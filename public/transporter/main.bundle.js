@@ -491,7 +491,7 @@ var DashboardComponent = (function () {
         //   {"label":"Shipment Status","link":"shipmentStatus"}
         //   ];
         this.selectedView = 'shipment';
-        this.localStorageService.set("AUTH_TOKEN", "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MTMxNzI0NTcsInVzZXJJZCI6Ijg1MWMwNmU5LWRkMjctNGY5Mi1iNGUzLTZkOTczMWY1MzZjZCIsImVtYWlsIjoiYWthc2guZHV0dGFAZnJldHJvbi5jb20iLCJtb2JpbGVOdW1iZXIiOiI5Nzc2MjE3NzY5Iiwib3JnSWQiOiJjZTM4Njg5MC01YzIyLTQ5Y2EtYTRjZC03MjVjMmY3OGY0NjUiLCJuYW1lIjoiQUtBU0ggRFVUVEEiLCJvcmdUeXBlIjoiVFJBTlNQT1JURVIifQ.lt_N28ihCMmWh1jbxBGgfDCJdOwUbEf1OMY8OkMKYpA");
+        // this.localStorageService.set("AUTH_TOKEN","eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MTMxNzI0NTcsInVzZXJJZCI6Ijg1MWMwNmU5LWRkMjctNGY5Mi1iNGUzLTZkOTczMWY1MzZjZCIsImVtYWlsIjoiYWthc2guZHV0dGFAZnJldHJvbi5jb20iLCJtb2JpbGVOdW1iZXIiOiI5Nzc2MjE3NzY5Iiwib3JnSWQiOiJjZTM4Njg5MC01YzIyLTQ5Y2EtYTRjZC03MjVjMmY3OGY0NjUiLCJuYW1lIjoiQUtBU0ggRFVUVEEiLCJvcmdUeXBlIjoiVFJBTlNQT1JURVIifQ.lt_N28ihCMmWh1jbxBGgfDCJdOwUbEf1OMY8OkMKYpA");
     }
     DashboardComponent.prototype.ngOnInit = function () {
     };
