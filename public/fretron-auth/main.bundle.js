@@ -789,7 +789,7 @@ var GOOGLE_PROVIDERS = {
 var BASE_IP = {
     IP: 'http://apis.fretron.com',
     ROHIT_IP: 'http://192.168.0.103',
-    TEST_IP: 'http://192.168.0.153'
+    TEST_IP: 'http://192.168.0.153',
 };
 // export const paths = {
 //   "LOGIN_PATH" :"http://192.168.0.103:8099/user/login/forany",
