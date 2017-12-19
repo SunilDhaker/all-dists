@@ -1215,7 +1215,6 @@ var GOOGLE_PROVIDERS = {
 };
 var BASE_IP = {
     IP: 'http://apis.fretron.com',
-    TEST_IP: 'http://192.168.0.153'
 };
 var paths = {
     "LOGIN_PATH": BASE_IP.IP + "/user/login",
