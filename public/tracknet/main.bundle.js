@@ -11090,7 +11090,8 @@ var VehicleTripStatusDetails = (function () {
             "freightLocation": { "name": this.templateObj['origin']['name'],
                 "address": this.templateObj['origin']['address'],
                 "geofence": { "boundry": this.templateObj['origin']['geofence']['boundry'],
-                    "center": this.templateObj['origin']['geofence']['center']
+                    "center": this.templateObj['origin']['geofence']['center'],
+                    "type": this.templateObj['origin']['geofence']['type']
                 },
                 "material": [""]
             },
@@ -11103,7 +11104,8 @@ var VehicleTripStatusDetails = (function () {
             "freightLocation": { "name": this.templateObj['destination']['name'],
                 "address": this.templateObj['destination']['address'],
                 "geofence": { "boundry": this.templateObj['destination']['geofence']['boundry'],
-                    "center": this.templateObj['destination']['geofence']['center']
+                    "center": this.templateObj['destination']['geofence']['center'],
+                    "type": this.templateObj['destination']['geofence']['type']
                 },
                 "material": [""]
             },
@@ -17333,6 +17335,9 @@ var ManageVehicleListComponent = (function () {
             if (value['status'] == 200) {
                 _this.isShowAddNewVehicle = false;
                 _this.openSnackBar("Vehicle Added Successfully.");
+                setTimeout(function () {
+                    _this.vehicleMgmntService.getAllVehiclesByOrg.emit(_this.orgId);
+                }, 1500);
             }
             else {
                 _this.openSnackBar("Failed to Add Vehicle");
@@ -17349,6 +17354,8 @@ var ManageVehicleListComponent = (function () {
             this.unSub_customerDetails.unsubscribe();
         if (typeof this.unSub_refreshList != 'undefined' && this.unSub_refreshList != null && this.unSub_refreshList != undefined)
             this.unSub_refreshList.unsubscribe();
+        if (typeof this.unSub_addNewVehicle != 'undefined' && this.unSub_addNewVehicle != null && this.unSub_addNewVehicle != undefined)
+            this.unSub_addNewVehicle.unsubscribe();
     };
     ManageVehicleListComponent.prototype.showAddNewVehicle = function () {
         this.isShowAddNewVehicle = true;
