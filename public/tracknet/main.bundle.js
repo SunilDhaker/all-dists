@@ -477,8 +477,7 @@ var GOOGLE_PROVIDERS = {
     }
 };
 var TEST_BASE_IP = {
-    // IP : 'http://192.168.0.153',
-    IP: 'http://apis.fretron.com'
+    IP: 'http://192.168.0.153',
 };
 var BASE_IP = {
     // IP : 'http://apis.fretron.com',
