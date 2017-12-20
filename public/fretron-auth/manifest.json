@@ -1,0 +1,29 @@
+
+{
+  "short_name": "FRETRON",
+  "name": "FRETRON",
+  "icons": [
+    {
+      "src": "images/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "images/logo300x300.png",
+      "sizes": "240x240",
+      "type": "image/png"
+    } ,
+    {
+      "src": "images/logo520x520.png",
+      "sizes": "520x520",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+//  "theme_color": "#424242",
+  "theme_color": "#303F9F",
+//  "background_color": "#616161"
+  "background_color": "#3F51B5"
+}
