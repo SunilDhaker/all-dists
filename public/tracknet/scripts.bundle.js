@@ -1,6 +1,6 @@
 webpackJsonp([3,5],{
 
-/***/ 1005:
+/***/ 1003:
 /***/ (function(module, exports) {
 
 /*
@@ -17,18 +17,18 @@ module.exports = function(src) {
 
 /***/ }),
 
-/***/ 1021:
+/***/ 1019:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(435);
+module.exports = __webpack_require__(436);
 
 
 /***/ }),
 
-/***/ 435:
+/***/ 436:
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(1005)(__webpack_require__(700))
+__webpack_require__(1003)(__webpack_require__(700))
 
 /***/ }),
 
@@ -39,5 +39,5 @@ module.exports = "/*!\n * Chart.js\n * http://chartjs.org/\n * Version: 2.5.0\n 
 
 /***/ })
 
-},[1021]);
+},[1019]);
 //# sourceMappingURL=scripts.bundle.js.map
