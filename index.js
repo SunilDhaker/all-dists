@@ -29,6 +29,11 @@ app.get('/transporter*', (req, res) => {
 res.sendFile(path.normalize(__dirname) + '/public/transporter/index.html');
 });
 
+app.get('/shipper*', (req, res) => {
+    console.log("serving index.html for shipper")
+res.sendFile(path.normalize(__dirname) + '/public/shipper/index.html');
+});
+
 
 http.listen(process.env.PORT || 5053, function () {
     console.log('Express server listening on port 5053 ' );
