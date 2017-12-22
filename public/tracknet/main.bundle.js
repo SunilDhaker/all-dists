@@ -604,6 +604,7 @@ var paths = {
     ADD_VEHICLE_PATH: BASE_IP.REGISTRY_MANAGER + '/vehicle',
     ORG_FOR_SHARE_PATH: BASE_IP.ORG_MANAGER + "/getbyid/",
     SHARE_VEHICLE_PATH: BASE_IP.REGISTRY_MANAGER + '/vehicle/share',
+    SHARE_VGROUP_PATH: BASE_IP.REGISTRY_MANAGER + '/vehiclegroup/share',
     // **********************************************************
     //******************************* Trip template path*******************************
     TRIP_TEMPLATE_PATH: BASE_IP.TRIP_TEMPLATE_IP,
@@ -1835,6 +1836,7 @@ var VehicleManagementService = (function () {
         this.addNewVehicles = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.getSharedOrg = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.shareSelecetedVehicles = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.shareSelecetedGroup = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.token = this.localStorageService.get("AUTH_TOKEN");
         //@todo handle error cases
         this.getAllVehicleGroupsList.subscribe(function (orgId) {
@@ -1956,6 +1958,17 @@ var VehicleManagementService = (function () {
             _this.shareVehicle(sharedVehObj, path).subscribe(function (response) {
                 console.log(response);
                 _this._store.dispatch({ type: "SHARE_VEHICLE_RESPONSE", payload: response });
+            }, function (err) {
+                console.log(err);
+            });
+        });
+        this.shareSelecetedGroup.subscribe(function (sharedGroupObj) {
+            var path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* paths */].SHARE_VGROUP_PATH;
+            console.log(path);
+            console.log(sharedGroupObj);
+            _this.shareVehicleGroup(sharedGroupObj, path).subscribe(function (response) {
+                console.log(response);
+                _this._store.dispatch({ type: "SHARE_VEHICLE_GROUP_RESPONSE", payload: response });
             }, function (err) {
                 console.log(err);
             });
@@ -2148,6 +2161,24 @@ var VehicleManagementService = (function () {
             method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
             headers: headers,
             body: shareVehObj,
+        });
+        return this.http.request(path, requestOptions).map(function (response) {
+            // console.log(response.status);
+            console.log(response);
+            if (response.status == 200) {
+                return response.json();
+            }
+        });
+    };
+    VehicleManagementService.prototype.shareVehicleGroup = function (shareGroupObj, path) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */](this.defaultHeaders.toJSON());
+        var bearerToken = "Bearer " + this.token;
+        headers.set('Content-Type', 'application/json');
+        headers.set('authorization', bearerToken);
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
+            headers: headers,
+            body: shareGroupObj,
         });
         return this.http.request(path, requestOptions).map(function (response) {
             // console.log(response.status);
@@ -17196,6 +17227,7 @@ var _a, _b, _c, _d, _e, _f;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_vehicle_management_services__ = __webpack_require__(69);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_material__ = __webpack_require__(13);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ManageVehicleGroupComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -17211,17 +17243,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ManageVehicleGroupComponent = (function () {
-    function ManageVehicleGroupComponent(_store, vehicleGrpMgmntService, localStorageService) {
+    function ManageVehicleGroupComponent(_store, vehicleGrpMgmntService, localStorageService, snackBar) {
         var _this = this;
         this._store = _store;
         this.vehicleGrpMgmntService = vehicleGrpMgmntService;
         this.localStorageService = localStorageService;
+        this.snackBar = snackBar;
         this.isShowAddNewGroup = false;
         this.iscreateErrMsg = false;
+        this.isSelectForShare = false;
+        this.isShowShareGroup = false;
+        this.isShowConfirmOrg = false;
         this.view = '';
         this.groupName = '';
         this.orgId = '';
+        this.shareOrgId = '';
         this.groupId = '';
         this.vehicleNumber = '';
         this.editVehicleList = [];
@@ -17233,6 +17271,8 @@ var ManageVehicleGroupComponent = (function () {
         this.unSub_createGroupResponse = null;
         this.unSub_addVehicleInGroupResponse = null;
         this.unSub_customerDetails = null;
+        this.unSub_sharedOrgDetails = null;
+        this.unSub_shareVehicleGroupResponse = null;
         this.view = document['view'];
         this.unSub_customerDetails = _store.select('customerDetails').subscribe(function (value) {
             console.log(value);
@@ -17280,6 +17320,28 @@ var ManageVehicleGroupComponent = (function () {
             console.log(value);
             _this.vehicleGrpMgmntService.getAllVehicleGroupsList.emit(_this.orgId);
         });
+        this.unSub_sharedOrgDetails = _store.select('getSharedOrgDetails').subscribe(function (value) {
+            if (value == null) {
+                return;
+            }
+            console.log(value);
+            console.log('Shared Org Details');
+            _this.sharedOrgDetails = value;
+        });
+        this.unSub_shareVehicleGroupResponse = _store.select('shareVehGroupResponse').subscribe(function (value) {
+            if (value == null) {
+                return;
+            }
+            console.log('share group response :');
+            console.log(value);
+            if (value['status'] == 200) {
+                _this.openSnackBar("Vehicle Group Shared Successufully");
+            }
+            if (value['status'] == 400) {
+                _this.openSnackBar(value['error']);
+            }
+            _this.vehicleGrpMgmntService.getAllVehicleGroupsList.emit(_this.orgId);
+        });
     }
     ManageVehicleGroupComponent.prototype.ngOnInit = function () {
     };
@@ -17294,6 +17356,11 @@ var ManageVehicleGroupComponent = (function () {
             this.unSub_addVehicleInGroupResponse.unsubscribe();
         if (typeof this.unSub_customerDetails != 'undefined' && this.unSub_customerDetails != null && this.unSub_customerDetails != undefined)
             this.unSub_customerDetails.unsubscribe();
+        if (typeof this.unSub_sharedOrgDetails != 'undefined' && this.unSub_sharedOrgDetails != null && this.unSub_sharedOrgDetails != undefined)
+            this.unSub_sharedOrgDetails.unsubscribe();
+        if (typeof this.unSub_shareVehicleGroupResponse != 'undefined' && this.unSub_shareVehicleGroupResponse != null && this.unSub_shareVehicleGroupResponse != undefined)
+            this.unSub_shareVehicleGroupResponse.unsubscribe();
+        this._store.dispatch({ type: "SHARE_VEHICLE_GROUP_RESPONSE", payload: null });
     };
     ManageVehicleGroupComponent.prototype.goToGroupedVehiclesList = function (groupObj) {
         this._store.dispatch({ type: "SELECTED_VEH_GROUP_FOR_EDIT", payload: groupObj });
@@ -17324,8 +17391,40 @@ var ManageVehicleGroupComponent = (function () {
         console.log(obj);
         this.vehicleGrpMgmntService.addVehiclesToGroup.emit(obj);
     };
-    ManageVehicleGroupComponent.prototype.selectGroupForShare = function (groupObj) {
+    ManageVehicleGroupComponent.prototype.selectGroupForShare = function (groupObj, event) {
+        if (event.checked) {
+            this.isSelectForShare = true;
+        }
+        else {
+            this.isSelectForShare = false;
+        }
+        console.log(groupObj);
+        for (var i = 0; i < this.vehicleGroupList.length; i++) {
+            this.vehicleGroupList[i]._isChecked = false;
+            if (this.vehicleGroupList[i] == groupObj) {
+                this.vehicleGroupList[i]._isChecked = true;
+            }
+        }
         this.selectedGroupToShare = groupObj;
+        console.log(this.vehicleGroupList);
+    };
+    ManageVehicleGroupComponent.prototype.showConfirmOrgDialogue = function () {
+        this.isShowShareGroup = false;
+        this.vehicleGrpMgmntService.getSharedOrg.emit(this.shareOrgId);
+        this.isShowConfirmOrg = true;
+    };
+    ManageVehicleGroupComponent.prototype.shareGroup = function () {
+        console.log(this.selectedGroupToShare);
+        // this.vehicleGrpMgmntService.
+        this.isShowConfirmOrg = false;
+        var shareObj = {
+            "orgId": this.sharedOrgDetails['organisation']['uuid'],
+            "groupId": this.selectedGroupToShare['uuid']
+        };
+        this.vehicleGrpMgmntService.shareSelecetedGroup.emit(shareObj);
+    };
+    ManageVehicleGroupComponent.prototype.openSnackBar = function (message) {
+        this.snackBar.open(message, 'OK', { duration: 4000 });
     };
     return ManageVehicleGroupComponent;
 }());
@@ -17335,10 +17434,10 @@ ManageVehicleGroupComponent = __decorate([
         template: __webpack_require__(752),
         styles: [__webpack_require__(639)]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__ngrx_store__["b" /* Store */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_vehicle_management_services__["a" /* VehicleManagementService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_vehicle_management_services__["a" /* VehicleManagementService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__ngrx_store__["b" /* Store */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_vehicle_management_services__["a" /* VehicleManagementService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_vehicle_management_services__["a" /* VehicleManagementService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__angular_material__["A" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_material__["A" /* MdSnackBar */]) === "function" && _d || Object])
 ], ManageVehicleGroupComponent);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=manage-vehicle-group.component.js.map
 
 /***/ }),
@@ -17450,10 +17549,10 @@ var ManageVehicleListComponent = (function () {
                 return;
             }
             console.log(value);
-            if (value['status'] == 200) {
-                console.log('Shared Org Details');
-                _this.sharedOrgDetails = value['organisation'];
-            }
+            // if(value['status'] == 200) {
+            console.log('Shared Org Details');
+            _this.sharedOrgDetails = value;
+            // }
         });
         this.unSub_addNewVehicle = _store.select('addVehicleResponse').subscribe(function (value) {
             if (value == null) {
@@ -18810,7 +18909,8 @@ var reducers = {
     addVehicleResponse: __WEBPACK_IMPORTED_MODULE_15__vehicle_management_store__["l" /* addVehicleResponse */],
     selectedVehicleforAlert: __WEBPACK_IMPORTED_MODULE_11__alerts_store__["j" /* selectedVehicleforAlert */],
     getSharedOrgDetails: __WEBPACK_IMPORTED_MODULE_15__vehicle_management_store__["m" /* getSharedOrgDetails */],
-    shareVehicleResponse: __WEBPACK_IMPORTED_MODULE_15__vehicle_management_store__["n" /* shareVehicleResponse */]
+    shareVehicleResponse: __WEBPACK_IMPORTED_MODULE_15__vehicle_management_store__["n" /* shareVehicleResponse */],
+    shareVehGroupResponse: __WEBPACK_IMPORTED_MODULE_15__vehicle_management_store__["o" /* shareVehGroupResponse */]
 };
 var rootReducer = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__ngrx_core__["b" /* compose */])(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["d" /* combineReducers */])(reducers);
 function mainReducer(state, action) {
@@ -19220,6 +19320,7 @@ function switchOrgResp(state, action) {
 /* harmony export (immutable) */ __webpack_exports__["k"] = refreshVehicleList;
 /* harmony export (immutable) */ __webpack_exports__["m"] = getSharedOrgDetails;
 /* harmony export (immutable) */ __webpack_exports__["n"] = shareVehicleResponse;
+/* harmony export (immutable) */ __webpack_exports__["o"] = shareVehGroupResponse;
 
 var obj = new __WEBPACK_IMPORTED_MODULE_0__services_actionRecorder_service__["a" /* ActionRecorderServices */]();
 function getAllVehiclesGroupList(state, action) {
@@ -19380,6 +19481,17 @@ function shareVehicleResponse(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
         case "SHARE_VEHICLE_RESPONSE": {
+            obj.addAction(action);
+            return action.payload;
+        }
+        default:
+            return state;
+    }
+}
+function shareVehGroupResponse(state, action) {
+    if (state === void 0) { state = null; }
+    switch (action.type) {
+        case "SHARE_VEHICLE_GROUP_RESPONSE": {
             obj.addAction(action);
             return action.payload;
         }
@@ -21660,13 +21772,13 @@ module.exports = "<!--Top Header to be shown in mobile view only -->\r\n\r\n<div
 /* 752 */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"overflow: auto; height: calc( 100vh - 50px)\">\r\n<div *ngFor=\"let group of vehicleGroupList\" >\r\n  <!--style=\"overflow: auto;height: calc(100vh - 45px);\"-->\r\n  <md-card  style=\"padding-top:10px; margin-bottom: 1%\" >\r\n    <md-card-content>\r\n      <div fxLayout=\"row\" (click)=\"goToGroupedVehiclesList(group)\">\r\n        <div fxFlex=\"90\">\r\n          <h3>{{group['groupName']}}</h3>\r\n        </div>\r\n        <div fxFlex=\"10\">\r\n          <span style=\"float: right\">\r\n            <md-checkbox (change)=\"selectGroupForShare()\"></md-checkbox>\r\n          </span>\r\n        </div>\r\n        <!--<div fxFlex=\"50\">-->\r\n          <!--<span style=\"float: right\"><button md-button><i class=\"fa fa-share-square-o\" aria-hidden=\"true\"></i></button></span>-->\r\n        <!--</div>-->\r\n      </div>\r\n    </md-card-content>\r\n  </md-card>\r\n</div>\r\n\r\n  <div style=\"width: 100%; height: 50px\"></div>\r\n\r\n  <button md-fab color=\"primary\" style=\"position: absolute; top: 90%\" [style.left]=\"(view =='web')?'90%':'80%'\" (click)=\"showAddNewGroup()\" >\r\n    <i class=\"fa fa-plus\" aria-hidden=\"true\" style=\"font-size: 20px;color: white \"></i>\r\n  </button>\r\n</div>\r\n\r\n\r\n<div  *ngIf=\"isShowAddNewGroup\" id=\"myParameterModal\" class=\"modal\">\r\n  <!-- Modal content -->\r\n  <div class=\"modal-content\">\r\n    <span class=\"close\" (click)=\"isShowAddNewGroup=false\">&times;</span>\r\n\r\n    <h4 style=\"margin-bottom: 0px\">Add New Group</h4>\r\n\r\n    <div style=\"width: 100%\">\r\n      <md-input-container style=\"width:85%\" >\r\n        <input placeholder=\"Group Name\"  mdInput required [(ngModel)]=\"groupName\" >\r\n      </md-input-container>\r\n    </div>\r\n\r\n    <div style=\"width: 100%\">\r\n      <!--<md-input-container style=\"width:85%\" >-->\r\n        <!--<input placeholder=\"Vehicle Number\"  mdInput required [(ngModel)]=\"vehicleNumber\" >-->\r\n      <!--</md-input-container>-->\r\n\r\n      <div>\r\n        <vehicle-picker [editableVehicleList]=\"editVehicleList\"></vehicle-picker>\r\n      </div>\r\n\r\n      <div *ngIf=\"iscreateErrMsg\"><label style=\"color: red\">*All Feilds are mandatory</label></div>\r\n\r\n    </div>\r\n\r\n    <div style=\"margin-top: 5%\">\r\n      <button md-raised-button (click)=\"isShowAddNewGroup=false\">CANCEL</button>\r\n      <button md-raised-button color=\"primary\" style=\"margin-left: 15%\" (click)=\"createNewGroup()\">ADD GROUP</button>\r\n    </div>\r\n\r\n\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div style=\"overflow: auto; height: calc( 100vh - 50px)\">\r\n<div *ngFor=\"let group of vehicleGroupList\" >\r\n  <!--style=\"overflow: auto;height: calc(100vh - 45px);\"-->\r\n  <md-card  style=\"padding-top:10px; margin-bottom: 1%\" >\r\n    <md-card-content>\r\n      <div fxLayout=\"row\" >\r\n        <div fxFlex=\"90\" (click)=\"goToGroupedVehiclesList(group)\">\r\n          <h3>{{group['groupName']}}</h3>\r\n        </div>\r\n        <div fxFlex=\"10\">\r\n          <span style=\"float: right\">\r\n            <md-checkbox [checked]=\"group?._isChecked\" (change)=\"selectGroupForShare(group,$event)\"></md-checkbox>\r\n          </span>\r\n        </div>\r\n        <!--<div fxFlex=\"50\">-->\r\n          <!--<span style=\"float: right\"><button md-button><i class=\"fa fa-share-square-o\" aria-hidden=\"true\"></i></button></span>-->\r\n        <!--</div>-->\r\n      </div>\r\n    </md-card-content>\r\n  </md-card>\r\n</div>\r\n\r\n  <div style=\"width: 100%; height: 50px\"></div>\r\n\r\n  <button *ngIf=\"!isSelectForShare\" md-fab color=\"primary\" style=\"position: absolute; top: 90%\" [style.left]=\"(view =='web')?'90%':'80%'\" (click)=\"showAddNewGroup()\" >\r\n    <i class=\"fa fa-plus\" aria-hidden=\"true\" style=\"font-size: 20px;color: white \"></i>\r\n  </button>\r\n\r\n  <button *ngIf=\"isSelectForShare\" md-fab color=\"accent\" style=\"position: absolute; top: 90%\" [style.left]=\"(view =='web')?'90%':'80%'\" (click)=\"isShowShareGroup=true\" >\r\n    <i class=\"fa fa-share-alt\" aria-hidden=\"true\" style=\"font-size: 20px;color: white \"></i>\r\n  </button>\r\n</div>\r\n\r\n\r\n<div  *ngIf=\"isShowAddNewGroup\" id=\"myParameterModal\" class=\"modal\">\r\n  <!-- Modal content -->\r\n  <div class=\"modal-content\">\r\n    <span class=\"close\" (click)=\"isShowAddNewGroup=false\">&times;</span>\r\n\r\n    <h4 style=\"margin-bottom: 0px\">Add New Group</h4>\r\n\r\n    <div style=\"width: 100%\">\r\n      <md-input-container style=\"width:85%\" >\r\n        <input placeholder=\"Group Name\"  mdInput required [(ngModel)]=\"groupName\" >\r\n      </md-input-container>\r\n    </div>\r\n\r\n    <div style=\"width: 100%\">\r\n      <!--<md-input-container style=\"width:85%\" >-->\r\n        <!--<input placeholder=\"Vehicle Number\"  mdInput required [(ngModel)]=\"vehicleNumber\" >-->\r\n      <!--</md-input-container>-->\r\n\r\n      <div>\r\n        <vehicle-picker [editableVehicleList]=\"editVehicleList\"></vehicle-picker>\r\n      </div>\r\n\r\n      <div *ngIf=\"iscreateErrMsg\"><label style=\"color: red\">*All Feilds are mandatory</label></div>\r\n\r\n    </div>\r\n\r\n    <div style=\"margin-top: 5%\">\r\n      <button md-raised-button (click)=\"isShowAddNewGroup=false\">CANCEL</button>\r\n      <button md-raised-button color=\"primary\" style=\"margin-left: 15%\" (click)=\"createNewGroup()\">ADD GROUP</button>\r\n    </div>\r\n\r\n\r\n  </div>\r\n</div>\r\n\r\n\r\n\r\n<!--organisation for share modal starts here-->\r\n<div  *ngIf=\"isShowShareGroup\" id=\"myShareModal\" class=\"modal\">\r\n  <!-- Modal content -->\r\n  <div class=\"modal-content\">\r\n    <span class=\"close\" (click)=\"isShowShareGroup=false\">&times;</span>\r\n\r\n    <h4 style=\"margin-bottom: 0px\">Share Vehicle Group</h4>\r\n\r\n    <div style=\"width: 100%\">\r\n      <md-input-container style=\"width:85%\" >\r\n        <input placeholder=\"Organisation Id\"  mdInput required [(ngModel)]=\"shareOrgId\" >\r\n      </md-input-container>\r\n    </div>\r\n\r\n    <div style=\"margin-top: 5%\">\r\n      <button md-raised-button (click)=\"isShowShareGroup=false\">CANCEL</button>\r\n      <button md-raised-button color=\"primary\" style=\"margin-left: 15%\" (click)=\"showConfirmOrgDialogue()\">SHARE GROUP</button>\r\n    </div>\r\n\r\n  </div>\r\n</div>\r\n\r\n<!--organisation for share modal ends here-->\r\n\r\n\r\n<!--confirm organistion modal starts here -->\r\n\r\n<div  *ngIf=\"isShowConfirmOrg\" id=\"myConfirmShareModal\" class=\"modal\">\r\n  <!-- Modal content -->\r\n  <div class=\"modal-content\">\r\n    <span class=\"close\" (click)=\"isShowConfirmOrg=false\">&times;</span>\r\n\r\n    <h4 style=\"margin-bottom: 0px\">Confirm Organisation you shared with</h4>\r\n\r\n    <div fxLayout=\"row\">\r\n      <div fxFlex=\"100\" *ngIf=\"sharedOrgDetails?.status == 200\" >\r\n        <span>Organisation Name : {{sharedOrgDetails.organisation?.organisationName}}</span><br>\r\n        <span>Organisation Id :  {{sharedOrgDetails.organisation?.orgId}}</span>\r\n      </div>\r\n\r\n      <div fxFlex=\"100\" *ngIf=\"sharedOrgDetails?.status != 200\" >\r\n        <span>Error: {{sharedOrgDetails?.error}}</span><br>\r\n      </div>\r\n    </div>\r\n\r\n\r\n    <div style=\"margin-top: 5%\">\r\n      <button md-raised-button (click)=\"isShowConfirmOrg=false\">CANCEL</button>\r\n      <button md-raised-button [disabled]=\"sharedOrgDetails?.status != 200\" color=\"primary\" style=\"margin-left: 15%\" (click)=\"shareGroup()\">CONFIRM SHARE</button>\r\n    </div>\r\n\r\n\r\n  </div>\r\n</div>\r\n<!--confirm organistion modal ends here -->\r\n"
 
 /***/ }),
 /* 753 */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"overflow: auto; height: calc( 100vh - 50px)\">\r\n\r\n  <div *ngFor=\"let vehicle of vehiclesByOrgList\" >\r\n    <!--style=\"overflow: auto;height: calc(100vh - 45px);\"-->\r\n    <md-card >\r\n      <md-card-content style=\"margin-bottom: 1%\">\r\n        <div fxLayout=\"row\">\r\n          <div fxFlex=\"7\"><md-checkbox (change)=\"selectVehicleforShare($event,vehicle)\" ></md-checkbox></div>\r\n          <div fxFlex=\"35\" (click)=\"goToEditVehicles(vehicle)\"><span style=\"font-size: large\"><b>{{vehicle['vehicleRegistrationNumber']}}</b></span></div>\r\n          <div fxFlex=\"20\" (click)=\"goToEditVehicles(vehicle)\"><label>{{vehicle['vehicleType']}}</label></div>\r\n          <div fxFlex=\"38\"><span style=\"background-color: #505050; color: white; border-radius: 10px; padding: 7px; margin-left: 8px\">{{vehicle['vtsDeviceId']!== \"\"?\"FRETRON GPS\": \"OTHER GPS\"}}</span>\r\n            <!--<span (click)=\"showShareModal()\"><button md-icon-button style=\"float: right\" ><i class=\"fa fa-share-square-o\" aria-hidden=\"true\"></i></button></span>-->\r\n          </div>\r\n        </div>\r\n\r\n        <!--<div fxLayout=\"row\">-->\r\n          <!--&lt;!&ndash;<div fxFlex=\"50\"><span style=\"color: #9b9b9b\">Status</span></div>&ndash;&gt;-->\r\n          <!--<div fxFlex=\"50\"><span style=\"color: #9b9b9b\">Group</span></div>-->\r\n        <!--</div>-->\r\n      </md-card-content>\r\n      <div fxLayout=\"row\">\r\n        <div fxFlex=\"100\">\r\n\r\n        </div>\r\n      </div>\r\n    </md-card>\r\n  </div>\r\n\r\n  <div style=\"height: 50px; width: 100%\"></div>\r\n\r\n\r\n\r\n  <button *ngIf=\"!isSelcetedForShare\" md-fab color=\"primary\" style=\"position: absolute; top: 90%\" [style.left]=\"(view =='web')?'90%':'80%'\" (click)=\"showAddNewVehicle()\" >\r\n    <i class=\"fa fa-plus\" aria-hidden=\"true\" style=\"font-size: 20px;color: white \"></i>\r\n  </button>\r\n\r\n  <button *ngIf=\"isSelcetedForShare\" md-fab color=\"accent\" style=\"position: absolute; top: 90%\" [style.left]=\"(view =='web')?'90%':'80%'\" (click)=\"isShowShareVehicle=true\" >\r\n    <i class=\"fa fa-share-alt\" aria-hidden=\"true\" style=\"font-size: 20px;color: white \"></i>\r\n  </button>\r\n</div>\r\n\r\n<div  *ngIf=\"isShowAddNewVehicle\" id=\"myParameterModal\" class=\"modal\">\r\n  <!-- Modal content -->\r\n  <div class=\"modal-content\">\r\n    <span class=\"close\" (click)=\"isShowAddNewVehicle=false\">&times;</span>\r\n\r\n    <h4 style=\"margin-bottom: 0px\">Add New Vehicle</h4>\r\n\r\n    <div style=\"width: 100%\">\r\n      <md-input-container style=\"width:85%\" >\r\n        <input placeholder=\"Vehicle Number\"  mdInput required [(ngModel)]=\"vehicleNumber\" >\r\n      </md-input-container>\r\n    </div>\r\n\r\n    <div style=\"width: 100%\">\r\n      <md-select  placeholder=\"Vehicle Type\"  style=\"width: 85%; margin-bottom: 8%\" [(ngModel)]=\"vehicleType\"  >\r\n        <md-option  [value]=\"vtype\" *ngFor=\"let vtype of vehicleTypeList\">{{vtype}}</md-option>\r\n      </md-select>\r\n    </div>\r\n\r\n    <!--<div style=\"width: 100%\">-->\r\n      <!--<md-select  placeholder=\"Status\"  style=\"width: 85%\" [(ngModel)]=\"vehicleStatus\"  >-->\r\n        <!--<md-option  [value]=\"vStatus\" *ngFor=\"let vStatus of vehicleStatusList\">{{vStatus}}</md-option>-->\r\n      <!--</md-select>-->\r\n    <!--</div>-->\r\n\r\n    <div style=\"width: 100%\">\r\n      <md-input-container style=\"width:85%\" >\r\n        <input placeholder=\"Vts Device Id\"  mdInput required [(ngModel)]=\"vtsDeviceIdVehicle\" >\r\n      </md-input-container>\r\n    </div>\r\n\r\n    <!--<div style=\"width: 100%\">-->\r\n      <!--<md-select  placeholder=\"GPS\"  style=\"width: 85%\" [(ngModel)]=\"gpsVendor\"  >-->\r\n        <!--<md-option  [value]=\"gps\" *ngFor=\"let gps of gpsVendorList\">{{gps}}</md-option>-->\r\n      <!--</md-select>-->\r\n    <!--</div>-->\r\n\r\n    <div style=\"margin-top: 5%\">\r\n      <button md-raised-button (click)=\"isShowAddNewVehicle=false\">CANCEL</button>\r\n      <button md-raised-button color=\"primary\" style=\"margin-left: 15%\" (click)=\"saveNewVehicles()\">ADD VEHICLE</button>\r\n    </div>\r\n\r\n\r\n  </div>\r\n</div>\r\n\r\n\r\n<div  *ngIf=\"isShowShareVehicle\" id=\"myShareModal\" class=\"modal\">\r\n  <!-- Modal content -->\r\n  <div class=\"modal-content\">\r\n    <span class=\"close\" (click)=\"isShowShareVehicle=false\">&times;</span>\r\n\r\n    <h4 style=\"margin-bottom: 0px\">Share Vehicle</h4>\r\n\r\n    <div style=\"width: 100%\">\r\n      <md-input-container style=\"width:85%\" >\r\n        <input placeholder=\"Organisation Id\"  mdInput required [(ngModel)]=\"shareOrgId\" >\r\n      </md-input-container>\r\n    </div>\r\n\r\n    <div style=\"margin-top: 5%\">\r\n      <button md-raised-button (click)=\"isShowShareVehicle=false\">CANCEL</button>\r\n      <button md-raised-button color=\"primary\" style=\"margin-left: 15%\" (click)=\"showConfirmOrgDialogue()\">SHARE VEHICLE</button>\r\n    </div>\r\n\r\n\r\n  </div>\r\n</div>\r\n\r\n\r\n<div  *ngIf=\"isShowOrgConfirm\" id=\"myConfirmShareModal\" class=\"modal\">\r\n  <!-- Modal content -->\r\n  <div class=\"modal-content\">\r\n    <span class=\"close\" (click)=\"isShowOrgConfirm=false\">&times;</span>\r\n\r\n    <h4 style=\"margin-bottom: 0px\">Confirm Organisation you shared with</h4>\r\n\r\n    <div fxLayout=\"row\">\r\n      <div fxFlex=\"100\">\r\n        <span>Organisation Name : {{sharedOrgDetails?.organisationName}}</span><br>\r\n        <span>Organisation Id :  {{sharedOrgDetails?.orgId}}</span>\r\n      </div>\r\n    </div>\r\n\r\n\r\n    <div style=\"margin-top: 5%\">\r\n      <button md-raised-button (click)=\"isShowOrgConfirm=false\">CANCEL</button>\r\n      <button md-raised-button color=\"primary\" style=\"margin-left: 15%\" (click)=\"shareVehicle()\">CONFIRM SHARE</button>\r\n    </div>\r\n\r\n\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div style=\"overflow: auto; height: calc( 100vh - 50px)\">\r\n\r\n  <div *ngFor=\"let vehicle of vehiclesByOrgList\" >\r\n    <!--style=\"overflow: auto;height: calc(100vh - 45px);\"-->\r\n    <md-card >\r\n      <md-card-content style=\"margin-bottom: 1%\">\r\n        <div fxLayout=\"row\">\r\n          <div fxFlex=\"7\"><md-checkbox (change)=\"selectVehicleforShare($event,vehicle)\" ></md-checkbox></div>\r\n          <div fxFlex=\"35\" (click)=\"goToEditVehicles(vehicle)\"><span style=\"font-size: large\"><b>{{vehicle['vehicleRegistrationNumber']}}</b></span></div>\r\n          <div fxFlex=\"20\" (click)=\"goToEditVehicles(vehicle)\"><label>{{vehicle['vehicleType']}}</label></div>\r\n          <div fxFlex=\"38\"><span style=\"background-color: #505050; color: white; border-radius: 10px; padding: 7px; margin-left: 8px\">{{vehicle['vtsDeviceId']!== \"\"?\"FRETRON GPS\": \"OTHER GPS\"}}</span>\r\n            <!--<span (click)=\"showShareModal()\"><button md-icon-button style=\"float: right\" ><i class=\"fa fa-share-square-o\" aria-hidden=\"true\"></i></button></span>-->\r\n          </div>\r\n        </div>\r\n\r\n        <!--<div fxLayout=\"row\">-->\r\n          <!--&lt;!&ndash;<div fxFlex=\"50\"><span style=\"color: #9b9b9b\">Status</span></div>&ndash;&gt;-->\r\n          <!--<div fxFlex=\"50\"><span style=\"color: #9b9b9b\">Group</span></div>-->\r\n        <!--</div>-->\r\n      </md-card-content>\r\n      <div fxLayout=\"row\">\r\n        <div fxFlex=\"100\">\r\n\r\n        </div>\r\n      </div>\r\n    </md-card>\r\n  </div>\r\n\r\n  <div style=\"height: 50px; width: 100%\"></div>\r\n\r\n\r\n\r\n  <button *ngIf=\"!isSelcetedForShare\" md-fab color=\"primary\" style=\"position: absolute; top: 90%\" [style.left]=\"(view =='web')?'90%':'80%'\" (click)=\"showAddNewVehicle()\" >\r\n    <i class=\"fa fa-plus\" aria-hidden=\"true\" style=\"font-size: 20px;color: white \"></i>\r\n  </button>\r\n\r\n  <button *ngIf=\"isSelcetedForShare\" md-fab color=\"accent\" style=\"position: absolute; top: 90%\" [style.left]=\"(view =='web')?'90%':'80%'\" (click)=\"isShowShareVehicle=true\" >\r\n    <i class=\"fa fa-share-alt\" aria-hidden=\"true\" style=\"font-size: 20px;color: white \"></i>\r\n  </button>\r\n</div>\r\n\r\n<div  *ngIf=\"isShowAddNewVehicle\" id=\"myParameterModal\" class=\"modal\">\r\n  <!-- Modal content -->\r\n  <div class=\"modal-content\">\r\n    <span class=\"close\" (click)=\"isShowAddNewVehicle=false\">&times;</span>\r\n\r\n    <h4 style=\"margin-bottom: 0px\">Add New Vehicle</h4>\r\n\r\n    <div style=\"width: 100%\">\r\n      <md-input-container style=\"width:85%\" >\r\n        <input placeholder=\"Vehicle Number\"  mdInput required [(ngModel)]=\"vehicleNumber\" >\r\n      </md-input-container>\r\n    </div>\r\n\r\n    <div style=\"width: 100%\">\r\n      <md-select  placeholder=\"Vehicle Type\"  style=\"width: 85%; margin-bottom: 8%\" [(ngModel)]=\"vehicleType\"  >\r\n        <md-option  [value]=\"vtype\" *ngFor=\"let vtype of vehicleTypeList\">{{vtype}}</md-option>\r\n      </md-select>\r\n    </div>\r\n\r\n    <!--<div style=\"width: 100%\">-->\r\n      <!--<md-select  placeholder=\"Status\"  style=\"width: 85%\" [(ngModel)]=\"vehicleStatus\"  >-->\r\n        <!--<md-option  [value]=\"vStatus\" *ngFor=\"let vStatus of vehicleStatusList\">{{vStatus}}</md-option>-->\r\n      <!--</md-select>-->\r\n    <!--</div>-->\r\n\r\n    <div style=\"width: 100%\">\r\n      <md-input-container style=\"width:85%\" >\r\n        <input placeholder=\"Vts Device Id\"  mdInput required [(ngModel)]=\"vtsDeviceIdVehicle\" >\r\n      </md-input-container>\r\n    </div>\r\n\r\n    <!--<div style=\"width: 100%\">-->\r\n      <!--<md-select  placeholder=\"GPS\"  style=\"width: 85%\" [(ngModel)]=\"gpsVendor\"  >-->\r\n        <!--<md-option  [value]=\"gps\" *ngFor=\"let gps of gpsVendorList\">{{gps}}</md-option>-->\r\n      <!--</md-select>-->\r\n    <!--</div>-->\r\n\r\n    <div style=\"margin-top: 5%\">\r\n      <button md-raised-button (click)=\"isShowAddNewVehicle=false\">CANCEL</button>\r\n      <button md-raised-button color=\"primary\" style=\"margin-left: 15%\" (click)=\"saveNewVehicles()\">ADD VEHICLE</button>\r\n    </div>\r\n\r\n\r\n  </div>\r\n</div>\r\n\r\n\r\n<div  *ngIf=\"isShowShareVehicle\" id=\"myShareModal\" class=\"modal\">\r\n  <!-- Modal content -->\r\n  <div class=\"modal-content\">\r\n    <span class=\"close\" (click)=\"isShowShareVehicle=false\">&times;</span>\r\n\r\n    <h4 style=\"margin-bottom: 0px\">Share Vehicle</h4>\r\n\r\n    <div style=\"width: 100%\">\r\n      <md-input-container style=\"width:85%\" >\r\n        <input placeholder=\"Organisation Id\"  mdInput required [(ngModel)]=\"shareOrgId\" >\r\n      </md-input-container>\r\n    </div>\r\n\r\n    <div style=\"margin-top: 5%\">\r\n      <button md-raised-button (click)=\"isShowShareVehicle=false\">CANCEL</button>\r\n      <button md-raised-button color=\"primary\" style=\"margin-left: 15%\" (click)=\"showConfirmOrgDialogue()\">SHARE VEHICLE</button>\r\n    </div>\r\n\r\n\r\n  </div>\r\n</div>\r\n\r\n\r\n<div  *ngIf=\"isShowOrgConfirm\" id=\"myConfirmShareModal\" class=\"modal\">\r\n  <!-- Modal content -->\r\n  <div class=\"modal-content\">\r\n    <span class=\"close\" (click)=\"isShowOrgConfirm=false\">&times;</span>\r\n\r\n    <h4 style=\"margin-bottom: 0px\">Confirm Organisation you shared with</h4>\r\n\r\n    <div fxLayout=\"row\">\r\n      <div fxFlex=\"100\" *ngIf=\"sharedOrgDetails.status == 200\">\r\n        <span>Organisation Name : {{sharedOrgDetails.organistaion?.organisationName}}</span><br>\r\n        <span>Organisation Id :  {{sharedOrgDetails.organisation?.orgId}}</span>\r\n      </div>\r\n\r\n      <div fxFlex=\"100\" *ngIf=\"sharedOrgDetails.status != 200\">\r\n        <span>Error : {{sharedOrgDetails.error}}</span><br>\r\n      </div>\r\n    </div>\r\n\r\n\r\n    <div style=\"margin-top: 5%\">\r\n      <button md-raised-button (click)=\"isShowOrgConfirm=false\">CANCEL</button>\r\n      <button md-raised-button [disabled]=\"sharedOrgDetails.status != 200\" color=\"primary\" style=\"margin-left: 15%\" (click)=\"shareVehicle()\">CONFIRM SHARE</button>\r\n    </div>\r\n\r\n\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 /* 754 */
