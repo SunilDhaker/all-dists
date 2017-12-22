@@ -70,44 +70,46 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__filters_filter__ = __webpack_require__("../../../../../src/app/filters/filter.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__filters_deviceFilter__ = __webpack_require__("../../../../../src/app/filters/deviceFilter.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__filters_shipmentFilter__ = __webpack_require__("../../../../../src/app/filters/shipmentFilter.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_device_dashboard_device_dashboard_component__ = __webpack_require__("../../../../../src/app/components/device-dashboard/device-dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_new_shipment_new_shipment_component__ = __webpack_require__("../../../../../src/app/components/new-shipment/new-shipment.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_ng_pick_datetime_picker_module__ = __webpack_require__("../../../../ng-pick-datetime/picker.module.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_ng_pick_datetime_picker_module___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_19_ng_pick_datetime_picker_module__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_shipment_services__ = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_tracker_services__ = __webpack_require__("../../../../../src/app/services/tracker-services.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__services_manage_organisation_services__ = __webpack_require__("../../../../../src/app/services/manage-organisation-services.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_device_services__ = __webpack_require__("../../../../../src/app/services/device-services.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_26_angular_2_local_storage__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__reducers_info_store__ = __webpack_require__("../../../../../src/app/reducers/info_store.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_dialog_confirm_device_return_confirm_device_return_component__ = __webpack_require__("../../../../../src/app/components/dialog/confirm-device-return/confirm-device-return.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_dialog_assign_vehicle_assign_vehicle_component__ = __webpack_require__("../../../../../src/app/components/dialog/assign-vehicle/assign-vehicle.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_dialog_mark_as_required_mark_as_required_component__ = __webpack_require__("../../../../../src/app/components/dialog/mark-as-required/mark-as-required.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_tracker_shipment_status_tracker_shipment_status_component__ = __webpack_require__("../../../../../src/app/components/tracker-shipment-status/tracker-shipment-status.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_edit_shipment_location_edit_shipment_location_component__ = __webpack_require__("../../../../../src/app/components/edit-shipment-location/edit-shipment-location.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_user_profile_user_profile_component__ = __webpack_require__("../../../../../src/app/components/user-profile/user-profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_add_organisation_add_organisation_component__ = __webpack_require__("../../../../../src/app/components/add-organisation/add-organisation.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_settings_component_settings_component_component__ = __webpack_require__("../../../../../src/app/components/settings-component/settings-component.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_manage_organisation_manage_organisation_component__ = __webpack_require__("../../../../../src/app/components/manage-organisation/manage-organisation.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__components_shipment_management_shipment_management_component__ = __webpack_require__("../../../../../src/app/components/shipment-management/shipment-management.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__services_shipment_mgmt_services__ = __webpack_require__("../../../../../src/app/services/shipment-mgmt-services.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__services_manual_shipment_service__ = __webpack_require__("../../../../../src/app/services/manual-shipment-service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__components_user_management_console_user_management_console_component__ = __webpack_require__("../../../../../src/app/components/user-management-console/user-management-console.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__components_user_management_console_users_list_users_list_component__ = __webpack_require__("../../../../../src/app/components/user-management-console/users-list/users-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__services_user_management_services__ = __webpack_require__("../../../../../src/app/services/user-management-services.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__components_freight_location_components_freight_location_picker_freight_location_picker_component__ = __webpack_require__("../../../../../src/app/components/freight-location-components/freight-location-picker/freight-location-picker.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__components_freight_location_components_freight_location_creater_freight_location_creater_component__ = __webpack_require__("../../../../../src/app/components/freight-location-components/freight-location-creater/freight-location-creater.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__reducers_user_management_store__ = __webpack_require__("../../../../../src/app/reducers/user-management-store.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__services_logout_service__ = __webpack_require__("../../../../../src/app/services/logout-service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__filters_sortFilter__ = __webpack_require__("../../../../../src/app/filters/sortFilter.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_device_dashboard_device_dashboard_component__ = __webpack_require__("../../../../../src/app/components/device-dashboard/device-dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_new_shipment_new_shipment_component__ = __webpack_require__("../../../../../src/app/components/new-shipment/new-shipment.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_ng_pick_datetime_picker_module__ = __webpack_require__("../../../../ng-pick-datetime/picker.module.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_ng_pick_datetime_picker_module___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_20_ng_pick_datetime_picker_module__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_shipment_services__ = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__services_tracker_services__ = __webpack_require__("../../../../../src/app/services/tracker-services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_manage_organisation_services__ = __webpack_require__("../../../../../src/app/services/manage-organisation-services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__services_device_services__ = __webpack_require__("../../../../../src/app/services/device-services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_27_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__reducers_info_store__ = __webpack_require__("../../../../../src/app/reducers/info_store.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_dialog_confirm_device_return_confirm_device_return_component__ = __webpack_require__("../../../../../src/app/components/dialog/confirm-device-return/confirm-device-return.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_dialog_assign_vehicle_assign_vehicle_component__ = __webpack_require__("../../../../../src/app/components/dialog/assign-vehicle/assign-vehicle.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_dialog_mark_as_required_mark_as_required_component__ = __webpack_require__("../../../../../src/app/components/dialog/mark-as-required/mark-as-required.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_tracker_shipment_status_tracker_shipment_status_component__ = __webpack_require__("../../../../../src/app/components/tracker-shipment-status/tracker-shipment-status.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_edit_shipment_location_edit_shipment_location_component__ = __webpack_require__("../../../../../src/app/components/edit-shipment-location/edit-shipment-location.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_user_profile_user_profile_component__ = __webpack_require__("../../../../../src/app/components/user-profile/user-profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_add_organisation_add_organisation_component__ = __webpack_require__("../../../../../src/app/components/add-organisation/add-organisation.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_settings_component_settings_component_component__ = __webpack_require__("../../../../../src/app/components/settings-component/settings-component.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__components_manage_organisation_manage_organisation_component__ = __webpack_require__("../../../../../src/app/components/manage-organisation/manage-organisation.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__components_shipment_management_shipment_management_component__ = __webpack_require__("../../../../../src/app/components/shipment-management/shipment-management.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__services_shipment_mgmt_services__ = __webpack_require__("../../../../../src/app/services/shipment-mgmt-services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__services_manual_shipment_service__ = __webpack_require__("../../../../../src/app/services/manual-shipment-service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__components_user_management_console_user_management_console_component__ = __webpack_require__("../../../../../src/app/components/user-management-console/user-management-console.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__components_user_management_console_users_list_users_list_component__ = __webpack_require__("../../../../../src/app/components/user-management-console/users-list/users-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__services_user_management_services__ = __webpack_require__("../../../../../src/app/services/user-management-services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__components_freight_location_components_freight_location_picker_freight_location_picker_component__ = __webpack_require__("../../../../../src/app/components/freight-location-components/freight-location-picker/freight-location-picker.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__components_freight_location_components_freight_location_creater_freight_location_creater_component__ = __webpack_require__("../../../../../src/app/components/freight-location-components/freight-location-creater/freight-location-creater.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__reducers_user_management_store__ = __webpack_require__("../../../../../src/app/reducers/user-management-store.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__services_logout_service__ = __webpack_require__("../../../../../src/app/services/logout-service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -161,25 +163,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var stores = { shipmentIdList: __WEBPACK_IMPORTED_MODULE_27__reducers_info_store__["m" /* shipmentIdList */],
-    allShipmentList: __WEBPACK_IMPORTED_MODULE_27__reducers_info_store__["c" /* allShipmentList */],
-    shipmentDetail: __WEBPACK_IMPORTED_MODULE_27__reducers_info_store__["k" /* shipmentDetail */],
-    newShipment: __WEBPACK_IMPORTED_MODULE_27__reducers_info_store__["j" /* newShipment */],
-    allDevicesList: __WEBPACK_IMPORTED_MODULE_27__reducers_info_store__["b" /* allDevicesList */],
-    checkVehicle: __WEBPACK_IMPORTED_MODULE_27__reducers_info_store__["d" /* checkVehicle */],
-    deviceDetails: __WEBPACK_IMPORTED_MODULE_27__reducers_info_store__["i" /* deviceDetails */],
-    closeDialog: __WEBPACK_IMPORTED_MODULE_27__reducers_info_store__["e" /* closeDialog */],
-    createOrgRes: __WEBPACK_IMPORTED_MODULE_27__reducers_info_store__["g" /* createOrgRes */],
-    switchOrganisationResp: __WEBPACK_IMPORTED_MODULE_27__reducers_info_store__["n" /* switchOrganisationResp */],
-    customerDetails: __WEBPACK_IMPORTED_MODULE_27__reducers_info_store__["h" /* customerDetails */],
-    shipmentGroupList: __WEBPACK_IMPORTED_MODULE_27__reducers_info_store__["l" /* shipmentGroupList */],
-    createGroupRes: __WEBPACK_IMPORTED_MODULE_27__reducers_info_store__["f" /* createGroupRes */],
-    deleteUserResponse: __WEBPACK_IMPORTED_MODULE_45__reducers_user_management_store__["a" /* deleteUserResponse */],
-    getAllUserList: __WEBPACK_IMPORTED_MODULE_45__reducers_user_management_store__["c" /* getAllUserList */],
-    updateUserStatusResponse: __WEBPACK_IMPORTED_MODULE_45__reducers_user_management_store__["d" /* updateUserStatusResponse */],
-    existingUserResponse: __WEBPACK_IMPORTED_MODULE_45__reducers_user_management_store__["b" /* existingUserResponse */],
-    switchShipment: __WEBPACK_IMPORTED_MODULE_27__reducers_info_store__["o" /* switchShipment */],
-    addDevice: __WEBPACK_IMPORTED_MODULE_27__reducers_info_store__["a" /* addDevice */]
+var stores = { shipmentIdList: __WEBPACK_IMPORTED_MODULE_28__reducers_info_store__["m" /* shipmentIdList */],
+    allShipmentList: __WEBPACK_IMPORTED_MODULE_28__reducers_info_store__["c" /* allShipmentList */],
+    shipmentDetail: __WEBPACK_IMPORTED_MODULE_28__reducers_info_store__["k" /* shipmentDetail */],
+    newShipment: __WEBPACK_IMPORTED_MODULE_28__reducers_info_store__["j" /* newShipment */],
+    allDevicesList: __WEBPACK_IMPORTED_MODULE_28__reducers_info_store__["b" /* allDevicesList */],
+    checkVehicle: __WEBPACK_IMPORTED_MODULE_28__reducers_info_store__["d" /* checkVehicle */],
+    deviceDetails: __WEBPACK_IMPORTED_MODULE_28__reducers_info_store__["i" /* deviceDetails */],
+    closeDialog: __WEBPACK_IMPORTED_MODULE_28__reducers_info_store__["e" /* closeDialog */],
+    createOrgRes: __WEBPACK_IMPORTED_MODULE_28__reducers_info_store__["g" /* createOrgRes */],
+    switchOrganisationResp: __WEBPACK_IMPORTED_MODULE_28__reducers_info_store__["n" /* switchOrganisationResp */],
+    customerDetails: __WEBPACK_IMPORTED_MODULE_28__reducers_info_store__["h" /* customerDetails */],
+    shipmentGroupList: __WEBPACK_IMPORTED_MODULE_28__reducers_info_store__["l" /* shipmentGroupList */],
+    createGroupRes: __WEBPACK_IMPORTED_MODULE_28__reducers_info_store__["f" /* createGroupRes */],
+    deleteUserResponse: __WEBPACK_IMPORTED_MODULE_46__reducers_user_management_store__["a" /* deleteUserResponse */],
+    getAllUserList: __WEBPACK_IMPORTED_MODULE_46__reducers_user_management_store__["c" /* getAllUserList */],
+    updateUserStatusResponse: __WEBPACK_IMPORTED_MODULE_46__reducers_user_management_store__["d" /* updateUserStatusResponse */],
+    existingUserResponse: __WEBPACK_IMPORTED_MODULE_46__reducers_user_management_store__["b" /* existingUserResponse */],
+    switchShipment: __WEBPACK_IMPORTED_MODULE_28__reducers_info_store__["o" /* switchShipment */],
+    addDevice: __WEBPACK_IMPORTED_MODULE_28__reducers_info_store__["a" /* addDevice */]
 };
 var AppModule = (function () {
     function AppModule() {
@@ -193,35 +195,36 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_5__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
             __WEBPACK_IMPORTED_MODULE_9__components_shipment_status_shipment_status_component__["a" /* ShipmentStatusComponent */],
             __WEBPACK_IMPORTED_MODULE_12__components_manual_shipment_status_manual_shipment_status_component__["a" /* ManualShipmentStatusComponent */],
-            __WEBPACK_IMPORTED_MODULE_15__filters_deviceFilter__["a" /* DeviceFilter */], __WEBPACK_IMPORTED_MODULE_16__filters_shipmentFilter__["a" /* ShipmentFilter */], __WEBPACK_IMPORTED_MODULE_14__filters_filter__["a" /* SearchFilter */], __WEBPACK_IMPORTED_MODULE_17__components_device_dashboard_device_dashboard_component__["a" /* DeviceDashboard */], __WEBPACK_IMPORTED_MODULE_18__components_new_shipment_new_shipment_component__["a" /* NewShipment */],
-            __WEBPACK_IMPORTED_MODULE_28__components_dialog_confirm_device_return_confirm_device_return_component__["a" /* ConfirmDeviceReturnComponent */], __WEBPACK_IMPORTED_MODULE_29__components_dialog_assign_vehicle_assign_vehicle_component__["a" /* AssignVehicleComponent */], __WEBPACK_IMPORTED_MODULE_30__components_dialog_mark_as_required_mark_as_required_component__["a" /* MarkAsRequiredComponent */],
-            __WEBPACK_IMPORTED_MODULE_31__components_tracker_shipment_status_tracker_shipment_status_component__["a" /* TrackerShipmentStatusComponent */],
-            __WEBPACK_IMPORTED_MODULE_32__components_edit_shipment_location_edit_shipment_location_component__["a" /* EditShipmentLocationComponent */],
-            __WEBPACK_IMPORTED_MODULE_33__components_user_profile_user_profile_component__["a" /* UserProfile */],
-            __WEBPACK_IMPORTED_MODULE_34__components_add_organisation_add_organisation_component__["a" /* AddOrganisationComponent */],
-            __WEBPACK_IMPORTED_MODULE_35__components_settings_component_settings_component_component__["a" /* SettingsComponentComponent */],
-            __WEBPACK_IMPORTED_MODULE_36__components_manage_organisation_manage_organisation_component__["a" /* ManageOrganisationComponent */],
-            __WEBPACK_IMPORTED_MODULE_37__components_shipment_management_shipment_management_component__["a" /* ShipmentManagementComponent */],
+            __WEBPACK_IMPORTED_MODULE_15__filters_deviceFilter__["a" /* DeviceFilter */], __WEBPACK_IMPORTED_MODULE_16__filters_shipmentFilter__["a" /* ShipmentFilter */], __WEBPACK_IMPORTED_MODULE_14__filters_filter__["a" /* SearchFilter */], __WEBPACK_IMPORTED_MODULE_17__filters_sortFilter__["a" /* SortFilter */],
+            __WEBPACK_IMPORTED_MODULE_18__components_device_dashboard_device_dashboard_component__["a" /* DeviceDashboard */], __WEBPACK_IMPORTED_MODULE_19__components_new_shipment_new_shipment_component__["a" /* NewShipment */],
+            __WEBPACK_IMPORTED_MODULE_29__components_dialog_confirm_device_return_confirm_device_return_component__["a" /* ConfirmDeviceReturnComponent */], __WEBPACK_IMPORTED_MODULE_30__components_dialog_assign_vehicle_assign_vehicle_component__["a" /* AssignVehicleComponent */], __WEBPACK_IMPORTED_MODULE_31__components_dialog_mark_as_required_mark_as_required_component__["a" /* MarkAsRequiredComponent */],
+            __WEBPACK_IMPORTED_MODULE_32__components_tracker_shipment_status_tracker_shipment_status_component__["a" /* TrackerShipmentStatusComponent */],
+            __WEBPACK_IMPORTED_MODULE_33__components_edit_shipment_location_edit_shipment_location_component__["a" /* EditShipmentLocationComponent */],
+            __WEBPACK_IMPORTED_MODULE_34__components_user_profile_user_profile_component__["a" /* UserProfile */],
+            __WEBPACK_IMPORTED_MODULE_35__components_add_organisation_add_organisation_component__["a" /* AddOrganisationComponent */],
+            __WEBPACK_IMPORTED_MODULE_36__components_settings_component_settings_component_component__["a" /* SettingsComponentComponent */],
+            __WEBPACK_IMPORTED_MODULE_37__components_manage_organisation_manage_organisation_component__["a" /* ManageOrganisationComponent */],
+            __WEBPACK_IMPORTED_MODULE_38__components_shipment_management_shipment_management_component__["a" /* ShipmentManagementComponent */],
             // ShipmentGroupsListComponent,
             // EditShipmentGroupsComponent,
-            __WEBPACK_IMPORTED_MODULE_41__components_user_management_console_users_list_users_list_component__["a" /* UsersListComponent */],
+            __WEBPACK_IMPORTED_MODULE_42__components_user_management_console_users_list_users_list_component__["a" /* UsersListComponent */],
             // ShipmentListInGroupComponent,
-            __WEBPACK_IMPORTED_MODULE_40__components_user_management_console_user_management_console_component__["a" /* UserManagementConsoleComponent */],
+            __WEBPACK_IMPORTED_MODULE_41__components_user_management_console_user_management_console_component__["a" /* UserManagementConsoleComponent */],
             //*************freight picker */
-            __WEBPACK_IMPORTED_MODULE_43__components_freight_location_components_freight_location_picker_freight_location_picker_component__["a" /* FreightLocationPickerComponent */],
-            __WEBPACK_IMPORTED_MODULE_44__components_freight_location_components_freight_location_creater_freight_location_creater_component__["a" /* FreightLocationCreaterComponent */],
+            __WEBPACK_IMPORTED_MODULE_44__components_freight_location_components_freight_location_picker_freight_location_picker_component__["a" /* FreightLocationPickerComponent */],
+            __WEBPACK_IMPORTED_MODULE_45__components_freight_location_components_freight_location_creater_freight_location_creater_component__["a" /* FreightLocationCreaterComponent */],
         ],
         entryComponents: [
-            __WEBPACK_IMPORTED_MODULE_28__components_dialog_confirm_device_return_confirm_device_return_component__["a" /* ConfirmDeviceReturnComponent */],
-            __WEBPACK_IMPORTED_MODULE_29__components_dialog_assign_vehicle_assign_vehicle_component__["a" /* AssignVehicleComponent */],
-            __WEBPACK_IMPORTED_MODULE_30__components_dialog_mark_as_required_mark_as_required_component__["a" /* MarkAsRequiredComponent */],
+            __WEBPACK_IMPORTED_MODULE_29__components_dialog_confirm_device_return_confirm_device_return_component__["a" /* ConfirmDeviceReturnComponent */],
+            __WEBPACK_IMPORTED_MODULE_30__components_dialog_assign_vehicle_assign_vehicle_component__["a" /* AssignVehicleComponent */],
+            __WEBPACK_IMPORTED_MODULE_31__components_dialog_mark_as_required_mark_as_required_component__["a" /* MarkAsRequiredComponent */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_26_angular_2_local_storage__["LocalStorageModule"].withConfig({
+            __WEBPACK_IMPORTED_MODULE_27_angular_2_local_storage__["LocalStorageModule"].withConfig({
                 prefix: "my-app",
                 storageType: "localStorage"
             }),
-            __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */], __WEBPACK_IMPORTED_MODULE_24__angular_http__["c" /* HttpModule */], __WEBPACK_IMPORTED_MODULE_24__angular_http__["d" /* JsonpModule */],
+            __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */], __WEBPACK_IMPORTED_MODULE_25__angular_http__["c" /* HttpModule */], __WEBPACK_IMPORTED_MODULE_25__angular_http__["d" /* JsonpModule */],
             __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
             __WEBPACK_IMPORTED_MODULE_6__router_module_router_module_routing_module__["a" /* RouterModuleRoutingModule */],
             __WEBPACK_IMPORTED_MODULE_2__agm_core__["a" /* AgmCoreModule */].forRoot({
@@ -230,8 +233,8 @@ AppModule = __decorate([
             }),
             __WEBPACK_IMPORTED_MODULE_13__angular_forms__["FormsModule"],
             __WEBPACK_IMPORTED_MODULE_13__angular_forms__["ReactiveFormsModule"],
-            __WEBPACK_IMPORTED_MODULE_25__ngrx_store__["b" /* StoreModule */].provideStore(stores),
-            __WEBPACK_IMPORTED_MODULE_8_angular_font_awesome_angular_font_awesome__["a" /* AngularFontAwesomeModule */], __WEBPACK_IMPORTED_MODULE_19_ng_pick_datetime_picker_module__["DateTimePickerModule"],
+            __WEBPACK_IMPORTED_MODULE_26__ngrx_store__["b" /* StoreModule */].provideStore(stores),
+            __WEBPACK_IMPORTED_MODULE_8_angular_font_awesome_angular_font_awesome__["a" /* AngularFontAwesomeModule */], __WEBPACK_IMPORTED_MODULE_20_ng_pick_datetime_picker_module__["DateTimePickerModule"],
             __WEBPACK_IMPORTED_MODULE_7__angular_material__["l" /* MdInputModule */],
             __WEBPACK_IMPORTED_MODULE_7__angular_material__["v" /* MdToolbarModule */],
             __WEBPACK_IMPORTED_MODULE_7__angular_material__["j" /* MdGridListModule */],
@@ -252,9 +255,9 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_7__angular_material__["r" /* MdSlideToggleModule */],
         ],
         providers: [__WEBPACK_IMPORTED_MODULE_7__angular_material__["k" /* MdIconRegistry */],
-            __WEBPACK_IMPORTED_MODULE_13__angular_forms__["NgModel"], __WEBPACK_IMPORTED_MODULE_25__ngrx_store__["b" /* StoreModule */], __WEBPACK_IMPORTED_MODULE_20__services_shipment_services__["a" /* ShipmentServices */],
-            __WEBPACK_IMPORTED_MODULE_23__services_device_services__["a" /* DeviceServices */], __WEBPACK_IMPORTED_MODULE_2__agm_core__["c" /* GoogleMapsAPIWrapper */], __WEBPACK_IMPORTED_MODULE_21__services_tracker_services__["a" /* TrackerServices */],
-            __WEBPACK_IMPORTED_MODULE_22__services_manage_organisation_services__["a" /* ManageOrganisationService */], __WEBPACK_IMPORTED_MODULE_38__services_shipment_mgmt_services__["a" /* ShipmentMgmtService */], __WEBPACK_IMPORTED_MODULE_42__services_user_management_services__["a" /* UserManagementService */], __WEBPACK_IMPORTED_MODULE_46__services_logout_service__["a" /* LogoutServices */], __WEBPACK_IMPORTED_MODULE_39__services_manual_shipment_service__["a" /* ManualShipmentServices */]],
+            __WEBPACK_IMPORTED_MODULE_13__angular_forms__["NgModel"], __WEBPACK_IMPORTED_MODULE_26__ngrx_store__["b" /* StoreModule */], __WEBPACK_IMPORTED_MODULE_21__services_shipment_services__["a" /* ShipmentServices */],
+            __WEBPACK_IMPORTED_MODULE_24__services_device_services__["a" /* DeviceServices */], __WEBPACK_IMPORTED_MODULE_2__agm_core__["c" /* GoogleMapsAPIWrapper */], __WEBPACK_IMPORTED_MODULE_22__services_tracker_services__["a" /* TrackerServices */],
+            __WEBPACK_IMPORTED_MODULE_23__services_manage_organisation_services__["a" /* ManageOrganisationService */], __WEBPACK_IMPORTED_MODULE_39__services_shipment_mgmt_services__["a" /* ShipmentMgmtService */], __WEBPACK_IMPORTED_MODULE_43__services_user_management_services__["a" /* UserManagementService */], __WEBPACK_IMPORTED_MODULE_47__services_logout_service__["a" /* LogoutServices */], __WEBPACK_IMPORTED_MODULE_40__services_manual_shipment_service__["a" /* ManualShipmentServices */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
@@ -549,7 +552,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/device-dashboard/device-dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" style=\"min-width: 700px;box-sizing: border-box;overflow: auto\">\n  <md-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></md-spinner>\n  <div style=\"display:flex;padding:7px\" >\n    <div style=\"display:flex;\">\n      <button (click)=\"selectedFilter = ''\" md-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == ''?'#1976d2':''\"  [style.color]=\"selectedFilter == ''?'#FFFFFF':''\">{{countFilterData['all']}} <span>All</span></button>\n      <button (click)=\"selectedFilter = 'active'\" md-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == 'active'?'#1976d2':''\" [style.color]=\"selectedFilter == 'active'?'#FFFFFF':''\" style=\"margin-left: 15px\">{{countFilterData['active']}} <span>Active</span></button>\n      <button (click)=\"selectedFilter = 'available'\" md-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == 'available'?'#1976d2':''\" [style.color]=\"selectedFilter == 'available'?'#FFFFFF':''\" style=\"margin-left: 15px\">{{countFilterData['available']}} <span>Available</span></button>\n      <!--<button (click)=\"selectedFilter = 'repairing'\" md-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == 'repairing'?'#1976d2':''\" [style.color]=\"selectedFilter == 'repairing'?'#FFFFFF':''\" style=\"margin-left: 15px;width: 23%;\"> {{countFilterData['repairing']}} <span style=\"white-space: nowrap\">Not Working</span></button>-->\n    </div>\n    <div style=\"margin-left: auto;display: flex\">\n      <div >\n        <button class=\"custome-button align-vert-center\"  md-button  (click)=\"isAddDeviceDialog=true\">+add Tracker</button>\n      </div>\n\n      <div style=\"position:relative;margin-top: 4px;\" >\n        <i  class=\"fa fa-search \"  aria-hidden=\"true\" style=\"margin-top: 7px;right: 7px;position: absolute;font-size: 13px;color: black;\"></i>\n        <input myAutofocus  [(ngModel)]=\"search\" class=\"expand-search\"  placeholder=\"Search\">\n      </div>\n    </div>\n  </div>\n  <hr>\n  <!--************************  dialog *********************************-->\n  <div *ngIf=\"isAddDeviceDialog\"  class=\"mycustomDialog\" style=\"padding-top: 70px;overflow:unset\">\n    <div class=\"modal-content\" style=\"width: 60%;min-width: 250px;overflow:unset;max-width: 360px;height:40vh;\">\n      <div class=\"modal-header\">\n        <span class=\"close\" (click)=\"isAddDeviceDialog=false\" >&times;</span>\n        <div>\n          <label>Add Device</label>\n        </div>\n      </div>\n\n      <div  style=\"font-size: 15px;margin-left:20px;margin-top: 20px;\">          \n        <md-input-container style=\"width: 80%;\">\n          <input   style=\"width: 100%;\" placeholder=\"IMEI Number\" mdInput [(ngModel)]=\"deviceIMEI\"  name=\"deviceIMEI\" id=\"deviceIMEI\" required>\n        </md-input-container>\n      </div>\n      <div  style=\"font-size: 15px;margin-left:20px\" >          \n        <md-input-container style=\"width: 80%;\">\n          <input style=\"width:100%;\" placeholder=\"Manufacturer Name\" mdInput [(ngModel)]=\"manufacturerName\"  name=\"manufacturerName\" id=\"manufacturerName\">\n        </md-input-container>\n      </div>\n      <div style=\"margin-top: 30px;\">\n          <button md-raised-button  style=\"margin-left: 50px;\" (click)=\"isAddDeviceDialog=false\" >Cancel</button>\n          <button md-raised-button  style=\"margin-left: 20px;width: 30%\" (click)=\"confirmAddDevice()\" >Ok</button>\n      </div>\n    </div>\n  </div>\n<!-- close Switch Shipment dialog -->\n\n<div style=\"overflow:auto;height:calc(100vh - 115px);\" >\n <div style=\"margin-top: 10px\" *ngFor=\"let selDevice of allDeviceList | deviceType: ['status' ,selectedFilter]\">\n <!--<div style=\"margin-top: 10px\" *ngFor=\"let selDevice of allDeviceList\">-->\n  <md-card  *ngIf=\"selDevice['device']['status'] =='active'\" style=\"margin-top:5px;\">\n    <div fxLayout=\"row\" >\n      <div style=\"font-size: 12px;width: 100%\" >\n         <div fxLayout=\"row\" class=\"margins\" >\n           <span fxFlex >{{selDevice['device']['imei']}}</span>\n           <span style=\"margin-right: 12px\"  fxFlex ><i style=\"margin-right: 3px\" class=\"fa fa-truck\" aria-hidden=\"true\"></i>{{selDevice['shipment']['vehicleRegistrationNo']}}</span>\n           <span fxFlex name=\"destination\"><i style=\"margin-right: 3px\" class=\"fa fa-map-marker\" aria-hidden=\"true\"></i>{{selDevice['shipment']?.endLocation?.freightLocation?.address}}</span>\n           <span fxFlex ><i style=\"margin-right: 3px\" class=\"fa fa-user-o\" aria-hidden=\"true\"></i>{{selDevice['shipment']?.driverName}}</span>\n         </div>\n\n         <div style=\"margin-top: 8px\"  fxLayout=\"row\" class=\"margins\"  >\n           <span fxFlex=\"50\" name=\"currentLocation\" ><i style=\"margin-right: 3px\" class=\"fa fa-location-arrow\" aria-hidden=\"true\"></i>{{(selDevice?.latestGpsState?.endLocation?.address)?selDevice?.latestGpsState?.endLocation?.address:'N/A'}}</span>\n           <span fxFlex name=\"origin\"><label style=\"margin-right: 3px\" class=\"custome-circle\"><i class=\"fa fa-circle\" aria-hidden=\"true\"></i></label>{{selDevice['shipment']?.startLocation?.freightLocation?.address}}</span>\n           <span fxFlex  ><i style=\"margin-right: 3px\" class=\"fa fa-phone\" aria-hidden=\"true\"></i>{{selDevice['shipment']?.mobileNo}}</span>\n         </div>\n      </div>\n      <div style=\"font-size: 11px;\">\n        <div style=\"margin-top: 8px;width: 100px;\" >\n           <span *ngIf=\"selDevice['shipment']['actualStartTime'] != null\" class=\"align-vert-center\" style=\"white-space: nowrap;\" >Since: {{selDevice['shipment']['_stateDuration']}}</span>\n        </div>\n      </div>\n      <div style=\"margin-right: 10px;\">\n        <button md-raised-button style=\"margin-top: 3px\" class=\"current-status-button\" >Active</button>\n      </div>\n      <div style=\"margin-left: auto;margin-right: 10px;\">\n        <button class=\"custome-button fade-sub-header-text align-vert-center\"  md-button (click)=\"openDialogConfirmDeviceReturn(selDevice)\" >+confirm device Return</button>\n      </div>\n    </div>\n  </md-card>\n\n  <md-card style=\"margin-top:5px;\"  *ngIf=\"selDevice['device']['status'] ==null\" >\n    <div fxLayout=\"row\">\n      <div style=\"font-size: 12px;width: 100%\" >\n        <div fxLayout=\"row\" class=\"margins\" >\n          <span fxFlex >{{selDevice['device']['imei']}}</span>\n        </div>\n\n        <div style=\"margin-top: 8px\"  fxLayout=\"row\" class=\"margins\"  >\n          <span fxFlex=\"50\" >\n            <i style=\"color: #e39f41;margin-right: 5px;font-size: 14px;\" class=\"fa fa-exclamation-circle\" aria-hidden=\"true\"></i>(Since 29 aug 2017)</span>\n        </div>\n      </div>\n\n      <div style=\"margin-right: 30px;\">\n        <button md-raised-button style=\"margin-top: 3px;background-color: #21b22e\" class=\"current-status-button\" >Available</button>\n      </div>\n\n      <div style=\"margin-right: 30px;\">\n        <button class=\"custome-button fade-sub-header-text align-vert-center\"  md-button (click)=\"openDialogAssignVehicle(selDevice)\">+assign Vehicle</button>\n      </div>\n    </div>\n  </md-card>\n\n  <!--<md-card style=\"margin-top:5px;\" *ngIf=\"selDevice.device.status=='repairing'\" >-->\n    <!--<div fxLayout=\"row\">-->\n      <!--<div style=\"font-size: 12px;width: 100%\" >-->\n        <!--<div fxLayout=\"row\" class=\"margins\" >-->\n          <!--<span fxFlex >363251425152</span>-->\n        <!--</div>-->\n\n        <!--<div style=\"margin-top: 8px\"  fxLayout=\"row\" class=\"margins\"  >-->\n          <!--<span fxFlex=\"50\" >-->\n            <!--<i style=\"color: #dc2019;margin-right: 5px;font-size: 14px;\" class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i>-->\n            <!--Under Repairing - since 8 days</span>-->\n        <!--</div>-->\n      <!--</div>-->\n\n      <!--<div style=\"margin-right: 30px;\">-->\n        <!--<button md-raised-button style=\"margin-top: 3px;background-color: #dc2019\" class=\"current-status-button\" >Repairing</button>-->\n      <!--</div>-->\n      <!--<div style=\"margin-right: 10px;\">-->\n        <!--<button class=\"custome-button fade-sub-header-text align-vert-center\"  md-button (click)=\"openDialogMarkAsRequired(selDevice)\">+mark as Required</button>-->\n      <!--</div>-->\n    <!--</div>-->\n  <!--</md-card>-->\n</div>\n  <div style=\"height:30px\"></div>\n</div>\n</div>\n"
+module.exports = "<div class=\"container\" style=\"min-width: 700px;box-sizing: border-box;overflow: auto\">\n  <md-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></md-spinner>\n  <div style=\"display:flex;padding:7px\" >\n    <div style=\"display:flex;\">\n      <button (click)=\"selectedFilter = ''\" md-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == ''?'#1976d2':''\"  [style.color]=\"selectedFilter == ''?'#FFFFFF':''\">{{countFilterData['all']}} <span>All</span></button>\n      <button (click)=\"selectedFilter = 'active'\" md-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == 'active'?'#1976d2':''\" [style.color]=\"selectedFilter == 'active'?'#FFFFFF':''\" style=\"margin-left: 15px\">{{countFilterData['active']}} <span>Active</span></button>\n      <button (click)=\"selectedFilter = 'available'\" md-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == 'available'?'#1976d2':''\" [style.color]=\"selectedFilter == 'available'?'#FFFFFF':''\" style=\"margin-left: 15px\">{{countFilterData['available']}} <span>Available</span></button>\n      <!--<button (click)=\"selectedFilter = 'repairing'\" md-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == 'repairing'?'#1976d2':''\" [style.color]=\"selectedFilter == 'repairing'?'#FFFFFF':''\" style=\"margin-left: 15px;width: 23%;\"> {{countFilterData['repairing']}} <span style=\"white-space: nowrap\">Not Working</span></button>-->\n    </div>\n    <div style=\"margin-left: auto;display: flex\">\n      <div >\n        <button class=\"custome-button align-vert-center\"  md-button  (click)=\"isAddDeviceDialog=true\">+add Tracker</button>\n      </div>\n\n      <div style=\"position:relative;margin-top: 4px;\" >\n        <i  class=\"fa fa-search \"  aria-hidden=\"true\" style=\"margin-top: 7px;right: 7px;position: absolute;font-size: 13px;color: black;\"></i>\n        <input myAutofocus  [(ngModel)]=\"search\" class=\"expand-search\"  placeholder=\"Search\">\n      </div>\n    </div>\n  </div>\n  <hr>\n  <!--************************  dialog *********************************-->\n  <div *ngIf=\"isAddDeviceDialog\"  class=\"mycustomDialog\" style=\"padding-top: 70px;overflow:unset\">\n    <div class=\"modal-content\" style=\"width: 60%;min-width: 250px;overflow:unset;max-width: 360px;height:40vh;\">\n      <div class=\"modal-header\">\n        <span class=\"close\" (click)=\"isAddDeviceDialog=false\" >&times;</span>\n        <div>\n          <label>Add Device</label>\n        </div>\n      </div>\n\n      <div  style=\"font-size: 15px;margin-left:20px;margin-top: 20px;\">          \n        <md-input-container style=\"width: 80%;\">\n          <input   style=\"width: 100%;\" placeholder=\"IMEI Number\" mdInput [(ngModel)]=\"deviceIMEI\"  name=\"deviceIMEI\" id=\"deviceIMEI\" required>\n        </md-input-container>\n      </div>\n      <div  style=\"font-size: 15px;margin-left:20px\" >          \n        <md-input-container style=\"width: 80%;\">\n          <input style=\"width:100%;\" placeholder=\"Manufacturer Name\" mdInput [(ngModel)]=\"manufacturerName\"  name=\"manufacturerName\" id=\"manufacturerName\">\n        </md-input-container>\n      </div>\n      <div style=\"margin-top: 30px;\">\n          <button md-raised-button  style=\"margin-left: 50px;\" (click)=\"isAddDeviceDialog=false\" >Cancel</button>\n          <button md-raised-button  style=\"margin-left: 20px;width: 30%\" (click)=\"confirmAddDevice()\" >Ok</button>\n      </div>\n    </div>\n  </div>\n<!-- close Switch Shipment dialog -->\n<div  style=\"overflow:auto;max-height:100vh;display:flex\" >\n    <div style=\"overflow-y:auto;overflow-x:hidden;max-height:100vh; width: 100%;margin-right: -1px;\" >\n      <div  *ngFor=\"let selDevice of allDeviceList | deviceType: ['status' ,selectedFilter]\" (click)=\"selectedShipmentDetail(selDevice['shipment'])\">\n        <md-card  *ngIf=\"selDevice['device']['status'] =='active'\" style=\"margin-top:5px;\" >\n          <div fxLayout=\"row\" >\n            <div style=\"font-size: 12px;width: 100%\" >\n              <div fxLayout=\"row\" class=\"margins\" >\n                <span fxFlex >{{selDevice['device']?.imei}}</span>\n                <span fxFlex >{{selDevice['shipment']?.shipmentNo}}</span>\n                <span style=\"margin-right: 12px\"  fxFlex ><i style=\"margin-right: 3px\" class=\"fa fa-truck\" aria-hidden=\"true\"></i>{{selDevice['shipment']?.vehicleRegistrationNo}}</span>\n                <!-- <span fxFlex ><i style=\"margin-right: 3px\" class=\"fa fa-user-o\" aria-hidden=\"true\"></i>{{selDevice['shipment']?.driverName}}</span> -->\n              <!-- </div> -->\n  \n              <!-- <div style=\"margin-top: 8px\"  fxLayout=\"row\" class=\"margins\"  > -->\n                <span fxFlex  ><i style=\"margin-right: 3px\" class=\"fa fa-location-arrow\" aria-hidden=\"true\"></i>{{(selDevice?.latestGpsState?.endLocation?.address)?selDevice?.latestGpsState?.endLocation?.address:'N/A'}}</span>\n                <span fxFlex><label style=\"margin-right: 3px\" ><i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i></label>{{(selDevice['shipment']?.startLocation?.freightLocation?.name)?selDevice['shipment']?.startLocation?.freightLocation?.name:'N/A'}}</span>\n                \n                <span fxFlex ><i style=\"margin-right: 3px\" class=\"fa fa-circle\" aria-hidden=\"true\"></i>{{(selDevice['shipment']?.endLocation?.freightLocation?.name)?selDevice['shipment']?.endLocation?.freightLocation?.name:'N/A'}}</span>\n                \n                <!-- <span fxFlex  ><i style=\"margin-right: 3px\" class=\"fa fa-phone\" aria-hidden=\"true\"></i>{{selDevice['shipment']?.mobileNo}}</span> -->\n                <span fxFlex=\"20\" *ngIf=\"selDevice['shipment']['actualStartTime'] != null\" style=\"white-space: nowrap;\" >Since: {{selDevice['shipment']['_stateDuration']}}</span>\n                \n              </div>\n            </div>\n            <!-- <div style=\"font-size: 11px;\">\n              <div style=\"margin-top: 8px;width: 100px;\" >\n              </div>\n            </div> -->\n            <div style=\"margin-right: 30px;\">\n              <button md-raised-button style=\"margin-top: 3px\" class=\"current-status-button\" >Active</button>\n            </div>\n            <!-- <div style=\"margin-left: auto;margin-right: 10px;\">\n              <button class=\"custome-button fade-sub-header-text align-vert-center\"  md-button (click)=\"openDialogConfirmDeviceReturn(selDevice)\" >+confirm device Return</button>\n            </div> -->\n          </div>\n        </md-card>\n\n        <md-card style=\"margin-top:5px;\"  *ngIf=\"selDevice['device']['status'] =='available'\" >\n          <div fxLayout=\"row\">\n            <div style=\"font-size: 12px;width: 100%\" >\n              <div fxLayout=\"row\" class=\"margins\" >\n                <span fxFlex >{{selDevice['device']['imei']}}</span>\n                <span fxFlex=22 ><i style=\"color: #e39f41;margin-right: 5px;font-size: 14px;\" class=\"fa fa-exclamation-circle\" aria-hidden=\"true\"></i>(Since 29 aug 2017)</span>\n              </div>\n            </div>\n  \n            <div style=\"margin-right: 30px;\">\n              <button md-raised-button style=\"margin-top: 3px;background-color: #21b22e\" class=\"current-status-button\" >Available</button>\n            </div>\n  \n            <!-- <div style=\"margin-right: 30px;\">\n              <button class=\"custome-button fade-sub-header-text align-vert-center\"  md-button (click)=\"openDialogAssignVehicle(selDevice)\">+assign Vehicle</button>\n            </div> -->\n          </div>\n        </md-card>\n      </div>\n    </div>\n    <div *ngIf=\"isShowDetails\" class=\"mycustomDialog\" style=\"padding: 8px 10px;width: 100%;margin-bottom: 10px;\" >\n      <div class=\"modal-content\"  style=\"min-width: 280px;overflow:unset;max-width: 400px;height:45vh;margin-top: 70px;\">\n        <i (click)=\"isShowDetails = false;\" style=\"font-size:24px;float: right;margin-top: 3px;color: rgb(82, 80, 80);cursor:pointer\" class=\"fa fa-times-circle-o\" aria-hidden=\"true\"></i>\n        <div *ngIf=\"trackingType=='Tracker'\"><app-tracker-shipment-status></app-tracker-shipment-status></div>\n      </div>\n    </div>\n</div>\n\n  <!-- <div style=\"overflow:auto;height:calc(100vh - 115px);\" >\n  <div style=\"margin-top: 10px\" *ngFor=\"let selDevice of allDeviceList | deviceType: ['status' ,selectedFilter]\"> -->\n      <!--<div style=\"margin-top: 10px\" *ngFor=\"let selDevice of allDeviceList\">-->\n     \n\n      <!--<md-card style=\"margin-top:5px;\" *ngIf=\"selDevice.device.status=='repairing'\" >-->\n        <!--<div fxLayout=\"row\">-->\n          <!--<div style=\"font-size: 12px;width: 100%\" >-->\n            <!--<div fxLayout=\"row\" class=\"margins\" >-->\n              <!--<span fxFlex >363251425152</span>-->\n            <!--</div>-->\n\n            <!--<div style=\"margin-top: 8px\"  fxLayout=\"row\" class=\"margins\"  >-->\n              <!--<span fxFlex=\"50\" >-->\n                <!--<i style=\"color: #dc2019;margin-right: 5px;font-size: 14px;\" class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i>-->\n                <!--Under Repairing - since 8 days</span>-->\n            <!--</div>-->\n          <!--</div>-->\n\n          <!--<div style=\"margin-right: 30px;\">-->\n            <!--<button md-raised-button style=\"margin-top: 3px;background-color: #dc2019\" class=\"current-status-button\" >Repairing</button>-->\n          <!--</div>-->\n          <!--<div style=\"margin-right: 10px;\">-->\n            <!--<button class=\"custome-button fade-sub-header-text align-vert-center\"  md-button (click)=\"openDialogMarkAsRequired(selDevice)\">+mark as Required</button>-->\n          <!--</div>-->\n        <!--</div>-->\n      <!--</md-card>-->\n  <!-- </div>\n  <div style=\"height:30px\"></div>\n  </div> -->\n</div>\n"
 
 /***/ }),
 
@@ -561,13 +564,14 @@ module.exports = "<div class=\"container\" style=\"min-width: 700px;box-sizing: 
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_device_services__ = __webpack_require__("../../../../../src/app/services/device-services.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_util__ = __webpack_require__("../../../../util/util.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_util___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_util__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_dialog_confirm_device_return_confirm_device_return_component__ = __webpack_require__("../../../../../src/app/components/dialog/confirm-device-return/confirm-device-return.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_dialog_assign_vehicle_assign_vehicle_component__ = __webpack_require__("../../../../../src/app/components/dialog/assign-vehicle/assign-vehicle.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_dialog_mark_as_required_mark_as_required_component__ = __webpack_require__("../../../../../src/app/components/dialog/mark-as-required/mark-as-required.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_shipment_services__ = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_util__ = __webpack_require__("../../../../util/util.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_util___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_util__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_dialog_confirm_device_return_confirm_device_return_component__ = __webpack_require__("../../../../../src/app/components/dialog/confirm-device-return/confirm-device-return.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_dialog_assign_vehicle_assign_vehicle_component__ = __webpack_require__("../../../../../src/app/components/dialog/assign-vehicle/assign-vehicle.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_dialog_mark_as_required_mark_as_required_component__ = __webpack_require__("../../../../../src/app/components/dialog/mark-as-required/mark-as-required.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -586,15 +590,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var DeviceDashboard = (function () {
     // public unSub_allActiveDeviceList=null;
     // public unSub_allAvailableDeviceList=null;
     // public unSub_allRepairingDeviceList=null;
-    function DeviceDashboard(snackBar, _router, deviceServices, dialog, _store) {
+    function DeviceDashboard(snackBar, _router, deviceServices, shipmentServices, dialog, _store) {
         var _this = this;
         this.snackBar = snackBar;
         this._router = _router;
         this.deviceServices = deviceServices;
+        this.shipmentServices = shipmentServices;
         this.dialog = dialog;
         this._store = _store;
         this.selectedFilter = '';
@@ -602,6 +608,7 @@ var DeviceDashboard = (function () {
         this.allDeviceList = [];
         this.deviceIMEI = null;
         this.manufacturerName = null;
+        this.isShowDetails = false;
         this.countFilterData = { all: 0, active: 0, available: 0, repairing: 0 };
         // public  allActiveDeviceList:any[]=[];
         // public  allAvailableDeviceList:any[]=[];
@@ -652,7 +659,8 @@ var DeviceDashboard = (function () {
                     this.allDeviceList[i]['shipment']['_stateDuration'] = stateDuration;
                 }
             }
-            else if (this.allDeviceList[i]['device']['status'] == "available") {
+            else if (this.allDeviceList[i]['device']['status'] == null) {
+                this.allDeviceList[i]['device']['status'] = 'available';
                 this.countFilterData['available'] = this.countFilterData['available'] + 1;
             }
             // else if(this.allDeviceList[i]['status'] =="repairing"){
@@ -663,7 +671,7 @@ var DeviceDashboard = (function () {
     };
     DeviceDashboard.prototype.confirmAddDevice = function () {
         console.log(this.deviceIMEI);
-        if (Object(__WEBPACK_IMPORTED_MODULE_4_util__["isNullOrUndefined"])(this.deviceIMEI) || this.deviceIMEI == 0) {
+        if (Object(__WEBPACK_IMPORTED_MODULE_5_util__["isNullOrUndefined"])(this.deviceIMEI) || this.deviceIMEI == 0) {
             this.openSnackBar('please fill device IMEI ');
             return;
         }
@@ -677,6 +685,15 @@ var DeviceDashboard = (function () {
         this.isAddDeviceDialog = false;
     };
     DeviceDashboard.prototype.ngOnInit = function () {
+    };
+    DeviceDashboard.prototype.selectedShipmentDetail = function (shipment) {
+        console.log(shipment);
+        if (!Object(__WEBPACK_IMPORTED_MODULE_5_util__["isNullOrUndefined"])(shipment)) {
+            this.trackingType = shipment.trackingType;
+            var id = shipment.shipmentId;
+            this.shipmentServices.getShipmentDetail.emit(id);
+            this.isShowDetails = true;
+        }
     };
     DeviceDashboard.prototype.ngOnDestroy = function () {
         if (typeof this.unSub_allDeviceList != 'undefined' && this.unSub_allDeviceList != null && this.unSub_allDeviceList != undefined)
@@ -692,7 +709,7 @@ var DeviceDashboard = (function () {
         var res = device;
         console.log(res);
         this._store.dispatch({ type: "DEVICE_DETAILS", payload: { error: '', data: res } });
-        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_6__components_dialog_confirm_device_return_confirm_device_return_component__["a" /* ConfirmDeviceReturnComponent */]);
+        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_7__components_dialog_confirm_device_return_confirm_device_return_component__["a" /* ConfirmDeviceReturnComponent */]);
         dialogRef.afterClosed().subscribe(function (result) {
             console.log("Dialog result: " + result);
         });
@@ -701,7 +718,7 @@ var DeviceDashboard = (function () {
         var res = device;
         console.log(res);
         this._store.dispatch({ type: "DEVICE_DETAILS", payload: { error: '', data: res } });
-        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_7__components_dialog_assign_vehicle_assign_vehicle_component__["a" /* AssignVehicleComponent */], {
+        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_8__components_dialog_assign_vehicle_assign_vehicle_component__["a" /* AssignVehicleComponent */], {
             height: '350px', width: '500px'
         });
         dialogRef.afterClosed().subscribe(function (result) {
@@ -712,7 +729,7 @@ var DeviceDashboard = (function () {
         var res = device;
         console.log(res);
         this._store.dispatch({ type: "DEVICE_DETAILS", payload: { error: '', data: res } });
-        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_8__components_dialog_mark_as_required_mark_as_required_component__["a" /* MarkAsRequiredComponent */], {
+        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_9__components_dialog_mark_as_required_mark_as_required_component__["a" /* MarkAsRequiredComponent */], {
             height: '350px', width: '500px'
         });
         dialogRef.afterClosed().subscribe(function (result) {
@@ -763,10 +780,10 @@ DeviceDashboard = __decorate([
         template: __webpack_require__("../../../../../src/app/components/device-dashboard/device-dashboard.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/device-dashboard/device-dashboard.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5__angular_material__["s" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_material__["s" /* MdSnackBar */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_device_services__["a" /* DeviceServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_device_services__["a" /* DeviceServices */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__angular_material__["f" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_material__["f" /* MdDialog */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["a" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["a" /* Store */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_6__angular_material__["s" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__angular_material__["s" /* MdSnackBar */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_device_services__["a" /* DeviceServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_device_services__["a" /* DeviceServices */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_shipment_services__["a" /* ShipmentServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_shipment_services__["a" /* ShipmentServices */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_6__angular_material__["f" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__angular_material__["f" /* MdDialog */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__ngrx_store__["a" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ngrx_store__["a" /* Store */]) === "function" && _f || Object])
 ], DeviceDashboard);
 
-var _a, _b, _c, _d, _e;
+var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=device-dashboard.component.js.map
 
 /***/ }),
@@ -2133,7 +2150,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/freight-location-components/freight-location-picker/freight-location-picker.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<md-input-container style=\"width: 100%;margin-top:-20px\">\n  <input #tripLocation mdInput [(ngModel)]=\"locationName\" (keyup)=\"searchName(tripLocation.value)\" (click)=\"isSearchClicked=true; onFilterClick('PUBLIC')\"\n    onkeydown=\"if(((event.keyCode<=65 &&  event.keyCode>=122)) && event.keyCode!=8 && event.keyCode!=13 )return false;\" required (blur)=\"hideList(true);hideDropdownMenu()\" >\n  <!--(blur)=\"hideDropdownMenu()\"-->\n</md-input-container>\n<br>\n\n\n<div *ngIf=\"isSearchClicked\" style=\"z-index: 11; position:absolute; width: 100%;\">\n  <div fxLayout=\"row\" style = \"margin: 0px 0px;background-color: whitesmoke;padding-top: 1%; padding-bottom: 1%;margin-top: -2%;\">\n    <!--style=\"border-right: solid; border-right-color:#aaaaaa;padding: 0px 5px\"-->\n    <div fxFlex=\"25\" style=\"padding-left: 7%\" >\n           <span [style.color]=\"clickFilter==='PUBLIC'?'blue':'gray'\" (click)=\"hideList(false);onFilterClick('PUBLIC')\"><label style=\"font-size: smaller\">Public</label></span>\n    </div>\n    <div fxFlex=\"50\" style=\"padding-left: 11%\">\n      <span [style.color]=\"clickFilter==='MYLOCATIONS'?'blue':'gray'\" (click)=\"hideList(false);isHideList=false;onFilterClick('MYLOCATIONS')\"><label style=\"font-size: smaller\">My Locations</label></span>\n    </div>\n    <div fxFlex=\"25\">\n      <span [style.color]=\"clickFilter==='FAVOURITES'?'blue':'gray'\" (click)=\"hideList(false);isHideList=false;onFilterClick('FAVOURITES')\"><label style=\"font-size: smaller\">Favourite</label></span>\n    </div>\n  </div>\n</div>\n\n\n\n<!--<md-select placeholder=\"Proximity/Boundary Selector\" [(ngModel)]=\"selected_value\" (change)=\"onSelection()\" style=\"width:100%; margin-top: 18px;\">-->\n  <!--<md-option value=\"add_boundary\">Add Boundary</md-option>-->\n  <!--<md-option value=\"add_proximity\">Add Proximity</md-option>-->\n  <!--<md-option value=\"both\">Both</md-option>-->\n<!--</md-select>-->\n<div style=\" z-index: 9; overflow: hidden; position: relative; background-color: white; min-width: 100%; margin-top: 20px; margin-left: 0px;\"\n  *ngIf=\"locationAvailable\">\n  <div style=\"height: 250px; overflow-y: scroll;width: 100%\">\n\n  <div *ngIf=\"isRecentAvailable\">\n      <h4 style=\"height:0px\">Recently Used</h4>\n    <ul style=\"list-style-type: none; padding: 0; margin: 0;\" *ngFor=\"let location of recentLocationList\">\n      <li (click)=\"setLocation(location)\"><i class=\"fa fa-map-marker\" aria-hidden=\"true\"  style=\"margin-right: 8px; font-size: 15px\"></i>{{location['name']}}</li>\n    </ul>\n  </div>\n  <!--location['freightLocation']['name']-->\n  <h4 style=\"height:0px\">Public</h4>\n  <ul style=\"list-style-type: none; padding: 0; margin: 0;\" *ngFor=\"let publiclocation of locationNameList;let ind=index\">\n    <li>\n      <i class=\"fa fa-map-marker\" aria-hidden=\"true\"  style=\"margin-right: 8px; font-size: 15px\"></i>\n      <span (click)=\"setLocation(publiclocation)\" >{{publiclocation['freightLocation']['name']}}</span>\n      <span style=\"float: right\" (click)=\"setFavouriteLocation(publiclocation.freightLocation)\">\n        <i  [style.color]=\"(publiclocation.freightLocation.isStared)?'blue':'black'\" class=\"fa fa-star-o\" aria-hidden=\"true\" ></i>\n      </span>\n    </li>\n  </ul>\n\n  <ul style=\"list-style-type: none; padding: 0; margin: 0;\">\n    <li (click)=\"onAddLocation()\">+add new location</li>\n  </ul>\n  </div>\n\n </div>\n\n<div style=\" z-index: 9; overflow: visible; position: absolute; background-color: white; min-width: 100%; margin-top: 20px; margin-left: 0px;\"\n  *ngIf=\"isPrivateLocationAvailable\">\n<!--\n  <ul style=\"list-style-type: none; padding: 0; margin: 0;\" *ngFor=\"let location of locationNameList\">\n    <li (click)=\"setLocation(location)\"><i class=\"fa fa-map-marker\" aria-hidden=\"true\"  style=\"margin-right: 8px; font-size: 15px\"></i>{{location.freightLocation.name}}<span (click)=\"setLocation(location)\"><i class=\"fa fa-star-o\" aria-hidden=\"true\" style=\"float: right\"></i></span></li>\n  </ul> -->\n\n  <ul style=\"list-style-type: none; padding: 0; margin: 0;\" *ngFor=\"let location of locationNameList\">\n      <li><i class=\"fa fa-map-marker\" aria-hidden=\"true\"  style=\"margin-right: 8px; font-size: 15px\"></i><span (click)=\"setLocation(location)\">{{location.freightLocation.name}}</span><span style=\"float: right\" (click)=\"setFavouriteLocation(location.freightLocation)\"><i [style.color]=\"(location.freightLocation.isStared)?'blue':'black'\" class=\"fa fa-star-o\" aria-hidden=\"true\" ></i></span></li>\n    </ul>\n\n  <ul style=\"list-style-type: none; padding: 0; margin: 0;\">\n    <li (click)=\"onAddLocation()\">+add new location</li>\n  </ul>\n</div>\n\n<div style=\" z-index: 9; overflow: visible; position: absolute; background-color: white; min-width: 100%; margin-top: 20px; margin-left: 0px;\"\n  *ngIf=\"isFavouriteLocationAvailable\">\n\n  <!-- <ul style=\"list-style-type: none; padding: 0; margin: 0;\" *ngFor=\"let location of locationNameList\">\n    <li (click)=\"setLocation(location)\"><i class=\"fa fa-map-marker\" aria-hidden=\"true\"  style=\"margin-right: 8px; font-size: 15px\"></i>{{location.favFreightLocation.name}}</li>\n  </ul> -->\n\n  <ul style=\"list-style-type: none; padding: 0; margin: 0;\" *ngFor=\"let location of locationNameList\">\n      <li><i class=\"fa fa-map-marker\" aria-hidden=\"true\"  style=\"margin-right: 8px; font-size: 15px\"></i><span (click)=\"setLocation(location)\">{{location.favFreightLocation.name}}</span><span style=\"float: right\" ><i [style.color]=\"(location.favFreightLocation.isStared)?'blue':'black'\" class=\"fa fa-star-o\" aria-hidden=\"true\" (click)=\"removeFavouriteLocation(location)\"></i></span></li>\n    </ul>\n\n  <ul style=\"list-style-type: none; padding: 0; margin: 0;\">\n    <li (click)=\"onAddLocation()\">+add new location</li>\n  </ul>\n</div>\n\n\n<div *ngIf=\"isDialogOpen\" class=\"mycustomDialog-Location\" style=\"padding-top: 70px;\">\n  <div class=\"modal-content\" style=\"width: 60%;min-width: 250px;overflow: hidden;max-width: 560px;height: calc(100vh - 140px);\">\n    <div class=\"modal-header\">\n      <span class=\"close\" (click)=\"isDialogOpen=false; locationAvailable=false\">&times;</span>\n      <div>\n        <label>Location</label>\n      </div>\n    </div>\n\n    <div style=\"padding: 5px;font-size: 13px;overflow: auto;width: calc(99vw - 16px);height: auto;\">\n      <app-freight-location-creater [selectedValueFromParent]=\"selected_value\" (onLocationCreation)=\"getFreightLocationObject($event)\"></app-freight-location-creater>\n    </div>\n  </div>\n</div>\n"
+module.exports = "\n<md-input-container style=\"width: 100%;margin-top:-20px\">\n  <input #tripLocation mdInput [(ngModel)]=\"locationName\" (keyup)=\"searchName(tripLocation.value)\" (click)=\"isSearchClicked=true; onFilterClick('PUBLIC')\"\n    onkeydown=\"if(((event.keyCode<=65 &&  event.keyCode>=122)) && event.keyCode!=8 && event.keyCode!=13 )return false;\" required (blur)=\"hideList(true);hideDropdownMenu()\" >\n  <!--(blur)=\"hideDropdownMenu()\"-->\n</md-input-container>\n<br>\n\n\n<div *ngIf=\"isSearchClicked\" style=\"z-index: 11; position:absolute; width: 96%;\">\n  <div fxLayout=\"row\" style = \"margin: 0px 0px;background-color: whitesmoke;padding-top: 1%; padding-bottom: 1%;margin-top: -2%;\">\n    <!--style=\"border-right: solid; border-right-color:#aaaaaa;padding: 0px 5px\"-->\n    <div fxFlex=\"25\" style=\"padding-left: 7%\" >\n           <span [style.color]=\"clickFilter==='PUBLIC'?'blue':'gray'\" (click)=\"hideList(false);onFilterClick('PUBLIC')\"><label style=\"font-size: smaller\">Public</label></span>\n    </div>\n    <div fxFlex=\"50\" style=\"padding-left: 11%\">\n      <span [style.color]=\"clickFilter==='MYLOCATIONS'?'blue':'gray'\" (click)=\"hideList(false);isHideList=false;onFilterClick('MYLOCATIONS')\"><label style=\"font-size: smaller\">My Locations</label></span>\n    </div>\n    <div fxFlex=\"25\">\n      <span [style.color]=\"clickFilter==='FAVOURITES'?'blue':'gray'\" (click)=\"hideList(false);isHideList=false;onFilterClick('FAVOURITES')\"><label style=\"font-size: smaller\">Favourite</label></span>\n    </div>\n  </div>\n</div>\n\n\n\n<!--<md-select placeholder=\"Proximity/Boundary Selector\" [(ngModel)]=\"selected_value\" (change)=\"onSelection()\" style=\"width:100%; margin-top: 18px;\">-->\n  <!--<md-option value=\"add_boundary\">Add Boundary</md-option>-->\n  <!--<md-option value=\"add_proximity\">Add Proximity</md-option>-->\n  <!--<md-option value=\"both\">Both</md-option>-->\n<!--</md-select>-->\n<div style=\" z-index: 9; overflow: hidden; position: absolute; background-color: white; min-width: 100%; margin-top: 20px; margin-left: 0px;\"\n  *ngIf=\"locationAvailable\">\n  <div style=\"height: 250px; overflow-y: scroll;width: 96%\">\n\n  <div *ngIf=\"isRecentAvailable\">\n      <h4 style=\"height:0px\">Recently Used</h4>\n    <ul style=\"list-style-type: none; padding: 0; margin: 0;\" *ngFor=\"let location of recentLocationList\">\n      <li (click)=\"setLocation(location)\"><i class=\"fa fa-map-marker\" aria-hidden=\"true\"  style=\"margin-right: 8px; font-size: 15px\"></i>{{location['name']}}</li>\n    </ul>\n  </div>\n  <!--location['freightLocation']['name']-->\n  <h4 style=\"height:0px\">Public</h4>\n  <ul style=\"list-style-type: none; padding: 0; margin: 0;\" *ngFor=\"let publiclocation of locationNameList;let ind=index\">\n    <li>\n      <i class=\"fa fa-map-marker\" aria-hidden=\"true\"  style=\"margin-right: 8px; font-size: 15px\"></i>\n      <span (click)=\"setLocation(publiclocation)\" >{{publiclocation['freightLocation']['name']}}</span>\n      <span style=\"float: right\" (click)=\"setFavouriteLocation(publiclocation.freightLocation)\">\n        <i  [style.color]=\"(publiclocation.freightLocation.isStared)?'blue':'black'\" class=\"fa fa-star-o\" aria-hidden=\"true\" ></i>\n      </span>\n    </li>\n  </ul>\n\n  <ul style=\"list-style-type: none; padding: 0; margin: 0;\">\n    <li (click)=\"onAddLocation()\">+add new location</li>\n  </ul>\n  </div>\n\n </div>\n\n<div style=\" z-index: 9; overflow: visible; position: absolute; background-color: white; min-width: 100%; margin-top: 20px; margin-left: 0px;\"\n  *ngIf=\"isPrivateLocationAvailable\">\n<!--\n  <ul style=\"list-style-type: none; padding: 0; margin: 0;\" *ngFor=\"let location of locationNameList\">\n    <li (click)=\"setLocation(location)\"><i class=\"fa fa-map-marker\" aria-hidden=\"true\"  style=\"margin-right: 8px; font-size: 15px\"></i>{{location.freightLocation.name}}<span (click)=\"setLocation(location)\"><i class=\"fa fa-star-o\" aria-hidden=\"true\" style=\"float: right\"></i></span></li>\n  </ul> -->\n\n  <ul style=\"list-style-type: none; padding: 0; margin: 0;\" *ngFor=\"let location of locationNameList\">\n      <li><i class=\"fa fa-map-marker\" aria-hidden=\"true\"  style=\"margin-right: 8px; font-size: 15px\"></i><span (click)=\"setLocation(location)\">{{location.freightLocation.name}}</span><span style=\"float: right\" (click)=\"setFavouriteLocation(location.freightLocation)\"><i [style.color]=\"(location.freightLocation.isStared)?'blue':'black'\" class=\"fa fa-star-o\" aria-hidden=\"true\" ></i></span></li>\n    </ul>\n\n  <ul style=\"list-style-type: none; padding: 0; margin: 0;\">\n    <li (click)=\"onAddLocation()\">+add new location</li>\n  </ul>\n</div>\n\n<div style=\" z-index: 9; overflow: visible; position: absolute; background-color: white; min-width: 100%; margin-top: 20px; margin-left: 0px;\"\n  *ngIf=\"isFavouriteLocationAvailable\">\n\n  <!-- <ul style=\"list-style-type: none; padding: 0; margin: 0;\" *ngFor=\"let location of locationNameList\">\n    <li (click)=\"setLocation(location)\"><i class=\"fa fa-map-marker\" aria-hidden=\"true\"  style=\"margin-right: 8px; font-size: 15px\"></i>{{location.favFreightLocation.name}}</li>\n  </ul> -->\n\n  <ul style=\"list-style-type: none; padding: 0; margin: 0;\" *ngFor=\"let location of locationNameList\">\n      <li><i class=\"fa fa-map-marker\" aria-hidden=\"true\"  style=\"margin-right: 8px; font-size: 15px\"></i><span (click)=\"setLocation(location)\">{{location.favFreightLocation.name}}</span><span style=\"float: right\" ><i [style.color]=\"(location.favFreightLocation.isStared)?'blue':'black'\" class=\"fa fa-star-o\" aria-hidden=\"true\" (click)=\"removeFavouriteLocation(location)\"></i></span></li>\n    </ul>\n\n  <ul style=\"list-style-type: none; padding: 0; margin: 0;\">\n    <li (click)=\"onAddLocation()\">+add new location</li>\n  </ul>\n</div>\n\n\n<div *ngIf=\"isDialogOpen\" class=\"mycustomDialog-Location\" style=\"padding-top: 70px;\">\n  <div class=\"modal-content\" style=\"width: 60%;min-width: 250px;overflow: hidden;max-width: 560px;height: calc(100vh - 140px);\">\n    <div class=\"modal-header\">\n      <span class=\"close\" (click)=\"isDialogOpen=false; locationAvailable=false\">&times;</span>\n      <div>\n        <label>Location</label>\n      </div>\n    </div>\n\n    <div style=\"padding: 5px;font-size: 13px;overflow: auto;width: calc(99vw - 16px);height: auto;\">\n      <app-freight-location-creater [selectedValueFromParent]=\"selected_value\" (onLocationCreation)=\"getFreightLocationObject($event)\"></app-freight-location-creater>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -2236,9 +2253,8 @@ var FreightLocationPickerComponent = (function () {
             // console.log(path);
             _this.publicFreight().subscribe(function (response) {
                 _this.locationNameList = response['value'];
-                console.log(_this.locationNameList);
                 if (_this.locationNameList != null) {
-                    console.log(_this.locationNameList.length);
+                    console.log(_this.locationNameList);
                     for (var i = 0; i < _this.locationNameList.length; i++) {
                         _this.locationNameList[i]['isStared'] = false;
                     }
@@ -2261,11 +2277,13 @@ var FreightLocationPickerComponent = (function () {
             // console.log(path);
             _this.recentFreight().subscribe(function (response) {
                 _this.recentLocationList = response['value'];
-                if (_this.recentLocationList.length > 0) {
-                    // this.locationAvailable=true;
-                    _this.isRecentAvailable = true;
-                    _this.isPrivateLocationAvailable = false;
-                    _this.isFavouriteLocationAvailable = false;
+                if (_this.recentLocationList != null) {
+                    if (_this.recentLocationList.length > 0) {
+                        // this.locationAvailable=true;
+                        _this.isRecentAvailable = true;
+                        _this.isPrivateLocationAvailable = false;
+                        _this.isFavouriteLocationAvailable = false;
+                    }
                 }
                 console.log(_this.recentLocationList);
             }, function (err) {
@@ -2277,9 +2295,11 @@ var FreightLocationPickerComponent = (function () {
             _this.privateFreight().subscribe(function (response) {
                 console.log(response['value']);
                 _this.locationNameList = response['value'];
-                if (_this.locationNameList.length > 0) {
-                    for (var i = 0; i < _this.locationNameList.length; i++) {
-                        _this.locationNameList[i]['isStared'] = false;
+                if (_this.locationNameList != null) {
+                    if (_this.locationNameList.length > 0) {
+                        for (var i = 0; i < _this.locationNameList.length; i++) {
+                            _this.locationNameList[i]['isStared'] = false;
+                        }
                     }
                 }
                 _this.locationAvailable = false;
@@ -2364,20 +2384,17 @@ var FreightLocationPickerComponent = (function () {
     };
     FreightLocationPickerComponent.prototype.setLocationList = function (value) {
         console.log("setLocation");
-        console.log(value);
+        console.log(value['data']['list']);
         if (value == null) {
             return;
         }
         if (value['status'] == 200) {
             console.log(value);
             this.waitForLastResp = false;
-            if (value['data'].length > 0) {
+            if (value['data']['list'].length > 0) {
                 var locationList = [];
-                for (var i = 0; i < value['data'].length; i++) {
-                    var obj = {
-                        'name': value['data'][i]['freightLocation']['name'],
-                        'locObj': value['data'][i]
-                    };
+                for (var i = 0; i < value['data']['list'].length; i++) {
+                    var obj = value['data']['list'][i];
                     locationList.push(obj);
                 }
                 this.locationNameList = locationList;
@@ -2548,6 +2565,7 @@ var FreightLocationPickerComponent = (function () {
         }
     };
     FreightLocationPickerComponent.prototype.searchName = function (name) {
+        console.log(name);
         // if (!this.waitForLastResp) {
         this.waitForLastResp = true;
         if (name.toString().length == 0) {
@@ -2561,7 +2579,12 @@ var FreightLocationPickerComponent = (function () {
         if (this.isFavouriteLocationAvailable) {
             type = "fav";
         }
-        this.searchLocation.emit({ name: name, type: type });
+        if (name == '') {
+            this.onFilterClick(this.clickFilter);
+        }
+        else {
+            this.searchLocation.emit({ name: name, type: type });
+        }
     };
     FreightLocationPickerComponent.prototype.getFreightLocationObject = function (value) {
         var type = "Public";
@@ -3196,7 +3219,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/new-shipment/new-shipment.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div style=\"overflow: hidden;height: 100vh;\">\n      <div  fxLayout=\"row\" style=\"padding: 9px;\">\n        <div  fxFlex=\"33\" >\n          <div  style=\"display:flex;\" >\n            <label class=\"stepperIcon\" [style.background-color]=\"steperNo >= 1 ?'#3f51b5':'grey'\" >\n              <span style=\"position: absolute;margin-left: -4px;margin-top: -8px;\">1</span>\n            </label>\n            <!--<hr>-->\n            <span style=\"margin-left: 5px\">Enter Shipment Detail</span>\n          </div>\n        </div>\n        <div fxFlex=\"33\">\n          <div style=\"text-align: center;display: flex;\" >\n            <label class=\"stepperIcon\" [style.background-color]=\"steperNo >= 2 ?'#3f51b5':'grey'\" >\n              <span style=\"position: absolute;margin-left: -4px;margin-top: -8px;\">2</span>\n            </label>\n            <!--<hr>-->\n            <span style=\"margin-left: 5px\">Add Vehicle Tracking device</span>\n            <!--<span style=\"margin-left: 5px\">Tracking Configuration</span>-->\n          </div>\n        </div>\n\n        <div fxFlex=\"33\">\n          <div  style=\"display: flex;\" >\n            <label class=\"stepperIcon\" [style.background-color]=\"steperNo == 3 ?'#3f51b5':'grey'\" >\n              <span style=\"position: absolute;margin-left: -4px;margin-top: -8px;\">3</span>\n            </label>\n            <span style=\"margin-left: 5px\">Add Driver Details</span>\n          </div>\n        </div>\n      </div>\n\n      <div style=\"overflow:auto;height: calc(100vh - 80px);\">\n        <div *ngIf=\"steperNo == 1\" style=\"padding: 30px;font-size: 13px;\" >\n          \n          <div>\n            <label  class=\"fade-sub-header-text\">Consignor Name*</label>\n            <app-freight-location-picker [inputType]=\"'origin'\"    [locationFromTemplate]=\"selectedTemplateLocation\" [pickerLocationType]=\"typeOfLocationCreator\" (onLocationPick)='setOriginLocation($event)' ></app-freight-location-picker>\n          </div>\n          <!--(click)=\"tripOriginDialog()\"-->\n           \n          <div>\n              <label class=\"fade-sub-header-text\">Consignee Name*</label>              \n            <app-freight-location-picker [inputType]=\"'destination'\"  [locationFromTemplate]=\"selectedTemplateLocation\" [pickerLocationType]=\"typeOfLocationCreator\" (onLocationPick)='setDestinationLocation($event)' ></app-freight-location-picker>\n          </div>\n           <!--(click)=\"tripOriginDialog()\"-->\n            \n           \n\n\n          <div class=\"element\" >\n            <md-input-container style=\"width: 100%;\">\n              <input type=\"number\" style=\"width: 100%;\" placeholder=\"Shipment Number\" mdInput [(ngModel)]=\"shipmentNumber\" name=\"shipmentNumber\" id=\"shipmentNumber\">\n            </md-input-container>\n          </div>\n\n\n          <div class=\"element\" >\n            <md-input-container style=\"width: 100%;\">\n              <input style=\"width: 100%;\" placeholder=\"Consignment Number\" mdInput [(ngModel)]=\"consignmentNumber\" name=\"consignmentNumber\"\n                     id=\"consignmentNumber\">\n            </md-input-container>\n          </div>\n\n          <div fxLayout=\"row\" >\n            <div fxFlex=\"48\" style=\"margin-top: 12px;height:60px;top:281px;\">\n              <owl-date-time mdInput [autoClose]=true [(ngModel)]=\"plannedStartDate\" placeHolder=\"Planned Start Date\"></owl-date-time>\n            </div>\n            <div fxFlex=\"48\" style=\"margin-left:auto\">\n              <md-input-container style=\"width: 100%;\">\n                <input type=\"number\" placeholder=\"Transit Days\" mdInput  [(ngModel)]=\"transitDays\" name=\"transitDays\" id=\"transitDays\">\n              </md-input-container>\n            </div>\n          </div>\n\n          \n          <div fxLayout=\"row\" class=\"element\" ><!-- *ngFor=\"let item of itemList\" -->\n            <div fxFlex=\"48\" style=\"margin-top: 4px\">\n              <md-input-container style=\"width: 90%;\">\n                <input style=\"width: 100%;\" placeholder=\"Quantity\" mdInput  [(ngModel)]=\"quantity\" name=\"quantity\" id=\"quantity\">\n              </md-input-container>\n            </div>\n\n            <div fxFlex=\"48\" style=\"margin-top: 11px\">\n              <md-select  placeholder=\"Measurement Type\" style=\"width: 80%\" [(ngModel)]=\"mesurementType\" (change)=\"selectMesurementType()\" >\n                <md-option *ngFor=\"let mesurement of mesurements\" [value]=\"mesurement.name\" >\n                   {{mesurement.viewValue}}\n                </md-option>\n              </md-select>\n            </div>\n            <div fxFlex=\"48\" style=\"margin-top: 11px\" *ngIf=\"isShowUnits\">\n              <md-select  placeholder=\"Select Units\" style=\"width: 60%\" [(ngModel)]=\"selectedUnit\" floatPlaceholder=\"never\">\n                <md-option *ngFor=\"let unit of selectUnit\" [value]=\"unit\">\n                   {{unit}}\n                </md-option>\n              </md-select>\n            </div>\n            <div fxFlex=\"48\" style=\"margin-top: 7px\" *ngIf=\"isShowUnitInput\">\n                <md-input-container style=\"width: 90%;\">\n                    <input style=\"width: 60%;\" placeholder=\"No. Of Package\" mdInput  [(ngModel)]=\"selectedUnit\" >\n                  </md-input-container>\n            </div>\n          </div>\n          <!-- <div style=\"width: 100%;margin-top: 10px;text-align:right;\">\n            <button md-raised-button  class=\"change-mode-button\" style=\"background-color: #bebebe;\" (click)=\"addItem()\">+add</button>\n         </div> -->\n          \n\n\n          <div style=\"margin-top: 10px;\">\n            <md-input-container style=\"width: 100%;\">\n              <input style=\"width: 100%;\" placeholder=\"Vehicle Number\" mdInput [(ngModel)]=\"vehicleNumber\" name=\"vehicleNumber\" id=\"vehicleNumber\">\n            </md-input-container>\n          </div>\n\n          <div style=\"margin-top: 20px;text-align: right;\">\n            <button md-raised-button color=\"primary\" (click)=\"step2();convertTime();\">Next</button>\n            <!--<button md-raised-button>BACK</button>-->\n          </div>\n\n        </div>\n\n        <!-- step 2 ************************************-->\n        <div *ngIf=\"steperNo == 2\" style=\"margin-top:60px;text-align: center\" >\n        <md-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></md-spinner>\n          <div *ngIf=\"isShowTracknetEnable\"><span><u>Tracknet Enabled </u></span></div>\n          <div style=\"margin-top: 21px;\">\n             <button [style.background-color]=\"trackerType == 'Trip'?'green':'gray'\" md-raised-button  class=\"change-mode-button\"  (click)=\"setTrackType('Trip');isShowTracknetEnable=true\" *ngIf=\"isShowTrip\">Tracknet</button>              \n             <button [style.background-color]=\"trackerType == 'Tracker'?'green':'gray'\" md-raised-button  class=\"change-mode-button\" style=\"margin-left: 20px;\" (click)=\"setTrackType('Tracker');isShowTracknetEnable=false\">Tracker</button>\n             <button [style.background-color]=\"trackerType == 'Manual'?'green':'gray'\" md-raised-button style=\"margin-left: 20px;\" class=\"change-mode-button\" (click)=\"setTrackType('Manual');isShowTrip=false\">Manual mode</button>\n          </div>\n          <div style=\"margin-top: 15px\" *ngIf=\"trackerType == 'Tracker'\">\n            <md-input-container style=\"width: 250px;\" >\n              <input style=\"width: 100%;\" placeholder=\"Tracker IMEI\" mdInput [(ngModel)]=\"trackerIMEI\"  name=\"TrackerIMEI\" id=\"TrackerIMEI\">\n            </md-input-container>\n          </div>\n\n          <div style=\"margin-top: 60px;\">\n\n            <button md-raised-button color=\"primary\" (click)=\"step1()\">Previous</button>\n\n            <button md-raised-button color=\"primary\" (click)=\"step3();\">Next</button>\n            <!--<button md-raised-button>BACK</button>-->\n          </div>\n        </div>\n\n        <div *ngIf=\"steperNo ==  3\" style=\"text-align: center;margin-top: 60px\">\n          <div  *ngIf=\"isShowchip\"style=\"margin-top: 15px;\">\n            <md-chip-list style=\"justify-content: center;display: flex;\">\n                <md-chip >{{driverName}}  {{mobileNo}} <i class=\"fa fa-times-circle\" mdChipRemove *ngIf=\"true\" (click)=\"isShowchip=false\"></i> </md-chip>\n            </md-chip-list>\n          </div>\n\n          <div style=\"margin-top: 15px \">\n             <button md-raised-button  class=\"change-mode-button\" style=\"background-color: #bebebe\" (click)=\"isAddDriverDetail=true\">+add Driver</button>\n          </div>\n          <div *ngIf=\"isAddDriverDetail\">\n            <md-input-container>\n              <input style=\"width: 100%;\" placeholder=\"Driver Name\" mdInput [(ngModel)]=\"driverName\"  name=\"driverName\" id=\"driverName\">\n            </md-input-container>\n            <md-input-container>\n              <input style=\"width: 100%;\" placeholder=\"Mobile No\" mdInput [(ngModel)]=\"mobileNo\"  name=\"mobileNo\" id=\"mobileNo\">\n            </md-input-container>\n          </div>\n          <div style=\"margin-top: 60px\">\n             <button md-raised-button color=\"primary\" (click)=\"step2()\">Previous</button>\n             <button md-raised-button color=\"primary\" (click)=\"createShipment()\">Done</button>\n          </div>\n        </div>\n      </div>\n</div>\n\n"
+module.exports = "\n<div style=\"overflow: hidden;height: 100vh;\">\n      <div  fxLayout=\"row\" style=\"padding: 9px;\">\n        <div  fxFlex=\"33\" >\n          <div  style=\"display:flex;\" >\n            <label class=\"stepperIcon\" [style.background-color]=\"steperNo >= 1 ?'#3f51b5':'grey'\" >\n              <span style=\"position: absolute;margin-left: -4px;margin-top: -8px;\">1</span>\n            </label>\n            <!--<hr>-->\n            <span style=\"margin-left: 5px\">Enter Shipment Detail</span>\n          </div>\n        </div>\n        <div fxFlex=\"33\">\n          <div style=\"text-align: center;display: flex;\" >\n            <label class=\"stepperIcon\" [style.background-color]=\"steperNo >= 2 ?'#3f51b5':'grey'\" >\n              <span style=\"position: absolute;margin-left: -4px;margin-top: -8px;\">2</span>\n            </label>\n            <!--<hr>-->\n            <span style=\"margin-left: 5px\">Add Vehicle Tracking device</span>\n            <!--<span style=\"margin-left: 5px\">Tracking Configuration</span>-->\n          </div>\n        </div>\n\n        <div fxFlex=\"33\">\n          <div  style=\"display: flex;\" >\n            <label class=\"stepperIcon\" [style.background-color]=\"steperNo == 3 ?'#3f51b5':'grey'\" >\n              <span style=\"position: absolute;margin-left: -4px;margin-top: -8px;\">3</span>\n            </label>\n            <span style=\"margin-left: 5px\">Add Driver Details</span>\n          </div>\n        </div>\n      </div>\n\n      <div style=\"overflow:hidden;height: calc(100vh - 80px);\">\n        <div *ngIf=\"steperNo == 1\" style=\"padding: 30px;font-size: 13px;\" >\n          \n          <div>\n            <label  class=\"fade-sub-header-text\">Consignor Name*</label>\n            <app-freight-location-picker [inputType]=\"'origin'\"    [locationFromTemplate]=\"selectedTemplateLocation\" [pickerLocationType]=\"typeOfLocationCreator\" (onLocationPick)='setOriginLocation($event)' ></app-freight-location-picker>\n          </div>\n          <!--(click)=\"tripOriginDialog()\"-->\n           \n          <div>\n              <label class=\"fade-sub-header-text\">Consignee Name*</label>              \n            <app-freight-location-picker [inputType]=\"'destination'\"  [locationFromTemplate]=\"selectedTemplateLocation\" [pickerLocationType]=\"typeOfLocationCreator\" (onLocationPick)='setDestinationLocation($event)' ></app-freight-location-picker>\n          </div>\n           <!--(click)=\"tripOriginDialog()\"-->\n            \n           \n\n\n          <div class=\"element\" >\n            <md-input-container style=\"width: 100%;\">\n              <input style=\"width: 100%;\" placeholder=\"Shipment Number\" mdInput [(ngModel)]=\"shipmentNumber\" name=\"shipmentNumber\" id=\"shipmentNumber\" >\n            </md-input-container>\n          </div>\n\n\n          <div class=\"element\" >\n            <md-input-container style=\"width: 100%;\">\n              <input style=\"width: 100%;\" placeholder=\"Consignment Number\" mdInput [(ngModel)]=\"consignmentNumber\" name=\"consignmentNumber\"\n                     id=\"consignmentNumber\">\n            </md-input-container>\n          </div>\n\n          <div fxLayout=\"row\" >\n            <div fxFlex=\"48\" style=\"margin-top: 12px;height:60px;top:281px;\">\n              <owl-date-time mdInput [autoClose]=true [(ngModel)]=\"plannedStartDate\" placeHolder=\"Planned Start Date\"></owl-date-time>\n            </div>\n            <div fxFlex=\"48\" style=\"margin-left:auto\">\n              <md-input-container style=\"width: 100%;\">\n                <input type=\"number\" placeholder=\"Transit Days\" mdInput  [(ngModel)]=\"transitDays\" name=\"transitDays\" id=\"transitDays\">\n              </md-input-container>\n            </div>\n          </div>\n\n          \n          <div fxLayout=\"row\" class=\"element\" ><!-- *ngFor=\"let item of itemList\" -->\n            <div fxFlex=\"48\" style=\"margin-top: 4px\">\n              <md-input-container style=\"width: 90%;\">\n                <input style=\"width: 100%;\" placeholder=\"Quantity\" mdInput  [(ngModel)]=\"quantity\" name=\"quantity\" id=\"quantity\">\n              </md-input-container>\n            </div>\n\n            <div fxFlex=\"48\" style=\"margin-top: 11px\">\n              <md-select  placeholder=\"Measurement Type\" style=\"width: 80%\" [(ngModel)]=\"mesurementType\" (change)=\"selectMesurementType()\" >\n                <md-option *ngFor=\"let mesurement of mesurements\" [value]=\"mesurement.name\" >\n                   {{mesurement.viewValue}}\n                </md-option>\n              </md-select>\n            </div>\n            <div fxFlex=\"48\" style=\"margin-top: 11px\" *ngIf=\"isShowUnits\">\n              <md-select  placeholder=\"Select Units\" style=\"width: 60%\" [(ngModel)]=\"selectedUnit\" floatPlaceholder=\"never\">\n                <md-option *ngFor=\"let unit of selectUnit\" [value]=\"unit\">\n                   {{unit}}\n                </md-option>\n              </md-select>\n            </div>\n            <div fxFlex=\"48\" style=\"margin-top: 7px\" *ngIf=\"isShowUnitInput\">\n                <md-input-container style=\"width: 90%;\">\n                    <input style=\"width: 60%;\" placeholder=\"No. Of Package\" mdInput  [(ngModel)]=\"selectedUnit\" >\n                  </md-input-container>\n            </div>\n          </div>\n          <!-- <div style=\"width: 100%;margin-top: 10px;text-align:right;\">\n            <button md-raised-button  class=\"change-mode-button\" style=\"background-color: #bebebe;\" (click)=\"addItem()\">+add</button>\n         </div> -->\n          \n\n\n          <div style=\"margin-top: 10px;\">\n            <md-input-container style=\"width: 100%;\">\n              <input style=\"width: 100%;\" placeholder=\"Vehicle Number\" mdInput [(ngModel)]=\"vehicleNumber\" name=\"vehicleNumber\" id=\"vehicleNumber\">\n            </md-input-container>\n          </div>\n\n          <div style=\"margin-top: 20px;text-align: right;\">\n            <button md-raised-button color=\"primary\" (click)=\"step2();convertTime();\">Next</button>\n            <!--<button md-raised-button>BACK</button>-->\n          </div>\n\n        </div>\n\n        <!-- step 2 ************************************-->\n        <div *ngIf=\"steperNo == 2\" style=\"margin-top:60px;text-align: center\" >\n        <md-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></md-spinner>\n          <div *ngIf=\"isShowTracknetEnable\"><span><u>Tracknet Enabled </u></span></div>\n          <div style=\"margin-top: 21px;\">\n             <button [style.background-color]=\"trackerType == 'Trip'?'green':'gray'\" md-raised-button  class=\"change-mode-button\"  (click)=\"setTrackType('Trip');isShowTracknetEnable=true\" *ngIf=\"isShowTrip\">Tracknet</button>              \n             <button [style.background-color]=\"trackerType == 'Tracker'?'green':'gray'\" md-raised-button  class=\"change-mode-button\" style=\"margin-left: 20px;\" (click)=\"setTrackType('Tracker');isShowTracknetEnable=false\">Tracker</button>\n             <button [style.background-color]=\"trackerType == 'Manual'?'green':'gray'\" md-raised-button style=\"margin-left: 20px;\" class=\"change-mode-button\" (click)=\"setTrackType('Manual');isShowTracknetEnable=false\">Manual mode</button>\n          </div>\n          <div style=\"margin-top: 15px\" *ngIf=\"trackerType == 'Tracker'\">\n            <md-input-container style=\"width: 250px;\" >\n              <input style=\"width: 100%;\" placeholder=\"Tracker IMEI\" mdInput [(ngModel)]=\"trackerIMEI\"  name=\"TrackerIMEI\" id=\"TrackerIMEI\">\n            </md-input-container>\n          </div>\n\n          <div style=\"margin-top: 60px;\">\n\n            <button md-raised-button color=\"primary\" (click)=\"step1()\">Previous</button>\n\n            <button md-raised-button color=\"primary\" (click)=\"step3();\">Next</button>\n            <!--<button md-raised-button>BACK</button>-->\n          </div>\n        </div>\n\n        <div *ngIf=\"steperNo ==  3\" style=\"text-align: center;margin-top: 60px\">\n          <div  *ngIf=\"isShowchip\"style=\"margin-top: 15px;\">\n            <md-chip-list style=\"justify-content: center;display: flex;\">\n                <md-chip >{{driverName}}  {{mobileNo}} <i class=\"fa fa-times-circle\" mdChipRemove *ngIf=\"true\" (click)=\"isShowchip=false\"></i> </md-chip>\n            </md-chip-list>\n          </div>\n\n          <div style=\"margin-top: 15px \">\n             <button md-raised-button  class=\"change-mode-button\" style=\"background-color: #bebebe\" (click)=\"isAddDriverDetail=true\">+add Driver</button>\n          </div>\n          <div *ngIf=\"isAddDriverDetail\">\n            <md-input-container>\n              <input style=\"width: 100%;\" placeholder=\"Driver Name\" mdInput [(ngModel)]=\"driverName\"  name=\"driverName\" id=\"driverName\">\n            </md-input-container>\n            <md-input-container>\n              <input style=\"width: 100%;\" placeholder=\"Mobile No\" mdInput [(ngModel)]=\"mobileNo\"  name=\"mobileNo\" id=\"mobileNo\">\n            </md-input-container>\n          </div>\n          <div style=\"margin-top: 60px\">\n             <button md-raised-button color=\"primary\" (click)=\"step2()\">Previous</button>\n             <button md-raised-button color=\"primary\" (click)=\"createShipment()\">Done</button>\n          </div>\n        </div>\n      </div>\n</div>\n\n"
 
 /***/ }),
 
@@ -3245,7 +3268,7 @@ var NewShipment = (function () {
             { name: 'package', viewValue: 'Package Count' }
         ];
         this.selectUnit = this.mesurements[0].units;
-        this.shipmentNumber = null;
+        this.shipmentNumber = '';
         this.consignmentNumber = null;
         this.mesurementType = 'weight';
         this.trackerType = "Tracker";
@@ -3361,7 +3384,8 @@ var NewShipment = (function () {
             "planedStartTime": this._plannedStartDateTimestamp,
             "shipmentId": null,
             "vehicleId": vehicleId,
-            "shipmentNo": this.shipmentNumber,
+            "shipmentNo": null,
+            "shipmentNoExtended": this.shipmentNumber,
             "shipmentState": "Created",
             "startLocation": { "freightLocation": this.consigner },
             "trackingType": this.trackerType,
@@ -3780,7 +3804,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/shipment-status/shipment-status.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" style=\"min-width: 700px;box-sizing: border-box;\">\n    <md-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></md-spinner>    \n  <div style=\"display:flex;padding:20px 5px 10px 12px;\" >\n    <md-card class=\"cards-toggle\" (click)=\"selectedFilter = 'all'\" [style.background-color]=\"selectedFilter == 'all'?'#1976d2':''\"  [style.color]=\"selectedFilter == 'all'?'#FFFFFF':''\">\n      <div ><span >{{length}}</span></div>\n      <div style=\"margin-top: 6px;\" ><span  >All Shipments</span></div>\n    </md-card>\n\n    <md-card class=\"cards-toggle\" (click)=\"selectedFilter = 'active'\" [style.background-color]=\"selectedFilter == 'active'?'#1976d2':''\"  [style.color]=\"selectedFilter == 'active'?'#FFFFFF':''\" style=\"margin-left: 20px\" >\n      <div  ><span > {{active}}</span></div>\n      <div style=\"margin-top: 6px;\" ><span  >Active</span></div>\n    </md-card>\n\n    <md-card class=\"cards-toggle\" (click)=\"selectedFilter = 'deliverd'\" [style.background-color]=\"selectedFilter == 'deliverd'?'#1976d2':''\"  [style.color]=\"selectedFilter == 'deliverd'?'#FFFFFF':''\" style=\"margin-left: 20px\" >\n      <div  ><span >{{deliverd}}</span></div>\n      <div  style=\"margin-top: 6px;\"><span  >Delivered</span></div>\n    </md-card>\n\n    <div style=\"display: flex;margin-left: auto;margin-right: 45px;\" >\n      <div class=\"doughnut-chart\" >\n        <div class=\"overlay\">\n          <i style=\"color: #1976d2\" class=\"fa fa-wifi\" aria-hidden=\"true\"></i>\n          <i style=\"color: #1976d2\" class=\"fa fa-mobile\" style=\"margin-left:6px\" aria-hidden=\"true\"></i>\n        </div>\n        <canvas baseChart\n                [options]=\"doughnutChartOptions\"\n                [data]=\"doughnutChartData\"\n                [chartType]=\"doughnutChartType\"\n                [colors]=\"doughnutColor\">\n        </canvas>\n      </div>\n\n      <div  style=\"margin-top: -10px;\">\n        <span style=\"font-size: 14px\">Tracking Status</span>\n        <div >\n          <span class=\"doughnut-chart-label\" style=\"background-color:#71a2ec;\" ></span>\n          <span style=\"font-size: 11px;\" >{{doughnutChartData[0]}}: Tracknet</span>\n        </div>\n        <div style=\"margin-top: 5px;\">\n          <span class=\"doughnut-chart-label\" style=\"background-color:#a1f2f5;\"></span>\n          <span style=\"font-size: 11px;\" >{{doughnutChartData[1]}}: Trip Tracker</span>\n        </div>\n\n        <div style=\"margin-top: 5px;\">\n          <span class=\"doughnut-chart-label\" style=\"background-color:#d7d8df;\"></span>\n          <span style=\"font-size: 11px;\" >{{doughnutChartData[2]}}: Manual Mode</span>\n        </div>\n      </div>\n    </div>\n    \n  </div>\n\n   \n  <div style=\"display: flex;padding: 5px 5px;margin-top: 10px\" >\n    <div class=\"custome-button\" >\n      <button md-button (click)=\"createNewShipment()\" >+Create New Shipment</button>\n      <button md-raised-button color=\"primary\" style=\"margin-left: 16px;\" >Import Shipment</button>\n    </div>\n    <div style=\"display: flex;padding: 5px 5px;margin-left: 13px;\">\n      <i   (click)=\"download()\" class=\"fa fa-download my-download\" aria-hidden=\"true\">\n        <span class=\"download-csv\">CSV</span>\n      </i>\n    </div>\n    \n    <div class=\"custome-button\" style=\"display: inline-flex;margin-left: auto;\" >\n      <button md-raised-button color=\"primary\" style=\"margin-right: 40px\">Share</button>\n      <div style=\"position:relative;margin-top: -1px;\" >\n        <i  class=\"fa fa-search \"  aria-hidden=\"true\" style=\"margin-top: 7px;right: 7px;position: absolute;font-size: 13px;color: black;\"></i>\n        <input myAutofocus  [(ngModel)]=\"search\" class=\"expand-search\"  placeholder=\"Search\">\n      </div>\n    </div>\n  </div>\n    \n   <!--************************ Switch Shipment dialog *********************************-->\n    <div *ngIf=\"isSwitchShipmentDialog\"  class=\"mycustomDialog\" style=\"padding-top: 70px;overflow:unset\">\n      <div class=\"modal-content\" style=\"width: 60%;min-width: 250px;overflow:unset;max-width: 560px;height:60vh;\">\n        <div class=\"modal-header\">\n          <span class=\"close\" (click)=\"closeToggle()\" >&times;</span>\n          <div>\n            <label>Switch Shipment</label>\n          </div>\n        </div>\n\n        <div  style=\"padding: 18px;font-size: 17px;margin-top:40px;margin-left:150px\" >\n          <md-spinner *ngIf=\"isSpin\" mode=\"indeterminate\" class=\"spinner\"></md-spinner>\n            <div *ngIf=\"isShowTrip\"><span><u>Tracknet Enabled </u></span></div>\n            <div style=\"margin-top: 21px;\">\n               <button [style.background-color]=\"trackerType == 'Trip'?'green':'gray'\" md-raised-button  class=\"change-mode-button\"  (click)=\"setTrackType('Trip')\" *ngIf=\"isShowTrip\">Tracknet</button>              \n               <button [style.background-color]=\"trackerType == 'Tracker'?'green':'gray'\" md-raised-button  class=\"change-mode-button\" style=\"margin-left: 20px;\" (click)=\"setTrackType('Tracker')\">Tracker</button>\n            </div>\n            <div style=\"margin-top: 15px\" *ngIf=\"trackerType == 'Tracker'\">\n              <md-input-container style=\"width: 250px;\" >\n                <input style=\"width: 100%;\" placeholder=\"Tracker IMEI\" mdInput [(ngModel)]=\"trackerIMEI\"  name=\"trackerIMEI\" id=\"trackerIMEI\">\n              </md-input-container>\n            </div>\n        </div>\n        <div style=\"margin-top: 40px;\">\n            <button md-raised-button  style=\"margin-left: 120px;margin-top: 30px\" (click)=\"closeToggle()\" >Cancel</button>\n            <button md-raised-button  style=\"margin-left: 60px;margin-top: 30px;width: 30%\" (click)=\"confirmSwitchShipment()\" >Switch Shipment</button>\n        </div>\n      </div>\n    </div>\n  <!-- close Switch Shipment dialog -->\n\n  <div style=\"padding: 25px 5px 0px 20px;min-width: 700px\">\n    <div style=\"box-shadow: 0px 4px 19px darkgrey;\">\n      <table style=\"border: 1px solid #e1e6ef;\">\n        <tr style=\"height: 50px\">\n          <td style=\"font-size:17px;border:none;\" ><label>All Shipments</label></td>\n          <td colspan=\"4\" style=\"float: right;padding: 0px\">\n            <md-paginator class=\"customePaginator\" [length]=\"length\"\n                          [pageSize]=\"pageSize\"\n                          [pageSizeOptions]=\"pageSizeOptions\"\n                          (page)=\"pageEvent = $event;selectTableHeight()\" >\n            </md-paginator>\n          </td>\n        </tr>\n         \n        <div fxLayout=\"row\" class=\"list-header1\" [style.width]=\"(isShowDetails || this.previousSelectedVehicle['_isShowDetails'])?'calc(160% - 330px)':'160%'\">\n          <span style=\"width: 25px;\"></span>\n          <span fxFlex=14 >Shipment No</span>\n          <span fxFlex=12 >Vehicle No</span>\n          <span fxFlex=15 >Shipment Status</span>\n          <span fxFlex=15  >Consignor</span>\n          <span fxFlex=14  >Consignee</span>\n          <span fxFlex=14 >Distance to go</span>\n          <span fxFlex=14  >Current Status</span>\n      </div>\n      </table>\n      <div  style=\"overflow:auto;max-height:calc(100vh - 340px);display:flex\" >\n        <div style=\"overflow-y:auto;overflow-x:hidden;max-height:calc(100vh - 340px); width: 100%;margin-right: -1px;\" >\n        <table  style=\"border-top: 1px solid #e1e6ef;border-bottom: 4px solid rgba(225, 230, 239, 0);\">\n          <div fxLayout=\"row\" *ngFor=\"let shipment of selectedVehicleList | searchFilter : ['vehicleNo','shipmentNo', search] | shipmentType: ['_shipmentStatus', search]\" >\n            <div fxFlex=100 >\n              <md-card   (click)=\"isShowDetails = true;selectedShipmentDetail(shipment);changeBgColor(shipment)\"\n              [style.background-color]=\"shipment._isShowDetails?'aliceblue':''\" style=\"cursor: alias;\"  fxLayout=\"row\" class=\"list-body1\" >      \n                <span> <md-checkbox class=\"customCheckBox\" [(ngModel)]=\"shipment.isChecked\" ></md-checkbox></span>\n                <span fxFlex=13>{{shipment.shipmentNo}}</span>\n                <span fxFlex=12 ><i   class=\"fa fa-truck\" aria-hidden=\"true\"></i>&nbsp;&nbsp;{{shipment.vehicleRegistrationNumber}}</span>\n                <span fxFlex=14 *ngIf=\"shipment.vts=='EnrouteForPickUp'\"><i   aria-hidden=\"true\">Enroute For Pickup</i></span>\n                <span fxFlex=14 *ngIf=\"shipment.vts=='AtPickUpPoint'\"><i   aria-hidden=\"true\">At Pickup Point</i></span>\n                <span fxFlex=14 *ngIf=\"shipment.vts=='EnrouteForDestination'\"><i   aria-hidden=\"true\">Enroute For Delivery</i></span>\n                <span  fxFlex=14 *ngIf=\"shipment.vts=='AtDestination' && shipment.shipmentState=='Started'\"><i   aria-hidden=\"true\">At Destination</i></span>\n                <span  fxFlex=14 *ngIf=\"shipment.vts=='AtDestination' && shipment.shipmentState=='Completed'\"><i   aria-hidden=\"true\">Delivered</i></span>\n                \n                <!-- <span style=\"margin-left: 45px\" *ngIf=\"shipment.vts=='AtDestination'\"><i   aria-hidden=\"true\">Enroute For Pickup</i></span>                    -->\n                <span  fxFlex=14><i  class=\"fa fa-map-marker\" aria-hidden=\"true\"></i>&nbsp;&nbsp;{{shipment.startLocationName}} </span>\n                <span fxFlex=13 ><i   class=\"fa fa-circle\" aria-hidden=\"true\"></i>&nbsp;&nbsp;{{shipment.endLocationName}} </span>\n                <span fxFlex=14 ><i   *ngIf=false class=\"fa fa-location-arrow\" aria-hidden=\"true\"></i>&nbsp;&nbsp;</span>\n                <span fxFlex=14 *ngIf=\"shipment.trackingType=='Tracker'\"><i  style=\"color:rgb(27, 238, 245);\" class=\"fa fa fa-rss-square\" aria-hidden=\"true\" *ngIf=\"!shipment.currentLocationName\"></i>&nbsp;&nbsp;{{shipment.currentLocationName}}</span>\n                <span fxFlex=14 *ngIf=\"shipment.trackingType=='Manual'\"> <i  style=\"color:#bfc0c5\" class=\"fa fa fa-square\" aria-hidden=\"true\" *ngIf=\"!shipment.currentLocationName\"></i>&nbsp;&nbsp;{{shipment.currentLocationName}}</span>\n                <span fxFlex=14 *ngIf=\"shipment.trackingType=='Trip'\"> <i  style=\"color:rgb(27, 114, 245);\" class=\"fa fa fa-square\" aria-hidden=\"true\" *ngIf=\"!shipment.currentLocationName\"></i>&nbsp;&nbsp;{{shipment.currentLocationName}}</span>\n              </md-card>\n            </div>\n            <div fxFlex=0  class=\"custome-button\" style=\"margin-left: -40px;margin-top:8px\" *ngIf=\"shipment.trackingType=='Manual'\">\n                <md-slide-toggle [checked]=\"shipment['isToggle'] && switchShipment['isToggle']\" (change)=\"checkVehicle(shipment)\" ></md-slide-toggle>\n            </div>\n          </div>\n        </table>\n        </div>\n        <div *ngIf=\"isShowDetails\" style=\"background-color: aliceblue;padding: 8px 10px;width: 100%;max-width: 330px;margin-bottom: 10px;\" >\n          <i (click)=\"isShowDetails = false;closeDetails()\" style=\"float: right;margin-top: -7px;color: #9E9E9E;cursor:pointer\" class=\"fa fa-times-circle-o\" aria-hidden=\"true\"></i>\n          <div *ngIf=\"trackingType=='Manual'\"><app-manual-shipment-status></app-manual-shipment-status></div>\n          <div *ngIf=\"trackingType=='Tracker'\"><app-tracker-shipment-status></app-tracker-shipment-status></div>\n          <div *ngIf=\"trackingType=='Trip'\"><app-tracker-shipment-status></app-tracker-shipment-status></div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n"
+module.exports = "<div class=\"container\" style=\"min-width: 700px;box-sizing: border-box;\">\n    <md-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></md-spinner>    \n  <div style=\"display:flex;padding:20px 5px 10px 12px;\" >\n    <md-card class=\"cards-toggle\" (click)=\"selectedFilter = '';changeFilterList('')\" [style.background-color]=\"selectedFilter == ''?'#1976d2':''\"  [style.color]=\"selectedFilter == ''?'#FFFFFF':''\">\n      <div ><span >{{length}}</span></div>\n      <div style=\"margin-top: 6px;\" ><span  >All Shipments</span></div>\n    </md-card>\n\n    <md-card class=\"cards-toggle\" (click)=\"selectedFilter = 'active';changeFilterList('active')\" [style.background-color]=\"selectedFilter == 'active'?'#1976d2':''\"  [style.color]=\"selectedFilter == 'active'?'#FFFFFF':''\" style=\"margin-left: 20px\" >\n      <div  ><span > {{active}}</span></div>\n      <div style=\"margin-top: 6px;\" ><span  >Active</span></div>\n    </md-card>\n\n    <md-card class=\"cards-toggle\" (click)=\"selectedFilter = 'deliverd';changeFilterList('deliverd')\" [style.background-color]=\"selectedFilter == 'deliverd'?'#1976d2':''\"  [style.color]=\"selectedFilter == 'deliverd'?'#FFFFFF':''\" style=\"margin-left: 20px\" >\n      <div  ><span >{{deliverd}}</span></div>\n      <div  style=\"margin-top: 6px;\"><span  >Delivered</span></div>\n    </md-card>\n\n    <div style=\"display: flex;margin-left: auto;margin-right: 45px;\" >\n      <div class=\"doughnut-chart\" >\n        <div class=\"overlay\">\n          <i style=\"color: #1976d2\" class=\"fa fa-wifi\" aria-hidden=\"true\"></i>\n          <i style=\"color: #1976d2\" class=\"fa fa-mobile\" style=\"margin-left:6px\" aria-hidden=\"true\"></i>\n        </div>\n        <canvas baseChart\n                [options]=\"doughnutChartOptions\"\n                [data]=\"doughnutChartData\"\n                [chartType]=\"doughnutChartType\"\n                [colors]=\"doughnutColor\">\n        </canvas>\n      </div>\n\n      <div  style=\"margin-top: -10px;\">\n        <span style=\"font-size: 14px\">Tracking Status</span>\n        <div >\n          <span class=\"doughnut-chart-label\" style=\"background-color:#71a2ec;\" ></span>\n          <span style=\"font-size: 11px;\" >{{doughnutChartData[0]}}: Tracknet</span>\n        </div>\n        <div style=\"margin-top: 5px;\">\n          <span class=\"doughnut-chart-label\" style=\"background-color:#a1f2f5;\"></span>\n          <span style=\"font-size: 11px;\" >{{doughnutChartData[1]}}: Trip Tracker</span>\n        </div>\n\n        <div style=\"margin-top: 5px;\">\n          <span class=\"doughnut-chart-label\" style=\"background-color:#d7d8df;\"></span>\n          <span style=\"font-size: 11px;\" >{{doughnutChartData[2]}}: Manual Mode</span>\n        </div>\n      </div>\n    </div>\n    \n  </div>\n\n   \n  <div style=\"display: flex;padding: 5px 5px;margin-top: 10px\" >\n    <div class=\"custome-button\" >\n      <button md-button (click)=\"createNewShipment()\" >+Create New Shipment</button>\n      <button md-raised-button color=\"primary\" style=\"margin-left: 16px;\" >Import Shipment</button>\n    </div>\n    <div style=\"display: flex;padding: 5px 5px;margin-left: 13px;\">\n      <i   (click)=\"download()\" class=\"fa fa-download my-download\" aria-hidden=\"true\">\n        <span class=\"download-csv\">CSV</span>\n      </i>\n    </div>\n    \n    <div class=\"custome-button\" style=\"display: inline-flex;margin-left: auto;\" >\n      <button md-raised-button color=\"primary\" style=\"margin-right: 40px\">Share</button>\n      <div style=\"position:relative;margin-top: -1px;\" >\n        <i  class=\"fa fa-search \"  aria-hidden=\"true\" style=\"margin-top: 7px;right: 7px;position: absolute;font-size: 13px;color: black;\"></i>\n        <input myAutofocus  [(ngModel)]=\"search\" class=\"expand-search\"  placeholder=\"Search\">\n      </div>\n    </div>\n  </div>\n    \n   <!--************************ Switch Shipment dialog *********************************-->\n    <div *ngIf=\"isSwitchShipmentDialog\"  class=\"mycustomDialog\" style=\"padding-top: 70px;overflow:unset\">\n      <div class=\"modal-content\" style=\"width: 60%;min-width: 250px;overflow:unset;max-width: 560px;height:60vh;\">\n        <div class=\"modal-header\">\n          <span class=\"close\" (click)=\"closeToggle()\" >&times;</span>\n          <div>\n            <label>Switch Shipment</label>\n          </div>\n        </div>\n\n        <div  style=\"padding: 18px;font-size: 17px;margin-top:40px;margin-left:150px\" >\n          <md-spinner *ngIf=\"isSpin\" mode=\"indeterminate\" class=\"spinner\"></md-spinner>\n            <div *ngIf=\"isShowTrip\"><span><u>Tracknet Enabled </u></span></div>\n            <div style=\"margin-top: 21px;\">\n               <button [style.background-color]=\"trackerType == 'Trip'?'green':'gray'\" md-raised-button  class=\"change-mode-button\"  (click)=\"setTrackType('Trip')\" *ngIf=\"isShowTrip\">Tracknet</button>              \n               <button [style.background-color]=\"trackerType == 'Tracker'?'green':'gray'\" md-raised-button  class=\"change-mode-button\" style=\"margin-left: 20px;\" (click)=\"setTrackType('Tracker')\">Tracker</button>\n            </div>\n            <div style=\"margin-top: 15px\" *ngIf=\"trackerType == 'Tracker'\">\n              <md-input-container style=\"width: 250px;\" >\n                <input style=\"width: 100%;\" placeholder=\"Tracker IMEI\" mdInput [(ngModel)]=\"trackerIMEI\"  name=\"trackerIMEI\" id=\"trackerIMEI\">\n              </md-input-container>\n            </div>\n        </div>\n        <div style=\"margin-top: 40px;\">\n            <button md-raised-button  style=\"margin-left: 120px;margin-top: 30px\" (click)=\"closeToggle()\" >Cancel</button>\n            <button md-raised-button  style=\"margin-left: 60px;margin-top: 30px;width: 30%\" (click)=\"confirmSwitchShipment()\" >Switch Shipment</button>\n        </div>\n      </div>\n    </div>\n  <!-- close Switch Shipment dialog -->\n\n  <div style=\"padding: 25px 5px 0px 20px;min-width: 700px\">\n    <div style=\"box-shadow: 0px 4px 19px darkgrey;\">\n      <table style=\"border: 1px solid #e1e6ef;\">\n        <tr style=\"height: 50px\">\n          <td style=\"font-size:17px;border:none;\" ><label>All Shipments</label></td>\n          <td colspan=\"4\" style=\"float: right;padding: 0px\">\n            <md-paginator class=\"customePaginator\" [length]=\"length\"\n                          [pageSize]=\"pageSize\"\n                          [pageSizeOptions]=\"pageSizeOptions\"\n                          (page)=\"pageEvent = $event;selectTableHeight()\" >\n            </md-paginator>\n          </td>\n        </tr>\n         \n        <div fxLayout=\"row\" class=\"list-header1\" [style.width]=\"(isShowDetails || this.previousSelectedVehicle['_isShowDetails'])?'calc(160% - 330px)':'160%'\">\n          <span fxFlex=3><md-checkbox class=\"customCheckBox\" [(ngModel)]=\"s\" (change)=\"allChecked()\" ></md-checkbox></span>\n          <span fxFlex=14 >Shipment No</span>\n          <span fxFlex=12 >Vehicle No</span>\n          <span fxFlex=14 >Shipment Status</span>\n          <span fxFlex=15  >Consignor</span>\n          <span fxFlex=14  >Consignee</span>\n          <span fxFlex=14 >Distance to go</span>\n          <span fxFlex=14  >Current Status</span>\n      </div>\n      </table>\n      <div  style=\"overflow:auto;max-height:calc(100vh - 340px);display:flex\" >\n        <div style=\"overflow-y:auto;overflow-x:hidden;max-height:calc(100vh - 340px); width: 100%;margin-right: -1px;\" >\n        <table  style=\"border-top: 1px solid #e1e6ef;border-bottom: 4px solid rgba(225, 230, 239, 0);\">\n          <div fxLayout=\"row\" *ngFor=\"let shipment of selectedVehicleList | searchFilter : ['vehicleRegistrationNumber','shipmentNo', search] | shipmentType: ['_shipmentStatus', selectedFilter] | orderBy:['plannedStartTime']\">\n            <div fxFlex=2 style=\"margin-top: 10px;margin-left: 10px;\">\n              <span> <md-checkbox class=\"customCheckBox\" [(ngModel)]=\"shipment.isChecked\" (change)=\"allTestChecked()\" ></md-checkbox></span>                \n            </div>\n            <div fxFlex=97 >\n              <md-card   (click)=\"isShowDetails = true;selectedShipmentDetail(shipment);changeBgColor(shipment)\"\n              [style.background-color]=\"shipment._isShowDetails?'aliceblue':''\" style=\"cursor: alias;padding: 12px;\"  fxLayout=\"row\" class=\"list-body1\" >      \n                <span fxFlex=13 *ngIf=\"shipment.shipmentNo!=null\">{{shipment.shipmentNo}}</span>\n                <span fxFlex=13 *ngIf=\"shipment.shipmentNoExtended!=null\">{{shipment.shipmentNoExtended}}</span>\n                \n                <span fxFlex=12 ><i   class=\"fa fa-truck\" aria-hidden=\"true\"></i>&nbsp;&nbsp;{{shipment.vehicleRegistrationNumber}}</span>\n                <span fxFlex=14 *ngIf=\"shipment.vts=='EnrouteForPickUp'\"><i   aria-hidden=\"true\">Enroute For Pickup</i></span>\n                <span fxFlex=14 *ngIf=\"shipment.vts=='AtPickUpPoint'\"><i   aria-hidden=\"true\">At Pickup Point</i></span>\n                <span fxFlex=14 *ngIf=\"shipment.vts=='EnrouteForDestination'\"><i   aria-hidden=\"true\">Enroute For Delivery</i></span>\n                <span  fxFlex=14 *ngIf=\"shipment.vts=='AtDestination' && shipment.shipmentState=='Started'\"><i   aria-hidden=\"true\">At Destination</i></span>\n                <span  fxFlex=14 *ngIf=\"shipment.vts=='AtDestination' && shipment.shipmentState=='Completed'\"><i   aria-hidden=\"true\">Delivered</i></span>\n                \n                <!-- <span style=\"margin-left: 45px\" *ngIf=\"shipment.vts=='AtDestination'\"><i   aria-hidden=\"true\">Enroute For Pickup</i></span>                    -->\n                <span  fxFlex=14><i  class=\"fa fa-map-marker\" aria-hidden=\"true\"></i>&nbsp;&nbsp;{{shipment.startLocationName}} </span>\n                <span fxFlex=13 ><i   class=\"fa fa-circle\" aria-hidden=\"true\"></i>&nbsp;&nbsp;{{shipment.endLocationName}} </span>\n                <span fxFlex=14 ><i   *ngIf=false class=\"fa fa-location-arrow\" aria-hidden=\"true\"></i>&nbsp;&nbsp;</span>\n                <span fxFlex=14 *ngIf=\"shipment.trackingType=='Tracker'\"><i  style=\"color:rgb(27, 238, 245);\" class=\"fa fa fa-rss-square\" aria-hidden=\"true\"  ></i>&nbsp;&nbsp;{{shipment.currentLocationName}}</span>\n                <span fxFlex=14 *ngIf=\"shipment.trackingType=='Manual'\"> <i  style=\"color:#bfc0c5\" class=\"fa fa fa-square\" aria-hidden=\"true\"  ></i>&nbsp;&nbsp;{{shipment.currentLocationName}}</span>\n                <span fxFlex=14 *ngIf=\"shipment.trackingType=='Trip'\"> <i  style=\"color:rgb(27, 114, 245);\" class=\"fa fa fa-square\" aria-hidden=\"true\" ></i>&nbsp;&nbsp;{{shipment.currentLocationName}}</span>\n              </md-card>\n            </div>\n            <div fxFlex=1  class=\"custome-button\" style=\"margin-left: -45px;margin-top:8px\" *ngIf=\"shipment.trackingType=='Manual'\">\n                <md-slide-toggle [checked]=\"shipment['isToggle'] && switchShipment['isToggle']\" (change)=\"checkVehicle(shipment)\" ></md-slide-toggle>\n            </div>\n          </div>\n        </table>\n        </div>\n        <div *ngIf=\"isShowDetails\" style=\"background-color: aliceblue;padding: 8px 10px;width: 100%;max-width: 330px;margin-bottom: 10px;\" >\n          <i (click)=\"isShowDetails = false;closeDetails()\" style=\"float: right;margin-top: -7px;color: #9E9E9E;cursor:pointer\" class=\"fa fa-times-circle-o\" aria-hidden=\"true\"></i>\n          <div *ngIf=\"trackingType=='Manual'\"><app-manual-shipment-status></app-manual-shipment-status></div>\n          <div *ngIf=\"trackingType=='Tracker'\"><app-tracker-shipment-status></app-tracker-shipment-status></div>\n          <div *ngIf=\"trackingType=='Trip'\"><app-tracker-shipment-status></app-tracker-shipment-status></div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n"
 
 /***/ }),
 
@@ -3832,12 +3856,13 @@ var ShipmentStatusComponent = (function () {
         this.unSub_switchShipment = null;
         this.isShowDetails = false;
         this.isSwitchShipmentDialog = false;
-        this.selectedFilter = 'all';
+        this.selectedFilter = '';
         this.shipmentId = [];
         this.allShipment = [];
         this.selectedVehicleList = [];
         this.previousSelectedVehicle = { _isShowDetails: false };
         this.search = '';
+        this.filterShipmentList = [];
         this.active = 0;
         this.deliverd = 0;
         this.isSpinner = true;
@@ -3860,16 +3885,18 @@ var ShipmentStatusComponent = (function () {
                     _this.deliverd = 0;
                     for (var i = 0; i < _this.allShipment.length; i++) {
                         _this.allShipment[i]['isToggle'] = false;
+                        _this.allShipment[i]['isChecked'] = false;
                         if (_this.allShipment[i]['shipmentState'] == 'Created' || _this.allShipment[i]['shipmentState'] == 'Started') {
                             _this.active = _this.active + 1;
-                            _this.allShipment[i]['_shipmentStatus'] == 'active';
+                            _this.allShipment[i]['_shipmentStatus'] = 'active';
                         }
                         if (_this.allShipment[i]['shipmentState'] == 'Completed') {
                             _this.deliverd = _this.deliverd + 1;
-                            _this.allShipment[i]['_shipmentStatus'] == 'deliverd';
+                            _this.allShipment[i]['_shipmentStatus'] = 'deliverd';
                         }
                     }
                     // this.countShipment(this.allShipment);
+                    _this.changeFilterList('');
                     _this.isSpinner = false;
                 }
                 else {
@@ -3877,8 +3904,8 @@ var ShipmentStatusComponent = (function () {
                     _this.isSpinner = false;
                 }
             }
-            _this.selectedVehicleList = _this.allShipment.slice(0, _this.pageSize);
             _this.length = _this.allShipment.length;
+            console.log(_this.allShipment);
         });
         this.unSub_checkVehicle = this._store.select('checkVehicle').subscribe(function (value) {
             if (value != null) {
@@ -3931,14 +3958,55 @@ var ShipmentStatusComponent = (function () {
     // }
     ShipmentStatusComponent.prototype.ngOnInit = function () {
     };
+    ShipmentStatusComponent.prototype.allTestChecked = function () {
+        console.log("allTestChecked");
+        var l = 0;
+        for (var i = 0; i < this.filterShipmentList.length; i++) {
+            if (this.filterShipmentList[i]['isChecked']) {
+                l = l + 1;
+            }
+        }
+        if (l == this.filterShipmentList.length) {
+            this.s = true;
+        }
+        else
+            this.s = false;
+    };
+    ShipmentStatusComponent.prototype.allChecked = function () {
+        if (this.s == true) {
+            for (var i = 0; i < this.filterShipmentList.length; i++) {
+                this.filterShipmentList[i]['isChecked'] = true;
+            }
+        }
+        if (this.s == false) {
+            for (var i = 0; i < this.filterShipmentList.length; i++) {
+                this.filterShipmentList[i]['isChecked'] = false;
+            }
+        }
+    };
+    ShipmentStatusComponent.prototype.changeFilterList = function (value) {
+        this.s = false;
+        this.filterShipmentList = [];
+        for (var i = 0; i < this.allShipment.length; i++) {
+            this.allShipment[i]['isChecked'] = false;
+            if (value == '') {
+                this.filterShipmentList.push(this.allShipment[i]);
+            }
+            if (this.allShipment[i]['_shipmentStatus'] == value) {
+                this.filterShipmentList.push(this.allShipment[i]);
+            }
+        }
+        this.selectedVehicleList = this.filterShipmentList.slice(0, this.pageSize);
+        console.log(this.filterShipmentList);
+    };
     ShipmentStatusComponent.prototype.confirmSwitchShipment = function () {
         var obj;
         if (this.trackerType == 'Trip') {
             obj = {
                 "shipmentId": this.switchShipment.shipmentId,
                 "trackingType": "Trip",
-                "deviceImei": this.vehicleObj.vtsDeviceId,
-                "vehicleId": this.vehicleObj.vehicleId
+                // "deviceImei":this.vehicleObj.vtsDeviceId,
+                "vehicleId": this.vehicleObj['uuid']
             };
         }
         if (this.trackerType == 'Tracker') {
@@ -4038,26 +4106,28 @@ var ShipmentStatusComponent = (function () {
         var endTime;
         var distance = 0;
         console.log("done");
-        for (var i = 0; i < this.allShipment.length; i++) {
-            consigner = this.allShipment[i]['startLocationName'];
-            consignee = this.allShipment[i]['endLocationName'];
-            status = this.allShipment[i]['vts'];
-            vehicleNo = this.allShipment[i]['vehicleRegistrationNumber'];
-            curLoc = this.allShipment[i]['currentLocationName'];
-            startTime = new Date(this.allShipment[i]['plannedStartTime']);
-            // endTime=this.allShipment[i];
-            // distance=this.allShipment[i];
-            var temp = {
-                'Vehicle Number': vehicleNo,
-                'Shipment Status': status,
-                'Consigner': consigner,
-                'Consignee': consignee,
-                'Current Location': curLoc,
-                'Start Time': startTime.getDate() + " " + this.getMonthName(startTime.getMonth()) + " " + startTime.getFullYear() + " " + this.to12HourFormat(startTime),
-                // 'End Time':endTime.getDate()+" "+this.getMonthName(endTime.getMonth())+" "+endTime.getFullYear()+" "+this.to12HourFormat(endTime),
-                'Distance': (distance / 1000).toFixed(2) + " km",
-            };
-            obj.push(temp);
+        for (var i = 0; i < this.filterShipmentList.length; i++) {
+            if (this.filterShipmentList[i]['isChecked'] == true) {
+                consigner = this.filterShipmentList[i]['startLocationName'];
+                consignee = this.filterShipmentList[i]['endLocationName'];
+                status = this.filterShipmentList[i]['vts'];
+                vehicleNo = this.filterShipmentList[i]['vehicleRegistrationNumber'];
+                curLoc = this.filterShipmentList[i]['currentLocationName'];
+                startTime = new Date(this.filterShipmentList[i]['plannedStartTime']);
+                // endTime=this.allShipment[i];
+                // distance=this.allShipment[i];
+                var temp = {
+                    'Vehicle Number': vehicleNo,
+                    'Shipment Status': status,
+                    'Consigner': consigner,
+                    'Consignee': consignee,
+                    'Current Location': curLoc,
+                    'Start Time': startTime.getDate() + " " + this.getMonthName(startTime.getMonth()) + " " + startTime.getFullYear() + " " + this.to12HourFormat(startTime),
+                    // 'End Time':endTime.getDate()+" "+this.getMonthName(endTime.getMonth())+" "+endTime.getFullYear()+" "+this.to12HourFormat(endTime),
+                    'Distance': (distance / 1000).toFixed(2) + " km",
+                };
+                obj.push(temp);
+            }
         }
         var csvData = this.ConvertToCSV(obj);
         // console.log(csvData);
@@ -4271,84 +4341,86 @@ var TrackerShipmentStatusComponent = (function () {
             console.log(_this.selectedShipment);
             _this.selectedShipmentClone = value['res']; // create new object
             console.log(_this.selectedShipmentClone);
-            if (_this.selectedShipment['vts'] != null) {
-                _this.selectedShipment['vts']['_stateDuration'] = _this.msToTime(_this.selectedShipment['vts']['endTime'] - _this.selectedShipment['vts']['startTime']);
-                if (_this.selectedShipment['currentShipment'] != null) {
-                    _this.selectedShipment['currentShipment']['_transiteTime'] = _this.msToTime(_this.selectedShipment['currentShipment']['planedEndTime'] - _this.selectedShipment['currentShipment']['planedStartTime']);
-                    console.log(_this.selectedShipment['currentShipment']['_transiteTime']);
-                }
-                if (_this.selectedShipment['vts']['state'] == 'WaitingForLoad') {
-                    _this.vehicleState = 'Waiting For Load';
-                }
-                else if (_this.selectedShipment['vts']['state'] == 'EnrouteForPickUp') {
-                    _this.vehicleState = 'Enroute for Pickup';
-                }
-                else if (_this.selectedShipment['vts']['state'] == 'AtPickUpPoint') {
-                    _this.vehicleState = 'At Pickup Point';
-                }
-                else if (_this.selectedShipment['vts']['state'] == 'EnrouteForDestination') {
-                    _this.vehicleState = 'Enroute for Delivery';
+            if (_this.selectedShipment != null) {
+                if (_this.selectedShipment['vts'] != null) {
+                    _this.selectedShipment['vts']['_stateDuration'] = _this.msToTime(_this.selectedShipment['vts']['endTime'] - _this.selectedShipment['vts']['startTime']);
                     if (_this.selectedShipment['currentShipment'] != null) {
-                        _this.selectedShipment['currentShipment'].startLocation['_loadingDuration'] = _this.msToTime(_this.selectedShipment['currentShipment'].startLocation['tillTime'] - _this.selectedShipment['currentShipment'].startLocation['fromTime']);
+                        _this.selectedShipment['currentShipment']['_transiteTime'] = _this.msToTime(_this.selectedShipment['currentShipment']['planedEndTime'] - _this.selectedShipment['currentShipment']['planedStartTime']);
+                        console.log(_this.selectedShipment['currentShipment']['_transiteTime']);
                     }
-                    console.log(_this.selectedShipment['movementLegs']);
-                    if (_this.selectedShipment['movementLegs'] != null) {
-                        var totalTravlingDistance = 0;
-                        var totalTravlingTime = 0;
-                        var stopCount = 0;
-                        var disconnectedCount = 0;
-                        for (var i = 0; i < _this.selectedShipment['movementLegs'].length; i++) {
-                            totalTravlingDistance = totalTravlingDistance + _this.selectedShipment['movementLegs'][i]['totalDistance'];
-                            totalTravlingTime = totalTravlingTime + _this.selectedShipment['movementLegs'][i]['totalTime'];
-                            _this.selectedShipment['movementLegs'][i]['_totalDuration'] = _this.msToTime(_this.selectedShipment['movementLegs'][i]['totalTime']);
-                            if (_this.selectedShipment['movementLegs'][i]['state'] == 'Stopped') {
-                                stopCount++;
-                            }
-                            if (_this.selectedShipment['movementLegs'][i]['state'] == 'Disconnected') {
-                                disconnectedCount++;
-                            }
+                    if (_this.selectedShipment['vts']['state'] == 'WaitingForLoad') {
+                        _this.vehicleState = 'Waiting For Load';
+                    }
+                    else if (_this.selectedShipment['vts']['state'] == 'EnrouteForPickUp') {
+                        _this.vehicleState = 'Enroute for Pickup';
+                    }
+                    else if (_this.selectedShipment['vts']['state'] == 'AtPickUpPoint') {
+                        _this.vehicleState = 'At Pickup Point';
+                    }
+                    else if (_this.selectedShipment['vts']['state'] == 'EnrouteForDestination') {
+                        _this.vehicleState = 'Enroute for Delivery';
+                        if (_this.selectedShipment['currentShipment'] != null) {
+                            _this.selectedShipment['currentShipment'].startLocation['_loadingDuration'] = _this.msToTime(_this.selectedShipment['currentShipment'].startLocation['tillTime'] - _this.selectedShipment['currentShipment'].startLocation['fromTime']);
                         }
-                        _this.movementLogs.totalTravlingDistance = totalTravlingDistance;
-                        _this.movementLogs._totalTravlingDistance = totalTravlingDistance / 1000;
-                        _this.movementLogs.totalTravlingTime = totalTravlingTime;
-                        _this.movementLogs._totalTravlingTime = _this.msToTime(totalTravlingTime);
-                        _this.movementLogs.disconnected = disconnectedCount;
-                        _this.movementLogs.stopped = stopCount;
-                        console.log(_this.movementLogs);
-                    }
-                }
-                else if (_this.selectedShipment['vts']['state'] == 'AtDestination') {
-                    _this.vehicleState = 'At Delivery Point';
-                    if (_this.selectedShipment['currentShipment'] != null) {
-                        _this.selectedShipment['currentShipment'].startLocation['_loadingDuration'] = _this.msToTime(_this.selectedShipment['currentShipment'].startLocation['tillTime'] - _this.selectedShipment['currentShipment'].startLocation['fromTime']);
-                        _this.tillTimeCheck = _this.selectedShipment['currentShipment'].endLocation['tillTime'];
-                    }
-                    if (_this.selectedShipment['movementLegs'] != null) {
-                        var totalTravlingDistance = 0;
-                        var totalTravlingTime = 0;
-                        var stopCount = 0;
-                        var disconnectedCount = 0;
-                        for (var i = 0; i < _this.selectedShipment['movementLegs'].length; i++) {
-                            totalTravlingDistance = totalTravlingDistance + _this.selectedShipment['movementLegs'][i]['totalDistance'];
-                            totalTravlingTime = totalTravlingTime + _this.selectedShipment['movementLegs'][i]['totalTime'];
-                            _this.selectedShipment['movementLegs'][i]['_totalDuration'] = _this.msToTime(_this.selectedShipment['movementLegs'][i]['totalTime']);
-                            if (_this.selectedShipment['movementLegs'][i]['state'] == 'Stopped') {
-                                stopCount++;
+                        console.log(_this.selectedShipment['movementLegs']);
+                        if (_this.selectedShipment['movementLegs'] != null) {
+                            var totalTravlingDistance = 0;
+                            var totalTravlingTime = 0;
+                            var stopCount = 0;
+                            var disconnectedCount = 0;
+                            for (var i = 0; i < _this.selectedShipment['movementLegs'].length; i++) {
+                                totalTravlingDistance = totalTravlingDistance + _this.selectedShipment['movementLegs'][i]['totalDistance'];
+                                totalTravlingTime = totalTravlingTime + _this.selectedShipment['movementLegs'][i]['totalTime'];
+                                _this.selectedShipment['movementLegs'][i]['_totalDuration'] = _this.msToTime(_this.selectedShipment['movementLegs'][i]['totalTime']);
+                                if (_this.selectedShipment['movementLegs'][i]['state'] == 'Stopped') {
+                                    stopCount++;
+                                }
+                                if (_this.selectedShipment['movementLegs'][i]['state'] == 'Disconnected') {
+                                    disconnectedCount++;
+                                }
                             }
-                            if (_this.selectedShipment['movementLegs'][i]['state'] == 'Disconnected') {
-                                disconnectedCount++;
-                            }
+                            _this.movementLogs.totalTravlingDistance = totalTravlingDistance;
+                            _this.movementLogs._totalTravlingDistance = totalTravlingDistance / 1000;
+                            _this.movementLogs.totalTravlingTime = totalTravlingTime;
+                            _this.movementLogs._totalTravlingTime = _this.msToTime(totalTravlingTime);
+                            _this.movementLogs.disconnected = disconnectedCount;
+                            _this.movementLogs.stopped = stopCount;
+                            console.log(_this.movementLogs);
                         }
-                        _this.movementLogs.totalTravlingDistance = totalTravlingDistance;
-                        _this.movementLogs._totalTravlingDistance = totalTravlingDistance / 1000;
-                        _this.movementLogs.totalTravlingTime = totalTravlingTime;
-                        _this.movementLogs._totalTravlingTime = _this.msToTime(totalTravlingTime);
-                        _this.movementLogs.disconnected = disconnectedCount;
-                        _this.movementLogs.stopped = stopCount;
-                        console.log(_this.movementLogs);
                     }
+                    else if (_this.selectedShipment['vts']['state'] == 'AtDestination') {
+                        _this.vehicleState = 'At Delivery Point';
+                        if (_this.selectedShipment['currentShipment'] != null) {
+                            _this.selectedShipment['currentShipment'].startLocation['_loadingDuration'] = _this.msToTime(_this.selectedShipment['currentShipment'].startLocation['tillTime'] - _this.selectedShipment['currentShipment'].startLocation['fromTime']);
+                            _this.tillTimeCheck = _this.selectedShipment['currentShipment'].endLocation['tillTime'];
+                        }
+                        if (_this.selectedShipment['movementLegs'] != null) {
+                            var totalTravlingDistance = 0;
+                            var totalTravlingTime = 0;
+                            var stopCount = 0;
+                            var disconnectedCount = 0;
+                            for (var i = 0; i < _this.selectedShipment['movementLegs'].length; i++) {
+                                totalTravlingDistance = totalTravlingDistance + _this.selectedShipment['movementLegs'][i]['totalDistance'];
+                                totalTravlingTime = totalTravlingTime + _this.selectedShipment['movementLegs'][i]['totalTime'];
+                                _this.selectedShipment['movementLegs'][i]['_totalDuration'] = _this.msToTime(_this.selectedShipment['movementLegs'][i]['totalTime']);
+                                if (_this.selectedShipment['movementLegs'][i]['state'] == 'Stopped') {
+                                    stopCount++;
+                                }
+                                if (_this.selectedShipment['movementLegs'][i]['state'] == 'Disconnected') {
+                                    disconnectedCount++;
+                                }
+                            }
+                            _this.movementLogs.totalTravlingDistance = totalTravlingDistance;
+                            _this.movementLogs._totalTravlingDistance = totalTravlingDistance / 1000;
+                            _this.movementLogs.totalTravlingTime = totalTravlingTime;
+                            _this.movementLogs._totalTravlingTime = _this.msToTime(totalTravlingTime);
+                            _this.movementLogs.disconnected = disconnectedCount;
+                            _this.movementLogs.stopped = stopCount;
+                            console.log(_this.movementLogs);
+                        }
+                    }
+                    console.log(_this.selectedShipment);
                 }
-                console.log(_this.selectedShipment);
             }
         });
         this.unSub_closeDialog = _store.select('closeDialog').subscribe(function (value) {
@@ -4884,7 +4956,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/user-profile/user-profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n  <div class=\"profile-container-desktop\" >\n    <img class=\"logo\" src=\"../../../../images/fretron_logo.png\" alt=\"Avatar\"  >\n    <img class=\"profile-pic\" src=\"../../../../images/default-profile.png\" alt=\"profile\"  >\n    <div style=\"display: grid;position: absolute;top:81px;left: 23px;color:white\">\n      <span style=\"font-size: 18px;margin-bottom: 3px;\">{{customerName}}</span>\n      <span style=\"font-size: 12px\">{{customerMobile}}</span>\n    </div>\n  </div>\n  <div style=\"margin: 10px 0px 10px 10px;overflow: auto;max-height: 250px;\" >\n    <div class=\"org-list-element\" *ngFor=\"let currentOrg of orgList\" (click)=\"switchOrg(currentOrg)\" >\n      <div  style=\"padding: 5px;\" [style.background-color]=\"(currentOrgId === currentOrg['uuid']? 'lightblue': 'white')\">\n        <span >{{currentOrg['organisationName']}}</span>\n      </div>\n    </div>\n  </div>\n  <div style=\"margin-bottom: -8px;width: 95%;text-align: right;\" >\n    <button  (click)=\"goToAddOrganisation()\" md-button >Add Organisation</button>\n    <button  (click)=\"logout();\" md-button >Logout</button>\n  </div>\n</div>\n\n\n<!-- ************************ mobile view code start here *2* ************************************** -->\n<!--<div *ngIf=\"viewType =='mobile'\" class=\"profile-container\" >-->\n  <!--<img class=\"logo\" src=\"../../../../images/fretron_logo.png\" alt=\"Avatar\"  >-->\n  <!--<img class=\"profile-pic\" src=\"../../../../images/default-profile.png\" alt=\"profile\"  >-->\n  <!--<div style=\"display: grid;position: absolute;top:81px;left: 23px;color:white\">-->\n    <!--<span style=\"font-size: 18px;margin-bottom: 3px;\">{{customerName}}</span>-->\n    <!--<span style=\"font-size: 12px\">{{customerMobile}}</span>-->\n  <!--</div>-->\n  <!--<div class=\"user-org-details\" (click)=\"isOrgList =!isOrgList\">-->\n    <!--<button md-icon-button style=\"cursor: pointer;z-index: 1000;font-size:15px;color: #ffffff\"   >-->\n      <!--<span *ngIf=\"isOrgList\" >&#9650;</span>-->\n      <!--<span *ngIf=\"!isOrgList\">&#9660;</span>-->\n    <!--</button>-->\n  <!--</div>-->\n<!--</div>-->\n<!--<div *ngIf=\"viewType =='mobile' && isOrgList\" class=\"org-list\">-->\n  <!--<div class=\"org-list-element\" *ngFor=\"let currentOrg of orgList\" (click)=\"switchOrg(currentOrg)\" >-->\n    <!--<span >{{currentOrg['organisationName']}}</span>-->\n  <!--</div>-->\n<!--</div>-->\n<!-- ************************ end mobile view code start here  ************************************** -->\n"
+module.exports = "<div>\n  <div class=\"profile-container-desktop\" >\n    <img class=\"logo\" src=\"../../../../images/fretron_logo.png\" alt=\"Avatar\"  >\n    <img class=\"profile-pic\" src=\"../../../../images/default-profile.png\" alt=\"profile\"  >\n    <div style=\"display: grid;position: absolute;top:81px;left: 23px;color:white\">\n      <span style=\"font-size: 18px;margin-bottom: 3px;\">{{customerName}}</span>\n      <span style=\"font-size: 12px\">{{customerMobile}}</span>\n    </div>\n  </div>\n  <div style=\"margin: 10px 0px 10px 10px;overflow: auto;max-height: 250px;\" >\n    <div class=\"org-list-element\" *ngFor=\"let currentOrg of orgList\" (click)=\"switchOrg(currentOrg)\" >\n      <div  style=\"padding: 5px;\" [style.background-color]=\"(currentOrgId === currentOrg['uuid']? 'lightblue': 'white')\">\n        <span >{{currentOrg['organisationName']}}</span>\n      </div>\n    </div>\n    <div *ngIf=\"isShowGodFeatures\">\n      <div class=\"org-list-element\" (click)=\"switchOrg({uuid:'FRETRON_GOD_TRANSPORTER',type:'TRANSPORTER'},true)\" >\n        <div  style=\"padding: 5px;\" [style.background-color]=\"(currentOrgId === 'FRETRON_GOD_TRANSPORTER'? 'lightblue': 'white')\">\n          <span >SUPER USER TRANSPORTER</span>\n        </div>\n      </div>\n  \n      <div class=\"org-list-element\" (click)=\"switchOrg({uuid:'FRETRON_GOD_FO',type:'FLEET_OWNER'},true)\" >\n        <div  style=\"padding: 5px;\" [style.background-color]=\"(currentOrgId === 'FRETRON_GOD_FO'? 'lightblue': 'white')\">\n          <span>SUPER USER FLEET OWNER</span>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div style=\"margin-bottom: -8px;width: 95%;text-align: right;\" >\n    <button  (click)=\"goToAddOrganisation()\" md-button >Add Organisation</button>\n    <button  (click)=\"logout();\" md-button >Logout</button>\n  </div>\n</div>\n\n\n<!-- ************************ mobile view code start here *2* ************************************** -->\n<!--<div *ngIf=\"viewType =='mobile'\" class=\"profile-container\" >-->\n  <!--<img class=\"logo\" src=\"../../../../images/fretron_logo.png\" alt=\"Avatar\"  >-->\n  <!--<img class=\"profile-pic\" src=\"../../../../images/default-profile.png\" alt=\"profile\"  >-->\n  <!--<div style=\"display: grid;position: absolute;top:81px;left: 23px;color:white\">-->\n    <!--<span style=\"font-size: 18px;margin-bottom: 3px;\">{{customerName}}</span>-->\n    <!--<span style=\"font-size: 12px\">{{customerMobile}}</span>-->\n  <!--</div>-->\n  <!--<div class=\"user-org-details\" (click)=\"isOrgList =!isOrgList\">-->\n    <!--<button md-icon-button style=\"cursor: pointer;z-index: 1000;font-size:15px;color: #ffffff\"   >-->\n      <!--<span *ngIf=\"isOrgList\" >&#9650;</span>-->\n      <!--<span *ngIf=\"!isOrgList\">&#9660;</span>-->\n    <!--</button>-->\n  <!--</div>-->\n<!--</div>-->\n<!--<div *ngIf=\"viewType =='mobile' && isOrgList\" class=\"org-list\">-->\n  <!--<div class=\"org-list-element\" *ngFor=\"let currentOrg of orgList\" (click)=\"switchOrg(currentOrg)\" >-->\n    <!--<span >{{currentOrg['organisationName']}}</span>-->\n  <!--</div>-->\n<!--</div>-->\n<!-- ************************ end mobile view code start here  ************************************** -->\n"
 
 /***/ }),
 
@@ -4931,6 +5003,7 @@ var UserProfile = (function () {
         this.customerMobile = '';
         this.currentOrgId = '';
         this.userDetails = null;
+        this.isShowGodFeatures = false;
         this.viewType = '';
         this.isOrgList = false;
         this.authToken = null;
@@ -4960,20 +5033,25 @@ var UserProfile = (function () {
     UserProfile.prototype.customerDetail = function (token) {
         var userDetails = {};
         this.userDetails = null;
-        // let base64Url = token.split('.')[0];
-        // let base64 = base64Url.replace('-', '+').replace('_', '/');
-        // userDetails['userType']=JSON.parse(window.atob(base64));
-        // base64Url = token.split('.')[1];
-        // base64 = base64Url.replace('-', '+').replace('_', '/');
-        // userDetails['details']=JSON.parse(window.atob(base64));
-        var base64Url = token.split('.')[1];
+        var base64Url = token.split('.')[0];
         var base64 = base64Url.replace('-', '+').replace('_', '/');
-        userDetails = JSON.parse(window.atob(base64));
-        userDetails['id'] = userDetails['userId'];
+        userDetails['userType'] = JSON.parse(window.atob(base64));
+        base64Url = token.split('.')[1];
+        base64 = base64Url.replace('-', '+').replace('_', '/');
+        userDetails['details'] = JSON.parse(window.atob(base64));
+        userDetails['details']['id'] = userDetails['details']['userId'];
         this.userDetails = userDetails;
-        this.customerName = userDetails['name'];
-        this.customerMobile = userDetails['mobileNumber'];
-        this.currentOrgId = userDetails['orgId'];
+        this.customerName = userDetails['details']['name'];
+        this.customerMobile = userDetails['details']['mobileNumber'];
+        this.currentOrgId = userDetails['details']['orgId'];
+        if (userDetails['details']['isGod'] != null || userDetails['details']['isGod'] != undefined) {
+            console.log("isGod not null or undefined");
+            console.log(userDetails['details']['isGod']);
+            if (userDetails['details']['isGod'] == true) {
+                this.isShowGodFeatures = true;
+            }
+        }
+        this.localStorageService.set("ORGID", this.currentOrgId);
         console.log(this.userDetails);
         this._store.dispatch({ type: "CUSTOMER_DETAILS", payload: { customer: this.userDetails } });
     };
@@ -5199,9 +5277,9 @@ var ShipmentFilter = (function () {
         if (config[1] == '') {
             return input;
         }
+        console.log(input);
         console.log(config);
-        console.log(config);
-        var list = input.filter(function (u) { return u['_shipmentState'][config[0]].toUpperCase().indexOf(config[1].toUpperCase()) != -1; });
+        var list = input.filter(function (u) { return u[config[0]].toUpperCase().indexOf(config[1].toUpperCase()) != -1; });
         {
             return list;
         }
@@ -5213,6 +5291,46 @@ ShipmentFilter = __decorate([
 ], ShipmentFilter);
 
 //# sourceMappingURL=shipmentFilter.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/filters/sortFilter.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SortFilter; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var SortFilter = (function () {
+    function SortFilter() {
+    }
+    SortFilter.prototype.transform = function (input, config) {
+        input.sort(function (a, b) {
+            if (a[config] < b[config]) {
+                return -1;
+            }
+            else if (a[config] > b[config]) {
+                return 1;
+            }
+            else {
+                return 0;
+            }
+        });
+        return input;
+    };
+    return SortFilter;
+}());
+SortFilter = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Pipe"])({ name: 'orderBy', pure: false })
+], SortFilter);
+
+//# sourceMappingURL=sortFilter.js.map
 
 /***/ }),
 
@@ -5659,6 +5777,9 @@ var DeviceServices = (function () {
                 //  console.log(response);
                 if (response['status'] >= 200 && response['status'] < 300) {
                     _this._store.dispatch({ type: "ADD_DEVICE", payload: { error: '', res: response } });
+                    setTimeout(function () {
+                        _this.allDevicesList.emit();
+                    }, 100);
                 }
                 else {
                     _this._store.dispatch({ type: "ADD_DEVICE", payload: { error: 'X', errorMsg: "Server error " + response.error } });
