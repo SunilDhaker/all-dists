@@ -183,7 +183,7 @@ var stores = { shipmentIdList: __WEBPACK_IMPORTED_MODULE_29__reducers_info_store
     updateUserStatusResponse: __WEBPACK_IMPORTED_MODULE_47__reducers_user_management_store__["d" /* updateUserStatusResponse */],
     existingUserResponse: __WEBPACK_IMPORTED_MODULE_47__reducers_user_management_store__["b" /* existingUserResponse */],
     switchShipment: __WEBPACK_IMPORTED_MODULE_29__reducers_info_store__["o" /* switchShipment */],
-    addDevice: __WEBPACK_IMPORTED_MODULE_29__reducers_info_store__["a" /* addDevice */]
+    addDevice: __WEBPACK_IMPORTED_MODULE_29__reducers_info_store__["a" /* addDevice */],
 };
 var AppModule = (function () {
     function AppModule() {
@@ -641,7 +641,9 @@ var DeviceDashboard = (function () {
             if (value != null) {
                 if (value['error'] == '') {
                     //for Error Handaling
-                    _this.openSnackBar("Device added successfully");
+                    if (value['res']['status'] >= 200 && value['res']['status'] < 300) {
+                        _this.openSnackBar("Device added successfully");
+                    }
                 }
                 else {
                     console.log(value['errorMsg']);
@@ -701,8 +703,8 @@ var DeviceDashboard = (function () {
     DeviceDashboard.prototype.ngOnDestroy = function () {
         if (typeof this.unSub_allDeviceList != 'undefined' && this.unSub_allDeviceList != null && this.unSub_allDeviceList != undefined)
             this.unSub_allDeviceList.unsubscribe();
-        // if (typeof this.unSub_allActiveDeviceList != 'undefined' && this.unSub_allActiveDeviceList != null && this.unSub_allActiveDeviceList != undefined)
-        // this.unSub_allActiveDeviceList.unsubscribe();
+        // if (typeof this.unSub_addDevice != 'undefined' && this.unSub_addDevice != null && this.unSub_addDevice != undefined)
+        // this.unSub_addDevice.unsubscribe();
         // if (typeof this.unSub_allAvailableDeviceList != 'undefined' && this.unSub_allAvailableDeviceList != null && this.unSub_allAvailableDeviceList != undefined)
         // this.unSub_allAvailableDeviceList.unsubscribe();
         // if (typeof this.unSub_allRepairingDeviceList != 'undefined' && this.unSub_allRepairingDeviceList != null && this.unSub_allRepairingDeviceList != undefined)
@@ -3222,7 +3224,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/new-shipment/new-shipment.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div style=\"overflow: hidden;height: 100vh;\">\n      <div  fxLayout=\"row\" style=\"padding: 9px;\">\n        <div  fxFlex=\"33\" >\n          <div  style=\"display:flex;\" >\n            <label class=\"stepperIcon\" [style.background-color]=\"steperNo >= 1 ?'#3f51b5':'grey'\" >\n              <span style=\"position: absolute;margin-left: -4px;margin-top: -8px;\">1</span>\n            </label>\n            <!--<hr>-->\n            <span style=\"margin-left: 5px\">Enter Shipment Detail</span>\n          </div>\n        </div>\n        <div fxFlex=\"33\">\n          <div style=\"text-align: center;display: flex;\" >\n            <label class=\"stepperIcon\" [style.background-color]=\"steperNo >= 2 ?'#3f51b5':'grey'\" >\n              <span style=\"position: absolute;margin-left: -4px;margin-top: -8px;\">2</span>\n            </label>\n            <!--<hr>-->\n            <span style=\"margin-left: 5px\">Add Vehicle Tracking device</span>\n            <!--<span style=\"margin-left: 5px\">Tracking Configuration</span>-->\n          </div>\n        </div>\n\n        <div fxFlex=\"33\">\n          <div  style=\"display: flex;\" >\n            <label class=\"stepperIcon\" [style.background-color]=\"steperNo == 3 ?'#3f51b5':'grey'\" >\n              <span style=\"position: absolute;margin-left: -4px;margin-top: -8px;\">3</span>\n            </label>\n            <span style=\"margin-left: 5px\">Add Driver Details</span>\n          </div>\n        </div>\n      </div>\n\n      <div style=\"overflow:hidden;height: calc(100vh - 80px);\">\n        <div *ngIf=\"steperNo == 1\" style=\"padding: 30px;font-size: 13px;\" >\n          \n          <div>\n            <label  class=\"fade-sub-header-text\">Consignor Name*</label>\n            <app-freight-location-picker [inputType]=\"'origin'\"    [locationFromTemplate]=\"selectedTemplateLocation\" [pickerLocationType]=\"typeOfLocationCreator\" (onLocationPick)='setOriginLocation($event)' ></app-freight-location-picker>\n          </div>\n          <!--(click)=\"tripOriginDialog()\"-->\n           \n          <div>\n              <label class=\"fade-sub-header-text\">Consignee Name*</label>              \n            <app-freight-location-picker [inputType]=\"'destination'\"  [locationFromTemplate]=\"selectedTemplateLocation\" [pickerLocationType]=\"typeOfLocationCreator\" (onLocationPick)='setDestinationLocation($event)' ></app-freight-location-picker>\n          </div>\n           <!--(click)=\"tripOriginDialog()\"-->\n            \n           \n\n\n          <div class=\"element\" >\n            <md-input-container style=\"width: 100%;\">\n              <input style=\"width: 100%;\" placeholder=\"Shipment Number\" mdInput [(ngModel)]=\"shipmentNumber\" name=\"shipmentNumber\" id=\"shipmentNumber\" >\n            </md-input-container>\n          </div>\n\n\n          <div class=\"element\" >\n            <md-input-container style=\"width: 100%;\">\n              <input style=\"width: 100%;\" placeholder=\"Consignment Number\" mdInput [(ngModel)]=\"consignmentNumber\" name=\"consignmentNumber\"\n                     id=\"consignmentNumber\">\n            </md-input-container>\n          </div>\n\n          <div fxLayout=\"row\" >\n            <div fxFlex=\"48\" style=\"margin-top: 12px;height:60px;top:281px;\">\n              <owl-date-time mdInput [autoClose]=true [(ngModel)]=\"plannedStartDate\" placeHolder=\"Planned Start Date\"></owl-date-time>\n            </div>\n            <div fxFlex=\"48\" style=\"margin-left:auto\">\n              <md-input-container style=\"width: 100%;\">\n                <input type=\"number\" placeholder=\"Transit Days\" mdInput  [(ngModel)]=\"transitDays\" name=\"transitDays\" id=\"transitDays\">\n              </md-input-container>\n            </div>\n          </div>\n\n          \n          <div fxLayout=\"row\" class=\"element\" ><!-- *ngFor=\"let item of itemList\" -->\n            <div fxFlex=\"48\" style=\"margin-top: 4px\">\n              <md-input-container style=\"width: 90%;\">\n                <input style=\"width: 100%;\" placeholder=\"Quantity\" mdInput  [(ngModel)]=\"quantity\" name=\"quantity\" id=\"quantity\">\n              </md-input-container>\n            </div>\n\n            <div fxFlex=\"48\" style=\"margin-top: 11px\">\n              <md-select  placeholder=\"Measurement Type\" style=\"width: 80%\" [(ngModel)]=\"mesurementType\" (change)=\"selectMesurementType()\" >\n                <md-option *ngFor=\"let mesurement of mesurements\" [value]=\"mesurement.name\" >\n                   {{mesurement.viewValue}}\n                </md-option>\n              </md-select>\n            </div>\n            <div fxFlex=\"48\" style=\"margin-top: 11px\" *ngIf=\"isShowUnits\">\n              <md-select  placeholder=\"Select Units\" style=\"width: 60%\" [(ngModel)]=\"selectedUnit\" floatPlaceholder=\"never\">\n                <md-option *ngFor=\"let unit of selectUnit\" [value]=\"unit\">\n                   {{unit}}\n                </md-option>\n              </md-select>\n            </div>\n            <div fxFlex=\"48\" style=\"margin-top: 7px\" *ngIf=\"isShowUnitInput\">\n                <md-input-container style=\"width: 90%;\">\n                    <input style=\"width: 60%;\" placeholder=\"No. Of Package\" mdInput  [(ngModel)]=\"selectedUnit\" >\n                  </md-input-container>\n            </div>\n          </div>\n          <!-- <div style=\"width: 100%;margin-top: 10px;text-align:right;\">\n            <button md-raised-button  class=\"change-mode-button\" style=\"background-color: #bebebe;\" (click)=\"addItem()\">+add</button>\n         </div> -->\n          \n\n\n          <div style=\"margin-top: 10px;\">\n            <md-input-container style=\"width: 100%;\">\n              <input style=\"width: 100%;\" placeholder=\"Vehicle Number\" mdInput [(ngModel)]=\"vehicleNumber\" name=\"vehicleNumber\" id=\"vehicleNumber\">\n            </md-input-container>\n          </div>\n\n          <div style=\"margin-top: 20px;text-align: right;\">\n            <button md-raised-button color=\"primary\" (click)=\"step2();convertTime();\">Next</button>\n            <!--<button md-raised-button>BACK</button>-->\n          </div>\n\n        </div>\n\n        <!-- step 2 ************************************-->\n        <div *ngIf=\"steperNo == 2\" style=\"margin-top:60px;text-align: center\" >\n        <md-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></md-spinner>\n          <div *ngIf=\"isShowTracknetEnable\"><span><u>Tracknet Enabled </u></span></div>\n          <div style=\"margin-top: 21px;\">\n             <button [style.background-color]=\"trackerType == 'Trip'?'green':'gray'\" md-raised-button  class=\"change-mode-button\"  (click)=\"setTrackType('Trip');isShowTracknetEnable=true\" *ngIf=\"isShowTrip\">Tracknet</button>              \n             <button [style.background-color]=\"trackerType == 'Tracker'?'green':'gray'\" md-raised-button  class=\"change-mode-button\" style=\"margin-left: 20px;\" (click)=\"setTrackType('Tracker');isShowTracknetEnable=false\">Tracker</button>\n             <button [style.background-color]=\"trackerType == 'Manual'?'green':'gray'\" md-raised-button style=\"margin-left: 20px;\" class=\"change-mode-button\" (click)=\"setTrackType('Manual');isShowTracknetEnable=false\">Manual mode</button>\n          </div>\n          <div style=\"margin-top: 15px\" *ngIf=\"trackerType == 'Tracker'\">\n            <md-input-container style=\"width: 250px;\" >\n              <input style=\"width: 100%;\" placeholder=\"Tracker IMEI\" mdInput [(ngModel)]=\"trackerIMEI\"  name=\"TrackerIMEI\" id=\"TrackerIMEI\">\n            </md-input-container>\n          </div>\n\n          <div style=\"margin-top: 60px;\">\n\n            <button md-raised-button color=\"primary\" (click)=\"step1()\">Previous</button>\n\n            <button md-raised-button color=\"primary\" (click)=\"step3();\">Next</button>\n            <!--<button md-raised-button>BACK</button>-->\n          </div>\n        </div>\n\n        <div *ngIf=\"steperNo ==  3\" style=\"text-align: center;margin-top: 60px\">\n          <div  *ngIf=\"isShowchip\"style=\"margin-top: 15px;\">\n            <md-chip-list style=\"justify-content: center;display: flex;\">\n                <md-chip >{{driverName}}  {{mobileNo}} <i class=\"fa fa-times-circle\" mdChipRemove *ngIf=\"true\" (click)=\"isShowchip=false\"></i> </md-chip>\n            </md-chip-list>\n          </div>\n\n          <div style=\"margin-top: 15px \">\n             <button md-raised-button  class=\"change-mode-button\" style=\"background-color: #bebebe\" (click)=\"isAddDriverDetail=true\">+add Driver</button>\n          </div>\n          <div *ngIf=\"isAddDriverDetail\">\n            <md-input-container>\n              <input style=\"width: 100%;\" placeholder=\"Driver Name\" mdInput [(ngModel)]=\"driverName\"  name=\"driverName\" id=\"driverName\">\n            </md-input-container>\n            <md-input-container>\n              <input style=\"width: 100%;\" placeholder=\"Mobile No\" mdInput [(ngModel)]=\"mobileNo\"  name=\"mobileNo\" id=\"mobileNo\">\n            </md-input-container>\n          </div>\n          <div style=\"margin-top: 60px\">\n             <button md-raised-button color=\"primary\" (click)=\"step2()\">Previous</button>\n             <button md-raised-button color=\"primary\" (click)=\"createShipment()\">Done</button>\n          </div>\n        </div>\n      </div>\n</div>\n\n"
+module.exports = "\n<div style=\"overflow: hidden;height: 100vh;\">\n      <div  fxLayout=\"row\" style=\"padding: 9px;\">\n        <div  fxFlex=\"33\" >\n          <div  style=\"display:flex;\" >\n            <label class=\"stepperIcon\" [style.background-color]=\"steperNo >= 1 ?'#3f51b5':'grey'\" >\n              <span style=\"position: absolute;margin-left: -4px;margin-top: -8px;\">1</span>\n            </label>\n            <!--<hr>-->\n            <span style=\"margin-left: 5px\">Enter Shipment Detail</span>\n          </div>\n        </div>\n        <div fxFlex=\"33\">\n          <div style=\"text-align: center;display: flex;\" >\n            <label class=\"stepperIcon\" [style.background-color]=\"steperNo >= 2 ?'#3f51b5':'grey'\" >\n              <span style=\"position: absolute;margin-left: -4px;margin-top: -8px;\">2</span>\n            </label>\n            <!--<hr>-->\n            <span style=\"margin-left: 5px\">Add Vehicle Tracking device</span>\n            <!--<span style=\"margin-left: 5px\">Tracking Configuration</span>-->\n          </div>\n        </div>\n\n        <div fxFlex=\"33\">\n          <div  style=\"display: flex;\" >\n            <label class=\"stepperIcon\" [style.background-color]=\"steperNo == 3 ?'#3f51b5':'grey'\" >\n              <span style=\"position: absolute;margin-left: -4px;margin-top: -8px;\">3</span>\n            </label>\n            <span style=\"margin-left: 5px\">Add Driver Details</span>\n          </div>\n        </div>\n      </div>\n\n      <div style=\"overflow:hidden;height: calc(100vh - 80px);\">\n        <div *ngIf=\"steperNo == 1\" style=\"padding: 30px;font-size: 13px;\" >\n          \n          <div>\n            <label  class=\"fade-sub-header-text\">Consignor Name*</label>\n            <app-freight-location-picker [inputType]=\"'origin'\"    [locationFromTemplate]=\"selectedTemplateLocation\" [pickerLocationType]=\"typeOfLocationCreator\" (onLocationPick)='setOriginLocation($event)' ></app-freight-location-picker>\n          </div>\n          <!--(click)=\"tripOriginDialog()\"-->\n           \n          <div>\n              <label class=\"fade-sub-header-text\">Consignee Name*</label>              \n            <app-freight-location-picker [inputType]=\"'destination'\"  [locationFromTemplate]=\"selectedTemplateLocation\" [pickerLocationType]=\"typeOfLocationCreator\" (onLocationPick)='setDestinationLocation($event)' ></app-freight-location-picker>\n          </div>\n           <!--(click)=\"tripOriginDialog()\"-->\n            \n           \n\n\n          <div class=\"element\" >\n            <md-input-container style=\"width: 100%;\">\n              <input style=\"width: 100%;\" placeholder=\"Shipment Number\" mdInput [(ngModel)]=\"shipmentNumber\" name=\"shipmentNumber\" id=\"shipmentNumber\" >\n            </md-input-container>\n          </div>\n\n\n          <div class=\"element\" >\n            <md-input-container style=\"width: 100%;\">\n              <input style=\"width: 100%;\" placeholder=\"Consignment Number\" mdInput [(ngModel)]=\"consignmentNumber\" name=\"consignmentNumber\"\n                     id=\"consignmentNumber\">\n            </md-input-container>\n          </div>\n\n          <div fxLayout=\"row\" >\n            <div fxFlex=\"48\" style=\"margin-top: 12px;height:60px;top:281px;\">\n              <owl-date-time mdInput [autoClose]=true [(ngModel)]=\"plannedStartDate\" placeHolder=\"Planned Start Date\"></owl-date-time>\n            </div>\n            <div fxFlex=\"48\" style=\"margin-left:auto\">\n              <md-input-container style=\"width: 100%;\">\n                <input type=\"number\" placeholder=\"Transit Days\" mdInput  [(ngModel)]=\"transitDays\" name=\"transitDays\" id=\"transitDays\">\n              </md-input-container>\n            </div>\n          </div>\n\n          \n          <div fxLayout=\"row\" class=\"element\" ><!-- *ngFor=\"let item of itemList\" -->\n            <div fxFlex=\"48\" style=\"margin-top: 4px\">\n              <md-input-container style=\"width: 90%;\">\n                <input style=\"width: 100%;\" placeholder=\"Quantity\" mdInput  [(ngModel)]=\"quantity\" name=\"quantity\" id=\"quantity\">\n              </md-input-container>\n            </div>\n\n            <div fxFlex=\"48\" style=\"margin-top: 11px\">\n              <md-select  placeholder=\"Measurement Type\" style=\"width: 80%\" [(ngModel)]=\"mesurementType\" (change)=\"selectMesurementType()\" >\n                <md-option *ngFor=\"let mesurement of mesurements\" [value]=\"mesurement.name\" >\n                   {{mesurement.viewValue}}\n                </md-option>\n              </md-select>\n            </div>\n            <div fxFlex=\"48\" style=\"margin-top: 11px\" *ngIf=\"isShowUnits\">\n              <md-select  placeholder=\"Select Units\" style=\"width: 60%\" [(ngModel)]=\"selectedUnit\" floatPlaceholder=\"never\">\n                <md-option *ngFor=\"let unit of selectUnit\" [value]=\"unit\">\n                   {{unit}}\n                </md-option>\n              </md-select>\n            </div>\n            <div fxFlex=\"48\" style=\"margin-top: 7px\" *ngIf=\"isShowUnitInput\">\n                <md-input-container style=\"width: 90%;\">\n                    <input style=\"width: 60%;\" placeholder=\"No. Of Package\" mdInput  [(ngModel)]=\"selectedUnit\" >\n                  </md-input-container>\n            </div>\n          </div>\n          <!-- <div style=\"width: 100%;margin-top: 10px;text-align:right;\">\n            <button md-raised-button  class=\"change-mode-button\" style=\"background-color: #bebebe;\" (click)=\"addItem()\">+add</button>\n         </div> -->\n          \n\n\n          <div style=\"margin-top: 10px;\">\n            <md-input-container style=\"width: 100%;\">\n              <input style=\"width: 100%;\" placeholder=\"Vehicle Number\" mdInput [(ngModel)]=\"vehicleNumber\" name=\"vehicleNumber\" id=\"vehicleNumber\">\n            </md-input-container>\n          </div>\n\n          <div style=\"margin-top: 20px;text-align: right;\">\n            <button md-raised-button color=\"primary\" (click)=\"step2();convertTime();\">Next</button>\n            <!--<button md-raised-button>BACK</button>-->\n          </div>\n\n        </div>\n\n        <!-- step 2 ************************************-->\n        <div *ngIf=\"steperNo == 2\" style=\"margin-top:60px;text-align: center\" >\n        <md-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></md-spinner>\n          <div *ngIf=\"isShowTracknetEnable\"><span><u>Tracknet Enabled </u></span></div>\n          <div style=\"margin-top: 21px;\">\n             <button [style.background-color]=\"trackerType == 'Trip'?'green':'gray'\" md-raised-button  class=\"change-mode-button\"  (click)=\"setTrackType('Trip');isShowTracknetEnable=true\" *ngIf=\"isShowTrip\">Tracknet</button>              \n             <button [style.background-color]=\"trackerType == 'Tracker'?'green':'gray'\" md-raised-button  class=\"change-mode-button\" style=\"margin-left: 20px;\" (click)=\"setTrackType('Tracker');isShowTracknetEnable=false\">Tracker</button>\n             <button [style.background-color]=\"trackerType == 'Manual'?'green':'gray'\" md-raised-button style=\"margin-left: 20px;\" class=\"change-mode-button\" (click)=\"setTrackType('Manual');isShowTracknetEnable=false\">Manual mode</button>\n          </div>\n          <div style=\"margin-top: 15px\" *ngIf=\"trackerType == 'Tracker'\">\n            <md-input-container style=\"width: 250px;\" >\n              <input style=\"width: 100%;\" placeholder=\"Tracker IMEI\" mdInput [(ngModel)]=\"trackerIMEI\"  name=\"TrackerIMEI\" id=\"TrackerIMEI\" readonly (focus)=\"onClickIMEI()\">\n            </md-input-container>\n            <div *ngIf=\"showIMEI\" style=\"height: 190px;overflow-y: auto;width: 300px;margin-left:345px;margin-top: -22px;\">\n              <ul style=\"list-style-type: none;\" *ngFor=\"let device of allDeviceList\">\n                <li (click)=\"onSelectIMEI(device)\">{{device?.device?.imei}}</li><hr>\n              </ul>\n            </div>\n          </div>\n\n          <div style=\"margin-top: 60px;\">\n\n            <button md-raised-button color=\"primary\" (click)=\"step1()\">Previous</button>\n\n            <button md-raised-button color=\"primary\" (click)=\"step3();\">Next</button>\n            <!--<button md-raised-button>BACK</button>-->\n          </div>\n        </div>\n\n        <div *ngIf=\"steperNo ==  3\" style=\"text-align: center;margin-top: 60px\">\n          <div  *ngIf=\"isShowchip\"style=\"margin-top: 15px;\">\n            <md-chip-list style=\"justify-content: center;display: flex;\">\n                <md-chip >{{driverName}}  {{mobileNo}} <i class=\"fa fa-times-circle\" mdChipRemove *ngIf=\"true\" (click)=\"isShowchip=false\"></i> </md-chip>\n            </md-chip-list>\n          </div>\n\n          <div style=\"margin-top: 15px \">\n             <button md-raised-button  class=\"change-mode-button\" style=\"background-color: #bebebe\" (click)=\"isAddDriverDetail=true\">+add Driver</button>\n          </div>\n          <div *ngIf=\"isAddDriverDetail\">\n            <md-input-container>\n              <input style=\"width: 100%;\" placeholder=\"Driver Name\" mdInput [(ngModel)]=\"driverName\"  name=\"driverName\" id=\"driverName\">\n            </md-input-container>\n            <md-input-container>\n              <input style=\"width: 100%;\" placeholder=\"Mobile No\" mdInput [(ngModel)]=\"mobileNo\"  name=\"mobileNo\" id=\"mobileNo\">\n            </md-input-container>\n          </div>\n          <div style=\"margin-top: 60px\">\n             <button md-raised-button color=\"primary\" (click)=\"step2()\">Previous</button>\n             <button md-raised-button color=\"primary\" (click)=\"createShipment()\">Done</button>\n          </div>\n        </div>\n      </div>\n</div>\n\n"
 
 /***/ }),
 
@@ -3233,13 +3235,14 @@ module.exports = "\n<div style=\"overflow: hidden;height: 100vh;\">\n      <div 
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewShipment; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_shipment_services__ = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_util__ = __webpack_require__("../../../../util/util.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_util___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_util__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_device_services__ = __webpack_require__("../../../../../src/app/services/device-services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_shipment_services__ = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_util__ = __webpack_require__("../../../../util/util.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_util___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_util__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3256,10 +3259,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var NewShipment = (function () {
-    function NewShipment(_router, shipmentServices, _store, service, snackBar) {
+    function NewShipment(_router, deviceServices, shipmentServices, _store, service, snackBar) {
         var _this = this;
         this._router = _router;
+        this.deviceServices = deviceServices;
         this.shipmentServices = shipmentServices;
         this._store = _store;
         this.service = service;
@@ -3278,6 +3283,7 @@ var NewShipment = (function () {
         this.trackerIMEI = null;
         this.driverName = 'md Asif';
         this.mobileNo = '854745869';
+        this.isDevice = false;
         // *****************************************
         this.hours = [];
         this.minutes = [];
@@ -3291,6 +3297,7 @@ var NewShipment = (function () {
         this.fromMin = "";
         //unSubscribe variables
         this.unSub_allFreightList = null;
+        this.unSub_allDeviceList = null;
         this.selectedTemplateLocation = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         //validation variables
         this.isEventSelected = false;
@@ -3317,9 +3324,12 @@ var NewShipment = (function () {
         //unsubscribe var
         this.unSub_newShipment = null;
         this.unSub_checkVehicle = null;
+        this.unSub_checkDevice = null;
         this.isShowTrip = false;
         this.isShowTracknetEnable = false;
         this.isSpinner = true;
+        this.allDeviceList = [];
+        this.showIMEI = false;
         shipmentServices.initialize();
         this.unSub_newShipment = this._store.select('newShipment').subscribe(function (value) {
             if (value != null) {
@@ -3327,6 +3337,23 @@ var NewShipment = (function () {
                     _this.openSnackBar("Shipment Created Successfully");
                 }
                 else {
+                    _this.openSnackBar(value['errorMsg']);
+                }
+            }
+        });
+        this.deviceServices.allDevicesList.emit();
+        this.isSpinner = true;
+        this.unSub_allDeviceList = this._store.select('allDevicesList').subscribe(function (value) {
+            console.log(value);
+            if (value != null) {
+                _this.isSpinner = false;
+                if (value['error'] == '') {
+                    //for Error Handaling
+                    _this.allDeviceList = value['res'];
+                    console.log(_this.allDeviceList);
+                }
+                else {
+                    console.log(value['errorMsg']);
                     _this.openSnackBar(value['errorMsg']);
                 }
             }
@@ -3410,7 +3437,7 @@ var NewShipment = (function () {
             console.log('contains No freight location Obj source');
             obj1 = value;
         }
-        if (Object(__WEBPACK_IMPORTED_MODULE_5_util__["isNullOrUndefined"])(obj1['address']) || obj1['address'] == "") {
+        if (Object(__WEBPACK_IMPORTED_MODULE_6_util__["isNullOrUndefined"])(obj1['address']) || obj1['address'] == "") {
             obj1['address'] = value['name'];
         }
         // console.log(obj1);
@@ -3435,7 +3462,7 @@ var NewShipment = (function () {
             console.log('contains No freight location Obj Destination');
             obj = value;
         }
-        if (Object(__WEBPACK_IMPORTED_MODULE_5_util__["isNullOrUndefined"])(obj['address']) || obj['address'] == "") {
+        if (Object(__WEBPACK_IMPORTED_MODULE_6_util__["isNullOrUndefined"])(obj['address']) || obj['address'] == "") {
             obj['address'] = value['name'];
         }
         this.consigneeName = obj['name'];
@@ -3463,6 +3490,13 @@ var NewShipment = (function () {
     };
     NewShipment.prototype.setTrackType = function (type) {
         this.trackerType = type;
+    };
+    NewShipment.prototype.onClickIMEI = function () {
+        this.showIMEI = true;
+    };
+    NewShipment.prototype.onSelectIMEI = function (device) {
+        this.trackerIMEI = device['device']['imei'];
+        this.showIMEI = false;
     };
     NewShipment.prototype.selectMesurementType = function () {
         if (this.mesurementType == 'weight') {
@@ -3500,23 +3534,23 @@ var NewShipment = (function () {
         this.snackBar.open(message, 'OK', { duration: 4000 });
     };
     NewShipment.prototype.step2 = function () {
-        if (Object(__WEBPACK_IMPORTED_MODULE_5_util__["isNullOrUndefined"])(this.consigner) || this.consigner == "") {
+        if (Object(__WEBPACK_IMPORTED_MODULE_6_util__["isNullOrUndefined"])(this.consigner) || this.consigner == "") {
             this.openSnackBar("Please fill Consigner");
             this.steperNo = 1;
         }
-        else if (Object(__WEBPACK_IMPORTED_MODULE_5_util__["isNullOrUndefined"])(this.consignee) || this.consignee == "") {
+        else if (Object(__WEBPACK_IMPORTED_MODULE_6_util__["isNullOrUndefined"])(this.consignee) || this.consignee == "") {
             this.openSnackBar("Please fill Consinee");
             this.steperNo = 1;
         }
-        else if (Object(__WEBPACK_IMPORTED_MODULE_5_util__["isNullOrUndefined"])(this.plannedStartDate) || this.plannedStartDate == "") {
+        else if (Object(__WEBPACK_IMPORTED_MODULE_6_util__["isNullOrUndefined"])(this.plannedStartDate) || this.plannedStartDate == "") {
             this.openSnackBar("Please fill Shipment start time");
             this.steperNo = 1;
         }
-        else if (Object(__WEBPACK_IMPORTED_MODULE_5_util__["isNullOrUndefined"])(this.transitDays) || this.transitDays == "") {
+        else if (Object(__WEBPACK_IMPORTED_MODULE_6_util__["isNullOrUndefined"])(this.transitDays) || this.transitDays == "") {
             this.openSnackBar("Please fill Transite Days");
             this.steperNo = 1;
         }
-        else if (Object(__WEBPACK_IMPORTED_MODULE_5_util__["isNullOrUndefined"])(this.vehicleNumber) || this.vehicleNumber == "") {
+        else if (Object(__WEBPACK_IMPORTED_MODULE_6_util__["isNullOrUndefined"])(this.vehicleNumber) || this.vehicleNumber == "") {
             this.openSnackBar("Please fill Vehicle No");
             this.steperNo = 1;
         }
@@ -3527,8 +3561,20 @@ var NewShipment = (function () {
         }
     };
     NewShipment.prototype.step3 = function () {
-        if (this.trackerType == 'Tracker' && this.trackerIMEI == undefined) {
+        if (this.trackerType == 'Tracker' && (this.trackerIMEI == undefined || this.trackerIMEI == null)) {
             this.openSnackBar("Please fill IMEI No");
+            // if(this.trackerIMEI!=null ||this.trackerIMEI!=undefined){
+            //   setTimeout(()=>{
+            //   this.shipmentServices.checkDevice.emit(this.trackerIMEI);
+            //     },100);
+            //   if(!this.isDevice){
+            //     this.steperNo = 2;
+            //   }
+            //   else{
+            //     this.isAddDriverDetail=false;
+            //     this.steperNo = 3;
+            //   }
+            // }
             this.steperNo = 2;
         }
         else {
@@ -3547,10 +3593,10 @@ NewShipment = __decorate([
         template: __webpack_require__("../../../../../src/app/components/new-shipment/new-shipment.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/new-shipment/new-shipment.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_shipment_services__["a" /* ShipmentServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_shipment_services__["a" /* ShipmentServices */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_6__ngrx_store__["a" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__ngrx_store__["a" /* Store */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__angular_material__["s" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_material__["s" /* MdSnackBar */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_device_services__["a" /* DeviceServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_device_services__["a" /* DeviceServices */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_shipment_services__["a" /* ShipmentServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_shipment_services__["a" /* ShipmentServices */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_7__ngrx_store__["a" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__ngrx_store__["a" /* Store */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__angular_material__["s" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_material__["s" /* MdSnackBar */]) === "function" && _f || Object])
 ], NewShipment);
 
-var _a, _b, _c, _d, _e;
+var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=new-shipment.component.js.map
 
 /***/ }),
@@ -4106,11 +4152,13 @@ var ShipmentStatusComponent = (function () {
         var startTime;
         var endTime;
         var distance = 0;
+        var shipmentNo = '';
         console.log("done");
         for (var i = 0; i < this.filterShipmentList.length; i++) {
             if (this.filterShipmentList[i]['isChecked'] == true) {
                 consigner = this.filterShipmentList[i]['startLocationName'];
                 consignee = this.filterShipmentList[i]['endLocationName'];
+                shipmentNo = this.filterShipmentList[i]['shipmentNoExtended'];
                 if (this.filterShipmentList[i]['vts'] == 'EnrouteForPickUp')
                     status = 'Enroute for Pickup';
                 else if (this.filterShipmentList[i]['vts'] == 'AtPickUpPoint')
@@ -4127,6 +4175,7 @@ var ShipmentStatusComponent = (function () {
                 // endTime=this.allShipment[i];
                 // distance=this.allShipment[i];
                 var temp = {
+                    'ShipmentNo': shipmentNo,
                     'Vehicle Number': vehicleNo,
                     'Shipment Status': status,
                     'Consigner': consigner,
@@ -5625,6 +5674,16 @@ function createGroupRes(state, action) {
             return state;
     }
 }
+// export function checkDevice(state: any = null, action:Action) {
+//   switch (action.type) {
+//     case 'CHECK_DEVICE':
+//     {
+//       return action.payload;
+//     }
+//     default:
+//       return state;
+//   }
+// }
 // export function avilableDevicesList(state: any = null, action:Action) {
 //   switch (action.type) {
 //     case 'AVALABLE_DEVICE_LIST':
@@ -6710,6 +6769,7 @@ var ShipmentServices = (function () {
         this.getShipmentDetail = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.createNewShipment = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.checkVehicle = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        // public checkDevice=new EventEmitter();
         this.switchShipmentDetail = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         /***************get shipment list ***************/
         this.token = this.localStorgeService.get("AUTH_TOKEN");
@@ -6786,7 +6846,7 @@ var ShipmentServices = (function () {
                 _this._store.dispatch({ type: "SWITCH_SHIPMENT", payload: { error: 'X', errorMsg: "error occur " + err } });
             });
         });
-        /************* switch shipment details  *************/
+        /*************check vehicle details  *************/
         this.checkVehicle.subscribe(function (id) {
             var path = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["b" /* paths */].CHECK_VEHICLE + '?registrationNumber=' + id;
             console.log(path);
@@ -6804,6 +6864,23 @@ var ShipmentServices = (function () {
                 _this._store.dispatch({ type: "CHECK_VEHICLE", payload: { error: 'X', errorMsg: "error occur " + err } });
             });
         });
+        /*************check vehicle details  *************/
+        // this.checkDevice.subscribe((id)=> {
+        //   let path = paths.CHECK_DEVICE+'?imei='+id;
+        //   console.log(path);
+        //   this.getVehicle(path).subscribe(response =>{
+        //     console.log(response);
+        //     if(response.status >=200 && response.status < 300){
+        //       this._store.dispatch({type: "CHECK_DEVICE", payload: {error:'',res:response }});
+        //     }else{
+        //       this._store.dispatch({type: "CHECK_DEVICE", payload: {error:'X',errorMsg:'server error...'}});
+        //     }
+        //   }, err => {
+        //     console.log(err);
+        //     console.log(err.json());
+        //     this._store.dispatch({type: "CHECK_VEHICLE", payload: {error:'X',errorMsg:"error occur "+err}});
+        //   });
+        // });
     } // constructor close here
     ShipmentServices.prototype.ngOnDestroy = function () {
     };
@@ -7422,7 +7499,7 @@ var paths = {
     SHIPMENT_PATH: BASE_IP.IP + '/shipment',
     DEVICE_LIST_PATH: BASE_IP.IP + "/shipment/device/dashboard",
     DEVICE_ADD_PATH: BASE_IP.IP + '/registry/device/add',
-    CHECK_VEHICLE: BASE_IP.IP + '/registry/checkvehicle'
+    CHECK_VEHICLE: BASE_IP.IP + '/registry/checkvehicle',
 };
 //# sourceMappingURL=environment.js.map
 
