@@ -4166,11 +4166,11 @@ var ShipmentStatusComponent = (function () {
                 else if (this.filterShipmentList[i]['vts'] == 'AtPickUpPoint')
                     status = 'At Pickup Point';
                 else if (this.filterShipmentList[i]['vts'] == 'EnrouteForDestination')
-                    status == 'Enroute for Delivery';
+                    status = 'Enroute for Delivery';
                 else if (this.filterShipmentList[i]['vts'] == 'AtDestination' && this.filterShipmentList[i]['shipmentState'] == 'Started')
-                    status == 'At Delivery Point';
+                    status = 'At Delivery Point';
                 else if (this.filterShipmentList[i]['vts'] == 'AtDestination' && this.filterShipmentList[i]['shipmentState'] == 'Completed')
-                    status == 'Delivered';
+                    status = 'Delivered';
                 vehicleNo = this.filterShipmentList[i]['vehicleRegistrationNumber'];
                 curLoc = this.filterShipmentList[i]['currentLocationName'];
                 startTime = new Date(this.filterShipmentList[i]['plannedStartTime']);
