@@ -3971,8 +3971,6 @@ var ShipmentStatusComponent = (function () {
             _this.length = _this.allShipment.length;
             console.log(_this.allShipment);
         });
-        this.deviceServices.allDevicesList.emit();
-        this.isSpinner = true;
         this.unSub_allDeviceList = this._store.select('allDevicesList').subscribe(function (value) {
             console.log(value);
             if (value != null) {
@@ -3984,7 +3982,6 @@ var ShipmentStatusComponent = (function () {
                 }
                 else {
                     console.log(value['errorMsg']);
-                    _this.openSnackBar(value['errorMsg']);
                 }
             }
         });
@@ -4123,6 +4120,8 @@ var ShipmentStatusComponent = (function () {
         this.switchShipment = shipment;
         this.switchShipment['isToggle'] = true;
         this.shipmentServices.checkVehicle.emit(shipment.vehicleRegistrationNumber);
+        this.deviceServices.allDevicesList.emit();
+        this.isSpinner = true;
         this.isSpin = true;
         setTimeout(function () {
             _this.isSwitchShipmentDialog = true;
