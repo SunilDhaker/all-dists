@@ -523,6 +523,9 @@ var ValidateOTP = (function () {
                 _this.openSnackBar("OTP send to your Mobile Number");
                 _this.userInfo = value['res'];
             }
+            else {
+                _this.openSnackBar(value['errorMsg']);
+            }
             console.log(_this.userInfo);
         });
         this.unSub_signupInfo = this._store.select('signupInfo').subscribe(function (value) {
@@ -533,6 +536,9 @@ var ValidateOTP = (function () {
                 _this.signupInfo = value['res'];
                 if (_this.userInfo['loginType'] == 'google') {
                     _this.userInfo['mobileNumber'] = "" + _this.signupInfo['mobileNumber'];
+                }
+                else {
+                    _this.openSnackBar(value['errorMsg']);
                 }
                 _this.openSnackBar('OTP send to your mobile');
                 console.log(_this.signupInfo);
