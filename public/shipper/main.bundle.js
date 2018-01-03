@@ -4722,7 +4722,6 @@ var AppComponent = (function () {
         this.router = router;
         this.snackBar = snackBar;
         var token = this.localStorageService.get('AUTH_TOKEN');
-        this.router.navigate(["mainDashboard/dashboard/user"]);
         console.log(token);
         if (token == undefined || token == null) {
             this.openSnackBar("Please Login First !!!");
