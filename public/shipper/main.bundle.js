@@ -17,595 +17,6 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_gendir lazy recursive";
 
 /***/ }),
 
-/***/ "../../../../../src/app/HMEL-admin/FTL-orders/browse-shipment/browse-shipment.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "div {\r\n  font-family: Helvetica !important;\r\n}\r\n\r\n\r\n.card-span span{\r\n  margin-right: 50px;\r\n  font-size: 13px;\r\n  white-space: nowrap;\r\n  line-height: 2;\r\n}\r\n\r\n.card-sub-span{\r\n  margin-left: 10px;\r\n  border-bottom: 1px solid aliceblue;\r\n  margin-top: 5px;\r\n  padding-bottom: 10px;\r\n  color: #6f6a6a;\r\n}\r\n\r\n.card-sub-span span{\r\n  /*margin-right: 70px;*/\r\n  font-size: 12px;\r\n  white-space: nowrap;\r\n  line-height: 1.7;\r\n}\r\n\r\n .my-expansion-panel-body >>> .mat-expansion-panel-body{\r\n  margin-bottom: 0px !important;\r\n}\r\n\r\n .shipment-tracking-state{\r\n   color: blue;\r\n   border-radius: 10px;\r\n   padding: 3px 10px;\r\n   background-color: #ece8e8;\r\n }\r\n\r\n\r\n.expand-search {\r\n  border: 1.5px solid #b0bcc1;\r\n  width: 100%;\r\n  font-size: 12px;\r\n  padding: 5px 26px 5px 12px;\r\n  display: inline-block;\r\n  border-radius: 17px;\r\n  box-sizing: border-box;\r\n  outline: none;\r\n}\r\n\r\n/* search box*/\r\n.expand-search:focus{\r\n  outline: none;\r\n  border: 1.5px solid #03a9f4;\r\n}\r\n\r\n\r\n.status-button{\r\n  font-size: 12px;\r\n  line-height: 26px;\r\n  height: 33px;\r\n  width: 19%;\r\n  /* overflow: hidden; */\r\n  line-height: 1.2;\r\n  white-space: initial;\r\n  border-radius: 2px;\r\n}\r\n\r\n.status-button:hover\r\n{\r\n  background-color: #5b89ff !important;\r\n  color: white;\r\n}\r\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/HMEL-admin/FTL-orders/browse-shipment/browse-shipment.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div style=\"overflow: auto;height:calc(100vh - 61px);\" >\r\n  <div style=\"display:flex;padding:7px\" >\r\n    <div style=\"display:flex;padding-top: 7px;\">\r\n      <button (click)=\"selectedFilter = '';filterValue()\" mat-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == ''?'#1976d2':''\"  [style.color]=\"selectedFilter == ''?'#FFFFFF':''\">{{countFilterData['all']}} <span>All</span></button>\r\n      <button (click)=\"selectedFilter = 'active';filterValue()\" mat-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == 'active'?'#1976d2':''\" [style.color]=\"selectedFilter == 'active'?'#FFFFFF':''\" style=\"margin-left: 15px\">{{countFilterData['active']}} <span>Active</span></button>\r\n      <button (click)=\"selectedFilter = 'completed';filterValue()\" mat-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == 'completed'?'#1976d2':''\" [style.color]=\"selectedFilter == 'completed'?'#FFFFFF':''\" style=\"margin-left: 15px\">{{countFilterData['completed']}} <span>Completed</span></button>\r\n    </div>\r\n  </div>\r\n\r\n  <div style=\"margin-top:15px;text-align:center;font-size:18px;color:#e27560;\" *ngIf=\"isSpinner ==false\">\r\n       <span>{{msg}}</span>\r\n  </div>\r\n  <mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></mat-spinner>\r\n  <div style=\"margin-top: 10px\">\r\n    <!-- [expanded]=true  means close by default-->\r\n    <mat-expansion-panel [expanded]=true class=\"my-expansion-panel-body\" style=\"margin-top: 10px;padding: 12px\" *ngFor=\"let shipmentOrder of shipmentOrders\">\r\n      <mat-expansion-panel-header style=\"padding-left: 0px;\">\r\n        <div class=\"card-span\" >\r\n          <span ><b>Shipment Order Number :</b> {{(shipmentOrder?.shipmentOrderNumber)?(shipmentOrder?.shipmentOrderNumber):'N/A'}}</span>\r\n          <span><b>Shipment Order Creation Time :</b> {{(shipmentOrder?.shipmentOrderCreateDate)?(shipmentOrder?.shipmentOrderCreateDate | date:'dd-MMM-yyyy'):'N/A'}}</span>\r\n          <span><b>Shipment Order Type :</b> {{(shipmentOrder?.shipmentType)?(shipmentOrder?.shipmentType):'N/A'}}</span>\r\n          <span><b>Vehicle No :</b> {{(shipmentOrder?.vehicleRegistrationNumber)?(shipmentOrder?.vehicleRegistrationNumber):'N/A'}}</span>\r\n          <span><b>Transporter Name :</b> {{(shipmentOrder?.transporterName)?(shipmentOrder?.transporterName):'N/A'}}</span>\r\n          <span><b>Orgnization ID :</b> {{(shipmentOrder?.orgId)?(shipmentOrder?.orgId):'N/A'}}</span>\r\n          <span><b>Distance :</b> {{(shipmentOrder?.distance)?(shipmentOrder?.distance/1000):'N/A'}} KM</span>\r\n        </div>\r\n      </mat-expansion-panel-header>\r\n      <div style=\"margin-top: 10px\">\r\n        <div style=\"font-size: 14px;color: #7d7a7a;\"><b>Freight Unit:</b></div>\r\n        <div class=\"card-sub-span\"  *ngFor=\"let freightUnit of shipmentOrder?.freightUnits\" >\r\n          <div style=\"margin-bottom: 2px;display: flex;flex-wrap: wrap;justify-content: space-between;\" >\r\n            <span ><b>Freight Unit Number : </b>{{(freightUnit?.freightUnitNumber)?(freightUnit?.freightUnitNumber):'N/A'}}</span>\r\n            <span ><b>State : </b><span class=\"shipment-tracking-state\">{{(freightUnit?.shipmentState?.state)?(freightUnit?.shipmentState?.state):'N/A'}}</span></span>\r\n            <span ><b>Last Known Location : </b><span class=\"shipment-tracking-state\">{{(freightUnit?.shipmentState?.address)?(freightUnit?.shipmentState?.address):'N/A'}}</span></span>\r\n          </div>\r\n          <div style=\"display: flex;flex-wrap: wrap;justify-content: space-between;\">\r\n            <span><b>Consignor : </b>{{(freightUnit?.consignerName)?(freightUnit?.consignerName):'N/A'}}</span>\r\n            <span><b>Consignee : </b>{{(freightUnit?.consigneeName)?(freightUnit?.consigneeName):'N/A'}}</span>\r\n            <span><b>Material : </b>{{(freightUnit?.material)?(freightUnit?.material):'N/A'}}</span>\r\n            <span><b>Quantity : </b>{{(freightUnit?.quantity != 'null')?(freightUnit?.quantity):'N/A'}}</span>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </mat-expansion-panel>\r\n    <div style=\"height: 50px\"></div>\r\n  </div>\r\n\r\n  <button [matTooltipPosition]=\"'left'\" matTooltip=\"Add new Shipment Order\" mat-fab color=\"primary\" name=\"createShipment\" (click)=\"createShipmentOrder()\" style=\"position:absolute;bottom:10px;right:10px\" >\r\n    <i class=\"fa fa-plus\" aria-hidden=\"true\" style=\"font-size: 24px;line-height: 24px;color: white;\"></i>\r\n  </button>\r\n</div>\r\n\r\n\r\n\r\n\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/HMEL-admin/FTL-orders/browse-shipment/browse-shipment.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BrowseShipment; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__service_shipment_order_service__ = __webpack_require__("../../../../../src/service/shipment-order-service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var BrowseShipment = (function () {
-    function BrowseShipment(router, shipmentOrderService, snackBar, _store) {
-        var _this = this;
-        this.router = router;
-        this.shipmentOrderService = shipmentOrderService;
-        this.snackBar = snackBar;
-        this._store = _store;
-        this.unSub_shipmentOrders = null;
-        this.orderList = []; // array which contains res value
-        this.shipmentOrders = []; //array which contains filtered value
-        this.isSpinner = false;
-        this.msg = '';
-        this.selectedFilter = '';
-        this.countFilterData = { all: 0, active: 0, completed: 0 };
-        this.shipmentOrderService.getShipmentOrderList.emit();
-        this.isSpinner = true;
-        this.unSub_shipmentOrders = this._store.select('shipmentOrders').subscribe(function (value) {
-            if (value == null) {
-                return;
-            }
-            _this.msg = '';
-            _this.isSpinner = false;
-            if (value['error'] == "") {
-                console.log(value['data']);
-                _this.orderList = JSON.parse(JSON.stringify(value['data']));
-                _this.filterValue();
-                if (_this.shipmentOrders.length == 0) {
-                    _this.msg = 'No Record Found';
-                }
-                _this.countFilter();
-            }
-            else {
-                console.log(value['errorMsg']);
-                _this.openSnackBar(value['errorMsg']);
-                _this.msg = value['errorMsg'];
-            }
-        });
-    } // close constructor
-    BrowseShipment.prototype.ngOnDestroy = function () {
-        console.log("add freight dialog close");
-        if (this.unSub_shipmentOrders != null && this.unSub_shipmentOrders != undefined) {
-            this.unSub_shipmentOrders.unsubscribe();
-        }
-    };
-    BrowseShipment.prototype.ngOnInit = function () {
-    };
-    BrowseShipment.prototype.filterValue = function () {
-        var _this = this;
-        console.log("call filter");
-        if (this.selectedFilter == '') {
-            this.shipmentOrders = this.orderList;
-        }
-        if (this.selectedFilter == 'completed') {
-            var list = this.orderList.filter(function (u) {
-                if (u['freightUnits'][0]['shipmentState'] == undefined || u['freightUnits'][0]['shipmentState'] == null) {
-                    return false;
-                }
-                return (u['freightUnits'][0]['shipmentState']['state'].toUpperCase().indexOf(_this.selectedFilter.toUpperCase()) != -1);
-            });
-            console.log("not call");
-            console.log(list);
-            {
-                this.shipmentOrders = list;
-            }
-        }
-        if (this.selectedFilter == 'active') {
-            var list = this.orderList.filter(function (u) {
-                if (u['freightUnits'][0]['shipmentState'] == undefined || u['freightUnits'][0]['shipmentState'] == null) {
-                    return false;
-                }
-                else if (u['freightUnits'][0]['shipmentState']['state'] == 'EnrouteForPickUp' ||
-                    u['freightUnits'][0]['shipmentState']['state'] == 'AtPickUpPoint' ||
-                    u['freightUnits'][0]['shipmentState']['state'] == 'EnrouteForDestination' ||
-                    u['freightUnits'][0]['shipmentState']['state'] == 'AtDestination') {
-                    return true;
-                }
-                return false;
-            });
-            console.log(list);
-            {
-                this.shipmentOrders = list;
-            }
-        }
-    }; //close filterValue methods
-    BrowseShipment.prototype.countFilter = function () {
-        this.countFilterData = { all: 0, active: 0, completed: 0 };
-        this.countFilterData.all = this.shipmentOrders.length;
-        for (var i = 0; i < this.shipmentOrders.length; i++) {
-            if (this.shipmentOrders[i].freightUnits[0]['shipmentState'] != undefined) {
-                console.log(this.shipmentOrders[i].freightUnits[0]['shipmentState']['state']);
-                if (this.shipmentOrders[i].freightUnits[0]['shipmentState']['state'] == 'completed') {
-                    this.countFilterData.completed = this.countFilterData.completed + 1;
-                }
-                if (this.shipmentOrders[i].freightUnits[0]['shipmentState']['state'] == 'EnrouteForPickUp' ||
-                    this.shipmentOrders[i].freightUnits[0]['shipmentState']['state'] == 'AtPickUpPoint' ||
-                    this.shipmentOrders[i].freightUnits[0]['shipmentState']['state'] == 'EnrouteForDestination' ||
-                    this.shipmentOrders[i].freightUnits[0]['shipmentState']['state'] == 'AtDestination') {
-                    this.countFilterData.active = this.countFilterData.active + 1;
-                }
-            }
-        }
-        // freightUnits?.shipmentState?.state
-    }; //close count filter
-    BrowseShipment.prototype.createShipmentOrder = function () {
-        this._store.dispatch({ type: "CREATE_SHIPMENT_RES", payload: null });
-        this.router.navigate(["mainDashboard/createShipmentOrder"]);
-    };
-    BrowseShipment.prototype.openSnackBar = function (message) {
-        this.snackBar.open(message, '', { duration: 4000 });
-    };
-    return BrowseShipment;
-}());
-BrowseShipment = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-browse-shipment',
-        template: __webpack_require__("../../../../../src/app/HMEL-admin/FTL-orders/browse-shipment/browse-shipment.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/HMEL-admin/FTL-orders/browse-shipment/browse-shipment.component.css")]
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__service_shipment_order_service__["a" /* ShipmentOrderServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__service_shipment_order_service__["a" /* ShipmentOrderServices */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_material__["s" /* MatSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_material__["s" /* MatSnackBar */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ngrx_store__["b" /* Store */]) === "function" && _d || Object])
-], BrowseShipment);
-
-var _a, _b, _c, _d;
-//# sourceMappingURL=browse-shipment.component.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/HMEL-admin/FTL-orders/create-shipment-order/add-freight-unit-dialog/add-freight-unit-dialog.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".div {\r\n    margin-top: 20px;\r\n    margin-left: 10px;\r\n}\r\n\r\n.weeklyButton {\r\n    border: none;\r\n    text-align: center;\r\n    display: inline-block;\r\n    margin: 0px 8px;\r\n    cursor: pointer;\r\n    min-width:20px;\r\n    line-height: 30px;\r\n}\r\n\r\n.weeklyButton_S {\r\n    border: none;\r\n    text-align: center;\r\n    display: inline-block;\r\n    margin: 0px 8px;\r\n    cursor: pointer;\r\n    min-width:20px;\r\n    line-height: 30px;\r\n    background: red;\r\n}\r\n\r\n\r\n.weeklyButton_S:hover {\r\n    background-color: #5b89ff !important;\r\n    color: white;\r\n}\r\n\r\n.weeklyButton:hover {\r\n    background-color: #5b89ff !important;\r\n    color: white;\r\n}\r\n\r\n.button {\r\n    font-size: 12px;\r\n    line-height: 26px;\r\n    color: black;\r\n    height: 33px;\r\n    width: 19%;\r\n    float: right;\r\n    /* overflow: hidden; */\r\n    line-height: 1.2;\r\n    white-space: initial;\r\n    border-radius: 2px;\r\n  }\r\n\r\n  .button:hover {\r\n  background-color: #5b89ff !important;\r\n  color: white;\r\n  }\r\n\r\n\r\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/HMEL-admin/FTL-orders/create-shipment-order/add-freight-unit-dialog/add-freight-unit-dialog.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div >\r\n  <div>\r\n    <span class=\"header-text\">Add Freight Unit</span>\r\n  </div>\r\n\r\n  <div style=\"margin-top: 16px;\">\r\n    <div fxLayout>\r\n      <mat-form-field fxFlex  style=\"margin-right: 10px\">\r\n        <input matInput [(ngModel)]=\"freightUnitNumber\" placeholder=\"Freight Unit Number\" required>\r\n      </mat-form-field>\r\n\r\n      <mat-form-field fxFlex style=\"margin-right: 10px\">\r\n        <mat-select [(ngModel)]=\"consignor\" placeholder=\" Select Consignor\" required >\r\n          <mat-option *ngFor=\"let selConsignor of consignorList\" value=\"{{selConsignor.uuid}}\" >{{selConsignor.name}}</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n\r\n      <mat-form-field fxFlex >\r\n        <mat-select [(ngModel)]=\"consignee\" placeholder=\"Consignee\" required >\r\n          <mat-option *ngFor=\"let selConsignee of consigneeList\" value=\"{{selConsignee.uuid}}\" (click)=\"consigneeObj =selConsignee\">{{selConsignee.name}}</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n    </div>\r\n\r\n    <div fxLayout>\r\n      <mat-form-field fxFlex style=\"margin-right: 10px;\">\r\n        <input matInput  [(ngModel)]=\"material\" placeholder=\"Material\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field fxFlex style=\"margin-right: 10px\" >\r\n        <input matInput type=\"number\" [(ngModel)]=\"quantity\" placeholder=\"Quantity\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field fxFlex  >\r\n        <mat-select [(ngModel)]=\"UOM\" placeholder=\"Quantity UOM\">\r\n          <mat-option value=\"tonne\">Tonne</mat-option>\r\n          <mat-option value=\"pieces\">Pieces</mat-option>\r\n          <mat-option value=\"packets\">Packets</mat-option>\r\n          <mat-option value=\"litres\">Litres</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n    </div>\r\n\r\n    <div fxLayout>\r\n      <div fxFlex style=\"margin-right: 10px;margin-top: 23px;\" >\r\n        <owl-date-time matInput [autoClose]=\"true\" [(ngModel)]=\"freightUnitCreationDate\" placeHolder=\"Freight Unit Creation Date\"></owl-date-time>\r\n      </div>\r\n\r\n      <mat-form-field fxFlex  >\r\n        <input matInput type=\"number\" [(ngModel)]=\"distance\" placeholder=\"Distance\">\r\n      </mat-form-field> <span style=\"margin-top: 22px;\"> km</span>\r\n    </div>\r\n\r\n    <div fxLayout style=\"margin-top: 16px\" >\r\n      <div fxFlex style=\"margin-right: 10px;\" >\r\n        <owl-date-time matInput [autoClose]=\"true\" [(ngModel)]=\"actualStartTime\" placeHolder=\"Actual Start Time\"></owl-date-time>\r\n      </div>\r\n\r\n      <div fxFlex>\r\n        <owl-date-time matInput [autoClose]=\"true\" [(ngModel)]=\"actualEndTime\" placeHolder=\"Actual End Time\"></owl-date-time>\r\n      </div>\r\n    </div>\r\n\r\n      <div  style=\"margin-top: 10px;text-align: right;padding: 10px 10px\" >\r\n        <button mat-raised-button style=\"margin-right: 15px\" (click)=\"cancel()\">Cancel</button>\r\n        <button mat-raised-button color=\"primary\" (click)=\"addFreightUnit()\">Add</button>\r\n      </div>\r\n  </div>\r\n</div>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/HMEL-admin/FTL-orders/create-shipment-order/add-freight-unit-dialog/add-freight-unit-dialog.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddFreightUnitDialog; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__service_shipment_order_service__ = __webpack_require__("../../../../../src/service/shipment-order-service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-/**
- * Created by amit8.kumar on 12-12-2017.
- */
-
-
-
-
-var AddFreightUnitDialog = (function () {
-    function AddFreightUnitDialog(snackBar, _store, matDialogRef, shipmentOderService) {
-        var _this = this;
-        this.snackBar = snackBar;
-        this._store = _store;
-        this.matDialogRef = matDialogRef;
-        this.shipmentOderService = shipmentOderService;
-        this.freightUnitNumber = '';
-        this.consigneeObj = null;
-        this.consignorList = [];
-        this.consignor = '';
-        this.consignee = '';
-        this.consigneeList = [];
-        this.material = '';
-        this.UOM = 'tonne';
-        this.quantity = null;
-        this.distance = null;
-        this.consignorList.push({ uuid: '9ee8e724-96b9-4ec2-9b27-7fd0104b2327', name: 'Jindal saw limited' });
-        this.unSub_freightLocation = this._store.select('freightLocation').subscribe(function (value) {
-            if (value == null) {
-                return;
-            }
-            if (value['error'] == "") {
-                _this.consigneeList = value['data'];
-                console.log(_this.consigneeList);
-            }
-            else {
-                console.log(value['errorMsg']);
-            }
-        });
-    } //close constructor
-    AddFreightUnitDialog.prototype.ngOnDestroy = function () {
-        console.log("add freight dialog close");
-        if (typeof this.unSub_freightLocation != 'undefined' && this.unSub_freightLocation != null && this.unSub_freightLocation != undefined) {
-            this.unSub_freightLocation.unsubscribe();
-        }
-    };
-    AddFreightUnitDialog.prototype.addFreightUnit = function () {
-        if (this.checkValidation()) {
-            var obj = {
-                "consigner": this.consignor,
-                "consignee": this.consignee,
-                "material": this.material,
-                "quantity": this.quantity,
-                "plannedStartTime": null,
-                "plannedEndTime": null,
-                "actualStartTime": (this.actualStartTime == undefined) ? null : this.actualStartTime.getTime(),
-                "actualEndTime": (this.actualEndTime == undefined) ? null : this.actualEndTime.getTime(),
-                "distance": (this.distance * 1000),
-                "quantityUmo": this.UOM,
-                "freightUnitNumber": this.freightUnitNumber,
-                "freightUnitCreationDate": (this.freightUnitCreationDate == undefined) ? null : this.freightUnitCreationDate.getTime(),
-            };
-            this.matDialogRef.close({ FU: obj, consigneeObj: this.consigneeObj });
-        }
-    }; //close dialog addFeightUnit
-    AddFreightUnitDialog.prototype.checkValidation = function () {
-        if (this.freightUnitNumber == '' || this.freightUnitNumber == null) {
-            this.openSnackBar("Please fill Freight Unit Number");
-            return false;
-        }
-        if (this.consignor == '' || this.consignor == null) {
-            this.openSnackBar("Please select Consignor");
-            return false;
-        }
-        if (this.consignee == '' || this.consignee == null) {
-            this.openSnackBar("Please select Consignee");
-            return false;
-        }
-        return true;
-    };
-    AddFreightUnitDialog.prototype.cancel = function () {
-        this.matDialogRef.close();
-    };
-    AddFreightUnitDialog.prototype.openSnackBar = function (message) {
-        this.snackBar.open(message, '', { duration: 4000 });
-    };
-    return AddFreightUnitDialog;
-}());
-AddFreightUnitDialog = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-add-freight-unit-dialog',
-        template: __webpack_require__("../../../../../src/app/HMEL-admin/FTL-orders/create-shipment-order/add-freight-unit-dialog/add-freight-unit-dialog.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/HMEL-admin/FTL-orders/create-shipment-order/add-freight-unit-dialog/add-freight-unit-dialog.component.css")]
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["s" /* MatSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["s" /* MatSnackBar */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["h" /* MatDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["h" /* MatDialogRef */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__service_shipment_order_service__["a" /* ShipmentOrderServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__service_shipment_order_service__["a" /* ShipmentOrderServices */]) === "function" && _d || Object])
-], AddFreightUnitDialog);
-
-var _a, _b, _c, _d;
-//# sourceMappingURL=add-freight-unit-dialog.component.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/HMEL-admin/FTL-orders/create-shipment-order/create-shipment-order.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".form-box{\r\n  padding: 15px;\r\n  border: 1px solid #d2cfcd;\r\n  margin-top: 10px;\r\n}\r\n\r\n/*.mat-dialog-container{*/\r\n  /*overflow: unset !important;*/\r\n/*}*/\r\n\r\n.close-chips{\r\n  font-size: 22px;\r\n  border-radius: 50%;\r\n  padding: 0px 3px;\r\n  background-color: aliceblue;\r\n}\r\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/HMEL-admin/FTL-orders/create-shipment-order/create-shipment-order.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\" style=\"position: absolute;\"></mat-spinner>\r\n\r\n<div  style=\"padding: 15px;height: calc(100vh - 91px);overflow:auto\">\r\n  <div>\r\n    <span class=\"header-text\">Create Shipment Order</span>\r\n  </div>\r\n\r\n  <div class=\"form-box\">\r\n    <div style=\"margin-top: 20px\"  fxLayout=\"row\">\r\n      <mat-form-field fxFlex style=\"margin-right: 15px\">\r\n        <input matInput [(ngModel)]=\"shipmentOrderNo\" placeholder=\"Shipment Order No\" required >\r\n      </mat-form-field>\r\n\r\n      <mat-form-field fxFlex style=\"margin-right: 15px;\" >\r\n        <input matInput  style='text-transform:uppercase' (blur)=\"checkVehicleRegNoExist()\" [(ngModel)]=\"vehicleRegNo\" placeholder=\"vehicle reg No\" required>\r\n      </mat-form-field>\r\n\r\n      <div  fxFlex style=\"margin-right: 5px;\" [style.margin-top]=\"(shipmentOrderDate ==null)?'22px':'0px'\" >\r\n        <div *ngIf=\"shipmentOrderDate !=null\" style=\"margin-bottom: 4px;\">\r\n          <span style=\"white-space: nowrap;font-size:12px\" ><b>Order Date</b></span>\r\n        </div>\r\n        <owl-date-time matInput  hourFormat='12' [autoClose]=\"false\" dateFormat=\"DD/MMM/YYYY hh:mm a\" [(ngModel)]=\"shipmentOrderDate\" placeHolder=\"Select Order Date\" required></owl-date-time>\r\n      </div>\r\n    </div>\r\n\r\n\r\n    <div style=\"margin-top:20px;margin-bottom:20px;border:1px solid #dee0e2;padding: 10px 5px;\" fxLayout=\"row\">\r\n      <label style=\"white-space:nowrap;margin-top: 7px;margin-right: 5px;\">Freight unit* : </label>\r\n      <div fxLayout=\"row\" style=\"width: 100%;\" >\r\n          <mat-chip-list style=\"max-height: 130px;overflow: auto;\" >\r\n              <mat-chip style=\"white-space: nowrap;margin-bottom: 5px;\"  *ngFor=\"let selFreightUnit of freightUnits\" [selectable]=true\r\n                         (remove)=\"remove(selFreightUnit)\" >\r\n                {{selFreightUnit?.FU?.freightUnitNumber}} - {{selFreightUnit?.consigneeObj?.name}}\r\n                <span class=\"close-chips\" matChipRemove >&times;</span>\r\n              </mat-chip>\r\n          </mat-chip-list>\r\n        <div  style=\"margin-left:auto;margin-right:5px\">\r\n           <button [disabled]=\"freightUnits.length >0\"  (click)=\"openFreightUnitDialog()\" mat-mini-fab color=\"primary\">\r\n             <i class=\"fa fa-plus\"  aria-hidden=\"true\" ></i>\r\n           </button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div style=\"margin-top: 10px\" fxLayout=\"row\">\r\n      <mat-form-field fxFlex style=\"margin-right: 15px\" >\r\n        <mat-select [(ngModel)]=\"TBPName\" placeholder=\"Transport business partner name\" required>\r\n          <!--<mat-option value=\"\">select</mat-option>-->\r\n          <mat-option *ngFor=\"let trBusinessPart of trBusinessPartners\" value=\"{{trBusinessPart['uuid']}}\">{{trBusinessPart['contactPersonName']}}</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n\r\n      <div  fxFlex style=\"margin-right: 15px;    margin-top: 22px;\" >\r\n        <owl-date-time  hourFormat='12' dateFormat=\"DD/MMM/YYYY hh:mm a\"  [autoClose]=\"true\" [(ngModel)]=\"actualStartTime\" placeHolder=\"Actual start time\" required></owl-date-time>\r\n      </div>\r\n\r\n      <div fxFlex style=\"margin-right: 5px;margin-top: 22px;\" >\r\n        <owl-date-time [autoClose]=\"true\" hourFormat='12' dateFormat=\"DD/MMM/YYYY hh:mm a\"  [(ngModel)]=\"actualEndTime\" placeHolder=\"Actual End Time\" required></owl-date-time>\r\n      </div>\r\n    </div>\r\n\r\n\r\n\r\n    <div style=\"margin-top: 10px\" fxLayout=\"row\">\r\n      <div style=\"margin-right: 15px;\" fxFlex>\r\n        <mat-form-field  style=\"width: calc(100% - 22px);\" >\r\n          <input type=\"number\" matInput [(ngModel)]=\"distance\" placeholder=\"distance\">\r\n        </mat-form-field>\r\n        <span style=\"font-size:12px\"> km</span>\r\n      </div>\r\n\r\n      <mat-form-field fxFlex style=\"margin-right: 15px\" >\r\n        <mat-select [(ngModel)]=\"shipmentOrderType\" placeholder=\"Shipment Order Type\">\r\n          <mat-option value=\"Inbound\">Inbound</mat-option>\r\n          <mat-option value=\"Outbound\">Outbound</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n\r\n      <div fxFlex style=\"margin-right: 15px;\">\r\n      </div>\r\n\r\n    </div>\r\n\r\n    <div style=\"margin-top: 10px\" fxLayout=\"row\">\r\n      <mat-form-field fxFlex style=\"margin-right: 15px\" >\r\n        <mat-select [(ngModel)]=\"trackMode\" placeholder=\"Select Track Mode\" required>\r\n          <mat-option value=\"Manual\">Manual</mat-option>\r\n          <mat-option value=\"Tracker\">Tracker</mat-option>\r\n          <mat-option *ngIf=\"isVehicleExist\" value=\"Trip\">Tracknet</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n\r\n      <div  fxFlex style=\"margin-right: 15px;\" >\r\n        <mat-form-field *ngIf=\"trackMode =='Tracker'\" style=\"width:100%;\" >\r\n          <input matInput [(ngModel)]=\"imei\" placeholder=\"IMEI\" required >\r\n        </mat-form-field>\r\n      </div>\r\n\r\n      <div fxFlex style=\"margin-right: 15px;\"></div>\r\n    </div>\r\n\r\n    <div  style=\"margin-top: 10px;text-align: right;padding: 10px 10px\" >\r\n      <button mat-raised-button style=\"margin-right: 15px\" (click)=\"cancel()\">Cancel</button>\r\n      <button mat-raised-button color=\"primary\" (click)=\"createShipmentOrder()\">Create</button>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/HMEL-admin/FTL-orders/create-shipment-order/create-shipment-order.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CreateShipmentOrder; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__add_freight_unit_dialog_add_freight_unit_dialog_component__ = __webpack_require__("../../../../../src/app/HMEL-admin/FTL-orders/create-shipment-order/add-freight-unit-dialog/add-freight-unit-dialog.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__service_shipment_order_service__ = __webpack_require__("../../../../../src/service/shipment-order-service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-var CreateShipmentOrder = (function () {
-    function CreateShipmentOrder(localStorageService, snackBar, _store, router, dialog, shipmentOderService) {
-        var _this = this;
-        this.localStorageService = localStorageService;
-        this.snackBar = snackBar;
-        this._store = _store;
-        this.router = router;
-        this.dialog = dialog;
-        this.shipmentOderService = shipmentOderService;
-        this.shipmentOrderNo = '';
-        this.isSpinner = false;
-        this.shipmentOrderType = "Inbound";
-        this.TBPName = "";
-        this.distance = null;
-        this.vehicleRegNo = "";
-        this.trBusinessPartners = [];
-        this.freightUnits = [];
-        this.trackMode = '';
-        this.isVehicleExist = false;
-        this.imei = '';
-        this.unSub_trBusinessPartners = null;
-        this.unSub_createShipmentRes = null;
-        this.unSub_checkVehicleNoExist = null;
-        this.shipmentOderService.getFreightLocationList.emit();
-        this.shipmentOderService.getTransportBusinessPartnerList.emit();
-        this.unSub_trBusinessPartners = this._store.select('transportBusinessPartners').subscribe(function (value) {
-            if (value == null) {
-                return;
-            }
-            if (value['error'] == "") {
-                _this.trBusinessPartners = value['data'];
-                console.log(_this.trBusinessPartners);
-            }
-            else {
-                console.log(value['errorMsg']);
-                _this.openSnackBar(value['errorMsg']);
-            }
-        });
-        this.unSub_createShipmentRes = this._store.select('createShipmentRes').subscribe(function (value) {
-            if (value == null) {
-                return;
-            }
-            _this.isSpinner = false;
-            if (value['error'] == "") {
-                console.log(value['successMsg']);
-                _this.openSnackBar(value['successMsg']);
-                _this.router.navigate(["mainDashboard/browseShipment"]);
-            }
-            else {
-                console.log(value['errorMsg']);
-                _this.openSnackBar(value['errorMsg']);
-            }
-        });
-        this.unSub_checkVehicleNoExist = this._store.select('checkVehicleNoExist').subscribe(function (value) {
-            if (value == null) {
-                return;
-            }
-            _this.isSpinner = false;
-            if (value['error'] == "") {
-                _this.isVehicleExist = value['data']['exist'];
-                console.log(value);
-            }
-            else {
-                console.log(value['errorMsg']);
-                _this.openSnackBar(value['errorMsg']);
-            }
-        });
-    } //constructor close
-    CreateShipmentOrder.prototype.ngOnDestroy = function () {
-        console.log("add freight dialog close");
-        if (this.unSub_trBusinessPartners != null && this.unSub_trBusinessPartners != undefined) {
-            this.unSub_trBusinessPartners.unsubscribe();
-        }
-        if (this.unSub_createShipmentRes != null && this.unSub_createShipmentRes != undefined) {
-            this.unSub_createShipmentRes.unsubscribe();
-        }
-        if (this.unSub_checkVehicleNoExist != null && this.unSub_checkVehicleNoExist != undefined) {
-            this.unSub_checkVehicleNoExist.unsubscribe();
-        }
-    };
-    CreateShipmentOrder.prototype.ngOnInit = function () {
-    };
-    // **************************************************************************************************
-    CreateShipmentOrder.prototype.checkVehicleRegNoExist = function () {
-        this.isSpinner = true;
-        var vehicleNo = this.vehicleRegNo.trim().toUpperCase();
-        this.isVehicleExist = false;
-        this.trackMode = '';
-        this._store.dispatch({ type: "CHECK_VEHICLE_NO_EXIST", payload: null });
-        this.shipmentOderService.checkVehicleNoExist.emit(vehicleNo);
-    }; // close methods checkVehicleRegNoExist
-    CreateShipmentOrder.prototype.openFreightUnitDialog = function () {
-        var _this = this;
-        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_3__add_freight_unit_dialog_add_freight_unit_dialog_component__["a" /* AddFreightUnitDialog */]);
-        dialogRef.afterClosed().subscribe(function (result) {
-            if (result == undefined || result == null) {
-                // console.log(result);
-                return;
-            }
-            console.log(result);
-            _this.freightUnits.push(result);
-            console.log(_this.freightUnits);
-        });
-    };
-    CreateShipmentOrder.prototype.createShipmentOrder = function () {
-        console.log(this.shipmentOrderDate);
-        var freightUnits = [];
-        for (var i = 0; i < this.freightUnits.length; i++) {
-            freightUnits.push(this.freightUnits[i]['FU']);
-        }
-        console.log(freightUnits);
-        if (this.checkValidation() && this.checkUnicFreightUnit(freightUnits)) {
-            var shipmentOrderObj = {
-                orgId: null,
-                shipmentOrderNumber: this.shipmentOrderNo,
-                shipmentOrderCreateDate: (this.shipmentOrderDate == undefined) ? null : this.shipmentOrderDate.getTime(),
-                freightUnits: freightUnits,
-                shipmentType: this.shipmentOrderType,
-                transporterId: this.TBPName,
-                plannedStartTime: null,
-                plannedEndTime: null,
-                actualStartTime: (this.actualStartTime == undefined) ? null : this.actualStartTime.getTime(),
-                actualEndTime: (this.actualEndTime == undefined) ? null : this.actualEndTime.getTime(),
-                distance: (this.distance * 1000),
-                shipmentStages: null,
-                vehicleRegistrationNumber: this.vehicleRegNo.toUpperCase(),
-                vehicleId: null,
-                type: this.trackMode,
-                imei: null
-            };
-            if (this.trackMode == 'Tracker') {
-                shipmentOrderObj.imei = this.imei;
-            }
-            this.isSpinner = true;
-            // this.localStorageService.set('SHIPMENT_ORDER',shipmentOrderObj);
-            this.shipmentOderService.createShipmentOrder.emit(shipmentOrderObj);
-            console.log(shipmentOrderObj);
-        }
-    }; // close methods createShipmentOrder
-    CreateShipmentOrder.prototype.checkValidation = function () {
-        if (this.shipmentOrderNo == '' || this.shipmentOrderNo == null) {
-            this.openSnackBar("Please fill Shipment order Number");
-            return false;
-        }
-        if (this.shipmentOrderDate == '' || this.shipmentOrderDate == null || this.shipmentOrderDate == undefined) {
-            this.openSnackBar("Please select shipment Order Date");
-            return false;
-        }
-        if (this.TBPName == '' || this.TBPName == null || this.TBPName == undefined) {
-            this.openSnackBar("Please select Tranporter");
-            return false;
-        }
-        if (this.actualStartTime == '' || this.actualStartTime == null || this.actualStartTime == undefined) {
-            this.openSnackBar("Please select Actual Start Time");
-            return false;
-        }
-        if (this.actualEndTime == '' || this.actualEndTime == null || this.actualEndTime == undefined) {
-            this.openSnackBar("Please select Actual End Time");
-            return false;
-        }
-        if (this.vehicleRegNo == '' || this.vehicleRegNo == null || this.vehicleRegNo == undefined) {
-            this.openSnackBar("Please fill vehicle Reg No");
-            return false;
-        }
-        if (this.trackMode == '' || this.trackMode == null || this.trackMode == undefined) {
-            this.openSnackBar("Please Select Track Mode");
-            return false;
-        }
-        if (this.trackMode == 'Tracker' && this.imei == '' || this.imei == null || this.imei == undefined) {
-            this.openSnackBar("Please fill IMEI");
-            return false;
-        }
-        return true;
-    };
-    CreateShipmentOrder.prototype.checkUnicFreightUnit = function (freightUnits) {
-        if (freightUnits.length == 0) {
-            this.openSnackBar("please Add Freight Unit Number");
-            return false;
-        }
-        for (var i = 0; i < (freightUnits.length - 1); i++) {
-            for (var j = i + 1; j < freightUnits.length; j++) {
-                if (freightUnits[i]['freightUnitNumber'] == freightUnits[j]['freightUnitNumber']) {
-                    this.openSnackBar("Freight Unit Number should be Unic");
-                    return false;
-                }
-            }
-        }
-        return true;
-    };
-    CreateShipmentOrder.prototype.remove = function (selFreightUnit) {
-        var index = this.freightUnits.indexOf(selFreightUnit);
-        if (index >= 0) {
-            this.freightUnits.splice(index, 1);
-        }
-    };
-    CreateShipmentOrder.prototype.openSnackBar = function (message) {
-        this.snackBar.open(message, '', { duration: 4000 });
-    };
-    CreateShipmentOrder.prototype.cancel = function () {
-        this.router.navigate(["mainDashboard/browseShipment"]);
-    };
-    return CreateShipmentOrder;
-}()); // close class
-CreateShipmentOrder = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-create-shipment-order',
-        template: __webpack_require__("../../../../../src/app/HMEL-admin/FTL-orders/create-shipment-order/create-shipment-order.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/HMEL-admin/FTL-orders/create-shipment-order/create-shipment-order.component.css")]
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["s" /* MatSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_material__["s" /* MatSnackBar */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__ngrx_store__["b" /* Store */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["f" /* MatDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_material__["f" /* MatDialog */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__service_shipment_order_service__["a" /* ShipmentOrderServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__service_shipment_order_service__["a" /* ShipmentOrderServices */]) === "function" && _f || Object])
-], CreateShipmentOrder);
-
-var _a, _b, _c, _d, _e, _f;
-//# sourceMappingURL=create-shipment-order.component.js.map
-
-/***/ }),
-
 /***/ "../../../../../src/app/HMEL-admin/add-location/add-location.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -614,7 +25,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".trip-header{\r\n    background-color: #3F51B5;\r\n    width: 30%;\r\n    /*padding-bottom: 3px;*/\r\n    padding: 8px;\r\n    height: 40px;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    color: #ffffff;\r\n  }\r\n  \r\n  md-card{\r\n    padding: 9px;\r\n    min-width: 250px;\r\n  }\r\n  \r\n  div {\r\n    font-family: Helvetica !important;\r\n    /*color: #46465f;*/\r\n  }\r\n  \r\n  .my-hr{\r\n    border-style:ridge;\r\n    border-width:1px;\r\n    margin-top: 6px;\r\n    min-width: 250px;\r\n    margin-bottom:3px;\r\n  }\r\n  \r\n  .my-map-search{\r\n    left: 0%;\r\n    width: 73%;\r\n    position: relative; \r\n    z-index: 10;\r\n    margin-top: 10px;\r\n  }\r\n\r\n  .my-toggle >>> .mat-button-toggle-label-content {\r\n    line-height: 23px;\r\n    padding: 0px 10px;\r\n  }\r\n\r\n  .radio-button {\r\n    margin-left: 20px;\r\n    padding: 20px\r\n  }\r\n\r\n  .status-button{\r\n    font-size: 12px;\r\n    line-height: 26px;\r\n    color: black;\r\n    height: 33px;\r\n    width: 19%;\r\n    float : right;\r\n    margin-left: 10px;\r\n    /* overflow: hidden; */\r\n    line-height: 1.2;\r\n    white-space: initial;\r\n    border-radius: 2px;\r\n    -ms-flex-item-align: right;\r\n        -ms-grid-row-align: right;\r\n        align-self: right;\r\n  }\r\n\r\n  .status-button:hover\r\n  {\r\n    background-color: #5b89ff !important;\r\n    color: white;\r\n  }\r\n  /*button {*/\r\n  /*color:#ffffff;*/\r\n  /*background-color:#1E88E5;*/\r\n  /*}*/\r\n\r\n  /* search box*/\r\n.search {\r\n  width: 67%;\r\n  font-size: 14px;\r\n  padding: 5px 26px 6px 12px;\r\n  display: inline-block;\r\n  border: 1.5px solid #ccc;\r\n  border-radius: 5px;\r\n  box-sizing: border-box;\r\n  }\r\n  .search:focus{\r\n  outline: none;\r\n  border: 1.5px solid #03a9f4;\r\n  box-shadow: 0px 0px 5px #03a9f4;\r\n  }\r\n  \r\n  /* ******************/\r\n  ", ""]);
+exports.push([module.i, ".trip-header{\r\n    background-color: #3F51B5;\r\n    width: 30%;\r\n    /*padding-bottom: 3px;*/\r\n    padding: 8px;\r\n    height: 40px;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    color: #ffffff;\r\n  }\r\n\r\n  mat-card{\r\n    padding: 9px;\r\n    min-width: 250px;\r\n  }\r\n\r\n  div {\r\n    font-family: Helvetica !important;\r\n    /*color: #46465f;*/\r\n  }\r\n\r\n  .my-hr{\r\n    border-style:ridge;\r\n    border-width:1px;\r\n    margin-top: 6px;\r\n    min-width: 250px;\r\n    margin-bottom:3px;\r\n  }\r\n\r\n  .my-map-search{\r\n    left: 0%;\r\n    width: 73%;\r\n    position: relative;\r\n    z-index: 10;\r\n    margin-top: 10px;\r\n  }\r\n\r\n  .my-toggle >>> .mat-button-toggle-label-content {\r\n    line-height: 23px;\r\n    padding: 0px 10px;\r\n  }\r\n\r\n  .radio-button {\r\n    margin-left: 20px;\r\n    padding: 20px\r\n  }\r\n\r\n  .status-button{\r\n    font-size: 12px;\r\n    line-height: 26px;\r\n    color: black;\r\n    height: 33px;\r\n    width: 19%;\r\n    float : right;\r\n    margin-left: 10px;\r\n    /* overflow: hidden; */\r\n    line-height: 1.2;\r\n    white-space: initial;\r\n    border-radius: 2px;\r\n    -ms-flex-item-align: right;\r\n        -ms-grid-row-align: right;\r\n        align-self: right;\r\n  }\r\n\r\n  .status-button:hover\r\n  {\r\n    background-color: #5b89ff !important;\r\n    color: white;\r\n  }\r\n  /*button {*/\r\n  /*color:#ffffff;*/\r\n  /*background-color:#1E88E5;*/\r\n  /*}*/\r\n\r\n  /* search box*/\r\n.search {\r\n  width: 67%;\r\n  font-size: 14px;\r\n  padding: 5px 26px 6px 12px;\r\n  display: inline-block;\r\n  border: 1.5px solid #ccc;\r\n  border-radius: 5px;\r\n  box-sizing: border-box;\r\n  }\r\n  .search:focus{\r\n  outline: none;\r\n  border: 1.5px solid #03a9f4;\r\n  box-shadow: 0px 0px 5px #03a9f4;\r\n  }\r\n\r\n  /* ******************/\r\n", ""]);
 
 // exports
 
@@ -1032,6 +443,679 @@ var _a, _b, _c, _d, _e, _f;
 
 /***/ }),
 
+/***/ "../../../../../src/app/HMEL-admin/dashboard/add-business-partner/add-business-partner.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "div {\r\n  font-family: Helvetica !important;\r\n}\r\n\r\n.my-map-search{\r\n  /*left: 0%;*/\r\n  /*width: 73%;*/\r\n  position: relative;\r\n  z-index: 10;\r\n  /*margin-top: 10px;*/\r\n}\r\n\r\n.my-toggle{\r\n  position: absolute;\r\n  z-index: 11;\r\n  left: 10px;\r\n  top: 33px;\r\n  height: 20px;\r\n  font-size: 12px;\r\n}\r\n\r\n.my-toggle >>> .mat-button-toggle-label-content {\r\n  line-height: 23px;\r\n  padding: 0px 10px;\r\n  color: black;\r\n}\r\n\r\n.search {\r\n  width: 100%;\r\n  font-size: 14px;\r\n  padding: 5px 26px 6px 12px;\r\n  display: inline-block;\r\n  border: 1.5px solid #ccc;\r\n  border-radius: 5px;\r\n  box-sizing: border-box;\r\n}\r\n.search:focus{\r\n  outline: none;\r\n  border: 1.5px solid #03a9f4;\r\n  box-shadow: 0px 0px 5px #03a9f4;\r\n}\r\n\r\n.contact-detail{\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -ms-flex-wrap: wrap;\r\n      flex-wrap: wrap;\r\n  padding: 5px 10px;\r\n  margin: 0px 10px;\r\n  border: 1px solid antiquewhite;\r\n}\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/HMEL-admin/dashboard/add-business-partner/add-business-partner.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" style=\"position: absolute;\" class=\"spinner\"></mat-spinner>\r\n<div (keyup.Enter)=\"addFreightLocation()\">\r\n  <div style=\"font-size:21px;color:#8a8c8e;padding: 5px;\" >\r\n    <span>Add Business Partner</span>\r\n  </div>\r\n\r\n  <div>\r\n    <div  style=\"display:flex;flex-wrap: wrap;\">\r\n      <div  style=\"min-width: 200px;position: relative;padding: 10px;margin-top: 5px;width: 60%;\" >\r\n        <div style=\"position: relative;\" >\r\n          <div style=\"width:95%; margin-left: auto; margin-right: auto;margin-bottom: -31px;\">\r\n            <div class=\"my-map-search\">\r\n              <input [disabled]=\"type !='customer'\" id=\"pac-input\" type=\"text\" class=\"search\" matTooltip=\"Address search Here\" placeholder=\"Address Search Here\" >\r\n              <i class=\"fa fa-search\" aria-hidden=\"true\" style=\"right: 10px;top: 7px;font-size: 15px;position: absolute;\"></i>\r\n            </div>\r\n          </div>\r\n\r\n          <mat-button-toggle-group [disabled] =\"type != 'customer'\"  class=\"my-toggle\" #group=\"matButtonToggleGroup\" [(ngModel)]=\"mapType\">\r\n            <mat-button-toggle value=\"hybrid\">\r\n              <span>Satellite</span>\r\n            </mat-button-toggle>\r\n            <mat-button-toggle value=\"roadmap\" style=\"background-color:floralwhite;\" [style.opacity]=\"(mapType =='roadmap')?'.8':'.6'\">\r\n              <span>Map</span>\r\n            </mat-button-toggle>\r\n          </mat-button-toggle-group>\r\n\r\n          <agm-map [streetViewControl]=\"mapOption.streetViewControl\" [zoomControl]=\"mapOption.zoomControl\" [mapDraggable]=\"mapOption.isMapDraggable\" [disableDefaultUI]=\"mapOption.disableDefaultUI\" [scrollwheel]=\"mapOption.scrollwheel\" [clickableIcons]=\"mapOption.clickableIcons\"\r\n                   [mapTypeId]=\"mapType\" style=\"height: 50vh;\" [latitude]=\"latitude\" [longitude]=\"longitude\" [zoom]=\"5\">\r\n            <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\">\r\n            </agm-marker>\r\n          </agm-map>\r\n        </div>\r\n      </div>\r\n\r\n      <div fxFlex style=\"padding: 5px\" >\r\n        <mat-form-field style=\"width: 100%\">\r\n          <mat-select [disabled]=\"isClicked ==true\" [(ngModel)]='type' placeholder=\"type\" (change)=\"disableMap()\" required>\r\n            <mat-option value=\"customer\">Customer</mat-option>\r\n            <mat-option value=\"transporter\">Transporter</mat-option>\r\n          </mat-select>\r\n        </mat-form-field>\r\n\r\n        <div>\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"fretronRefNo\" placeholder=\"Fretron Reference No\">\r\n          </mat-form-field>\r\n\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"businessPartnerName\" placeholder=\"business Partner Name\" required>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input [disabled]=\"isClicked ==true\"  matInput [(ngModel)]=\"address\" placeholder=\"Address\">\r\n          </mat-form-field>\r\n\r\n          <div style=\"display: flex;flex-wrap: wrap;\" >\r\n            <mat-form-field style=\"margin-right: auto\" >\r\n              <input [disabled]=\"isClicked ==true\"  matInput  [(ngModel)]=\"state\" placeholder=\"State\" >\r\n            </mat-form-field>\r\n\r\n            <mat-form-field style=\"margin-left: 2px\" >\r\n              <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"zip\" placeholder=\"PIN/ZIP\">\r\n            </mat-form-field>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"contact-detail\">\r\n      <mat-form-field style=\"margin-right: 10px;width: 30%;min-width: 200px;\">\r\n        <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"contactPersonName\" placeholder=\"Contact Person Name\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field style=\"margin-right :10px;margin-left :10px;width: 30%;min-width: 200px;\" >\r\n        <input [disabled]=\"isClicked ==true\"  matInput type=\"email\" [(ngModel)]=\"email\" placeholder=\"Email\"\r\n               pattern=\"[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}\" >\r\n      </mat-form-field>\r\n\r\n      <mat-form-field style=\"margin-left :10px;width: 30%;min-width: 200px;\">\r\n        <input [disabled]=\"isClicked ==true\"  matInput type=\"number\" [(ngModel)]=\"mobileNo\" placeholder=\"MobileNo\" onkeydown=\"if(event.target.value.length>=10 && event.keyCode!=8 && event.keyCode!=13 )return false;\"\r\n               pattern=\"[0-9]{10}\" >\r\n      </mat-form-field>\r\n    </div>\r\n  </div>\r\n\r\n  <div style=\"text-align: right;padding: 12px;\" >\r\n    <button matTooltip=\"CANCEL / BACK\"  mat-raised-button (click)=\"cancel()\" class=\"status-button\" >Cancel</button>\r\n    <button [disabled]=\"businessPartnerName =='' || isClicked ==true\" matTooltip=\"Add New Business Partner\" color=\"primary\"  mat-raised-button (click)=\"addFreightLocation()\" class=\"status-button\" >Add Business Partner</button>\r\n  </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/HMEL-admin/dashboard/add-business-partner/add-business-partner.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddBusinessPartnerComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__service_create_freigth_location_service__ = __webpack_require__("../../../../../src/service/create-freigth-location.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__service_businessPartnerService__ = __webpack_require__("../../../../../src/service/businessPartnerService.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var AddBusinessPartnerComponent = (function () {
+    function AddBusinessPartnerComponent(router, businessPartnerService, createFreightLocation, dialog, store, matSnackBar) {
+        var _this = this;
+        this.router = router;
+        this.businessPartnerService = businessPartnerService;
+        this.createFreightLocation = createFreightLocation;
+        this.dialog = dialog;
+        this.store = store;
+        this.matSnackBar = matSnackBar;
+        this.isSpinner = false;
+        this.type = 'customer';
+        this.mapOption = { isMapDraggable: true, disableDefaultUI: true,
+            scrollwheel: true, clickableIcons: true, zoomControl: true, streetViewControl: true };
+        this.mapType = 'roadmap';
+        this.fretronRefNo = '';
+        this.businessPartnerName = '';
+        this.address = '';
+        this.state = '';
+        this.zip = '';
+        this.contactPersonName = '';
+        this.email = '';
+        this.mobileNo = '';
+        this.freightLocation = '';
+        this.polygon = null;
+        this.isPolygonEditable = false;
+        this.latitude = null;
+        this.longitude = null;
+        this.freightLocUuid = '';
+        this.isClicked = false;
+        this.unSub_createFreightLocRes = null;
+        this.unSub_addBusinessPartRes = null;
+        console.log("constructor");
+        // dispatched from create freight location services
+        this.unSub_createFreightLocRes = this.store.select('createFreightLocRes').subscribe(function (value) {
+            if (value == null) {
+                return;
+            }
+            console.log(value);
+            _this.freightLocUuid = '';
+            if (value['error'] == '') {
+                _this.freightLocUuid = value['data']['data']['uuid'];
+                console.log(_this.freightLocUuid);
+                if (_this.freightLocUuid == '' || _this.freightLocUuid == null) {
+                    _this.openSnackBar('error please try again');
+                    return;
+                }
+                else {
+                    _this.addBusinessPartner();
+                }
+            }
+            else {
+                _this.isSpinner = false;
+                _this.isClicked = false;
+                _this.openSnackBar(value['errorMsg'] + ' please try again');
+            }
+        });
+        this.unSub_addBusinessPartRes = this.store.select('addBusinessPartRes').subscribe(function (value) {
+            if (value == null) {
+                return;
+            }
+            console.log(value);
+            _this.isSpinner = false;
+            _this.isClicked = false;
+            if (value['error'] == '') {
+                _this.openSnackBar("Created Succesfully");
+            }
+            else {
+                _this.openSnackBar(value['errorMsg'] + ' please try again');
+            }
+        });
+    } // close constructor
+    AddBusinessPartnerComponent.prototype.ngOnDestroy = function () {
+        if (this.unSub_createFreightLocRes != null && this.unSub_createFreightLocRes != undefined)
+            this.unSub_createFreightLocRes.unsubscribe();
+        if (this.unSub_addBusinessPartRes != null && this.unSub_addBusinessPartRes != undefined)
+            this.unSub_addBusinessPartRes.unsubscribe();
+        this.store.dispatch({ type: "ADD_BUSINESS_PART_RES", payload: null });
+        this.store.dispatch({ type: "CREATE_FREIGHT_LOCATION_RES", payload: null });
+    };
+    AddBusinessPartnerComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        console.log("oninit");
+        this.agmMap.mapReady.subscribe(function (map) {
+            _this.map = map;
+            // let points = this.getNPointsCircularPolygone({lat : this.latitude , lng : this.longitude} , 0.5 , 6);
+            var points = [];
+            console.log(points);
+            _this.polygon = _this.addPolygone(_this.map, points, false, '#858585', '#353535');
+            _this.editLocation();
+        });
+    };
+    AddBusinessPartnerComponent.prototype.addPolygone = function (map, points, editable, fillColor, strokeColor) {
+        var myPolygon = new google.maps.Polygon({
+            paths: points,
+            editable: editable,
+            strokeColor: strokeColor,
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: fillColor,
+            fillOpacity: 0.35
+        });
+        myPolygon.setMap(map);
+        return myPolygon;
+    };
+    AddBusinessPartnerComponent.prototype.getNPointsCircularPolygone = function (center, dist, n) {
+        var i = 0;
+        var polygonePoint = [];
+        for (i = 1; i <= n; i++) {
+            polygonePoint.push(getPointAt(center, (360.0 / n) * (i), dist));
+        }
+        function toRAD(NUM) {
+            return NUM * Math.PI / 180;
+        }
+        function toDeg(NUM) {
+            return NUM * 180 / Math.PI;
+        }
+        function getPointAt(latlng, brng, dist) {
+            // console.log(latlng);
+            // console.log(latlng);
+            dist = dist / 6371;
+            brng = toRAD(brng);
+            var lat1 = toRAD(latlng.latitude), lon1 = toRAD(latlng.longitude);
+            var lat2 = Math.asin(Math.sin(lat1) * Math.cos(dist) + Math.cos(lat1) * Math.sin(dist) * Math.cos(brng));
+            var lon2 = lon1 + Math.atan2(Math.sin(brng) * Math.sin(dist) * Math.cos(lat1), Math.cos(dist) - Math.sin(lat1) * Math.sin(lat2));
+            if (isNaN(lat2) || isNaN(lon2))
+                return null;
+            return new google.maps.LatLng(toDeg(lat2), toDeg(lon2));
+        }
+        ;
+        return polygonePoint;
+    };
+    AddBusinessPartnerComponent.prototype.editLocation = function () {
+        this.isPolygonEditable = true;
+        this.polygon.setEditable(true);
+        this.polygon.setOptions({ fillColor: '#FF0000', strokeColor: '#FF0000' });
+        this.placesServices();
+    };
+    AddBusinessPartnerComponent.prototype.disableMap = function () {
+        console.log("disable unit");
+        if (this.type == 'customer') {
+            this.polygon.setEditable(true);
+            this.polygon.setOptions({ fillColor: '#FF0000', strokeColor: '#FF0000' });
+            this.mapOption.isMapDraggable = true;
+            this.mapOption.disableDefaultUI = true;
+            this.mapOption.scrollwheel = true;
+            this.mapOption.clickableIcons = true;
+            this.mapOption.zoomControl = true;
+            this.mapOption.streetViewControl = true;
+        }
+        else {
+            this.polygon.setEditable(false);
+            this.polygon.setOptions({ fillColor: '#858585', strokeColor: '#353535' });
+            this.mapOption.isMapDraggable = false;
+            this.mapOption.disableDefaultUI = false;
+            this.mapOption.scrollwheel = false;
+            this.mapOption.clickableIcons = false;
+            this.mapOption.zoomControl = false;
+            this.mapOption.streetViewControl = false;
+        }
+    };
+    AddBusinessPartnerComponent.prototype.placesServices = function () {
+        var _this = this;
+        // Create the search box and link it to the UI element.
+        var input = document.getElementById('pac-input');
+        console.log(input);
+        var searchBox = new google.maps.places.SearchBox(input);
+        this.map.addListener('bounds_changed', function () {
+            searchBox.setBounds(_this.map.getBounds());
+        });
+        // this.markers = [];
+        // if (this.res != null) {
+        // console.log(this.res["data"]["radius"])
+        // let points = this.getNPointsCircularPolygone({ latitude: this.latitude, longitude: this.longitude }, 0.5, 5);
+        // this.polygon.setPath(points);
+        // this.polygon.setMap(this.map);
+        // }
+        searchBox.addListener('places_changed', function () {
+            var places = searchBox.getPlaces();
+            console.log(places);
+            if (places.length == 0) {
+                return;
+            }
+            // Clear out the old markers.
+            // this.markers.forEach((marker) => {
+            //   marker.setMap(null);
+            // });
+            // this.markers = [];
+            // For each place, get the icon, name and location.
+            var bounds = new google.maps.LatLngBounds();
+            // places.forEach((place) => {
+            if (!places[0].geometry) {
+                console.log("Returned place contains no geometry");
+                return;
+            }
+            var icon = {
+                url: places[0].icon,
+                size: new google.maps.Size(71, 71),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(17, 34),
+                scaledSize: new google.maps.Size(25, 25)
+            };
+            // Create a marker for each place.
+            var currentMarker = new google.maps.Marker({
+                // map: this.map,
+                // icon: icon,
+                title: places[0].formatted_address,
+                position: places[0].geometry.location
+            });
+            // console.log(places[0].geometry.location);
+            _this.latitude = currentMarker['position'].lat();
+            _this.longitude = currentMarker['position'].lng();
+            console.log(_this.latitude + " " + _this.longitude);
+            _this.address = '';
+            _this.state = '';
+            _this.address = places[0].formatted_address;
+            if (places[0].address_components != undefined) {
+                for (var i = 0; i < places[0].address_components.length; i++) {
+                    if (places[0].address_components[i]['types'][0] == 'administrative_area_level_1') {
+                        console.log(places[0].address_components[i]['long_name']);
+                        _this.state = places[0].address_components[i]['long_name'];
+                    }
+                }
+            }
+            //  this.polygon.setMap(this.map);
+            console.log(places[0].formatted_address);
+            // this.markers.push(currentMarker);
+            // ********** for show marker according to screen ********
+            if (places[0].geometry.viewport) {
+                // Only geocodes have viewport.
+                bounds.union(places[0].geometry.viewport);
+            }
+            else {
+                bounds.extend(places[0].geometry.location);
+            }
+            // ****** for show marker accoeding to screen  ************
+            // });
+            _this.map.fitBounds(bounds);
+            _this.onAddLocation();
+        });
+    }; // close placesServices
+    // Add location boundary on map
+    AddBusinessPartnerComponent.prototype.onAddLocation = function () {
+        var obj = { latitude: this.latitude, longitude: this.longitude };
+        console.log('Set New Location Obj');
+        console.log(obj);
+        if (this.polygon != null)
+            this.polygon.setMap(null);
+        var points = this.getNPointsCircularPolygone({ latitude: this.latitude, longitude: this.longitude }, 0.5, 5);
+        this.polygon.setPath(points);
+        this.polygon.setMap(this.map);
+        this.map.setZoom(14);
+    };
+    AddBusinessPartnerComponent.prototype.addFreightLocation = function () {
+        if (this.type == 'transporter') {
+            if (this.checkValidation()) {
+                this.isClicked = true;
+                this.isSpinner = true;
+                this.addBusinessPartner();
+            }
+        }
+        else {
+            //  for create organization first we create freight location and then create organization
+            var obj = null;
+            var vertices = this.polygon.getPath();
+            if (vertices == undefined || vertices == null) {
+                this.openSnackBar("Please select Location on Map.");
+                return false;
+            }
+            var polygonPoints = [];
+            for (var i = 0; i < vertices.getLength(); i++) {
+                var xy = vertices.getAt(i);
+                polygonPoints.push({ latitude: xy.lat(), longitude: xy.lng() });
+                // console.log(xy.lat()+"     "+xy.lng());
+            }
+            if (polygonPoints.length <= 0) {
+                this.openSnackBar("Please select Location on map");
+                return;
+            }
+            if (this.checkValidation()) {
+                obj = {
+                    "name": this.businessPartnerName,
+                    "address": this.address,
+                    "geoTagType": 'geofence',
+                    "source": "manual",
+                    "zone1": null,
+                    "zone2": null,
+                    "zone3": null,
+                    "boundary": polygonPoints,
+                    "centre": { "latitude": this.latitude, "longitude": this.longitude },
+                    "type": 'plant'
+                };
+                console.log(obj);
+                this.isClicked = true;
+                this.isSpinner = true;
+                this.store.dispatch({ type: "ADD_ORG_RESPONSE", payload: null });
+                this.store.dispatch({ type: "CREATE_FREIGHT_LOCATION_RES", payload: null });
+                this.createFreightLocation.createFreightLoc.emit(obj); // response will get in constructor
+            }
+        }
+    }; // close methods add freight location
+    AddBusinessPartnerComponent.prototype.checkValidation = function () {
+        if (this.type == '' || this.type == undefined || this.type == null) {
+            this.openSnackBar("Please Select Type");
+            return false;
+        }
+        if (this.businessPartnerName == '' || this.businessPartnerName == undefined || this.businessPartnerName == null) {
+            this.openSnackBar("Please fill Business Partner Name");
+            return false;
+        }
+        var isEmailValid = true;
+        if (this.email != '') {
+            isEmailValid = this.emailValidation();
+        }
+        console.log("all valiation true");
+        return (true && isEmailValid);
+    };
+    AddBusinessPartnerComponent.prototype.emailValidation = function () {
+        var patt = new RegExp("[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}");
+        var isEmailValid = patt.test(this.email);
+        if (isEmailValid == false) {
+            this.openSnackBar("Please fill valid Email ID or Leave Empty");
+            return false;
+        }
+        return true;
+    };
+    AddBusinessPartnerComponent.prototype.addBusinessPartner = function () {
+        var obj = {
+            type: this.type,
+            partnerName: this.businessPartnerName,
+            address: this.address,
+            state: this.state,
+            zip: this.zip,
+            contactPersonName: this.contactPersonName,
+            emailId: this.email,
+            mobileNo: this.mobileNo
+        };
+        if (this.fretronRefNo != '') {
+            obj['fretronReferenceNo'] = this.fretronRefNo;
+        }
+        if (this.type == 'customer') {
+            obj['freightLocation'] = this.freightLocUuid;
+        }
+        console.log(obj);
+        this.businessPartnerService.addBusinessPartner.emit(obj);
+    }; //close addBusinessPartner
+    AddBusinessPartnerComponent.prototype.cancel = function () {
+        console.log("nothing done");
+        this.router.navigate(["mainDashboard/dashboard/businessPartner"]);
+    };
+    AddBusinessPartnerComponent.prototype.openSnackBar = function (message) {
+        this.matSnackBar.open(message, "OK", { duration: 4000 });
+    };
+    return AddBusinessPartnerComponent;
+}()); //close class
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_3__agm_core__["b" /* AgmMap */]),
+    __metadata("design:type", Object)
+], AddBusinessPartnerComponent.prototype, "agmMap", void 0);
+AddBusinessPartnerComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-add-business-partner',
+        template: __webpack_require__("../../../../../src/app/HMEL-admin/dashboard/add-business-partner/add-business-partner.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/HMEL-admin/dashboard/add-business-partner/add-business-partner.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_6__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__service_businessPartnerService__["a" /* BusinessPartnerService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__service_businessPartnerService__["a" /* BusinessPartnerService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__service_create_freigth_location_service__["a" /* CreateFreightLocation */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__service_create_freigth_location_service__["a" /* CreateFreightLocation */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["f" /* MatDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["f" /* MatDialog */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["b" /* Store */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["s" /* MatSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["s" /* MatSnackBar */]) === "function" && _f || Object])
+], AddBusinessPartnerComponent);
+
+var _a, _b, _c, _d, _e, _f;
+//# sourceMappingURL=add-business-partner.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/HMEL-admin/dashboard/business-partner/business-partner.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".button-basic3 {\r\n  font-size: 12px;\r\n  line-height: 26px;\r\n  color: black;\r\n  height: 33px;\r\n  width: 19%;\r\n  float: right;\r\n  /* overflow: hidden; */\r\n  line-height: 1.2;\r\n  white-space: initial;\r\n  border-radius: 2px;\r\n}\r\n\r\n.button-basic3:hover {\r\n  background-color: #5b89ff !important;\r\n  color: white;\r\n}\r\n\r\n.div {\r\n  border: 100% solid black;\r\n}\r\n\r\n.table1 {\r\n  border-collapse: collapse;\r\n  width: 100%;\r\n  color : black;\r\n  border-top : 1px solid #ddd;\r\n  border-left: 1px solid #ddd;\r\n  border-right: 1px solid #ddd;\r\n}\r\n\r\ntd {\r\n  width: 150px;\r\n  height: 25px;\r\n  text-align: center;\r\n  border-bottom: 1px solid #ddd;\r\n  color : black;\r\n  font-size: 12px;\r\n}\r\n\r\n.expand-search {\r\n  border: 1.5px solid #b0bcc1;\r\n  font-size: 12px;\r\n  padding: 5px 26px 5px 12px;\r\n  display: inline-block;\r\n  border-radius: 17px;\r\n  box-sizing: border-box;\r\n  outline: none;\r\n  min-width: 250px;\r\n}\r\n\r\n\r\n.header-span span{\r\n  padding: 8px 4px;\r\n  font-weight: bold;\r\n  text-align: center;\r\n}\r\n.table-body-span{\r\n  text-align: center;\r\n}\r\n\r\n\r\n.search-icon{\r\n  right:7px;\r\n  margin-top:7px;\r\n  position:absolute;\r\n  font-size:13px;\r\n  color:black;\r\n  cursor: pointer;\r\n}\r\n\r\n.search-icon:active{\r\n  color: #6459a1;\r\n}\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/HMEL-admin/dashboard/business-partner/business-partner.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div>\r\n  <div style=\"display: flex;padding: 10px;\">\r\n    <div style=\"font-size:21px;color:#8a8c8e;\" >\r\n      <span>Business Partner</span>\r\n    </div>\r\n\r\n    <div style=\"position:relative;position: relative;margin-left: auto;\" >\r\n      <i  class=\"fa fa-search search-icon\"  aria-hidden=\"true\"  (click)=\"searchPartner()\"></i>\r\n      <input #location class=\"expand-search\" [(ngModel)]=\"search\" (keyup.Enter)=\"searchPartner()\"  placeholder=\"Search\" >\r\n    </div>\r\n  </div>\r\n\r\n  <div>\r\n    <mat-paginator [length]=totalRecord\r\n                   [pageSize]=this.pageSize\r\n                   [pageSizeOptions]=[5,10,20,50]\r\n                   (page)=\"fetchRecords($event)\" >\r\n    </mat-paginator>\r\n    <div class=\"header-span\" style=\"padding :3px 3px;box-shadow: 0px 2px 5px grey;margin-bottom: 1px; background-color: #f5f2f26b; margin-left: 10px; margin-right: 10px; font-size: 12px\" fxLayout=\"row\">\r\n      <span fxFlex >Business Partner Name</span>\r\n      <span fxFlex>Type</span>\r\n      <span fxFlex>fretron Ref No</span>\r\n      <span fxFlex>Contact Person Name</span>\r\n      <span fxFlex>State</span>\r\n      <span fxFlex>Email ID</span>\r\n      <span fxFlex>Mobile No</span>\r\n      <span fxFlex>Edit</span>\r\n      <span fxFlex>Delete</span>\r\n    </div>\r\n    <div  style=\"margin-left: 10px; margin-right: 10px;height: calc(100vh - 244px);overflow: auto\" >\r\n      <mat-card class=\"table-body-span\" *ngFor=\"let businessPartner of businesPartList\" fxLayout=\"row\" style=\"font-size: 12px; height: auto;padding: 2px;\">\r\n        <span fxFlex style=\"margin-top: 10px\" >{{businessPartner?.partnerName?businessPartner?.partnerName:'N/A'}}</span>\r\n        <span fxFlex style=\"margin-top: 10px\" >{{businessPartner?.type?businessPartner?.type:'N/A'}}</span>\r\n        <span fxFlex style=\"margin-top: 10px\" >{{businessPartner?.type?businessPartner?.fretronReferenceNo:'N/A'}}</span>\r\n        <span fxFlex style=\"margin-top: 10px\" >{{(businessPartner?.contactPersonName)?(businessPartner?.contactPersonName):'N/A'}}</span>\r\n        <span fxFlex style=\"margin-top: 10px\" >{{(businessPartner?.contactPersonName)?(businessPartner?.state):'N/A'}}</span>\r\n        <span fxFlex style=\"margin-top: 10px\" >{{businessPartner?.emailId?businessPartner?.emailId:'N/A'}}</span>\r\n        <span fxFlex style=\"margin-top: 10px\" >{{businessPartner?.mobileNo?businessPartner?.mobileNo:'N/A'}}</span>\r\n        <span fxFlex><button mat-button (click)=\"updateBusinessPartner(businessPartner)\" ><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button></span>\r\n        <span fxFlex><button mat-button (click)=\"openDeleteConfirmationDialog(businessPartner)\" ><i class=\"fa fa-trash-o\" aria-hidden=\"true\"></i></button></span>\r\n      </mat-card>\r\n      <div style=\"height: 50px\"></div>\r\n    </div>\r\n  </div>\r\n\r\n  <button [matTooltipPosition]=\"'left'\" matTooltip=\"Create Business partner\" mat-fab color=\"primary\" name=\"createShipment\" (click)=\"goToaddBusinessPartner()\"style=\"position:absolute;bottom:10px;right:10px\" >\r\n    <i class=\"fa fa-plus\" aria-hidden=\"true\" style=\"font-size: 24px;line-height: 24px;color: white;\"></i>\r\n  </button>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/HMEL-admin/dashboard/business-partner/business-partner.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BusinessPartnerComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__service_businessPartnerService__ = __webpack_require__("../../../../../src/service/businessPartnerService.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__delete_business_partner_dialog_delete_business_partner_dialog_component__ = __webpack_require__("../../../../../src/app/HMEL-admin/dashboard/business-partner/delete-business-partner-dialog/delete-business-partner-dialog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var BusinessPartnerComponent = (function () {
+    function BusinessPartnerComponent(localStorageService, businessPartnerService, router, dialog, store, matSnackBar) {
+        var _this = this;
+        this.localStorageService = localStorageService;
+        this.businessPartnerService = businessPartnerService;
+        this.router = router;
+        this.dialog = dialog;
+        this.store = store;
+        this.matSnackBar = matSnackBar;
+        this.businesPartList = [];
+        this.pageSize = 5;
+        this.pageIndex = 1;
+        this.totalRecord = 0;
+        this.search = '';
+        this.unSub_businessPartnerList = null;
+        this.unSub_deleteBusinessPartner = null;
+        this.getBusinesPart();
+        this.unSub_businessPartnerList = this.store.select('businessPartnerList').subscribe(function (value) {
+            if (value == null) {
+                return;
+            }
+            console.log(value);
+            if (value['error'] == '') {
+                _this.businesPartList = JSON.parse(JSON.stringify(value['data']['data']));
+                _this.totalRecord = value['data']['rowCount'];
+            }
+            else {
+                _this.openSnackBar(value['data']['errorMsg'] + ' please try again');
+            }
+        });
+        this.unSub_deleteBusinessPartner = this.store.select('deleteBusinessPartner').subscribe(function (value) {
+            if (value == null) {
+                return;
+            }
+            console.log(value);
+            if (value['error'] == '') {
+                _this.openSnackBar("Deleted Successfully");
+                _this.businesPartList = [];
+                _this.getBusinesPart();
+            }
+            else {
+                _this.openSnackBar(value['errorMsg'] + ' please try again');
+            }
+        });
+    } // close constructor
+    BusinessPartnerComponent.prototype.ngOnDestroy = function () {
+        if (this.unSub_businessPartnerList != null && this.unSub_businessPartnerList != undefined)
+            this.unSub_businessPartnerList.unsubscribe();
+        if (this.unSub_deleteBusinessPartner != null && this.unSub_deleteBusinessPartner != undefined)
+            this.unSub_deleteBusinessPartner.unsubscribe();
+    };
+    BusinessPartnerComponent.prototype.ngOnInit = function () {
+    };
+    BusinessPartnerComponent.prototype.fetchRecords = function (event) {
+        console.log(event);
+        this.pageSize = event.pageSize;
+        this.pageIndex = event.pageIndex + 1;
+        console.log(this.pageSize, this.pageIndex);
+        this.getBusinesPart();
+    };
+    BusinessPartnerComponent.prototype.searchPartner = function () {
+        if (this.search != '' && this.search != undefined) {
+            this.getBusinesPart();
+        }
+    };
+    BusinessPartnerComponent.prototype.getBusinesPart = function () {
+        console.log('get partner');
+        this.businessPartnerService.getBusinessPartnerList.emit({ pageId: this.pageIndex, pageSize: this.pageSize, searchLike: '' });
+    };
+    BusinessPartnerComponent.prototype.goToaddBusinessPartner = function () {
+        console.log("add partner");
+        this.store.dispatch({ type: "ADD_BUSINESS_PART_RES", payload: null });
+        this.store.dispatch({ type: "CREATE_FREIGHT_LOCATION_RES", payload: null });
+        this.router.navigate(["mainDashboard/dashboard/addBusinessPartner"]);
+    };
+    BusinessPartnerComponent.prototype.openDeleteConfirmationDialog = function (businessPartner) {
+        var _this = this;
+        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_5__delete_business_partner_dialog_delete_business_partner_dialog_component__["a" /* DeleteBusinessPartnerDialog */]);
+        dialogRef.afterClosed().subscribe(function (result) {
+            if (result == undefined || result == null) {
+                // console.log(result);
+                return;
+            }
+            console.log(result);
+            if (result.isDelete == "Y") {
+                _this.deleteBusinessPartner(businessPartner);
+            }
+        });
+    };
+    BusinessPartnerComponent.prototype.deleteBusinessPartner = function (businessPartner) {
+        console.log(businessPartner);
+        var deleteObj = {
+            uuid: businessPartner.uuid,
+            orgId: businessPartner.orgId
+        };
+        this.businessPartnerService.deleteBusinessPartner.emit(deleteObj);
+    };
+    BusinessPartnerComponent.prototype.updateBusinessPartner = function (businessPartner) {
+        this.store.dispatch({ type: "SELECTED_BUSINESS_PART_OBJ", payload: businessPartner });
+        this.router.navigate(["mainDashboard/dashboard/updateBusinessPartner"]);
+    };
+    BusinessPartnerComponent.prototype.openSnackBar = function (message) {
+        this.matSnackBar.open(message, "OK", { duration: 4000 });
+    };
+    return BusinessPartnerComponent;
+}()); //close class
+BusinessPartnerComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-business-partner',
+        template: __webpack_require__("../../../../../src/app/HMEL-admin/dashboard/business-partner/business-partner.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/HMEL-admin/dashboard/business-partner/business-partner.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__service_businessPartnerService__["a" /* BusinessPartnerService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__service_businessPartnerService__["a" /* BusinessPartnerService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["f" /* MatDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["f" /* MatDialog */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["b" /* Store */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["s" /* MatSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["s" /* MatSnackBar */]) === "function" && _f || Object])
+], BusinessPartnerComponent);
+
+var _a, _b, _c, _d, _e, _f;
+//# sourceMappingURL=business-partner.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/HMEL-admin/dashboard/business-partner/delete-business-partner-dialog/delete-business-partner-dialog.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".div {\r\n    margin-top: 20px;\r\n    margin-left: 10px;\r\n}\r\n\r\n.weeklyButton {\r\n    border: none;\r\n    text-align: center;\r\n    display: inline-block;\r\n    margin: 0px 8px;\r\n    cursor: pointer;\r\n    min-width:20px;\r\n    line-height: 30px;\r\n}\r\n\r\n.weeklyButton_S {\r\n    border: none;\r\n    text-align: center;\r\n    display: inline-block;\r\n    margin: 0px 8px;\r\n    cursor: pointer;\r\n    min-width:20px;\r\n    line-height: 30px;\r\n    background: red;\r\n}\r\n\r\n\r\n.weeklyButton_S:hover {\r\n    background-color: #5b89ff !important;\r\n    color: white;\r\n}\r\n\r\n.weeklyButton:hover {\r\n    background-color: #5b89ff !important;\r\n    color: white;\r\n}\r\n\r\n.button {\r\n    font-size: 12px;\r\n    line-height: 26px;\r\n    color: black;\r\n    height: 33px;\r\n    width: 19%;\r\n    float: right;\r\n    /* overflow: hidden; */\r\n    line-height: 1.2;\r\n    white-space: initial;\r\n    border-radius: 2px;\r\n  }\r\n\r\n  .button:hover {\r\n  background-color: #5b89ff !important;\r\n  color: white;\r\n  }\r\n\r\n\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/HMEL-admin/dashboard/business-partner/delete-business-partner-dialog/delete-business-partner-dialog.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div >\r\n  <div>\r\n    <span class=\"header-text\">Are You Sure ?</span>\r\n  </div>\r\n\r\n      <div  style=\"margin-top: 10px;text-align: right;padding: 10px 10px\" >\r\n        <button mat-raised-button style=\"margin-right: 15px\" (click)=\"cancel()\">NO</button>\r\n        <button mat-raised-button color=\"primary\" (click)=\"delete()\">YES</button>\r\n      </div>\r\n  </div>\r\n\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/HMEL-admin/dashboard/business-partner/delete-business-partner-dialog/delete-business-partner-dialog.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DeleteBusinessPartnerDialog; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+/**
+ * Created by amit8.kumar on 12-12-2017.
+ */
+
+
+var DeleteBusinessPartnerDialog = (function () {
+    function DeleteBusinessPartnerDialog(matDialogRef) {
+        this.matDialogRef = matDialogRef;
+    } //close constructor
+    DeleteBusinessPartnerDialog.prototype.ngOnDestroy = function () {
+    };
+    DeleteBusinessPartnerDialog.prototype.delete = function () {
+        this.matDialogRef.close({ isDelete: 'Y' });
+    }; //close dialog addFeightUnit
+    DeleteBusinessPartnerDialog.prototype.cancel = function () {
+        this.matDialogRef.close({ isDelete: 'N' });
+    };
+    return DeleteBusinessPartnerDialog;
+}());
+DeleteBusinessPartnerDialog = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-delete-business-partner-dialog.component',
+        template: __webpack_require__("../../../../../src/app/HMEL-admin/dashboard/business-partner/delete-business-partner-dialog/delete-business-partner-dialog.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/HMEL-admin/dashboard/business-partner/delete-business-partner-dialog/delete-business-partner-dialog.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["h" /* MatDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["h" /* MatDialogRef */]) === "function" && _a || Object])
+], DeleteBusinessPartnerDialog);
+
+var _a;
+//# sourceMappingURL=delete-business-partner-dialog.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/HMEL-admin/dashboard/dashboard.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1040,7 +1124,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "div{\r\n    font-family: Helvetica;\r\n  }\r\n  \r\n  .logo{\r\n    width: 100px;\r\n    padding: 2px;\r\n    height: 19px;\r\n  }\r\n  \r\n  .service-name{\r\n    white-space: nowrap;\r\n    font-size: 12px;\r\n    position: absolute;\r\n    margin-top:6px; \r\n    top: 28px;\r\n    left: 45px;\r\n    font-family: Helvetica;\r\n  }\r\n  \r\n  .header{\r\n    padding:5px 0px 4px 15px;\r\n    background-color: #3F51B5;\r\n    color: white;\r\n    height: 45px;\r\n    box-shadow: 0px 0px 6px darkgrey;\r\n  }\r\n  \r\n  .setting-button{\r\n    margin-left: auto;\r\n    padding: 11px;\r\n    margin-right: 15px;\r\n  }\r\n  \r\n  .menu-button{\r\n    color: white;\r\n  }\r\n  \r\n  .menu-button >>> .mat-button-focus-overlay{\r\n    background-color: rgba(255, 255, 255, 0);\r\n  }\r\n  \r\n  .menu-button:hover{\r\n    color: white !important;\r\n  }\r\n\r\n  .button-basic1 {\r\n    background-color: #3F51B5;\r\n    border: none; \r\n    font-size: 12px;\r\n    color: white;\r\n    margin-left:20px \r\n  }\r\n  \r\n  .button-basic2 {\r\n    background-color: white;\r\n    border: none;\r\n    font-size: 12px;\r\n    margin-bottom:16px;\r\n    color:gray;\r\n    margin-left:20px;  \r\n  }\r\n\r\n  .div-class {\r\n      margin-top:14px; \r\n      border-bottom: 1px solid gray; \r\n  }\r\n\r\n  .button-basic2:focus {\r\n    background-color:#5b89ff !important;\r\n    color: white;\r\n  }", ""]);
+exports.push([module.i, "div{\r\n    font-family: Helvetica;\r\n  }\r\n\r\n  .logo{\r\n    width: 100px;\r\n    padding: 2px;\r\n    height: 19px;\r\n  }\r\n\r\n  .service-name{\r\n    white-space: nowrap;\r\n    font-size: 12px;\r\n    position: absolute;\r\n    margin-top:6px;\r\n    top: 28px;\r\n    left: 45px;\r\n    font-family: Helvetica;\r\n  }\r\n\r\n  .header{\r\n    padding:5px 0px 4px 15px;\r\n    background-color: #3F51B5;\r\n    color: white;\r\n    height: 45px;\r\n    box-shadow: 0px 0px 6px darkgrey;\r\n  }\r\n\r\n  .setting-button{\r\n    margin-left: auto;\r\n    padding: 11px;\r\n    margin-right: 15px;\r\n  }\r\n\r\n  .menu-button{\r\n    color: white;\r\n  }\r\n\r\n  .menu-button >>> .mat-button-focus-overlay{\r\n    background-color: rgba(255, 255, 255, 0);\r\n  }\r\n\r\n  .menu-button:hover{\r\n    color: white !important;\r\n  }\r\n\r\n  .button-basic1 {\r\n    background-color: #3F51B5;\r\n    border: none;\r\n    font-size: 12px;\r\n    color: white;\r\n    margin-left:20px\r\n  }\r\n\r\n  .button-basic2 {\r\n    background-color: white;\r\n    border: none;\r\n    font-size: 12px;\r\n    /*margin-bottom:16px;*/\r\n    color:gray;\r\n    margin-left:20px;\r\n  }\r\n\r\n  .div-class {\r\n      /*margin-top:14px; */\r\n      border-bottom: 1px solid gray;\r\n  }\r\n\r\n  .button-basic2:focus {\r\n    background-color:#5b89ff !important;\r\n    color: white;\r\n  }\r\n", ""]);
 
 // exports
 
@@ -1053,7 +1137,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/HMEL-admin/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"height: 90vh;overflow: hidden;\" >\r\n    <!-- <div class=\"header\" fxLayout=\"row\" >\r\n      <img class=\"logo\" src=\"logo-light.png\" alt=\"Fretron Logo\"  >\r\n      <span class=\"service-name\" >Shipper Portal</span>\r\n      <button *ngFor = \"let button of headerButtons\" mat-button class=\"button-basic1\">\r\n             {{button}}\r\n        </button>   -->\r\n\r\n  <div mat-button class=\"div-class\">\r\n  <button *ngFor=\"let button of buttons\"  mat-button class=\"button-basic2\" (click)='onClick(button)'>\r\n    {{button}}\r\n  </button>\r\n</div><br>\r\n  <div>\r\n      <router-outlet></router-outlet>\r\n  </div>\r\n     <!-- </div> -->\r\n</div>"
+module.exports = "<div style=\"height: calc(100vh - 55px);overflow: hidden;\" >\r\n    <!-- <div class=\"header\" fxLayout=\"row\" >\r\n      <img class=\"logo\" src=\"logo-light.png\" alt=\"Fretron Logo\"  >\r\n      <span class=\"service-name\" >Shipper Portal</span>\r\n      <button *ngFor = \"let button of headerButtons\" mat-button class=\"button-basic1\">\r\n             {{button}}\r\n        </button>   -->\r\n\r\n  <div mat-button class=\"div-class\">\r\n  <button *ngFor=\"let button of buttons\"  mat-button class=\"button-basic2\" (click)='onClick(button)'>\r\n    {{button}}\r\n  </button>\r\n</div>\r\n  <div>\r\n      <router-outlet></router-outlet>\r\n  </div>\r\n     <!-- </div> -->\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1086,17 +1170,14 @@ var DashBoardComponent = (function () {
         // ]
         this.buttons = [
             "Users",
-            "Freight Cluster",
-            "Freight Locations",
-            "Freight Zones",
-            "Freight Routes",
-            "Transporter Volume Quota",
-            "Load Allocation Polices"
+            "Business Partner",
         ];
     }
     DashBoardComponent.prototype.onClick = function (value) {
         if (value === "Users")
             this.router.navigate(["mainDashboard/dashboard/user"]);
+        if (value == "Business Partner")
+            this.router.navigate(["mainDashboard/dashboard/businessPartner"]);
         if (value == "Freight Cluster")
             this.router.navigate(["mainDashboard/dashboard/freightClusterStatus"]);
         if (value == "Freight Locations")
@@ -1123,6 +1204,214 @@ DashBoardComponent = __decorate([
 
 var _a;
 //# sourceMappingURL=dashboard.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/HMEL-admin/dashboard/update-business-partner/update-business-partner.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "div {\r\n  font-family: Helvetica !important;\r\n}\r\n\r\n.my-map-search{\r\n  /*left: 0%;*/\r\n  /*width: 73%;*/\r\n  position: relative;\r\n  z-index: 10;\r\n  /*margin-top: 10px;*/\r\n}\r\n\r\n.my-toggle{\r\n  position: absolute;\r\n  z-index: 11;\r\n  left: 10px;\r\n  top: 33px;\r\n  height: 20px;\r\n  font-size: 12px;\r\n}\r\n\r\n.my-toggle >>> .mat-button-toggle-label-content {\r\n  line-height: 23px;\r\n  padding: 0px 10px;\r\n  color: black;\r\n}\r\n\r\n.search {\r\n  width: 100%;\r\n  font-size: 14px;\r\n  padding: 5px 26px 6px 12px;\r\n  display: inline-block;\r\n  border: 1.5px solid #ccc;\r\n  border-radius: 5px;\r\n  box-sizing: border-box;\r\n}\r\n.search:focus{\r\n  outline: none;\r\n  border: 1.5px solid #03a9f4;\r\n  box-shadow: 0px 0px 5px #03a9f4;\r\n}\r\n\r\n.contact-detail{\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -ms-flex-wrap: wrap;\r\n      flex-wrap: wrap;\r\n  padding: 5px 10px;\r\n  margin: 0px 10px;\r\n  border: 1px solid antiquewhite;\r\n}\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/HMEL-admin/dashboard/update-business-partner/update-business-partner.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" style=\"position: absolute;\" class=\"spinner\"></mat-spinner>\r\n<div (keyup.Enter)=\"updateBusinesPart()\">\r\n  <div style=\"font-size:21px;color:#8a8c8e;padding: 5px;\" >\r\n    <span>Update Business Partner</span>\r\n  </div>\r\n\r\n  <div>\r\n    <div  style=\"display:flex;flex-wrap: wrap;\">\r\n      <div  style=\"min-width: 200px;position: relative;padding: 10px;margin-top: 5px;width: 60%;\" >\r\n        <div style=\"position: relative;\" >\r\n\r\n          <mat-button-toggle-group [disabled] =\"type != 'customer'\"  class=\"my-toggle\" #group=\"matButtonToggleGroup\" [(ngModel)]=\"mapType\">\r\n            <mat-button-toggle value=\"hybrid\">\r\n              <span>Satellite</span>\r\n            </mat-button-toggle>\r\n            <mat-button-toggle value=\"roadmap\" style=\"background-color:floralwhite;\" [style.opacity]=\"(mapType =='roadmap')?'.8':'.6'\">\r\n              <span>Map</span>\r\n            </mat-button-toggle>\r\n          </mat-button-toggle-group>\r\n\r\n          <agm-map [streetViewControl]=\"mapOption.streetViewControl\" [zoomControl]=\"mapOption.zoomControl\" [mapDraggable]=\"mapOption.isMapDraggable\" [disableDefaultUI]=\"mapOption.disableDefaultUI\" [scrollwheel]=\"mapOption.scrollwheel\" [clickableIcons]=\"mapOption.clickableIcons\"\r\n                   [mapTypeId]=\"mapType\" style=\"height: 50vh;\" [latitude]=\"latitude\" [longitude]=\"longitude\" [zoom]=\"5\">\r\n            <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\">\r\n            </agm-marker>\r\n          </agm-map>\r\n        </div>\r\n      </div>\r\n\r\n      <div fxFlex style=\"padding: 5px\" >\r\n        <mat-form-field style=\"width: 100%\">\r\n          <input matInput [disabled]=true  [value]=\"businesPartnerObject.type\" placeholder=\"Type\">\r\n        </mat-form-field>\r\n\r\n        <div>\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"businesPartnerObject.fretronReferenceNo\" placeholder=\"Fretron Reference No\">\r\n          </mat-form-field>\r\n\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"businesPartnerObject.partnerName\" placeholder=\"business Partner Name\" required>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input [disabled]=\"isClicked ==true\"  matInput [(ngModel)]=\"businesPartnerObject.address\" placeholder=\"Address\">\r\n          </mat-form-field>\r\n\r\n          <div style=\"display: flex;flex-wrap: wrap;\" >\r\n            <mat-form-field style=\"margin-right: auto\" >\r\n              <input [disabled]=\"isClicked ==true\"  matInput  [(ngModel)]=\"businesPartnerObject.state\" placeholder=\"State\" >\r\n            </mat-form-field>\r\n\r\n            <mat-form-field style=\"margin-left: 2px\" >\r\n              <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"businesPartnerObject.zip\" placeholder=\"PIN/ZIP\">\r\n            </mat-form-field>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"contact-detail\">\r\n      <mat-form-field style=\"margin-right: 10px;width: 30%;min-width: 200px;\">\r\n        <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"businesPartnerObject.contactPersonName\" placeholder=\"Contact Person Name\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field style=\"margin-right :10px;margin-left :10px;width: 30%;min-width: 200px;\" >\r\n        <input [disabled]=\"isClicked ==true\"  matInput type=\"email\" [(ngModel)]=\"businesPartnerObject.emailId\" placeholder=\"Email\"\r\n               pattern=\"[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}\" >\r\n      </mat-form-field>\r\n\r\n      <mat-form-field style=\"margin-left :10px;width: 30%;min-width: 200px;\">\r\n        <input [disabled]=\"isClicked ==true\"  matInput type=\"number\" [(ngModel)]=\"businesPartnerObject.mobileNo\" placeholder=\"MobileNo\" onkeydown=\"if(event.target.value.length>=10 && event.keyCode!=8 && event.keyCode!=13 )return false;\"\r\n               pattern=\"[0-9]{10}\" >\r\n      </mat-form-field>\r\n    </div>\r\n  </div>\r\n\r\n  <div style=\"text-align: right;padding: 12px;\" >\r\n    <button matTooltip=\"CANCEL / BACK\"  mat-raised-button (click)=\"cancel()\" class=\"status-button\" >Cancel</button>\r\n    <button [disabled]=\"businesPartnerObject.partnerName =='' || isClicked ==true\" matTooltip=\"Add New Business Partner\" color=\"primary\"  mat-raised-button (click)=\"updateBusinesPart()\" class=\"status-button\" >Update</button>\r\n  </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/HMEL-admin/dashboard/update-business-partner/update-business-partner.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UpdateBusinessPartner; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__service_create_freigth_location_service__ = __webpack_require__("../../../../../src/service/create-freigth-location.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__service_businessPartnerService__ = __webpack_require__("../../../../../src/service/businessPartnerService.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var UpdateBusinessPartner = (function () {
+    function UpdateBusinessPartner(localStorageService, router, businessPartnerService, createFreightLocation, dialog, store, matSnackBar) {
+        var _this = this;
+        this.localStorageService = localStorageService;
+        this.router = router;
+        this.businessPartnerService = businessPartnerService;
+        this.createFreightLocation = createFreightLocation;
+        this.dialog = dialog;
+        this.store = store;
+        this.matSnackBar = matSnackBar;
+        this.isSpinner = false;
+        this.type = 'customer';
+        this.mapOption = { isMapDraggable: true, disableDefaultUI: true,
+            scrollwheel: true, clickableIcons: true, zoomControl: true, streetViewControl: true
+        };
+        this.mapType = 'roadmap';
+        this.businesPartnerObject = {
+            uuid: '',
+            orgId: '',
+            type: '',
+            partnerName: '',
+            fretronReferenceNo: '',
+            freightLocation: '',
+            address: '',
+            state: '',
+            zip: '',
+            contactPersonName: '',
+            emailId: '',
+            mobileNo: ''
+        };
+        this.polygon = null;
+        this.latitude = null;
+        this.longitude = null;
+        this.isClicked = false;
+        this.unSub_selectedBusinessPartnerObj = null;
+        this.unSub_selectedBusinessPartnerObj = this.store.select('selectedBusinessPartnerObj').subscribe(function (value) {
+            if (value == null) {
+                return;
+            }
+            console.log(value);
+            var obj = value;
+            if (obj == null || obj == undefined) {
+                _this.router.navigate(["mainDashboard/dashboard/businessPartner"]);
+            }
+            else {
+                // let businessObj:any =JSON.parse(obj);
+                // this.businesPartnerObject.type =businessObj['type'];
+            }
+        });
+    } // close constructor
+    UpdateBusinessPartner.prototype.ngOnInit = function () {
+        var _this = this;
+        this.agmMap.mapReady.subscribe(function (map) {
+            _this.map = map;
+            var points = [];
+            console.log(points);
+            _this.polygon = _this.addPolygone(_this.map, points, false, '#858585', '#353535');
+            _this.disableMap();
+        });
+    };
+    UpdateBusinessPartner.prototype.ngOnDestroy = function () {
+    };
+    UpdateBusinessPartner.prototype.addPolygone = function (map, points, editable, fillColor, strokeColor) {
+        var myPolygon = new google.maps.Polygon({
+            paths: points,
+            editable: editable,
+            strokeColor: strokeColor,
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: fillColor,
+            fillOpacity: 0.35
+        });
+        myPolygon.setMap(map);
+        return myPolygon;
+    };
+    UpdateBusinessPartner.prototype.disableMap = function () {
+        console.log("disable unit");
+        this.polygon.setEditable(false);
+        this.polygon.setOptions({ fillColor: '#858585', strokeColor: '#353535' });
+        this.mapOption.isMapDraggable = false;
+        this.mapOption.disableDefaultUI = false;
+        this.mapOption.scrollwheel = false;
+        this.mapOption.clickableIcons = false;
+        this.mapOption.zoomControl = false;
+        this.mapOption.streetViewControl = false;
+    };
+    UpdateBusinessPartner.prototype.updateBusinesPart = function () {
+        console.log("development in progress");
+        //Note after succesfull updation clear  selectedBusinessPartnerObj store
+        // if (this.checkValidation()) {
+        //   obj = {
+        //     "name": this.businessPartnerName,
+        //     "address": this.address,
+        //     "geoTagType": 'geofence',
+        //     "source": "manual",
+        //     "zone1": null,
+        //     "zone2": null,
+        //     "zone3": null,
+        //     "boundary": polygonPoints,
+        //     "centre": {"latitude": this.latitude, "longitude": this.longitude},
+        //     "type": 'plant'
+        //   }
+        //   this.createFreightLocation.createFreightLoc.emit(obj); // response will get in constructor
+    }; // close methods add freight location
+    UpdateBusinessPartner.prototype.checkValidation = function () {
+        if (this.businesPartnerObject.partnerName == '' || this.businesPartnerObject.partnerName == undefined || this.businesPartnerObject.partnerName == null) {
+            this.openSnackBar("Please fill Business Partner Name");
+            return false;
+        }
+        var isEmailValid = true;
+        if (this.businesPartnerObject.emailId != '') {
+            isEmailValid = this.emailValidation();
+        }
+        console.log("all valiation true");
+        return (true && isEmailValid);
+    };
+    UpdateBusinessPartner.prototype.emailValidation = function () {
+        var patt = new RegExp("[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}");
+        var isEmailValid = patt.test(this.businesPartnerObject.emailId);
+        if (isEmailValid == false) {
+            this.openSnackBar("Please fill valid Email ID or Leave Empty");
+            return false;
+        }
+        return true;
+    };
+    UpdateBusinessPartner.prototype.cancel = function () {
+        console.log("nothing done");
+        this.router.navigate(["mainDashboard/dashboard/businessPartner"]);
+    };
+    UpdateBusinessPartner.prototype.openSnackBar = function (message) {
+        this.matSnackBar.open(message, "OK", { duration: 4000 });
+    };
+    return UpdateBusinessPartner;
+}()); //close class
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_4__agm_core__["b" /* AgmMap */]),
+    __metadata("design:type", Object)
+], UpdateBusinessPartner.prototype, "agmMap", void 0);
+UpdateBusinessPartner = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+        selector: 'app-update-business-partner',
+        template: __webpack_require__("../../../../../src/app/HMEL-admin/dashboard/update-business-partner/update-business-partner.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/HMEL-admin/dashboard/update-business-partner/update-business-partner.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_7__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_6__service_businessPartnerService__["a" /* BusinessPartnerService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__service_businessPartnerService__["a" /* BusinessPartnerService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__service_create_freigth_location_service__["a" /* CreateFreightLocation */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__service_create_freigth_location_service__["a" /* CreateFreightLocation */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["f" /* MatDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_material__["f" /* MatDialog */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["s" /* MatSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_material__["s" /* MatSnackBar */]) === "function" && _g || Object])
+], UpdateBusinessPartner);
+
+var _a, _b, _c, _d, _e, _f, _g;
+//# sourceMappingURL=update-business-partner.component.js.map
 
 /***/ }),
 
@@ -2699,6 +2988,636 @@ var _a, _b, _c, _d;
 
 /***/ }),
 
+/***/ "../../../../../src/app/HMEL-admin/shipment-orders/browse-shipment/browse-shipment.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "div {\r\n  font-family: Helvetica !important;\r\n}\r\n\r\n\r\n.card-span span{\r\n  margin-right: 50px;\r\n  font-size: 13px;\r\n  white-space: nowrap;\r\n  line-height: 2;\r\n}\r\n\r\n.card-sub-span{\r\n  margin-left: 10px;\r\n  border-bottom: 1px solid aliceblue;\r\n  margin-top: 5px;\r\n  padding-bottom: 10px;\r\n  color: #6f6a6a;\r\n}\r\n\r\n.card-sub-span span{\r\n  /*margin-right: 70px;*/\r\n  font-size: 12px;\r\n  white-space: nowrap;\r\n  line-height: 1.7;\r\n}\r\n\r\n .my-expansion-panel-body >>> .mat-expansion-panel-body{\r\n  margin-bottom: 0px !important;\r\n}\r\n\r\n .shipment-tracking-state{\r\n   color: blue;\r\n   border-radius: 10px;\r\n   padding: 3px 10px;\r\n   background-color: #ece8e8;\r\n }\r\n\r\n\r\n.expand-search {\r\n  border: 1.5px solid #b0bcc1;\r\n  width: 100%;\r\n  font-size: 12px;\r\n  padding: 5px 26px 5px 12px;\r\n  display: inline-block;\r\n  border-radius: 17px;\r\n  box-sizing: border-box;\r\n  outline: none;\r\n}\r\n\r\n/* search box*/\r\n.expand-search:focus{\r\n  outline: none;\r\n  border: 1.5px solid #03a9f4;\r\n}\r\n\r\n\r\n.status-button{\r\n  font-size: 12px;\r\n  line-height: 26px;\r\n  height: 33px;\r\n  width: 19%;\r\n  /* overflow: hidden; */\r\n  line-height: 1.2;\r\n  white-space: initial;\r\n  border-radius: 2px;\r\n}\r\n\r\n.status-button:hover\r\n{\r\n  background-color: #5b89ff !important;\r\n  color: white;\r\n}\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/HMEL-admin/shipment-orders/browse-shipment/browse-shipment.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div style=\"overflow: auto;height:calc(100vh - 55px);\" >\r\n  <div style=\"display:flex;padding:7px\" >\r\n    <div style=\"display:flex;padding-top: 7px;\">\r\n      <button (click)=\"selectedFilter = '';filterValue()\" mat-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == ''?'#1976d2':''\"  [style.color]=\"selectedFilter == ''?'#FFFFFF':''\">{{countFilterData['all']}} <span>All</span></button>\r\n      <button (click)=\"selectedFilter = 'active';filterValue()\" mat-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == 'active'?'#1976d2':''\" [style.color]=\"selectedFilter == 'active'?'#FFFFFF':''\" style=\"margin-left: 15px\">{{countFilterData['active']}} <span>Active</span></button>\r\n      <button (click)=\"selectedFilter = 'completed';filterValue()\" mat-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == 'completed'?'#1976d2':''\" [style.color]=\"selectedFilter == 'completed'?'#FFFFFF':''\" style=\"margin-left: 15px\">{{countFilterData['completed']}} <span>Completed</span></button>\r\n    </div>\r\n  </div>\r\n\r\n  <div style=\"margin-top:15px;text-align:center;font-size:18px;color:#e27560;\" *ngIf=\"isSpinner ==false\">\r\n       <span>{{msg}}</span>\r\n  </div>\r\n  <mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></mat-spinner>\r\n  <div style=\"margin-top: 10px\">\r\n    <!-- [expanded]=true  means close by default-->\r\n    <mat-expansion-panel [expanded]=true class=\"my-expansion-panel-body\" style=\"margin-top: 10px;padding: 12px\" *ngFor=\"let shipmentOrder of shipmentOrders\">\r\n      <mat-expansion-panel-header style=\"padding-left: 0px;\">\r\n        <div class=\"card-span\" >\r\n          <span ><b>Shipment Order Number :</b> {{(shipmentOrder?.shipmentOrderNumber)?(shipmentOrder?.shipmentOrderNumber):'N/A'}}</span>\r\n          <span><b>Shipment Order Creation Time :</b> {{(shipmentOrder?.shipmentOrderCreateDate)?(shipmentOrder?.shipmentOrderCreateDate | date:'dd-MMM-yyyy'):'N/A'}}</span>\r\n          <span><b>Shipment Order Type :</b> {{(shipmentOrder?.shipmentType)?(shipmentOrder?.shipmentType):'N/A'}}</span>\r\n          <span><b>Vehicle No :</b> {{(shipmentOrder?.vehicleRegistrationNumber)?(shipmentOrder?.vehicleRegistrationNumber):'N/A'}}</span>\r\n          <span><b>Transporter Name :</b> {{(shipmentOrder?.transporterName)?(shipmentOrder?.transporterName):'N/A'}}</span>\r\n          <span><b>Orgnization ID :</b> {{(shipmentOrder?.orgId)?(shipmentOrder?.orgId):'N/A'}}</span>\r\n          <span><b>Distance :</b> {{(shipmentOrder?.distance)?(shipmentOrder?.distance/1000):'N/A'}} KM</span>\r\n        </div>\r\n      </mat-expansion-panel-header>\r\n      <div style=\"margin-top: 10px\">\r\n        <div style=\"font-size: 14px;color: #7d7a7a;\"><b>Freight Unit:</b></div>\r\n        <div class=\"card-sub-span\"  *ngFor=\"let freightUnit of shipmentOrder?.freightUnits\" >\r\n          <div style=\"margin-bottom: 2px;display: flex;flex-wrap: wrap;justify-content: space-between;\" >\r\n            <span ><b>Freight Unit Number : </b>{{(freightUnit?.freightUnitNumber)?(freightUnit?.freightUnitNumber):'N/A'}}</span>\r\n            <span ><b>State : </b><span class=\"shipment-tracking-state\">{{(freightUnit?.shipmentState?.state)?(freightUnit?.shipmentState?.state):'N/A'}}</span></span>\r\n            <span ><b>Last Known Location : </b><span class=\"shipment-tracking-state\">{{(freightUnit?.shipmentState?.address)?(freightUnit?.shipmentState?.address):'N/A'}}</span></span>\r\n          </div>\r\n          <div style=\"display: flex;flex-wrap: wrap;justify-content: space-between;\">\r\n            <span><b>Consignor : </b>{{(freightUnit?.consignerName)?(freightUnit?.consignerName):'N/A'}}</span>\r\n            <span><b>Consignee : </b>{{(freightUnit?.consigneeName)?(freightUnit?.consigneeName):'N/A'}}</span>\r\n            <span><b>Material : </b>{{(freightUnit?.material)?(freightUnit?.material):'N/A'}}</span>\r\n            <span><b>Quantity : </b>{{(freightUnit?.quantity != 'null')?(freightUnit?.quantity):'N/A'}}</span>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </mat-expansion-panel>\r\n    <div style=\"height: 50px\"></div>\r\n  </div>\r\n\r\n  <button [matTooltipPosition]=\"'left'\" matTooltip=\"Add new Shipment Order\" mat-fab color=\"primary\" name=\"createShipment\" (click)=\"createShipmentOrder()\" style=\"position:absolute;bottom:10px;right:10px\" >\r\n    <i class=\"fa fa-plus\" aria-hidden=\"true\" style=\"font-size: 24px;line-height: 24px;color: white;\"></i>\r\n  </button>\r\n</div>\r\n\r\n\r\n\r\n\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/HMEL-admin/shipment-orders/browse-shipment/browse-shipment.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BrowseShipment; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__service_shipment_order_service__ = __webpack_require__("../../../../../src/service/shipment-order-service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var BrowseShipment = (function () {
+    function BrowseShipment(router, shipmentOrderService, snackBar, _store) {
+        var _this = this;
+        this.router = router;
+        this.shipmentOrderService = shipmentOrderService;
+        this.snackBar = snackBar;
+        this._store = _store;
+        this.unSub_shipmentOrders = null;
+        this.orderList = []; // array which contains res value
+        this.shipmentOrders = []; //array which contains filtered value
+        this.isSpinner = false;
+        this.msg = '';
+        this.selectedFilter = '';
+        this.countFilterData = { all: 0, active: 0, completed: 0 };
+        this.pageNo = 1;
+        this.records = 50;
+        this.shipmentOrderService.getShipmentOrderList.emit({ pageNo: this.pageNo, records: this.records });
+        this.isSpinner = true;
+        console.log("browse shipment component");
+        this.unSub_shipmentOrders = this._store.select('shipmentOrders').subscribe(function (value) {
+            if (value == null) {
+                return;
+            }
+            _this.msg = '';
+            _this.isSpinner = false;
+            if (value['error'] == "") {
+                console.log(value['data']);
+                _this.orderList = JSON.parse(JSON.stringify(value['data']));
+                _this.filterValue();
+                if (_this.shipmentOrders.length == 0) {
+                    _this.msg = 'No Record Found';
+                }
+                _this.countFilter();
+            }
+            else {
+                console.log(value['errorMsg']);
+                _this.openSnackBar(value['errorMsg']);
+                _this.msg = value['errorMsg'];
+            }
+        });
+    } // close constructor
+    BrowseShipment.prototype.ngOnDestroy = function () {
+        console.log("add freight dialog close");
+        if (this.unSub_shipmentOrders != null && this.unSub_shipmentOrders != undefined) {
+            this.unSub_shipmentOrders.unsubscribe();
+        }
+    };
+    BrowseShipment.prototype.ngOnInit = function () {
+    };
+    BrowseShipment.prototype.filterValue = function () {
+        var _this = this;
+        console.log("call filter");
+        if (this.selectedFilter == '') {
+            this.shipmentOrders = this.orderList;
+        }
+        if (this.selectedFilter == 'completed') {
+            var list = this.orderList.filter(function (u) {
+                if (u['freightUnits'][0]['shipmentState'] == undefined || u['freightUnits'][0]['shipmentState'] == null) {
+                    return false;
+                }
+                return (u['freightUnits'][0]['shipmentState']['state'].toUpperCase().indexOf(_this.selectedFilter.toUpperCase()) != -1);
+            });
+            console.log("not call");
+            console.log(list);
+            {
+                this.shipmentOrders = list;
+            }
+        }
+        if (this.selectedFilter == 'active') {
+            var list = this.orderList.filter(function (u) {
+                if (u['freightUnits'][0]['shipmentState'] == undefined || u['freightUnits'][0]['shipmentState'] == null) {
+                    return false;
+                }
+                else if (u['freightUnits'][0]['shipmentState']['state'] == 'EnrouteForPickUp' ||
+                    u['freightUnits'][0]['shipmentState']['state'] == 'AtPickUpPoint' ||
+                    u['freightUnits'][0]['shipmentState']['state'] == 'EnrouteForDestination' ||
+                    u['freightUnits'][0]['shipmentState']['state'] == 'AtDestination') {
+                    return true;
+                }
+                return false;
+            });
+            console.log(list);
+            {
+                this.shipmentOrders = list;
+            }
+        }
+    }; //close filterValue methods
+    BrowseShipment.prototype.countFilter = function () {
+        this.countFilterData = { all: 0, active: 0, completed: 0 };
+        this.countFilterData.all = this.shipmentOrders.length;
+        for (var i = 0; i < this.shipmentOrders.length; i++) {
+            if (this.shipmentOrders[i].freightUnits[0]['shipmentState'] != undefined) {
+                console.log(this.shipmentOrders[i].freightUnits[0]['shipmentState']['state']);
+                if (this.shipmentOrders[i].freightUnits[0]['shipmentState']['state'] == 'completed') {
+                    this.countFilterData.completed = this.countFilterData.completed + 1;
+                }
+                if (this.shipmentOrders[i].freightUnits[0]['shipmentState']['state'] == 'EnrouteForPickUp' ||
+                    this.shipmentOrders[i].freightUnits[0]['shipmentState']['state'] == 'AtPickUpPoint' ||
+                    this.shipmentOrders[i].freightUnits[0]['shipmentState']['state'] == 'EnrouteForDestination' ||
+                    this.shipmentOrders[i].freightUnits[0]['shipmentState']['state'] == 'AtDestination') {
+                    this.countFilterData.active = this.countFilterData.active + 1;
+                }
+            }
+        }
+        // freightUnits?.shipmentState?.state
+    }; //close count filter
+    BrowseShipment.prototype.createShipmentOrder = function () {
+        this._store.dispatch({ type: "CREATE_SHIPMENT_RES", payload: null });
+        this.router.navigate(["mainDashboard/createShipmentOrder"]);
+    };
+    BrowseShipment.prototype.openSnackBar = function (message) {
+        this.snackBar.open(message, '', { duration: 4000 });
+    };
+    return BrowseShipment;
+}());
+BrowseShipment = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-browse-shipment',
+        template: __webpack_require__("../../../../../src/app/HMEL-admin/shipment-orders/browse-shipment/browse-shipment.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/HMEL-admin/shipment-orders/browse-shipment/browse-shipment.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__service_shipment_order_service__["a" /* ShipmentOrderServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__service_shipment_order_service__["a" /* ShipmentOrderServices */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_material__["s" /* MatSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_material__["s" /* MatSnackBar */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ngrx_store__["b" /* Store */]) === "function" && _d || Object])
+], BrowseShipment);
+
+var _a, _b, _c, _d;
+//# sourceMappingURL=browse-shipment.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/HMEL-admin/shipment-orders/create-shipment-order/add-freight-unit-dialog/add-freight-unit-dialog.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".div {\r\n    margin-top: 20px;\r\n    margin-left: 10px;\r\n}\r\n\r\n.weeklyButton {\r\n    border: none;\r\n    text-align: center;\r\n    display: inline-block;\r\n    margin: 0px 8px;\r\n    cursor: pointer;\r\n    min-width:20px;\r\n    line-height: 30px;\r\n}\r\n\r\n.weeklyButton_S {\r\n    border: none;\r\n    text-align: center;\r\n    display: inline-block;\r\n    margin: 0px 8px;\r\n    cursor: pointer;\r\n    min-width:20px;\r\n    line-height: 30px;\r\n    background: red;\r\n}\r\n\r\n\r\n.weeklyButton_S:hover {\r\n    background-color: #5b89ff !important;\r\n    color: white;\r\n}\r\n\r\n.weeklyButton:hover {\r\n    background-color: #5b89ff !important;\r\n    color: white;\r\n}\r\n\r\n.button {\r\n    font-size: 12px;\r\n    line-height: 26px;\r\n    color: black;\r\n    height: 33px;\r\n    width: 19%;\r\n    float: right;\r\n    /* overflow: hidden; */\r\n    line-height: 1.2;\r\n    white-space: initial;\r\n    border-radius: 2px;\r\n  }\r\n\r\n  .button:hover {\r\n  background-color: #5b89ff !important;\r\n  color: white;\r\n  }\r\n\r\n\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/HMEL-admin/shipment-orders/create-shipment-order/add-freight-unit-dialog/add-freight-unit-dialog.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div >\r\n  <div>\r\n    <span class=\"header-text\">Add Freight Unit</span>\r\n  </div>\r\n\r\n  <div style=\"margin-top: 16px;\">\r\n    <div fxLayout>\r\n      <mat-form-field fxFlex  style=\"margin-right: 10px\">\r\n        <input matInput [(ngModel)]=\"freightUnitNumber\" placeholder=\"Freight Unit Number\" required>\r\n      </mat-form-field>\r\n\r\n      <mat-form-field fxFlex style=\"margin-right: 10px\">\r\n        <mat-select [(ngModel)]=\"consignor\" placeholder=\" Select Consignor\" required >\r\n          <mat-option *ngFor=\"let selConsignor of consignorList\" value=\"{{selConsignor.uuid}}\" >{{selConsignor.name}}</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n\r\n      <mat-form-field fxFlex >\r\n        <mat-select [(ngModel)]=\"consignee\" placeholder=\"Consignee\" required >\r\n          <mat-option *ngFor=\"let selConsignee of consigneeList\" value=\"{{selConsignee.uuid}}\" (click)=\"consigneeObj =selConsignee\">{{selConsignee.name}}</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n    </div>\r\n\r\n    <div fxLayout>\r\n      <mat-form-field fxFlex style=\"margin-right: 10px;\">\r\n        <input matInput  [(ngModel)]=\"material\" placeholder=\"Material\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field fxFlex style=\"margin-right: 10px\" >\r\n        <input matInput type=\"number\" [(ngModel)]=\"quantity\" placeholder=\"Quantity\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field fxFlex  >\r\n        <mat-select [(ngModel)]=\"UOM\" placeholder=\"Quantity UOM\">\r\n          <mat-option value=\"tonne\">Tonne</mat-option>\r\n          <mat-option value=\"pieces\">Pieces</mat-option>\r\n          <mat-option value=\"packets\">Packets</mat-option>\r\n          <mat-option value=\"litres\">Litres</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n    </div>\r\n\r\n    <div fxLayout>\r\n      <div fxFlex style=\"margin-right: 10px;margin-top: 23px;\" >\r\n        <owl-date-time matInput [autoClose]=\"true\" [(ngModel)]=\"freightUnitCreationDate\" placeHolder=\"Freight Unit Creation Date\"></owl-date-time>\r\n      </div>\r\n\r\n      <mat-form-field fxFlex  >\r\n        <input matInput type=\"number\" [(ngModel)]=\"distance\" placeholder=\"Distance\">\r\n      </mat-form-field> <span style=\"margin-top: 22px;\"> km</span>\r\n    </div>\r\n\r\n    <div fxLayout style=\"margin-top: 16px\" >\r\n      <div fxFlex style=\"margin-right: 10px;\" >\r\n        <owl-date-time matInput [autoClose]=\"true\" [(ngModel)]=\"actualStartTime\" placeHolder=\"Actual Start Time\"></owl-date-time>\r\n      </div>\r\n\r\n      <div fxFlex>\r\n        <owl-date-time matInput [autoClose]=\"true\" [(ngModel)]=\"actualEndTime\" placeHolder=\"Actual End Time\"></owl-date-time>\r\n      </div>\r\n    </div>\r\n\r\n      <div  style=\"margin-top: 10px;text-align: right;padding: 10px 10px\" >\r\n        <button mat-raised-button style=\"margin-right: 15px\" (click)=\"cancel()\">Cancel</button>\r\n        <button mat-raised-button color=\"primary\" (click)=\"addFreightUnit()\">Add</button>\r\n      </div>\r\n  </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/HMEL-admin/shipment-orders/create-shipment-order/add-freight-unit-dialog/add-freight-unit-dialog.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddFreightUnitDialog; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__service_shipment_order_service__ = __webpack_require__("../../../../../src/service/shipment-order-service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+/**
+ * Created by amit8.kumar on 12-12-2017.
+ */
+
+
+
+
+var AddFreightUnitDialog = (function () {
+    function AddFreightUnitDialog(snackBar, _store, matDialogRef, shipmentOderService) {
+        var _this = this;
+        this.snackBar = snackBar;
+        this._store = _store;
+        this.matDialogRef = matDialogRef;
+        this.shipmentOderService = shipmentOderService;
+        this.freightUnitNumber = '';
+        this.consigneeObj = null;
+        this.consignorList = [];
+        this.consignor = '';
+        this.consignee = '';
+        this.consigneeList = [];
+        this.material = '';
+        this.UOM = 'tonne';
+        this.quantity = null;
+        this.distance = null;
+        this.consignorList.push({ uuid: '9ee8e724-96b9-4ec2-9b27-7fd0104b2327', name: 'Jindal saw limited' });
+        this.unSub_freightLocation = this._store.select('freightLocation').subscribe(function (value) {
+            if (value == null) {
+                return;
+            }
+            if (value['error'] == "") {
+                _this.consigneeList = value['data'];
+                console.log(_this.consigneeList);
+            }
+            else {
+                console.log(value['errorMsg']);
+            }
+        });
+    } //close constructor
+    AddFreightUnitDialog.prototype.ngOnDestroy = function () {
+        console.log("add freight dialog close");
+        if (typeof this.unSub_freightLocation != 'undefined' && this.unSub_freightLocation != null && this.unSub_freightLocation != undefined) {
+            this.unSub_freightLocation.unsubscribe();
+        }
+    };
+    AddFreightUnitDialog.prototype.addFreightUnit = function () {
+        if (this.checkValidation()) {
+            var obj = {
+                "consigner": this.consignor,
+                "consignee": this.consignee,
+                "material": this.material,
+                "quantity": this.quantity,
+                "plannedStartTime": null,
+                "plannedEndTime": null,
+                "actualStartTime": (this.actualStartTime == undefined) ? null : this.actualStartTime.getTime(),
+                "actualEndTime": (this.actualEndTime == undefined) ? null : this.actualEndTime.getTime(),
+                "distance": (this.distance * 1000),
+                "quantityUmo": this.UOM,
+                "freightUnitNumber": this.freightUnitNumber,
+                "freightUnitCreationDate": (this.freightUnitCreationDate == undefined) ? null : this.freightUnitCreationDate.getTime(),
+            };
+            this.matDialogRef.close({ FU: obj, consigneeObj: this.consigneeObj });
+        }
+    }; //close dialog addFeightUnit
+    AddFreightUnitDialog.prototype.checkValidation = function () {
+        if (this.freightUnitNumber == '' || this.freightUnitNumber == null) {
+            this.openSnackBar("Please fill Freight Unit Number");
+            return false;
+        }
+        if (this.consignor == '' || this.consignor == null) {
+            this.openSnackBar("Please select Consignor");
+            return false;
+        }
+        if (this.consignee == '' || this.consignee == null) {
+            this.openSnackBar("Please select Consignee");
+            return false;
+        }
+        return true;
+    };
+    AddFreightUnitDialog.prototype.cancel = function () {
+        this.matDialogRef.close();
+    };
+    AddFreightUnitDialog.prototype.openSnackBar = function (message) {
+        this.snackBar.open(message, '', { duration: 4000 });
+    };
+    return AddFreightUnitDialog;
+}());
+AddFreightUnitDialog = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-add-freight-unit-dialog',
+        template: __webpack_require__("../../../../../src/app/HMEL-admin/shipment-orders/create-shipment-order/add-freight-unit-dialog/add-freight-unit-dialog.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/HMEL-admin/shipment-orders/create-shipment-order/add-freight-unit-dialog/add-freight-unit-dialog.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["s" /* MatSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["s" /* MatSnackBar */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["h" /* MatDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["h" /* MatDialogRef */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__service_shipment_order_service__["a" /* ShipmentOrderServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__service_shipment_order_service__["a" /* ShipmentOrderServices */]) === "function" && _d || Object])
+], AddFreightUnitDialog);
+
+var _a, _b, _c, _d;
+//# sourceMappingURL=add-freight-unit-dialog.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/HMEL-admin/shipment-orders/create-shipment-order/create-shipment-order.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".form-box{\r\n  padding: 15px;\r\n  border: 1px solid #d2cfcd;\r\n  margin-top: 10px;\r\n}\r\n\r\n/*.mat-dialog-container{*/\r\n  /*overflow: unset !important;*/\r\n/*}*/\r\n\r\n.close-chips{\r\n  font-size: 22px;\r\n  border-radius: 50%;\r\n  padding: 0px 3px;\r\n  background-color: aliceblue;\r\n}\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/HMEL-admin/shipment-orders/create-shipment-order/create-shipment-order.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\" style=\"position: absolute;\"></mat-spinner>\r\n\r\n<div style=\"padding: 15px;height: calc(100vh - 91px);overflow:auto\">\r\n  <div>\r\n    <span class=\"header-text\">Create Shipment Order</span>\r\n  </div>\r\n\r\n  <div class=\"form-box\">\r\n    <div style=\"margin-top: 20px\" fxLayout=\"row\">\r\n      <mat-form-field fxFlex style=\"margin-right: 15px\">\r\n        <input matInput [(ngModel)]=\"shipmentOrderNo\" placeholder=\"Shipment Order No\" required>\r\n      </mat-form-field>\r\n\r\n      <mat-form-field fxFlex style=\"margin-right: 15px;\">\r\n        <input matInput style='text-transform:uppercase' (blur)=\"checkVehicleRegNoExist()\" [(ngModel)]=\"vehicleRegNo\" placeholder=\"vehicle reg No\"\r\n          required>\r\n      </mat-form-field>\r\n\r\n      <div fxFlex style=\"margin-right: 5px;\" [style.margin-top]=\"(shipmentOrderDate ==null)?'22px':'0px'\">\r\n        <div *ngIf=\"shipmentOrderDate !=null\" style=\"margin-bottom: 4px;\">\r\n          <span style=\"white-space: nowrap;font-size:12px\">\r\n            <b>Order Date</b>\r\n          </span>\r\n        </div>\r\n        <owl-date-time matInput hourFormat='12' [autoClose]=\"false\" dateFormat=\"DD/MMM/YYYY hh:mm a\" [(ngModel)]=\"shipmentOrderDate\"\r\n          placeHolder=\"Select Order Date\" required></owl-date-time>\r\n      </div>\r\n    </div>\r\n\r\n\r\n    <!-- <div style=\"margin-top:20px;margin-bottom:20px;border:1px solid #dee0e2;padding: 10px 5px;\" fxLayout=\"row\">\r\n      <label style=\"white-space:nowrap;margin-top: 7px;margin-right: 5px;\">Freight unit* : </label>\r\n      <div fxLayout=\"row\" style=\"width: 100%;\" >\r\n          <mat-chip-list style=\"max-height: 130px;overflow: auto;\" >\r\n              <mat-chip style=\"white-space: nowrap;margin-bottom: 5px;\"  *ngFor=\"let selFreightUnit of freightUnits\" [selectable]=true\r\n                         (remove)=\"remove(selFreightUnit)\" >\r\n                {{selFreightUnit?.FU?.freightUnitNumber}} - {{selFreightUnit?.consigneeObj?.name}}\r\n                <span class=\"close-chips\" matChipRemove >&times;</span>\r\n              </mat-chip>\r\n          </mat-chip-list>\r\n        <div  style=\"margin-left:auto;margin-right:5px\">\r\n           <button [disabled]=\"freightUnits.length >0\"  (click)=\"openFreightUnitDialog()\" mat-mini-fab color=\"primary\">\r\n             <i class=\"fa fa-plus\"  aria-hidden=\"true\" ></i>\r\n           </button>\r\n        </div>\r\n      </div>\r\n    </div> -->\r\n\r\n    <div style=\"margin-top: 10px\" fxLayout=\"row\">\r\n      <mat-form-field fxFlex style=\"margin-right: 10px\">\r\n        <mat-select [(ngModel)]=\"consignor\" placeholder=\" Select Consignor\" required>\r\n          <mat-option *ngFor=\"let selConsignor of consignorList\" value=\"{{selConsignor.uuid}}\">{{selConsignor.name}}</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n\r\n      <mat-form-field fxFlex>\r\n        <mat-select [(ngModel)]=\"consignee\" placeholder=\"Consignee\" required>\r\n          <mat-option *ngFor=\"let selConsignee of consigneeList\" value=\"{{selConsignee.uuid}}\" (click)=\"consigneeObj =selConsignee\">{{selConsignee.name}}</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n\r\n\r\n      <mat-form-field fxFlex style=\"margin-left: 10px;\">\r\n        <input matInput [(ngModel)]=\"material\" placeholder=\"Material\">\r\n      </mat-form-field>\r\n    </div>\r\n\r\n    <div style=\"margin-top: 10px\" fxLayout=\"row\">\r\n      <mat-form-field fxFlex style=\"margin-right: 10px\">\r\n        <input matInput type=\"number\" [(ngModel)]=\"quantity\" placeholder=\"Quantity\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field fxFlex>\r\n        <mat-select [(ngModel)]=\"UOM\" placeholder=\"Quantity UOM\">\r\n          <mat-option value=\"tonne\">Tonne</mat-option>\r\n          <mat-option value=\"pieces\">Pieces</mat-option>\r\n          <mat-option value=\"packets\">Packets</mat-option>\r\n          <mat-option value=\"litres\">Litres</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n\r\n      <div fxFlex style=\"margin-left: 10px; margin-top: 22px;\">\r\n        <owl-date-time matInput [autoClose]=\"true\" hourFormat='12' dateFormat=\"DD/MMM/YYYY hh:mm a\" [(ngModel)]=\"plannedStartTime\"\r\n          placeHolder=\"Planned Start Time\"></owl-date-time>\r\n      </div>\r\n    </div>\r\n\r\n    <div style=\"margin-top: 10px\" fxLayout=\"row\">\r\n      <mat-form-field fxFlex style=\"margin-right: 15px\">\r\n        <mat-select [(ngModel)]=\"TBPName\" placeholder=\"Transport business partner name\" required>\r\n          <!--<mat-option value=\"\">select</mat-option>-->\r\n          <mat-option *ngFor=\"let trBusinessPart of trBusinessPartners\" value=\"{{trBusinessPart['uuid']}}\">{{trBusinessPart['contactPersonName']}}</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n\r\n      <div fxFlex style=\"margin-right: 15px;    margin-top: 22px;\">\r\n        <owl-date-time hourFormat='12' dateFormat=\"DD/MMM/YYYY hh:mm a\" [autoClose]=\"true\" [(ngModel)]=\"actualStartTime\" placeHolder=\"Actual start time\"\r\n          required></owl-date-time>\r\n      </div>\r\n\r\n      <div fxFlex style=\"margin-right: 5px;margin-top: 22px;\">\r\n        <owl-date-time [autoClose]=\"true\" hourFormat='12' dateFormat=\"DD/MMM/YYYY hh:mm a\" [(ngModel)]=\"actualEndTime\" placeHolder=\"Actual End Time\"\r\n          required></owl-date-time>\r\n      </div>\r\n    </div>\r\n\r\n\r\n\r\n    <div style=\"margin-top: 10px\" fxLayout=\"row\">\r\n      <div style=\"margin-right: 15px;\" fxFlex>\r\n        <mat-form-field style=\"width: calc(100% - 22px);\">\r\n          <input type=\"number\" matInput [(ngModel)]=\"distance\" placeholder=\"distance\">\r\n        </mat-form-field>\r\n        <span style=\"font-size:12px\"> km</span>\r\n      </div>\r\n\r\n      <mat-form-field fxFlex>\r\n        <mat-select [(ngModel)]=\"shipmentOrderType\" placeholder=\"Shipment Order Type\">\r\n          <mat-option value=\"Inbound\">Inbound</mat-option>\r\n          <mat-option value=\"Outbound\">Outbound</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n\r\n      <div fxFlex style=\"margin-left:10px; margin-top: 22px;\">\r\n        <owl-date-time matInput [autoClose]=\"true\" hourFormat='12' dateFormat=\"DD/MMM/YYYY hh:mm a\" [(ngModel)]=\"plannedEndTime\"\r\n          placeHolder=\"Planned End Time\"></owl-date-time>\r\n      </div>\r\n\r\n    </div>\r\n\r\n    <div style=\"margin-top: 10px\" fxLayout=\"row\">\r\n      <mat-form-field fxFlex style=\"margin-right: 15px\">\r\n        <mat-select [(ngModel)]=\"trackMode\" placeholder=\"Select Track Mode\" required>\r\n          <mat-option value=\"Manual\">Manual</mat-option>\r\n          <mat-option value=\"Tracker\">Tracker</mat-option>\r\n          <mat-option *ngIf=\"isVehicleExist\" value=\"Trip\">Tracknet</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n\r\n      <div fxFlex style=\"margin-left: 15px;\">\r\n        <mat-form-field *ngIf=\"trackMode =='Tracker'\" style=\"width:100%;\">\r\n          <input matInput [(ngModel)]=\"imei\" placeholder=\"IMEI\" required>\r\n        </mat-form-field>\r\n      </div>\r\n\r\n      <div fxFlex style=\"margin-right: 15px;\"></div>\r\n    </div>\r\n\r\n    <div style=\"margin-top: 10px;text-align: right;padding: 10px 10px\">\r\n      <button mat-raised-button style=\"margin-right: 15px\" (click)=\"cancel()\">Cancel</button>\r\n      <button mat-raised-button color=\"primary\" (click)=\"createShipmentOrder()\">Create</button>\r\n    </div>\r\n  </div>\r\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/HMEL-admin/shipment-orders/create-shipment-order/create-shipment-order.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CreateShipmentOrder; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__add_freight_unit_dialog_add_freight_unit_dialog_component__ = __webpack_require__("../../../../../src/app/HMEL-admin/shipment-orders/create-shipment-order/add-freight-unit-dialog/add-freight-unit-dialog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__service_shipment_order_service__ = __webpack_require__("../../../../../src/service/shipment-order-service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var CreateShipmentOrder = (function () {
+    function CreateShipmentOrder(localStorageService, snackBar, _store, router, dialog, shipmentOderService) {
+        var _this = this;
+        this.localStorageService = localStorageService;
+        this.snackBar = snackBar;
+        this._store = _store;
+        this.router = router;
+        this.dialog = dialog;
+        this.shipmentOderService = shipmentOderService;
+        this.shipmentOrderNo = '';
+        this.isSpinner = false;
+        this.shipmentOrderType = "Inbound";
+        this.TBPName = "";
+        this.distance = null;
+        this.vehicleRegNo = "";
+        this.trBusinessPartners = [];
+        this.freightUnits = [];
+        this.trackMode = '';
+        this.isVehicleExist = false;
+        this.imei = '';
+        this.consignor = '';
+        this.consignee = '';
+        this.material = '';
+        this.quantity = '';
+        this.UOM = '';
+        this.consigneeList = [];
+        this.consignorList = [];
+        this.unSub_trBusinessPartners = null;
+        this.unSub_createShipmentRes = null;
+        this.unSub_checkVehicleNoExist = null;
+        this.unSub_freightLocation = null;
+        this.shipmentOderService.getFreightLocationList.emit();
+        this.shipmentOderService.getTransportBusinessPartnerList.emit();
+        this.unSub_trBusinessPartners = this._store.select('transportBusinessPartners').subscribe(function (value) {
+            if (value == null) {
+                return;
+            }
+            if (value['error'] == "") {
+                _this.trBusinessPartners = value['data'];
+                console.log(_this.trBusinessPartners);
+            }
+            else {
+                console.log(value['errorMsg']);
+                _this.openSnackBar(value['errorMsg']);
+            }
+        });
+        this.unSub_createShipmentRes = this._store.select('createShipmentRes').subscribe(function (value) {
+            if (value == null) {
+                return;
+            }
+            _this.isSpinner = false;
+            if (value['error'] == "") {
+                console.log(value['successMsg']);
+                _this.openSnackBar(value['successMsg']);
+                _this.router.navigate(["mainDashboard/browseShipment"]);
+            }
+            else {
+                console.log(value['errorMsg']);
+                _this.openSnackBar(value['errorMsg']);
+            }
+        });
+        this.unSub_checkVehicleNoExist = this._store.select('checkVehicleNoExist').subscribe(function (value) {
+            if (value == null) {
+                return;
+            }
+            _this.isSpinner = false;
+            if (value['error'] == "") {
+                _this.isVehicleExist = value['data']['exist'];
+                console.log(value);
+            }
+            else {
+                console.log(value['errorMsg']);
+                _this.openSnackBar(value['errorMsg']);
+            }
+        });
+        this.unSub_freightLocation = this._store.select('freightLocation').subscribe(function (value) {
+            if (value == null) {
+                return;
+            }
+            if (value['error'] == "") {
+                _this.consigneeList = value['data'];
+                console.log(_this.consigneeList);
+            }
+            else {
+                console.log(value['errorMsg']);
+            }
+        });
+    } //constructor close
+    CreateShipmentOrder.prototype.ngOnDestroy = function () {
+        console.log("add freight dialog close");
+        if (this.unSub_trBusinessPartners != null && this.unSub_trBusinessPartners != undefined) {
+            this.unSub_trBusinessPartners.unsubscribe();
+        }
+        if (this.unSub_createShipmentRes != null && this.unSub_createShipmentRes != undefined) {
+            this.unSub_createShipmentRes.unsubscribe();
+        }
+        if (this.unSub_checkVehicleNoExist != null && this.unSub_checkVehicleNoExist != undefined) {
+            this.unSub_checkVehicleNoExist.unsubscribe();
+        }
+        if (this.unSub_freightLocation != null && this.unSub_freightLocation != undefined) {
+            this.unSub_freightLocation.unsubscribe();
+        }
+    };
+    CreateShipmentOrder.prototype.ngOnInit = function () {
+    };
+    // **************************************************************************************************
+    CreateShipmentOrder.prototype.checkVehicleRegNoExist = function () {
+        this.isSpinner = true;
+        var vehicleNo = this.vehicleRegNo.trim().toUpperCase();
+        this.isVehicleExist = false;
+        this.trackMode = '';
+        this._store.dispatch({ type: "CHECK_VEHICLE_NO_EXIST", payload: null });
+        this.shipmentOderService.checkVehicleNoExist.emit(vehicleNo);
+    }; // close methods checkVehicleRegNoExist
+    CreateShipmentOrder.prototype.openFreightUnitDialog = function () {
+        var _this = this;
+        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_3__add_freight_unit_dialog_add_freight_unit_dialog_component__["a" /* AddFreightUnitDialog */]);
+        dialogRef.afterClosed().subscribe(function (result) {
+            if (result == undefined || result == null) {
+                // console.log(result);
+                return;
+            }
+            console.log(result);
+            _this.freightUnits.push(result);
+            console.log(_this.freightUnits);
+        });
+    };
+    CreateShipmentOrder.prototype.createShipmentOrder = function () {
+        var freightUnit = {
+            "consigner": this.consignor,
+            "consignee": this.consignee,
+            "material": this.material,
+            "quantity": this.quantity,
+            "plannedStartTime": (this.plannedStartTime == undefined) ? null : this.plannedStartTime.getTime(),
+            "plannedEndTime": (this.plannedStartTime == undefined) ? null : this.plannedEndTime.getTime(),
+            "actualStartTime": (this.actualStartTime == undefined) ? null : this.actualStartTime.getTime(),
+            "actualEndTime": (this.actualEndTime == undefined) ? null : this.actualEndTime.getTime(),
+            "distance": (this.distance * 1000),
+            "quantityUmo": this.UOM,
+            "freightUnitNumber": this.shipmentOrderNo,
+            "freightUnitCreationDate": (this.shipmentOrderDate == undefined) ? null : this.shipmentOrderDate.getTime(),
+        };
+        console.log(this.shipmentOrderDate);
+        var freightUnits = [];
+        // for(let i=0;i <this.freightUnits.length;i++){
+        //   freightUnits.push(this.freightUnits[i]['FU']);
+        // }
+        freightUnits.push(freightUnit);
+        console.log(freightUnits);
+        if (this.checkValidation() && this.checkUnicFreightUnit(freightUnits)) {
+            var shipmentOrderObj = {
+                orgId: null,
+                shipmentOrderNumber: this.shipmentOrderNo,
+                shipmentOrderCreateDate: (this.shipmentOrderDate == undefined) ? null : this.shipmentOrderDate.getTime(),
+                freightUnits: freightUnits,
+                shipmentType: this.shipmentOrderType,
+                transporterId: this.TBPName,
+                plannedStartTime: null,
+                plannedEndTime: null,
+                actualStartTime: (this.actualStartTime == undefined) ? null : this.actualStartTime.getTime(),
+                actualEndTime: (this.actualEndTime == undefined) ? null : this.actualEndTime.getTime(),
+                distance: (this.distance * 1000),
+                shipmentStages: null,
+                vehicleRegistrationNumber: this.vehicleRegNo.toUpperCase(),
+                vehicleId: null,
+                type: this.trackMode,
+                imei: null
+            };
+            if (this.trackMode == 'Tracker') {
+                shipmentOrderObj.imei = this.imei;
+            }
+            this.isSpinner = true;
+            // this.localStorageService.set('SHIPMENT_ORDER',shipmentOrderObj);
+            this.shipmentOderService.createShipmentOrder.emit(shipmentOrderObj);
+            console.log(shipmentOrderObj);
+        }
+    }; // close methods createShipmentOrder
+    CreateShipmentOrder.prototype.checkValidation = function () {
+        if (this.shipmentOrderNo == '' || this.shipmentOrderNo == null) {
+            this.openSnackBar("Please fill Shipment order Number");
+            return false;
+        }
+        if (this.shipmentOrderDate == '' || this.shipmentOrderDate == null || this.shipmentOrderDate == undefined) {
+            this.openSnackBar("Please select shipment Order Date");
+            return false;
+        }
+        if (this.TBPName == '' || this.TBPName == null || this.TBPName == undefined) {
+            this.openSnackBar("Please select Tranporter");
+            return false;
+        }
+        if (this.actualStartTime == '' || this.actualStartTime == null || this.actualStartTime == undefined) {
+            this.openSnackBar("Please select Actual Start Time");
+            return false;
+        }
+        if (this.actualEndTime == '' || this.actualEndTime == null || this.actualEndTime == undefined) {
+            this.openSnackBar("Please select Actual End Time");
+            return false;
+        }
+        if (this.vehicleRegNo == '' || this.vehicleRegNo == null || this.vehicleRegNo == undefined) {
+            this.openSnackBar("Please fill vehicle Reg No");
+            return false;
+        }
+        if (this.trackMode == '' || this.trackMode == null || this.trackMode == undefined) {
+            this.openSnackBar("Please Select Track Mode");
+            return false;
+        }
+        if (this.trackMode == 'Tracker' && this.imei == '' || this.imei == null || this.imei == undefined) {
+            this.openSnackBar("Please fill IMEI");
+            return false;
+        }
+        return true;
+    };
+    CreateShipmentOrder.prototype.checkUnicFreightUnit = function (freightUnits) {
+        if (freightUnits.length == 0) {
+            this.openSnackBar("please Add Freight Unit Number");
+            return false;
+        }
+        for (var i = 0; i < (freightUnits.length - 1); i++) {
+            for (var j = i + 1; j < freightUnits.length; j++) {
+                if (freightUnits[i]['freightUnitNumber'] == freightUnits[j]['freightUnitNumber']) {
+                    this.openSnackBar("Freight Unit Number should be Unic");
+                    return false;
+                }
+            }
+        }
+        return true;
+    };
+    CreateShipmentOrder.prototype.remove = function (selFreightUnit) {
+        var index = this.freightUnits.indexOf(selFreightUnit);
+        if (index >= 0) {
+            this.freightUnits.splice(index, 1);
+        }
+    };
+    CreateShipmentOrder.prototype.openSnackBar = function (message) {
+        this.snackBar.open(message, '', { duration: 4000 });
+    };
+    CreateShipmentOrder.prototype.cancel = function () {
+        this.router.navigate(["mainDashboard/browseShipment"]);
+    };
+    return CreateShipmentOrder;
+}()); // close class
+CreateShipmentOrder = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-create-shipment-order',
+        template: __webpack_require__("../../../../../src/app/HMEL-admin/shipment-orders/create-shipment-order/create-shipment-order.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/HMEL-admin/shipment-orders/create-shipment-order/create-shipment-order.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["s" /* MatSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_material__["s" /* MatSnackBar */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__ngrx_store__["b" /* Store */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["f" /* MatDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_material__["f" /* MatDialog */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__service_shipment_order_service__["a" /* ShipmentOrderServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__service_shipment_order_service__["a" /* ShipmentOrderServices */]) === "function" && _f || Object])
+], CreateShipmentOrder);
+
+var _a, _b, _c, _d, _e, _f;
+//# sourceMappingURL=create-shipment-order.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/HMEL-admin/shipment-status/shipment-status.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3199,6 +4118,31 @@ module.exports = "<label> Add New Transporter Volume Quota</label>\r\n<div>\r\n 
 
 /***/ }),
 
+/***/ "../../../../../src/app/HMEL-admin/user/deleteDialog.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".button {\r\n    font-size: 12px;\r\n    line-height: 26px;\r\n    color: black;\r\n    height: 33px;\r\n    width: 19%;\r\n    /* overflow: hidden; */\r\n    line-height: 1.2;\r\n    white-space: initial;\r\n    border-radius: 2px;\r\n  }\r\n\r\n.button:hover {\r\n  background-color: #5b89ff !important;\r\n  color: white;\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/HMEL-admin/user/deleteDialog.html":
+/***/ (function(module, exports) {
+
+module.exports = "\r\n<h5 style=\"text-align: center; font-size: 16px\">Are You Sure ?</h5>\r\n<div style=\"display: flex\">\r\n    <button mat-raised-button class=\"button\" style=\"float:left\"  (click)=\"onDelete()\">Yes</button>\r\n    <button mat-raised-button class=\"button\" style=\"margin-left: 77px;\"  (click)=\"onCancel()\">No</button>\r\n</div>\r\n\r\n"
+
+/***/ }),
+
 /***/ "../../../../../src/app/HMEL-admin/user/user-form.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3220,7 +4164,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/HMEL-admin/user/user-form.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<label style=\"font-size: 20px\">Add New User</label><br><br>\r\n  \r\n<div class=\"form-container\">\r\n\r\n    <mat-form-field>\r\n        <input matInput [(ngModel)]=\"name\" placeholder=\"Business Partner\" required>\r\n      </mat-form-field>\r\n\r\n      <mat-form-field>\r\n          <mat-select [(ngModel)]=\"type\" placeholder=\"Type\">\r\n            <mat-option value=\"Transporter Vendor\">Transporter Vendor</mat-option>\r\n          </mat-select>\r\n        </mat-form-field> \r\n\r\n        <!-- <mat-form-field>\r\n                <input matInput [(ngModel)]=\"type\" placeholder=\"Type\" required>\r\n            </mat-form-field> -->\r\n    \r\n      <mat-form-field>\r\n          <input matInput [(ngModel)]=\"address\" placeholder=\"Address\" required>\r\n      </mat-form-field>\r\n          \r\n          <mat-form-field>\r\n              <input matInput [(ngModel)]=\"contactPersonName\" placeholder=\"Contact Person Name\" required>\r\n            </mat-form-field>\r\n\r\n        <mat-form-field>\r\n            <input matInput [(ngModel)]=\"contactPersonEmail\" placeholder=\"Contact Person Email\"  required>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field>\r\n              <input matInput [(ngModel)]=\"contactPersonNumber\" placeholder=\"Contact Person Number\" required>\r\n            </mat-form-field>\r\n    </div>\r\n    \r\n    <div>\r\n         <button mat-raised-button class=\"button\" (click)=\"onCanccel()\" style=\"margin-left:10px\">Cancel</button>\r\n         <button mat-raised-button class=\"button\" (click)=\"submitted()\">Save</button>\r\n        </div>"
+module.exports = "<div style=\"font-size:21px;color:#8a8c8e;\" >\r\n        <span>Add New User</span>\r\n      </div>\r\n\r\n<div class=\"form-container\">\r\n    <mat-form-field>\r\n        <input matInput [(ngModel)]=\"name\" placeholder=\"Name\" required (keyup)=\"validateName()\" (focusout)=\"showErrorMessage('name')\">\r\n    </mat-form-field>\r\n\r\n    <mat-form-field>\r\n        <input matInput [(ngModel)]=\"email\" placeholder=\"Email\" required (keyup)=\"validateEmail()\" (focusout)=\"showErrorMessage('email')\">\r\n    </mat-form-field>\r\n\r\n    <mat-form-field>\r\n        <input matInput [(ngModel)]=\"contactPersonNumber\" placeholder=\"Mobile\" (keyup)=\"validateMobile()\" (focusout)=\"showErrorMessage('mobile')\">\r\n    </mat-form-field>\r\n</div>\r\n<div>\r\n    <button mat-raised-button class=\"button\" [disabled]=\"isNameValid || isEmailValid || isMobileNumberValid\" (click)=\"submitted()\">Save</button>\r\n    <button mat-raised-button class=\"button\" (click)=\"onCancel()\" style=\"margin-right:10px\">Cancel</button>\r\n</div>"
 
 /***/ }),
 
@@ -3232,7 +4176,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".button-basic3 {\r\n  font-size: 12px;\r\n  line-height: 26px;\r\n  color: black;\r\n  height: 33px;\r\n  width: 19%;\r\n  float: right;\r\n  /* overflow: hidden; */\r\n  line-height: 1.2;\r\n  white-space: initial;\r\n  border-radius: 2px;\r\n}\r\n\r\n.button-basic3:hover {\r\n  background-color: #5b89ff !important;\r\n  color: white;\r\n}\r\n\r\n.div {\r\n  border: 100% solid black;\r\n}\r\n\r\n.table1 {\r\n  border-collapse: collapse;\r\n  width: 100%;\r\n  color : black;\r\n  border-top : 1px solid #ddd;\r\n  border-left: 1px solid #ddd;\r\n  border-right: 1px solid #ddd;\r\n}\r\n\r\ntd {\r\n  width: 150px;\r\n  height: 25px;\r\n  text-align: center;\r\n  border-bottom: 1px solid #ddd;\r\n  color : black;\r\n  font-size: 12px;\r\n}\r\n\r\n.expand-search {\r\n  border: 1.5px solid #b0bcc1;\r\n  width: 18%;\r\n  font-size: 12px;\r\n  padding: 5px 26px 5px 12px;\r\n  display: inline-block;\r\n  border-radius: 17px;\r\n  box-sizing: border-box;\r\n  outline: none;\r\n  margin-left: 900px;\r\n}", ""]);
+exports.push([module.i, ".button-basic3 {\r\n  font-size: 12px;\r\n  line-height: 26px;\r\n  color: black;\r\n  height: 33px;\r\n  width: 19%;\r\n  float: right;\r\n  /* overflow: hidden; */\r\n  line-height: 1.2;\r\n  white-space: initial;\r\n  border-radius: 2px;\r\n}\r\n\r\n.button-basic3:hover {\r\n  background-color: #5b89ff !important;\r\n  color: white;\r\n}\r\n\r\n.div {\r\n  border: 100% solid black;\r\n}\r\n\r\n.table1 {\r\n  border-collapse: collapse;\r\n  width: 100%;\r\n  color : black;\r\n  border-top : 1px solid #ddd;\r\n  border-left: 1px solid #ddd;\r\n  border-right: 1px solid #ddd;\r\n}\r\n\r\ntd {\r\n  width: 150px;\r\n  height: 25px;\r\n  text-align: center;\r\n  border-bottom: 1px solid #ddd;\r\n  color : black;\r\n  font-size: 12px;\r\n}\r\n\r\n.expand-search {\r\n  border: 1.5px solid #b0bcc1;\r\n  font-size: 12px;\r\n  padding: 5px 26px 5px 12px;\r\n  display: inline-block;\r\n  border-radius: 17px;\r\n  box-sizing: border-box;\r\n  outline: none;\r\n  min-width: 250px;\r\n}\r\n\r\n.header-span span{\r\n  padding: 8px 4px;\r\n  font-weight: bold;\r\n  text-align: left;\r\n}", ""]);
 
 // exports
 
@@ -3245,7 +4189,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/HMEL-admin/user/user.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n\r\n<div style=\"position:relative;margin-top: -1px;\" >\r\n        <i  class=\"fa fa-search \"  aria-hidden=\"true\" style=\"margin-top: 7px;right: 170px;position: absolute;font-size: 13px;color: black;\"></i>\r\n    <input #location class=\"expand-search\"  placeholder=\"Search\" (keyup)=\"search(location.value)\">\r\n  </div>\r\n\r\n  <!-- <div *ngIf=\"user.length>0 && searchedClick\" style=\"z-index: 5;overflow-y:auto; position: fixed;background-color: rgba(245,245,245,1);width:18%;margin-top:0px;margin-left:38px\" >\r\n      <ul style=\"list-style: none;margin-left: -32px;\"  *ngFor = \"let data of user\">\r\n          <li (click)=\"onSearchClick(data)\">{{data?.organisationName}}<hr></li>\r\n      </ul>            \r\n  </div> -->\r\n\r\n  <div><br><br>\r\n  <div style=\"box-shadow: 0px 4px 12px darkgray; margin-left: 40px; margin-right: 40px; font-size: 12px\" fxLayout=\"row\">          \r\n            <span fxFlex></span>\r\n            <span fxFlex><h4>Name</h4></span>\r\n            <!-- <span fxFlex><h4><mat-card style=\"padding: 8px;margin-top: 0px;width: 66px;\">{{type}}<i class=\"fa fa-caret-down\" aria-hidden=\"true\" style=\"font-size:15px;float:right\" (click)=\"isFreightCluster=true;isFreightLocation=false\"></i></mat-card></h4></span> -->\r\n            <span fxFlex><h4>Type</h4></span>\r\n            <span fxFlex><h4>Organisation Address</h4></span>\r\n            <span fxFlex><h4>Contact Person Name</h4></span>\r\n            <span fxFlex><h4>Contact Person Number</h4></span>\r\n            <span fxFlex><h4>Contact Person Email</h4></span>\r\n            <span fxFlex></span>\r\n            <span fxFlex></span>    \r\n  </div>\r\n      \r\n    <div *ngIf=\"user.length>0?false:true\" style=\"box-shadow: 0px 4px 19px darkgray; margin-left: 40px; margin-right: 40px\">\r\n      <mat-card *ngFor=\"let user of users.data\" fxLayout=\"row\" style=\"font-size: 12px; height: autopx\">\r\n       <span fxFlex><i style = \"padding-right: 100px \"class=\"fa fa-user-circle\" aria-hidden=\"true\"></i></span>\r\n       <span fxFlex>{{user?.organisationName}}</span>\r\n       <span fxFlex>{{user?.type}}</span>\r\n       <span fxFlex>{{user?.address}}</span>\r\n       <span fxFlex>{{user?.contactPersonName}}</span>\r\n       <span fxFlex>{{user?.contactPersonNumber}}</span>\r\n       <span fxFlex>{{user?.email}}</span>\r\n       <span fxFlex><button mat-button style=\"align-content: right; margin-right: 2px; margin-top: -12px\" (click)=\"editEvent(user)\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button></span>\r\n       <span fxFlex><button mat-button style=\"align-content: right; margin-right: 2px; margin-top: -12px\" (click)=\"deleteEvent(user.id)\"><i class=\"fa fa-trash-o\" aria-hidden=\"true\"></i></button></span>\r\n      </mat-card>\r\n    </div>\r\n\r\n    <div *ngIf=\"user.length>0\" style=\"box-shadow: 0px 4px 19px darkgray; margin-left: 40px; margin-right: 40px\">\r\n        <mat-card *ngFor=\"let data of user\" fxLayout=\"row\" style=\"font-size: 12px; height: auto\">\r\n         <span fxFlex><i style = \"padding-right: 100px \"class=\"fa fa-user-circle\" aria-hidden=\"true\"></i></span>\r\n         <span fxFlex>{{data?.organisationName}}</span>\r\n         <span fxFlex>{{data?.type}}</span>\r\n         <span fxFlex>{{data?.address}}</span>\r\n         <span fxFlex>{{data?.contactPersonName}}</span>\r\n         <span fxFlex>{{data?.contactPersonNumber}}</span>\r\n         <span fxFlex>{{data?.email}}</span>\r\n         <span fxFlex><button mat-button style=\"align-content: right; margin-right: 2px; margin-top: -12px\" (click)=\"editEvent(user)\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button></span>\r\n         <span fxFlex><button mat-button style=\"align-content: right; margin-right: 2px; margin-top: -12px\" (click)=\"deleteEvent(user.id)\"><i class=\"fa fa-trash-o\" aria-hidden=\"true\"></i></button></span>\r\n        </mat-card>\r\n      </div>\r\n  </div>\r\n  <button mat-fab color=\"primary\" style=\"position: absolute; top: 90%;left:90%\" (click)=\"openDialog()\">\r\n      <i class=\"fa fa-plus\" aria-hidden=\"true\" style=\"font-size: 20px;color: white \"></i>\r\n      </button>\r\n</div>"
+module.exports = "<div>\r\n        <div style=\"display: flex;padding: 10px;\">\r\n                <div style=\"font-size:21px;color:#8a8c8e;\" >\r\n                  <span>Users</span>\r\n                </div>\r\n\r\n                <div style=\"position:relative;position: relative;margin-left: auto;\" >\r\n                  <i  class=\"fa fa-search\" aria-hidden=\"true\" style=\"right:7px;margin-top:7px;position:absolute;font-size:13px;color:black;\" ></i>\r\n                  <input #user class=\"expand-search\"  placeholder=\"Search\" (keyup)=\"search(user.value)\">\r\n                </div>\r\n              </div>\r\n\r\n           <div>\r\n                <mat-paginator [length]=\"pageLength\"\r\n                [pageSize]=\"pageSize\"\r\n                [pageSizeOptions]=\"pageSizeoptions\"\r\n                (page)=\"pageEvent = $event;selectTableHeight()\">\r\n                </mat-paginator>\r\n           </div>\r\n\r\n           <div class=\"header-span\" style=\"padding :3px 3px;box-shadow: 0px 2px 5px grey;margin-bottom: 1px; background-color: #f5f2f26b; margin-left: 10px; margin-right: 10px; font-size: 12px\" fxLayout=\"row\">\r\n                <span fxFlex=20>Name</span>\r\n                <span fxFlex=20>Email ID</span>\r\n                <span fxFlex=20>Mobile No</span>\r\n                <span fxFlex=20 style=\"text-align: center\">Edit</span>\r\n                <span fxFlex=20 style=\"text-align: center\">Delete</span>\r\n           </div>\r\n\r\n           <div style=\"margin-left: 10px; margin-right: 10px;height: calc(100vh - 244px);overflow: auto\" >\r\n                <mat-card class=\"table-body-span\" *ngFor=\"let user of selectedUsers\" fxLayout=\"row\" style=\"font-size: 12px; height: auto;padding: 2px;\">\r\n                  <span fxFlex=20 style=\"margin-top: 10px\" >{{user?.name}}</span>\r\n                  <span fxFlex=20 style=\"margin-top: 10px\" >{{user?.email}}</span>\r\n                  <span fxFlex=20 style=\"margin-top: 10px\" >{{(user.contactPersonNumber)?user?.contactPersonNumber:'N/A'}}</span>\r\n                  <span fxFlex=20 style=\"text-align: center\"><button mat-button (click)=\"editEvent(user)\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button></span>\r\n                  <span *ngIf=\"user?.googleToken == undefined?true:false\" fxFlex=20 style=\"text-align: center\"><button mat-button (click)=\"deleteEvent(user.id)\"><i class=\"fa fa-trash-o\" aria-hidden=\"true\"></i></button></span>\r\n                </mat-card>\r\n                <div style=\"height: 50px\"></div>\r\n           </div>\r\n  <button [matTooltipPosition]=\"'left'\" matTooltip=\"Create User\" mat-fab color=\"primary\" name=\"createUser\" (click)=\"openDialog()\"style=\"position:absolute;bottom:10px;right:10px\" >\r\n        <i class=\"fa fa-plus\" aria-hidden=\"true\" style=\"font-size: 24px;line-height: 24px;color: white;\"></i>\r\n      </button>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -3253,8 +4197,9 @@ module.exports = "<div>\r\n\r\n<div style=\"position:relative;margin-top: -1px;\
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return UserFormComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return UserComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return UserFormComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DeleteDialog; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__service_service__ = __webpack_require__("../../../../../src/service/service.ts");
@@ -3285,40 +4230,44 @@ var UserComponent = (function () {
         this.users = [];
         this.isValuesLoaded = true;
         this.isStoreLoaded = false;
-        this.user = [];
-        this.searchedClick = true;
+        this.searchedUser = [];
         this.type = "type";
-        // this.storeVariable = 
-        // this.fetchDataService.getData.emit();
+        this.isSearched = false;
+        this.pageLength = 0;
+        this.pageSize = 10;
+        this.pageSizeoptions = [5, 10, 25, 100];
+        this.selectedUsers = [];
         store.dispatch({ type: "COMMAND", payload: null });
         this.service.getUser.emit();
         this.storeVariable = store.select("userStore").subscribe(function (res) {
             if (res == null)
                 return;
             _this.users = res['data'];
-            _this.isValuesLoaded = false;
-            _this.isStoreLoaded = true;
-            console.log(_this.users);
+            if (_this.users['data'] != null) {
+                _this.pageLength = _this.users['data'].length;
+                _this.selectedUsers = _this.users['data'].slice(0, _this.pageSize);
+                _this.isValuesLoaded = false;
+                _this.isStoreLoaded = true;
+                console.log(_this.users);
+            }
         });
         this.commandVariable = this.store.select("command").subscribe(function (res) {
             if (res == null)
                 return;
             console.log(res);
             if (res['data']['status'] == 200)
-                _this.openSnackBar("successfully executed");
+                _this.openSnackBar(res['message']);
             else
-                _this.openSnackBar(res['data']['errorMessage']);
+                _this.openSnackBar(res['data']['error']);
         });
     }
     UserComponent.prototype.ngOnInit = function () {
-        //  this.storeVariable = this.fetchDataService.getData.emit();
     };
     UserComponent.prototype.openDialog = function () {
-        this.searchedClick = false;
         this.store.dispatch({ "type": "COMMON", payload: null });
         var dialogRef = this.dialog.open(UserFormComponent, {
-            width: '700px',
-            height: '600px'
+            width: '526px',
+            height: '336px'
         });
     };
     UserComponent.prototype.ngOnDestroy = function () {
@@ -3329,16 +4278,15 @@ var UserComponent = (function () {
         console.log("user store unsubscribed");
     };
     UserComponent.prototype.deleteEvent = function (id) {
-        this.searchedClick = false;
-        //this.deleteUser.path = this.deleteUser.path+id;
-        this.service.deleteUser.emit(id);
+        this.store.dispatch({ "type": "COMMON", payload: id });
+        var dialogRef = this.dialog.open(DeleteDialog);
     };
     UserComponent.prototype.editEvent = function (value) {
-        this.searchedClick = false;
+        // this.searchedClick = false;
         this.store.dispatch({ "type": "COMMON", payload: value });
         var dialogRef = this.dialog.open(UserFormComponent, {
-            width: '700px',
-            height: '600px'
+            width: '526px',
+            height: '336px'
         });
     };
     UserComponent.prototype.openSnackBar = function (message) {
@@ -3346,19 +4294,22 @@ var UserComponent = (function () {
     };
     UserComponent.prototype.search = function (value) {
         console.log(value);
-        this.user = [];
-        this.searchedClick = true;
+        this.searchedUser = [];
+        this.isSearched = true;
         console.log(this.users);
         for (var i = 0; i < this.users['data'].length; i++) {
-            var str = this.users['data'][i]['organisationName'].toUpperCase();
+            var str = this.users['data'][i]['name'].toUpperCase();
             if (str.includes(value.toUpperCase())) {
-                this.user.push(this.users['data'][i]);
+                this.searchedUser.push(this.users['data'][i]);
             }
         }
-        console.log(this.user);
+        this.selectedUsers = this.searchedUser.slice(0, this.pageSize);
+        console.log(this.searchedUser);
     };
-    UserComponent.prototype.onSearchClick = function (data) {
-        this.searchedClick = false;
+    UserComponent.prototype.selectTableHeight = function () {
+        this.pageSize = this.pageEvent['pageSize'];
+        console.log(this.pageEvent['pageIndex']);
+        this.selectedUsers = this.users['data'].slice((this.pageEvent['pageSize'] * this.pageEvent['pageIndex']), (this.pageEvent['pageSize'] * (this.pageEvent['pageIndex'] + 1)));
     };
     return UserComponent;
 }());
@@ -3372,38 +4323,51 @@ UserComponent = __decorate([
 ], UserComponent);
 
 var UserFormComponent = (function () {
-    function UserFormComponent(dialogRef, service, store, fetchDataService) {
+    function UserFormComponent(dialogRef, service, store, fetchDataService, matSnackBar) {
         var _this = this;
         this.dialogRef = dialogRef;
         this.service = service;
         this.store = store;
         this.fetchDataService = fetchDataService;
+        this.matSnackBar = matSnackBar;
+        this.contactPersonNumber = null;
         this.id = null;
         this.isOrgUser = true;
         this.isTranspoter = false;
         this.isTransporterSelected = true;
-        store.select("updaterStore").subscribe(function (res) {
+        this.isNameValid = true;
+        this.isEmailValid = true;
+        this.isMobileNumberValid = false;
+        this.un_SubStore = null;
+        this.un_SubStore = store.select("updaterStore").subscribe(function (res) {
             if (res == null)
                 return;
             console.log(res);
-            _this.name = res["organisationName"],
-                _this.type = res["type"],
-                _this.address = res["address"],
-                _this.contactPersonEmail = res["email"],
+            _this.email = res["email"],
+                _this.name = res["name"],
                 _this.contactPersonNumber = res["contactPersonNumber"],
-                _this.contactPersonName = res["contactPersonName"],
                 _this.id = res['id'];
         });
+        this.validateName();
+        this.validateEmail();
     }
+    UserFormComponent.prototype.ngOnInit = function () {
+    };
     UserFormComponent.prototype.submitted = function () {
-        var obj = {
-            "organisationName": this.name,
-            "type": this.type,
-            "address": this.address,
-            "email": this.contactPersonEmail,
-            "contactPersonNumber": this.contactPersonNumber,
-            "contactPersonName": this.contactPersonName
-        };
+        var obj;
+        if (this.contactPersonNumber == null) {
+            obj = {
+                "name": this.name,
+                "email": this.email
+            };
+        }
+        else {
+            obj = {
+                "name": this.name,
+                "email": this.email,
+                "contactPersonNumber": this.contactPersonNumber
+            };
+        }
         console.log(obj);
         if (this.id == null) {
             this.service.createUser.emit(obj);
@@ -3415,8 +4379,58 @@ var UserFormComponent = (function () {
         }
         this.dialogRef.close();
     };
-    UserFormComponent.prototype.onCanccel = function () {
+    UserFormComponent.prototype.ngOnDestroy = function () {
+        if (typeof this.un_SubStore != 'undefined' && this.un_SubStore != null && this.un_SubStore != undefined)
+            this.un_SubStore.unsubscribe();
+    };
+    UserFormComponent.prototype.onCancel = function () {
         this.dialogRef.close();
+    };
+    UserFormComponent.prototype.openSnackBar = function (message) {
+        this.matSnackBar.open(message, "OK", { duration: 4000 });
+    };
+    UserFormComponent.prototype.validateName = function () {
+        console.log("name");
+        var nameRegex = /^[a-zA-Z ]{2,30}$/;
+        if (nameRegex.test(this.name)) {
+            this.isNameValid = false;
+        }
+        else {
+            this.isNameValid = true;
+        }
+    };
+    UserFormComponent.prototype.validateEmail = function () {
+        var emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (emailRegex.test(this.email)) {
+            this.isEmailValid = false;
+        }
+        else {
+            this.isEmailValid = true;
+        }
+    };
+    UserFormComponent.prototype.validateMobile = function () {
+        this.isMobileNumberValid = true;
+        var mobileRegex = /^(\+91-|\+91|0)?\d{10}$/;
+        if (mobileRegex.test(this.contactPersonNumber)) {
+            this.isMobileNumberValid = false;
+        }
+        else {
+            this.isMobileNumberValid = true;
+        }
+    };
+    UserFormComponent.prototype.showErrorMessage = function (type) {
+        if (type == 'name') {
+            if (this.isNameValid)
+                this.openSnackBar("please enter a vaild name");
+        }
+        if (type == 'email') {
+            if (this.isEmailValid)
+                this.openSnackBar("please enter a vaild email");
+        }
+        if (type == 'mobile') {
+            if (this.isEmailValid)
+                this.openSnackBar("please enter a valid mobile number");
+        }
     };
     return UserFormComponent;
 }());
@@ -3426,11 +4440,450 @@ UserFormComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/HMEL-admin/user/user-form.component.html"),
         styles: [__webpack_require__("../../../../../src/app/HMEL-admin/user/user-form.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["h" /* MatDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["h" /* MatDialogRef */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2__service_service__["a" /* Services */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__service_service__["a" /* Services */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_4__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ngrx_store__["b" /* Store */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_3__service_fetch_data_service__["a" /* FetchDataServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__service_fetch_data_service__["a" /* FetchDataServices */]) === "function" && _j || Object])
+    __metadata("design:paramtypes", [typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["h" /* MatDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["h" /* MatDialogRef */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2__service_service__["a" /* Services */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__service_service__["a" /* Services */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_4__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ngrx_store__["b" /* Store */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_3__service_fetch_data_service__["a" /* FetchDataServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__service_fetch_data_service__["a" /* FetchDataServices */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["s" /* MatSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["s" /* MatSnackBar */]) === "function" && _k || Object])
 ], UserFormComponent);
 
-var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+var DeleteDialog = (function () {
+    function DeleteDialog(store, service, dialogRef) {
+        var _this = this;
+        this.store = store;
+        this.service = service;
+        this.dialogRef = dialogRef;
+        this.un_SubStore = null;
+        this.un_SubStore = this.store.select("updaterStore").subscribe(function (res) {
+            console.log(res);
+            if (res == null)
+                return;
+            _this.id = res;
+        });
+    }
+    DeleteDialog.prototype.ngOnInit = function () {
+    };
+    DeleteDialog.prototype.onDelete = function () {
+        this.service.deleteUser.emit(this.id);
+        this.store.dispatch({ "type": "COMMON", payload: null });
+        this.dialogRef.close();
+    };
+    DeleteDialog.prototype.onCancel = function () {
+        this.dialogRef.close();
+    };
+    DeleteDialog.prototype.ngOnDestroy = function () {
+        if (typeof this.un_SubStore != 'undefined' && this.un_SubStore != null && this.un_SubStore != undefined)
+            this.un_SubStore.unsubscribe();
+    };
+    return DeleteDialog;
+}());
+DeleteDialog = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: "delete-dialog",
+        template: __webpack_require__("../../../../../src/app/HMEL-admin/user/deleteDialog.html"),
+        styles: [__webpack_require__("../../../../../src/app/HMEL-admin/user/deleteDialog.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_4__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ngrx_store__["b" /* Store */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_2__service_service__["a" /* Services */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__service_service__["a" /* Services */]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["h" /* MatDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["h" /* MatDialogRef */]) === "function" && _o || Object])
+], DeleteDialog);
+
+var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
 //# sourceMappingURL=user.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/add-organisation/add-organisation.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "/*md-card*/\r\n/*{*/\r\n  /*margin: 10%;*/\r\n/*}*/\r\n\r\n.main{\r\n  min-width: 200px;\r\n  /*max-width: 390px;*/\r\n  /*margin: 50px auto;*/\r\n  padding: 8px\r\n}\r\n\r\n/*button:hover {*/\r\n  /*opacity: 0.7;*/\r\n/*}*/\r\n\r\n.imgcontainer {\r\n  /*text-align: center;*/\r\n  margin: 8px 0px 30px 8px;\r\n}\r\n\r\n\r\n\r\n.trip-header{\r\n  background-color: #3F51B5;\r\n  width: 30%;\r\n  /*padding-bottom: 3px;*/\r\n  padding: 8px;\r\n  height: 40px;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\r\n  color: #ffffff;\r\n}\r\n\r\nmat-card{\r\n  padding: 9px;\r\n  min-width: 250px;\r\n}\r\n\r\ndiv {\r\n  font-family: Helvetica !important;\r\n  /*color: #46465f;*/\r\n}\r\n\r\n.my-hr{\r\n  border-style:ridge;\r\n  border-width:1px;\r\n  margin-top: 6px;\r\n  min-width: 250px;\r\n  margin-bottom:3px;\r\n}\r\n\r\n.my-map-search{\r\n  /*left: 0%;*/\r\n  /*width: 73%;*/\r\n  position: relative;\r\n  z-index: 10;\r\n  /*margin-top: 10px;*/\r\n}\r\n\r\n.my-toggle{\r\n  position: absolute;\r\n  z-index: 11;\r\n  left: 10px;\r\n  top: 10px;\r\n  height: 21px;\r\n  font-size: 12px;\r\n\r\n}\r\n\r\n.my-toggle >>> .mat-button-toggle-label-content {\r\n  line-height: 23px;\r\n  padding: 0px 10px;\r\n  color: black;\r\n}\r\n\r\n.radio-button {\r\n  margin-left: 20px;\r\n  padding: 20px\r\n}\r\n\r\n.status-button{\r\n  font-size: 12px;\r\n  line-height: 26px;\r\n  color: black;\r\n  height: 33px;\r\n  width: 19%;\r\n  margin-left: 10px;\r\n  /* overflow: hidden; */\r\n  line-height: 1.2;\r\n  white-space: initial;\r\n  border-radius: 2px;\r\n  -ms-flex-item-align: right;\r\n      -ms-grid-row-align: right;\r\n      align-self: right;\r\n}\r\n\r\n.status-button:hover\r\n{\r\n  background-color: #5b89ff !important;\r\n  color: white;\r\n}\r\n/*button {*/\r\n/*color:#ffffff;*/\r\n/*background-color:#1E88E5;*/\r\n/*}*/\r\n\r\n/* search box*/\r\n.search {\r\n  width: 100%;\r\n  font-size: 14px;\r\n  padding: 5px 26px 6px 12px;\r\n  display: inline-block;\r\n  border: 1.5px solid #ccc;\r\n  border-radius: 5px;\r\n  box-sizing: border-box;\r\n}\r\n.search:focus{\r\n  outline: none;\r\n  border: 1.5px solid #03a9f4;\r\n  box-shadow: 0px 0px 5px #03a9f4;\r\n}\r\n\r\n/* ******************/\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/add-organisation/add-organisation.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"main\" style=\"height: calc(100vh - 18px);\" >\r\n  <div class=\"imgcontainer\" >\r\n    <div>\r\n      <img style=\"padding: 5px;background-color: darkgray;\" src=\"../../../../images/fretron_logo.png\" alt=\"Avatar\"  ></div>\r\n    <div style=\"text-align: center;\">\r\n      <span><b>You don't have any organisation yet.</b><br> Kindly register any your organisation here: </span>\r\n    </div>\r\n  </div>\r\n\r\n  <div fxLayout=\"row\" >\r\n    <div style=\"min-width: 200px\" fxFlex=\"60\">\r\n      <!--<div style=\"width: 95%;margin-left: auto; margin-right: auto;margin-bottom: -33px;\">-->\r\n        <!--<div class=\"my-map-search\">-->\r\n          <!--<input id=\"pac-input\" type=\"text\" class=\"search\" matTooltip=\"search Here\" placeholder=\"'Search'\">-->\r\n          <!--<i class=\"fa fa-search\" aria-hidden=\"true\" style=\"right: 10px;top: 7px;font-size: 15px;position: absolute;\"></i>-->\r\n        <!--</div>-->\r\n      <!--</div>-->\r\n\r\n        <div style=\"position: relative;\">\r\n            <mat-button-toggle-group class=\"my-toggle\" #group=\"matButtonToggleGroup\" [(ngModel)]=\"mapType\">\r\n              <mat-button-toggle value=\"hybrid\">\r\n                <span>Satellite</span>\r\n              </mat-button-toggle>\r\n              <mat-button-toggle value=\"roadmap\" style=\"background-color:floralwhite;\" [style.opacity]=\"(mapType =='roadmap')?'.8':'.6'\">\r\n                <span>Map</span>\r\n              </mat-button-toggle>\r\n            </mat-button-toggle-group>\r\n\r\n          <agm-map [mapTypeId]=\"mapType\" style=\"height: calc(100vh - 200px);\" [latitude]=\"latitude\" [longitude]=\"longitude\" [zoom]=\"5\">\r\n            <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\">\r\n            </agm-marker>\r\n          </agm-map>\r\n        </div>\r\n    </div>\r\n\r\n    <div fxFlex=\"40\" style=\"padding-top:20px;\" >\r\n      <div style=\"padding: 20px;\">\r\n        <mat-form-field style=\"width: 100%\" >\r\n          <input matInput [disabled]=\"isClicked\" [(ngModel)]=\"orgName\" placeholder=\"Organization Name\" required>\r\n        </mat-form-field>\r\n\r\n        <mat-form-field style=\"width: 100%\" >\r\n          <input matInput [disabled]=\"isClicked\"  [(ngModel)]=\"organizationId\" placeholder=\"Organization Id\">\r\n        </mat-form-field>\r\n\r\n        <mat-form-field style=\"width: 100%\" >\r\n          <input matInput [disabled]=\"isClicked\"  id=\"pac-input\" [(ngModel)]=\"address\" matTooltip=\"Address Search Here\" placeholder=\"Address Search Here\">\r\n          <!--<i class=\"fa fa-search\" aria-hidden=\"true\" style=\"right: 10px;top: 7px;font-size: 15px;position: absolute;\"></i>-->\r\n        </mat-form-field>\r\n\r\n      </div>\r\n\r\n      <div *ngIf=\"isAuthorized\" style=\"text-align: center;padding-top: 20px;\">\r\n        <button matTooltip=\"logout\"  mat-raised-button (click)=\"logout()\" class=\"status-button\" >Logout</button>\r\n        <!--//  for create organization first we create freight location and then create organization-->\r\n        <button [disabled]=\"isClicked\"  matTooltip=\"Create organization\"  mat-raised-button class=\"status-button\" (click)=\"addFreightLocation()\">Create</button>\r\n      </div>\r\n    </div>\r\n    </div>\r\n  </div>\r\n\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/add-organisation/add-organisation.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddOrganizationComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__service_login_services__ = __webpack_require__("../../../../../src/service/login-services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__service_create_freigth_location_service__ = __webpack_require__("../../../../../src/service/create-freigth-location.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__service_authorization_service_service__ = __webpack_require__("../../../../../src/service/authorization-service.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+var AddOrganizationComponent = (function () {
+    function AddOrganizationComponent(authorizationService, createFreightLocation, mapApiWrapper, router, _store, _loginServices, localStorageService, snackBar) {
+        var _this = this;
+        this.authorizationService = authorizationService;
+        this.createFreightLocation = createFreightLocation;
+        this.mapApiWrapper = mapApiWrapper;
+        this.router = router;
+        this._store = _store;
+        this._loginServices = _loginServices;
+        this.localStorageService = localStorageService;
+        this.snackBar = snackBar;
+        this.latitude = null;
+        this.longitude = null;
+        this.isPolygonEditable = false;
+        this.polygon = null;
+        this.mapType = 'roadmap';
+        this.input = 0;
+        this.orgName = '';
+        this.organizationId = '';
+        this.address = '';
+        this.isAuthorized = false;
+        this.isClicked = false; // for disabled all input when user click for create org
+        this.freightLocUuid = '';
+        this.unSub_createFreightLocRes = null;
+        this.unSub_authorization = null;
+        this.unSub_addOrgRes = null;
+        this.token = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        if (this.token == null || this.token == undefined) {
+            this.logout();
+        }
+        var isAlreadyAuthorized = false;
+        this.unSub_authorization = this._store.select('authorization').subscribe(function (value) {
+            if (value == null) {
+                return;
+            }
+            isAlreadyAuthorized = true; // for checking request a;ready send or not
+            if (value['error'] == "") {
+                console.log(value);
+                _this.isAuthorized = true;
+            }
+            else {
+                console.log(value['errorMsg']);
+                _this.logout();
+                _this.openSnackBar(value['errorMsg']);
+            }
+        });
+        // call for check authorization
+        if (isAlreadyAuthorized == false) {
+            console.log("user come directly");
+            this.authorizationService.authorizedToken.emit(this.token);
+        }
+        //close call for check authorization
+        console.log("constructor");
+        // dispatched from create freight location services
+        this.unSub_createFreightLocRes = this._store.select('createFreightLocRes').subscribe(function (value) {
+            if (value == null) {
+                return;
+            }
+            console.log(value);
+            _this.freightLocUuid = '';
+            if (value['error'] == '') {
+                _this.freightLocUuid = value['data']['data']['uuid'];
+                console.log(_this.freightLocUuid);
+                if (_this.freightLocUuid == '' || _this.freightLocUuid == null) {
+                    _this.openSnackBar('error please try again');
+                    _this.isClicked = false;
+                    return;
+                }
+                else {
+                    _this.createOrganization();
+                }
+            }
+            else {
+                _this.isClicked = false;
+                _this.openSnackBar(value['errorMsg'] + ' please try again');
+            }
+        });
+        this.unSub_addOrgRes = this._store.select('addOrgRes').subscribe(function (value) {
+            if (value == null) {
+                return;
+            }
+            _this.isClicked = false;
+            console.log(value);
+            if (value['error'] == '') {
+                _this.openSnackBar('Organization created succesfully');
+                _this._store.dispatch({ type: "AUTHORIZATION", payload: null }); // use for re authorization in mainDashboard component
+                _this.router.navigate(["mainDashboard"]);
+            }
+            else {
+                _this.openSnackBar(value['errorMsg'] + ' please try again');
+            }
+        });
+    } // constructor close
+    AddOrganizationComponent.prototype.ngOnDestroy = function () {
+        if (this.unSub_createFreightLocRes != null && this.unSub_createFreightLocRes != undefined)
+            this.unSub_createFreightLocRes.unsubscribe();
+        if (this.unSub_authorization != null && this.unSub_authorization != undefined) {
+            this.unSub_authorization.unsubscribe();
+        }
+        if (this.unSub_addOrgRes != null && this.unSub_addOrgRes != undefined) {
+            this.unSub_addOrgRes.unsubscribe();
+        }
+    };
+    AddOrganizationComponent.prototype.createOrganization = function () {
+        var obj = {
+            orgId: this.organizationId,
+            name: this.orgName,
+            type: 'shipper',
+            freightLocationId: this.freightLocUuid
+        };
+        console.log(obj);
+        this._loginServices.createOrg.emit(obj);
+    }; //close createOrganization
+    AddOrganizationComponent.prototype.logout = function () {
+        this.localStorageService.remove('AUTH_TOKEN_SHIPPER');
+        this.localStorageService.clearAll();
+        this._store.dispatch({ type: "USER_INFO", payload: null });
+        this._store.dispatch({ type: "SIGNUP_RES", payload: null });
+        this._store.dispatch({ type: "AUTHORIZATION", payload: null });
+        console.log(this.localStorageService.get('AUTH_TOKEN_SHIPPER'));
+        this.router.navigate(['login']);
+    };
+    AddOrganizationComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        console.log("in on init");
+        console.log("oninit");
+        this.agmMap.mapReady.subscribe(function (map) {
+            _this.map = map;
+            // let points = this.getNPointsCircularPolygone({lat : this.latitude , lng : this.longitude} , 0.5 , 6);
+            var points = [];
+            console.log(points);
+            _this.polygon = _this.addPolygone(_this.map, points, false, '#858585', '#353535');
+            _this.editLocation();
+        });
+        // }
+    };
+    AddOrganizationComponent.prototype.addPolygone = function (map, points, editable, fillColor, strokeColor) {
+        var myPolygon = new google.maps.Polygon({
+            paths: points,
+            editable: editable,
+            strokeColor: strokeColor,
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: fillColor,
+            fillOpacity: 0.35
+        });
+        myPolygon.setMap(map);
+        return myPolygon;
+    };
+    AddOrganizationComponent.prototype.getNPointsCircularPolygone = function (center, dist, n) {
+        var i = 0;
+        var polygonePoint = [];
+        for (i = 1; i <= n; i++) {
+            polygonePoint.push(getPointAt(center, (360.0 / n) * (i), dist));
+        }
+        function toRAD(NUM) {
+            return NUM * Math.PI / 180;
+        }
+        function toDeg(NUM) {
+            return NUM * 180 / Math.PI;
+        }
+        function getPointAt(latlng, brng, dist) {
+            // console.log(latlng);
+            // console.log(latlng);
+            dist = dist / 6371;
+            brng = toRAD(brng);
+            var lat1 = toRAD(latlng.latitude), lon1 = toRAD(latlng.longitude);
+            var lat2 = Math.asin(Math.sin(lat1) * Math.cos(dist) + Math.cos(lat1) * Math.sin(dist) * Math.cos(brng));
+            var lon2 = lon1 + Math.atan2(Math.sin(brng) * Math.sin(dist) * Math.cos(lat1), Math.cos(dist) - Math.sin(lat1) * Math.sin(lat2));
+            if (isNaN(lat2) || isNaN(lon2))
+                return null;
+            return new google.maps.LatLng(toDeg(lat2), toDeg(lon2));
+        }
+        ;
+        return polygonePoint;
+    };
+    AddOrganizationComponent.prototype.editLocation = function () {
+        // this.isMarkerDragable=true;
+        // this.polygon.setMap(null);//
+        this.isPolygonEditable = true;
+        this.polygon.setEditable(true);
+        this.polygon.setOptions({ fillColor: '#FF0000', strokeColor: '#FF0000' });
+        this.placesServices();
+    };
+    AddOrganizationComponent.prototype.placesServices = function () {
+        var _this = this;
+        // Create the search box and link it to the UI element.
+        var input = document.getElementById('pac-input');
+        console.log(input);
+        var searchBox = new google.maps.places.SearchBox(input);
+        this.map.addListener('bounds_changed', function () {
+            searchBox.setBounds(_this.map.getBounds());
+        });
+        // this.markers = [];
+        // if (this.res != null) {
+        // console.log(this.res["data"]["radius"])
+        // let points = this.getNPointsCircularPolygone({ latitude: this.latitude, longitude: this.longitude }, 0.5, 5);
+        // this.polygon.setPath(points);
+        // this.polygon.setMap(this.map);
+        // }
+        searchBox.addListener('places_changed', function () {
+            var places = searchBox.getPlaces();
+            console.log(places.length);
+            if (places.length == 0) {
+                return;
+            }
+            // Clear out the old markers.
+            // this.markers.forEach((marker) => {
+            //   marker.setMap(null);
+            // });
+            // this.markers = [];
+            // For each place, get the icon, name and location.
+            var bounds = new google.maps.LatLngBounds();
+            // places.forEach((place) => {
+            if (!places[0].geometry) {
+                console.log("Returned place contains no geometry");
+                return;
+            }
+            var icon = {
+                url: places[0].icon,
+                size: new google.maps.Size(71, 71),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(17, 34),
+                scaledSize: new google.maps.Size(25, 25)
+            };
+            // Create a marker for each place.
+            var currentMarker = new google.maps.Marker({
+                // map: this.map,
+                // icon: icon,
+                title: places[0].formatted_address,
+                position: places[0].geometry.location
+            });
+            // console.log(places[0].geometry.location);
+            _this.latitude = currentMarker['position'].lat();
+            _this.longitude = currentMarker['position'].lng();
+            console.log(_this.latitude + " " + _this.longitude);
+            _this.address = places[0].formatted_address;
+            //  this.polygon.setMap(this.map);
+            console.log(places[0].formatted_address);
+            // this.markers.push(currentMarker);
+            // ********** for show marker according to screen ********
+            if (places[0].geometry.viewport) {
+                // Only geocodes have viewport.
+                bounds.union(places[0].geometry.viewport);
+            }
+            else {
+                bounds.extend(places[0].geometry.location);
+            }
+            // ****** for show marker accoeding to screen  ************
+            // });
+            _this.map.fitBounds(bounds);
+            _this.onAddLocation();
+        });
+    }; // close placesServices
+    // Add location boundary on map
+    AddOrganizationComponent.prototype.onAddLocation = function () {
+        var obj = { latitude: this.latitude, longitude: this.longitude };
+        console.log('Set New Location Obj');
+        console.log(obj);
+        if (this.polygon != null)
+            this.polygon.setMap(null);
+        var points = this.getNPointsCircularPolygone({ latitude: this.latitude, longitude: this.longitude }, 0.5, 5);
+        this.polygon.setPath(points);
+        this.polygon.setMap(this.map);
+        this.map.setZoom(14);
+    };
+    AddOrganizationComponent.prototype.addFreightLocation = function () {
+        //  for create organization first we create freight location and then create organization
+        var obj = null;
+        var vertices = this.polygon.getPath();
+        if (vertices == undefined || vertices == null) {
+            this.openSnackBar("Please select Location On Map");
+            return false;
+        }
+        var polygonPoints = [];
+        for (var i = 0; i < vertices.getLength(); i++) {
+            var xy = vertices.getAt(i);
+            polygonPoints.push({ latitude: xy.lat(), longitude: xy.lng() });
+            // console.log(xy.lat()+"     "+xy.lng());
+        }
+        if (this.checkValidation(polygonPoints)) {
+            obj = {
+                "name": this.orgName,
+                "address": this.address,
+                "geoTagType": 'geofence',
+                "source": "manual",
+                "zone1": null,
+                "zone2": null,
+                "zone3": null,
+                "boundary": polygonPoints,
+                "centre": { "latitude": this.latitude, "longitude": this.longitude },
+                "type": 'plant'
+            };
+            console.log(obj);
+            this.isClicked = true;
+            this._store.dispatch({ type: "ADD_ORG_RESPONSE", payload: null });
+            this._store.dispatch({ type: "CREATE_FREIGHT_LOCATION_RES", payload: null });
+            this.createFreightLocation.createFreightLoc.emit(obj); // response get in constructor
+        }
+    };
+    AddOrganizationComponent.prototype.checkValidation = function (polygonPoints) {
+        if (this.orgName == '') {
+            this.openSnackBar("Please fill Organization Name");
+            return false;
+        }
+        if (this.organizationId == '') {
+            this.openSnackBar("Please fill Organization Id");
+            return false;
+        }
+        if (polygonPoints.length <= 0) {
+            this.openSnackBar("Please select Location on map");
+            return false;
+        }
+        if (this.address == '' || this.address == null) {
+            this.openSnackBar("Please select Address");
+            return false;
+        }
+        return true;
+    };
+    AddOrganizationComponent.prototype.openSnackBar = function (message) {
+        this.snackBar.open(message, '', { duration: 3000 });
+    };
+    return AddOrganizationComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_5__agm_core__["b" /* AgmMap */]),
+    __metadata("design:type", Object)
+], AddOrganizationComponent.prototype, "agmMap", void 0);
+AddOrganizationComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-add-organisation',
+        template: __webpack_require__("../../../../../src/app/add-organisation/add-organisation.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/add-organisation/add-organisation.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_8__service_authorization_service_service__["a" /* AuthorizationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_8__service_authorization_service_service__["a" /* AuthorizationService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_7__service_create_freigth_location_service__["a" /* CreateFreightLocation */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__service_create_freigth_location_service__["a" /* CreateFreightLocation */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5__agm_core__["c" /* GoogleMapsAPIWrapper */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__agm_core__["c" /* GoogleMapsAPIWrapper */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_6__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__ngrx_store__["b" /* Store */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__service_login_services__["a" /* LoginServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__service_login_services__["a" /* LoginServices */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage__["LocalStorageService"]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_3__angular_material__["s" /* MatSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_material__["s" /* MatSnackBar */]) === "function" && _h || Object])
+], AddOrganizationComponent);
+
+var _a, _b, _c, _d, _e, _f, _g, _h;
+//# sourceMappingURL=add-organisation.component.js.map
 
 /***/ }),
 
@@ -3465,6 +4918,10 @@ module.exports = "  <!--<div class=\"header\" fxLayout=\"row\" style=\"min-width
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3475,21 +4932,38 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
 var AppComponent = (function () {
-    function AppComponent() {
-        // this.goToFTL_OrdersView();
-    }
+    function AppComponent(localStorageService, router, snackBar) {
+        // this.localStorageService.set('AUTH_TOKEN_SHIPPER','eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MTQyOTMzMDcsInVzZXJJZCI6ImNjZmRmMzljLWZiY2YtNDg0OC1iNmYwLTM2ODMwZDI2MDQ5ZiIsImVtYWlsIjoiYW1pdC5rdW1hckBmcmV0cm9uLmNvbSIsIm5hbWUiOiJBbWl0IEt1bWFyIn0.o5qVe1zjZ3V6SqyxNz_xVklu0QQT4OazEa3oZBsV7hY');
+        this.localStorageService = localStorageService;
+        this.router = router;
+        this.snackBar = snackBar;
+        var token = this.localStorageService.get('AUTH_TOKEN_SHIPPER');
+        console.log(token);
+        if (token == undefined || token == null) {
+            this.openSnackBar("Please Login First !!!");
+            this.router.navigate(["login"]);
+        }
+        console.log("app component");
+    } // close constructor
+    AppComponent.prototype.openSnackBar = function (message) {
+        this.snackBar.open(message, '', { duration: 4000 });
+    };
     return AppComponent;
-}());
+}()); // class close
 AppComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-root',
         template: __webpack_require__("../../../../../src/app/app.component.html"),
         styles: [__webpack_require__("../../../../../src/app/app.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_material__["s" /* MatSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_material__["s" /* MatSnackBar */]) === "function" && _c || Object])
 ], AppComponent);
 
+var _a, _b, _c;
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
@@ -3554,11 +5028,11 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__angular_flex_layout__ = __webpack_require__("../../../flex-layout/@angular/flex-layout.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__service_freight_cluster_services__ = __webpack_require__("../../../../../src/service/freight-cluster-services.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__HMEL_admin_freight_cluster_freight_cluster_status_freight_cluster_status_component__ = __webpack_require__("../../../../../src/app/HMEL-admin/freight-cluster/freight-cluster-status/freight-cluster-status.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__HMEL_admin_FTL_orders_browse_shipment_browse_shipment_component__ = __webpack_require__("../../../../../src/app/HMEL-admin/FTL-orders/browse-shipment/browse-shipment.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__HMEL_admin_FTL_orders_create_shipment_order_create_shipment_order_component__ = __webpack_require__("../../../../../src/app/HMEL-admin/FTL-orders/create-shipment-order/create-shipment-order.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__HMEL_admin_shipment_orders_browse_shipment_browse_shipment_component__ = __webpack_require__("../../../../../src/app/HMEL-admin/shipment-orders/browse-shipment/browse-shipment.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__HMEL_admin_shipment_orders_create_shipment_order_create_shipment_order_component__ = __webpack_require__("../../../../../src/app/HMEL-admin/shipment-orders/create-shipment-order/create-shipment-order.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_56_ng_pick_datetime_picker_module__ = __webpack_require__("../../../../ng-pick-datetime/picker.module.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_56_ng_pick_datetime_picker_module___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_56_ng_pick_datetime_picker_module__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__HMEL_admin_FTL_orders_create_shipment_order_add_freight_unit_dialog_add_freight_unit_dialog_component__ = __webpack_require__("../../../../../src/app/HMEL-admin/FTL-orders/create-shipment-order/add-freight-unit-dialog/add-freight-unit-dialog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__HMEL_admin_shipment_orders_create_shipment_order_add_freight_unit_dialog_add_freight_unit_dialog_component__ = __webpack_require__("../../../../../src/app/HMEL-admin/shipment-orders/create-shipment-order/add-freight-unit-dialog/add-freight-unit-dialog.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__service_shipment_order_service__ = __webpack_require__("../../../../../src/service/shipment-order-service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__reducer_shipment_order_store__ = __webpack_require__("../../../../../src/reducer/shipment-order-store.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__user_profile_user_profile_component__ = __webpack_require__("../../../../../src/app/user-profile/user-profile.component.ts");
@@ -3569,6 +5043,15 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_64_angular2_social_login__ = __webpack_require__("../../../../angular2-social-login/dist/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_65__service_login_services__ = __webpack_require__("../../../../../src/service/login-services.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_66__signup_signup_component__ = __webpack_require__("../../../../../src/app/signup/signup.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_67__reducer_login_store__ = __webpack_require__("../../../../../src/reducer/login-store.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_68__service_authorization_service_service__ = __webpack_require__("../../../../../src/service/authorization-service.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_69__add_organisation_add_organisation_component__ = __webpack_require__("../../../../../src/app/add-organisation/add-organisation.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_70__HMEL_admin_dashboard_business_partner_business_partner_component__ = __webpack_require__("../../../../../src/app/HMEL-admin/dashboard/business-partner/business-partner.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_71__HMEL_admin_dashboard_add_business_partner_add_business_partner_component__ = __webpack_require__("../../../../../src/app/HMEL-admin/dashboard/add-business-partner/add-business-partner.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_72__HMEL_admin_dashboard_business_partner_delete_business_partner_dialog_delete_business_partner_dialog_component__ = __webpack_require__("../../../../../src/app/HMEL-admin/dashboard/business-partner/delete-business-partner-dialog/delete-business-partner-dialog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_73__reducer_busines_partner_store__ = __webpack_require__("../../../../../src/reducer/busines-partner-store.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_74__service_businessPartnerService__ = __webpack_require__("../../../../../src/service/businessPartnerService.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_75__HMEL_admin_dashboard_update_business_partner_update_business_partner_component__ = __webpack_require__("../../../../../src/app/HMEL-admin/dashboard/update-business-partner/update-business-partner.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3650,6 +5133,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
+
+
+
+
+
+
+
 // import "hammer-timejs";
 var store = {
     userStore: __WEBPACK_IMPORTED_MODULE_28__reducer_info_store__["x" /* userStore */], freightLocationStore: __WEBPACK_IMPORTED_MODULE_28__reducer_info_store__["k" /* freightLocationStore */], dialogRefStore: __WEBPACK_IMPORTED_MODULE_28__reducer_info_store__["g" /* dialogRefStore */],
@@ -3663,7 +5155,9 @@ var store = {
     deletefreightClusterStore: __WEBPACK_IMPORTED_MODULE_28__reducer_info_store__["e" /* deletefreightClusterStore */], command: __WEBPACK_IMPORTED_MODULE_28__reducer_info_store__["b" /* command */], freightZoneAll: __WEBPACK_IMPORTED_MODULE_28__reducer_info_store__["l" /* freightZoneAll */],
     freightLocation: __WEBPACK_IMPORTED_MODULE_59__reducer_shipment_order_store__["c" /* freightLocation */], transportBusinessPartners: __WEBPACK_IMPORTED_MODULE_59__reducer_shipment_order_store__["e" /* transportBusinessPartners */],
     createShipmentRes: __WEBPACK_IMPORTED_MODULE_59__reducer_shipment_order_store__["b" /* createShipmentRes */], shipmentOrders: __WEBPACK_IMPORTED_MODULE_59__reducer_shipment_order_store__["d" /* shipmentOrders */],
-    checkVehicleNoExist: __WEBPACK_IMPORTED_MODULE_59__reducer_shipment_order_store__["a" /* checkVehicleNoExist */]
+    checkVehicleNoExist: __WEBPACK_IMPORTED_MODULE_59__reducer_shipment_order_store__["a" /* checkVehicleNoExist */], userInfo: __WEBPACK_IMPORTED_MODULE_67__reducer_login_store__["f" /* userInfo */], signupRes: __WEBPACK_IMPORTED_MODULE_67__reducer_login_store__["e" /* signupRes */], authorization: __WEBPACK_IMPORTED_MODULE_67__reducer_login_store__["b" /* authorization */], customerDetails: __WEBPACK_IMPORTED_MODULE_67__reducer_login_store__["d" /* customerDetails */],
+    createFreightLocRes: __WEBPACK_IMPORTED_MODULE_67__reducer_login_store__["c" /* createFreightLocRes */], addOrgRes: __WEBPACK_IMPORTED_MODULE_67__reducer_login_store__["a" /* addOrgRes */], addBusinessPartRes: __WEBPACK_IMPORTED_MODULE_73__reducer_busines_partner_store__["a" /* addBusinessPartRes */], businessPartnerList: __WEBPACK_IMPORTED_MODULE_73__reducer_busines_partner_store__["b" /* businessPartnerList */],
+    deleteBusinessPartner: __WEBPACK_IMPORTED_MODULE_73__reducer_busines_partner_store__["c" /* deleteBusinessPartner */], selectedBusinessPartnerObj: __WEBPACK_IMPORTED_MODULE_73__reducer_busines_partner_store__["d" /* selectedBusinessPartnerObj */]
 };
 var AppModule = (function () {
     function AppModule() {
@@ -3675,8 +5169,9 @@ AppModule = __decorate([
         declarations: [
             __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */],
             __WEBPACK_IMPORTED_MODULE_6__app_HMEL_admin_dashboard_dashboard_component__["a" /* DashBoardComponent */],
-            __WEBPACK_IMPORTED_MODULE_3__app_HMEL_admin_user_user_component__["a" /* UserComponent */],
-            __WEBPACK_IMPORTED_MODULE_3__app_HMEL_admin_user_user_component__["b" /* UserFormComponent */],
+            __WEBPACK_IMPORTED_MODULE_3__app_HMEL_admin_user_user_component__["b" /* UserComponent */],
+            __WEBPACK_IMPORTED_MODULE_3__app_HMEL_admin_user_user_component__["c" /* UserFormComponent */],
+            __WEBPACK_IMPORTED_MODULE_3__app_HMEL_admin_user_user_component__["a" /* DeleteDialog */],
             __WEBPACK_IMPORTED_MODULE_36__HMEL_admin_freight_locations_freight_locations_component__["a" /* FreightLocationsComponent */],
             __WEBPACK_IMPORTED_MODULE_39__HMEL_admin_add_location_add_location_component__["a" /* AddLocationComponent */],
             __WEBPACK_IMPORTED_MODULE_41__HMEL_admin_freight_zones_freight_zones_component__["a" /* FreightZoneComponent */],
@@ -3693,13 +5188,18 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_49__HMEL_admin_shipment_status_shipment_status_component__["a" /* ShipmentStatusComponent */],
             __WEBPACK_IMPORTED_MODULE_48__HMEL_admin_selected_vehicle_status_selected_vehicle_status_component__["a" /* SelectedVehicleStatusComponent */],
             __WEBPACK_IMPORTED_MODULE_53__HMEL_admin_freight_cluster_freight_cluster_status_freight_cluster_status_component__["a" /* FreightClusterStatusComponent */],
-            __WEBPACK_IMPORTED_MODULE_54__HMEL_admin_FTL_orders_browse_shipment_browse_shipment_component__["a" /* BrowseShipment */],
-            __WEBPACK_IMPORTED_MODULE_55__HMEL_admin_FTL_orders_create_shipment_order_create_shipment_order_component__["a" /* CreateShipmentOrder */],
-            __WEBPACK_IMPORTED_MODULE_57__HMEL_admin_FTL_orders_create_shipment_order_add_freight_unit_dialog_add_freight_unit_dialog_component__["a" /* AddFreightUnitDialog */],
+            __WEBPACK_IMPORTED_MODULE_54__HMEL_admin_shipment_orders_browse_shipment_browse_shipment_component__["a" /* BrowseShipment */],
+            __WEBPACK_IMPORTED_MODULE_55__HMEL_admin_shipment_orders_create_shipment_order_create_shipment_order_component__["a" /* CreateShipmentOrder */],
+            __WEBPACK_IMPORTED_MODULE_57__HMEL_admin_shipment_orders_create_shipment_order_add_freight_unit_dialog_add_freight_unit_dialog_component__["a" /* AddFreightUnitDialog */],
             __WEBPACK_IMPORTED_MODULE_60__user_profile_user_profile_component__["a" /* UserProfile */],
-            __WEBPACK_IMPORTED_MODULE_62__main_dashboard_main_dashboard_component__["a" /* MainDashboardComponent */]
+            __WEBPACK_IMPORTED_MODULE_62__main_dashboard_main_dashboard_component__["a" /* MainDashboardComponent */],
+            __WEBPACK_IMPORTED_MODULE_69__add_organisation_add_organisation_component__["a" /* AddOrganizationComponent */],
+            __WEBPACK_IMPORTED_MODULE_70__HMEL_admin_dashboard_business_partner_business_partner_component__["a" /* BusinessPartnerComponent */],
+            __WEBPACK_IMPORTED_MODULE_71__HMEL_admin_dashboard_add_business_partner_add_business_partner_component__["a" /* AddBusinessPartnerComponent */],
+            __WEBPACK_IMPORTED_MODULE_72__HMEL_admin_dashboard_business_partner_delete_business_partner_dialog_delete_business_partner_dialog_component__["a" /* DeleteBusinessPartnerDialog */],
+            __WEBPACK_IMPORTED_MODULE_75__HMEL_admin_dashboard_update_business_partner_update_business_partner_component__["a" /* UpdateBusinessPartner */]
         ],
-        entryComponents: [__WEBPACK_IMPORTED_MODULE_3__app_HMEL_admin_user_user_component__["b" /* UserFormComponent */], __WEBPACK_IMPORTED_MODULE_39__HMEL_admin_add_location_add_location_component__["a" /* AddLocationComponent */], __WEBPACK_IMPORTED_MODULE_43__HMEL_admin_freight_routes_freight_routes_component__["a" /* FreightLane */], __WEBPACK_IMPORTED_MODULE_42__HMEL_admin_transpoter_transpoter_component__["a" /* Transporter */], __WEBPACK_IMPORTED_MODULE_47__HMEL_admin_planned_load_planned_load_component__["b" /* PlannedLoadDialogComponent */], __WEBPACK_IMPORTED_MODULE_57__HMEL_admin_FTL_orders_create_shipment_order_add_freight_unit_dialog_add_freight_unit_dialog_component__["a" /* AddFreightUnitDialog */]],
+        entryComponents: [__WEBPACK_IMPORTED_MODULE_3__app_HMEL_admin_user_user_component__["c" /* UserFormComponent */], __WEBPACK_IMPORTED_MODULE_39__HMEL_admin_add_location_add_location_component__["a" /* AddLocationComponent */], __WEBPACK_IMPORTED_MODULE_43__HMEL_admin_freight_routes_freight_routes_component__["a" /* FreightLane */], __WEBPACK_IMPORTED_MODULE_42__HMEL_admin_transpoter_transpoter_component__["a" /* Transporter */], __WEBPACK_IMPORTED_MODULE_47__HMEL_admin_planned_load_planned_load_component__["b" /* PlannedLoadDialogComponent */], __WEBPACK_IMPORTED_MODULE_57__HMEL_admin_shipment_orders_create_shipment_order_add_freight_unit_dialog_add_freight_unit_dialog_component__["a" /* AddFreightUnitDialog */], __WEBPACK_IMPORTED_MODULE_3__app_HMEL_admin_user_user_component__["a" /* DeleteDialog */], __WEBPACK_IMPORTED_MODULE_72__HMEL_admin_dashboard_business_partner_delete_business_partner_dialog_delete_business_partner_dialog_component__["a" /* DeleteBusinessPartnerDialog */]],
         imports: [
             __WEBPACK_IMPORTED_MODULE_61_angular_2_local_storage__["LocalStorageModule"].withConfig({
                 prefix: "my-app",
@@ -3745,7 +5245,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_18__service_delete_freight_lane_service__["a" /* DeleteFreightLane */], __WEBPACK_IMPORTED_MODULE_32__service_fetch_freight_lane_group_data_service__["a" /* FetchFreightGroupDataServices */], __WEBPACK_IMPORTED_MODULE_23__service_Fetch_transporter_service__["a" /* FetchTranporterDataServices */],
             __WEBPACK_IMPORTED_MODULE_33__service_create_freight_lane_group_service__["a" /* CreateFreightLaneGroup */], __WEBPACK_IMPORTED_MODULE_31__service_freight_zone_service__["a" /* FreightZoneServices */], __WEBPACK_IMPORTED_MODULE_38__service_fetch_freight_zone_service__["a" /* FetchFreightZone */], __WEBPACK_IMPORTED_MODULE_16__service_create_lane_service__["a" /* CreateFreightLane */],
             __WEBPACK_IMPORTED_MODULE_30__service_fetch_freight_lane_data_service__["a" /* FetchFreightLaneDataService */], __WEBPACK_IMPORTED_MODULE_17__service_update_freight_zone_service__["a" /* UpdateFreightZone */], __WEBPACK_IMPORTED_MODULE_50__service_shipment_services__["a" /* ShipmentServices */],
-            __WEBPACK_IMPORTED_MODULE_52__service_freight_cluster_services__["a" /* FreightClusterServices */], __WEBPACK_IMPORTED_MODULE_58__service_shipment_order_service__["a" /* ShipmentOrderServices */], __WEBPACK_IMPORTED_MODULE_65__service_login_services__["a" /* LoginServices */]],
+            __WEBPACK_IMPORTED_MODULE_52__service_freight_cluster_services__["a" /* FreightClusterServices */], __WEBPACK_IMPORTED_MODULE_58__service_shipment_order_service__["a" /* ShipmentOrderServices */], __WEBPACK_IMPORTED_MODULE_65__service_login_services__["a" /* LoginServices */], __WEBPACK_IMPORTED_MODULE_68__service_authorization_service_service__["a" /* AuthorizationService */], __WEBPACK_IMPORTED_MODULE_74__service_businessPartnerService__["a" /* BusinessPartnerService */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
@@ -3855,7 +5355,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/log_in/log-in.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--<div class = \"div\">-->\r\n<!--<mat-form-field>-->\r\n  <!--<input matInput [(ngModel)]=\"transporter_id\" placeholder=\"Transporter Id\" required>-->\r\n<!--</mat-form-field><br>-->\r\n\r\n<!--<mat-form-field>-->\r\n  <!--<input matInput [(ngModel)]=\"password\" placeholder=\"Password\" required>-->\r\n<!--</mat-form-field><br>-->\r\n\r\n<!--<button mat-raised-button class=\"button\" (click)=\"onLogOn()\">Log In</button>-->\r\n<!--</div>-->\r\n<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" style=\"position: absolute;\" class=\"spinner\"></mat-spinner>\r\n<div class=\"main\" >\r\n    <!--<div style=\"text-align: center\">-->\r\n      <!--<label>LOGIN</label>-->\r\n    <!--</div>-->\r\n    <mat-card class=\"login-card\">\r\n      <div class=\"imgcontainer\" >\r\n        <img style=\"padding: 5px;background-color: darkgray; width: 60%;\" src=\"../../../../images/fretron_logo.png\" alt=\"Avatar\"  >\r\n      </div>\r\n      <div fxLayout=\"row\" >\r\n        <button (click)=\"loginWithGoogle()\" color=\"primary\" style=\"width: 100%;margin-bottom: 10px\" mat-raised-button >\r\n          Login with Google\r\n        </button>\r\n      </div>\r\n    </mat-card>\r\n</div>\r\n"
+module.exports = "<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" style=\"position: absolute;\" class=\"spinner\"></mat-spinner>\r\n<div class=\"main\" >\r\n    <!--<div style=\"text-align: center\">-->\r\n      <!--<label>LOGIN</label>-->\r\n    <!--</div>-->\r\n    <mat-card class=\"login-card\">\r\n      <div class=\"imgcontainer\" >\r\n        <img style=\"padding: 5px;background-color: darkgray; width: 60%;\" src=\"../../../../images/fretron_logo.png\" alt=\"Avatar\"  >\r\n      </div>\r\n      <div fxLayout=\"row\" >\r\n        <button (click)=\"loginWithGoogle()\" color=\"primary\" style=\"width: 100%;margin-bottom: 10px\" mat-raised-button >\r\n          Login with Google\r\n        </button>\r\n      </div>\r\n    </mat-card>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -3872,6 +5372,7 @@ module.exports = "<!--<div class = \"div\">-->\r\n<!--<mat-form-field>-->\r\n  <
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_social_login__ = __webpack_require__("../../../../angular2-social-login/dist/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__service_login_services__ = __webpack_require__("../../../../../src/service/login-services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__service_authorization_service_service__ = __webpack_require__("../../../../../src/service/authorization-service.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3888,8 +5389,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var LogInComponent = (function () {
-    function LogInComponent(_loginServices, router, _auth, snackBar, _store, localStorageService) {
+    function LogInComponent(authorizationService, _loginServices, router, _auth, snackBar, _store, localStorageService) {
+        var _this = this;
+        this.authorizationService = authorizationService;
         this._loginServices = _loginServices;
         this.router = router;
         this._auth = _auth;
@@ -3897,8 +5401,58 @@ var LogInComponent = (function () {
         this._store = _store;
         this.localStorageService = localStorageService;
         this.isSpinner = false;
-    }
+        this.unSub_userInfo = null;
+        this.unSub_authorization = null;
+        var authToken = this.localStorageService.get('AUTH_TOKEN_SHIPPER');
+        if (authToken != null && authToken != undefined) {
+            this.router.navigate(["mainDashboard"]);
+        }
+        this.unSub_userInfo = this._store.select('userInfo').subscribe(function (value) {
+            if (value == null) {
+                return;
+            }
+            if (value['error'] == "") {
+                console.log(value);
+                if (value['data']['isExist'] == true) {
+                    _this.authorizationService.authorizedToken.emit(value['data']['token']);
+                }
+                else if (value['data']['isExist'] == false) {
+                    _this.isSpinner = false;
+                    _this.openSnackBar("user not Registered Please Signup");
+                    _this.router.navigate(["signup"]);
+                }
+            }
+            else {
+                _this.isSpinner = false;
+                console.log(value['errorMsg']);
+                _this.openSnackBar(value['errorMsg']);
+            }
+        });
+        this.unSub_authorization = this._store.select('authorization').subscribe(function (value) {
+            if (value == null) {
+                return;
+            }
+            _this.isSpinner = false;
+            if (value['error'] == "") {
+                console.log(value);
+                _this.router.navigate(["mainDashboard"]);
+            }
+            else {
+                console.log(value['errorMsg']);
+                _this._store.dispatch({ type: "USER_INFO", payload: null });
+                _this.openSnackBar(value['errorMsg']);
+            }
+        });
+    } // constructor close
     LogInComponent.prototype.ngOnInit = function () {
+    };
+    LogInComponent.prototype.ngOnDestroy = function () {
+        if (this.unSub_userInfo != null && this.unSub_userInfo != undefined) {
+            this.unSub_userInfo.unsubscribe();
+        }
+        if (this.unSub_authorization != null && this.unSub_authorization != undefined) {
+            this.unSub_authorization.unsubscribe();
+        }
     };
     LogInComponent.prototype.loginWithGoogle = function () {
         var _this = this;
@@ -3919,28 +5473,29 @@ var LogInComponent = (function () {
                 }
             };
             console.log(reqObj);
-            // this.isSpinner=true;
-            // this._loginServices.getUserInfo.emit(reqObj); // call api for checking user existing or not
+            _this.isSpinner = true;
+            _this._store.dispatch({ type: "USER_INFO", payload: null });
+            _this._loginServices.login.emit(reqObj); // call api for checking user existing or not
         }, function (err) {
             _this.isSpinner = false;
             console.log(err);
         });
-    };
+    }; // close loginWithGoogle
     LogInComponent.prototype.openSnackBar = function (message) {
         this.snackBar.open(message, '', { duration: 3000 });
     };
     return LogInComponent;
-}());
+}()); // class close
 LogInComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-log-in',
         template: __webpack_require__("../../../../../src/app/log_in/log-in.component.html"),
         styles: [__webpack_require__("../../../../../src/app/log_in/log-in.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_6__service_login_services__["a" /* LoginServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__service_login_services__["a" /* LoginServices */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4_angular2_social_login__["b" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular2_social_login__["b" /* AuthService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__angular_material__["s" /* MatSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_material__["s" /* MatSnackBar */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["b" /* Store */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular_2_local_storage__["LocalStorageService"]) === "function" && _f || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_7__service_authorization_service_service__["a" /* AuthorizationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__service_authorization_service_service__["a" /* AuthorizationService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_6__service_login_services__["a" /* LoginServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__service_login_services__["a" /* LoginServices */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4_angular2_social_login__["b" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular2_social_login__["b" /* AuthService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__angular_material__["s" /* MatSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_material__["s" /* MatSnackBar */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["b" /* Store */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_3_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular_2_local_storage__["LocalStorageService"]) === "function" && _g || Object])
 ], LogInComponent);
 
-var _a, _b, _c, _d, _e, _f;
+var _a, _b, _c, _d, _e, _f, _g;
 //# sourceMappingURL=log-in.component.js.map
 
 /***/ }),
@@ -3953,7 +5508,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "div{\r\n  font-family: Helvetica;\r\n}\r\n.logo{\r\n  width: 100px;\r\n  padding: 2px;\r\n  height: 19px;\r\n}\r\n\r\n.service-name{\r\n  white-space: nowrap;\r\n  font-size: 12px;\r\n  position: absolute;\r\n  margin-top:6px;\r\n  top: 28px;\r\n  left: 45px;\r\n  font-family: Helvetica;\r\n}\r\n\r\n.header{\r\n  padding:5px 0px 4px 15px;\r\n  background-color: #3F51B5;\r\n  color: white;\r\n  height: 45px;\r\n  box-shadow: 0px 0px 6px darkgrey;\r\n}\r\n\r\n.setting-button{\r\n  margin-left: auto;\r\n  padding: 11px;\r\n  margin-right: 15px;\r\n}\r\n\r\n.menu-button{\r\n  color: white;\r\n}\r\n\r\n.menu-button >>> .mat-button-focus-overlay{\r\n  background-color: rgba(255, 255, 255, 0);\r\n}\r\n\r\n.menu-button:hover{\r\n  color: white !important;\r\n}\r\n\r\n.button-basic1 {\r\n  background-color: #3F51B5;\r\n  border: none;\r\n  font-size: 16px;\r\n  color: #e0dcdc;\r\n  margin-left:20px\r\n}\r\n\r\n.button-basic1:hover {\r\n  color: white !important;\r\n}\r\n\r\n\r\n.button-basic2 {\r\n  background-color: white;\r\n  border: none;\r\n  font-size: 16px;\r\n  margin-bottom:16px;\r\n  color:gray;\r\n  margin-left:20px;\r\n}\r\n\r\n.button-basic3 {\r\n  background-color: #3F51B5;\r\n  color: white;\r\n  font-size: 16px;\r\n  border-radius: 5px;\r\n  border: none;\r\n  float: right;\r\n  margin-top : 16px;\r\n}\r\n\r\n.div-class {\r\n  margin-top:16px;\r\n  border-bottom: 1px solid gray;\r\n}\r\n", ""]);
+exports.push([module.i, "div{\r\n  font-family: Helvetica;\r\n}\r\n.logo{\r\n  width: 100px;\r\n  padding: 2px;\r\n  height: 19px;\r\n}\r\n\r\n.service-name{\r\n  white-space: nowrap;\r\n  font-size: 12px;\r\n  position: absolute;\r\n  top: 28px;\r\n  left: 45px;\r\n  font-family: Helvetica;\r\n}\r\n\r\n.header{\r\n  padding:5px 0px 4px 15px;\r\n  background-color: #3F51B5;\r\n  color: white;\r\n  height: 45px;\r\n  box-shadow: 0px 0px 6px darkgrey;\r\n}\r\n\r\n.setting-button{\r\n  margin-left: auto;\r\n  padding: 11px;\r\n  margin-right: 15px;\r\n}\r\n\r\n.menu-button{\r\n  color: white;\r\n}\r\n\r\n.menu-button >>> .mat-button-focus-overlay{\r\n  background-color: rgba(255, 255, 255, 0);\r\n}\r\n\r\n.menu-button:hover{\r\n  color: white !important;\r\n}\r\n\r\n.button-basic1 {\r\n  background-color: #3F51B5;\r\n  border: none;\r\n  font-size: 16px;\r\n  color: #e0dcdc;\r\n  margin-left:20px\r\n}\r\n\r\n.button-basic1:hover {\r\n  color: white !important;\r\n}\r\n\r\n\r\n.button-basic2 {\r\n  background-color: white;\r\n  border: none;\r\n  font-size: 16px;\r\n  margin-bottom:16px;\r\n  color:gray;\r\n  margin-left:20px;\r\n}\r\n\r\n.button-basic3 {\r\n  background-color: #3F51B5;\r\n  color: white;\r\n  font-size: 16px;\r\n  border-radius: 5px;\r\n  border: none;\r\n  float: right;\r\n  margin-top : 16px;\r\n}\r\n\r\n.div-class {\r\n  margin-top:16px;\r\n  border-bottom: 1px solid gray;\r\n}\r\n", ""]);
 
 // exports
 
@@ -3966,7 +5521,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/main-dashboard/main-dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"header\" fxLayout=\"row\" style=\"min-width: 768px;\">\n  <img class=\"logo\" src=\"logo-light.png\" alt=\"Fretron Logo\" >\n  <span class=\"service-name\" >Shipper Portal</span>\n  <button  mat-button class=\"button-basic1\" (click)=\"goToFTL_OrdersView()\">FTL Orders</button>\n  <button  mat-button class=\"button-basic1\" (click)=\"goToLR_TrackingView()\">LR Tracking</button>\n  <button  mat-button class=\"button-basic1\" >Payment Status</button>\n  <button  mat-button class=\"button-basic1\" >Statement of Accounts</button>\n\n  <button mat-button class=\"button-basic1 fa fa-cog\" style=\"margin-left:auto;\"  (click)=\"goToSettingView()\"></button>\n\n  <button mat-button [matMenuTriggerFor]=\"menu\" style=\"cursor: pointer;z-index: 1000;margin-left: auto;\" >\n    <i  class=\"fa fa-user-o\" aria-hidden=\"true\" >&#9662;</i>\n  </button>\n  <mat-menu #menu=\"matMenu\">\n    <app-user-profile></app-user-profile>\n  </mat-menu>\n</div>\n<div>\n  <router-outlet></router-outlet>\n</div>\n"
+module.exports = "<div *ngIf=\"isUserAuthorized ==false\" style=\"height:100vh;background-color: #1f2021;opacity: .3;\">\n  <label style=\"font-size: 21px;color: #e8dbdb; position: absolute;top: 36%;left: 50%;transform: translate(-50%,-50%);\">{{loginMsg}}</label>\n  <label style=\"color: red;color: #ff000a !important;position: absolute;left: 50%;top: 17%;transform: translate(-50%,-50%);font-size: 20px;font-weight: bold;\">{{errorMsg}}</label>\n</div>\n\n<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\" style=\"position: absolute\"></mat-spinner>\n\n<div *ngIf=\"isUserAuthorized\" class=\"header\" fxLayout=\"row\" style=\"min-width: 768px;\" >\n  <img class=\"logo\" src=\"logo-light.png\" alt=\"Fretron Logo\" >\n  <span class=\"service-name\" >Shipper Portal</span>\n  <button  mat-button class=\"button-basic1\" (click)=\"goToShipment_OrdersView()\" >Shipment Orders</button>\n  <button  mat-button class=\"button-basic1\" (click)=\"goToLR_TrackingView()\">LR Tracking</button>\n  <!--<button  mat-button class=\"button-basic1\" >Payment Status</button>-->\n  <!--<button  mat-button class=\"button-basic1\" >Statement of Accounts</button>-->\n\n  <button mat-button class=\"button-basic1 fa fa-cog\" style=\"margin-left:auto;\"  (click)=\"goToSettingView()\"></button>\n\n  <button mat-button [matMenuTriggerFor]=\"menu\" style=\"cursor: pointer;z-index: 1000;\" >\n    <i  class=\"fa fa-user-o\" aria-hidden=\"true\" >&#9662;</i>\n  </button>\n  <mat-menu #menu=\"matMenu\">\n    <app-user-profile></app-user-profile>\n  </mat-menu>\n</div>\n<div *ngIf=\"isUserAuthorized\" style=\"padding: 5px\">\n  <router-outlet></router-outlet>\n</div>\n"
 
 /***/ }),
 
@@ -3977,6 +5532,11 @@ module.exports = "<div class=\"header\" fxLayout=\"row\" style=\"min-width: 768p
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MainDashboardComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__service_authorization_service_service__ = __webpack_require__("../../../../../src/service/authorization-service.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3988,14 +5548,88 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
+
+
+
 var MainDashboardComponent = (function () {
-    function MainDashboardComponent(router) {
+    function MainDashboardComponent(authorizationService, router, _store, snackBar, localStorageService) {
+        var _this = this;
+        this.authorizationService = authorizationService;
         this.router = router;
-    }
+        this._store = _store;
+        this.snackBar = snackBar;
+        this.localStorageService = localStorageService;
+        this.unSub_authorization = null;
+        this.isUserAuthorized = false;
+        this.isSpinner = false;
+        this.loginMsg = 'LOGIN...';
+        this.errorMsg = '';
+        console.log("main dashboard");
+        var authToken = this.localStorageService.get('AUTH_TOKEN_SHIPPER'); // if token not found then it will check in app.component.
+        var isAlreadyAuthorized = false;
+        this.unSub_authorization = this._store.select('authorization').subscribe(function (value) {
+            if (value == null) {
+                return;
+            }
+            isAlreadyAuthorized = true; // for checking request a;ready send or not
+            _this.isSpinner = false;
+            _this.errorMsg = '';
+            if (value['error'] == "") {
+                console.log(value);
+                var token = _this.localStorageService.get('AUTH_TOKEN_SHIPPER');
+                var customerDetails = _this.customerDetail(token);
+                console.log(customerDetails);
+                if (customerDetails['orgId'] == undefined || customerDetails['orgId'] == null) {
+                    _this.router.navigate(["addOrganization"]);
+                }
+                else {
+                    _this.isUserAuthorized = true;
+                    _this.openSnackBar("You Are Logged In");
+                    var currentPath = _this.router.url;
+                    console.log(currentPath);
+                    if (currentPath == '/mainDashboard') {
+                        _this.goToShipment_OrdersView();
+                    }
+                }
+            }
+            else if (value['error'] == "XX") {
+                console.log(value['errorMsg']);
+                _this.errorMsg = value['errorMsg'];
+                _this.loginMsg = 'LOGIN Failed !!!   Try Again.';
+                _this.openSnackBar(value['errorMsg']);
+            }
+            else {
+                console.log(value['errorMsg']);
+                _this._store.dispatch({ type: "USER_INFO", payload: null });
+                _this._store.dispatch({ type: "SIGNUP_RES", payload: null });
+                _this._store.dispatch({ type: "AUTHORIZATION", payload: null });
+                _this.router.navigate(["login"]);
+                _this.openSnackBar(value['errorMsg']);
+            }
+        });
+        if (authToken != null && authToken != undefined && isAlreadyAuthorized == false) {
+            this.isSpinner = true;
+            this.authorizationService.authorizedToken.emit("" + authToken);
+            console.log(authToken);
+        }
+    } // close constructor
+    MainDashboardComponent.prototype.ngOnDestroy = function () {
+        if (this.unSub_authorization != null && this.unSub_authorization != undefined) {
+            this.unSub_authorization.unsubscribe();
+        }
+    };
+    MainDashboardComponent.prototype.customerDetail = function (token) {
+        var customerDetails = {};
+        var base64Url = token.split('.')[1];
+        var base64 = base64Url.replace('-', '+').replace('_', '/');
+        customerDetails = JSON.parse(window.atob(base64));
+        // userDetails['id'] =userDetails['userId'];
+        return customerDetails;
+    };
     MainDashboardComponent.prototype.ngOnInit = function () {
     };
-    MainDashboardComponent.prototype.goToFTL_OrdersView = function () {
-        console.log("ftl");
+    MainDashboardComponent.prototype.goToShipment_OrdersView = function () {
         this.router.navigate(["mainDashboard/browseShipment"]);
     };
     MainDashboardComponent.prototype.goToLR_TrackingView = function () {
@@ -4003,6 +5637,9 @@ var MainDashboardComponent = (function () {
     };
     MainDashboardComponent.prototype.goToSettingView = function () {
         this.router.navigate(["mainDashboard/dashboard"]);
+    };
+    MainDashboardComponent.prototype.openSnackBar = function (message) {
+        this.snackBar.open(message, '', { duration: 3000 });
     };
     return MainDashboardComponent;
 }());
@@ -4012,10 +5649,10 @@ MainDashboardComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/main-dashboard/main-dashboard.component.html"),
         styles: [__webpack_require__("../../../../../src/app/main-dashboard/main-dashboard.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5__service_authorization_service_service__["a" /* AuthorizationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__service_authorization_service_service__["a" /* AuthorizationService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["b" /* Store */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_material__["s" /* MatSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_material__["s" /* MatSnackBar */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _e || Object])
 ], MainDashboardComponent);
 
-var _a;
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=main-dashboard.component.js.map
 
 /***/ }),
@@ -4039,10 +5676,14 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__HMEL_admin_planned_load_planned_load_component__ = __webpack_require__("../../../../../src/app/HMEL-admin/planned-load/planned-load.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__HMEL_admin_shipment_status_shipment_status_component__ = __webpack_require__("../../../../../src/app/HMEL-admin/shipment-status/shipment-status.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__HMEL_admin_freight_cluster_freight_cluster_status_freight_cluster_status_component__ = __webpack_require__("../../../../../src/app/HMEL-admin/freight-cluster/freight-cluster-status/freight-cluster-status.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__HMEL_admin_FTL_orders_browse_shipment_browse_shipment_component__ = __webpack_require__("../../../../../src/app/HMEL-admin/FTL-orders/browse-shipment/browse-shipment.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__HMEL_admin_FTL_orders_create_shipment_order_create_shipment_order_component__ = __webpack_require__("../../../../../src/app/HMEL-admin/FTL-orders/create-shipment-order/create-shipment-order.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__HMEL_admin_shipment_orders_browse_shipment_browse_shipment_component__ = __webpack_require__("../../../../../src/app/HMEL-admin/shipment-orders/browse-shipment/browse-shipment.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__HMEL_admin_shipment_orders_create_shipment_order_create_shipment_order_component__ = __webpack_require__("../../../../../src/app/HMEL-admin/shipment-orders/create-shipment-order/create-shipment-order.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__main_dashboard_main_dashboard_component__ = __webpack_require__("../../../../../src/app/main-dashboard/main-dashboard.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__signup_signup_component__ = __webpack_require__("../../../../../src/app/signup/signup.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__add_organisation_add_organisation_component__ = __webpack_require__("../../../../../src/app/add-organisation/add-organisation.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__HMEL_admin_dashboard_business_partner_business_partner_component__ = __webpack_require__("../../../../../src/app/HMEL-admin/dashboard/business-partner/business-partner.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__HMEL_admin_dashboard_add_business_partner_add_business_partner_component__ = __webpack_require__("../../../../../src/app/HMEL-admin/dashboard/add-business-partner/add-business-partner.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__HMEL_admin_dashboard_update_business_partner_update_business_partner_component__ = __webpack_require__("../../../../../src/app/HMEL-admin/dashboard/update-business-partner/update-business-partner.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4067,18 +5708,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
+
+
 var routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_8__log_in_log_in_component__["a" /* LogInComponent */] },
     { path: 'signup', component: __WEBPACK_IMPORTED_MODULE_17__signup_signup_component__["a" /* Signup */] },
+    { path: 'addOrganization', component: __WEBPACK_IMPORTED_MODULE_18__add_organisation_add_organisation_component__["a" /* AddOrganizationComponent */] },
     { path: 'mainDashboard', component: __WEBPACK_IMPORTED_MODULE_16__main_dashboard_main_dashboard_component__["a" /* MainDashboardComponent */],
         children: [{ path: 'shipment_status', component: __WEBPACK_IMPORTED_MODULE_12__HMEL_admin_shipment_status_shipment_status_component__["a" /* ShipmentStatusComponent */] },
-            { path: 'browseShipment', component: __WEBPACK_IMPORTED_MODULE_14__HMEL_admin_FTL_orders_browse_shipment_browse_shipment_component__["a" /* BrowseShipment */] },
-            { path: 'createShipmentOrder', component: __WEBPACK_IMPORTED_MODULE_15__HMEL_admin_FTL_orders_create_shipment_order_create_shipment_order_component__["a" /* CreateShipmentOrder */] },
+            { path: 'browseShipment', component: __WEBPACK_IMPORTED_MODULE_14__HMEL_admin_shipment_orders_browse_shipment_browse_shipment_component__["a" /* BrowseShipment */] },
+            { path: 'createShipmentOrder', component: __WEBPACK_IMPORTED_MODULE_15__HMEL_admin_shipment_orders_create_shipment_order_create_shipment_order_component__["a" /* CreateShipmentOrder */] },
             {
                 path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_3__HMEL_admin_dashboard_dashboard_component__["a" /* DashBoardComponent */],
                 children: [
-                    { path: 'user', component: __WEBPACK_IMPORTED_MODULE_2__HMEL_admin_user_user_component__["a" /* UserComponent */] },
+                    { path: 'user', component: __WEBPACK_IMPORTED_MODULE_2__HMEL_admin_user_user_component__["b" /* UserComponent */] },
+                    { path: 'businessPartner', component: __WEBPACK_IMPORTED_MODULE_19__HMEL_admin_dashboard_business_partner_business_partner_component__["a" /* BusinessPartnerComponent */] },
+                    { path: 'addBusinessPartner', component: __WEBPACK_IMPORTED_MODULE_20__HMEL_admin_dashboard_add_business_partner_add_business_partner_component__["a" /* AddBusinessPartnerComponent */] },
+                    { path: 'updateBusinessPartner', component: __WEBPACK_IMPORTED_MODULE_21__HMEL_admin_dashboard_update_business_partner_update_business_partner_component__["a" /* UpdateBusinessPartner */] },
                     { path: 'freightClusterStatus', component: __WEBPACK_IMPORTED_MODULE_13__HMEL_admin_freight_cluster_freight_cluster_status_freight_cluster_status_component__["a" /* FreightClusterStatusComponent */] },
                     { path: 'freight_location', component: __WEBPACK_IMPORTED_MODULE_4__HMEL_admin_freight_locations_freight_locations_component__["a" /* FreightLocationsComponent */] },
                     { path: 'freight_zones', component: __WEBPACK_IMPORTED_MODULE_5__HMEL_admin_freight_zones_freight_zones_component__["a" /* FreightZoneComponent */] },
@@ -4133,7 +5782,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/signup/signup.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main\">\n  <mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></mat-spinner>\n  <mat-card >\n    <form (ngSubmit)=\"userSignup()\" #signupForm=\"ngForm\" >\n      <div class=\"imgcontainer\" >\n        <img style=\"padding: 5px;background-color: darkgray; width: 60%;\" src=\"../../../../images/fretron_logo.png\" alt=\"Avatar\"  >\n      </div>\n\n      <div>\n        <div class=\"fade-header\" style=\"text-align: center;margin-bottom: 30px\" >\n          <span>Create New Account</span>\n        </div>\n\n        <div fxLayout=\"row\" >\n          <mat-input-container class=\"login-text-color\" style=\"width: 100%\" >\n            <input  matTooltip=\"{{'This field is required'}}\" value=\" \" matInput [(ngModel)]=\"name\" placeholder=\"{{'Enter Name'}}\" [disabled]=\"loginType =='google'\"  name=\"name\" id=\"name\" required>\n          </mat-input-container>\n        </div>\n\n        <div fxLayout=\"row\" style=\"margin-top: 5px\" >\n          <mat-input-container class=\"login-text-color\" style=\"width: 100%\" >\n            <input  matTooltip=\"{{'This field is required'}}\" value=\" \" matInput [(ngModel)]=\"email\" placeholder=\"{{'Enter Email'}}\" [disabled]=\"loginType =='google'\" name=\"email\" id=\"email\">\n          </mat-input-container>\n        </div>\n\n        <div fxLayout=\"row\" style=\"margin-top: 5px\" >\n          <mat-input-container class=\"login-text-color\" style=\"width: 100%\" >\n            <input [disabled]=\"loginType =='fretron'\" type=\"number\" min=\"0\" matTooltip=\"{{'This field is required'}}\"  matInput [(ngModel)]=\"mobileNo\"\n                   onkeydown=\"if(event.target.value.length>=10 && event.keyCode!=8 && event.keyCode!=13 )return false;\"\n                   pattern=\"[0-9]{10}\" placeholder=\"{{'Enter Mobile Number'}}\" name=\"mobileNo\" id=\"mobileNo\" required>\n          </mat-input-container>\n        </div>\n        <div fxLayout=\"row\" style=\"margin-top:15px;\" >\n          <button style=\"margin-left: auto\" name=\"cancel\" type=\"reset\"  (click)=\"cancel()\"  matTooltip=\"{{'cancel'}}\"  mat-button >\n            cancel\n          </button>\n          <button *ngIf=\"!(loginType ==undefined ||loginType =='' || loginType ==null)\" name=\"ok\"  type=\"submit\"  matTooltip=\"{{'ok'}}\"  mat-button  [disabled]=\"!signupForm.form.valid\">\n            Signup\n          </button>\n        </div>\n      </div>\n    </form>\n  </mat-card>\n</div>\n\n"
+module.exports = "<div class=\"main\">\n  <mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></mat-spinner>\n  <mat-card >\n    <form (ngSubmit)=\"userSignup()\" #signupForm=\"ngForm\" >\n      <div class=\"imgcontainer\" >\n        <img style=\"padding: 5px;background-color: darkgray; width: 60%;\" src=\"../../../../images/fretron_logo.png\" alt=\"Avatar\"  >\n      </div>\n\n      <div>\n        <div class=\"fade-header\" style=\"text-align: center;margin-bottom: 30px\" >\n          <span>Create New Account</span>\n        </div>\n\n        <div fxLayout=\"row\" >\n          <mat-input-container class=\"login-text-color\" style=\"width: 100%\" >\n            <input  matTooltip=\"{{'This field is required'}}\" value=\" \" matInput [(ngModel)]=\"name\" placeholder=\"{{'Enter Name'}}\" disabled name=\"name\" id=\"name\" required>\n          </mat-input-container>\n        </div>\n\n        <div fxLayout=\"row\" style=\"margin-top: 5px\" >\n          <mat-input-container class=\"login-text-color\" style=\"width: 100%\" >\n            <input  matTooltip=\"{{'This field is required'}}\" value=\" \" matInput [(ngModel)]=\"email\" placeholder=\"{{'Enter Email'}}\" disabled name=\"email\" id=\"email\">\n          </mat-input-container>\n        </div>\n\n        <div fxLayout=\"row\" style=\"margin-top: 5px\" >\n          <mat-input-container class=\"login-text-color\" style=\"width: 100%\" >\n            <input type=\"number\" min=\"0\" matTooltip=\"{{'This field is required'}}\"  matInput [(ngModel)]=\"mobileNo\"\n                   onkeydown=\"if(event.target.value.length>=10 && event.keyCode!=8 && event.keyCode!=13 )return false;\"\n                   pattern=\"[0-9]{10}\" placeholder=\"{{'Enter Mobile Number'}}\" name=\"mobileNo\" id=\"mobileNo\" >\n          </mat-input-container>\n        </div>\n        <div fxLayout=\"row\" style=\"margin-top:15px;\" >\n          <button style=\"margin-left: auto\" name=\"cancel\" type=\"reset\"  (click)=\"cancel()\"  matTooltip=\"{{'cancel'}}\"  mat-button >\n            cancel\n          </button>\n          <button  name=\"ok\"  type=\"submit\"  matTooltip=\"{{'ok'}}\"  mat-button  [disabled]=\"!signupForm.form.valid || isClicked ==true\" >\n            Signup\n          </button>\n        </div>\n      </div>\n    </form>\n  </mat-card>\n</div>\n\n"
 
 /***/ }),
 
@@ -4149,6 +5798,7 @@ module.exports = "<div class=\"main\">\n  <mat-spinner *ngIf=\"isSpinner\" mode=
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__service_login_services__ = __webpack_require__("../../../../../src/service/login-services.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__service_authorization_service_service__ = __webpack_require__("../../../../../src/service/authorization-service.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4164,97 +5814,130 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var Signup = (function () {
-    function Signup(_loginServices, snackBar, localStorageService, _store, _router) {
-        // let mob =this.localStorageService.get("USER-MOB-NO");
-        // this.mobileNo =""+mob;
-        // this.startTimer(300);
+    function Signup(_loginServices, snackBar, localStorageService, _store, router, authorizationService) {
         var _this = this;
         this._loginServices = _loginServices;
         this.snackBar = snackBar;
         this.localStorageService = localStorageService;
         this._store = _store;
-        this._router = _router;
-        this.name = '';
-        this.email = '';
+        this.router = router;
+        this.authorizationService = authorizationService;
+        this.name = ' ';
+        this.email = ' ';
         this.mobileNo = '';
-        this.userType = '';
-        this.isResend = false;
+        this.isClicked = false;
         this.isSpinner = false;
-        this.loginType = '';
-        this.min = 5;
-        this.sec = 0;
         this.unSub_userInfo = null;
-        this.unSub_signupInfo = null;
+        this.unSub_signupRes = null;
+        this.unSub_authorization = null;
+        var authToken = this.localStorageService.get('AUTH_TOKEN_SHIPPER');
+        if (authToken != null && authToken != undefined) {
+            this.router.navigate(["mainDashboard"]);
+        }
         this.unSub_userInfo = this._store.select('userInfo').subscribe(function (value) {
             if (value == null) {
                 _this.cancel();
                 return;
             }
             console.log(value);
-            if (value['error'] == '' && value['res']['userType'] == 'new') {
-                _this.openSnackBar("Please Signup first");
-                _this.loginType = value['res']['loginType'];
-                if (_this.loginType == 'google') {
-                    _this.email = value['res']['email'];
-                    _this.name = value['res']['name'];
-                }
-                else if (_this.loginType == 'fretron') {
-                    _this.mobileNo = value['res']['mobileNumber'];
-                }
+            if (value['error'] == '') {
+                _this.userInfo = value['data'];
+                _this.email = value['data']['email'];
+                _this.name = value['data']['name'];
             }
-            // this.userType =value['res']['userType'];
         });
-        this.unSub_signupInfo = this._store.select('signupInfo').subscribe(function (value) {
+        this.unSub_signupRes = this._store.select('signupRes').subscribe(function (value) {
             if (value == null) {
                 return;
             }
+            console.log(value);
+            _this.isClicked = false;
             if (value['error'] == '') {
-                // this._store.dispatch(go(['/validateOTP']));
+                _this.authorizationService.authorizedToken.emit(value['data']['token']);
+            }
+            else {
+                _this.openSnackBar(value['errorMsg']);
+            }
+        });
+        this.unSub_authorization = this._store.select('authorization').subscribe(function (value) {
+            if (value == null) {
+                return;
+            }
+            _this.isSpinner = false;
+            if (value['error'] == "") {
+                console.log(value);
+                var token = _this.localStorageService.get('AUTH_TOKEN_SHIPPER');
+                var customerDetails = _this.customerDetail(token);
+                console.log(customerDetails);
+                if (customerDetails['orgId'] == undefined || customerDetails['orgId'] == null) {
+                    _this.router.navigate(["addOrganization"]);
+                }
+                else {
+                    _this.router.navigate(["mainDashboard"]);
+                }
+            }
+            else {
+                console.log(value['errorMsg']);
+                _this._store.dispatch({ type: "USER_INFO", payload: null });
+                _this._store.dispatch({ type: "SIGNUP_RES", payload: null });
+                _this.openSnackBar(value['errorMsg']);
             }
         });
     } // close constructor
     Signup.prototype.ngOnDestroy = function () {
-        if (typeof this.unSub_userInfo != 'undefined' && this.unSub_userInfo != null && this.unSub_userInfo != undefined)
+        if (typeof this.unSub_userInfo != 'undefined' && this.unSub_userInfo != null && this.unSub_userInfo != undefined) {
             this.unSub_userInfo.unsubscribe();
-        if (typeof this.unSub_signupInfo != 'undefined' && this.unSub_signupInfo != null && this.unSub_signupInfo != undefined)
-            this.unSub_signupInfo.unsubscribe();
+        }
+        if (this.unSub_signupRes != null && this.unSub_signupRes != undefined) {
+            this.unSub_signupRes.unsubscribe();
+        }
+        if (this.unSub_authorization != null && this.unSub_authorization != undefined) {
+            this.unSub_authorization.unsubscribe();
+        }
     };
     Signup.prototype.ngOnInit = function () {
+    };
+    Signup.prototype.customerDetail = function (token) {
+        var customerDetails = {};
+        var base64Url = token.split('.')[1];
+        var base64 = base64Url.replace('-', '+').replace('_', '/');
+        customerDetails = JSON.parse(window.atob(base64));
+        // userDetails['id'] =userDetails['userId'];
+        return customerDetails;
     };
     Signup.prototype.userSignup = function () {
         console.log("sign up");
         if (this.fieldsValidation()) {
             var obj = {
-                "onBoardingType": this.loginType,
-                "email": this.email,
-                "mobileNumber": this.mobileNo,
-                "name": this.name,
-                "otpType": 'signup'
+                token: this.userInfo['_googleToken'],
+                email: this.email,
+                name: this.name,
             };
-            // this._store.dispatch({type: "SIGNUP", payload:obj});
-            // this._loginServices.getSignupOTP.emit(obj); // call api for checking user existing or not
+            if (this.mobileNo != '' && this.mobileNo != null) {
+                obj['mobileNumber'] = "" + this.mobileNo;
+            }
+            this.isClicked = true;
+            this._loginServices.signup.emit(obj);
             console.log(obj);
         }
     };
     Signup.prototype.fieldsValidation = function () {
-        if (this.name == '' || this.name == undefined) {
+        if (this.name.trim() == '' || this.name == undefined) {
             console.log("please fill Name");
             return false;
         }
-        if ((this.email == '' || this.email == undefined) && this.loginType == 'google') {
+        if (this.email.trim() == '' || this.email == undefined) {
             console.log("please fill Email");
-            return false;
-        }
-        if (this.mobileNo == '' || this.mobileNo == undefined) {
-            console.log("please fill Mobile No");
             return false;
         }
         return true;
     };
     Signup.prototype.cancel = function () {
         this._store.dispatch({ type: "USER_INFO", payload: null });
-        // this._store.dispatch(go(['/login']));
+        this._store.dispatch({ type: "SIGNUP_RES", payload: null });
+        this.router.navigate(["login"]);
     };
     Signup.prototype.openSnackBar = function (message) {
         this.snackBar.open(message, '', { duration: 3000 });
@@ -4267,10 +5950,10 @@ Signup = __decorate([
         template: __webpack_require__("../../../../../src/app/signup/signup.component.html"),
         styles: [__webpack_require__("../../../../../src/app/signup/signup.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__service_login_services__["a" /* LoginServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__service_login_services__["a" /* LoginServices */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__angular_material__["s" /* MatSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_material__["s" /* MatSnackBar */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage__["LocalStorageService"]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["b" /* Store */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__service_login_services__["a" /* LoginServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__service_login_services__["a" /* LoginServices */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__angular_material__["s" /* MatSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_material__["s" /* MatSnackBar */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage__["LocalStorageService"]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["b" /* Store */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_6__service_authorization_service_service__["a" /* AuthorizationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__service_authorization_service_service__["a" /* AuthorizationService */]) === "function" && _f || Object])
 ], Signup);
 
-var _a, _b, _c, _d, _e;
+var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=signup.component.js.map
 
 /***/ }),
@@ -4296,7 +5979,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/user-profile/user-profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n  <div class=\"profile-container-desktop\" >\r\n    <img class=\"logo\" src=\"../../images/fretron_logo.png\" alt=\"Avatar\"  >\r\n    <img class=\"profile-pic\" src=\"../../images/default-profile.png\" alt=\"profile\"  >\r\n    <div style=\"display: grid;position: absolute;top:81px;left: 23px;color:white\">\r\n      <span style=\"font-size: 18px;margin-bottom: 3px;\">{{customerName}}</span>\r\n      <span style=\"font-size: 12px\">{{customerMobile}}</span>\r\n    </div>\r\n  </div>\r\n  <div style=\"margin: 10px 0px 10px 10px;overflow: auto;max-height: 250px;\" >\r\n    <div class=\"org-list-element\" *ngFor=\"let currentOrg of orgList\" (click)=\"switchOrg(currentOrg)\" >\r\n      <div  style=\"padding: 5px;\" [style.background-color]=\"(currentOrgId === currentOrg['uuid']? 'lightblue': 'white')\">\r\n        <span >{{currentOrg['organisationName']}}</span>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div style=\"width: 95%;text-align: right;\" >\r\n    <!--<button  (click)=\"goToAddOrganisation()\" mat-button >Add Organisation</button>-->\r\n    <button  (click)=\"logout();\" mat-button >Logout</button>\r\n  </div>\r\n</div>\r\n\r\n"
+module.exports = "<div>\r\n  <div class=\"profile-container-desktop\" >\r\n    <img class=\"logo\" src=\"../../images/fretron_logo.png\" alt=\"Avatar\"  >\r\n    <img class=\"profile-pic\" src=\"../../images/default-profile.png\" alt=\"profile\"  >\r\n    <div style=\"display: grid;position: absolute;top:81px;left: 23px;color:white\">\r\n      <span style=\"font-size: 18px;margin-bottom: 3px;\">{{customerName}}</span>\r\n      <span style=\"font-size: 12px\">{{customerMobile}}</span>\r\n      <span style=\"font-size: 12px\">{{userDetails?.email}}</span>\r\n    </div>\r\n  </div>\r\n  <!--<div style=\"margin: 10px 0px 10px 10px;overflow: auto;max-height: 250px;\" >-->\r\n    <!--<div class=\"org-list-element\" *ngFor=\"let currentOrg of orgList\" (click)=\"switchOrg(currentOrg)\" >-->\r\n      <!--<div  style=\"padding: 5px;\" [style.background-color]=\"(currentOrgId === currentOrg['uuid']? 'lightblue': 'white')\">-->\r\n        <!--<span >{{currentOrg['organisationName']}}</span>-->\r\n      <!--</div>-->\r\n    <!--</div>-->\r\n  <!--</div>-->\r\n  <div style=\"width: 95%;text-align: right;\" >\r\n    <!--<button  (click)=\"goToAddOrganisation()\" mat-button >Add Organisation</button>-->\r\n    <button  (click)=\"logout();\" mat-button >Logout</button>\r\n  </div>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -4311,7 +5994,6 @@ module.exports = "<div>\r\n  <div class=\"profile-container-desktop\" >\r\n    <
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4321,8 +6003,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
 
 
 
@@ -4342,11 +6022,10 @@ var UserProfile = (function () {
         this.viewType = '';
         this.isOrgList = false;
         this.authToken = null;
-        this.orgList = [];
         this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         this.defaultHeaders.append('Access-Control-Allow-Origin', '*');
         this.defaultHeaders.append('Access-Control-Allow-Methods', 'GET,POST, OPTIONS, PUT, PATCH, DELETE');
-        var auth_token = this.localStorageService.get("AUTH_TOKEN");
+        var auth_token = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         console.log("user profile");
         console.log(auth_token);
         if (auth_token != null) {
@@ -4380,90 +6059,13 @@ var UserProfile = (function () {
         this._store.dispatch({ type: "CUSTOMER_DETAILS", payload: { customer: this.userDetails } });
     };
     UserProfile.prototype.logout = function () {
+        this.localStorageService.remove('AUTH_TOKEN_SHIPPER');
+        this.localStorageService.clearAll();
+        this._store.dispatch({ type: "USER_INFO", payload: null });
+        this._store.dispatch({ type: "SIGNUP_RES", payload: null });
+        this._store.dispatch({ type: "AUTHORIZATION", payload: null });
+        console.log(this.localStorageService.get('AUTH_TOKEN_SHIPPER'));
         this._router.navigate(['login']);
-    };
-    UserProfile.prototype.switchOrg = function (currentOrg) {
-        var _this = this;
-        console.log(currentOrg);
-        console.log(this.userDetails);
-        var pathUrl = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].SWITCH_ORG_PATH + currentOrg['uuid'];
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
-        headers.set('Content-Type', 'application/json');
-        var bearerToken = "Bearer " + this.authToken;
-        headers.set('authorization', bearerToken);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
-            headers: headers,
-        });
-        console.log(pathUrl);
-        console.log(bearerToken);
-        this.http.request(pathUrl, requestOptions).map(function (response) {
-            // console.log(response.status);
-            // console.log(response);
-            return response.json();
-        }).subscribe(function (response) {
-            console.log(response);
-            if (response['status'] >= 200 && response['status'] < 300) {
-                if (_this.userDetails['orgType'] == currentOrg['type']) {
-                    _this.localStorageService.clearAll();
-                    _this.localStorageService.set("AUTH_TOKEN", response['token']);
-                    _this.authToken = _this.localStorageService.get("AUTH_TOKEN");
-                    _this.refreshUser();
-                }
-                else {
-                    _this.localStorageService.clearAll();
-                    _this.localStorageService.set("AUTH_TOKEN", response['token']);
-                    var pathUrl_1 = 'http://' + window.location.hostname + ':' + window.location.port;
-                    console.log(pathUrl_1 + "/transporter");
-                    if (currentOrg['type'] == 'TRANSPORTER') {
-                        window.location.replace(pathUrl_1 + "/transporter");
-                    }
-                    else if (currentOrg['type'] == 'FLEET_OWNER') {
-                        window.location.replace(pathUrl_1 + "/tracknet/vtsdashboard");
-                    }
-                    else if (currentOrg['type'] == 'FLEET_OWNER_AGENT') {
-                        // window.location.replace(pathUrl+"/tracknet/vtsdashboard");
-                    }
-                }
-            }
-            else {
-                console.log("error");
-            }
-        }, function (err) {
-            console.log(err);
-            console.log(err.json());
-        });
-    }; //close switch org
-    //get organization
-    UserProfile.prototype.getOrganization = function (token) {
-        var _this = this;
-        this.orgList = [];
-        var pathUrl = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].ORGANIZATION_LIST_PATH;
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
-        headers.set('Content-Type', 'application/json');
-        var bearerToken = "Bearer " + token;
-        headers.set('authorization', bearerToken);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
-            headers: headers,
-        });
-        this.http.request(pathUrl, requestOptions).map(function (response) {
-            // console.log(response.status);
-            // console.log(response);
-            return response.json();
-        }).subscribe(function (response) {
-            console.log(response);
-            if (response['status'] >= 200 && response['status'] < 300) {
-                _this.orgList = response['list'];
-                console.log(_this.orgList);
-            }
-            else {
-                console.log(response['error']);
-            }
-        }, function (err) {
-            console.log(err);
-            console.log(err.json());
-        });
     };
     UserProfile.prototype.goToAddOrganisation = function () {
         // this._router.navigate(['dashboard/addOrganisation']);
@@ -4511,13 +6113,16 @@ var GOOGLE_PROVIDERS = {
 };
 var BASE_IP = {
     // BASE:'https://shippermanagementg2963f8fc.jp1.hana.ondemand.com/ShipperManagement/api',
-    // BASE:'http://192.168.0.121:2122',
+    // BASE:'http://192.168.0.91:2122',
     BASE: 'http://192.168.0.153',
     IP: 'http://apis.fretron.com',
     ORG_MANAGER: 'http://apis.fretron.com/organisation',
 };
 var path = {
-    LOGIN_PATH: '',
+    LOGIN_PATH: BASE_IP.BASE + '/shipper/login',
+    AUTHORIZATION_PATH: BASE_IP.BASE + '/shipper/authorize',
+    SIGNUP_PATH: BASE_IP.BASE + '/shipper/signUp',
+    CREATE_ORGANISATION_PATH: BASE_IP.BASE + '/shipper/organisation/create',
     GET_FREIGHT_LOCATION: BASE_IP.BASE + '/shipper/freightLocation',
     GET_TRANSPORT_BUSINESS_PARTNER_PATH: BASE_IP.BASE + '/shipper/user',
     SHIPMENT_ORDER_PATH: BASE_IP.BASE + '/shipper/shipment/order/create',
@@ -4548,6 +6153,9 @@ var path = {
     UTVQPATH: BASE_IP.BASE + "/shipper/volume/update/",
     FREIGHT_CLUSTER: BASE_IP.BASE + '/shipper/freight/cluster',
     FREIGHT_ZONE: BASE_IP.BASE + '/shipper/freight/zone',
+    ADD_BUSINESS_PARTNER: BASE_IP.BASE + '/shipper/businessPartner/add',
+    GET_BUSINESS_PARTNER: BASE_IP.BASE + '/shipper/businessPartner/get',
+    DELETE_BUSINESS_PARTNER: BASE_IP.BASE + '/shipper/businessPartner/delete',
     CREATESHIPMENT: 'http://192.168.0.103:8094/shipment/create',
     PATH1: 'http://192.168.0.149:2124/shipment/latest/status',
     DETAIL: 'http://192.168.0.149:2124/shipment/detail/',
@@ -4587,6 +6195,62 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["enableProdMode"])();
 Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */])
     .catch(function (err) { return console.log(err); });
 //# sourceMappingURL=main.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/reducer/busines-partner-store.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = addBusinessPartRes;
+/* harmony export (immutable) */ __webpack_exports__["b"] = businessPartnerList;
+/* harmony export (immutable) */ __webpack_exports__["c"] = deleteBusinessPartner;
+/* harmony export (immutable) */ __webpack_exports__["d"] = selectedBusinessPartnerObj;
+function addBusinessPartRes(state, action) {
+    if (state === void 0) { state = null; }
+    switch (action.type) {
+        case 'ADD_BUSINESS_PART_RES':
+            {
+                return action.payload;
+            }
+        default:
+            return state;
+    }
+}
+function businessPartnerList(state, action) {
+    if (state === void 0) { state = null; }
+    switch (action.type) {
+        case 'BUSINESS_PART_LIST':
+            {
+                return action.payload;
+            }
+        default:
+            return state;
+    }
+}
+function deleteBusinessPartner(state, action) {
+    if (state === void 0) { state = null; }
+    switch (action.type) {
+        case 'DELETE_BUSINESS_PART':
+            {
+                return action.payload;
+            }
+        default:
+            return state;
+    }
+}
+function selectedBusinessPartnerObj(state, action) {
+    if (state === void 0) { state = null; }
+    switch (action.type) {
+        case 'SELECTED_BUSINESS_PART_OBJ':
+            {
+                return action.payload;
+            }
+        default:
+            return state;
+    }
+}
+//# sourceMappingURL=busines-partner-store.js.map
 
 /***/ }),
 
@@ -4900,6 +6564,88 @@ function freightZoneAll(state, action) {
 
 /***/ }),
 
+/***/ "../../../../../src/reducer/login-store.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["f"] = userInfo;
+/* harmony export (immutable) */ __webpack_exports__["e"] = signupRes;
+/* harmony export (immutable) */ __webpack_exports__["b"] = authorization;
+/* harmony export (immutable) */ __webpack_exports__["d"] = customerDetails;
+/* harmony export (immutable) */ __webpack_exports__["c"] = createFreightLocRes;
+/* harmony export (immutable) */ __webpack_exports__["a"] = addOrgRes;
+// store logging information when user want to login
+function userInfo(state, action) {
+    if (state === void 0) { state = null; }
+    switch (action.type) {
+        case 'USER_INFO':
+            {
+                return action.payload;
+            }
+        default:
+            return state;
+    }
+}
+// user signin information
+function signupRes(state, action) {
+    if (state === void 0) { state = null; }
+    switch (action.type) {
+        case 'SIGNUP_RES':
+            {
+                return action.payload;
+            }
+        default:
+            return state;
+    }
+}
+function authorization(state, action) {
+    if (state === void 0) { state = null; }
+    switch (action.type) {
+        case 'AUTHORIZATION':
+            {
+                return action.payload;
+            }
+        default:
+            return state;
+    }
+}
+function customerDetails(state, action) {
+    if (state === void 0) { state = null; }
+    switch (action.type) {
+        case 'CUSTOMER_DETAILS':
+            {
+                return action.payload;
+            }
+        default:
+            return state;
+    }
+}
+function createFreightLocRes(state, action) {
+    if (state === void 0) { state = null; }
+    switch (action.type) {
+        case 'CREATE_FREIGHT_LOCATION_RES':
+            {
+                return action.payload;
+            }
+        default:
+            return state;
+    }
+}
+function addOrgRes(state, action) {
+    if (state === void 0) { state = null; }
+    switch (action.type) {
+        case 'ADD_ORG_RESPONSE':
+            {
+                return action.payload;
+            }
+        default:
+            return state;
+    }
+}
+//# sourceMappingURL=login-store.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/reducer/shipment-order-store.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -4979,6 +6725,8 @@ function checkVehicleNoExist(state, action) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4994,11 +6742,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var FetchTranporterDataServices = (function () {
-    function FetchTranporterDataServices(http, _store) {
+    function FetchTranporterDataServices(localStorageService, http, _store) {
         // this.defaultHeaders.append('Access-Control-Allow-Origin', '*');
         // this.defaultHeaders.append('Access-Control-Allow-Methods', 'GET,POST, OPTIONS, PUT, PATCH, DELETE');
         var _this = this;
+        this.localStorageService = localStorageService;
         this.http = http;
         this._store = _store;
         this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
@@ -5013,24 +6763,15 @@ var FetchTranporterDataServices = (function () {
                 _store.dispatch({ type: "TRANSPORTER", payload: { error: '', data: res } });
             });
         });
-        // this.getShipmentList.subscribe((shipmentReqArray)=> {
-        //   let path = PATH;
-        //   this.getList(path,shipmentReqArray).subscribe(response =>{
-        //     console.log(response);
-        //     let res=response;
-        //     this._store.dispatch({type: "All_SHIPMENT_LIST",payload:{error:'',data:res}});
-        //   },err=>{
-        //     // this._store.dispatch({type: "CUSTOMER_LIST",payload:{error:'X', errorMsg:"error occur while fetching data"+err}});
-        //     // console.log(err);
-        //     console.log(err.json());
-        //   });
-        // });
     } // constructor close here
     FetchTranporterDataServices.prototype.ngOnDestroy = function () {
     };
     //********************* send Request *****/
     FetchTranporterDataServices.prototype.sendRequest = function (path, transporter) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type','application/json');
         console.log(headers);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -5047,25 +6788,26 @@ var FetchTranporterDataServices = (function () {
 }()); // class close
 FetchTranporterDataServices = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _c || Object])
 ], FetchTranporterDataServices);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=Fetch-transporter.service.js.map
 
 /***/ }),
 
-/***/ "../../../../../src/service/create-freight-lane-group.service.ts":
+/***/ "../../../../../src/service/authorization-service.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CreateFreightLaneGroup; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthorizationService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fetch_freight_lane_group_data_service__ = __webpack_require__("../../../../../src/service/fetch-freight-lane-group-data.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -5083,23 +6825,301 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var CreateFreightLaneGroup = (function () {
-    function CreateFreightLaneGroup(http, _store, fetchFreightLaneGroup) {
+var AuthorizationService = (function () {
+    function AuthorizationService(http, _store, localStorageService) {
         // this.defaultHeaders.append('Access-Control-Allow-Origin', '*');
         // this.defaultHeaders.append('Access-Control-Allow-Methods', 'GET,POST, OPTIONS, PUT, PATCH, DELETE');
         var _this = this;
         this.http = http;
         this._store = _store;
+        this.localStorageService = localStorageService;
+        this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        this.authorizedToken = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        // this.token=this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        //************login ***************************************************
+        this.authorizedToken.subscribe(function (authToken) {
+            var pathURL = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].AUTHORIZATION_PATH;
+            console.log(pathURL);
+            _this.checkAuthorizedToken(pathURL, authToken).subscribe(function (response) {
+                console.log(response);
+                var res = response;
+                if (res == null) {
+                    _this.localStorageService.remove('AUTH_TOKEN_SHIPPER');
+                    _this.localStorageService.clearAll();
+                    _this._store.dispatch({ type: "AUTHORIZATION", payload: { error: 'X', errorMsg: 'server response with null' } });
+                }
+                else if (res.status >= 200 && res.status < 300 && res['isValid'] == true) {
+                    // let customer=this.customerDetail(authToken);
+                    _this.localStorageService.remove('AUTH_TOKEN_SHIPPER');
+                    // this.localStorageService.clearAll();
+                    if (res['refreshToken'] == '') {
+                        _this.localStorageService.set('AUTH_TOKEN_SHIPPER', authToken);
+                    }
+                    else {
+                        _this.localStorageService.set('AUTH_TOKEN_SHIPPER', res['refreshToken']);
+                    }
+                    _this._store.dispatch({ type: "AUTHORIZATION", payload: { error: '', isValid: res } });
+                }
+                else {
+                    _this.localStorageService.remove('AUTH_TOKEN_SHIPPER');
+                    _this.localStorageService.clearAll();
+                    _this._store.dispatch({ type: "AUTHORIZATION", payload: { error: 'X', errorMsg: res.error } });
+                }
+            }, function (err) {
+                console.log(err);
+                console.log(err.json());
+                _this._store.dispatch({ type: "AUTHORIZATION", payload: { error: 'XX', errorMsg: 'Network error : ' + err } });
+            });
+        });
+    } // constructor close here
+    AuthorizationService.prototype.ngOnDestroy = function () {
+    };
+    // ***********************  token authorization  **********************
+    AuthorizationService.prototype.checkAuthorizedToken = function (path, authToken) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        headers.set('Content-Type', 'application/json');
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
+            headers: headers,
+        });
+        return this.http.request(path, requestOptions).map(function (response) {
+            console.log(response);
+            return response.json();
+        });
+    };
+    AuthorizationService.prototype.customerDetail = function (token) {
+        // console.log(token);
+        var base64Url = token.split('.')[1];
+        var base64 = base64Url.replace('-', '+').replace('_', '/');
+        return JSON.parse(window.atob(base64));
+    };
+    return AuthorizationService;
+}()); // class close
+AuthorizationService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _c || Object])
+], AuthorizationService);
+
+var _a, _b, _c;
+//# sourceMappingURL=authorization-service.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/service/businessPartnerService.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BusinessPartnerService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__);
+/**
+ * Created by amit8.kumar on 12-12-2017.
+ */
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var BusinessPartnerService = (function () {
+    function BusinessPartnerService(localStorageService, http, _store) {
+        var _this = this;
+        this.localStorageService = localStorageService;
+        this.http = http;
+        this._store = _store;
+        this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        this.addBusinessPartner = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.getBusinessPartnerList = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.deleteBusinessPartner = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        /************* add Business Partner   *************/
+        this.addBusinessPartner.subscribe(function (obj) {
+            _this.addNewBusinessPartner(__WEBPACK_IMPORTED_MODULE_4__environments_environment__["b" /* path */].ADD_BUSINESS_PARTNER, obj).subscribe(function (response) {
+                console.log(response);
+                var res = response;
+                if (res == null) {
+                    _this._store.dispatch({ type: "ADD_BUSINESS_PART_RES", payload: { error: 'X', errorMsg: "server error" } });
+                }
+                else if (res['status'] == 200) {
+                    _this._store.dispatch({ type: "ADD_BUSINESS_PART_RES", payload: { error: '', data: res } });
+                }
+                else {
+                    _this._store.dispatch({ type: "ADD_BUSINESS_PART_RES", payload: { error: 'X', errorMsg: res['error'] } });
+                }
+            }, function (err) {
+                console.log(err.json());
+                _this._store.dispatch({ type: "ADD_BUSINESS_PART_RES", payload: { error: 'X', errorMsg: "Network error " + err } });
+            });
+        });
+        /************* get Business Partner List  *************/
+        this.getBusinessPartnerList.subscribe(function (reqObj) {
+            var pathURL = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["b" /* path */].GET_BUSINESS_PARTNER + '?pageId=' + reqObj.pageId + '&pageSize=' + reqObj.pageSize;
+            if (reqObj.searchLike != '' && reqObj.searchLike != null) {
+                pathURL = pathURL + '&searchLike=' + reqObj.searchLike;
+            }
+            console.log(pathURL);
+            _this.getBusinessPartner(pathURL, reqObj).subscribe(function (response) {
+                console.log(response);
+                var res = response;
+                if (res == null) {
+                    _this._store.dispatch({ type: "BUSINESS_PART_LIST", payload: { error: 'X', errorMsg: "server error" } });
+                }
+                else if (res['status'] == 200) {
+                    _this._store.dispatch({ type: "BUSINESS_PART_LIST", payload: { error: '', data: res } });
+                }
+                else {
+                    _this._store.dispatch({ type: "BUSINESS_PART_LIST", payload: { error: 'X', errorMsg: res['error'] } });
+                }
+            }, function (err) {
+                console.log(err.json());
+                _this._store.dispatch({ type: "BUSINESS_PART_LIST", payload: { error: 'X', errorMsg: "Network error " + err } });
+            });
+        });
+        /************* delete business partner   *************/
+        this.deleteBusinessPartner.subscribe(function (reqObj) {
+            _this.deleteBusinessPart(__WEBPACK_IMPORTED_MODULE_4__environments_environment__["b" /* path */].DELETE_BUSINESS_PARTNER, reqObj).subscribe(function (response) {
+                console.log(response);
+                var res = response;
+                if (res == null) {
+                    _this._store.dispatch({ type: "DELETE_BUSINESS_PART", payload: { error: 'X', errorMsg: "server error" } });
+                }
+                else if (res['status'] == 200) {
+                    _this._store.dispatch({ type: "DELETE_BUSINESS_PART", payload: { error: '', data: res } });
+                }
+                else {
+                    _this._store.dispatch({ type: "DELETE_BUSINESS_PART", payload: { error: 'X', errorMsg: res['error'] } });
+                }
+            }, function (err) {
+                console.log(err.json());
+                _this._store.dispatch({ type: "DELETE_BUSINESS_PART", payload: { error: 'X', errorMsg: "Network error " + err } });
+            });
+        });
+    } // constructor close here
+    BusinessPartnerService.prototype.ngOnDestroy = function () {
+    };
+    // get freight location
+    BusinessPartnerService.prototype.addNewBusinessPartner = function (path, obj) {
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
+        // headers.set('Content-Type', 'application/json');
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
+            headers: headers,
+            body: obj
+        });
+        return this.http.request(path, requestOptions).map(function (response) {
+            // console.log(response);
+            return response.json();
+        });
+    };
+    // get business partner
+    BusinessPartnerService.prototype.getBusinessPartner = function (path, obj) {
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
+            headers: headers,
+        });
+        return this.http.request(path, requestOptions).map(function (response) {
+            // console.log(response);
+            return response.json();
+        });
+    };
+    // get business partner
+    BusinessPartnerService.prototype.deleteBusinessPart = function (path, obj) {
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
+            headers: headers,
+            body: obj
+        });
+        return this.http.request(path, requestOptions).map(function (response) {
+            // console.log(response);
+            return response.json();
+        });
+    };
+    return BusinessPartnerService;
+}()); // class close
+BusinessPartnerService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _c || Object])
+], BusinessPartnerService);
+
+var _a, _b, _c;
+//# sourceMappingURL=businessPartnerService.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/service/create-freight-lane-group.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CreateFreightLaneGroup; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__fetch_freight_lane_group_data_service__ = __webpack_require__("../../../../../src/service/fetch-freight-lane-group-data.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var CreateFreightLaneGroup = (function () {
+    function CreateFreightLaneGroup(localStorageService, http, _store, fetchFreightLaneGroup) {
+        // this.defaultHeaders.append('Access-Control-Allow-Origin', '*');
+        // this.defaultHeaders.append('Access-Control-Allow-Methods', 'GET,POST, OPTIONS, PUT, PATCH, DELETE');
+        var _this = this;
+        this.localStorageService = localStorageService;
+        this.http = http;
+        this._store = _store;
         this.fetchFreightLaneGroup = fetchFreightLaneGroup;
         this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         this.token = '';
-        // private geocodePath=GEOCODE_PATH;
-        // private key:any=KEY;
-        // public getShipmentList=new EventEmitter();
         this.getData = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         //  this.defaultHeaders.append('Access-Control-Allow-Headers', 'Content-Type');
         this.getData.subscribe(function (freightLaneGroup) {
-            var pathURL = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].FLGPATH;
+            var pathURL = __WEBPACK_IMPORTED_MODULE_6__environments_environment__["b" /* path */].FLGPATH;
             _this.sendRequest(pathURL, freightLaneGroup).subscribe(function (response) {
                 console.log(response);
                 _this.fetchFreightLaneGroup.sendRequest(pathURL).subscribe(function (res) {
@@ -5112,7 +7132,11 @@ var CreateFreightLaneGroup = (function () {
     };
     //********************* send Request *****/
     CreateFreightLaneGroup.prototype.sendRequest = function (path, freightLaneGroup) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
+        // let headers = new Headers(this.defaultHeaders.toJSON());
         // headers.set('Content-Type','application/json');
         console.log(headers);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -5130,10 +7154,10 @@ var CreateFreightLaneGroup = (function () {
 }()); // class close
 CreateFreightLaneGroup = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__fetch_freight_lane_group_data_service__["a" /* FetchFreightGroupDataServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__fetch_freight_lane_group_data_service__["a" /* FetchFreightGroupDataServices */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__fetch_freight_lane_group_data_service__["a" /* FetchFreightGroupDataServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__fetch_freight_lane_group_data_service__["a" /* FetchFreightGroupDataServices */]) === "function" && _d || Object])
 ], CreateFreightLaneGroup);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=create-freight-lane-group.service.js.map
 
 /***/ }),
@@ -5148,8 +7172,10 @@ var _a, _b, _c;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__freight_location_service__ = __webpack_require__("../../../../../src/service/freight-location.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__freight_location_service__ = __webpack_require__("../../../../../src/service/freight-location.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5166,25 +7192,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var CreateFreightLocation = (function () {
-    function CreateFreightLocation(http, _store, fetchFreightLocationData) {
+    function CreateFreightLocation(localStorageService, http, _store, fetchFreightLocationData) {
         // this.defaultHeaders.append('Access-Control-Allow-Origin', '*');
         // this.defaultHeaders.append('Access-Control-Allow-Methods', 'GET,POST, OPTIONS, PUT, PATCH, DELETE');
         var _this = this;
+        this.localStorageService = localStorageService;
         this.http = http;
         this._store = _store;
         this.fetchFreightLocationData = fetchFreightLocationData;
         this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
-        this.token = '';
+        this.authToken = '';
         this.getData = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.createFreightLoc = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         //  this.defaultHeaders.append('Access-Control-Allow-Headers', 'Content-Type');
+        this.authToken = this.localStorageService.get('AUTH_TOKEN_SHIPPER');
         this.getData.subscribe(function (freightLocation) {
-            var pathURL = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].FLPATH;
+            var pathURL = __WEBPACK_IMPORTED_MODULE_6__environments_environment__["b" /* path */].FLPATH;
             _this.sendRequest(pathURL, freightLocation).subscribe(function (response) {
                 console.log(response);
                 var res = response;
-                _this._store.dispatch({ type: "COMMAND", payload: { error: '', data: res } });
-                if (res['statusCode'] = 200) {
+                if (res['status'] == 200) {
+                    _this._store.dispatch({ type: "COMMAND", payload: { error: '', data: res } });
                     fetchFreightLocationData.sendRequest(pathURL, freightLocation).subscribe(function (response) {
                         console.log(response);
                         var res = response;
@@ -5193,12 +7223,35 @@ var CreateFreightLocation = (function () {
                 }
             });
         });
+        this.createFreightLoc.subscribe(function (freightLocation) {
+            var pathURL = __WEBPACK_IMPORTED_MODULE_6__environments_environment__["b" /* path */].FLPATH;
+            _this.sendRequest(pathURL, freightLocation).subscribe(function (response) {
+                console.log(response);
+                var res = response;
+                if (res == null) {
+                    _this._store.dispatch({ type: "CREATE_FREIGHT_LOCATION_RES", payload: { error: 'X', errorMsg: "server error with null value" } });
+                }
+                else if (res.status >= 200 && res.status < 300) {
+                    _this._store.dispatch({ type: "CREATE_FREIGHT_LOCATION_RES", payload: { error: '', data: res } });
+                }
+                else {
+                    _this._store.dispatch({ type: "CREATE_FREIGHT_LOCATION_RES", payload: { error: 'X', errorMsg: res.error } });
+                }
+            }, function (err) {
+                console.log(err);
+                console.log(err.json());
+                _this._store.dispatch({ type: "CREATE_FREIGHT_LOCATION_RES", payload: { error: 'X', errorMsg: 'error : ' + err } });
+            });
+        });
     } // constructor close here
     CreateFreightLocation.prototype.ngOnDestroy = function () {
     };
     //********************* send Request *****/
     CreateFreightLocation.prototype.sendRequest = function (path, freightLocation) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type','application/json');
         console.log(headers);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -5206,7 +7259,6 @@ var CreateFreightLocation = (function () {
             headers: headers,
             body: freightLocation
         });
-        console.log(this.http);
         return this.http.request(path, requestOptions).map(function (response) {
             console.log(response);
             return response.json();
@@ -5216,10 +7268,10 @@ var CreateFreightLocation = (function () {
 }()); // class close
 CreateFreightLocation = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__freight_location_service__["a" /* FetchFreightLocationData */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__freight_location_service__["a" /* FetchFreightLocationData */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__freight_location_service__["a" /* FetchFreightLocationData */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__freight_location_service__["a" /* FetchFreightLocationData */]) === "function" && _d || Object])
 ], CreateFreightLocation);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=create-freigth-location.service.js.map
 
 /***/ }),
@@ -5234,8 +7286,10 @@ var _a, _b, _c;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fetch_freight_lane_data_service__ = __webpack_require__("../../../../../src/service/fetch-freight-lane-data.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__fetch_freight_lane_data_service__ = __webpack_require__("../../../../../src/service/fetch-freight-lane-data.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5252,23 +7306,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var CreateFreightLane = (function () {
-    function CreateFreightLane(http, _store, fetchFreightLane) {
+    function CreateFreightLane(localStorageService, http, _store, fetchFreightLane) {
         // this.defaultHeaders.append('Access-Control-Allow-Origin', '*');
         // this.defaultHeaders.append('Access-Control-Allow-Methods', 'GET,POST, OPTIONS, PUT, PATCH, DELETE');
         var _this = this;
+        this.localStorageService = localStorageService;
         this.http = http;
         this._store = _store;
         this.fetchFreightLane = fetchFreightLane;
         this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         this.token = '';
-        // private geocodePath=GEOCODE_PATH;
-        // private key:any=KEY;
-        // public getShipmentList=new EventEmitter();
         this.getData = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         //  this.defaultHeaders.append('Access-Control-Allow-Headers', 'Content-Type');
         this.getData.subscribe(function (freightLane) {
-            var pathURL = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].FLAPATH;
+            var pathURL = __WEBPACK_IMPORTED_MODULE_6__environments_environment__["b" /* path */].FLAPATH;
             _this.sendRequest(pathURL, freightLane).subscribe(function (response) {
                 console.log(response);
                 _this._store.dispatch({ type: "COMMAND", payload: { error: '', data: response } });
@@ -5284,7 +7337,10 @@ var CreateFreightLane = (function () {
     };
     //********************* send Request *****/
     CreateFreightLane.prototype.sendRequest = function (path, freightLane) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type','application/json');
         console.log(headers);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -5302,10 +7358,10 @@ var CreateFreightLane = (function () {
 }()); // class close
 CreateFreightLane = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__fetch_freight_lane_data_service__["a" /* FetchFreightLaneDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__fetch_freight_lane_data_service__["a" /* FetchFreightLaneDataService */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__fetch_freight_lane_data_service__["a" /* FetchFreightLaneDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__fetch_freight_lane_data_service__["a" /* FetchFreightLaneDataService */]) === "function" && _d || Object])
 ], CreateFreightLane);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=create-lane.service.js.map
 
 /***/ }),
@@ -5320,8 +7376,10 @@ var _a, _b, _c;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fetch_transporter_volume_quota_service__ = __webpack_require__("../../../../../src/service/fetch-transporter-volume-quota.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__fetch_transporter_volume_quota_service__ = __webpack_require__("../../../../../src/service/fetch-transporter-volume-quota.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5338,24 +7396,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-// import {KEY} from "./config-services"
+
 var CreateTrasporterVolumeQuota = (function () {
-    function CreateTrasporterVolumeQuota(http, _store, fetchTransporterVolumeQuota) {
+    function CreateTrasporterVolumeQuota(localStorageService, http, _store, fetchTransporterVolumeQuota) {
         // this.defaultHeaders.append('Access-Control-Allow-Origin', '*');
         // this.defaultHeaders.append('Access-Control-Allow-Methods', 'GET,POST, OPTIONS, PUT, PATCH, DELETE');
         var _this = this;
+        this.localStorageService = localStorageService;
         this.http = http;
         this._store = _store;
         this.fetchTransporterVolumeQuota = fetchTransporterVolumeQuota;
         this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         this.token = '';
-        // private geocodePath=GEOCODE_PATH;
-        // private key:any=KEY;
-        // public getShipmentList=new EventEmitter();
         this.getData = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         //  this.defaultHeaders.append('Access-Control-Allow-Headers', 'Content-Type');
         this.getData.subscribe(function (transporterVolumeQuota) {
-            var pathURL = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].TVQPATH;
+            var pathURL = __WEBPACK_IMPORTED_MODULE_6__environments_environment__["b" /* path */].TVQPATH;
             _this.sendRequest(pathURL, transporterVolumeQuota).subscribe(function (response) {
                 console.log(response);
                 var res = response;
@@ -5372,7 +7428,10 @@ var CreateTrasporterVolumeQuota = (function () {
     };
     //********************* send Request *****/
     CreateTrasporterVolumeQuota.prototype.sendRequest = function (path, transporterVolumeQuota) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type','application/json');
         console.log(headers);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -5390,10 +7449,10 @@ var CreateTrasporterVolumeQuota = (function () {
 }()); // class close
 CreateTrasporterVolumeQuota = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__fetch_transporter_volume_quota_service__["a" /* FetchTranporterVolumeQuotaDataServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__fetch_transporter_volume_quota_service__["a" /* FetchTranporterVolumeQuotaDataServices */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__fetch_transporter_volume_quota_service__["a" /* FetchTranporterVolumeQuotaDataServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__fetch_transporter_volume_quota_service__["a" /* FetchTranporterVolumeQuotaDataServices */]) === "function" && _d || Object])
 ], CreateTrasporterVolumeQuota);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=create-transporter-volume-quota.service.js.map
 
 /***/ }),
@@ -5408,8 +7467,10 @@ var _a, _b, _c;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fetch_freight_lane_group_data_service__ = __webpack_require__("../../../../../src/service/fetch-freight-lane-group-data.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__fetch_freight_lane_group_data_service__ = __webpack_require__("../../../../../src/service/fetch-freight-lane-group-data.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5426,18 +7487,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-// import {KEY} from "./config-services"
+
 var DeleteFreightLaneGroup = (function () {
-    function DeleteFreightLaneGroup(http, _store, fetchFreightLaneGroupData) {
+    function DeleteFreightLaneGroup(localStorageService, http, _store, fetchFreightLaneGroupData) {
         // this.defaultHeaders.append('Access-Control-Allow-Origin', '*');
         // this.defaultHeaders.append('Access-Control-Allow-Methods', 'GET,POST, OPTIONS, PUT, PATCH, DELETE');
         var _this = this;
+        this.localStorageService = localStorageService;
         this.http = http;
         this._store = _store;
         this.fetchFreightLaneGroupData = fetchFreightLaneGroupData;
         this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         this.token = '';
-        this.pathURL = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].DFLGPATH;
+        this.pathURL = __WEBPACK_IMPORTED_MODULE_6__environments_environment__["b" /* path */].DFLGPATH;
         this.getData = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         //  this.defaultHeaders.append('Access-Control-Allow-Headers', 'Content-Type');
         this.getData.subscribe(function (freightLaneGroup) {
@@ -5445,13 +7507,13 @@ var DeleteFreightLaneGroup = (function () {
                 console.log(response);
                 var res = response;
                 if (res['statusCode'] = 200) {
-                    fetchFreightLaneGroupData.sendRequest(__WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].FLGPATH).subscribe(function (response) {
+                    fetchFreightLaneGroupData.sendRequest(__WEBPACK_IMPORTED_MODULE_6__environments_environment__["b" /* path */].FLGPATH).subscribe(function (response) {
                         console.log(response);
                         var res = response;
                         _this._store.dispatch({ type: "FREIGHT LANE GROUP", payload: { error: '', data: res } });
                     });
                 }
-                _this.pathURL = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].DFLGPATH;
+                _this.pathURL = __WEBPACK_IMPORTED_MODULE_6__environments_environment__["b" /* path */].DFLGPATH;
             });
         });
     } // constructor close here
@@ -5459,7 +7521,10 @@ var DeleteFreightLaneGroup = (function () {
     };
     //********************* send Request *****/
     DeleteFreightLaneGroup.prototype.sendRequest = function (path, freightLaneGroup) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type','application/json');
         console.log(headers);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -5477,10 +7542,10 @@ var DeleteFreightLaneGroup = (function () {
 }());
 DeleteFreightLaneGroup = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__fetch_freight_lane_group_data_service__["a" /* FetchFreightGroupDataServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__fetch_freight_lane_group_data_service__["a" /* FetchFreightGroupDataServices */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__fetch_freight_lane_group_data_service__["a" /* FetchFreightGroupDataServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__fetch_freight_lane_group_data_service__["a" /* FetchFreightGroupDataServices */]) === "function" && _d || Object])
 ], DeleteFreightLaneGroup);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=delete-freight-lane-group.service.js.map
 
 /***/ }),
@@ -5495,8 +7560,10 @@ var _a, _b, _c;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fetch_freight_lane_data_service__ = __webpack_require__("../../../../../src/service/fetch-freight-lane-data.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__fetch_freight_lane_data_service__ = __webpack_require__("../../../../../src/service/fetch-freight-lane-data.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5513,18 +7580,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-// import {KEY} from "./config-services"
+
 var DeleteFreightLane = (function () {
-    function DeleteFreightLane(http, _store, fetchFreightLaneData) {
+    function DeleteFreightLane(localStorageService, http, _store, fetchFreightLaneData) {
         // this.defaultHeaders.append('Access-Control-Allow-Origin', '*');
         // this.defaultHeaders.append('Access-Control-Allow-Methods', 'GET,POST, OPTIONS, PUT, PATCH, DELETE');
         var _this = this;
+        this.localStorageService = localStorageService;
         this.http = http;
         this._store = _store;
         this.fetchFreightLaneData = fetchFreightLaneData;
         this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         this.token = '';
-        this.pathURL = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].DFLAPATH;
+        this.pathURL = __WEBPACK_IMPORTED_MODULE_6__environments_environment__["b" /* path */].DFLAPATH;
         this.getData = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         //  this.defaultHeaders.append('Access-Control-Allow-Headers', 'Content-Type');
         this.getData.subscribe(function (freightLane) {
@@ -5533,13 +7601,13 @@ var DeleteFreightLane = (function () {
                 var res = response;
                 _this._store.dispatch({ type: "COMMAND", payload: { error: '', data: res } });
                 if (res['status'] = 200) {
-                    fetchFreightLaneData.sendRequest(__WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].FLAPATH).subscribe(function (response) {
+                    fetchFreightLaneData.sendRequest(__WEBPACK_IMPORTED_MODULE_6__environments_environment__["b" /* path */].FLAPATH).subscribe(function (response) {
                         console.log(response);
                         var res = response;
                         _this._store.dispatch({ type: "FREIGHT LANE", payload: { error: '', data: res } });
                     });
                 }
-                _this.pathURL = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].DFLAPATH;
+                _this.pathURL = __WEBPACK_IMPORTED_MODULE_6__environments_environment__["b" /* path */].DFLAPATH;
             });
         });
     } // constructor close here
@@ -5547,7 +7615,10 @@ var DeleteFreightLane = (function () {
     };
     //********************* send Request *****/
     DeleteFreightLane.prototype.sendRequest = function (path, freightLane) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type','application/json');
         console.log(headers);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -5565,10 +7636,10 @@ var DeleteFreightLane = (function () {
 }());
 DeleteFreightLane = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__fetch_freight_lane_data_service__["a" /* FetchFreightLaneDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__fetch_freight_lane_data_service__["a" /* FetchFreightLaneDataService */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__fetch_freight_lane_data_service__["a" /* FetchFreightLaneDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__fetch_freight_lane_data_service__["a" /* FetchFreightLaneDataService */]) === "function" && _d || Object])
 ], DeleteFreightLane);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=delete-freight-lane.service.js.map
 
 /***/ }),
@@ -5585,6 +7656,8 @@ var _a, _b, _c;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__freight_location_service__ = __webpack_require__("../../../../../src/service/freight-location.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5601,11 +7674,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var DeleteFreightLocation = (function () {
-    function DeleteFreightLocation(http, _store, fetchFreightLocationData) {
+    function DeleteFreightLocation(localStorageService, http, _store, fetchFreightLocationData) {
         // this.defaultHeaders.append('Access-Control-Allow-Origin', '*');
         // this.defaultHeaders.append('Access-Control-Allow-Methods', 'GET,POST, OPTIONS, PUT, PATCH, DELETE');
         var _this = this;
+        this.localStorageService = localStorageService;
         this.http = http;
         this._store = _store;
         this.fetchFreightLocationData = fetchFreightLocationData;
@@ -5635,7 +7710,10 @@ var DeleteFreightLocation = (function () {
     };
     //********************* send Request *****/
     DeleteFreightLocation.prototype.sendRequest = function (path, freightLocation) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type','application/json');
         console.log(headers);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -5653,10 +7731,10 @@ var DeleteFreightLocation = (function () {
 }());
 DeleteFreightLocation = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__freight_location_service__["a" /* FetchFreightLocationData */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__freight_location_service__["a" /* FetchFreightLocationData */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__freight_location_service__["a" /* FetchFreightLocationData */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__freight_location_service__["a" /* FetchFreightLocationData */]) === "function" && _d || Object])
 ], DeleteFreightLocation);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=delete-freight-location.service.js.map
 
 /***/ }),
@@ -5673,6 +7751,8 @@ var _a, _b, _c;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__freight_location_service__ = __webpack_require__("../../../../../src/service/freight-location.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5689,11 +7769,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var DeleteFreightZone = (function () {
-    function DeleteFreightZone(http, _store, fetchFreightLocationData) {
+    function DeleteFreightZone(localStorageService, http, _store, fetchFreightLocationData) {
         // this.defaultHeaders.append('Access-Control-Allow-Origin', '*');
         // this.defaultHeaders.append('Access-Control-Allow-Methods', 'GET,POST, OPTIONS, PUT, PATCH, DELETE');
         var _this = this;
+        this.localStorageService = localStorageService;
         this.http = http;
         this._store = _store;
         this.fetchFreightLocationData = fetchFreightLocationData;
@@ -5722,7 +7804,10 @@ var DeleteFreightZone = (function () {
     };
     //********************* send Request *****/
     DeleteFreightZone.prototype.sendRequest = function (path, freightZone) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type','application/json');
         console.log(headers);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -5740,10 +7825,10 @@ var DeleteFreightZone = (function () {
 }());
 DeleteFreightZone = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__freight_location_service__["a" /* FetchFreightLocationData */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__freight_location_service__["a" /* FetchFreightLocationData */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__freight_location_service__["a" /* FetchFreightLocationData */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__freight_location_service__["a" /* FetchFreightLocationData */]) === "function" && _d || Object])
 ], DeleteFreightZone);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=delete-freight-zone.service.js.map
 
 /***/ }),
@@ -5758,8 +7843,10 @@ var _a, _b, _c;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fetch_transporter_volume_quota_service__ = __webpack_require__("../../../../../src/service/fetch-transporter-volume-quota.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__fetch_transporter_volume_quota_service__ = __webpack_require__("../../../../../src/service/fetch-transporter-volume-quota.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5776,18 +7863,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-// import {KEY} from "./config-services"
+
 var DeleteTransporterVolumeQuota = (function () {
-    function DeleteTransporterVolumeQuota(http, _store, fetchTranporterVolumeQuotaDataServices) {
+    function DeleteTransporterVolumeQuota(localStorageService, http, _store, fetchTranporterVolumeQuotaDataServices) {
         // this.defaultHeaders.append('Access-Control-Allow-Origin', '*');
         // this.defaultHeaders.append('Access-Control-Allow-Methods', 'GET,POST, OPTIONS, PUT, PATCH, DELETE');
         var _this = this;
+        this.localStorageService = localStorageService;
         this.http = http;
         this._store = _store;
         this.fetchTranporterVolumeQuotaDataServices = fetchTranporterVolumeQuotaDataServices;
         this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         this.token = '';
-        this.pathURL = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].DTVQPATH;
+        this.pathURL = __WEBPACK_IMPORTED_MODULE_6__environments_environment__["b" /* path */].DTVQPATH;
         this.getData = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         //  this.defaultHeaders.append('Access-Control-Allow-Headers', 'Content-Type');
         this.getData.subscribe(function (freightLocation) {
@@ -5795,12 +7883,12 @@ var DeleteTransporterVolumeQuota = (function () {
                 console.log(response);
                 var res = response;
                 _this._store.dispatch({ type: "COMMAND", payload: { error: '', data: res } });
-                fetchTranporterVolumeQuotaDataServices.sendRequest(__WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].TVQPATH).subscribe(function (response) {
+                fetchTranporterVolumeQuotaDataServices.sendRequest(__WEBPACK_IMPORTED_MODULE_6__environments_environment__["b" /* path */].TVQPATH).subscribe(function (response) {
                     console.log(response);
                     var res = response;
                     _this._store.dispatch({ type: "TRANSPORTER VOLUME QUOTA", payload: { error: '', data: res } });
                 });
-                _this.pathURL = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].DTVQPATH;
+                _this.pathURL = __WEBPACK_IMPORTED_MODULE_6__environments_environment__["b" /* path */].DTVQPATH;
             });
         });
     } // constructor close here
@@ -5808,7 +7896,10 @@ var DeleteTransporterVolumeQuota = (function () {
     };
     //********************* send Request *****/
     DeleteTransporterVolumeQuota.prototype.sendRequest = function (path, freightLocation) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type','application/json');
         console.log(headers);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -5826,10 +7917,10 @@ var DeleteTransporterVolumeQuota = (function () {
 }());
 DeleteTransporterVolumeQuota = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__fetch_transporter_volume_quota_service__["a" /* FetchTranporterVolumeQuotaDataServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__fetch_transporter_volume_quota_service__["a" /* FetchTranporterVolumeQuotaDataServices */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__fetch_transporter_volume_quota_service__["a" /* FetchTranporterVolumeQuotaDataServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__fetch_transporter_volume_quota_service__["a" /* FetchTranporterVolumeQuotaDataServices */]) === "function" && _d || Object])
 ], DeleteTransporterVolumeQuota);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=delete.transporter-volume-quota.service.js.map
 
 /***/ }),
@@ -5844,7 +7935,9 @@ var _a, _b, _c;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5860,47 +7953,36 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-// import {KEY} from "./config-services"
+
 var FetchDataServices = (function () {
-    function FetchDataServices(http, _store) {
+    function FetchDataServices(localStorageService, http, _store) {
         // this.defaultHeaders.append('Access-Control-Allow-Origin', '*');
         // this.defaultHeaders.append('Access-Control-Allow-Methods', 'GET,POST, OPTIONS, PUT, PATCH, DELETE');
         var _this = this;
+        this.localStorageService = localStorageService;
         this.http = http;
         this._store = _store;
         this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         this.token = '';
-        // private geocodePath=GEOCODE_PATH;
-        // private key:any=KEY;
-        // public getShipmentList=new EventEmitter();
         this.getData = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         //  this.defaultHeaders.append('Access-Control-Allow-Headers', 'Content-Type');
         this.getData.subscribe(function (user) {
-            var pathURL = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["b" /* path */].FPATH;
+            var pathURL = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].FPATH;
             _this.sendRequest(pathURL, user).subscribe(function (response) {
                 console.log(response);
                 var res = response;
                 _store.dispatch({ type: "USER STORE", payload: { error: '', data: res } });
             });
         });
-        // this.getShipmentList.subscribe((shipmentReqArray)=> {
-        //   let path = PATH;
-        //   this.getList(path,shipmentReqArray).subscribe(response =>{
-        //     console.log(response);
-        //     let res=response;
-        //     this._store.dispatch({type: "All_SHIPMENT_LIST",payload:{error:'',data:res}});
-        //   },err=>{
-        //     // this._store.dispatch({type: "CUSTOMER_LIST",payload:{error:'X', errorMsg:"error occur while fetching data"+err}});
-        //     // console.log(err);
-        //     console.log(err.json());
-        //   });
-        // });
     } // constructor close here
     FetchDataServices.prototype.ngOnDestroy = function () {
     };
     //********************* send Request *****/
     FetchDataServices.prototype.sendRequest = function (path, user) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type','application/json');
         console.log(headers);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -5917,10 +7999,10 @@ var FetchDataServices = (function () {
 }()); // class close
 FetchDataServices = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _c || Object])
 ], FetchDataServices);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=fetch-data.service.js.map
 
 /***/ }),
@@ -5936,6 +8018,8 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5951,18 +8035,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var FetchFreightLaneDataService = (function () {
-    function FetchFreightLaneDataService(http, _store) {
+    function FetchFreightLaneDataService(localStorageService, http, _store) {
         // this.defaultHeaders.append('Access-Control-Allow-Origin', '*');
         // this.defaultHeaders.append('Access-Control-Allow-Methods', 'GET,POST, OPTIONS, PUT, PATCH, DELETE');
         var _this = this;
+        this.localStorageService = localStorageService;
         this.http = http;
         this._store = _store;
         this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         this.token = '';
-        // private geocodePath=GEOCODE_PATH;
-        // private key:any=KEY;
-        // public getShipmentList=new EventEmitter();
         this.getData = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         //  this.defaultHeaders.append('Access-Control-Allow-Headers', 'Content-Type');
         this.getData.subscribe(function (freightLane) {
@@ -5973,24 +8056,15 @@ var FetchFreightLaneDataService = (function () {
                 _store.dispatch({ type: "FREIGHT LANE", payload: { error: '', data: res } });
             });
         });
-        // this.getShipmentList.subscribe((shipmentReqArray)=> {
-        //   let path = PATH;
-        //   this.getList(path,shipmentReqArray).subscribe(response =>{
-        //     console.log(response);
-        //     let res=response;
-        //     this._store.dispatch({type: "All_SHIPMENT_LIST",payload:{error:'',data:res}});
-        //   },err=>{
-        //     // this._store.dispatch({type: "CUSTOMER_LIST",payload:{error:'X', errorMsg:"error occur while fetching data"+err}});
-        //     // console.log(err);
-        //     console.log(err.json());
-        //   });
-        // });
     } // constructor close here
     FetchFreightLaneDataService.prototype.ngOnDestroy = function () {
     };
     //********************* send Request *****/
     FetchFreightLaneDataService.prototype.sendRequest = function (path) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type','application/json');
         console.log(headers);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -6007,10 +8081,10 @@ var FetchFreightLaneDataService = (function () {
 }()); // class close
 FetchFreightLaneDataService = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _c || Object])
 ], FetchFreightLaneDataService);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=fetch-freight-lane-data.service.js.map
 
 /***/ }),
@@ -6026,6 +8100,8 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6041,11 +8117,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var FetchFreightGroupDataServices = (function () {
-    function FetchFreightGroupDataServices(http, _store) {
+    function FetchFreightGroupDataServices(localStorageService, http, _store) {
         // this.defaultHeaders.append('Access-Control-Allow-Origin', '*');
         // this.defaultHeaders.append('Access-Control-Allow-Methods', 'GET,POST, OPTIONS, PUT, PATCH, DELETE');
         var _this = this;
+        this.localStorageService = localStorageService;
         this.http = http;
         this._store = _store;
         this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
@@ -6065,7 +8143,10 @@ var FetchFreightGroupDataServices = (function () {
     };
     //********************* send Request *****/
     FetchFreightGroupDataServices.prototype.sendRequest = function (path) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type','application/json');
         console.log(headers);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -6082,10 +8163,10 @@ var FetchFreightGroupDataServices = (function () {
 }()); // class close
 FetchFreightGroupDataServices = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _c || Object])
 ], FetchFreightGroupDataServices);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=fetch-freight-lane-group-data.service.js.map
 
 /***/ }),
@@ -6101,6 +8182,8 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6116,11 +8199,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var FetchFreightZone = (function () {
-    function FetchFreightZone(http, _store) {
+    function FetchFreightZone(localStorageService, http, _store) {
         // this.defaultHeaders.append('Access-Control-Allow-Origin', '*');
         // this.defaultHeaders.append('Access-Control-Allow-Methods', 'GET,POST, OPTIONS, PUT, PATCH, DELETE');
         var _this = this;
+        this.localStorageService = localStorageService;
         this.http = http;
         this._store = _store;
         this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
@@ -6135,24 +8220,15 @@ var FetchFreightZone = (function () {
                 _store.dispatch({ type: "FREIGHT ZONE", payload: { error: '', data: res } });
             });
         });
-        // this.getShipmentList.subscribe((shipmentReqArray)=> {
-        //   let path = PATH;
-        //   this.getList(path,shipmentReqArray).subscribe(response =>{
-        //     console.log(response);
-        //     let res=response;
-        //     this._store.dispatch({type: "All_SHIPMENT_LIST",payload:{error:'',data:res}});
-        //   },err=>{
-        //     // this._store.dispatch({type: "CUSTOMER_LIST",payload:{error:'X', errorMsg:"error occur while fetching data"+err}});
-        //     // console.log(err);
-        //     console.log(err.json());
-        //   });
-        // });
     } // constructor close here
     FetchFreightZone.prototype.ngOnDestroy = function () {
     };
     //********************* send Request *****/
     FetchFreightZone.prototype.sendRequest = function (path, freightZone) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type','application/json');
         console.log(headers);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -6169,10 +8245,10 @@ var FetchFreightZone = (function () {
 }()); // class close
 FetchFreightZone = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _c || Object])
 ], FetchFreightZone);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=fetch-freight-zone.service.js.map
 
 /***/ }),
@@ -6188,6 +8264,8 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6203,18 +8281,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var FetchLoadAllocationData = (function () {
-    function FetchLoadAllocationData(http, _store) {
+    function FetchLoadAllocationData(localStorageService, http, _store) {
         // this.defaultHeaders.append('Access-Control-Allow-Origin', '*');
         // this.defaultHeaders.append('Access-Control-Allow-Methods', 'GET,POST, OPTIONS, PUT, PATCH, DELETE');
         var _this = this;
+        this.localStorageService = localStorageService;
         this.http = http;
         this._store = _store;
         this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         this.token = '';
-        // private geocodePath=GEOCODE_PATH;
-        // private key:any=KEY;
-        // public getShipmentList=new EventEmitter();
         this.getData = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         //  this.defaultHeaders.append('Access-Control-Allow-Headers', 'Content-Type');
         this.getData.subscribe(function (loadAllocation) {
@@ -6230,7 +8307,10 @@ var FetchLoadAllocationData = (function () {
     };
     //********************* send Request *****/
     FetchLoadAllocationData.prototype.sendRequest = function (path) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type','application/json');
         console.log(headers);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -6247,10 +8327,10 @@ var FetchLoadAllocationData = (function () {
 }()); // class close
 FetchLoadAllocationData = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _c || Object])
 ], FetchLoadAllocationData);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=fetch-load-allocation-data.service.js.map
 
 /***/ }),
@@ -6266,6 +8346,8 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6281,11 +8363,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var FetchTranporterVolumeQuotaDataServices = (function () {
-    function FetchTranporterVolumeQuotaDataServices(http, _store) {
+    function FetchTranporterVolumeQuotaDataServices(localStorageService, http, _store) {
         // this.defaultHeaders.append('Access-Control-Allow-Origin', '*');
         // this.defaultHeaders.append('Access-Control-Allow-Methods', 'GET,POST, OPTIONS, PUT, PATCH, DELETE');
         var _this = this;
+        this.localStorageService = localStorageService;
         this.http = http;
         this._store = _store;
         this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
@@ -6300,24 +8384,15 @@ var FetchTranporterVolumeQuotaDataServices = (function () {
                 _store.dispatch({ type: "TRANSPORTER VOLUME QUOTA", payload: { error: '', data: res } });
             });
         });
-        // this.getShipmentList.subscribe((shipmentReqArray)=> {
-        //   let pathURL = PATH;
-        //   this.getList(pathURL,shipmentReqArray).subscribe(response =>{
-        //     console.log(response);
-        //     let res=response;
-        //     this._store.dispatch({type: "All_SHIPMENT_LIST",payload:{error:'',data:res}});
-        //   },err=>{
-        //     // this._store.dispatch({type: "CUSTOMER_LIST",payload:{error:'X', errorMsg:"error occur while fetching data"+err}});
-        //     // console.log(err);
-        //     console.log(err.json());
-        //   });
-        // });
     } // constructor close here
     FetchTranporterVolumeQuotaDataServices.prototype.ngOnDestroy = function () {
     };
     //********************* send Request *****/
     FetchTranporterVolumeQuotaDataServices.prototype.sendRequest = function (path) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type','application/json');
         console.log(headers);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -6334,10 +8409,10 @@ var FetchTranporterVolumeQuotaDataServices = (function () {
 }()); // class close
 FetchTranporterVolumeQuotaDataServices = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _c || Object])
 ], FetchTranporterVolumeQuotaDataServices);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=fetch-transporter-volume-quota.service.js.map
 
 /***/ }),
@@ -6353,6 +8428,8 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6368,11 +8445,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var FreightClusterServices = (function () {
-    function FreightClusterServices(http, _store) {
+    function FreightClusterServices(localStorageService, http, _store) {
         // this.defaultHeaders.append('Access-Control-Allow-Origin', '*');
         // this.defaultHeaders.append('Access-Control-Allow-Methods', 'GET,POST, OPTIONS, PUT, PATCH, DELETE');
         var _this = this;
+        this.localStorageService = localStorageService;
         this.http = http;
         this._store = _store;
         this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
@@ -6438,7 +8517,10 @@ var FreightClusterServices = (function () {
     };
     //********************* send Request *****/
     FreightClusterServices.prototype.getAllFreightCluster = function (path) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type','application/json');
         console.log("in service :" + path);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -6459,9 +8541,10 @@ var FreightClusterServices = (function () {
     };
     // *********************** create Trip service  **********************
     FreightClusterServices.prototype.createFreightClusterService = function (clusterData, path) {
-        // let path = TRIP_CREATE_UPDATE_PATH+"/trip/create";
-        // let queryParameters = new URLSearchParams();
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type', 'application/json');
         // console.log(headers);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -6474,7 +8557,10 @@ var FreightClusterServices = (function () {
         });
     };
     FreightClusterServices.prototype.updateFreightClusterService = function (clusterData, path) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type', 'application/json');
         // console.log(headers);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -6487,7 +8573,10 @@ var FreightClusterServices = (function () {
         });
     };
     FreightClusterServices.prototype.deleteFreightClusterService = function (clusterData, path) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type', 'application/json');
         // console.log(headers);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -6509,10 +8598,10 @@ var FreightClusterServices = (function () {
 }()); // class close
 FreightClusterServices = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _c || Object])
 ], FreightClusterServices);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=freight-cluster-services.js.map
 
 /***/ }),
@@ -6527,7 +8616,9 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6543,47 +8634,36 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-// import {KEY} from "./config-services"
+
 var FetchFreightLocationData = (function () {
-    function FetchFreightLocationData(http, _store) {
+    function FetchFreightLocationData(localStorageService, http, _store) {
         // this.defaultHeaders.append('Access-Control-Allow-Origin', '*');
         // this.defaultHeaders.append('Access-Control-Allow-Methods', 'GET,POST, OPTIONS, PUT, PATCH, DELETE');
         var _this = this;
+        this.localStorageService = localStorageService;
         this.http = http;
         this._store = _store;
         this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         this.token = '';
-        // private geocodePath=GEOCODE_PATH;
-        // private key:any=KEY;
-        // public getShipmentList=new EventEmitter();
         this.getData = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         //  this.defaultHeaders.append('Access-Control-Allow-Headers', 'Content-Type');
         this.getData.subscribe(function (freightLocation) {
-            var pathURL = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["b" /* path */].FLPATH;
+            var pathURL = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].FLPATH;
             _this.sendRequest(pathURL, freightLocation).subscribe(function (response) {
                 console.log(response);
                 var res = response;
                 _this._store.dispatch({ type: "FREIGHT LOCATION", payload: { error: '', data: res } });
             });
         });
-        // this.getShipmentList.subscribe((shipmentReqArray)=> {
-        //   let path = PATH;
-        //   this.getList(path,shipmentReqArray).subscribe(response =>{
-        //     console.log(response);
-        //     let res=response;
-        //     this._store.dispatch({type: "All_SHIPMENT_LIST",payload:{error:'',data:res}});
-        //   },err=>{
-        //     // this._store.dispatch({type: "CUSTOMER_LIST",payload:{error:'X', errorMsg:"error occur while fetching data"+err}});
-        //     // console.log(err);
-        //     console.log(err.json());
-        //   });
-        // });
     } // constructor close here
     FetchFreightLocationData.prototype.ngOnDestroy = function () {
     };
     //********************* send Request *****/
     FetchFreightLocationData.prototype.sendRequest = function (path, freightLocation) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type','application/json');
         console.log(headers);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -6600,10 +8680,10 @@ var FetchFreightLocationData = (function () {
 }()); // class close
 FetchFreightLocationData = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _c || Object])
 ], FetchFreightLocationData);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=freight-location.service.js.map
 
 /***/ }),
@@ -6619,6 +8699,8 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6634,11 +8716,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var FreightZoneServices = (function () {
-    function FreightZoneServices(http, _store) {
+    function FreightZoneServices(localStorageService, http, _store) {
         // this.defaultHeaders.append('Access-Control-Allow-Origin', '*');
         // this.defaultHeaders.append('Access-Control-Allow-Methods', 'GET,POST, OPTIONS, PUT, PATCH, DELETE');
         var _this = this;
+        this.localStorageService = localStorageService;
         this.http = http;
         this._store = _store;
         this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
@@ -6715,7 +8799,10 @@ var FreightZoneServices = (function () {
     };
     //********************* send Request *****/
     FreightZoneServices.prototype.getAllFreightZone = function (path) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type','application/json');
         console.log("in service :" + path);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -6736,9 +8823,10 @@ var FreightZoneServices = (function () {
     };
     // *********************** create Trip service  **********************
     FreightZoneServices.prototype.createFreightZoneService = function (zoneData, path) {
-        // let path = TRIP_CREATE_UPDATE_PATH+"/trip/create";
-        // let queryParameters = new URLSearchParams();
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type', 'application/json');
         // console.log(headers);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -6751,7 +8839,10 @@ var FreightZoneServices = (function () {
         });
     };
     FreightZoneServices.prototype.updateFreightZoneService = function (zoneData, path) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type', 'application/json');
         // console.log(headers);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -6764,7 +8855,10 @@ var FreightZoneServices = (function () {
         });
     };
     FreightZoneServices.prototype.deleteFreightZoneService = function (zoneData, path) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type', 'application/json');
         // console.log(headers);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -6786,10 +8880,10 @@ var FreightZoneServices = (function () {
 }()); // class close
 FreightZoneServices = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _c || Object])
 ], FreightZoneServices);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=freight-zone.service.js.map
 
 /***/ }),
@@ -6832,97 +8926,116 @@ var LoginServices = (function () {
         this._store = _store;
         this.localStorageService = localStorageService;
         this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
-        this.getUserInfo = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.getSignupOTP = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.resendOtp = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.signup = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.login = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.addUserOrganisation = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.createOrg = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.switchOrganisations = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.token = this.localStorageService.get("AUTH_TOKEN");
-        //************ get user info ,check user is exix=st or not ***************************************************
-        this.getUserInfo.subscribe(function (reqObj) {
+        // this.token=this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        //************login ***************************************************
+        this.login.subscribe(function (reqObj) {
             var pathURL = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].LOGIN_PATH;
-            _this.getUser(pathURL, reqObj).subscribe(function (response) {
+            console.log(pathURL);
+            console.log(reqObj);
+            _this.userLogin(pathURL, reqObj).subscribe(function (response) {
+                _this.localStorageService.clearAll();
                 console.log(response);
                 var res = response;
-                if (res.status >= 200 && res.status < 300) {
-                    // this._store.dispatch({type: "USER_INFO", payload:{error:'',res:res}});
+                if (res == null) {
+                    _this._store.dispatch({ type: "USER_INFO", payload: { error: 'X', errorMsg: "server error with null value" } });
+                }
+                else if (res.status >= 200 && res.status < 300) {
+                    if (res['isExist'] == false) {
+                        res['_googleToken'] = reqObj['authToken']['token'];
+                    }
+                    _this._store.dispatch({ type: "USER_INFO", payload: { error: '', data: res } });
                 }
                 else {
-                    // this._store.dispatch({type: "USER_INFO", payload:{error:'X',errorMsg:res.error}});
+                    _this._store.dispatch({ type: "USER_INFO", payload: { error: 'X', errorMsg: res.error } });
                 }
             }, function (err) {
                 console.log(err);
                 console.log(err.json());
-                // this._store.dispatch({type: "USER_INFO", payload:{error:'X',errorMsg:'error'}});
+                _this._store.dispatch({ type: "USER_INFO", payload: { error: 'X', errorMsg: 'error : ' + err } });
             });
         });
-        //************ signup ***************************************************
-        // this.signup.subscribe((signupObj)=> {
-        //   let pathURL =paths.SIGNUP_PATH ;
-        //   console.log(pathURL);
-        //   this.userSignup(pathURL,signupObj).subscribe(response =>{
-        //     console.log(response);
-        //     if(response.status >=200 && response.status <300){
-        //       this._store.dispatch({type: "TOKEN", payload:{error:'',res:response}});
-        //     }else{
-        //       this._store.dispatch({type: "TOKEN", payload:{error:'X',errorMsg:response.error}});
-        //     }
-        //   },err=>{
-        //     console.log(err);
-        //     console.log(err.json());
-        //     this._store.dispatch({type: "TOKEN", payload:{error:'X',errorMsg:'http error'}});
-        //   });
-        // });
+        // ************ signup ***************************************************
+        this.signup.subscribe(function (obj) {
+            var pathURL = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].SIGNUP_PATH;
+            console.log(pathURL);
+            _this.userSignup(pathURL, obj).subscribe(function (response) {
+                console.log(response);
+                if (response.status >= 200 && response.status < 300) {
+                    _this._store.dispatch({ type: "SIGNUP_RES", payload: { error: '', data: response } });
+                }
+                else {
+                    _this._store.dispatch({ type: "SIGNUP_RES", payload: { error: 'X', errorMsg: response.error } });
+                }
+            }, function (err) {
+                console.log(err);
+                console.log(err.json());
+                _this._store.dispatch({ type: "SIGNUP_RES", payload: { error: 'X', errorMsg: 'http error' + err } });
+            });
+        });
         //************ create Organisation ***************************************************
-        // this.createOrg.subscribe((addOrgObj)=> {
-        //   this.token=this.localStorageService.get("AUTH_TOKEN");
-        //   let pathURL =paths.CREATE_ORGANISATION_PATH ;
-        //   console.log(pathURL);
-        //   this.createOrganisation(pathURL,addOrgObj).subscribe(response =>{
-        //     console.log(response);
-        //     if(response.status >=200 && response.status <300){
-        //       this._store.dispatch({type: "ADD_ORG_RESPONSE", payload:{error:'',res:response}});
-        //     }else{
-        //       this._store.dispatch({type: "ADD_ORG_RESPONSE", payload:{error:'X',errorMsg:response.error}});
-        //     }
-        //   },err=>{
-        //     console.log(err);
-        //     console.log(err.json());
-        //     this._store.dispatch({type: "ADD_ORG_RESPONSE", payload:{error:'X',errorMsg:'http error'}});
-        //   });
-        // });
-        //************ add Organisation to user ***************************************************
-        // this.switchOrganisations.subscribe((orgId)=> {
-        //   this.token=this.localStorageService.get("AUTH_TOKEN");
-        //   let pathURL =paths.SWITCH_ORG_PATH+orgId;
-        //   console.log(pathURL);
-        //   this.switchOrganisation(pathURL,orgId).subscribe(response =>{
-        //     console.log(response);
-        //     if(response.status >=200 && response.status <300){
-        //       this._store.dispatch({type: "SWITCH_ORG_RESPONSE", payload:{error:'',res:response}});
-        //     }else{
-        //       this._store.dispatch({type: "SWITCH_ORG_RESPONSE", payload:{error:'X',errorMsg:response.error}});
-        //     }
-        //   },err=>{
-        //     console.log(err);
-        //     console.log(err.json());
-        //     this._store.dispatch({type: "SWITCH_ORG_RESPONSE", payload:{error:'X',errorMsg:'http error'}});
-        //   });
-        // });
+        this.createOrg.subscribe(function (addOrgObj) {
+            var pathURL = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].CREATE_ORGANISATION_PATH;
+            console.log(pathURL);
+            _this.createOrganisation(pathURL, addOrgObj).subscribe(function (response) {
+                console.log(response);
+                if (response.status >= 200 && response.status < 300) {
+                    _this._store.dispatch({ type: "ADD_ORG_RESPONSE", payload: { error: '', res: response } });
+                }
+                else {
+                    _this._store.dispatch({ type: "ADD_ORG_RESPONSE", payload: { error: 'X', errorMsg: response.error } });
+                }
+            }, function (err) {
+                console.log(err);
+                console.log(err.json());
+                _this._store.dispatch({ type: "ADD_ORG_RESPONSE", payload: { error: 'X', errorMsg: 'http error ' + err } });
+            });
+        });
     } // constructor close here
+    // public token;
     LoginServices.prototype.ngOnDestroy = function () {
     };
     // ***********************  token authorization  **********************
-    LoginServices.prototype.getUser = function (path, reqObj) {
+    LoginServices.prototype.userLogin = function (path, reqObj) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         // headers.set('Content-Type', 'application/json');
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
             method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
             headers: headers,
             body: reqObj,
+        });
+        return this.http.request(path, requestOptions).map(function (response) {
+            console.log(response);
+            return response.json();
+        });
+    };
+    // ***********************  token authorization  **********************
+    LoginServices.prototype.userSignup = function (path, reqObj) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.set('Content-Type', 'application/json');
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
+            headers: headers,
+            body: reqObj,
+        });
+        return this.http.request(path, requestOptions).map(function (response) {
+            console.log(response);
+            return response.json();
+        });
+    };
+    LoginServices.prototype.createOrganisation = function (path, addOrgObj) {
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
+            headers: headers,
+            body: addOrgObj,
         });
         return this.http.request(path, requestOptions).map(function (response) {
             console.log(response);
@@ -6957,8 +9070,10 @@ var _a, _b, _c;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fetch_data_service__ = __webpack_require__("../../../../../src/service/fetch-data.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__fetch_data_service__ = __webpack_require__("../../../../../src/service/fetch-data.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6975,56 +9090,51 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-// import {KEY} from "./config-services"
+
 var Services = (function () {
-    function Services(http, _store, fetchData) {
+    function Services(localStorageService, http, _store, fetchData) {
         // this.defaultHeaders.append('Access-Control-Allow-Origin', '*');
         // this.defaultHeaders.append('Access-Control-Allow-Methods', 'GET,POST, OPTIONS, PUT, PATCH, DELETE');
         var _this = this;
+        this.localStorageService = localStorageService;
         this.http = http;
         this._store = _store;
         this.fetchData = fetchData;
         this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         this.token = '';
-        // private geocodePath=GEOCODE_PATH;
-        // private key:any=KEY;
-        // public getShipmentList=new EventEmitter();
         this.createUser = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.getUser = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.deleteUser = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.updateUser = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         //  this.defaultHeaders.append('Access-Control-Allow-Headers', 'Content-Type');
         this.createUser.subscribe(function (user) {
-            var pathURL = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].PATH;
+            var pathURL = __WEBPACK_IMPORTED_MODULE_6__environments_environment__["b" /* path */].PATH;
             _this.createUserRequest(pathURL, user).subscribe(function (response) {
                 console.log(response);
                 var res = response;
-                _this._store.dispatch({ type: "COMMAND", payload: { error: '', data: res } });
-                _this.getUserDataRequest(__WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].FPATH).subscribe(function (response) {
+                _this._store.dispatch({ type: "COMMAND", payload: { message: 'user created', error: '', data: res } });
+                _this.getUserDataRequest(__WEBPACK_IMPORTED_MODULE_6__environments_environment__["b" /* path */].FPATH).subscribe(function (response) {
                     console.log(response);
                     var res = response;
                     _this._store.dispatch({ type: "USER STORE", payload: { error: '', data: res } });
                 });
             });
         });
-        // this.deleteUser.subscribe((res)=>{
-        //   let path = DUPATH+""
-        // })
         this.getUser.subscribe(function () {
             console.log("call user list");
-            _this.getUserDataRequest(__WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].FPATH).subscribe(function (response) {
+            _this.getUserDataRequest(__WEBPACK_IMPORTED_MODULE_6__environments_environment__["b" /* path */].FPATH).subscribe(function (response) {
                 console.log(response);
                 var res = response;
                 _this._store.dispatch({ type: "USER STORE", payload: { error: '', data: res } });
             });
         });
         this.deleteUser.subscribe(function (id) {
-            var pathURL = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].DUPATH + id;
+            var pathURL = __WEBPACK_IMPORTED_MODULE_6__environments_environment__["b" /* path */].DUPATH + id;
             _this.deleteUserRequest(pathURL).subscribe(function (response) {
                 console.log(response);
                 var res = response;
-                _this._store.dispatch({ type: "COMMAND", payload: { error: '', data: res } });
-                _this.getUserDataRequest(__WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].FPATH).subscribe(function (response) {
+                _this._store.dispatch({ type: "COMMAND", payload: { message: 'user deleted', error: '', data: res } });
+                _this.getUserDataRequest(__WEBPACK_IMPORTED_MODULE_6__environments_environment__["b" /* path */].FPATH).subscribe(function (response) {
                     console.log(response);
                     var res = response;
                     _this._store.dispatch({ type: "USER STORE", payload: { error: '', data: res } });
@@ -7032,12 +9142,12 @@ var Services = (function () {
             });
         });
         this.updateUser.subscribe(function (user) {
-            var pathURL = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].UUPATH + user['id'];
+            var pathURL = __WEBPACK_IMPORTED_MODULE_6__environments_environment__["b" /* path */].UUPATH + user['id'];
             _this.updateUserRequest(pathURL, user).subscribe(function (response) {
                 console.log(response);
                 var res = response;
-                _this._store.dispatch({ type: "COMMAND", payload: { error: '', data: res } });
-                _this.getUserDataRequest(__WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].FPATH).subscribe(function (response) {
+                _this._store.dispatch({ type: "COMMAND", payload: { message: 'user updated', error: '', data: res } });
+                _this.getUserDataRequest(__WEBPACK_IMPORTED_MODULE_6__environments_environment__["b" /* path */].FPATH).subscribe(function (response) {
                     console.log(response);
                     var res = response;
                     _this._store.dispatch({ type: "USER STORE", payload: { error: '', data: res } });
@@ -7049,7 +9159,10 @@ var Services = (function () {
     };
     //********************* send Request to create User*****/
     Services.prototype.createUserRequest = function (path, user) {
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type','application/json');
         console.log(headers);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -7065,7 +9178,10 @@ var Services = (function () {
     };
     //********************* send Request to get User*****/
     Services.prototype.getUserDataRequest = function (path) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type','application/json');
         console.log(headers);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -7080,7 +9196,10 @@ var Services = (function () {
     };
     /********send request to delete user ****/
     Services.prototype.deleteUserRequest = function (path) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type','application/json');
         console.log(headers);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -7095,7 +9214,10 @@ var Services = (function () {
     };
     /********send request to update user********/
     Services.prototype.updateUserRequest = function (path, user) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type','application/json');
         console.log(headers);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -7113,10 +9235,10 @@ var Services = (function () {
 }()); // class close
 Services = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__fetch_data_service__["a" /* FetchDataServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__fetch_data_service__["a" /* FetchDataServices */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__fetch_data_service__["a" /* FetchDataServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__fetch_data_service__["a" /* FetchDataServices */]) === "function" && _d || Object])
 ], Services);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=service.js.map
 
 /***/ }),
@@ -7132,6 +9254,8 @@ var _a, _b, _c;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__);
 /**
  * Created by amit8.kumar on 12-12-2017.
  */
@@ -7150,9 +9274,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ShipmentOrderServices = (function () {
-    function ShipmentOrderServices(http, _store) {
+    function ShipmentOrderServices(localStorageService, http, _store) {
         var _this = this;
+        this.localStorageService = localStorageService;
         this.http = http;
         this._store = _store;
         this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
@@ -7179,8 +9305,10 @@ var ShipmentOrderServices = (function () {
             });
         });
         //********************************************************************
-        this.getShipmentOrderList.subscribe(function () {
-            _this.getShipmentOrders(__WEBPACK_IMPORTED_MODULE_4__environments_environment__["b" /* path */].GET_SHIPMENT_ORDER_PATH).subscribe(function (response) {
+        //called from brouse-shipment
+        this.getShipmentOrderList.subscribe(function (obj) {
+            var urlPath = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["b" /* path */].GET_SHIPMENT_ORDER_PATH + '?pageId=' + obj.pageNo + '&records=' + obj.records;
+            _this.getShipmentOrders(urlPath).subscribe(function (response) {
                 console.log(response);
                 var res = response;
                 if (res['status'] == 200) {
@@ -7255,7 +9383,10 @@ var ShipmentOrderServices = (function () {
     };
     // get freight location
     ShipmentOrderServices.prototype.getFreightLocation = function (path) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type', 'application/json');
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
             method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
@@ -7267,7 +9398,11 @@ var ShipmentOrderServices = (function () {
         });
     };
     ShipmentOrderServices.prototype.getShipmentOrders = function (path) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        console.log(authToken);
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type', 'application/json');
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
             method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
@@ -7280,7 +9415,10 @@ var ShipmentOrderServices = (function () {
     };
     // get Transport Business Partner
     ShipmentOrderServices.prototype.getTransportBusinessPartner = function (path) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type', 'application/json');
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
             method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
@@ -7293,7 +9431,10 @@ var ShipmentOrderServices = (function () {
     };
     // get Transport Business Partner
     ShipmentOrderServices.prototype.checkVehicleExist = function (path) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type', 'application/json');
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
             method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
@@ -7306,7 +9447,10 @@ var ShipmentOrderServices = (function () {
     };
     // create New Shipment Order
     ShipmentOrderServices.prototype.createNewShipmentOrder = function (path, shipmentReqObj) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type', 'application/json');
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
             method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
@@ -7322,10 +9466,10 @@ var ShipmentOrderServices = (function () {
 }()); // class close
 ShipmentOrderServices = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _c || Object])
 ], ShipmentOrderServices);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=shipment-order-service.js.map
 
 /***/ }),
@@ -7341,6 +9485,8 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7356,18 +9502,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-// import {PATH1,DETAIL,CREATESHIPMENT,ADDSTOP,PICKUP,DELIVERY} from "./path-services";
-// import {KEY} from "./config-services"
+
 var ShipmentServices = (function () {
-    function ShipmentServices(http, _store) {
+    function ShipmentServices(localStorageService, http, _store) {
         var _this = this;
+        this.localStorageService = localStorageService;
         this.http = http;
         this._store = _store;
         this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         this.token = '';
         this.shipmentIdList = ["S01", "S02", "S03", "S04"]; //["f50e50b5-f2d8-4c31-8ed5-7e196f86e630","16d5cd23-2772-4fff-ae70-80cc7837f842"];
-        // private geocodePath=GEOCODE_PATH;
-        // private key:any=KEY;
         this.getShipmentIdList = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.getShipmentList = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.getShipmentDetail = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
@@ -7461,7 +9605,10 @@ var ShipmentServices = (function () {
     };
     // ***********************  get shipmentId list **********************
     ShipmentServices.prototype.getIdList = function (path) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type', 'application/json');
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
             method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
@@ -7475,7 +9622,10 @@ var ShipmentServices = (function () {
     };
     // ***********************  add Stop **********************
     ShipmentServices.prototype.setAddStop = function (path, value) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type', 'application/json');
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
             method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
@@ -7491,7 +9641,10 @@ var ShipmentServices = (function () {
     // ***********************  pickUp **********************
     ShipmentServices.prototype.setPickup = function (path, value) {
         console.log(path);
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type', 'application/json');
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
             method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
@@ -7506,7 +9659,10 @@ var ShipmentServices = (function () {
     };
     // ***********************  delivery **********************
     ShipmentServices.prototype.setDelivery = function (path, value) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type', 'application/json');
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
             method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
@@ -7521,7 +9677,10 @@ var ShipmentServices = (function () {
     };
     // ***********************  get vehicle list **********************
     ShipmentServices.prototype.getList = function (path, shipmentReqArray) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type', 'application/json');
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
             method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
@@ -7536,7 +9695,10 @@ var ShipmentServices = (function () {
     };
     // ****************** get Vehicle Detail *******************
     ShipmentServices.prototype.getDetails = function (path) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type', 'application/json');
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
             method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
@@ -7551,7 +9713,10 @@ var ShipmentServices = (function () {
     ShipmentServices.prototype.createShipment = function (path, shipment) {
         console.log(path);
         console.log(shipment);
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type', 'application/json');
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
             method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
@@ -7567,10 +9732,10 @@ var ShipmentServices = (function () {
 }()); // class close
 ShipmentServices = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _c || Object])
 ], ShipmentServices);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=shipment-services.js.map
 
 /***/ }),
@@ -7585,8 +9750,10 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fetch_freight_lane_group_data_service__ = __webpack_require__("../../../../../src/service/fetch-freight-lane-group-data.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__fetch_freight_lane_group_data_service__ = __webpack_require__("../../../../../src/service/fetch-freight-lane-group-data.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7603,32 +9770,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-// import {KEY} from "./config-services"
+
 var UpdateFreightLaneGroup = (function () {
-    function UpdateFreightLaneGroup(http, _store, fetchFreightGroupDataServices) {
+    function UpdateFreightLaneGroup(localStorageService, http, _store, fetchFreightGroupDataServices) {
         // this.defaultHeaders.append('Access-Control-Allow-Origin', '*');
         // this.defaultHeaders.append('Access-Control-Allow-Methods', 'GET,POST, OPTIONS, PUT, PATCH, DELETE');
+        //  this.defaultHeaders.append('Access-Control-Allow-Headers', 'Content-Type');
         var _this = this;
+        this.localStorageService = localStorageService;
         this.http = http;
         this._store = _store;
         this.fetchFreightGroupDataServices = fetchFreightGroupDataServices;
         this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         this.token = '';
-        this.pathURL = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].UFLGPATH;
+        this.pathURL = __WEBPACK_IMPORTED_MODULE_6__environments_environment__["b" /* path */].UFLGPATH;
         this.getData = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        //  this.defaultHeaders.append('Access-Control-Allow-Headers', 'Content-Type');
         this.getData.subscribe(function (freightlaneGroup) {
             _this.sendRequest(_this.pathURL, freightlaneGroup).subscribe(function (response) {
                 console.log(response);
                 var res = response;
                 if (res['statusCode'] = 200) {
-                    fetchFreightGroupDataServices.sendRequest(__WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].FLGPATH).subscribe(function (response) {
+                    fetchFreightGroupDataServices.sendRequest(__WEBPACK_IMPORTED_MODULE_6__environments_environment__["b" /* path */].FLGPATH).subscribe(function (response) {
                         console.log(response);
                         var res = response;
                         _this._store.dispatch({ type: "FREIGHT LANE GROUP", payload: { error: '', data: res } });
                     });
                 }
-                _this.pathURL = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].UFLGPATH;
+                _this.pathURL = __WEBPACK_IMPORTED_MODULE_6__environments_environment__["b" /* path */].UFLGPATH;
             });
         });
     } // constructor close here
@@ -7636,7 +9804,10 @@ var UpdateFreightLaneGroup = (function () {
     };
     //********************* send Request *****/
     UpdateFreightLaneGroup.prototype.sendRequest = function (path, freightLaneGoup) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type','application/json');
         console.log(headers);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -7654,10 +9825,10 @@ var UpdateFreightLaneGroup = (function () {
 }()); // class close
 UpdateFreightLaneGroup = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__fetch_freight_lane_group_data_service__["a" /* FetchFreightGroupDataServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__fetch_freight_lane_group_data_service__["a" /* FetchFreightGroupDataServices */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__fetch_freight_lane_group_data_service__["a" /* FetchFreightGroupDataServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__fetch_freight_lane_group_data_service__["a" /* FetchFreightGroupDataServices */]) === "function" && _d || Object])
 ], UpdateFreightLaneGroup);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=updat-freight-lane-groups.service.js.map
 
 /***/ }),
@@ -7674,6 +9845,8 @@ var _a, _b, _c;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fetch_freight_lane_data_service__ = __webpack_require__("../../../../../src/service/fetch-freight-lane-data.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7690,11 +9863,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var UpdateFreightLane = (function () {
-    function UpdateFreightLane(http, _store, fetchFreightLaneDataService) {
+    function UpdateFreightLane(localStorageService, http, _store, fetchFreightLaneDataService) {
         // this.defaultHeaders.append('Access-Control-Allow-Origin', '*');
         // this.defaultHeaders.append('Access-Control-Allow-Methods', 'GET,POST, OPTIONS, PUT, PATCH, DELETE');
         var _this = this;
+        this.localStorageService = localStorageService;
         this.http = http;
         this._store = _store;
         this.fetchFreightLaneDataService = fetchFreightLaneDataService;
@@ -7723,7 +9898,10 @@ var UpdateFreightLane = (function () {
     };
     //********************* send Request *****/
     UpdateFreightLane.prototype.sendRequest = function (path, freightLane) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type','application/json');
         console.log(headers);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -7741,10 +9919,10 @@ var UpdateFreightLane = (function () {
 }()); // class close
 UpdateFreightLane = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__fetch_freight_lane_data_service__["a" /* FetchFreightLaneDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__fetch_freight_lane_data_service__["a" /* FetchFreightLaneDataService */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__fetch_freight_lane_data_service__["a" /* FetchFreightLaneDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__fetch_freight_lane_data_service__["a" /* FetchFreightLaneDataService */]) === "function" && _d || Object])
 ], UpdateFreightLane);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=update-freight-lane.service.js.map
 
 /***/ }),
@@ -7759,8 +9937,10 @@ var _a, _b, _c;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__freight_location_service__ = __webpack_require__("../../../../../src/service/freight-location.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__freight_location_service__ = __webpack_require__("../../../../../src/service/freight-location.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7777,33 +9957,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-// import {KEY} from "./config-services"
+
 var UpdateFreightLocation = (function () {
-    function UpdateFreightLocation(http, _store, fetchFreightLocationData) {
+    function UpdateFreightLocation(localStorageService, http, _store, fetchFreightLocationData) {
         // this.defaultHeaders.append('Access-Control-Allow-Origin', '*');
         // this.defaultHeaders.append('Access-Control-Allow-Methods', 'GET,POST, OPTIONS, PUT, PATCH, DELETE');
         var _this = this;
+        this.localStorageService = localStorageService;
         this.http = http;
         this._store = _store;
         this.fetchFreightLocationData = fetchFreightLocationData;
         this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         this.token = '';
-        // private geocodePath=GEOCODE_PATH;
-        // private key:any=KEY;
-        // public getShipmentList=new EventEmitter();
         this.getData = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         //  this.defaultHeaders.append('Access-Control-Allow-Headers', 'Content-Type');
         this._store.select("idStore").subscribe(function (res) {
-            _this.pathURL = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].UFLPATH + res;
+            _this.pathURL = __WEBPACK_IMPORTED_MODULE_6__environments_environment__["b" /* path */].UFLPATH + res;
         });
-        // this._store.dispatch({"type":"IDSTORE", payload : null})
         this.getData.subscribe(function (freightLocation) {
             _this.sendRequest(_this.pathURL, freightLocation).subscribe(function (response) {
                 console.log(response);
                 var res = response;
                 _this._store.dispatch({ type: "COMMAND", payload: { error: '', data: res } });
                 if (res['statusCode'] = 200) {
-                    fetchFreightLocationData.sendRequest(__WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].FLPATH, freightLocation).subscribe(function (response) {
+                    fetchFreightLocationData.sendRequest(__WEBPACK_IMPORTED_MODULE_6__environments_environment__["b" /* path */].FLPATH, freightLocation).subscribe(function (response) {
                         console.log(response);
                         var res = response;
                         _this._store.dispatch({ type: "FREIGHT LOCATION", payload: { error: '', data: res } });
@@ -7816,7 +9993,10 @@ var UpdateFreightLocation = (function () {
     };
     //********************* send Request *****/
     UpdateFreightLocation.prototype.sendRequest = function (path, freightLocation) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type','application/json');
         console.log(headers);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -7834,10 +10014,10 @@ var UpdateFreightLocation = (function () {
 }()); // class close
 UpdateFreightLocation = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__freight_location_service__["a" /* FetchFreightLocationData */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__freight_location_service__["a" /* FetchFreightLocationData */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__freight_location_service__["a" /* FetchFreightLocationData */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__freight_location_service__["a" /* FetchFreightLocationData */]) === "function" && _d || Object])
 ], UpdateFreightLocation);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=update-freight-location.service.js.map
 
 /***/ }),
@@ -7854,6 +10034,8 @@ var _a, _b, _c;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fetch_freight_zone_service__ = __webpack_require__("../../../../../src/service/fetch-freight-zone.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7870,20 +10052,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var UpdateFreightZone = (function () {
-    function UpdateFreightZone(http, _store, FetchFreightZone) {
+    function UpdateFreightZone(localStorageService, http, _store, FetchFreightZone) {
         // this.defaultHeaders.append('Access-Control-Allow-Origin', '*');
         // this.defaultHeaders.append('Access-Control-Allow-Methods', 'GET,POST, OPTIONS, PUT, PATCH, DELETE');
         var _this = this;
+        this.localStorageService = localStorageService;
         this.http = http;
         this._store = _store;
         this.FetchFreightZone = FetchFreightZone;
         this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         this.token = '';
         this.pathURL = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].UFZPATH;
-        // private geocodePath=GEOCODE_PATH;
-        // private key:any=KEY;
-        // public getShipmentList=new EventEmitter();
         this.getData = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         //  this.defaultHeaders.append('Access-Control-Allow-Headers', 'Content-Type');
         this.getData.subscribe(function (freightZone) {
@@ -7905,7 +10086,10 @@ var UpdateFreightZone = (function () {
     };
     //********************* send Request *****/
     UpdateFreightZone.prototype.sendRequest = function (path, freightZone) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type','application/json');
         console.log(headers);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -7923,10 +10107,10 @@ var UpdateFreightZone = (function () {
 }()); // class close
 UpdateFreightZone = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__fetch_freight_zone_service__["a" /* FetchFreightZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__fetch_freight_zone_service__["a" /* FetchFreightZone */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__fetch_freight_zone_service__["a" /* FetchFreightZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__fetch_freight_zone_service__["a" /* FetchFreightZone */]) === "function" && _d || Object])
 ], UpdateFreightZone);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=update-freight-zone.service.js.map
 
 /***/ }),
@@ -7943,6 +10127,8 @@ var _a, _b, _c;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fetch_transporter_volume_quota_service__ = __webpack_require__("../../../../../src/service/fetch-transporter-volume-quota.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7959,11 +10145,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var UpdateTVQ = (function () {
-    function UpdateTVQ(http, _store, fetchTranporterVolumeQuotaDataServices) {
+    function UpdateTVQ(localStorageService, http, _store, fetchTranporterVolumeQuotaDataServices) {
         // this.defaultHeaders.append('Access-Control-Allow-Origin', '*');
         // this.defaultHeaders.append('Access-Control-Allow-Methods', 'GET,POST, OPTIONS, PUT, PATCH, DELETE');
         var _this = this;
+        this.localStorageService = localStorageService;
         this.http = http;
         this._store = _store;
         this.fetchTranporterVolumeQuotaDataServices = fetchTranporterVolumeQuotaDataServices;
@@ -7992,7 +10180,10 @@ var UpdateTVQ = (function () {
     };
     //********************* send Request *****/
     UpdateTVQ.prototype.sendRequest = function (path, data) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
         // headers.set('Content-Type','application/json');
         console.log(headers);
         var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
@@ -8010,10 +10201,10 @@ var UpdateTVQ = (function () {
 }()); // class close
 UpdateTVQ = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__fetch_transporter_volume_quota_service__["a" /* FetchTranporterVolumeQuotaDataServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__fetch_transporter_volume_quota_service__["a" /* FetchTranporterVolumeQuotaDataServices */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__fetch_transporter_volume_quota_service__["a" /* FetchTranporterVolumeQuotaDataServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__fetch_transporter_volume_quota_service__["a" /* FetchTranporterVolumeQuotaDataServices */]) === "function" && _d || Object])
 ], UpdateTVQ);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=update-transporter.service.js.map
 
 /***/ }),
