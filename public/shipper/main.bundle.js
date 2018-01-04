@@ -572,6 +572,8 @@ var AddBusinessPartnerComponent = (function () {
             this.unSub_createFreightLocRes.unsubscribe();
         if (this.unSub_addBusinessPartRes != null && this.unSub_addBusinessPartRes != undefined)
             this.unSub_addBusinessPartRes.unsubscribe();
+        this.store.dispatch({ type: "ADD_BUSINESS_PART_RES", payload: null });
+        this.store.dispatch({ type: "CREATE_FREIGHT_LOCATION_RES", payload: null });
     };
     AddBusinessPartnerComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -887,7 +889,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/HMEL-admin/dashboard/business-partner/business-partner.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n  <div style=\"display: flex;padding: 10px;\">\r\n    <div style=\"font-size:21px;color:#8a8c8e;\" >\r\n      <span>Business Partner</span>\r\n    </div>\r\n\r\n    <div style=\"position:relative;position: relative;margin-left: auto;\" >\r\n      <i  class=\"fa fa-search search-icon\"  aria-hidden=\"true\"  (click)=\"searchPartner()\"></i>\r\n      <input #location class=\"expand-search\" [(ngModel)]=\"search\" (keyup.Enter)=\"searchPartner()\"  placeholder=\"Search\" >\r\n    </div>\r\n  </div>\r\n\r\n  <div>\r\n    <mat-paginator [length]=totalRecord\r\n                   [pageSize]=this.pageSize\r\n                   [pageSizeOptions]=[5,10,20,50]\r\n                   (page)=\"fetchRecords($event)\" >\r\n    </mat-paginator>\r\n    <div class=\"header-span\" style=\"padding :3px 3px;box-shadow: 0px 2px 5px grey;margin-bottom: 1px; background-color: #f5f2f26b; margin-left: 10px; margin-right: 10px; font-size: 12px\" fxLayout=\"row\">\r\n      <span fxFlex >Business Partner Name</span>\r\n      <span fxFlex>Type</span>\r\n      <span fxFlex>fretron Ref No</span>\r\n      <span fxFlex>Contact Person Name</span>\r\n      <span fxFlex>State</span>\r\n      <span fxFlex>Email ID</span>\r\n      <span fxFlex>Mobile No</span>\r\n      <span fxFlex>Edit</span>\r\n      <span fxFlex>Delete</span>\r\n    </div>\r\n    <div  style=\"margin-left: 10px; margin-right: 10px;height: calc(100vh - 244px);overflow: auto\" >\r\n      <mat-card class=\"table-body-span\" *ngFor=\"let businessPartner of businesPartList\" fxLayout=\"row\" style=\"font-size: 12px; height: auto;padding: 2px;\">\r\n        <span fxFlex style=\"margin-top: 10px\" >{{businessPartner?.partnerName?businessPartner?.partnerName:'N/A'}}</span>\r\n        <span fxFlex style=\"margin-top: 10px\" >{{businessPartner?.type?businessPartner?.type:'N/A'}}</span>\r\n        <span fxFlex style=\"margin-top: 10px\" >{{businessPartner?.type?businessPartner?.fretronReferenceNo:'N/A'}}</span>\r\n        <span fxFlex style=\"margin-top: 10px\" >{{(businessPartner?.contactPersonName)?(businessPartner?.contactPersonName):'N/A'}}</span>\r\n        <span fxFlex style=\"margin-top: 10px\" >{{(businessPartner?.contactPersonName)?(businessPartner?.state):'N/A'}}</span>\r\n        <span fxFlex style=\"margin-top: 10px\" >{{businessPartner?.emailId?businessPartner?.emailId:'N/A'}}</span>\r\n        <span fxFlex style=\"margin-top: 10px\" >{{businessPartner?.mobileNo?businessPartner?.mobileNo:'N/A'}}</span>\r\n        <span fxFlex><button mat-button  ><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button></span>\r\n        <span fxFlex><button mat-button (click)=\"openDeleteConfirmationDialog(businessPartner)\" ><i class=\"fa fa-trash-o\" aria-hidden=\"true\"></i></button></span>\r\n      </mat-card>\r\n      <div style=\"height: 50px\"></div>\r\n    </div>\r\n  </div>\r\n\r\n  <button [matTooltipPosition]=\"'left'\" matTooltip=\"Create Business partner\" mat-fab color=\"primary\" name=\"createShipment\" (click)=\"goToaddBusinessPartner()\"style=\"position:absolute;bottom:10px;right:10px\" >\r\n    <i class=\"fa fa-plus\" aria-hidden=\"true\" style=\"font-size: 24px;line-height: 24px;color: white;\"></i>\r\n  </button>\r\n</div>\r\n"
+module.exports = "<div>\r\n  <div style=\"display: flex;padding: 10px;\">\r\n    <div style=\"font-size:21px;color:#8a8c8e;\" >\r\n      <span>Business Partner</span>\r\n    </div>\r\n\r\n    <div style=\"position:relative;position: relative;margin-left: auto;\" >\r\n      <i  class=\"fa fa-search search-icon\"  aria-hidden=\"true\"  (click)=\"searchPartner()\"></i>\r\n      <input #location class=\"expand-search\" [(ngModel)]=\"search\" (keyup.Enter)=\"searchPartner()\"  placeholder=\"Search\" >\r\n    </div>\r\n  </div>\r\n\r\n  <div>\r\n    <mat-paginator [length]=totalRecord\r\n                   [pageSize]=this.pageSize\r\n                   [pageSizeOptions]=[5,10,20,50]\r\n                   (page)=\"fetchRecords($event)\" >\r\n    </mat-paginator>\r\n    <div class=\"header-span\" style=\"padding :3px 3px;box-shadow: 0px 2px 5px grey;margin-bottom: 1px; background-color: #f5f2f26b; margin-left: 10px; margin-right: 10px; font-size: 12px\" fxLayout=\"row\">\r\n      <span fxFlex >Business Partner Name</span>\r\n      <span fxFlex>Type</span>\r\n      <span fxFlex>fretron Ref No</span>\r\n      <span fxFlex>Contact Person Name</span>\r\n      <span fxFlex>State</span>\r\n      <span fxFlex>Email ID</span>\r\n      <span fxFlex>Mobile No</span>\r\n      <span fxFlex>Edit</span>\r\n      <span fxFlex>Delete</span>\r\n    </div>\r\n    <div  style=\"margin-left: 10px; margin-right: 10px;height: calc(100vh - 244px);overflow: auto\" >\r\n      <mat-card class=\"table-body-span\" *ngFor=\"let businessPartner of businesPartList\" fxLayout=\"row\" style=\"font-size: 12px; height: auto;padding: 2px;\">\r\n        <span fxFlex style=\"margin-top: 10px\" >{{businessPartner?.partnerName?businessPartner?.partnerName:'N/A'}}</span>\r\n        <span fxFlex style=\"margin-top: 10px\" >{{businessPartner?.type?businessPartner?.type:'N/A'}}</span>\r\n        <span fxFlex style=\"margin-top: 10px\" >{{businessPartner?.type?businessPartner?.fretronReferenceNo:'N/A'}}</span>\r\n        <span fxFlex style=\"margin-top: 10px\" >{{(businessPartner?.contactPersonName)?(businessPartner?.contactPersonName):'N/A'}}</span>\r\n        <span fxFlex style=\"margin-top: 10px\" >{{(businessPartner?.contactPersonName)?(businessPartner?.state):'N/A'}}</span>\r\n        <span fxFlex style=\"margin-top: 10px\" >{{businessPartner?.emailId?businessPartner?.emailId:'N/A'}}</span>\r\n        <span fxFlex style=\"margin-top: 10px\" >{{businessPartner?.mobileNo?businessPartner?.mobileNo:'N/A'}}</span>\r\n        <span fxFlex><button mat-button (click)=\"updateBusinessPartner(businessPartner)\" ><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button></span>\r\n        <span fxFlex><button mat-button (click)=\"openDeleteConfirmationDialog(businessPartner)\" ><i class=\"fa fa-trash-o\" aria-hidden=\"true\"></i></button></span>\r\n      </mat-card>\r\n      <div style=\"height: 50px\"></div>\r\n    </div>\r\n  </div>\r\n\r\n  <button [matTooltipPosition]=\"'left'\" matTooltip=\"Create Business partner\" mat-fab color=\"primary\" name=\"createShipment\" (click)=\"goToaddBusinessPartner()\"style=\"position:absolute;bottom:10px;right:10px\" >\r\n    <i class=\"fa fa-plus\" aria-hidden=\"true\" style=\"font-size: 24px;line-height: 24px;color: white;\"></i>\r\n  </button>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -902,6 +904,8 @@ module.exports = "<div>\r\n  <div style=\"display: flex;padding: 10px;\">\r\n   
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__service_businessPartnerService__ = __webpack_require__("../../../../../src/service/businessPartnerService.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__delete_business_partner_dialog_delete_business_partner_dialog_component__ = __webpack_require__("../../../../../src/app/HMEL-admin/dashboard/business-partner/delete-business-partner-dialog/delete-business-partner-dialog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -917,9 +921,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var BusinessPartnerComponent = (function () {
-    function BusinessPartnerComponent(businessPartnerService, router, dialog, store, matSnackBar) {
+    function BusinessPartnerComponent(localStorageService, businessPartnerService, router, dialog, store, matSnackBar) {
         var _this = this;
+        this.localStorageService = localStorageService;
         this.businessPartnerService = businessPartnerService;
         this.router = router;
         this.dialog = dialog;
@@ -987,6 +993,8 @@ var BusinessPartnerComponent = (function () {
     };
     BusinessPartnerComponent.prototype.goToaddBusinessPartner = function () {
         console.log("add partner");
+        this.store.dispatch({ type: "ADD_BUSINESS_PART_RES", payload: null });
+        this.store.dispatch({ type: "CREATE_FREIGHT_LOCATION_RES", payload: null });
         this.router.navigate(["mainDashboard/dashboard/addBusinessPartner"]);
     };
     BusinessPartnerComponent.prototype.openDeleteConfirmationDialog = function (businessPartner) {
@@ -1011,6 +1019,10 @@ var BusinessPartnerComponent = (function () {
         };
         this.businessPartnerService.deleteBusinessPartner.emit(deleteObj);
     };
+    BusinessPartnerComponent.prototype.updateBusinessPartner = function (businessPartner) {
+        this.store.dispatch({ type: "SELECTED_BUSINESS_PART_OBJ", payload: businessPartner });
+        this.router.navigate(["mainDashboard/dashboard/updateBusinessPartner"]);
+    };
     BusinessPartnerComponent.prototype.openSnackBar = function (message) {
         this.matSnackBar.open(message, "OK", { duration: 4000 });
     };
@@ -1022,10 +1034,10 @@ BusinessPartnerComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/HMEL-admin/dashboard/business-partner/business-partner.component.html"),
         styles: [__webpack_require__("../../../../../src/app/HMEL-admin/dashboard/business-partner/business-partner.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__service_businessPartnerService__["a" /* BusinessPartnerService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__service_businessPartnerService__["a" /* BusinessPartnerService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["f" /* MatDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["f" /* MatDialog */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["b" /* Store */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["s" /* MatSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["s" /* MatSnackBar */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__service_businessPartnerService__["a" /* BusinessPartnerService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__service_businessPartnerService__["a" /* BusinessPartnerService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["f" /* MatDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["f" /* MatDialog */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["b" /* Store */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["s" /* MatSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["s" /* MatSnackBar */]) === "function" && _f || Object])
 ], BusinessPartnerComponent);
 
-var _a, _b, _c, _d, _e;
+var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=business-partner.component.js.map
 
 /***/ }),
@@ -1159,8 +1171,6 @@ var DashBoardComponent = (function () {
         this.buttons = [
             "Users",
             "Business Partner",
-            "Freight Cluster",
-            "Freight Locations",
         ];
     }
     DashBoardComponent.prototype.onClick = function (value) {
@@ -1194,6 +1204,214 @@ DashBoardComponent = __decorate([
 
 var _a;
 //# sourceMappingURL=dashboard.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/HMEL-admin/dashboard/update-business-partner/update-business-partner.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "div {\r\n  font-family: Helvetica !important;\r\n}\r\n\r\n.my-map-search{\r\n  /*left: 0%;*/\r\n  /*width: 73%;*/\r\n  position: relative;\r\n  z-index: 10;\r\n  /*margin-top: 10px;*/\r\n}\r\n\r\n.my-toggle{\r\n  position: absolute;\r\n  z-index: 11;\r\n  left: 10px;\r\n  top: 33px;\r\n  height: 20px;\r\n  font-size: 12px;\r\n}\r\n\r\n.my-toggle >>> .mat-button-toggle-label-content {\r\n  line-height: 23px;\r\n  padding: 0px 10px;\r\n  color: black;\r\n}\r\n\r\n.search {\r\n  width: 100%;\r\n  font-size: 14px;\r\n  padding: 5px 26px 6px 12px;\r\n  display: inline-block;\r\n  border: 1.5px solid #ccc;\r\n  border-radius: 5px;\r\n  box-sizing: border-box;\r\n}\r\n.search:focus{\r\n  outline: none;\r\n  border: 1.5px solid #03a9f4;\r\n  box-shadow: 0px 0px 5px #03a9f4;\r\n}\r\n\r\n.contact-detail{\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -ms-flex-wrap: wrap;\r\n      flex-wrap: wrap;\r\n  padding: 5px 10px;\r\n  margin: 0px 10px;\r\n  border: 1px solid antiquewhite;\r\n}\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/HMEL-admin/dashboard/update-business-partner/update-business-partner.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" style=\"position: absolute;\" class=\"spinner\"></mat-spinner>\r\n<div (keyup.Enter)=\"updateBusinesPart()\">\r\n  <div style=\"font-size:21px;color:#8a8c8e;padding: 5px;\" >\r\n    <span>Update Business Partner</span>\r\n  </div>\r\n\r\n  <div>\r\n    <div  style=\"display:flex;flex-wrap: wrap;\">\r\n      <div  style=\"min-width: 200px;position: relative;padding: 10px;margin-top: 5px;width: 60%;\" >\r\n        <div style=\"position: relative;\" >\r\n\r\n          <mat-button-toggle-group [disabled] =\"type != 'customer'\"  class=\"my-toggle\" #group=\"matButtonToggleGroup\" [(ngModel)]=\"mapType\">\r\n            <mat-button-toggle value=\"hybrid\">\r\n              <span>Satellite</span>\r\n            </mat-button-toggle>\r\n            <mat-button-toggle value=\"roadmap\" style=\"background-color:floralwhite;\" [style.opacity]=\"(mapType =='roadmap')?'.8':'.6'\">\r\n              <span>Map</span>\r\n            </mat-button-toggle>\r\n          </mat-button-toggle-group>\r\n\r\n          <agm-map [streetViewControl]=\"mapOption.streetViewControl\" [zoomControl]=\"mapOption.zoomControl\" [mapDraggable]=\"mapOption.isMapDraggable\" [disableDefaultUI]=\"mapOption.disableDefaultUI\" [scrollwheel]=\"mapOption.scrollwheel\" [clickableIcons]=\"mapOption.clickableIcons\"\r\n                   [mapTypeId]=\"mapType\" style=\"height: 50vh;\" [latitude]=\"latitude\" [longitude]=\"longitude\" [zoom]=\"5\">\r\n            <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\">\r\n            </agm-marker>\r\n          </agm-map>\r\n        </div>\r\n      </div>\r\n\r\n      <div fxFlex style=\"padding: 5px\" >\r\n        <mat-form-field style=\"width: 100%\">\r\n          <input matInput [disabled]=true  [value]=\"businesPartnerObject.type\" placeholder=\"Type\">\r\n        </mat-form-field>\r\n\r\n        <div>\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"businesPartnerObject.fretronReferenceNo\" placeholder=\"Fretron Reference No\">\r\n          </mat-form-field>\r\n\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"businesPartnerObject.partnerName\" placeholder=\"business Partner Name\" required>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input [disabled]=\"isClicked ==true\"  matInput [(ngModel)]=\"businesPartnerObject.address\" placeholder=\"Address\">\r\n          </mat-form-field>\r\n\r\n          <div style=\"display: flex;flex-wrap: wrap;\" >\r\n            <mat-form-field style=\"margin-right: auto\" >\r\n              <input [disabled]=\"isClicked ==true\"  matInput  [(ngModel)]=\"businesPartnerObject.state\" placeholder=\"State\" >\r\n            </mat-form-field>\r\n\r\n            <mat-form-field style=\"margin-left: 2px\" >\r\n              <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"businesPartnerObject.zip\" placeholder=\"PIN/ZIP\">\r\n            </mat-form-field>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"contact-detail\">\r\n      <mat-form-field style=\"margin-right: 10px;width: 30%;min-width: 200px;\">\r\n        <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"businesPartnerObject.contactPersonName\" placeholder=\"Contact Person Name\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field style=\"margin-right :10px;margin-left :10px;width: 30%;min-width: 200px;\" >\r\n        <input [disabled]=\"isClicked ==true\"  matInput type=\"email\" [(ngModel)]=\"businesPartnerObject.emailId\" placeholder=\"Email\"\r\n               pattern=\"[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}\" >\r\n      </mat-form-field>\r\n\r\n      <mat-form-field style=\"margin-left :10px;width: 30%;min-width: 200px;\">\r\n        <input [disabled]=\"isClicked ==true\"  matInput type=\"number\" [(ngModel)]=\"businesPartnerObject.mobileNo\" placeholder=\"MobileNo\" onkeydown=\"if(event.target.value.length>=10 && event.keyCode!=8 && event.keyCode!=13 )return false;\"\r\n               pattern=\"[0-9]{10}\" >\r\n      </mat-form-field>\r\n    </div>\r\n  </div>\r\n\r\n  <div style=\"text-align: right;padding: 12px;\" >\r\n    <button matTooltip=\"CANCEL / BACK\"  mat-raised-button (click)=\"cancel()\" class=\"status-button\" >Cancel</button>\r\n    <button [disabled]=\"businesPartnerObject.partnerName =='' || isClicked ==true\" matTooltip=\"Add New Business Partner\" color=\"primary\"  mat-raised-button (click)=\"updateBusinesPart()\" class=\"status-button\" >Update</button>\r\n  </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/HMEL-admin/dashboard/update-business-partner/update-business-partner.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UpdateBusinessPartner; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__service_create_freigth_location_service__ = __webpack_require__("../../../../../src/service/create-freigth-location.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__service_businessPartnerService__ = __webpack_require__("../../../../../src/service/businessPartnerService.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var UpdateBusinessPartner = (function () {
+    function UpdateBusinessPartner(localStorageService, router, businessPartnerService, createFreightLocation, dialog, store, matSnackBar) {
+        var _this = this;
+        this.localStorageService = localStorageService;
+        this.router = router;
+        this.businessPartnerService = businessPartnerService;
+        this.createFreightLocation = createFreightLocation;
+        this.dialog = dialog;
+        this.store = store;
+        this.matSnackBar = matSnackBar;
+        this.isSpinner = false;
+        this.type = 'customer';
+        this.mapOption = { isMapDraggable: true, disableDefaultUI: true,
+            scrollwheel: true, clickableIcons: true, zoomControl: true, streetViewControl: true
+        };
+        this.mapType = 'roadmap';
+        this.businesPartnerObject = {
+            uuid: '',
+            orgId: '',
+            type: '',
+            partnerName: '',
+            fretronReferenceNo: '',
+            freightLocation: '',
+            address: '',
+            state: '',
+            zip: '',
+            contactPersonName: '',
+            emailId: '',
+            mobileNo: ''
+        };
+        this.polygon = null;
+        this.latitude = null;
+        this.longitude = null;
+        this.isClicked = false;
+        this.unSub_selectedBusinessPartnerObj = null;
+        this.unSub_selectedBusinessPartnerObj = this.store.select('selectedBusinessPartnerObj').subscribe(function (value) {
+            if (value == null) {
+                return;
+            }
+            console.log(value);
+            var obj = value;
+            if (obj == null || obj == undefined) {
+                _this.router.navigate(["mainDashboard/dashboard/businessPartner"]);
+            }
+            else {
+                // let businessObj:any =JSON.parse(obj);
+                // this.businesPartnerObject.type =businessObj['type'];
+            }
+        });
+    } // close constructor
+    UpdateBusinessPartner.prototype.ngOnInit = function () {
+        var _this = this;
+        this.agmMap.mapReady.subscribe(function (map) {
+            _this.map = map;
+            var points = [];
+            console.log(points);
+            _this.polygon = _this.addPolygone(_this.map, points, false, '#858585', '#353535');
+            _this.disableMap();
+        });
+    };
+    UpdateBusinessPartner.prototype.ngOnDestroy = function () {
+    };
+    UpdateBusinessPartner.prototype.addPolygone = function (map, points, editable, fillColor, strokeColor) {
+        var myPolygon = new google.maps.Polygon({
+            paths: points,
+            editable: editable,
+            strokeColor: strokeColor,
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: fillColor,
+            fillOpacity: 0.35
+        });
+        myPolygon.setMap(map);
+        return myPolygon;
+    };
+    UpdateBusinessPartner.prototype.disableMap = function () {
+        console.log("disable unit");
+        this.polygon.setEditable(false);
+        this.polygon.setOptions({ fillColor: '#858585', strokeColor: '#353535' });
+        this.mapOption.isMapDraggable = false;
+        this.mapOption.disableDefaultUI = false;
+        this.mapOption.scrollwheel = false;
+        this.mapOption.clickableIcons = false;
+        this.mapOption.zoomControl = false;
+        this.mapOption.streetViewControl = false;
+    };
+    UpdateBusinessPartner.prototype.updateBusinesPart = function () {
+        console.log("development in progress");
+        //Note after succesfull updation clear  selectedBusinessPartnerObj store
+        // if (this.checkValidation()) {
+        //   obj = {
+        //     "name": this.businessPartnerName,
+        //     "address": this.address,
+        //     "geoTagType": 'geofence',
+        //     "source": "manual",
+        //     "zone1": null,
+        //     "zone2": null,
+        //     "zone3": null,
+        //     "boundary": polygonPoints,
+        //     "centre": {"latitude": this.latitude, "longitude": this.longitude},
+        //     "type": 'plant'
+        //   }
+        //   this.createFreightLocation.createFreightLoc.emit(obj); // response will get in constructor
+    }; // close methods add freight location
+    UpdateBusinessPartner.prototype.checkValidation = function () {
+        if (this.businesPartnerObject.partnerName == '' || this.businesPartnerObject.partnerName == undefined || this.businesPartnerObject.partnerName == null) {
+            this.openSnackBar("Please fill Business Partner Name");
+            return false;
+        }
+        var isEmailValid = true;
+        if (this.businesPartnerObject.emailId != '') {
+            isEmailValid = this.emailValidation();
+        }
+        console.log("all valiation true");
+        return (true && isEmailValid);
+    };
+    UpdateBusinessPartner.prototype.emailValidation = function () {
+        var patt = new RegExp("[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}");
+        var isEmailValid = patt.test(this.businesPartnerObject.emailId);
+        if (isEmailValid == false) {
+            this.openSnackBar("Please fill valid Email ID or Leave Empty");
+            return false;
+        }
+        return true;
+    };
+    UpdateBusinessPartner.prototype.cancel = function () {
+        console.log("nothing done");
+        this.router.navigate(["mainDashboard/dashboard/businessPartner"]);
+    };
+    UpdateBusinessPartner.prototype.openSnackBar = function (message) {
+        this.matSnackBar.open(message, "OK", { duration: 4000 });
+    };
+    return UpdateBusinessPartner;
+}()); //close class
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_4__agm_core__["b" /* AgmMap */]),
+    __metadata("design:type", Object)
+], UpdateBusinessPartner.prototype, "agmMap", void 0);
+UpdateBusinessPartner = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+        selector: 'app-update-business-partner',
+        template: __webpack_require__("../../../../../src/app/HMEL-admin/dashboard/update-business-partner/update-business-partner.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/HMEL-admin/dashboard/update-business-partner/update-business-partner.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_7__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_6__service_businessPartnerService__["a" /* BusinessPartnerService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__service_businessPartnerService__["a" /* BusinessPartnerService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__service_create_freigth_location_service__["a" /* CreateFreightLocation */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__service_create_freigth_location_service__["a" /* CreateFreightLocation */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["f" /* MatDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_material__["f" /* MatDialog */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["s" /* MatSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_material__["s" /* MatSnackBar */]) === "function" && _g || Object])
+], UpdateBusinessPartner);
+
+var _a, _b, _c, _d, _e, _f, _g;
+//# sourceMappingURL=update-business-partner.component.js.map
 
 /***/ }),
 
@@ -3171,6 +3389,7 @@ var CreateShipmentOrder = (function () {
         this.quantity = '';
         this.UOM = '';
         this.consigneeList = [];
+        this.consignorList = [];
         this.unSub_trBusinessPartners = null;
         this.unSub_createShipmentRes = null;
         this.unSub_checkVehicleNoExist = null;
@@ -4342,6 +4561,7 @@ var AddOrganizationComponent = (function () {
         this.isPolygonEditable = false;
         this.polygon = null;
         this.mapType = 'roadmap';
+        this.input = 0;
         this.orgName = '';
         this.organizationId = '';
         this.address = '';
@@ -4351,7 +4571,7 @@ var AddOrganizationComponent = (function () {
         this.unSub_createFreightLocRes = null;
         this.unSub_authorization = null;
         this.unSub_addOrgRes = null;
-        this.token = this.localStorageService.get("AUTH_TOKEN");
+        this.token = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         if (this.token == null || this.token == undefined) {
             this.logout();
         }
@@ -4439,12 +4659,12 @@ var AddOrganizationComponent = (function () {
         this._loginServices.createOrg.emit(obj);
     }; //close createOrganization
     AddOrganizationComponent.prototype.logout = function () {
-        this.localStorageService.remove('AUTH_TOKEN');
+        this.localStorageService.remove('AUTH_TOKEN_SHIPPER');
         this.localStorageService.clearAll();
         this._store.dispatch({ type: "USER_INFO", payload: null });
         this._store.dispatch({ type: "SIGNUP_RES", payload: null });
         this._store.dispatch({ type: "AUTHORIZATION", payload: null });
-        console.log(this.localStorageService.get('AUTH_TOKEN'));
+        console.log(this.localStorageService.get('AUTH_TOKEN_SHIPPER'));
         this.router.navigate(['login']);
     };
     AddOrganizationComponent.prototype.ngOnInit = function () {
@@ -4717,11 +4937,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var AppComponent = (function () {
     function AppComponent(localStorageService, router, snackBar) {
-        // this.localStorageService.set('AUTH_TOKEN','eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MTQyOTMzMDcsInVzZXJJZCI6ImNjZmRmMzljLWZiY2YtNDg0OC1iNmYwLTM2ODMwZDI2MDQ5ZiIsImVtYWlsIjoiYW1pdC5rdW1hckBmcmV0cm9uLmNvbSIsIm5hbWUiOiJBbWl0IEt1bWFyIn0.o5qVe1zjZ3V6SqyxNz_xVklu0QQT4OazEa3oZBsV7hY');
+        // this.localStorageService.set('AUTH_TOKEN_SHIPPER','eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MTQyOTMzMDcsInVzZXJJZCI6ImNjZmRmMzljLWZiY2YtNDg0OC1iNmYwLTM2ODMwZDI2MDQ5ZiIsImVtYWlsIjoiYW1pdC5rdW1hckBmcmV0cm9uLmNvbSIsIm5hbWUiOiJBbWl0IEt1bWFyIn0.o5qVe1zjZ3V6SqyxNz_xVklu0QQT4OazEa3oZBsV7hY');
         this.localStorageService = localStorageService;
         this.router = router;
         this.snackBar = snackBar;
-        var token = this.localStorageService.get('AUTH_TOKEN');
+        var token = this.localStorageService.get('AUTH_TOKEN_SHIPPER');
         console.log(token);
         if (token == undefined || token == null) {
             this.openSnackBar("Please Login First !!!");
@@ -4831,6 +5051,7 @@ var _a, _b, _c;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_72__HMEL_admin_dashboard_business_partner_delete_business_partner_dialog_delete_business_partner_dialog_component__ = __webpack_require__("../../../../../src/app/HMEL-admin/dashboard/business-partner/delete-business-partner-dialog/delete-business-partner-dialog.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_73__reducer_busines_partner_store__ = __webpack_require__("../../../../../src/reducer/busines-partner-store.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_74__service_businessPartnerService__ = __webpack_require__("../../../../../src/service/businessPartnerService.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_75__HMEL_admin_dashboard_update_business_partner_update_business_partner_component__ = __webpack_require__("../../../../../src/app/HMEL-admin/dashboard/update-business-partner/update-business-partner.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4920,6 +5141,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 // import "hammer-timejs";
 var store = {
     userStore: __WEBPACK_IMPORTED_MODULE_28__reducer_info_store__["x" /* userStore */], freightLocationStore: __WEBPACK_IMPORTED_MODULE_28__reducer_info_store__["k" /* freightLocationStore */], dialogRefStore: __WEBPACK_IMPORTED_MODULE_28__reducer_info_store__["g" /* dialogRefStore */],
@@ -4934,7 +5156,8 @@ var store = {
     freightLocation: __WEBPACK_IMPORTED_MODULE_59__reducer_shipment_order_store__["c" /* freightLocation */], transportBusinessPartners: __WEBPACK_IMPORTED_MODULE_59__reducer_shipment_order_store__["e" /* transportBusinessPartners */],
     createShipmentRes: __WEBPACK_IMPORTED_MODULE_59__reducer_shipment_order_store__["b" /* createShipmentRes */], shipmentOrders: __WEBPACK_IMPORTED_MODULE_59__reducer_shipment_order_store__["d" /* shipmentOrders */],
     checkVehicleNoExist: __WEBPACK_IMPORTED_MODULE_59__reducer_shipment_order_store__["a" /* checkVehicleNoExist */], userInfo: __WEBPACK_IMPORTED_MODULE_67__reducer_login_store__["f" /* userInfo */], signupRes: __WEBPACK_IMPORTED_MODULE_67__reducer_login_store__["e" /* signupRes */], authorization: __WEBPACK_IMPORTED_MODULE_67__reducer_login_store__["b" /* authorization */], customerDetails: __WEBPACK_IMPORTED_MODULE_67__reducer_login_store__["d" /* customerDetails */],
-    createFreightLocRes: __WEBPACK_IMPORTED_MODULE_67__reducer_login_store__["c" /* createFreightLocRes */], addOrgRes: __WEBPACK_IMPORTED_MODULE_67__reducer_login_store__["a" /* addOrgRes */], addBusinessPartRes: __WEBPACK_IMPORTED_MODULE_73__reducer_busines_partner_store__["a" /* addBusinessPartRes */], businessPartnerList: __WEBPACK_IMPORTED_MODULE_73__reducer_busines_partner_store__["b" /* businessPartnerList */], deleteBusinessPartner: __WEBPACK_IMPORTED_MODULE_73__reducer_busines_partner_store__["c" /* deleteBusinessPartner */]
+    createFreightLocRes: __WEBPACK_IMPORTED_MODULE_67__reducer_login_store__["c" /* createFreightLocRes */], addOrgRes: __WEBPACK_IMPORTED_MODULE_67__reducer_login_store__["a" /* addOrgRes */], addBusinessPartRes: __WEBPACK_IMPORTED_MODULE_73__reducer_busines_partner_store__["a" /* addBusinessPartRes */], businessPartnerList: __WEBPACK_IMPORTED_MODULE_73__reducer_busines_partner_store__["b" /* businessPartnerList */],
+    deleteBusinessPartner: __WEBPACK_IMPORTED_MODULE_73__reducer_busines_partner_store__["c" /* deleteBusinessPartner */], selectedBusinessPartnerObj: __WEBPACK_IMPORTED_MODULE_73__reducer_busines_partner_store__["d" /* selectedBusinessPartnerObj */]
 };
 var AppModule = (function () {
     function AppModule() {
@@ -4973,7 +5196,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_69__add_organisation_add_organisation_component__["a" /* AddOrganizationComponent */],
             __WEBPACK_IMPORTED_MODULE_70__HMEL_admin_dashboard_business_partner_business_partner_component__["a" /* BusinessPartnerComponent */],
             __WEBPACK_IMPORTED_MODULE_71__HMEL_admin_dashboard_add_business_partner_add_business_partner_component__["a" /* AddBusinessPartnerComponent */],
-            __WEBPACK_IMPORTED_MODULE_72__HMEL_admin_dashboard_business_partner_delete_business_partner_dialog_delete_business_partner_dialog_component__["a" /* DeleteBusinessPartnerDialog */]
+            __WEBPACK_IMPORTED_MODULE_72__HMEL_admin_dashboard_business_partner_delete_business_partner_dialog_delete_business_partner_dialog_component__["a" /* DeleteBusinessPartnerDialog */],
+            __WEBPACK_IMPORTED_MODULE_75__HMEL_admin_dashboard_update_business_partner_update_business_partner_component__["a" /* UpdateBusinessPartner */]
         ],
         entryComponents: [__WEBPACK_IMPORTED_MODULE_3__app_HMEL_admin_user_user_component__["c" /* UserFormComponent */], __WEBPACK_IMPORTED_MODULE_39__HMEL_admin_add_location_add_location_component__["a" /* AddLocationComponent */], __WEBPACK_IMPORTED_MODULE_43__HMEL_admin_freight_routes_freight_routes_component__["a" /* FreightLane */], __WEBPACK_IMPORTED_MODULE_42__HMEL_admin_transpoter_transpoter_component__["a" /* Transporter */], __WEBPACK_IMPORTED_MODULE_47__HMEL_admin_planned_load_planned_load_component__["b" /* PlannedLoadDialogComponent */], __WEBPACK_IMPORTED_MODULE_57__HMEL_admin_shipment_orders_create_shipment_order_add_freight_unit_dialog_add_freight_unit_dialog_component__["a" /* AddFreightUnitDialog */], __WEBPACK_IMPORTED_MODULE_3__app_HMEL_admin_user_user_component__["a" /* DeleteDialog */], __WEBPACK_IMPORTED_MODULE_72__HMEL_admin_dashboard_business_partner_delete_business_partner_dialog_delete_business_partner_dialog_component__["a" /* DeleteBusinessPartnerDialog */]],
         imports: [
@@ -5179,7 +5403,7 @@ var LogInComponent = (function () {
         this.isSpinner = false;
         this.unSub_userInfo = null;
         this.unSub_authorization = null;
-        var authToken = this.localStorageService.get('AUTH_TOKEN');
+        var authToken = this.localStorageService.get('AUTH_TOKEN_SHIPPER');
         if (authToken != null && authToken != undefined) {
             this.router.navigate(["mainDashboard"]);
         }
@@ -5297,7 +5521,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/main-dashboard/main-dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"isUserAuthorized ==false\" style=\"height:100vh;background-color: #1f2021;opacity: .3;\">\n  <label style=\"font-size: 21px;color: #e8dbdb; position: absolute;top: 36%;left: 50%;transform: translate(-50%,-50%);\">{{loginMsg}}</label>\n  <label style=\"color: red;color: #ff000a !important;position: absolute;left: 50%;top: 17%;transform: translate(-50%,-50%);font-size: 20px;font-weight: bold;\">{{errorMsg}}</label>\n</div>\n\n<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\" style=\"position: absolute\"></mat-spinner>\n\n<div *ngIf=\"isUserAuthorized\" class=\"header\" fxLayout=\"row\" style=\"min-width: 768px;\" >\n  <img class=\"logo\" src=\"logo-light.png\" alt=\"Fretron Logo\" >\n  <span class=\"service-name\" >Shipper Portal</span>\n  <button  mat-button class=\"button-basic1\" (click)=\"goToShipment_OrdersView()\" >Shipment Orders</button>\n  <button  mat-button class=\"button-basic1\" (click)=\"goToLR_TrackingView()\">LR Tracking</button>\n  <button  mat-button class=\"button-basic1\" >Payment Status</button>\n  <button  mat-button class=\"button-basic1\" >Statement of Accounts</button>\n\n  <button mat-button class=\"button-basic1 fa fa-cog\" style=\"margin-left:auto;\"  (click)=\"goToSettingView()\"></button>\n\n  <button mat-button [matMenuTriggerFor]=\"menu\" style=\"cursor: pointer;z-index: 1000;margin-left: auto;\" >\n    <i  class=\"fa fa-user-o\" aria-hidden=\"true\" >&#9662;</i>\n  </button>\n  <mat-menu #menu=\"matMenu\">\n    <app-user-profile></app-user-profile>\n  </mat-menu>\n</div>\n<div *ngIf=\"isUserAuthorized\" style=\"padding: 5px\">\n  <router-outlet></router-outlet>\n</div>\n"
+module.exports = "<div *ngIf=\"isUserAuthorized ==false\" style=\"height:100vh;background-color: #1f2021;opacity: .3;\">\n  <label style=\"font-size: 21px;color: #e8dbdb; position: absolute;top: 36%;left: 50%;transform: translate(-50%,-50%);\">{{loginMsg}}</label>\n  <label style=\"color: red;color: #ff000a !important;position: absolute;left: 50%;top: 17%;transform: translate(-50%,-50%);font-size: 20px;font-weight: bold;\">{{errorMsg}}</label>\n</div>\n\n<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\" style=\"position: absolute\"></mat-spinner>\n\n<div *ngIf=\"isUserAuthorized\" class=\"header\" fxLayout=\"row\" style=\"min-width: 768px;\" >\n  <img class=\"logo\" src=\"logo-light.png\" alt=\"Fretron Logo\" >\n  <span class=\"service-name\" >Shipper Portal</span>\n  <button  mat-button class=\"button-basic1\" (click)=\"goToShipment_OrdersView()\" >Shipment Orders</button>\n  <button  mat-button class=\"button-basic1\" (click)=\"goToLR_TrackingView()\">LR Tracking</button>\n  <!--<button  mat-button class=\"button-basic1\" >Payment Status</button>-->\n  <!--<button  mat-button class=\"button-basic1\" >Statement of Accounts</button>-->\n\n  <button mat-button class=\"button-basic1 fa fa-cog\" style=\"margin-left:auto;\"  (click)=\"goToSettingView()\"></button>\n\n  <button mat-button [matMenuTriggerFor]=\"menu\" style=\"cursor: pointer;z-index: 1000;\" >\n    <i  class=\"fa fa-user-o\" aria-hidden=\"true\" >&#9662;</i>\n  </button>\n  <mat-menu #menu=\"matMenu\">\n    <app-user-profile></app-user-profile>\n  </mat-menu>\n</div>\n<div *ngIf=\"isUserAuthorized\" style=\"padding: 5px\">\n  <router-outlet></router-outlet>\n</div>\n"
 
 /***/ }),
 
@@ -5342,7 +5566,7 @@ var MainDashboardComponent = (function () {
         this.loginMsg = 'LOGIN...';
         this.errorMsg = '';
         console.log("main dashboard");
-        var authToken = this.localStorageService.get('AUTH_TOKEN'); // if token not found then it will check in app.component.
+        var authToken = this.localStorageService.get('AUTH_TOKEN_SHIPPER'); // if token not found then it will check in app.component.
         var isAlreadyAuthorized = false;
         this.unSub_authorization = this._store.select('authorization').subscribe(function (value) {
             if (value == null) {
@@ -5353,7 +5577,7 @@ var MainDashboardComponent = (function () {
             _this.errorMsg = '';
             if (value['error'] == "") {
                 console.log(value);
-                var token = _this.localStorageService.get('AUTH_TOKEN');
+                var token = _this.localStorageService.get('AUTH_TOKEN_SHIPPER');
                 var customerDetails = _this.customerDetail(token);
                 console.log(customerDetails);
                 if (customerDetails['orgId'] == undefined || customerDetails['orgId'] == null) {
@@ -5459,12 +5683,14 @@ var _a, _b, _c, _d, _e;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__add_organisation_add_organisation_component__ = __webpack_require__("../../../../../src/app/add-organisation/add-organisation.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__HMEL_admin_dashboard_business_partner_business_partner_component__ = __webpack_require__("../../../../../src/app/HMEL-admin/dashboard/business-partner/business-partner.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__HMEL_admin_dashboard_add_business_partner_add_business_partner_component__ = __webpack_require__("../../../../../src/app/HMEL-admin/dashboard/add-business-partner/add-business-partner.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__HMEL_admin_dashboard_update_business_partner_update_business_partner_component__ = __webpack_require__("../../../../../src/app/HMEL-admin/dashboard/update-business-partner/update-business-partner.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -5501,6 +5727,7 @@ var routes = [
                     { path: 'user', component: __WEBPACK_IMPORTED_MODULE_2__HMEL_admin_user_user_component__["b" /* UserComponent */] },
                     { path: 'businessPartner', component: __WEBPACK_IMPORTED_MODULE_19__HMEL_admin_dashboard_business_partner_business_partner_component__["a" /* BusinessPartnerComponent */] },
                     { path: 'addBusinessPartner', component: __WEBPACK_IMPORTED_MODULE_20__HMEL_admin_dashboard_add_business_partner_add_business_partner_component__["a" /* AddBusinessPartnerComponent */] },
+                    { path: 'updateBusinessPartner', component: __WEBPACK_IMPORTED_MODULE_21__HMEL_admin_dashboard_update_business_partner_update_business_partner_component__["a" /* UpdateBusinessPartner */] },
                     { path: 'freightClusterStatus', component: __WEBPACK_IMPORTED_MODULE_13__HMEL_admin_freight_cluster_freight_cluster_status_freight_cluster_status_component__["a" /* FreightClusterStatusComponent */] },
                     { path: 'freight_location', component: __WEBPACK_IMPORTED_MODULE_4__HMEL_admin_freight_locations_freight_locations_component__["a" /* FreightLocationsComponent */] },
                     { path: 'freight_zones', component: __WEBPACK_IMPORTED_MODULE_5__HMEL_admin_freight_zones_freight_zones_component__["a" /* FreightZoneComponent */] },
@@ -5605,7 +5832,7 @@ var Signup = (function () {
         this.unSub_userInfo = null;
         this.unSub_signupRes = null;
         this.unSub_authorization = null;
-        var authToken = this.localStorageService.get('AUTH_TOKEN');
+        var authToken = this.localStorageService.get('AUTH_TOKEN_SHIPPER');
         if (authToken != null && authToken != undefined) {
             this.router.navigate(["mainDashboard"]);
         }
@@ -5641,7 +5868,7 @@ var Signup = (function () {
             _this.isSpinner = false;
             if (value['error'] == "") {
                 console.log(value);
-                var token = _this.localStorageService.get('AUTH_TOKEN');
+                var token = _this.localStorageService.get('AUTH_TOKEN_SHIPPER');
                 var customerDetails = _this.customerDetail(token);
                 console.log(customerDetails);
                 if (customerDetails['orgId'] == undefined || customerDetails['orgId'] == null) {
@@ -5752,7 +5979,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/user-profile/user-profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n  <div class=\"profile-container-desktop\" >\r\n    <img class=\"logo\" src=\"../../images/fretron_logo.png\" alt=\"Avatar\"  >\r\n    <img class=\"profile-pic\" src=\"../../images/default-profile.png\" alt=\"profile\"  >\r\n    <div style=\"display: grid;position: absolute;top:81px;left: 23px;color:white\">\r\n      <span style=\"font-size: 18px;margin-bottom: 3px;\">{{customerName}}</span>\r\n      <span style=\"font-size: 12px\">{{customerMobile}}</span>\r\n      <span style=\"font-size: 12px\">{{userDetails?.email}}</span>\r\n    </div>\r\n  </div>\r\n  <div style=\"margin: 10px 0px 10px 10px;overflow: auto;max-height: 250px;\" >\r\n    <div class=\"org-list-element\" *ngFor=\"let currentOrg of orgList\" (click)=\"switchOrg(currentOrg)\" >\r\n      <div  style=\"padding: 5px;\" [style.background-color]=\"(currentOrgId === currentOrg['uuid']? 'lightblue': 'white')\">\r\n        <span >{{currentOrg['organisationName']}}</span>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div style=\"width: 95%;text-align: right;\" >\r\n    <!--<button  (click)=\"goToAddOrganisation()\" mat-button >Add Organisation</button>-->\r\n    <button  (click)=\"logout();\" mat-button >Logout</button>\r\n  </div>\r\n</div>\r\n\r\n"
+module.exports = "<div>\r\n  <div class=\"profile-container-desktop\" >\r\n    <img class=\"logo\" src=\"../../images/fretron_logo.png\" alt=\"Avatar\"  >\r\n    <img class=\"profile-pic\" src=\"../../images/default-profile.png\" alt=\"profile\"  >\r\n    <div style=\"display: grid;position: absolute;top:81px;left: 23px;color:white\">\r\n      <span style=\"font-size: 18px;margin-bottom: 3px;\">{{customerName}}</span>\r\n      <span style=\"font-size: 12px\">{{customerMobile}}</span>\r\n      <span style=\"font-size: 12px\">{{userDetails?.email}}</span>\r\n    </div>\r\n  </div>\r\n  <!--<div style=\"margin: 10px 0px 10px 10px;overflow: auto;max-height: 250px;\" >-->\r\n    <!--<div class=\"org-list-element\" *ngFor=\"let currentOrg of orgList\" (click)=\"switchOrg(currentOrg)\" >-->\r\n      <!--<div  style=\"padding: 5px;\" [style.background-color]=\"(currentOrgId === currentOrg['uuid']? 'lightblue': 'white')\">-->\r\n        <!--<span >{{currentOrg['organisationName']}}</span>-->\r\n      <!--</div>-->\r\n    <!--</div>-->\r\n  <!--</div>-->\r\n  <div style=\"width: 95%;text-align: right;\" >\r\n    <!--<button  (click)=\"goToAddOrganisation()\" mat-button >Add Organisation</button>-->\r\n    <button  (click)=\"logout();\" mat-button >Logout</button>\r\n  </div>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -5767,7 +5994,6 @@ module.exports = "<div>\r\n  <div class=\"profile-container-desktop\" >\r\n    <
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5777,8 +6003,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
 
 
 
@@ -5798,11 +6022,10 @@ var UserProfile = (function () {
         this.viewType = '';
         this.isOrgList = false;
         this.authToken = null;
-        this.orgList = [];
         this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         this.defaultHeaders.append('Access-Control-Allow-Origin', '*');
         this.defaultHeaders.append('Access-Control-Allow-Methods', 'GET,POST, OPTIONS, PUT, PATCH, DELETE');
-        var auth_token = this.localStorageService.get("AUTH_TOKEN");
+        var auth_token = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         console.log("user profile");
         console.log(auth_token);
         if (auth_token != null) {
@@ -5836,96 +6059,13 @@ var UserProfile = (function () {
         this._store.dispatch({ type: "CUSTOMER_DETAILS", payload: { customer: this.userDetails } });
     };
     UserProfile.prototype.logout = function () {
-        this.localStorageService.remove('AUTH_TOKEN');
+        this.localStorageService.remove('AUTH_TOKEN_SHIPPER');
         this.localStorageService.clearAll();
         this._store.dispatch({ type: "USER_INFO", payload: null });
         this._store.dispatch({ type: "SIGNUP_RES", payload: null });
         this._store.dispatch({ type: "AUTHORIZATION", payload: null });
-        console.log(this.localStorageService.get('AUTH_TOKEN'));
+        console.log(this.localStorageService.get('AUTH_TOKEN_SHIPPER'));
         this._router.navigate(['login']);
-    };
-    UserProfile.prototype.switchOrg = function (currentOrg) {
-        var _this = this;
-        // console.log(currentOrg);
-        console.log(this.userDetails);
-        var pathUrl = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].SWITCH_ORG_PATH + currentOrg['uuid'];
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
-        headers.set('Content-Type', 'application/json');
-        var bearerToken = "Bearer " + this.authToken;
-        headers.set('authorization', bearerToken);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
-            headers: headers,
-        });
-        console.log(pathUrl);
-        console.log(bearerToken);
-        this.http.request(pathUrl, requestOptions).map(function (response) {
-            // console.log(response.status);
-            // console.log(response);
-            return response.json();
-        }).subscribe(function (response) {
-            console.log(response);
-            if (response['status'] >= 200 && response['status'] < 300) {
-                if (_this.userDetails['orgType'] == currentOrg['type']) {
-                    _this.localStorageService.clearAll();
-                    _this.localStorageService.set("AUTH_TOKEN", response['token']);
-                    _this.authToken = _this.localStorageService.get("AUTH_TOKEN");
-                    _this.refreshUser();
-                }
-                else {
-                    _this.localStorageService.clearAll();
-                    _this.localStorageService.set("AUTH_TOKEN", response['token']);
-                    var pathUrl_1 = 'http://' + window.location.hostname + ':' + window.location.port;
-                    console.log(pathUrl_1 + "/transporter");
-                    if (currentOrg['type'] == 'TRANSPORTER') {
-                        window.location.replace(pathUrl_1 + "/transporter");
-                    }
-                    else if (currentOrg['type'] == 'FLEET_OWNER') {
-                        window.location.replace(pathUrl_1 + "/tracknet/vtsdashboard");
-                    }
-                    else if (currentOrg['type'] == 'FLEET_OWNER_AGENT') {
-                        // window.location.replace(pathUrl+"/tracknet/vtsdashboard");
-                    }
-                }
-            }
-            else {
-                console.log("error");
-            }
-        }, function (err) {
-            console.log(err);
-            console.log(err.json());
-        });
-    }; //close switch org
-    //get organization
-    UserProfile.prototype.getOrganization = function (token) {
-        var _this = this;
-        this.orgList = [];
-        var pathUrl = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].ORGANIZATION_LIST_PATH;
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
-        headers.set('Content-Type', 'application/json');
-        var bearerToken = "Bearer " + token;
-        headers.set('authorization', bearerToken);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
-            headers: headers,
-        });
-        this.http.request(pathUrl, requestOptions).map(function (response) {
-            // console.log(response.status);
-            // console.log(response);
-            return response.json();
-        }).subscribe(function (response) {
-            console.log(response);
-            if (response['status'] >= 200 && response['status'] < 300) {
-                _this.orgList = response['list'];
-                console.log(_this.orgList);
-            }
-            else {
-                console.log(response['error']);
-            }
-        }, function (err) {
-            console.log(err);
-            console.log(err.json());
-        });
     };
     UserProfile.prototype.goToAddOrganisation = function () {
         // this._router.navigate(['dashboard/addOrganisation']);
@@ -6065,6 +6205,7 @@ Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* pl
 /* harmony export (immutable) */ __webpack_exports__["a"] = addBusinessPartRes;
 /* harmony export (immutable) */ __webpack_exports__["b"] = businessPartnerList;
 /* harmony export (immutable) */ __webpack_exports__["c"] = deleteBusinessPartner;
+/* harmony export (immutable) */ __webpack_exports__["d"] = selectedBusinessPartnerObj;
 function addBusinessPartRes(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -6091,6 +6232,17 @@ function deleteBusinessPartner(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
         case 'DELETE_BUSINESS_PART':
+            {
+                return action.payload;
+            }
+        default:
+            return state;
+    }
+}
+function selectedBusinessPartnerObj(state, action) {
+    if (state === void 0) { state = null; }
+    switch (action.type) {
+        case 'SELECTED_BUSINESS_PART_OBJ':
             {
                 return action.payload;
             }
@@ -6616,7 +6768,7 @@ var FetchTranporterDataServices = (function () {
     };
     //********************* send Request *****/
     FetchTranporterDataServices.prototype.sendRequest = function (path, transporter) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -6683,7 +6835,7 @@ var AuthorizationService = (function () {
         this.localStorageService = localStorageService;
         this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         this.authorizedToken = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        // this.token=this.localStorageService.get("AUTH_TOKEN");
+        // this.token=this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         //************login ***************************************************
         this.authorizedToken.subscribe(function (authToken) {
             var pathURL = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].AUTHORIZATION_PATH;
@@ -6692,24 +6844,24 @@ var AuthorizationService = (function () {
                 console.log(response);
                 var res = response;
                 if (res == null) {
-                    _this.localStorageService.remove('AUTH_TOKEN');
+                    _this.localStorageService.remove('AUTH_TOKEN_SHIPPER');
                     _this.localStorageService.clearAll();
                     _this._store.dispatch({ type: "AUTHORIZATION", payload: { error: 'X', errorMsg: 'server response with null' } });
                 }
                 else if (res.status >= 200 && res.status < 300 && res['isValid'] == true) {
                     // let customer=this.customerDetail(authToken);
-                    _this.localStorageService.remove('AUTH_TOKEN');
-                    _this.localStorageService.clearAll();
+                    _this.localStorageService.remove('AUTH_TOKEN_SHIPPER');
+                    // this.localStorageService.clearAll();
                     if (res['refreshToken'] == '') {
-                        _this.localStorageService.set('AUTH_TOKEN', authToken);
+                        _this.localStorageService.set('AUTH_TOKEN_SHIPPER', authToken);
                     }
                     else {
-                        _this.localStorageService.set('AUTH_TOKEN', res['refreshToken']);
+                        _this.localStorageService.set('AUTH_TOKEN_SHIPPER', res['refreshToken']);
                     }
                     _this._store.dispatch({ type: "AUTHORIZATION", payload: { error: '', isValid: res } });
                 }
                 else {
-                    _this.localStorageService.remove('AUTH_TOKEN');
+                    _this.localStorageService.remove('AUTH_TOKEN_SHIPPER');
                     _this.localStorageService.clearAll();
                     _this._store.dispatch({ type: "AUTHORIZATION", payload: { error: 'X', errorMsg: res.error } });
                 }
@@ -6864,7 +7016,7 @@ var BusinessPartnerService = (function () {
     };
     // get freight location
     BusinessPartnerService.prototype.addNewBusinessPartner = function (path, obj) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -6881,7 +7033,7 @@ var BusinessPartnerService = (function () {
     };
     // get business partner
     BusinessPartnerService.prototype.getBusinessPartner = function (path, obj) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -6896,7 +7048,7 @@ var BusinessPartnerService = (function () {
     };
     // get business partner
     BusinessPartnerService.prototype.deleteBusinessPart = function (path, obj) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -6980,7 +7132,7 @@ var CreateFreightLaneGroup = (function () {
     };
     //********************* send Request *****/
     CreateFreightLaneGroup.prototype.sendRequest = function (path, freightLaneGroup) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -7055,7 +7207,7 @@ var CreateFreightLocation = (function () {
         this.getData = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.createFreightLoc = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         //  this.defaultHeaders.append('Access-Control-Allow-Headers', 'Content-Type');
-        this.authToken = this.localStorageService.get('AUTH_TOKEN');
+        this.authToken = this.localStorageService.get('AUTH_TOKEN_SHIPPER');
         this.getData.subscribe(function (freightLocation) {
             var pathURL = __WEBPACK_IMPORTED_MODULE_6__environments_environment__["b" /* path */].FLPATH;
             _this.sendRequest(pathURL, freightLocation).subscribe(function (response) {
@@ -7096,7 +7248,7 @@ var CreateFreightLocation = (function () {
     };
     //********************* send Request *****/
     CreateFreightLocation.prototype.sendRequest = function (path, freightLocation) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -7185,7 +7337,7 @@ var CreateFreightLane = (function () {
     };
     //********************* send Request *****/
     CreateFreightLane.prototype.sendRequest = function (path, freightLane) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -7276,7 +7428,7 @@ var CreateTrasporterVolumeQuota = (function () {
     };
     //********************* send Request *****/
     CreateTrasporterVolumeQuota.prototype.sendRequest = function (path, transporterVolumeQuota) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -7369,7 +7521,7 @@ var DeleteFreightLaneGroup = (function () {
     };
     //********************* send Request *****/
     DeleteFreightLaneGroup.prototype.sendRequest = function (path, freightLaneGroup) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -7463,7 +7615,7 @@ var DeleteFreightLane = (function () {
     };
     //********************* send Request *****/
     DeleteFreightLane.prototype.sendRequest = function (path, freightLane) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -7558,7 +7710,7 @@ var DeleteFreightLocation = (function () {
     };
     //********************* send Request *****/
     DeleteFreightLocation.prototype.sendRequest = function (path, freightLocation) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -7652,7 +7804,7 @@ var DeleteFreightZone = (function () {
     };
     //********************* send Request *****/
     DeleteFreightZone.prototype.sendRequest = function (path, freightZone) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -7744,7 +7896,7 @@ var DeleteTransporterVolumeQuota = (function () {
     };
     //********************* send Request *****/
     DeleteTransporterVolumeQuota.prototype.sendRequest = function (path, freightLocation) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -7827,7 +7979,7 @@ var FetchDataServices = (function () {
     };
     //********************* send Request *****/
     FetchDataServices.prototype.sendRequest = function (path, user) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -7909,7 +8061,7 @@ var FetchFreightLaneDataService = (function () {
     };
     //********************* send Request *****/
     FetchFreightLaneDataService.prototype.sendRequest = function (path) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -7991,7 +8143,7 @@ var FetchFreightGroupDataServices = (function () {
     };
     //********************* send Request *****/
     FetchFreightGroupDataServices.prototype.sendRequest = function (path) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -8073,7 +8225,7 @@ var FetchFreightZone = (function () {
     };
     //********************* send Request *****/
     FetchFreightZone.prototype.sendRequest = function (path, freightZone) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -8155,7 +8307,7 @@ var FetchLoadAllocationData = (function () {
     };
     //********************* send Request *****/
     FetchLoadAllocationData.prototype.sendRequest = function (path) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -8237,7 +8389,7 @@ var FetchTranporterVolumeQuotaDataServices = (function () {
     };
     //********************* send Request *****/
     FetchTranporterVolumeQuotaDataServices.prototype.sendRequest = function (path) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -8365,7 +8517,7 @@ var FreightClusterServices = (function () {
     };
     //********************* send Request *****/
     FreightClusterServices.prototype.getAllFreightCluster = function (path) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -8389,7 +8541,7 @@ var FreightClusterServices = (function () {
     };
     // *********************** create Trip service  **********************
     FreightClusterServices.prototype.createFreightClusterService = function (clusterData, path) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -8405,7 +8557,7 @@ var FreightClusterServices = (function () {
         });
     };
     FreightClusterServices.prototype.updateFreightClusterService = function (clusterData, path) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -8421,7 +8573,7 @@ var FreightClusterServices = (function () {
         });
     };
     FreightClusterServices.prototype.deleteFreightClusterService = function (clusterData, path) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -8508,7 +8660,7 @@ var FetchFreightLocationData = (function () {
     };
     //********************* send Request *****/
     FetchFreightLocationData.prototype.sendRequest = function (path, freightLocation) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -8647,7 +8799,7 @@ var FreightZoneServices = (function () {
     };
     //********************* send Request *****/
     FreightZoneServices.prototype.getAllFreightZone = function (path) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -8671,7 +8823,7 @@ var FreightZoneServices = (function () {
     };
     // *********************** create Trip service  **********************
     FreightZoneServices.prototype.createFreightZoneService = function (zoneData, path) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -8687,7 +8839,7 @@ var FreightZoneServices = (function () {
         });
     };
     FreightZoneServices.prototype.updateFreightZoneService = function (zoneData, path) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -8703,7 +8855,7 @@ var FreightZoneServices = (function () {
         });
     };
     FreightZoneServices.prototype.deleteFreightZoneService = function (zoneData, path) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -8779,7 +8931,7 @@ var LoginServices = (function () {
         this.addUserOrganisation = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.createOrg = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.switchOrganisations = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        // this.token=this.localStorageService.get("AUTH_TOKEN");
+        // this.token=this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         //************login ***************************************************
         this.login.subscribe(function (reqObj) {
             var pathURL = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].LOGIN_PATH;
@@ -8876,7 +9028,7 @@ var LoginServices = (function () {
         });
     };
     LoginServices.prototype.createOrganisation = function (path, addOrgObj) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -9007,7 +9159,7 @@ var Services = (function () {
     };
     //********************* send Request to create User*****/
     Services.prototype.createUserRequest = function (path, user) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -9026,7 +9178,7 @@ var Services = (function () {
     };
     //********************* send Request to get User*****/
     Services.prototype.getUserDataRequest = function (path) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -9044,7 +9196,7 @@ var Services = (function () {
     };
     /********send request to delete user ****/
     Services.prototype.deleteUserRequest = function (path) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -9062,7 +9214,7 @@ var Services = (function () {
     };
     /********send request to update user********/
     Services.prototype.updateUserRequest = function (path, user) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -9231,7 +9383,7 @@ var ShipmentOrderServices = (function () {
     };
     // get freight location
     ShipmentOrderServices.prototype.getFreightLocation = function (path) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -9246,7 +9398,7 @@ var ShipmentOrderServices = (function () {
         });
     };
     ShipmentOrderServices.prototype.getShipmentOrders = function (path) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         console.log(authToken);
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
@@ -9263,7 +9415,7 @@ var ShipmentOrderServices = (function () {
     };
     // get Transport Business Partner
     ShipmentOrderServices.prototype.getTransportBusinessPartner = function (path) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -9279,7 +9431,7 @@ var ShipmentOrderServices = (function () {
     };
     // get Transport Business Partner
     ShipmentOrderServices.prototype.checkVehicleExist = function (path) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -9295,7 +9447,7 @@ var ShipmentOrderServices = (function () {
     };
     // create New Shipment Order
     ShipmentOrderServices.prototype.createNewShipmentOrder = function (path, shipmentReqObj) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -9453,7 +9605,7 @@ var ShipmentServices = (function () {
     };
     // ***********************  get shipmentId list **********************
     ShipmentServices.prototype.getIdList = function (path) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -9470,7 +9622,7 @@ var ShipmentServices = (function () {
     };
     // ***********************  add Stop **********************
     ShipmentServices.prototype.setAddStop = function (path, value) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -9489,7 +9641,7 @@ var ShipmentServices = (function () {
     // ***********************  pickUp **********************
     ShipmentServices.prototype.setPickup = function (path, value) {
         console.log(path);
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -9507,7 +9659,7 @@ var ShipmentServices = (function () {
     };
     // ***********************  delivery **********************
     ShipmentServices.prototype.setDelivery = function (path, value) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -9525,7 +9677,7 @@ var ShipmentServices = (function () {
     };
     // ***********************  get vehicle list **********************
     ShipmentServices.prototype.getList = function (path, shipmentReqArray) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -9543,7 +9695,7 @@ var ShipmentServices = (function () {
     };
     // ****************** get Vehicle Detail *******************
     ShipmentServices.prototype.getDetails = function (path) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -9561,7 +9713,7 @@ var ShipmentServices = (function () {
     ShipmentServices.prototype.createShipment = function (path, shipment) {
         console.log(path);
         console.log(shipment);
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -9652,7 +9804,7 @@ var UpdateFreightLaneGroup = (function () {
     };
     //********************* send Request *****/
     UpdateFreightLaneGroup.prototype.sendRequest = function (path, freightLaneGoup) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -9746,7 +9898,7 @@ var UpdateFreightLane = (function () {
     };
     //********************* send Request *****/
     UpdateFreightLane.prototype.sendRequest = function (path, freightLane) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -9841,7 +9993,7 @@ var UpdateFreightLocation = (function () {
     };
     //********************* send Request *****/
     UpdateFreightLocation.prototype.sendRequest = function (path, freightLocation) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -9934,7 +10086,7 @@ var UpdateFreightZone = (function () {
     };
     //********************* send Request *****/
     UpdateFreightZone.prototype.sendRequest = function (path, freightZone) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
@@ -10028,7 +10180,7 @@ var UpdateTVQ = (function () {
     };
     //********************* send Request *****/
     UpdateTVQ.prototype.sendRequest = function (path, data) {
-        var authToken = this.localStorageService.get("AUTH_TOKEN");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         var bearerToken = "Bearer " + authToken;
         headers.set('authorization', bearerToken);
