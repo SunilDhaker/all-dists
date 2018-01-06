@@ -477,8 +477,7 @@ var GOOGLE_PROVIDERS = {
     }
 };
 var TEST_BASE_IP = {
-    // IP : 'http://192.168.0.153',
-    IP: 'http://apis.fretron.com'
+    IP: 'http://192.168.0.153',
 };
 var BASE_IP = {
     // IP : 'http://apis.fretron.com',
@@ -14410,8 +14409,10 @@ var EditVehiclesComponent = (function () {
         ];
         this.vehicleStatusList = ["Own Vehicle", "Partner Vehicle"];
         this.vehicleNumber = '';
+        this.deviceImei = '';
         this.vehicleType = '';
         this.groupId = '';
+        this.orgId = '';
         this.vehicleStatus = '';
         this.selectedVehicle = {};
         this.driverName = null;
@@ -14419,12 +14420,14 @@ var EditVehiclesComponent = (function () {
         this.driverId = null;
         this.isShowDriver = false;
         this.isRemoveIcon = false;
+        this.isGod = false;
         this.unSub_SelectedVehicle = null;
         this.unSub_editVehicleResponse = null;
         this.unSub_deleteVehicleResponse = null;
         this.unSub_calledFromSource = null;
         this.unSub_SelectedGroup = null;
         this.unSub_allDeviceList = null;
+        this.unSub_customerDetails = null;
         this.unSub_removeDriver = null;
         this.isShowAddDriver = false;
         this.view = document['view'];
@@ -14438,6 +14441,7 @@ var EditVehiclesComponent = (function () {
             _this.selectedVehicle = value;
             _this.vehicleNumber = value['vehicleRegistrationNumber'];
             _this.vehicleType = value['vehicleType'];
+            _this.deviceImei = value['vtsDeviceId'];
             if (value['driver'] != null) {
                 _this.isRemoveIcon = true;
                 _this.driverName = value['driver']['name'];
@@ -14445,6 +14449,17 @@ var EditVehiclesComponent = (function () {
                 _this.driverId = value['driver']['uuid'];
             }
             _this.driverService.getAllDriverList.emit();
+        });
+        this.unSub_customerDetails = _store.select('customerDetails').subscribe(function (value) {
+            console.log(value);
+            // this.allUsersList=[];
+            if (value == null) {
+                return;
+            }
+            _this.orgId = value['customer']['orgId'];
+            if (value['customer']['isGod'] == true) {
+                _this.isGod = true;
+            }
         });
         this.unSub_SelectedGroup = _store.select('selectedVehicleGroupForEdit').subscribe(function (value) {
             if (value == null) {
@@ -14511,6 +14526,8 @@ var EditVehiclesComponent = (function () {
             this.unSub_deleteVehicleResponse.unsubscribe();
         if (typeof this.unSub_allDeviceList != 'undefined' && this.unSub_allDeviceList != null && this.unSub_allDeviceList != undefined)
             this.unSub_allDeviceList.unsubscribe();
+        if (typeof this.unSub_customerDetails != 'undefined' && this.unSub_customerDetails != null && this.unSub_customerDetails != undefined)
+            this.unSub_customerDetails.unsubscribe();
         this._store.dispatch({ type: "DELETE_VEHICLES_FROM_GROUP_RESPONSE", payload: null });
         this._store.dispatch({ type: "REMOVE_DRIVER_RESPONSE", payload: null });
     };
@@ -24053,7 +24070,7 @@ module.exports = "<!--<div style=\"padding: 8px 4px;box-shadow: 0px 4px 17px dar
 /* 774 */
 /***/ (function(module, exports) {
 
-module.exports = "\n<!--Top Header to be shown in mobile view only -->\n\n<div class=\"top-header\" id=\"top-head\" *ngIf=\"view!='web'\" >\n  <div fxLayout=\"row\" style=\" background-color: #3F51B5; height: 48px;padding-top: 15px; padding-left: 12px;\">\n      <span >\n        <i style=\"color:white;\" (click)=\"goToManageVehicles()\" class=\"fa fa-arrow-left\" aria-hidden=\"true\" ></i>\n      </span>\n    <span>\n        <label style=\"color:white;margin-left: 10px;margin-top: 4px;font-weight:bold;font-size:large;font-family: Gotham-Rounded-Medium, Sans-Serif\">Edit Vehicles</label>\n      </span>\n\n    <span style=\"margin-left: auto;margin-right:45px;\" >\n         <span style=\"font-size: 23px;color: rgba(245, 245, 245, 0.99);\" *ngIf=\"_calledFrom !== 'VehicleList'\">\n             <i class=\"fa fa-trash\" aria-hidden=\"true\" (click)=\"deleteSelectedVehicleFromGroup()\"  ></i>\n         </span>\n      </span>\n  </div>\n</div>\n\n<!--Top header ends here-->\n<!-- ***************add new driver ****************-->\n<div *ngIf=\"isShowAddDriver\">\n  <app-add-driver-component (driverDitail)=\"getDriverDitail($event)\" (isAddDriverDialog)=\"showAddNewDriver()\"></app-add-driver-component>      \n</div>  \n\n<!-- ***************update driver ****************-->\n<div style=\"margin-left: 30px;margin-top: 17px;\">\n  <h3>{{vehicleNumber}}</h3>\n<div style=\"width: 100%\">\n  <md-input-container style=\"width:85%;height:50px\" >\n    <input placeholder=\"Vehicle Number\"  mdInput required [(ngModel)]=\"vehicleNumber\" >\n  </md-input-container>\n</div>\n\n<div style=\"width: 100%;height:50px;margin-top: 18px;\">\n  <md-select  placeholder=\"Vehicle Type\"  style=\"width: 85%; margin-bottom: 8%;\" [(ngModel)]=\"vehicleType\"  >\n    <md-option  [value]=\"vtype\" *ngFor=\"let vtype of vehicleTypeList\">{{vtype}}</md-option>\n  </md-select>\n</div>\n<div style=\"width: 100%\" >\n    <div *ngIf=\"isRemoveIcon\" style=\"margin-bottom: -17px;\">\n        <md-chip-list style=\"margin-bottom:-10px\">\n            <md-chip style=\"margin: 3px\"\n                     color=\"accent\">\n              {{driverName}} - +91 {{mobNo}}\n              <i class=\"fa fa-close\" (click)=\"removeDriver()\"></i>\n            </md-chip>\n          </md-chip-list>\n    </div>\n  <md-input-container style=\"width:85%\" >\n      <input placeholder=\"Driver Name\"  mdInput #chip readonly (focus)=\"isShowDriver=true;\">\n  </md-input-container> \n  <!-- <button md-icon-button style=\"color: #4a4a4a;background-color: #eee;\" [style.margin-left]=\"(view=='web')?'4%':'1%'\" *ngIf=\"isRemoveIcon\" (click)=\"removeDriver()\"> <i class=\"fa fa-user-times\" aria-hidden=\"true\"></i></button> -->\n  <div *ngIf=\"isShowDriver\" class=\"modal-content\"  style=\"margin-top:-195px;height: 135px; overflow:hidden;width: 85%;background-color: rgb(248, 247, 246)\"  [style.margin-left]=\"(view=='web')?'-2px':'-13px'\">\n    <div style=\"height: 140px; overflow-y: scroll;width: 104%;margin-left: -18px;margin-top: -17px;background-color: rgb(248, 247, 246)\" *ngIf=\"allDriverList.length>0\">\n      <ul   style=\"width: 95%;list-style-type: none;\">\n        <li *ngFor=\"let driver of allDriverList\"  (click)=\"setDriver(driver)\" style=\"height: 38px;background-color: rgb(248, 247, 246);margin-left:-41px\"><span style=\"margin-left:2%\">{{driver['name']}} ->+91 {{driver['mobileNumber']}}</span><hr style=\"margin-left:-43px\"></li>\n      </ul>\n    </div>\n    <ul   style=\"width: 100%;list-style-type: none;margin-top: 0px;margin-left: -18px;background-color: #fefefe;\">\n      <li (click)=\"addNewDriver()\" style=\"height: 38px;margin-left:-41px\"><span style=\"margin-left:2%\">+ add new driver</span><hr style=\"margin-left:-40px\"></li>      \n    </ul>\n  </div>   \n</div>\n\n<!--<div style=\"width: 100%\">-->\n  <!--<md-select  placeholder=\"Status\"  style=\"width: 85%\" [(ngModel)]=\"vehicleStatus\"  >-->\n    <!--<md-option  [value]=\"vStatus\" *ngFor=\"let vStatus of vehicleStatusList\">{{vStatus}}</md-option>-->\n  <!--</md-select>-->\n<!--</div>-->\n\n\n<div style=\"margin-top: 5%;\" [style.margin-left]=\"(view=='web')?'24%':'8%'\">\n  <button md-raised-button (click)=\"goToManageVehicles()\">CANCEL</button>\n  <button md-raised-button color=\"primary\" *ngIf=\"(view=='web' && _calledFrom !== 'VehicleList')\" style=\"margin-left: 20%\" (click)=\"deleteSelectedVehicleFromGroup()\">DELETE</button>\n  <button md-raised-button color=\"primary\" style=\"margin-left: 30%\" (click)=\"saveEditVehicles()\">SAVE</button>\n</div>\n</div>\n"
+module.exports = "\n<!--Top Header to be shown in mobile view only -->\n\n<div class=\"top-header\" id=\"top-head\" *ngIf=\"view!='web'\" >\n  <div fxLayout=\"row\" style=\" background-color: #3F51B5; height: 48px;padding-top: 15px; padding-left: 12px;\">\n      <span >\n        <i style=\"color:white;\" (click)=\"goToManageVehicles()\" class=\"fa fa-arrow-left\" aria-hidden=\"true\" ></i>\n      </span>\n    <span>\n        <label style=\"color:white;margin-left: 10px;margin-top: 4px;font-weight:bold;font-size:large;font-family: Gotham-Rounded-Medium, Sans-Serif\">Edit Vehicles</label>\n      </span>\n\n    <span style=\"margin-left: auto;margin-right:45px;\" >\n         <span style=\"font-size: 23px;color: rgba(245, 245, 245, 0.99);\" *ngIf=\"_calledFrom !== 'VehicleList'\">\n             <i class=\"fa fa-trash\" aria-hidden=\"true\" (click)=\"deleteSelectedVehicleFromGroup()\"  ></i>\n         </span>\n      </span>\n  </div>\n</div>\n\n<!--Top header ends here-->\n<!-- ***************add new driver ****************-->\n<div *ngIf=\"isShowAddDriver\">\n  <app-add-driver-component (driverDitail)=\"getDriverDitail($event)\" (isAddDriverDialog)=\"showAddNewDriver()\"></app-add-driver-component>\n</div>\n\n<!-- ***************update driver ****************-->\n<div style=\"margin-left: 30px;margin-top: 17px;\">\n  <h3>{{vehicleNumber}}</h3>\n<div style=\"width: 100%\">\n  <md-input-container style=\"width:85%;height:50px\" >\n    <input placeholder=\"Vehicle Number\"  mdInput required [(ngModel)]=\"vehicleNumber\" >\n  </md-input-container>\n</div>\n\n<div style=\"width: 100%;height:50px;margin-top: 18px;\">\n  <md-select  placeholder=\"Vehicle Type\"  style=\"width: 85%; margin-bottom: 8%;\" [(ngModel)]=\"vehicleType\"  >\n    <md-option  [value]=\"vtype\" *ngFor=\"let vtype of vehicleTypeList\">{{vtype}}</md-option>\n  </md-select>\n</div>\n<div style=\"width: 100%\" >\n    <div *ngIf=\"isRemoveIcon\" style=\"margin-bottom: -17px;\">\n        <md-chip-list style=\"margin-bottom:-10px\">\n            <md-chip style=\"margin: 3px\"\n                     color=\"accent\">\n              {{driverName}} - +91 {{mobNo}}\n              <i class=\"fa fa-close\" (click)=\"removeDriver()\"></i>\n            </md-chip>\n          </md-chip-list>\n    </div>\n  <md-input-container style=\"width:85%\" >\n      <input placeholder=\"Driver Name\"  mdInput #chip readonly (focus)=\"isShowDriver=true;\">\n  </md-input-container>\n  <!-- <button md-icon-button style=\"color: #4a4a4a;background-color: #eee;\" [style.margin-left]=\"(view=='web')?'4%':'1%'\" *ngIf=\"isRemoveIcon\" (click)=\"removeDriver()\"> <i class=\"fa fa-user-times\" aria-hidden=\"true\"></i></button> -->\n  <div *ngIf=\"isShowDriver\" class=\"modal-content\"  style=\"margin-top:-195px;height: 135px; overflow:hidden;width: 85%;background-color: rgb(248, 247, 246)\"  [style.margin-left]=\"(view=='web')?'-2px':'-13px'\">\n    <div style=\"height: 140px; overflow-y: scroll;width: 104%;margin-left: -18px;margin-top: -17px;background-color: rgb(248, 247, 246)\" *ngIf=\"allDriverList.length>0\">\n      <ul   style=\"width: 95%;list-style-type: none;\">\n        <li *ngFor=\"let driver of allDriverList\"  (click)=\"setDriver(driver)\" style=\"height: 38px;background-color: rgb(248, 247, 246);margin-left:-41px\"><span style=\"margin-left:2%\">{{driver['name']}} ->+91 {{driver['mobileNumber']}}</span><hr style=\"margin-left:-43px\"></li>\n      </ul>\n    </div>\n    <ul   style=\"width: 100%;list-style-type: none;margin-top: 0px;margin-left: -18px;background-color: #fefefe;\">\n      <li (click)=\"addNewDriver()\" style=\"height: 38px;margin-left:-41px\"><span style=\"margin-left:2%\">+ add new driver</span><hr style=\"margin-left:-40px\"></li>\n    </ul>\n  </div>\n</div>\n\n  <!--<div style=\"width: 100%\" *ngIf=\"isGod\">-->\n    <!--<md-input-container style=\"width:85%;height:50px\" >-->\n      <!--<input placeholder=\"Device Imei\"  mdInput  [(ngModel)]=\"deviceImei\" >-->\n    <!--</md-input-container>-->\n  <!--</div>-->\n\n<!--<div style=\"width: 100%\">-->\n  <!--<md-select  placeholder=\"Status\"  style=\"width: 85%\" [(ngModel)]=\"vehicleStatus\"  >-->\n    <!--<md-option  [value]=\"vStatus\" *ngFor=\"let vStatus of vehicleStatusList\">{{vStatus}}</md-option>-->\n  <!--</md-select>-->\n<!--</div>-->\n\n\n<div style=\"margin-top: 5%;\" [style.margin-left]=\"(view=='web')?'24%':'8%'\">\n  <button md-raised-button (click)=\"goToManageVehicles()\">CANCEL</button>\n  <button md-raised-button color=\"primary\" *ngIf=\"(view=='web' && _calledFrom !== 'VehicleList')\" style=\"margin-left: 20%\" (click)=\"deleteSelectedVehicleFromGroup()\">DELETE</button>\n  <button md-raised-button color=\"primary\" style=\"margin-left: 30%\" (click)=\"saveEditVehicles()\">SAVE</button>\n</div>\n</div>\n"
 
 /***/ }),
 /* 775 */

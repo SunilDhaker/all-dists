@@ -793,10 +793,9 @@ var GOOGLE_PROVIDERS = {
     }
 };
 var BASE_IP = {
-    IP: 'http://apis.fretron.com',
-    ROHIT_IP: 'http://192.168.0.103',
-    // TEST_IP : 'http://192.168.0.153',
-    TEST_IP: 'http://apis.fretron.com'
+    // IP : 'http://apis.fretron.com',
+    // ROHIT_IP : 'http://192.168.0.103',
+    TEST_IP: 'http://192.168.0.153',
 };
 // export const paths = {
 //   "LOGIN_PATH" :"http://192.168.0.103:8099/user/login/forany",
@@ -1221,16 +1220,18 @@ var GOOGLE_PROVIDERS = {
     }
 };
 var BASE_IP = {
-    IP: 'http://apis.fretron.com',
+    // IP : 'http://apis.fretron.com',
+    TEST_IP: 'http://apis.fretron.com'
 };
-var paths = {
-    "LOGIN_PATH": BASE_IP.IP + "/user/login",
-    "SIGN_OTP_PATH": BASE_IP.IP + "/user/sendotp?mobileNumber=",
-    "SIGNUP_PATH": BASE_IP.IP + "/user/create",
-    "CONFIRM_LOGIN_PATH": BASE_IP.IP + "/user/authentication?mobileNumber=",
-    "CREATE_ORGANISATION_PATH": BASE_IP.IP + "/organisation/create",
-    "SWITCH_ORG_PATH": BASE_IP.IP + "/user/switchorg?orgId=",
-};
+//
+// export const paths = {
+//   "LOGIN_PATH" :BASE_IP.IP+"/user/login",
+//   "SIGN_OTP_PATH" :BASE_IP.IP+"/user/sendotp?mobileNumber=",
+//   "SIGNUP_PATH" : BASE_IP.IP+"/user/create",
+//   "CONFIRM_LOGIN_PATH" : BASE_IP.IP+"/user/authentication?mobileNumber=",
+//   "CREATE_ORGANISATION_PATH" : BASE_IP.IP+"/organisation/create",
+//   "SWITCH_ORG_PATH": BASE_IP.IP+"/user/switchorg?orgId=",
+// };
 // export const paths = {
 //   "LOGIN_PATH" :BASE_IP.TEST_IP+"/user/login/forany",
 //   "SIGN_OTP_PATH" :BASE_IP.TEST_IP+"/user/sendotp?mobileNumber=",
@@ -1239,6 +1240,14 @@ var paths = {
 //   "CREATE_ORGANISATION_PATH" : BASE_IP.TEST_IP+"/organisation/create",
 //   "SWITCH_ORG_PATH": BASE_IP.TEST_IP+"/user/switchorg?orgId=",
 // };
+var paths = {
+    "LOGIN_PATH": BASE_IP.TEST_IP + "/user/login",
+    "SIGN_OTP_PATH": BASE_IP.TEST_IP + "/user/sendotp?mobileNumber=",
+    "SIGNUP_PATH": BASE_IP.TEST_IP + "/user/create",
+    "CONFIRM_LOGIN_PATH": BASE_IP.TEST_IP + "/user/authentication?mobileNumber=",
+    "CREATE_ORGANISATION_PATH": BASE_IP.TEST_IP + "/organisation/create",
+    "SWITCH_ORG_PATH": BASE_IP.TEST_IP + "/user/switchorg?orgId=",
+};
 //# sourceMappingURL=environment.prod.js.map
 
 /***/ }),
