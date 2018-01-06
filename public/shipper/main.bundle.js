@@ -3632,7 +3632,7 @@ var CreateShipmentOrder = (function () {
             this.isSpinner = true;
             console.log(shipmentOrderObj);
             this.recentSho(freightUnit, shipmentOrderObj);
-            // this.shipmentOderService.createShipmentOrder.emit(shipmentOrderObj);
+            this.shipmentOderService.createShipmentOrder.emit(shipmentOrderObj);
         }
     }; // close methods createShipmentOrder
     CreateShipmentOrder.prototype.recentSho = function (freightUnit, shipmentOrderObj) {
@@ -3665,13 +3665,13 @@ var CreateShipmentOrder = (function () {
             }
             recentSHO_LIST.slice(0, 5);
             this.localStorageService.set('RECENT_SHO', recentSHO_LIST);
-            console.log(recentSHO_LIST);
+            // console.log(recentSHO_LIST);
         }
         else {
             var shoList = [];
             shoList.push(recentSho);
             this.localStorageService.set('RECENT_SHO', shoList);
-            console.log(shoList);
+            // console.log(shoList);
         }
     };
     CreateShipmentOrder.prototype.checkValidation = function () {
