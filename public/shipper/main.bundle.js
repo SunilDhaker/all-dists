@@ -886,10 +886,9 @@ var AddBusinessPartnerComponent = (function () {
     //method to check existance of fretron reference number
     AddBusinessPartnerComponent.prototype.checkFretronReferenceNumber = function (fretronReferenceNumber) {
         if (fretronReferenceNumber == null || fretronReferenceNumber == undefined || fretronReferenceNumber == '') {
-            return;
+            if (fretronReferenceNumber.length == 0)
+                this.isFRNValid = false;
         }
-        if (fretronReferenceNumber.length == 0)
-            this.isFRNValid = false;
         var frPath = __WEBPACK_IMPORTED_MODULE_7__environments_environment__["b" /* path */].CHECK_FRETRON_REFERECE_NUMBER + '?fretronReferenceNumber=' + fretronReferenceNumber;
         if (fretronReferenceNumber != '') {
             this.businessPartnerService.getFretronReferenceNumber.emit(frPath);
@@ -1452,8 +1451,8 @@ var UpdateBusinessPartner = (function () {
             this.unSub_selectedfreightLoc.unsubscribe();
         if (this.unSub_updateBusinessPartner != null && this.unSub_updateBusinessPartner != undefined)
             this.unSub_updateBusinessPartner.unsubscribe();
-        if (this.unSub_updateBusinessPartner != null && this.unSub_updateBusinessPartner != undefined)
-            this.unSub_updateBusinessPartner.unsubscribe();
+        if (this.unSub_checkFretronReferenceNumber != null && this.unSub_checkFretronReferenceNumber != undefined)
+            this.unSub_checkFretronReferenceNumber.unsubscribe();
         this.store.dispatch({ type: "SELECTED_BUSINESS_PART_OBJ", payload: null });
         this.store.dispatch({ type: "GET_SEL_FREIGHT_LOC", payload: null });
         this.store.dispatch({ type: "UPDATE_BUSINESS_PART_RES", payload: null });
@@ -1670,10 +1669,9 @@ var UpdateBusinessPartner = (function () {
     };
     UpdateBusinessPartner.prototype.checkFretronReferenceNumber = function (fretronReferenceNumber) {
         if (fretronReferenceNumber == null || fretronReferenceNumber == undefined || fretronReferenceNumber == '') {
-            return;
+            if (fretronReferenceNumber.length == 0)
+                this.isFRNValid = false;
         }
-        if (fretronReferenceNumber.length == 0)
-            this.isFRNValid = false;
         var frPath = __WEBPACK_IMPORTED_MODULE_8__environments_environment__["b" /* path */].CHECK_FRETRON_REFERECE_NUMBER + '?fretronReferenceNumber=' + fretronReferenceNumber;
         if (fretronReferenceNumber != '') {
             this.businessPartnerService.getFretronReferenceNumber.emit(frPath);
@@ -6524,8 +6522,8 @@ var GOOGLE_PROVIDERS = {
 };
 var BASE_IP = {
     // BASE:'https://shippermanagementg2963f8fc.jp1.hana.ondemand.com/ShipperManagement/api',
-    BASE: 'http://192.168.0.91:2122',
-    // BASE:'http://192.168.0.153',
+    // BASE:'http://192.168.0.91:2122',
+    BASE: 'http://192.168.0.153',
     IP: 'http://apis.fretron.com',
     ORG_MANAGER: 'http://apis.fretron.com/organisation',
 };
