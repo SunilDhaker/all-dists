@@ -451,7 +451,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "div {\r\n  font-family: Helvetica !important;\r\n}\r\n\r\n.my-map-search{\r\n  /*left: 0%;*/\r\n  /*width: 73%;*/\r\n  position: relative;\r\n  z-index: 10;\r\n  /*margin-top: 10px;*/\r\n}\r\n\r\n.my-toggle{\r\n  position: absolute;\r\n  z-index: 11;\r\n  left: 10px;\r\n  top: 33px;\r\n  height: 20px;\r\n  font-size: 12px;\r\n}\r\n\r\n.my-toggle >>> .mat-button-toggle-label-content {\r\n  line-height: 23px;\r\n  padding: 0px 10px;\r\n  color: black;\r\n}\r\n\r\n.search {\r\n  width: 100%;\r\n  font-size: 14px;\r\n  padding: 5px 26px 6px 12px;\r\n  display: inline-block;\r\n  border: 1.5px solid #ccc;\r\n  border-radius: 5px;\r\n  box-sizing: border-box;\r\n}\r\n.search:focus{\r\n  outline: none;\r\n  border: 1.5px solid #03a9f4;\r\n  box-shadow: 0px 0px 5px #03a9f4;\r\n}\r\n\r\n.contact-detail{\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -ms-flex-wrap: wrap;\r\n      flex-wrap: wrap;\r\n  padding: 5px 10px;\r\n  margin: 0px 10px;\r\n  border: 1px solid antiquewhite;\r\n}\r\n", ""]);
+exports.push([module.i, "div {\r\n  font-family: Helvetica !important;\r\n}\r\n\r\n.my-map-search{\r\n  /*left: 0%;*/\r\n  /*width: 73%;*/\r\n  position: relative;\r\n  z-index: 10;\r\n  /*margin-top: 10px;*/\r\n}\r\n\r\n.my-toggle{\r\n  position: absolute;\r\n  z-index: 11;\r\n  left: 10px;\r\n  top: 33px;\r\n  height: 20px;\r\n  font-size: 12px;\r\n}\r\n\r\n.my-toggle >>> .mat-button-toggle-label-content {\r\n  line-height: 23px;\r\n  padding: 0px 10px;\r\n  color: black;\r\n}\r\n\r\n.search {\r\n  width: 100%;\r\n  font-size: 14px;\r\n  padding: 5px 26px 6px 12px;\r\n  display: inline-block;\r\n  border: 1.5px solid #ccc;\r\n  border-radius: 5px;\r\n  box-sizing: border-box;\r\n}\r\n.search:focus{\r\n  outline: none;\r\n  border: 1.5px solid #03a9f4;\r\n  box-shadow: 0px 0px 5px #03a9f4;\r\n}\r\n\r\n.contact-detail{\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -ms-flex-wrap: wrap;\r\n      flex-wrap: wrap;\r\n  padding: 5px 10px;\r\n  margin: 0px 10px;\r\n  border: 1px solid antiquewhite;\r\n}\r\n\r\n.card {\r\n  height: 0px; \r\n  padding-top: 10px;\r\n  margin-top: -20px;\r\n}\r\nmat-spinner.small-spinner svg { width: 40px !important; height: 40px !important; }\r\n/* .spinner { */\r\n  /* mat-spinner.small-spinner svg { width: 40px !important; height: 40px !important; }\r\n} */\r\n", ""]);
 
 // exports
 
@@ -464,7 +464,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/HMEL-admin/dashboard/add-business-partner/add-business-partner.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" style=\"position: absolute;\" class=\"spinner\"></mat-spinner>\r\n<div (keyup.Enter)=\"addFreightLocation()\">\r\n  <div style=\"font-size:21px;color:#8a8c8e;padding: 5px;\" >\r\n    <span>Add Business Partner</span>\r\n  </div>\r\n\r\n  <div>\r\n    <div  style=\"display:flex;flex-wrap: wrap;\">\r\n      <div  style=\"min-width: 200px;position: relative;padding: 10px;margin-top: 5px;width: 60%;\" >\r\n        <div style=\"position: relative;\" >\r\n          <div style=\"width:95%; margin-left: auto; margin-right: auto;margin-bottom: -31px;\">\r\n            <div class=\"my-map-search\">\r\n              <input [disabled]=\"type !='customer'\" id=\"pac-input\" type=\"text\" class=\"search\" matTooltip=\"Address search Here\" placeholder=\"Address Search Here\" >\r\n              <i class=\"fa fa-search\" aria-hidden=\"true\" style=\"right: 10px;top: 7px;font-size: 15px;position: absolute;\"></i>\r\n            </div>\r\n          </div>\r\n\r\n          <mat-button-toggle-group [disabled] =\"type != 'customer'\"  class=\"my-toggle\" #group=\"matButtonToggleGroup\" [(ngModel)]=\"mapType\">\r\n            <mat-button-toggle value=\"hybrid\">\r\n              <span>Satellite</span>\r\n            </mat-button-toggle>\r\n            <mat-button-toggle value=\"roadmap\" style=\"background-color:floralwhite;\" [style.opacity]=\"(mapType =='roadmap')?'.8':'.6'\">\r\n              <span>Map</span>\r\n            </mat-button-toggle>\r\n          </mat-button-toggle-group>\r\n\r\n          <agm-map [streetViewControl]=\"mapOption.streetViewControl\" [zoomControl]=\"mapOption.zoomControl\" [mapDraggable]=\"mapOption.isMapDraggable\" [disableDefaultUI]=\"mapOption.disableDefaultUI\" [scrollwheel]=\"mapOption.scrollwheel\" [clickableIcons]=\"mapOption.clickableIcons\"\r\n                   [mapTypeId]=\"mapType\" style=\"height: 50vh;\" [latitude]=\"latitude\" [longitude]=\"longitude\" [zoom]=\"5\">\r\n            <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\">\r\n            </agm-marker>\r\n          </agm-map>\r\n        </div>\r\n      </div>\r\n\r\n      <div fxFlex style=\"padding: 5px\" >\r\n        <mat-form-field style=\"width: 100%\">\r\n          <mat-select [disabled]=\"isClicked ==true\" [(ngModel)]='type' placeholder=\"Type\" (change)=\"disableMap()\" required>\r\n            <mat-option value=\"customer\">Customer</mat-option>\r\n            <mat-option value=\"transporter\">Transporter</mat-option>\r\n          </mat-select>\r\n        </mat-form-field>\r\n\r\n        <div>\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"fretronRefNo\" placeholder=\"Fretron Reference No\">\r\n          </mat-form-field>\r\n\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"businessPartnerName\" placeholder=\"Business Partner Name\" required>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input [disabled]=\"isClicked ==true\"  matInput [(ngModel)]=\"address\" placeholder=\"Address\">\r\n          </mat-form-field>\r\n\r\n          <div style=\"display: flex;flex-wrap: wrap;\" >\r\n            <mat-form-field style=\"margin-right: auto\" >\r\n              <input [disabled]=\"isClicked ==true\"  matInput  [(ngModel)]=\"state\" placeholder=\"State\" >\r\n            </mat-form-field>\r\n\r\n            <mat-form-field style=\"margin-left: 2px\" >\r\n              <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"zip\" placeholder=\"PIN/ZIP\">\r\n            </mat-form-field>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"contact-detail\">\r\n      <mat-form-field style=\"margin-right: 10px;width: 30%;min-width: 200px;\">\r\n        <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"contactPersonName\" placeholder=\"Contact Person Name\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field style=\"margin-right :10px;margin-left :10px;width: 30%;min-width: 200px;\" >\r\n        <input [disabled]=\"isClicked ==true\"  matInput type=\"email\" [(ngModel)]=\"email\" placeholder=\"Email\"\r\n               pattern=\"[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}\" >\r\n      </mat-form-field>\r\n\r\n      <mat-form-field style=\"margin-left :10px;width: 30%;min-width: 200px;\">\r\n        <input [disabled]=\"isClicked ==true\"  matInput type=\"number\" [(ngModel)]=\"mobileNo\" placeholder=\"MobileNo\" onkeydown=\"if(event.target.value.length>=10 && event.keyCode!=8 && event.keyCode!=13 )return false;\"\r\n               pattern=\"[0-9]{10}\" >\r\n      </mat-form-field>\r\n    </div>\r\n  </div>\r\n\r\n  <div style=\"text-align: right;padding: 12px;\" >\r\n    <button matTooltip=\"CANCEL / BACK\"  mat-raised-button (click)=\"cancel()\" class=\"status-button\" >Cancel</button>\r\n    <button [disabled]=\"businessPartnerName =='' || isClicked ==true\" matTooltip=\"Add New Business Partner\" color=\"primary\"  mat-raised-button (click)=\"addFreightLocation()\" class=\"status-button\" >Add Business Partner</button>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" style=\"position: absolute;\" class=\"spinner\"></mat-spinner>\r\n<div (keyup.Enter)=\"addFreightLocation()\">\r\n  <div style=\"font-size:21px;color:#8a8c8e;padding: 5px;\" >\r\n    <span>Add Business Partner</span>\r\n  </div>\r\n\r\n  <div>\r\n    <div  style=\"display:flex;flex-wrap: wrap;\">\r\n      <div  style=\"min-width: 200px;position: relative;padding: 10px;margin-top: 5px;width: 60%;\" >\r\n        <div style=\"position: relative;\" >\r\n          <div style=\"width:95%; margin-left: auto; margin-right: auto;margin-bottom: -31px;\">\r\n            <div class=\"my-map-search\">\r\n              <input [disabled]=\"type !='customer'\" id=\"pac-input\" type=\"text\" class=\"search\" matTooltip=\"Address search Here\" placeholder=\"Address Search Here\" >\r\n              <i class=\"fa fa-search\" aria-hidden=\"true\" style=\"right: 10px;top: 7px;font-size: 15px;position: absolute;\"></i>\r\n            </div>\r\n          </div>\r\n\r\n          <mat-button-toggle-group [disabled] =\"type != 'customer'\"  class=\"my-toggle\" #group=\"matButtonToggleGroup\" [(ngModel)]=\"mapType\">\r\n            <mat-button-toggle value=\"hybrid\">\r\n              <span>Satellite</span>\r\n            </mat-button-toggle>\r\n            <mat-button-toggle value=\"roadmap\" style=\"background-color:floralwhite;\" [style.opacity]=\"(mapType =='roadmap')?'.8':'.6'\">\r\n              <span>Map</span>\r\n            </mat-button-toggle>\r\n          </mat-button-toggle-group>\r\n\r\n          <agm-map [streetViewControl]=\"mapOption.streetViewControl\" [zoomControl]=\"mapOption.zoomControl\" [mapDraggable]=\"mapOption.isMapDraggable\" [disableDefaultUI]=\"mapOption.disableDefaultUI\" [scrollwheel]=\"mapOption.scrollwheel\" [clickableIcons]=\"mapOption.clickableIcons\"\r\n                   [mapTypeId]=\"mapType\" style=\"height: 50vh;\" [latitude]=\"latitude\" [longitude]=\"longitude\" [zoom]=\"5\">\r\n            <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\">\r\n            </agm-marker>\r\n          </agm-map>\r\n        </div>\r\n      </div>\r\n\r\n      <div fxFlex style=\"padding: 5px\" >\r\n        <mat-form-field style=\"width: 100%\">\r\n          <mat-select [disabled]=\"isClicked ==true\" [(ngModel)]='type' placeholder=\"Type\" (change)=\"disableMap()\" required>\r\n            <mat-option value=\"customer\">Customer</mat-option>\r\n            <mat-option value=\"transporter\">Transporter</mat-option>\r\n          </mat-select>\r\n        </mat-form-field>\r\n\r\n        <div>\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input matInput [disabled]=\"isClicked ==true\"   [style.color]=\"isFRNValid==true?'red':'black'\"   [(ngModel)]=\"fretronRefNo\" placeholder=\"Fretron Reference No\" (keyup)=\"checkFretronReferenceNumber(fretronRefNo)\">\r\n          </mat-form-field>\r\n\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"businessPartnerName\" placeholder=\"Business Partner Name\" required>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input [disabled]=\"isClicked ==true\"  matInput [(ngModel)]=\"address\" placeholder=\"Address\">\r\n          </mat-form-field>\r\n\r\n          <div style=\"display: flex;flex-wrap: wrap;\" >\r\n            <mat-form-field style=\"margin-right: auto\" >\r\n              <input [disabled]=\"isClicked ==true\"  matInput  [(ngModel)]=\"state\" placeholder=\"State\" >\r\n            </mat-form-field>\r\n\r\n            <mat-form-field style=\"margin-left: 2px\" >\r\n              <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"zip\" placeholder=\"PIN/ZIP\">\r\n            </mat-form-field>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"contact-detail\">\r\n      <mat-form-field style=\"margin-right: 10px;width: 30%;min-width: 200px;\">\r\n        <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"contactPersonName\" placeholder=\"Contact Person Name\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field style=\"margin-right :10px;margin-left :10px;width: 30%;min-width: 200px;\" >\r\n        <input [disabled]=\"isClicked ==true\"  matInput type=\"email\" [(ngModel)]=\"email\" placeholder=\"Email\"\r\n               pattern=\"[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}\" >\r\n      </mat-form-field>\r\n\r\n      <mat-form-field style=\"margin-left :10px;width: 30%;min-width: 200px;\">\r\n        <input [disabled]=\"isClicked ==true\"  matInput type=\"number\" [(ngModel)]=\"mobileNo\" placeholder=\"MobileNo\" onkeydown=\"if(event.target.value.length>=10 && event.keyCode!=8 && event.keyCode!=13 )return false;\"\r\n               pattern=\"[0-9]{10}\" >\r\n      </mat-form-field>\r\n    </div>\r\n  </div>\r\n\r\n  <div style=\"text-align: right;padding: 12px;\" >\r\n    <button matTooltip=\"CANCEL / BACK\"  mat-raised-button (click)=\"cancel()\" class=\"status-button\" >Cancel</button>\r\n    <button [disabled]=\"businessPartnerName =='' || isClicked ==true\" matTooltip=\"Add New Business Partner\" color=\"primary\"  mat-raised-button (click)=\"addFreightLocation()\" class=\"status-button\" >Add Business Partner</button>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -480,6 +480,7 @@ module.exports = "<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" style=
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__service_create_freigth_location_service__ = __webpack_require__("../../../../../src/service/create-freigth-location.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__service_businessPartnerService__ = __webpack_require__("../../../../../src/service/businessPartnerService.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -489,6 +490,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -527,6 +529,11 @@ var AddBusinessPartnerComponent = (function () {
         this.isClicked = false;
         this.unSub_createFreightLocRes = null;
         this.unSub_addBusinessPartRes = null;
+        this.unSub_checkFretronReferenceNumber = null;
+        this.orgId = null;
+        this.fretronReferenceNoUuid = null;
+        this.isFRNValid = false;
+        this.fretronReferenceNumberPath = __WEBPACK_IMPORTED_MODULE_7__environments_environment__["b" /* path */].CHECK_FRETRON_REFERECE_NUMBER;
         console.log("constructor");
         // dispatched from create freight location services
         this.unSub_createFreightLocRes = this.store.select('createFreightLocRes').subscribe(function (value) {
@@ -567,12 +574,33 @@ var AddBusinessPartnerComponent = (function () {
                 _this.openSnackBar(value['errorMsg'] + ' please try again');
             }
         });
+        this.unSub_checkFretronReferenceNumber = this.store.select('fretronReferenceNumber').subscribe(function (res) {
+            console.log(res);
+            if (res == null)
+                return;
+            if (res['status'] == 200) {
+                _this.fretronReferenceNoUuid = res['organisation']['uuid'];
+                _this.isFRNValid = false;
+            }
+            else {
+                if (_this.fretronRefNo != null || _this.fretronRefNo != undefined || _this.fretronRefNo != '') {
+                    if (_this.fretronRefNo.length > 0) {
+                        _this.isFRNValid = true;
+                        _this.fretronReferenceNoUuid = null;
+                    }
+                    _this.fretronReferenceNoUuid = null;
+                }
+            }
+        });
     } // close constructor
     AddBusinessPartnerComponent.prototype.ngOnDestroy = function () {
         if (this.unSub_createFreightLocRes != null && this.unSub_createFreightLocRes != undefined)
             this.unSub_createFreightLocRes.unsubscribe();
         if (this.unSub_addBusinessPartRes != null && this.unSub_addBusinessPartRes != undefined)
             this.unSub_addBusinessPartRes.unsubscribe();
+        if (this.unSub_checkFretronReferenceNumber != null && this.unSub_checkFretronReferenceNumber != undefined)
+            this.unSub_checkFretronReferenceNumber.unsubscribe();
+        this.store.dispatch({ type: "FRETRON_REFERENCE_NUMBER", payload: null });
         this.store.dispatch({ type: "ADD_BUSINESS_PART_RES", payload: null });
         this.store.dispatch({ type: "CREATE_FREIGHT_LOCATION_RES", payload: null });
     };
@@ -750,51 +778,56 @@ var AddBusinessPartnerComponent = (function () {
         this.map.setZoom(14);
     };
     AddBusinessPartnerComponent.prototype.addFreightLocation = function () {
-        if (this.type == 'transporter') {
-            if (this.checkValidation()) {
-                this.isClicked = true;
-                this.isSpinner = true;
-                this.addBusinessPartner();
+        if (!this.isFRNValid) {
+            if (this.type == 'transporter') {
+                if (this.checkValidation()) {
+                    this.isClicked = true;
+                    this.isSpinner = true;
+                    this.addBusinessPartner();
+                }
+            }
+            else {
+                //  for create organization first we create freight location and then create organization
+                var obj = null;
+                var vertices = this.polygon.getPath();
+                if (vertices == undefined || vertices == null) {
+                    this.openSnackBar("Please select Location on Map.");
+                    return false;
+                }
+                var polygonPoints = [];
+                for (var i = 0; i < vertices.getLength(); i++) {
+                    var xy = vertices.getAt(i);
+                    polygonPoints.push({ latitude: xy.lat(), longitude: xy.lng() });
+                    // console.log(xy.lat()+"     "+xy.lng());
+                }
+                if (polygonPoints.length <= 0) {
+                    this.openSnackBar("Please select Location on map");
+                    return;
+                }
+                if (this.checkValidation()) {
+                    obj = {
+                        "name": this.businessPartnerName,
+                        "address": this.address,
+                        "geoTagType": 'geofence',
+                        "source": "manual",
+                        "zone1": null,
+                        "zone2": null,
+                        "zone3": null,
+                        "boundary": polygonPoints,
+                        "centre": { "latitude": this.latitude, "longitude": this.longitude },
+                        "type": 'plant'
+                    };
+                    console.log(obj);
+                    this.isClicked = true;
+                    this.isSpinner = true;
+                    this.store.dispatch({ type: "ADD_ORG_RESPONSE", payload: null });
+                    this.store.dispatch({ type: "CREATE_FREIGHT_LOCATION_RES", payload: null });
+                    this.createFreightLocation.createFreightLoc.emit(obj); // response will get in constructor
+                }
             }
         }
         else {
-            //  for create organization first we create freight location and then create organization
-            var obj = null;
-            var vertices = this.polygon.getPath();
-            if (vertices == undefined || vertices == null) {
-                this.openSnackBar("Please select Location on Map.");
-                return false;
-            }
-            var polygonPoints = [];
-            for (var i = 0; i < vertices.getLength(); i++) {
-                var xy = vertices.getAt(i);
-                polygonPoints.push({ latitude: xy.lat(), longitude: xy.lng() });
-                // console.log(xy.lat()+"     "+xy.lng());
-            }
-            if (polygonPoints.length <= 0) {
-                this.openSnackBar("Please select Location on map");
-                return;
-            }
-            if (this.checkValidation()) {
-                obj = {
-                    "name": this.businessPartnerName,
-                    "address": this.address,
-                    "geoTagType": 'geofence',
-                    "source": "manual",
-                    "zone1": null,
-                    "zone2": null,
-                    "zone3": null,
-                    "boundary": polygonPoints,
-                    "centre": { "latitude": this.latitude, "longitude": this.longitude },
-                    "type": 'plant'
-                };
-                console.log(obj);
-                this.isClicked = true;
-                this.isSpinner = true;
-                this.store.dispatch({ type: "ADD_ORG_RESPONSE", payload: null });
-                this.store.dispatch({ type: "CREATE_FREIGHT_LOCATION_RES", payload: null });
-                this.createFreightLocation.createFreightLoc.emit(obj); // response will get in constructor
-            }
+            this.openSnackBar("Fretron reference number doesn't exist");
         }
     }; // close methods add freight location
     AddBusinessPartnerComponent.prototype.checkValidation = function () {
@@ -831,7 +864,8 @@ var AddBusinessPartnerComponent = (function () {
             zip: this.zip,
             contactPersonName: this.contactPersonName,
             emailId: this.email,
-            mobileNo: this.mobileNo
+            mobileNo: this.mobileNo,
+            'fretronReferenceNoUuid': this.fretronReferenceNoUuid
         };
         if (this.fretronRefNo != '') {
             obj['fretronReferenceNo'] = this.fretronRefNo;
@@ -848,6 +882,21 @@ var AddBusinessPartnerComponent = (function () {
     };
     AddBusinessPartnerComponent.prototype.openSnackBar = function (message) {
         this.matSnackBar.open(message, "OK", { duration: 4000 });
+    };
+    //method to check existance of fretron reference number
+    AddBusinessPartnerComponent.prototype.checkFretronReferenceNumber = function (fretronReferenceNumber) {
+        if (fretronReferenceNumber == null || fretronReferenceNumber == undefined || fretronReferenceNumber == '') {
+            if (fretronReferenceNumber.length == 0)
+                this.isFRNValid = false;
+        }
+        var frPath = __WEBPACK_IMPORTED_MODULE_7__environments_environment__["b" /* path */].CHECK_FRETRON_REFERECE_NUMBER + '?fretronReferenceNumber=' + fretronReferenceNumber;
+        if (fretronReferenceNumber != '') {
+            this.businessPartnerService.getFretronReferenceNumber.emit(frPath);
+        }
+        else {
+            this.fretronRefNo = null;
+            this.fretronReferenceNoUuid = null;
+        }
     };
     return AddBusinessPartnerComponent;
 }()); //close class
@@ -973,6 +1022,7 @@ var BusinessPartnerComponent = (function () {
             this.unSub_businessPartnerList.unsubscribe();
         if (this.unSub_deleteBusinessPartner != null && this.unSub_deleteBusinessPartner != undefined)
             this.unSub_deleteBusinessPartner.unsubscribe();
+        this.store.dispatch({ type: "DELETE_BUSINESS_PART", payload: null });
     };
     BusinessPartnerComponent.prototype.ngOnInit = function () {
     };
@@ -1235,7 +1285,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/HMEL-admin/dashboard/update-business-partner/update-business-partner.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" style=\"position: absolute;\" class=\"spinner\"></mat-spinner>\r\n<div (keyup.Enter)=\"updateBusinesPart()\">\r\n  <div style=\"font-size:21px;color:#8a8c8e;padding: 5px;\" >\r\n    <span>Update Business Partner</span>\r\n  </div>\r\n\r\n  <div>\r\n    <div  style=\"display:flex;flex-wrap: wrap;\">\r\n      <div  style=\"min-width: 200px;position: relative;padding: 10px;margin-top: 5px;width: 60%;\" >\r\n        <div style=\"position: relative;\" >\r\n\r\n          <mat-button-toggle-group [disabled] =\"businesPartnerObject.type != 'customer'\"  class=\"my-toggle\" #group=\"matButtonToggleGroup\" [(ngModel)]=\"mapType\">\r\n            <mat-button-toggle value=\"hybrid\">\r\n              <span>Satellite</span>\r\n            </mat-button-toggle>\r\n            <mat-button-toggle value=\"roadmap\" style=\"background-color:floralwhite;\" [style.opacity]=\"(mapType =='roadmap')?'.8':'.6'\">\r\n              <span>Map</span>\r\n            </mat-button-toggle>\r\n          </mat-button-toggle-group>\r\n\r\n          <agm-map  [mapTypeId]=\"mapType\" style=\"height: 50vh;\" >\r\n\r\n          </agm-map>\r\n        </div>\r\n      </div>\r\n\r\n      <div fxFlex style=\"padding: 5px\" >\r\n        <mat-form-field style=\"width: 100%\">\r\n          <input matInput [disabled]=true  [value]=\"businesPartnerObject.type\" placeholder=\"Type\">\r\n        </mat-form-field>\r\n\r\n        <div>\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"fretronReferenceNo\" placeholder=\"Fretron Reference No\">\r\n          </mat-form-field>\r\n\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"businesPartnerObject.partnerName\" placeholder=\"Business Partner Name\" required>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input [disabled]=\"isClicked ==true\"  matInput [(ngModel)]=\"businesPartnerObject.address\" placeholder=\"Address\">\r\n          </mat-form-field>\r\n\r\n          <div style=\"display: flex;flex-wrap: wrap;\" >\r\n            <mat-form-field style=\"margin-right: auto\" >\r\n              <input [disabled]=\"isClicked ==true\"  matInput  [(ngModel)]=\"businesPartnerObject.state\" placeholder=\"State\" >\r\n            </mat-form-field>\r\n\r\n            <mat-form-field style=\"margin-left: 2px\" >\r\n              <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"businesPartnerObject.zip\" placeholder=\"PIN/ZIP\">\r\n            </mat-form-field>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"contact-detail\">\r\n      <mat-form-field style=\"margin-right: 10px;width: 30%;min-width: 200px;\">\r\n        <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"businesPartnerObject.contactPersonName\" placeholder=\"Contact Person Name\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field style=\"margin-right :10px;margin-left :10px;width: 30%;min-width: 200px;\" >\r\n        <input [disabled]=\"isClicked ==true\"  matInput type=\"email\" [(ngModel)]=\"businesPartnerObject.emailId\" placeholder=\"Email\"\r\n               pattern=\"[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}\" >\r\n      </mat-form-field>\r\n\r\n      <mat-form-field style=\"margin-left :10px;width: 30%;min-width: 200px;\">\r\n        <input [disabled]=\"isClicked ==true\"  matInput type=\"number\" [(ngModel)]=\"businesPartnerObject.mobileNo\" placeholder=\"MobileNo\" onkeydown=\"if(event.target.value.length>=10 && event.keyCode!=8 && event.keyCode!=13 )return false;\"\r\n               pattern=\"[0-9]{10}\" >\r\n      </mat-form-field>\r\n    </div>\r\n  </div>\r\n\r\n  <div style=\"text-align: right;padding: 12px;\" >\r\n    <button matTooltip=\"CANCEL / BACK\"  mat-raised-button (click)=\"cancel()\" class=\"status-button\" >Cancel</button>\r\n    <button [disabled]=\"businesPartnerObject.partnerName =='' || isClicked ==true\" matTooltip=\"Add New Business Partner\" color=\"primary\"  mat-raised-button (click)=\"updateBusinesPart()\" class=\"status-button\" >Update</button>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" style=\"position: absolute;\" class=\"spinner\"></mat-spinner>\r\n<div (keyup.Enter)=\"updateBusinesPart()\">\r\n  <div style=\"font-size:21px;color:#8a8c8e;padding: 5px;\" >\r\n    <span>Update Business Partner</span>\r\n  </div>\r\n\r\n  <div>\r\n    <div  style=\"display:flex;flex-wrap: wrap;\">\r\n      <div  style=\"min-width: 200px;position: relative;padding: 10px;margin-top: 5px;width: 60%;\" >\r\n        <div style=\"position: relative;\" >\r\n\r\n          <div style=\"width:95%; margin-left: auto; margin-right: auto;margin-bottom: -31px;\">\r\n            <div class=\"my-map-search\">\r\n              <input [disabled]=\"businesPartnerObject.type != 'customer'\" id=\"pac-input\" type=\"text\" class=\"search\" matTooltip=\"Address search Here\" placeholder=\"Address Search Here\" >\r\n              <i class=\"fa fa-search\" aria-hidden=\"true\" style=\"right: 10px;top: 7px;font-size: 15px;position: absolute;\"></i>\r\n            </div>\r\n          </div>\r\n\r\n          <mat-button-toggle-group [disabled] =\"businesPartnerObject.type != 'customer'\"  class=\"my-toggle\" #group=\"matButtonToggleGroup\" [(ngModel)]=\"mapType\">\r\n            <mat-button-toggle value=\"hybrid\">\r\n              <span>Satellite</span>\r\n            </mat-button-toggle>\r\n            <mat-button-toggle value=\"roadmap\" style=\"background-color:floralwhite;\" [style.opacity]=\"(mapType =='roadmap')?'.8':'.6'\">\r\n              <span>Map</span>\r\n            </mat-button-toggle>\r\n          </mat-button-toggle-group>\r\n\r\n          <agm-map  [mapTypeId]=\"mapType\" style=\"height: 50vh;\" >\r\n              <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\"></agm-marker>\r\n          </agm-map>\r\n        </div>\r\n      </div>\r\n\r\n      <div fxFlex style=\"padding: 5px\" >\r\n        <mat-form-field style=\"width: 100%\">\r\n          <input matInput [disabled]=true  [value]=\"businesPartnerObject.type\" placeholder=\"Type\">\r\n        </mat-form-field>\r\n\r\n        <div>\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input matInput [disabled]=\"isClicked ==true\"  [style.color]=\"isFRNValid==true?'red':'black'\" [(ngModel)]=\"fretronReferenceNo\" placeholder=\"Fretron Reference No\" (keyup)=\"checkFretronReferenceNumber(fretronReferenceNo)\">\r\n          </mat-form-field>\r\n\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"businesPartnerObject.partnerName\" placeholder=\"Business Partner Name\" required>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input [disabled]=\"isClicked ==true\"  matInput [(ngModel)]=\"businesPartnerObject.address\" placeholder=\"Address\">\r\n          </mat-form-field>\r\n\r\n          <div style=\"display: flex;flex-wrap: wrap;\" >\r\n            <mat-form-field style=\"margin-right: auto\" >\r\n              <input [disabled]=\"isClicked ==true\"  matInput  [(ngModel)]=\"businesPartnerObject.state\" placeholder=\"State\" >\r\n            </mat-form-field>\r\n\r\n            <mat-form-field style=\"margin-left: 2px\" >\r\n              <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"businesPartnerObject.zip\" placeholder=\"PIN/ZIP\">\r\n            </mat-form-field>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"contact-detail\">\r\n      <mat-form-field style=\"margin-right: 10px;width: 30%;min-width: 200px;\">\r\n        <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"businesPartnerObject.contactPersonName\" placeholder=\"Contact Person Name\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field style=\"margin-right :10px;margin-left :10px;width: 30%;min-width: 200px;\" >\r\n        <input [disabled]=\"isClicked ==true\"  matInput type=\"email\" [(ngModel)]=\"businesPartnerObject.emailId\" placeholder=\"Email\"\r\n               pattern=\"[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}\" >\r\n      </mat-form-field>\r\n\r\n      <mat-form-field style=\"margin-left :10px;width: 30%;min-width: 200px;\">\r\n        <input [disabled]=\"isClicked ==true\"  matInput type=\"number\" [(ngModel)]=\"businesPartnerObject.mobileNo\" placeholder=\"MobileNo\" onkeydown=\"if(event.target.value.length>=10 && event.keyCode!=8 && event.keyCode!=13 )return false;\"\r\n               pattern=\"[0-9]{10}\" >\r\n      </mat-form-field>\r\n    </div>\r\n  </div>\r\n\r\n  <div style=\"text-align: right;padding: 12px;\" >\r\n    <button matTooltip=\"CANCEL / BACK\"  mat-raised-button (click)=\"cancel()\" class=\"status-button\" >Cancel</button>\r\n    <button [disabled]=\"businesPartnerObject.partnerName =='' || isClicked ==true\" matTooltip=\"Add New Business Partner\" color=\"primary\"  mat-raised-button (click)=\"updateBusinesPart()\" class=\"status-button\" >Update</button>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1253,6 +1303,7 @@ module.exports = "<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" style=
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__service_create_freigth_location_service__ = __webpack_require__("../../../../../src/service/create-freigth-location.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__service_businessPartnerService__ = __webpack_require__("../../../../../src/service/businessPartnerService.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1262,6 +1313,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -1299,13 +1351,17 @@ var UpdateBusinessPartner = (function () {
             emailId: '',
             mobileNo: ''
         };
+        this.fretronReferenceNoUuid = null;
         this.polygon = null;
+        this.oldPolyBoundry = null;
         this.latitude = null;
         this.longitude = null;
         this.isClicked = false;
         this.unSub_selectedBusinessPartnerObj = null;
         this.unSub_selectedfreightLoc = null;
         this.unSub_updateBusinessPartner = null;
+        this.unSub_checkFretronReferenceNumber = null;
+        this.isFRNValid = false;
         this.unSub_selectedBusinessPartnerObj = this.store.select('selectedBusinessPartnerObj').subscribe(function (value) {
             if (value == null) {
                 _this.router.navigate(["mainDashboard/dashboard/businessPartner"]);
@@ -1343,6 +1399,24 @@ var UpdateBusinessPartner = (function () {
                 }
             }
         });
+        this.unSub_checkFretronReferenceNumber = this.store.select('fretronReferenceNumber').subscribe(function (res) {
+            console.log(res);
+            if (res == null)
+                return;
+            if (res['status'] == 200) {
+                _this.fretronReferenceNoUuid = res['organisation']['uuid'];
+                _this.isFRNValid = false;
+            }
+            else {
+                if (_this.fretronReferenceNo != null || _this.fretronReferenceNo != undefined || _this.fretronReferenceNo != '') {
+                    if (_this.fretronReferenceNo.length > 0) {
+                        _this.isFRNValid = true;
+                        _this.fretronReferenceNoUuid = null;
+                    }
+                }
+                _this.fretronReferenceNoUuid = null;
+            }
+        });
     } // close constructor
     UpdateBusinessPartner.prototype.ngOnInit = function () {
         var _this = this;
@@ -1350,19 +1424,19 @@ var UpdateBusinessPartner = (function () {
             _this.map = map;
             var points = [];
             console.log(points);
-            _this.disableMap();
             _this.unSub_selectedfreightLoc = _this.store.select('selectedFreightLoc').subscribe(function (value) {
                 if (value == null) {
                     return;
                 }
                 else {
                     if (value['error'] == '') {
+                        _this.oldPolyBoundry = value['data']['data']['boundary'];
                         for (var i = 0; i < value['data']['data']['boundary'].length; i++) {
                             points.push({ lat: value['data']['data']['boundary'][i]['latitude'], lng: value['data']['data']['boundary'][i]['longitude'] });
                         }
                         console.log(points);
-                        _this.polygon = _this.addPolygone(_this.map, points, false, '#858585', '#353535', value['data']['data']['centre']);
-                        // this.disableMap();
+                        _this.polygon = _this.addPolygone(_this.map, points, true, '#FF0000', '#FF0000', value['data']['data']['centre']);
+                        _this.placesServices();
                     }
                     else {
                         console.log(value['errorMsg']);
@@ -1378,12 +1452,17 @@ var UpdateBusinessPartner = (function () {
             this.unSub_selectedfreightLoc.unsubscribe();
         if (this.unSub_updateBusinessPartner != null && this.unSub_updateBusinessPartner != undefined)
             this.unSub_updateBusinessPartner.unsubscribe();
+        if (this.unSub_checkFretronReferenceNumber != null && this.unSub_checkFretronReferenceNumber != undefined)
+            this.unSub_checkFretronReferenceNumber.unsubscribe();
         this.store.dispatch({ type: "SELECTED_BUSINESS_PART_OBJ", payload: null });
         this.store.dispatch({ type: "GET_SEL_FREIGHT_LOC", payload: null });
         this.store.dispatch({ type: "UPDATE_BUSINESS_PART_RES", payload: null });
+        this.store.dispatch({ type: "FRETRON_REFERENCE_NUMBER", payload: null });
     };
     UpdateBusinessPartner.prototype.addPolygone = function (map, points, editable, fillColor, strokeColor, centre) {
         console.log(centre);
+        // this.latitude =centre.latitude;
+        // this.longitude =centre.longitude;
         var myPolygon = new google.maps.Polygon({
             paths: points,
             editable: editable,
@@ -1405,22 +1484,49 @@ var UpdateBusinessPartner = (function () {
     UpdateBusinessPartner.prototype.disableMap = function () {
         console.log("disable unit");
         // myPolygon.setOptions({fillColor: '#858585', strokeColor: '#353535' });
-        this.map.isMapDraggable = false;
-        this.map.disableDefaultUI = false;
-        this.map.scrollwheel = false;
-        this.map.clickableIcons = false;
-        this.map.zoomControl = false;
-        this.map.streetViewControl = false;
+        // this.map.isMapDraggable =false;
+        // this.map.disableDefaultUI =false;
+        // this.map.scrollwheel =false;
+        // this.map.clickableIcons =false;
+        // this.map.zoomControl =false;
+        // this.map.streetViewControl =false;
     };
     UpdateBusinessPartner.prototype.updateBusinesPart = function () {
-        var businessPart = JSON.parse(JSON.stringify(this.businesPartnerObject));
-        if (this.fretronReferenceNo != '') {
-            businessPart.fretronReferenceNo = this.fretronReferenceNo;
+        if (!this.isFRNValid) {
+            var businessPart = JSON.parse(JSON.stringify(this.businesPartnerObject));
+            if (businessPart.type == 'customer') {
+                var obj = null;
+                var vertices = this.polygon.getPath();
+                if (vertices == undefined || vertices == null) {
+                    this.openSnackBar("Please select Location on Map.");
+                    return false;
+                }
+                var polygonPoints = [];
+                for (var i = 0; i < vertices.getLength(); i++) {
+                    var xy = vertices.getAt(i);
+                    polygonPoints.push({ latitude: xy.lat(), longitude: xy.lng() });
+                    // console.log(xy.lat()+"     "+xy.lng());
+                }
+                if (polygonPoints.length <= 0) {
+                    this.openSnackBar("Please select Location on map");
+                    return;
+                }
+                if (JSON.stringify(this.oldPolyBoundry) != JSON.stringify(polygonPoints)) {
+                    businessPart['boundary'] = polygonPoints;
+                }
+            }
+            if (this.fretronReferenceNo != '') {
+                businessPart.fretronReferenceNo = this.fretronReferenceNo;
+                businessPart['fretronReferenceNoUuid'] = this.fretronReferenceNoUuid;
+            }
+            console.log(businessPart);
+            if (this.checkValidation()) {
+                this.isClicked = true;
+                this.businessPartnerService.updateBusinessPartner.emit(businessPart);
+            }
         }
-        console.log(businessPart);
-        if (this.checkValidation()) {
-            this.isClicked = true;
-            this.businessPartnerService.updateBusinessPartner.emit(businessPart);
+        else {
+            this.openSnackBar("Fretron reference number doesn't exist");
         }
     }; // close methods add freight location
     UpdateBusinessPartner.prototype.checkValidation = function () {
@@ -1444,12 +1550,137 @@ var UpdateBusinessPartner = (function () {
         }
         return true;
     };
+    UpdateBusinessPartner.prototype.placesServices = function () {
+        var _this = this;
+        // Create the search box and link it to the UI element.
+        var input = document.getElementById('pac-input');
+        console.log(input);
+        var searchBox = new google.maps.places.SearchBox(input);
+        this.map.addListener('bounds_changed', function () {
+            searchBox.setBounds(_this.map.getBounds());
+        });
+        searchBox.addListener('places_changed', function () {
+            var places = searchBox.getPlaces();
+            if (places.length == 0) {
+                return;
+            }
+            // For each place, get the icon, name and location.
+            var bounds = new google.maps.LatLngBounds();
+            // places.forEach((place) => {
+            if (!places[0].geometry) {
+                console.log("Returned place contains no geometry");
+                return;
+            }
+            var icon = {
+                url: places[0].icon,
+                size: new google.maps.Size(71, 71),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(17, 34),
+                scaledSize: new google.maps.Size(25, 25)
+            };
+            // Create a marker for each place.
+            var currentMarker = new google.maps.Marker({
+                // map: this.map,
+                // icon: icon,
+                title: places[0].formatted_address,
+                position: places[0].geometry.location
+            });
+            // console.log(places[0].geometry.location);
+            _this.latitude = currentMarker['position'].lat();
+            _this.longitude = currentMarker['position'].lng();
+            console.log(_this.latitude + " " + _this.longitude);
+            _this.businesPartnerObject.address = '';
+            _this.businesPartnerObject.state = '';
+            _this.businesPartnerObject.address = places[0].formatted_address;
+            if (places[0].address_components != undefined) {
+                for (var i = 0; i < places[0].address_components.length; i++) {
+                    if (places[0].address_components[i]['types'][0] == 'administrative_area_level_1') {
+                        console.log(places[0].address_components[i]['long_name']);
+                        _this.businesPartnerObject.state = places[0].address_components[i]['long_name'];
+                    }
+                }
+            }
+            //  this.polygon.setMap(this.map);
+            console.log(places[0].formatted_address);
+            // this.markers.push(currentMarker);
+            // ********** for show marker according to screen ********
+            if (places[0].geometry.viewport) {
+                // Only geocodes have viewport.
+                bounds.union(places[0].geometry.viewport);
+            }
+            else {
+                bounds.extend(places[0].geometry.location);
+            }
+            // ****** for show marker accoeding to screen  ************
+            // });
+            _this.map.fitBounds(bounds);
+            _this.onAddLocation();
+        });
+    }; // close placesServices
+    UpdateBusinessPartner.prototype.onAddLocation = function () {
+        var obj = { latitude: this.latitude, longitude: this.longitude };
+        console.log('Set New Location Obj');
+        console.log(obj);
+        if (this.polygon != null)
+            this.polygon.setMap(null);
+        var points = this.getNPointsCircularPolygone({ latitude: this.latitude, longitude: this.longitude }, 0.5, 5);
+        this.polygon.setPath(points);
+        this.polygon.setMap(this.map);
+        var bounds = new google.maps.LatLngBounds();
+        for (var i = 0; i < points.length; i++) {
+            //  And increase the bounds to take this point
+            bounds.extend(points[i]);
+        }
+        this.map.fitBounds(bounds);
+        // this.map.setZoom(14);
+    };
+    UpdateBusinessPartner.prototype.getNPointsCircularPolygone = function (center, dist, n) {
+        var i = 0;
+        var polygonePoint = [];
+        for (i = 1; i <= n; i++) {
+            polygonePoint.push(getPointAt(center, (360.0 / n) * (i), dist));
+        }
+        function toRAD(NUM) {
+            return NUM * Math.PI / 180;
+        }
+        function toDeg(NUM) {
+            return NUM * 180 / Math.PI;
+        }
+        function getPointAt(latlng, brng, dist) {
+            // console.log(latlng);
+            // console.log(latlng);
+            dist = dist / 6371;
+            brng = toRAD(brng);
+            var lat1 = toRAD(latlng.latitude), lon1 = toRAD(latlng.longitude);
+            var lat2 = Math.asin(Math.sin(lat1) * Math.cos(dist) + Math.cos(lat1) * Math.sin(dist) * Math.cos(brng));
+            var lon2 = lon1 + Math.atan2(Math.sin(brng) * Math.sin(dist) * Math.cos(lat1), Math.cos(dist) - Math.sin(lat1) * Math.sin(lat2));
+            if (isNaN(lat2) || isNaN(lon2))
+                return null;
+            return new google.maps.LatLng(toDeg(lat2), toDeg(lon2));
+        }
+        ;
+        return polygonePoint;
+    }; //close methods getNPointsCircularPolygone
     UpdateBusinessPartner.prototype.cancel = function () {
         console.log("nothing done");
         this.router.navigate(["mainDashboard/dashboard/businessPartner"]);
     };
     UpdateBusinessPartner.prototype.openSnackBar = function (message) {
         this.matSnackBar.open(message, "OK", { duration: 4000 });
+    };
+    UpdateBusinessPartner.prototype.checkFretronReferenceNumber = function (fretronReferenceNumber) {
+        if (fretronReferenceNumber == null || fretronReferenceNumber == undefined || fretronReferenceNumber == '') {
+            if (fretronReferenceNumber.length == 0)
+                this.isFRNValid = false;
+        }
+        var frPath = __WEBPACK_IMPORTED_MODULE_8__environments_environment__["b" /* path */].CHECK_FRETRON_REFERECE_NUMBER + '?fretronReferenceNumber=' + fretronReferenceNumber;
+        if (fretronReferenceNumber != '') {
+            this.businessPartnerService.getFretronReferenceNumber.emit(frPath);
+        }
+        else {
+            this.fretronReferenceNo = null;
+            this.fretronReferenceNoUuid = null;
+        }
     };
     return UpdateBusinessPartner;
 }()); //close class
@@ -4329,7 +4560,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/HMEL-admin/user/user-form.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"font-size:21px;color:#8a8c8e;\" >\r\n        <span>Add New User</span>\r\n      </div>\r\n\r\n<div class=\"form-container\">\r\n    <mat-form-field>\r\n        <input matInput [(ngModel)]=\"name\" placeholder=\"Name\" required (keyup)=\"validateName()\" (focusout)=\"showErrorMessage('name')\">\r\n    </mat-form-field>\r\n\r\n    <mat-form-field>\r\n        <input matInput [(ngModel)]=\"email\" placeholder=\"Email\" [disabled]=\"isUserAdmin\" required (keyup)=\"validateEmail()\" (focusout)=\"showErrorMessage('email')\">\r\n    </mat-form-field>\r\n\r\n    <mat-form-field>\r\n        <input matInput [(ngModel)]=\"contactPersonNumber\" placeholder=\"Mobile\" (keyup)=\"validateMobile()\" (focusout)=\"showErrorMessage('mobile')\">\r\n    </mat-form-field>\r\n</div>\r\n<div>\r\n    <button mat-raised-button class=\"button\" [disabled]=\"isNameValid || isEmailValid || isMobileNumberValid\" (click)=\"submitted()\">Save</button>\r\n    <button mat-raised-button class=\"button\" (click)=\"onCancel()\" style=\"margin-right:10px\">Cancel</button>\r\n</div>"
+module.exports = "<div style=\"font-size:21px;color:#8a8c8e;\" >\r\n        <span>Add New User</span>\r\n      </div>\r\n\r\n<div class=\"form-container\">\r\n    <mat-form-field>\r\n        <input matInput [(ngModel)]=\"name\" placeholder=\"Name\" required (keyup)=\"validateName()\" (focusout)=\"showErrorMessage('name')\">\r\n    </mat-form-field>\r\n\r\n    <mat-form-field>\r\n        <input matInput [(ngModel)]=\"email\" placeholder=\"Email\" [disabled]=\"isUserAdmin\" required (keyup)=\"validateEmail()\" (focusout)=\"showErrorMessage('email')\">\r\n    </mat-form-field>\r\n\r\n    <mat-form-field>\r\n        <input matInput [(ngModel)]=\"contactPersonNumber\" [maxlength]=\"10\"placeholder=\"Mobile\" (keyup)=\"validateMobile()\" (focusout)=\"showErrorMessage('mobile')\">\r\n    </mat-form-field>\r\n</div>\r\n<div>\r\n    <button mat-raised-button class=\"button\" [disabled]=\"isNameValid || isEmailValid || isMobileNumberValid\" (click)=\"submitted()\">Save</button>\r\n    <button mat-raised-button class=\"button\" (click)=\"onCancel()\" style=\"margin-right:10px\">Cancel</button>\r\n</div>"
 
 /***/ }),
 
@@ -5327,8 +5558,8 @@ var store = {
     createShipmentRes: __WEBPACK_IMPORTED_MODULE_59__reducer_shipment_order_store__["c" /* createShipmentRes */], shipmentOrders: __WEBPACK_IMPORTED_MODULE_59__reducer_shipment_order_store__["f" /* shipmentOrders */],
     checkVehicleNoExist: __WEBPACK_IMPORTED_MODULE_59__reducer_shipment_order_store__["b" /* checkVehicleNoExist */], userInfo: __WEBPACK_IMPORTED_MODULE_67__reducer_login_store__["f" /* userInfo */], signupRes: __WEBPACK_IMPORTED_MODULE_67__reducer_login_store__["e" /* signupRes */], authorization: __WEBPACK_IMPORTED_MODULE_67__reducer_login_store__["b" /* authorization */], customerDetails: __WEBPACK_IMPORTED_MODULE_67__reducer_login_store__["d" /* customerDetails */],
     createFreightLocRes: __WEBPACK_IMPORTED_MODULE_67__reducer_login_store__["c" /* createFreightLocRes */], addOrgRes: __WEBPACK_IMPORTED_MODULE_67__reducer_login_store__["a" /* addOrgRes */], addBusinessPartRes: __WEBPACK_IMPORTED_MODULE_73__reducer_busines_partner_store__["a" /* addBusinessPartRes */], businessPartnerList: __WEBPACK_IMPORTED_MODULE_73__reducer_busines_partner_store__["b" /* businessPartnerList */],
-    deleteBusinessPartner: __WEBPACK_IMPORTED_MODULE_73__reducer_busines_partner_store__["c" /* deleteBusinessPartner */], selectedBusinessPartnerObj: __WEBPACK_IMPORTED_MODULE_73__reducer_busines_partner_store__["d" /* selectedBusinessPartnerObj */],
-    selectedFreightLoc: __WEBPACK_IMPORTED_MODULE_73__reducer_busines_partner_store__["e" /* selectedFreightLoc */], updateBusinessPartner: __WEBPACK_IMPORTED_MODULE_73__reducer_busines_partner_store__["f" /* updateBusinessPartner */], organisationStore: __WEBPACK_IMPORTED_MODULE_59__reducer_shipment_order_store__["e" /* organisationStore */], allBusinessPartners: __WEBPACK_IMPORTED_MODULE_59__reducer_shipment_order_store__["a" /* allBusinessPartners */]
+    deleteBusinessPartner: __WEBPACK_IMPORTED_MODULE_73__reducer_busines_partner_store__["c" /* deleteBusinessPartner */], selectedBusinessPartnerObj: __WEBPACK_IMPORTED_MODULE_73__reducer_busines_partner_store__["e" /* selectedBusinessPartnerObj */],
+    selectedFreightLoc: __WEBPACK_IMPORTED_MODULE_73__reducer_busines_partner_store__["f" /* selectedFreightLoc */], updateBusinessPartner: __WEBPACK_IMPORTED_MODULE_73__reducer_busines_partner_store__["g" /* updateBusinessPartner */], organisationStore: __WEBPACK_IMPORTED_MODULE_59__reducer_shipment_order_store__["e" /* organisationStore */], allBusinessPartners: __WEBPACK_IMPORTED_MODULE_59__reducer_shipment_order_store__["a" /* allBusinessPartners */], fretronReferenceNumber: __WEBPACK_IMPORTED_MODULE_73__reducer_busines_partner_store__["d" /* fretronReferenceNumber */]
 };
 var AppModule = (function () {
     function AppModule() {
@@ -6309,6 +6540,7 @@ var path = {
     CHECK_VEHICLE_EXIST_PATH: BASE_IP.BASE + '/shipper/shipment/validateVehicle?vehicleRegistrattionNumber=',
     SWITCH_ORG_PATH: BASE_IP.IP + "/user/switchorg?orgId=",
     ORGANIZATION_LIST_PATH: BASE_IP.ORG_MANAGER + "/organizations",
+    CHECK_FRETRON_REFERECE_NUMBER: BASE_IP.BASE + "/shipper/check/fretron/reference/number",
     PATH: BASE_IP.BASE + '/shipper/user',
     DUPATH: BASE_IP.BASE + '/shipper/user/delete/',
     UUPATH: BASE_IP.BASE + '/shipper/user/update/',
@@ -6387,9 +6619,10 @@ Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* pl
 /* harmony export (immutable) */ __webpack_exports__["a"] = addBusinessPartRes;
 /* harmony export (immutable) */ __webpack_exports__["b"] = businessPartnerList;
 /* harmony export (immutable) */ __webpack_exports__["c"] = deleteBusinessPartner;
-/* harmony export (immutable) */ __webpack_exports__["d"] = selectedBusinessPartnerObj;
-/* harmony export (immutable) */ __webpack_exports__["e"] = selectedFreightLoc;
-/* harmony export (immutable) */ __webpack_exports__["f"] = updateBusinessPartner;
+/* harmony export (immutable) */ __webpack_exports__["e"] = selectedBusinessPartnerObj;
+/* harmony export (immutable) */ __webpack_exports__["f"] = selectedFreightLoc;
+/* harmony export (immutable) */ __webpack_exports__["g"] = updateBusinessPartner;
+/* harmony export (immutable) */ __webpack_exports__["d"] = fretronReferenceNumber;
 function addBusinessPartRes(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -6449,6 +6682,17 @@ function updateBusinessPartner(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
         case 'UPDATE_BUSINESS_PART_RES':
+            {
+                return action.payload;
+            }
+        default:
+            return state;
+    }
+}
+function fretronReferenceNumber(state, action) {
+    if (state === void 0) { state = null; }
+    switch (action.type) {
+        case 'FRETRON_REFERENCE_NUMBER':
             {
                 return action.payload;
             }
@@ -7183,6 +7427,7 @@ var BusinessPartnerService = (function () {
         this.updateBusinessPartner = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.getAllBusinessPartners = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.getOrganisation = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.getFretronReferenceNumber = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         /************* add Business Partner   *************/
         this.addBusinessPartner.subscribe(function (obj) {
             _this.addNewBusinessPartner(__WEBPACK_IMPORTED_MODULE_4__environments_environment__["b" /* path */].ADD_BUSINESS_PARTNER, obj).subscribe(function (response) {
@@ -7302,6 +7547,14 @@ var BusinessPartnerService = (function () {
                 _this._store.dispatch({ type: "ORGANISATION_STORE", payload: res });
             });
         });
+        /******get fretron reference number ****/
+        this.getFretronReferenceNumber.subscribe(function (path) {
+            _this.checkFretronReferenceNumber(path).subscribe(function (res) {
+                if (res == null)
+                    return;
+                _this._store.dispatch({ type: "FRETRON_REFERENCE_NUMBER", payload: res });
+            });
+        });
     } // constructor close here
     BusinessPartnerService.prototype.ngOnDestroy = function () {
     };
@@ -7369,6 +7622,21 @@ var BusinessPartnerService = (function () {
         });
     };
     BusinessPartnerService.prototype.requestGetOrganisation = function (path) {
+        console.log("organisation getter method requested");
+        var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var bearerToken = "Bearer " + authToken;
+        headers.set('authorization', bearerToken);
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
+            headers: headers,
+        });
+        return this.http.request(path, requestOptions).map(function (response) {
+            // console.log(response);
+            return response.json();
+        });
+    };
+    BusinessPartnerService.prototype.checkFretronReferenceNumber = function (path) {
         console.log("organisation getter method requested");
         var authToken = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
