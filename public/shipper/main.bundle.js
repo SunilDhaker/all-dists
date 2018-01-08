@@ -1022,6 +1022,7 @@ var BusinessPartnerComponent = (function () {
             this.unSub_businessPartnerList.unsubscribe();
         if (this.unSub_deleteBusinessPartner != null && this.unSub_deleteBusinessPartner != undefined)
             this.unSub_deleteBusinessPartner.unsubscribe();
+        this.store.dispatch({ type: "DELETE_BUSINESS_PART", payload: null });
     };
     BusinessPartnerComponent.prototype.ngOnInit = function () {
     };
