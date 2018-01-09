@@ -3634,7 +3634,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/HMEL-admin/shipment-orders/create-shipment-order/create-shipment-order.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\" style=\"position: absolute;\"></mat-spinner>\r\n\r\n<div style=\"padding: 15px;height: calc(100vh - 91px);overflow:auto\">\r\n  <div>\r\n    <span class=\"header-text\">Create Shipment Order</span>\r\n  </div>\r\n\r\n  <div class=\"form-box\">\r\n    <div style=\"margin-top: 20px\" fxLayout=\"row\">\r\n      <mat-form-field fxFlex style=\"margin-right: 15px\">\r\n        <input matInput [(ngModel)]=\"shipmentOrderNo\" placeholder=\"Shipment Order No\" required>\r\n      </mat-form-field>\r\n\r\n      <div fxFlex style=\"margin-right: 5px;\" [style.margin-top]=\"(shipmentOrderDate ==null)?'22px':'0px'\">\r\n        <div *ngIf=\"shipmentOrderDate !=null\" style=\"margin-bottom: 4px;\">\r\n          <span style=\"white-space: nowrap;font-size:12px\">\r\n            <b>Order Date</b>\r\n          </span>\r\n        </div>\r\n        <owl-date-time matInput hourFormat='12' [autoClose]=\"false\" dateFormat=\"DD/MMM/YYYY hh:mm a\" [(ngModel)]=\"shipmentOrderDate\"\r\n          placeHolder=\"Select Order Date\" required></owl-date-time>\r\n      </div>\r\n\r\n      <mat-form-field fxFlex>\r\n        <mat-select [(ngModel)]=\"shipmentOrderType\" placeholder=\"Shipment Order Type\">\r\n          <mat-option value=\"Inbound\">Inbound</mat-option>\r\n          <mat-option value=\"Outbound\">Outbound</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n    </div>\r\n\r\n    <div style=\"margin-top: 10px\" fxLayout=\"row\">\r\n        <mat-form-field fxFlex style=\"margin-right: 15px\">\r\n            <mat-select [(ngModel)]=\"TBPName\" placeholder=\"Transport business partner name\" required>\r\n              <!--<mat-option value=\"\">select</mat-option>-->\r\n              <mat-option *ngFor=\"let trBusinessPart of trBusinessPartners\" value=\"{{trBusinessPart['uuid']}}\">{{trBusinessPart['partnerName']}}</mat-option>\r\n            </mat-select>\r\n          </mat-form-field>\r\n\r\n      <mat-form-field fxFlex style=\"margin-right: 10px\">\r\n        <mat-select [(ngModel)]=\"consignor\" placeholder=\" Select Consignor\" required>\r\n          <mat-option *ngFor=\"let selConsignor of consignorList\" value=\"{{selConsignor.freightLocationId}}\">{{selConsignor.name}}</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n\r\n      <mat-form-field fxFlex>\r\n        <mat-select [(ngModel)]=\"consignee\" placeholder=\"Consignee\" required>\r\n          <mat-option *ngFor=\"let selConsignee of consigneeList\" value=\"{{selConsignee.freightLocation}}\" (click)=\"consigneeObj =selConsignee\">{{selConsignee.partnerName}}</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n    </div>\r\n\r\n    <div style=\"margin-top: 10px\" fxLayout=\"row\">\r\n        <mat-form-field fxFlex style=\"margin-right: 15px;\">\r\n            <input matInput [(ngModel)]=\"material\" placeholder=\"Material\">\r\n          </mat-form-field>\r\n\r\n      <mat-form-field fxFlex style=\"margin-right: 15px\">\r\n        <input matInput type=\"number\" [(ngModel)]=\"quantity\" placeholder=\"Quantity\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field fxFlex>\r\n        <mat-select [(ngModel)]=\"UOM\" placeholder=\"Quantity UOM\">\r\n          <mat-option value=\"tonne\">Tonne</mat-option>\r\n          <mat-option value=\"pieces\">Pieces</mat-option>\r\n          <mat-option value=\"packets\">Packets</mat-option>\r\n          <mat-option value=\"litres\">Litres</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n    </div>\r\n\r\n    <div style=\"margin-top: 10px\" fxLayout=\"row\">\r\n\r\n        <div fxFlex style=\"margin-right: 15px; margin-top: 22px;\">\r\n            <owl-date-time matInput [autoClose]=\"true\" hourFormat='12' dateFormat=\"DD/MMM/YYYY hh:mm a\" [(ngModel)]=\"plannedStartTime\"\r\n              placeHolder=\"Planned Start Time\" required></owl-date-time>\r\n          </div>\r\n\r\n      <div fxFlex style=\"margin-right:15px; margin-top: 22px;\">\r\n        <owl-date-time matInput [autoClose]=\"true\" hourFormat='12' dateFormat=\"DD/MMM/YYYY hh:mm a\" [(ngModel)]=\"plannedEndTime\"\r\n          placeHolder=\"Planned End Time\"></owl-date-time>\r\n      </div>\r\n\r\n      <mat-form-field fxFlex style=\"margin-right: 15px;\">\r\n          <input matInput style='text-transform:uppercase' (blur)=\"checkVehicleRegNoExist()\" [(ngModel)]=\"vehicleRegNo\" placeholder=\"vehicle reg No\"\r\n            required>\r\n        </mat-form-field>\r\n\r\n    </div>\r\n\r\n\r\n\r\n    <div style=\"margin-top: 10px\" fxLayout=\"row\">\r\n      <div style=\"margin-right: 15px;\" fxFlex>\r\n        <mat-form-field style=\"width: calc(100% - 22px);\">\r\n          <input type=\"number\" matInput [(ngModel)]=\"distance\" placeholder=\"distance\">\r\n        </mat-form-field>\r\n        <span style=\"font-size:12px\"> km</span>\r\n      </div>\r\n\r\n      <mat-form-field fxFlex style=\"margin-right: 15px\">\r\n        <mat-select [(ngModel)]=\"trackMode\" placeholder=\"Select Track Mode\" required>\r\n          <mat-option value=\"Manual\">Manual</mat-option>\r\n          <mat-option value=\"Tracker\">Tracker</mat-option>\r\n          <mat-option *ngIf=\"isVehicleExist\" value=\"Trip\">Tracknet</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n\r\n      <div fxFlex style=\"margin-left: 15px;\">\r\n        <mat-form-field *ngIf=\"trackMode =='Tracker'\" style=\"width:100%;\">\r\n          <input matInput [(ngModel)]=\"imei\" placeholder=\"IMEI\" required>\r\n        </mat-form-field>\r\n      </div>\r\n    </div>\r\n\r\n    <div style=\"margin-top: 10px;text-align: right;padding: 10px 10px\">\r\n      <button mat-raised-button style=\"margin-right: 15px\" (click)=\"cancel()\">Cancel</button>\r\n      <button mat-raised-button color=\"primary\" (click)=\"createShipmentOrder()\">Create</button>\r\n    </div>\r\n  </div>\r\n</div>\r\n<div style=\"left: 16px;position: absolute;width: calc(100% - 29px);bottom: 8px;\" >\r\n  <button style=\"text-align: left;line-height: 1.9;background-color: #e1cfe4;\" *ngFor=\"let recentShimentOrder of recentShimentOrders\" mat-raised-button\r\n          (click)=\"setValueFromHistory(recentShimentOrder)\"\r\n  ><b>To:</b>{{recentShimentOrder['selectedConsignee']['partnerName']}} <br> <b>By:</b>{{recentShimentOrder['selectedBusinessPartner']['partnerName']}}</button>\r\n</div>\r\n"
+module.exports = "<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\" style=\"position: absolute;\"></mat-spinner>\r\n\r\n<div style=\"padding: 15px;height: calc(100vh - 91px);overflow:auto\">\r\n  <div>\r\n    <span class=\"header-text\">Create Shipment Order</span>\r\n  </div>\r\n\r\n  <div class=\"form-box\">\r\n    <div style=\"margin-top: 20px\" fxLayout=\"row\">\r\n      <mat-form-field fxFlex style=\"margin-right: 15px\">\r\n        <input matInput [(ngModel)]=\"shipmentOrderNo\" placeholder=\"Shipment Order No\" required>\r\n      </mat-form-field>\r\n\r\n      <div fxFlex style=\"margin-right: 5px;\" [style.margin-top]=\"(shipmentOrderDate ==null)?'22px':'0px'\">\r\n        <div *ngIf=\"shipmentOrderDate !=null\" style=\"margin-bottom: 4px;\">\r\n          <span style=\"white-space: nowrap;font-size:12px\">\r\n            <b>Order Date</b>\r\n          </span>\r\n        </div>\r\n        <owl-date-time matInput hourFormat='12' [autoClose]=\"false\" dateFormat=\"DD/MMM/YYYY hh:mm a\" [(ngModel)]=\"shipmentOrderDate\"\r\n          placeHolder=\"Select Order Date\" required></owl-date-time>\r\n      </div>\r\n\r\n      <mat-form-field fxFlex>\r\n        <mat-select [(ngModel)]=\"shipmentOrderType\" placeholder=\"Shipment Order Type\">\r\n          <mat-option value=\"Inbound\">Inbound</mat-option>\r\n          <mat-option value=\"Outbound\">Outbound</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n    </div>\r\n\r\n    <div style=\"margin-top: 10px\" fxLayout=\"row\">\r\n        <mat-form-field fxFlex style=\"margin-right: 15px\">\r\n            <mat-select [(ngModel)]=\"TBPName\" placeholder=\"Transport business partner name\" required>\r\n              <!--<mat-option value=\"\">select</mat-option>-->\r\n              <mat-option *ngFor=\"let trBusinessPart of trBusinessPartners\" value=\"{{trBusinessPart['uuid']}}\">{{trBusinessPart['partnerName']}}</mat-option>\r\n            </mat-select>\r\n          </mat-form-field>\r\n\r\n      <mat-form-field fxFlex style=\"margin-right: 10px\">\r\n        <mat-select [(ngModel)]=\"consignor\" placeholder=\" Select Consignor\" required>\r\n          <mat-option *ngFor=\"let selConsignor of consignorList\" value=\"{{selConsignor.freightLocationId}}\">{{selConsignor.name}}</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n\r\n      <mat-form-field fxFlex>\r\n        <mat-select [(ngModel)]=\"consignee\" placeholder=\"Consignee\" required>\r\n          <mat-option *ngFor=\"let selConsignee of consigneeList\" value=\"{{selConsignee.freightLocation}}\" (click)=\"consigneeObj =selConsignee\">{{selConsignee.partnerName}}</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n    </div>\r\n\r\n    <div style=\"margin-top: 10px\" fxLayout=\"row\">\r\n        <mat-form-field fxFlex style=\"margin-right: 15px;\">\r\n            <input matInput [(ngModel)]=\"material\" placeholder=\"Material\">\r\n          </mat-form-field>\r\n\r\n      <mat-form-field fxFlex style=\"margin-right: 15px\">\r\n        <input matInput type=\"number\" [(ngModel)]=\"quantity\" placeholder=\"Quantity\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field fxFlex>\r\n        <mat-select [(ngModel)]=\"UOM\" placeholder=\"Quantity UOM\">\r\n          <mat-option value=\"tonne\">Tonne</mat-option>\r\n          <mat-option value=\"pieces\">Pieces</mat-option>\r\n          <mat-option value=\"packets\">Packets</mat-option>\r\n          <mat-option value=\"litres\">Litres</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n    </div>\r\n\r\n    <div style=\"margin-top: 10px\" fxLayout=\"row\">\r\n\r\n        <div fxFlex style=\"margin-right: 15px; margin-top: 22px;\">\r\n            <owl-date-time matInput [autoClose]=\"true\" hourFormat='12' dateFormat=\"DD/MMM/YYYY hh:mm a\" [(ngModel)]=\"plannedStartTime\"\r\n              placeHolder=\"Planned Start Time\" required></owl-date-time>\r\n          </div>\r\n\r\n      <div fxFlex style=\"margin-right:15px; margin-top: 22px;\">\r\n        <owl-date-time matInput [autoClose]=\"true\" hourFormat='12' dateFormat=\"DD/MMM/YYYY hh:mm a\" [(ngModel)]=\"plannedEndTime\"\r\n          placeHolder=\"Planned End Time\"></owl-date-time>\r\n      </div>\r\n\r\n      <mat-form-field fxFlex style=\"margin-right: 15px;\">\r\n          <input matInput style='text-transform:uppercase' (blur)=\"checkVehicleRegNoExist()\" [(ngModel)]=\"vehicleRegNo\" placeholder=\"vehicle reg No\"\r\n            required>\r\n        </mat-form-field>\r\n\r\n    </div>\r\n\r\n\r\n\r\n    <div style=\"margin-top: 10px\" fxLayout=\"row\">\r\n      <div style=\"margin-right: 15px;\" fxFlex>\r\n        <mat-form-field style=\"width: calc(100% - 22px);\">\r\n          <input type=\"number\" matInput [(ngModel)]=\"distance\" placeholder=\"distance\">\r\n        </mat-form-field>\r\n        <span style=\"font-size:12px\"> km</span>\r\n      </div>\r\n\r\n      <mat-form-field fxFlex style=\"margin-right: 15px\">\r\n        <mat-select [(ngModel)]=\"trackMode\" placeholder=\"Select Track Mode\" required>\r\n          <mat-option value=\"Manual\">Manual</mat-option>\r\n          <mat-option value=\"Tracker\">Tracker</mat-option>\r\n          <mat-option *ngIf=\"isVehicleExist\" value=\"Trip\">Tracknet</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n\r\n      <div fxFlex style=\"margin-left: 15px;\">\r\n        <mat-form-field *ngIf=\"trackMode =='Tracker'\" style=\"width:100%;\">\r\n          <input matInput [(ngModel)]=\"imei\" placeholder=\"IMEI\" required>\r\n        </mat-form-field>\r\n      </div>\r\n    </div>\r\n\r\n    <div style=\"margin-top: 10px;text-align: right;padding: 10px 10px\">\r\n      <button mat-raised-button style=\"margin-right: 15px\" (click)=\"cancel()\">Cancel</button>\r\n      <button mat-raised-button color=\"primary\" (click)=\"createShipmentOrder()\">Create</button>\r\n    </div>\r\n  </div>\r\n</div>\r\n<div style=\"left: 16px;position: absolute;width: calc(100% - 29px);bottom: 8px;\" >\r\n  <button style=\"text-align: left;line-height: 1.9;background-color: #e1cfe4;margin-left: 5px\" *ngFor=\"let recentShimentOrder of recentShimentOrders\" mat-raised-button\r\n          (click)=\"setValueFromHistory(recentShimentOrder)\"\r\n  ><b>To:</b>{{recentShimentOrder['selectedConsignee']['partnerName']}} <br> <b>By:</b>{{recentShimentOrder['selectedBusinessPartner']['partnerName']}}</button>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -3696,7 +3696,7 @@ var CreateShipmentOrder = (function () {
         this.consignee = '';
         this.material = '';
         this.quantity = '';
-        this.UOM = '';
+        this.UOM = 'tonne';
         this.consigneeList = [];
         this.consignorList = [];
         // public selectedBusinessPartner: any;
@@ -3769,6 +3769,7 @@ var CreateShipmentOrder = (function () {
             _this.consignorList = [];
             _this.consignorList.push(response['data']);
         });
+        this.shipmentOrderDate = new Date();
     } //constructor close
     CreateShipmentOrder.prototype.ngOnDestroy = function () {
         console.log("add freight dialog close");
@@ -3793,13 +3794,17 @@ var CreateShipmentOrder = (function () {
     };
     CreateShipmentOrder.prototype.ngOnInit = function () {
         this.recentShimentOrders = this.localStorageService.get('RECENT_SHO');
-        console.log(this.recentShimentOrders);
+        var shoNo = this.localStorageService.get('PREVIOUS_SHO_NO');
+        if (shoNo != null) {
+            this.shipmentOrderNo = "" + shoNo;
+        }
     };
     //this method use for : take data from localstorage and show at the bottom of page
     CreateShipmentOrder.prototype.setValueFromHistory = function (value) {
         console.log(value);
         var isConsigneeAvaiable = false;
         var isTBPAvaiable = false;
+        var isConsignorAvaiable = false;
         for (var i = 0; i < this.consigneeList.length; i++) {
             if (value['selectedConsignee']['freightLocation'] == this.consigneeList[i]['freightLocation']) {
                 isConsigneeAvaiable = true;
@@ -3810,10 +3815,17 @@ var CreateShipmentOrder = (function () {
                 isTBPAvaiable = true;
             }
         }
+        for (var i = 0; i < this.consignorList.length; i++) {
+            if (value['freightUnits'][0]['consigner'] == this.consignorList[i]['freightLocationId']) {
+                isConsignorAvaiable = true;
+            }
+        }
         this.consignee = (isConsigneeAvaiable) ? value['selectedConsignee']['freightLocation'] : '';
+        this.consignor = (isConsignorAvaiable) ? value['freightUnits'][0]['consigner'] : '';
         this.TBPName = (isTBPAvaiable) ? value['selectedBusinessPartner']['uuid'] : '';
         this.material = value['freightUnits'][0]['material'];
         this.distance = ((value['freightUnits'][0]['distance']) / 1000);
+        this.shipmentOrderType = value['shipmentType'];
     };
     // **************************************************************************************************
     CreateShipmentOrder.prototype.checkVehicleRegNoExist = function () {
@@ -3898,7 +3910,7 @@ var CreateShipmentOrder = (function () {
                 break;
             }
         }
-        recentSho['unicKey'] = recentSho['selectedConsignee']['freightLocation'] + '_' + recentSho['selectedBusinessPartner']['uuid'];
+        recentSho['unicKey'] = freightUnit['consigner'] + '_' + recentSho['selectedConsignee']['freightLocation'] + '_' + recentSho['selectedBusinessPartner']['uuid'];
         var recentSHO_LIST = this.localStorageService.get('RECENT_SHO');
         console.log(recentSHO_LIST);
         if (recentSHO_LIST != undefined && recentSHO_LIST != null) {
@@ -3922,9 +3934,9 @@ var CreateShipmentOrder = (function () {
             var shoList = [];
             shoList.push(recentSho);
             this.localStorageService.set('RECENT_SHO', shoList);
-            // console.log(shoList);
         }
-    };
+        this.localStorageService.set('PREVIOUS_SHO_NO', this.shipmentOrderNo);
+    }; //close recentSho methods
     CreateShipmentOrder.prototype.checkValidation = function () {
         if (this.shipmentOrderNo == '' || this.shipmentOrderNo == null) {
             this.openSnackBar("Please fill Shipment order Number");
@@ -3936,10 +3948,6 @@ var CreateShipmentOrder = (function () {
         }
         if (this.consignee == '' || this.consignee == null) {
             this.openSnackBar("Please select Consignee");
-            return false;
-        }
-        if (this.shipmentOrderDate == '' || this.shipmentOrderDate == null) {
-            this.openSnackBar("Please fill Shipment order date");
             return false;
         }
         if (this.plannedStartTime == '' || this.plannedStartTime == null) {
@@ -6524,9 +6532,9 @@ var GOOGLE_PROVIDERS = {
     }
 };
 var BASE_IP = {
-    // BASE:'https://shippermanagementg2963f8fc.jp1.hana.ondemand.com/ShipperManagement/api',
+    BASE: 'https://shippermanagementg2963f8fc.jp1.hana.ondemand.com/ShipperManagement/api',
     // BASE:'http://192.168.0.91:2122',
-    BASE: 'http://192.168.0.153',
+    // BASE:'http://192.168.0.153',
     IP: 'http://apis.fretron.com',
     ORG_MANAGER: 'http://apis.fretron.com/organisation',
 };
