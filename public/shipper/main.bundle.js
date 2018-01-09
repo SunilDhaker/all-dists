@@ -464,7 +464,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/HMEL-admin/dashboard/add-business-partner/add-business-partner.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" style=\"position: absolute;\" class=\"spinner\"></mat-spinner>\r\n<div (keyup.Enter)=\"addFreightLocation()\">\r\n  <div style=\"font-size:21px;color:#8a8c8e;padding: 5px;\" >\r\n    <span>Add Business Partner</span>\r\n  </div>\r\n\r\n  <div>\r\n    <div  style=\"display:flex;flex-wrap: wrap;\">\r\n      <div  style=\"min-width: 200px;position: relative;padding: 10px;margin-top: 5px;width: 60%;\" >\r\n        <div style=\"position: relative;\" >\r\n          <div style=\"width:95%; margin-left: auto; margin-right: auto;margin-bottom: -31px;\">\r\n            <div class=\"my-map-search\">\r\n              <input [disabled]=\"type !='customer'\" id=\"pac-input\" type=\"text\" class=\"search\" matTooltip=\"Address search Here\" placeholder=\"Address Search Here\" >\r\n              <i class=\"fa fa-search\" aria-hidden=\"true\" style=\"right: 10px;top: 7px;font-size: 15px;position: absolute;\"></i>\r\n            </div>\r\n          </div>\r\n\r\n          <mat-button-toggle-group [disabled] =\"type != 'customer'\"  class=\"my-toggle\" #group=\"matButtonToggleGroup\" [(ngModel)]=\"mapType\">\r\n            <mat-button-toggle value=\"hybrid\">\r\n              <span>Satellite</span>\r\n            </mat-button-toggle>\r\n            <mat-button-toggle value=\"roadmap\" style=\"background-color:floralwhite;\" [style.opacity]=\"(mapType =='roadmap')?'.8':'.6'\">\r\n              <span>Map</span>\r\n            </mat-button-toggle>\r\n          </mat-button-toggle-group>\r\n\r\n          <agm-map [streetViewControl]=\"mapOption.streetViewControl\" [zoomControl]=\"mapOption.zoomControl\" [mapDraggable]=\"mapOption.isMapDraggable\" [disableDefaultUI]=\"mapOption.disableDefaultUI\" [scrollwheel]=\"mapOption.scrollwheel\" [clickableIcons]=\"mapOption.clickableIcons\"\r\n                   [mapTypeId]=\"mapType\" style=\"height: 50vh;\" [latitude]=\"latitude\" [longitude]=\"longitude\" [zoom]=\"5\">\r\n            <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\">\r\n            </agm-marker>\r\n          </agm-map>\r\n        </div>\r\n      </div>\r\n\r\n      <div fxFlex style=\"padding: 5px\" >\r\n        <mat-form-field style=\"width: 100%\">\r\n          <mat-select [disabled]=\"isClicked ==true\" [(ngModel)]='type' placeholder=\"Type\" (change)=\"disableMap()\" required>\r\n            <mat-option value=\"customer\">Customer</mat-option>\r\n            <mat-option value=\"transporter\">Transporter</mat-option>\r\n          </mat-select>\r\n        </mat-form-field>\r\n\r\n        <div>\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input matInput [disabled]=\"isClicked ==true\"   [style.color]=\"isFRNValid==true?'red':'black'\"   [(ngModel)]=\"fretronRefNo\" placeholder=\"Fretron Reference No\" (keyup)=\"checkFretronReferenceNumber(fretronRefNo)\">\r\n          </mat-form-field>\r\n\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"businessPartnerName\" placeholder=\"Business Partner Name\" required>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input [disabled]=\"isClicked ==true\"  matInput [(ngModel)]=\"address\" placeholder=\"Address\">\r\n          </mat-form-field>\r\n\r\n          <div style=\"display: flex;flex-wrap: wrap;\" >\r\n            <mat-form-field style=\"margin-right: auto\" >\r\n              <input [disabled]=\"isClicked ==true\"  matInput  [(ngModel)]=\"state\" placeholder=\"State\" >\r\n            </mat-form-field>\r\n\r\n            <mat-form-field style=\"margin-left: 2px\" >\r\n              <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"zip\" placeholder=\"PIN/ZIP\">\r\n            </mat-form-field>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"contact-detail\">\r\n      <mat-form-field style=\"margin-right: 10px;width: 30%;min-width: 200px;\">\r\n        <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"contactPersonName\" placeholder=\"Contact Person Name\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field style=\"margin-right :10px;margin-left :10px;width: 30%;min-width: 200px;\" >\r\n        <input [disabled]=\"isClicked ==true\"  matInput type=\"email\" [(ngModel)]=\"email\" placeholder=\"Email\"\r\n               pattern=\"[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}\" >\r\n      </mat-form-field>\r\n\r\n      <mat-form-field style=\"margin-left :10px;width: 30%;min-width: 200px;\">\r\n        <input [disabled]=\"isClicked ==true\"  matInput type=\"number\" [(ngModel)]=\"mobileNo\" placeholder=\"MobileNo\" onkeydown=\"if(event.target.value.length>=10 && event.keyCode!=8 && event.keyCode!=13 )return false;\"\r\n               pattern=\"[0-9]{10}\" >\r\n      </mat-form-field>\r\n    </div>\r\n  </div>\r\n\r\n  <div style=\"text-align: right;padding: 12px;\" >\r\n    <button matTooltip=\"CANCEL / BACK\"  mat-raised-button (click)=\"cancel()\" class=\"status-button\" >Cancel</button>\r\n    <button [disabled]=\"businessPartnerName =='' || isClicked ==true\" matTooltip=\"Add New Business Partner\" color=\"primary\"  mat-raised-button (click)=\"addFreightLocation()\" class=\"status-button\" >Add Business Partner</button>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" style=\"position: absolute;\" class=\"spinner\"></mat-spinner>\r\n<div (keyup.Enter)=\"addFreightLocation()\">\r\n  <div style=\"font-size:21px;color:#8a8c8e;padding: 5px;\" >\r\n    <span>Add Business Partner</span>\r\n  </div>\r\n\r\n  <div>\r\n    <div  style=\"display:flex;flex-wrap: wrap;\">\r\n      <div  style=\"min-width: 200px;position: relative;padding: 10px;margin-top: 5px;width: 60%;\" >\r\n        <div style=\"position: relative;\" >\r\n          <div style=\"width:95%; margin-left: auto; margin-right: auto;margin-bottom: -31px;\">\r\n            <div class=\"my-map-search\">\r\n              <input [disabled]=\"type !='customer'\" id=\"pac-input\" type=\"text\" class=\"search\" matTooltip=\"Address search Here\" placeholder=\"Address Search Here\" >\r\n              <i class=\"fa fa-search\" aria-hidden=\"true\" style=\"right: 10px;top: 7px;font-size: 15px;position: absolute;\"></i>\r\n            </div>\r\n          </div>\r\n\r\n          <mat-button-toggle-group [disabled] =\"type != 'customer'\"  class=\"my-toggle\" #group=\"matButtonToggleGroup\" [(ngModel)]=\"mapType\">\r\n            <mat-button-toggle value=\"hybrid\">\r\n              <span>Satellite</span>\r\n            </mat-button-toggle>\r\n            <mat-button-toggle value=\"roadmap\" style=\"background-color:floralwhite;\" [style.opacity]=\"(mapType =='roadmap')?'.8':'.6'\">\r\n              <span>Map</span>\r\n            </mat-button-toggle>\r\n          </mat-button-toggle-group>\r\n\r\n          <agm-map [streetViewControl]=\"mapOption.streetViewControl\" [zoomControl]=\"mapOption.zoomControl\" [mapDraggable]=\"mapOption.isMapDraggable\" [disableDefaultUI]=\"mapOption.disableDefaultUI\" [scrollwheel]=\"mapOption.scrollwheel\" [clickableIcons]=\"mapOption.clickableIcons\"\r\n                   [mapTypeId]=\"mapType\" style=\"height: 50vh;\" [latitude]=\"latitude\" [longitude]=\"longitude\" [zoom]=\"5\">\r\n            <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\">\r\n            </agm-marker>\r\n          </agm-map>\r\n        </div>\r\n      </div>\r\n\r\n      <div fxFlex style=\"padding: 5px\" >\r\n        <mat-form-field style=\"width: 100%\">\r\n          <mat-select [disabled]=\"isClicked ==true\" [(ngModel)]='type' placeholder=\"Type\" (change)=\"disableMap(); checkFRN()\" required>\r\n            <mat-option value=\"customer\">Customer</mat-option>\r\n            <mat-option value=\"transporter\">Transporter</mat-option>\r\n          </mat-select>\r\n        </mat-form-field>\r\n\r\n        <div>\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input matInput [disabled]=\"isClicked ==true\"   [style.color]=\"isFRNValid?'black':'red'\" [(ngModel)]=\"fretronRefNo\" placeholder=\"Fretron Reference No\" (keyup)=\"checkFretronReferenceNumber(fretronRefNo)\">\r\n          </mat-form-field>\r\n\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"businessPartnerName\" placeholder=\"Business Partner Name\" required>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input [disabled]=\"isClicked ==true\"  matInput [(ngModel)]=\"address\" placeholder=\"Address\">\r\n          </mat-form-field>\r\n\r\n          <div style=\"display: flex;flex-wrap: wrap;\" >\r\n            <mat-form-field style=\"margin-right: auto\" >\r\n              <input [disabled]=\"isClicked ==true\"  matInput  [(ngModel)]=\"state\" placeholder=\"State\" >\r\n            </mat-form-field>\r\n\r\n            <mat-form-field style=\"margin-left: 2px\" >\r\n              <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"zip\" placeholder=\"PIN/ZIP\">\r\n            </mat-form-field>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"contact-detail\">\r\n      <mat-form-field style=\"margin-right: 10px;width: 30%;min-width: 200px;\">\r\n        <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"contactPersonName\" placeholder=\"Contact Person Name\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field style=\"margin-right :10px;margin-left :10px;width: 30%;min-width: 200px;\" >\r\n        <input [disabled]=\"isClicked ==true\"  matInput type=\"email\" [(ngModel)]=\"email\" placeholder=\"Email\"\r\n               pattern=\"[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}\" >\r\n      </mat-form-field>\r\n\r\n      <mat-form-field style=\"margin-left :10px;width: 30%;min-width: 200px;\">\r\n        <input [disabled]=\"isClicked ==true\"  matInput type=\"number\" [(ngModel)]=\"mobileNo\" placeholder=\"MobileNo\" onkeydown=\"if(event.target.value.length>=10 && event.keyCode!=8 && event.keyCode!=13 )return false;\"\r\n               pattern=\"[0-9]{10}\" >\r\n      </mat-form-field>\r\n    </div>\r\n  </div>\r\n\r\n  <div style=\"text-align: right;padding: 12px;\" >\r\n    <button matTooltip=\"CANCEL / BACK\"  mat-raised-button (click)=\"cancel()\" class=\"status-button\" >Cancel</button>\r\n    <button [disabled]=\"businessPartnerName =='' || isClicked ==true\" matTooltip=\"Add New Business Partner\" color=\"primary\"  mat-raised-button (click)=\"addFreightLocation()\" class=\"status-button\" >Add Business Partner</button>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -532,7 +532,8 @@ var AddBusinessPartnerComponent = (function () {
         this.unSub_checkFretronReferenceNumber = null;
         this.orgId = null;
         this.fretronReferenceNoUuid = null;
-        this.isFRNValid = false;
+        this.isFRNValid = true;
+        this.orgType = '';
         this.fretronReferenceNumberPath = __WEBPACK_IMPORTED_MODULE_7__environments_environment__["b" /* path */].CHECK_FRETRON_REFERECE_NUMBER;
         console.log("constructor");
         // dispatched from create freight location services
@@ -578,19 +579,32 @@ var AddBusinessPartnerComponent = (function () {
             console.log(res);
             if (res == null)
                 return;
-            if (res['status'] == 200) {
+            if (res['status'] == 200 && res['organisation'] != undefined) {
+                _this.orgType = res['organisation']['type'];
                 _this.fretronReferenceNoUuid = res['organisation']['uuid'];
-                _this.isFRNValid = false;
+                _this.isFRNValid = true;
             }
             else {
-                if (_this.fretronRefNo != null || _this.fretronRefNo != undefined || _this.fretronRefNo != '') {
-                    if (_this.fretronRefNo.length > 0) {
+                _this.orgType = null;
+                _this.fretronReferenceNoUuid = null;
+                _this.isFRNValid = false;
+            }
+            if (_this.orgType != null) {
+                if (_this.type.toUpperCase() == "TRANSPORTER") {
+                    if (_this.type.toUpperCase() == _this.orgType)
                         _this.isFRNValid = true;
-                        _this.fretronReferenceNoUuid = null;
-                    }
-                    _this.fretronReferenceNoUuid = null;
+                    else
+                        _this.isFRNValid = false;
+                }
+                else {
+                    if (_this.orgType == "TRANSPORTER")
+                        _this.isFRNValid = false;
+                    else
+                        _this.isFRNValid = true;
                 }
             }
+            if (_this.fretronRefNo == undefined || _this.fretronRefNo.length == 0)
+                _this.isFRNValid = true;
         });
     } // close constructor
     AddBusinessPartnerComponent.prototype.ngOnDestroy = function () {
@@ -778,7 +792,7 @@ var AddBusinessPartnerComponent = (function () {
         this.map.setZoom(14);
     };
     AddBusinessPartnerComponent.prototype.addFreightLocation = function () {
-        if (!this.isFRNValid) {
+        if (this.isFRNValid) {
             if (this.type == 'transporter') {
                 if (this.checkValidation()) {
                     this.isClicked = true;
@@ -867,6 +881,9 @@ var AddBusinessPartnerComponent = (function () {
             mobileNo: this.mobileNo,
             'fretronReferenceNoUuid': this.fretronReferenceNoUuid
         };
+        if (this.fretronReferenceNoUuid == null) {
+            obj['fretronReferenceNo'] = null;
+        }
         if (this.fretronRefNo != '') {
             obj['fretronReferenceNo'] = this.fretronRefNo;
         }
@@ -885,18 +902,15 @@ var AddBusinessPartnerComponent = (function () {
     };
     //method to check existance of fretron reference number
     AddBusinessPartnerComponent.prototype.checkFretronReferenceNumber = function (fretronReferenceNumber) {
-        if (fretronReferenceNumber == null || fretronReferenceNumber == undefined || fretronReferenceNumber == '') {
-            if (fretronReferenceNumber.length == 0)
-                this.isFRNValid = false;
-        }
-        var frPath = __WEBPACK_IMPORTED_MODULE_7__environments_environment__["b" /* path */].CHECK_FRETRON_REFERECE_NUMBER + '?fretronReferenceNumber=' + fretronReferenceNumber;
-        if (fretronReferenceNumber != '') {
+        if (fretronReferenceNumber != null || fretronReferenceNumber != undefined || fretronReferenceNumber != '') {
+            var frPath = __WEBPACK_IMPORTED_MODULE_7__environments_environment__["b" /* path */].CHECK_FRETRON_REFERECE_NUMBER + '?fretronReferenceNumber=' + fretronReferenceNumber;
             this.businessPartnerService.getFretronReferenceNumber.emit(frPath);
         }
-        else {
-            this.fretronRefNo = null;
-            this.fretronReferenceNoUuid = null;
-        }
+    };
+    AddBusinessPartnerComponent.prototype.checkFRN = function () {
+        var frPath = __WEBPACK_IMPORTED_MODULE_7__environments_environment__["b" /* path */].CHECK_FRETRON_REFERECE_NUMBER + '?fretronReferenceNumber=' + this.fretronRefNo;
+        if (this.fretronRefNo != '' || this.fretronRefNo != null || this.fretronRefNo != undefined)
+            this.businessPartnerService.getFretronReferenceNumber.emit(frPath);
     };
     return AddBusinessPartnerComponent;
 }()); //close class
@@ -1285,7 +1299,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/HMEL-admin/dashboard/update-business-partner/update-business-partner.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" style=\"position: absolute;\" class=\"spinner\"></mat-spinner>\r\n<div (keyup.Enter)=\"updateBusinesPart()\">\r\n  <div style=\"font-size:21px;color:#8a8c8e;padding: 5px;\" >\r\n    <span>Update Business Partner</span>\r\n  </div>\r\n\r\n  <div>\r\n    <div  style=\"display:flex;flex-wrap: wrap;\">\r\n      <div  style=\"min-width: 200px;position: relative;padding: 10px;margin-top: 5px;width: 60%;\" >\r\n        <div style=\"position: relative;\" >\r\n\r\n          <div style=\"width:95%; margin-left: auto; margin-right: auto;margin-bottom: -31px;\">\r\n            <div class=\"my-map-search\">\r\n              <input [disabled]=\"businesPartnerObject.type != 'customer'\" id=\"pac-input\" type=\"text\" class=\"search\" matTooltip=\"Address search Here\" placeholder=\"Address Search Here\" >\r\n              <i class=\"fa fa-search\" aria-hidden=\"true\" style=\"right: 10px;top: 7px;font-size: 15px;position: absolute;\"></i>\r\n            </div>\r\n          </div>\r\n\r\n          <mat-button-toggle-group [disabled] =\"businesPartnerObject.type != 'customer'\"  class=\"my-toggle\" #group=\"matButtonToggleGroup\" [(ngModel)]=\"mapType\">\r\n            <mat-button-toggle value=\"hybrid\">\r\n              <span>Satellite</span>\r\n            </mat-button-toggle>\r\n            <mat-button-toggle value=\"roadmap\" style=\"background-color:floralwhite;\" [style.opacity]=\"(mapType =='roadmap')?'.8':'.6'\">\r\n              <span>Map</span>\r\n            </mat-button-toggle>\r\n          </mat-button-toggle-group>\r\n\r\n          <agm-map  [mapTypeId]=\"mapType\" style=\"height: 50vh;\" >\r\n              <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\"></agm-marker>\r\n          </agm-map>\r\n        </div>\r\n      </div>\r\n\r\n      <div fxFlex style=\"padding: 5px\" >\r\n        <mat-form-field style=\"width: 100%\">\r\n          <input matInput [disabled]=true  [value]=\"businesPartnerObject.type\" placeholder=\"Type\">\r\n        </mat-form-field>\r\n\r\n        <div>\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input matInput [disabled]=\"isClicked ==true\"  [style.color]=\"isFRNValid==true?'red':'black'\" [(ngModel)]=\"fretronReferenceNo\" placeholder=\"Fretron Reference No\" (keyup)=\"checkFretronReferenceNumber(fretronReferenceNo)\">\r\n          </mat-form-field>\r\n\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"businesPartnerObject.partnerName\" placeholder=\"Business Partner Name\" required>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input [disabled]=\"isClicked ==true\"  matInput [(ngModel)]=\"businesPartnerObject.address\" placeholder=\"Address\">\r\n          </mat-form-field>\r\n\r\n          <div style=\"display: flex;flex-wrap: wrap;\" >\r\n            <mat-form-field style=\"margin-right: auto\" >\r\n              <input [disabled]=\"isClicked ==true\"  matInput  [(ngModel)]=\"businesPartnerObject.state\" placeholder=\"State\" >\r\n            </mat-form-field>\r\n\r\n            <mat-form-field style=\"margin-left: 2px\" >\r\n              <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"businesPartnerObject.zip\" placeholder=\"PIN/ZIP\">\r\n            </mat-form-field>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"contact-detail\">\r\n      <mat-form-field style=\"margin-right: 10px;width: 30%;min-width: 200px;\">\r\n        <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"businesPartnerObject.contactPersonName\" placeholder=\"Contact Person Name\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field style=\"margin-right :10px;margin-left :10px;width: 30%;min-width: 200px;\" >\r\n        <input [disabled]=\"isClicked ==true\"  matInput type=\"email\" [(ngModel)]=\"businesPartnerObject.emailId\" placeholder=\"Email\"\r\n               pattern=\"[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}\" >\r\n      </mat-form-field>\r\n\r\n      <mat-form-field style=\"margin-left :10px;width: 30%;min-width: 200px;\">\r\n        <input [disabled]=\"isClicked ==true\"  matInput type=\"number\" [(ngModel)]=\"businesPartnerObject.mobileNo\" placeholder=\"MobileNo\" onkeydown=\"if(event.target.value.length>=10 && event.keyCode!=8 && event.keyCode!=13 )return false;\"\r\n               pattern=\"[0-9]{10}\" >\r\n      </mat-form-field>\r\n    </div>\r\n  </div>\r\n\r\n  <div style=\"text-align: right;padding: 12px;\" >\r\n    <button matTooltip=\"CANCEL / BACK\"  mat-raised-button (click)=\"cancel()\" class=\"status-button\" >Cancel</button>\r\n    <button [disabled]=\"businesPartnerObject.partnerName =='' || isClicked ==true\" matTooltip=\"Add New Business Partner\" color=\"primary\"  mat-raised-button (click)=\"updateBusinesPart()\" class=\"status-button\" >Update</button>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" style=\"position: absolute;\" class=\"spinner\"></mat-spinner>\r\n<div (keyup.Enter)=\"updateBusinesPart()\">\r\n  <div style=\"font-size:21px;color:#8a8c8e;padding: 5px;\" >\r\n    <span>Update Business Partner</span>\r\n  </div>\r\n\r\n  <div>\r\n    <div  style=\"display:flex;flex-wrap: wrap;\">\r\n      <div  style=\"min-width: 200px;position: relative;padding: 10px;margin-top: 5px;width: 60%;\" >\r\n        <div style=\"position: relative;\" >\r\n\r\n          <div style=\"width:95%; margin-left: auto; margin-right: auto;margin-bottom: -31px;\">\r\n            <div class=\"my-map-search\">\r\n              <input [disabled]=\"businesPartnerObject.type != 'customer'\" id=\"pac-input\" type=\"text\" class=\"search\" matTooltip=\"Address search Here\" placeholder=\"Address Search Here\" >\r\n              <i class=\"fa fa-search\" aria-hidden=\"true\" style=\"right: 10px;top: 7px;font-size: 15px;position: absolute;\"></i>\r\n            </div>\r\n          </div>\r\n\r\n          <mat-button-toggle-group [disabled] =\"businesPartnerObject.type != 'customer'\"  class=\"my-toggle\" #group=\"matButtonToggleGroup\" [(ngModel)]=\"mapType\">\r\n            <mat-button-toggle value=\"hybrid\">\r\n              <span>Satellite</span>\r\n            </mat-button-toggle>\r\n            <mat-button-toggle value=\"roadmap\" style=\"background-color:floralwhite;\" [style.opacity]=\"(mapType =='roadmap')?'.8':'.6'\">\r\n              <span>Map</span>\r\n            </mat-button-toggle>\r\n          </mat-button-toggle-group>\r\n\r\n          <agm-map  [mapTypeId]=\"mapType\" style=\"height: 50vh;\" >\r\n              <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\"></agm-marker>\r\n          </agm-map>\r\n        </div>\r\n      </div>\r\n\r\n      <div fxFlex style=\"padding: 5px\" >\r\n        <mat-form-field style=\"width: 100%\">\r\n          <input matInput [disabled]=true  [value]=\"businesPartnerObject.type\" placeholder=\"Type\">\r\n        </mat-form-field>\r\n\r\n        <div>\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input matInput [disabled]=\"isClicked ==true\" [style.color]=\"isFRNValid?'black':'red'\" [(ngModel)]=\"fretronReferenceNo\" placeholder=\"Fretron Reference No\" (keyup)=\"checkFretronReferenceNumber(fretronReferenceNo)\">\r\n          </mat-form-field>\r\n\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"businesPartnerObject.partnerName\" placeholder=\"Business Partner Name\" required>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input [disabled]=\"isClicked ==true\"  matInput [(ngModel)]=\"businesPartnerObject.address\" placeholder=\"Address\">\r\n          </mat-form-field>\r\n\r\n          <div style=\"display: flex;flex-wrap: wrap;\" >\r\n            <mat-form-field style=\"margin-right: auto\" >\r\n              <input [disabled]=\"isClicked ==true\"  matInput  [(ngModel)]=\"businesPartnerObject.state\" placeholder=\"State\" >\r\n            </mat-form-field>\r\n\r\n            <mat-form-field style=\"margin-left: 2px\" >\r\n              <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"businesPartnerObject.zip\" placeholder=\"PIN/ZIP\">\r\n            </mat-form-field>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"contact-detail\">\r\n      <mat-form-field style=\"margin-right: 10px;width: 30%;min-width: 200px;\">\r\n        <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"businesPartnerObject.contactPersonName\" placeholder=\"Contact Person Name\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field style=\"margin-right :10px;margin-left :10px;width: 30%;min-width: 200px;\" >\r\n        <input [disabled]=\"isClicked ==true\"  matInput type=\"email\" [(ngModel)]=\"businesPartnerObject.emailId\" placeholder=\"Email\"\r\n               pattern=\"[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}\" >\r\n      </mat-form-field>\r\n\r\n      <mat-form-field style=\"margin-left :10px;width: 30%;min-width: 200px;\">\r\n        <input [disabled]=\"isClicked ==true\"  matInput type=\"number\" [(ngModel)]=\"businesPartnerObject.mobileNo\" placeholder=\"MobileNo\" onkeydown=\"if(event.target.value.length>=10 && event.keyCode!=8 && event.keyCode!=13 )return false;\"\r\n               pattern=\"[0-9]{10}\" >\r\n      </mat-form-field>\r\n    </div>\r\n  </div>\r\n\r\n  <div style=\"text-align: right;padding: 12px;\" >\r\n    <button matTooltip=\"CANCEL / BACK\"  mat-raised-button (click)=\"cancel()\" class=\"status-button\" >Cancel</button>\r\n    <button [disabled]=\"businesPartnerObject.partnerName =='' || isClicked ==true\" matTooltip=\"Add New Business Partner\" color=\"primary\"  mat-raised-button (click)=\"updateBusinesPart()\" class=\"status-button\" >Update</button>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1361,7 +1375,8 @@ var UpdateBusinessPartner = (function () {
         this.unSub_selectedfreightLoc = null;
         this.unSub_updateBusinessPartner = null;
         this.unSub_checkFretronReferenceNumber = null;
-        this.isFRNValid = false;
+        this.isFRNValid = true;
+        this.orgType = '';
         this.unSub_selectedBusinessPartnerObj = this.store.select('selectedBusinessPartnerObj').subscribe(function (value) {
             if (value == null) {
                 _this.router.navigate(["mainDashboard/dashboard/businessPartner"]);
@@ -1401,21 +1416,35 @@ var UpdateBusinessPartner = (function () {
         });
         this.unSub_checkFretronReferenceNumber = this.store.select('fretronReferenceNumber').subscribe(function (res) {
             console.log(res);
+            console.log(res);
             if (res == null)
                 return;
-            if (res['status'] == 200) {
+            if (res['status'] == 200 && res['organisation'] != undefined) {
+                _this.orgType = res['organisation']['type'];
                 _this.fretronReferenceNoUuid = res['organisation']['uuid'];
-                _this.isFRNValid = false;
+                _this.isFRNValid = true;
             }
             else {
-                if (_this.fretronReferenceNo != null || _this.fretronReferenceNo != undefined || _this.fretronReferenceNo != '') {
-                    if (_this.fretronReferenceNo.length > 0) {
-                        _this.isFRNValid = true;
-                        _this.fretronReferenceNoUuid = null;
-                    }
-                }
+                _this.orgType = null;
                 _this.fretronReferenceNoUuid = null;
+                _this.isFRNValid = false;
             }
+            if (_this.orgType != null) {
+                if (_this.businesPartnerObject['type'].toUpperCase() == "TRANSPORTER") {
+                    if (_this.businesPartnerObject['type'].toUpperCase() == _this.orgType)
+                        _this.isFRNValid = true;
+                    else
+                        _this.isFRNValid = false;
+                }
+                else {
+                    if (_this.orgType == "TRANSPORTER")
+                        _this.isFRNValid = false;
+                    else
+                        _this.isFRNValid = true;
+                }
+            }
+            if (_this.fretronReferenceNo == undefined || _this.fretronReferenceNo.length == 0)
+                _this.isFRNValid = true;
         });
     } // close constructor
     UpdateBusinessPartner.prototype.ngOnInit = function () {
@@ -1492,7 +1521,7 @@ var UpdateBusinessPartner = (function () {
         // this.map.streetViewControl =false;
     };
     UpdateBusinessPartner.prototype.updateBusinesPart = function () {
-        if (!this.isFRNValid) {
+        if (this.isFRNValid) {
             var businessPart = JSON.parse(JSON.stringify(this.businesPartnerObject));
             if (businessPart.type == 'customer') {
                 var obj = null;
@@ -1514,6 +1543,9 @@ var UpdateBusinessPartner = (function () {
                 if (JSON.stringify(this.oldPolyBoundry) != JSON.stringify(polygonPoints)) {
                     businessPart['boundary'] = polygonPoints;
                 }
+            }
+            if (this.fretronReferenceNoUuid == null || this.fretronReferenceNoUuid == null) {
+                businessPart.fretronReferenceNo = null;
             }
             if (this.fretronReferenceNo != '') {
                 businessPart.fretronReferenceNo = this.fretronReferenceNo;
@@ -1669,18 +1701,15 @@ var UpdateBusinessPartner = (function () {
         this.matSnackBar.open(message, "OK", { duration: 4000 });
     };
     UpdateBusinessPartner.prototype.checkFretronReferenceNumber = function (fretronReferenceNumber) {
-        if (fretronReferenceNumber == null || fretronReferenceNumber == undefined || fretronReferenceNumber == '') {
-            if (fretronReferenceNumber.length == 0)
-                this.isFRNValid = false;
-        }
-        var frPath = __WEBPACK_IMPORTED_MODULE_8__environments_environment__["b" /* path */].CHECK_FRETRON_REFERECE_NUMBER + '?fretronReferenceNumber=' + fretronReferenceNumber;
-        if (fretronReferenceNumber != '') {
+        if (fretronReferenceNumber != null || fretronReferenceNumber != undefined || fretronReferenceNumber != '') {
+            var frPath = __WEBPACK_IMPORTED_MODULE_8__environments_environment__["b" /* path */].CHECK_FRETRON_REFERECE_NUMBER + '?fretronReferenceNumber=' + fretronReferenceNumber;
             this.businessPartnerService.getFretronReferenceNumber.emit(frPath);
         }
-        else {
-            this.fretronReferenceNo = null;
-            this.fretronReferenceNoUuid = null;
-        }
+    };
+    UpdateBusinessPartner.prototype.checkFRN = function () {
+        var frPath = __WEBPACK_IMPORTED_MODULE_8__environments_environment__["b" /* path */].CHECK_FRETRON_REFERECE_NUMBER + '?fretronReferenceNumber=' + this.fretronReferenceNo;
+        if (this.fretronReferenceNo != '' || this.fretronReferenceNo != null || this.fretronReferenceNo != undefined)
+            this.businessPartnerService.getFretronReferenceNumber.emit(frPath);
     };
     return UpdateBusinessPartner;
 }()); //close class
@@ -3798,6 +3827,7 @@ var CreateShipmentOrder = (function () {
         if (shoNo != null) {
             this.shipmentOrderNo = "" + shoNo;
         }
+        console.log(this.recentShimentOrders);
     };
     //this method use for : take data from localstorage and show at the bottom of page
     CreateShipmentOrder.prototype.setValueFromHistory = function (value) {
@@ -6480,11 +6510,10 @@ var UserProfile = (function () {
     };
     UserProfile.prototype.logout = function () {
         this.localStorageService.remove('AUTH_TOKEN_SHIPPER');
-        this.localStorageService.clearAll();
+        // this.localStorageService.clearAll();
         this._store.dispatch({ type: "USER_INFO", payload: null });
         this._store.dispatch({ type: "SIGNUP_RES", payload: null });
         this._store.dispatch({ type: "AUTHORIZATION", payload: null });
-        console.log(this.localStorageService.get('AUTH_TOKEN_SHIPPER'));
         this._router.navigate(['login']);
     };
     UserProfile.prototype.goToAddOrganisation = function () {
@@ -6548,8 +6577,8 @@ var path = {
     SHIPMENT_ORDER_PATH: BASE_IP.BASE + '/shipper/shipment/order/create',
     GET_SHIPMENT_ORDER_PATH: BASE_IP.BASE + '/shipper/shipment/order/get',
     CHECK_VEHICLE_EXIST_PATH: BASE_IP.BASE + '/shipper/shipment/validateVehicle?vehicleRegistrattionNumber=',
-    SWITCH_ORG_PATH: BASE_IP.IP + "/user/switchorg?orgId=",
-    ORGANIZATION_LIST_PATH: BASE_IP.ORG_MANAGER + "/organizations",
+    // SWITCH_ORG_PATH: BASE_IP.IP+"/user/switchorg?orgId=",
+    // ORGANIZATION_LIST_PATH: BASE_IP.ORG_MANAGER+"/organizations",
     CHECK_FRETRON_REFERECE_NUMBER: BASE_IP.BASE + "/shipper/check/fretron/reference/number",
     PATH: BASE_IP.BASE + '/shipper/user',
     DUPATH: BASE_IP.BASE + '/shipper/user/delete/',
@@ -7329,7 +7358,7 @@ var AuthorizationService = (function () {
                 var res = response;
                 if (res == null) {
                     _this.localStorageService.remove('AUTH_TOKEN_SHIPPER');
-                    _this.localStorageService.clearAll();
+                    // this.localStorageService.clearAll();
                     _this._store.dispatch({ type: "AUTHORIZATION", payload: { error: 'X', errorMsg: 'server response with null' } });
                 }
                 else if (res.status >= 200 && res.status < 300 && res['isValid'] == true) {
@@ -7346,7 +7375,7 @@ var AuthorizationService = (function () {
                 }
                 else {
                     _this.localStorageService.remove('AUTH_TOKEN_SHIPPER');
-                    _this.localStorageService.clearAll();
+                    // this.localStorageService.clearAll();
                     _this._store.dispatch({ type: "AUTHORIZATION", payload: { error: 'X', errorMsg: res.error } });
                 }
             }, function (err) {
@@ -9537,7 +9566,8 @@ var LoginServices = (function () {
             console.log(pathURL);
             console.log(reqObj);
             _this.userLogin(pathURL, reqObj).subscribe(function (response) {
-                _this.localStorageService.clearAll();
+                // this.localStorageService.clearAll();
+                _this.localStorageService.remove('AUTH_TOKEN_SHIPPER');
                 console.log(response);
                 var res = response;
                 if (res == null) {
