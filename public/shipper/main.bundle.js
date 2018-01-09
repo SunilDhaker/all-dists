@@ -3889,11 +3889,13 @@ var CreateShipmentOrder = (function () {
         for (var i = 0; i < this.consigneeList.length; i++) {
             if (this.consignee == this.consigneeList[i]['freightLocation']) {
                 recentSho['selectedConsignee'] = this.consigneeList[i];
+                break;
             }
         }
         for (var i = 0; i < this.trBusinessPartners.length; i++) {
             if (this.TBPName == this.trBusinessPartners[i]['uuid']) {
                 recentSho['selectedBusinessPartner'] = this.trBusinessPartners[i];
+                break;
             }
         }
         recentSho['unicKey'] = recentSho['selectedConsignee']['freightLocation'] + '_' + recentSho['selectedBusinessPartner']['uuid'];
@@ -3912,8 +3914,8 @@ var CreateShipmentOrder = (function () {
                     i++;
                 }
             }
-            recentSHO_LIST.slice(0, 5);
-            this.localStorageService.set('RECENT_SHO', recentSHO_LIST);
+            var recentSHO_LIST2 = recentSHO_LIST.slice(0, 5);
+            this.localStorageService.set('RECENT_SHO', recentSHO_LIST2);
             // console.log(recentSHO_LIST);
         }
         else {
