@@ -5938,7 +5938,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/main-dashboard/main-dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"isUserAuthorized ==false\" style=\"height:100vh;background-color: #1f2021;opacity: .3;\">\n  <label style=\"font-size: 21px;color: #e8dbdb; position: absolute;top: 36%;left: 50%;transform: translate(-50%,-50%);\">{{loginMsg}}</label>\n  <label style=\"color: red;color: #ff000a !important;position: absolute;left: 50%;top: 17%;transform: translate(-50%,-50%);font-size: 20px;font-weight: bold;\">{{errorMsg}}</label>\n</div>\n\n<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\" style=\"position: absolute\"></mat-spinner>\n\n<div *ngIf=\"isUserAuthorized\" class=\"header\" fxLayout=\"row\" style=\"min-width: 768px;\" >\n  <img class=\"logo\" src=\"logo-light.png\" alt=\"Fretron Logo\" >\n  <span class=\"service-name\" >Shipper Portal</span>\n  <button  mat-button class=\"button-basic1\" (click)=\"goToShipment_OrdersView()\" >Shipment Orders</button>\n  <button  mat-button class=\"button-basic1\" (click)=\"goToLR_TrackingView()\">LR Tracking</button>\n  <!--<button  mat-button class=\"button-basic1\" >Payment Status</button>-->\n  <!--<button  mat-button class=\"button-basic1\" >Statement of Accounts</button>-->\n\n  <button mat-button class=\"button-basic1 fa fa-cog\" style=\"margin-left:auto;\"  (click)=\"goToSettingView()\"></button>\n\n  <button mat-button [matMenuTriggerFor]=\"menu\" style=\"cursor: pointer;z-index: 1000;\" >\n    <i  class=\"fa fa-user-o\" aria-hidden=\"true\" >&#9662;</i>\n  </button>\n  <mat-menu #menu=\"matMenu\">\n    <app-user-profile></app-user-profile>\n  </mat-menu>\n</div>\n<div *ngIf=\"isUserAuthorized\" style=\"padding: 5px\">\n  <router-outlet></router-outlet>\n</div>\n"
+module.exports = "<div *ngIf=\"isUserAuthorized ==false\" style=\"height:100vh;background-color: #1f2021;opacity: .3;\">\n  <label style=\"font-size: 21px;color: #e8dbdb; position: absolute;top: 36%;left: 50%;transform: translate(-50%,-50%);\">{{loginMsg}}</label>\n  <label style=\"color: red;color: #ff000a !important;position: absolute;left: 50%;top: 17%;transform: translate(-50%,-50%);font-size: 20px;font-weight: bold;\">{{errorMsg}}</label>\n</div>\n\n<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\" style=\"position: absolute\"></mat-spinner>\n\n<div *ngIf=\"isUserAuthorized\" class=\"header\" fxLayout=\"row\" style=\"min-width: 768px;\" >\n  <img class=\"logo\" src=\"logo-light.png\" alt=\"Fretron Logo\" >\n  <span class=\"service-name\" >Shipper Portal</span>\n  <button  mat-button class=\"button-basic1\" (click)=\"goToShipment_OrdersView()\" >Shipment Orders</button>\n  <!--<button  mat-button class=\"button-basic1\" (click)=\"goToLR_TrackingView()\">LR Tracking</button>-->\n  <!--<button  mat-button class=\"button-basic1\" >Payment Status</button>-->\n  <!--<button  mat-button class=\"button-basic1\" >Statement of Accounts</button>-->\n\n  <button mat-button class=\"button-basic1 fa fa-cog\" style=\"margin-left:auto;\"  (click)=\"goToSettingView()\"></button>\n\n  <button mat-button [matMenuTriggerFor]=\"menu\" style=\"cursor: pointer;z-index: 1000;\" >\n    <i  class=\"fa fa-user-o\" aria-hidden=\"true\" >&#9662;</i>\n  </button>\n  <mat-menu #menu=\"matMenu\">\n    <app-user-profile></app-user-profile>\n  </mat-menu>\n</div>\n<div *ngIf=\"isUserAuthorized\" style=\"padding: 5px\">\n  <router-outlet></router-outlet>\n</div>\n"
 
 /***/ }),
 
@@ -6532,9 +6532,9 @@ var GOOGLE_PROVIDERS = {
     }
 };
 var BASE_IP = {
-    BASE: 'https://shippermanagementg2963f8fc.jp1.hana.ondemand.com/ShipperManagement/api',
+    // BASE:'https://shippermanagementg2963f8fc.jp1.hana.ondemand.com/ShipperManagement/api',
     // BASE:'http://192.168.0.91:2122',
-    // BASE:'http://192.168.0.153',
+    BASE: 'http://192.168.0.153',
     IP: 'http://apis.fretron.com',
     ORG_MANAGER: 'http://apis.fretron.com/organisation',
 };
