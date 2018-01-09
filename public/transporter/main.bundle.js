@@ -525,16 +525,21 @@ var DashboardComponent = (function () {
         this.unsub_authorization = null;
         this.unSub_customerDetails = null;
         this.selectedView = 'shipment';
-        var customer = this.customerDetail(this.localStorageService.get("AUTH_TOKEN"));
-        var orgType = customer['orgType'];
-        // let pathname = window.location.pathname;
-        var path = 'http://' + window.location.hostname + ':' + window.location.port;
-        if (orgType == 'FLEET_OWNER') {
-            window.location.replace(path + "/tracknet");
+        var token = this.localStorageService.get("AUTH_TOKEN");
+        if (token != null) {
+            var customer = this.customerDetail(token);
+            var orgType = customer['orgType'];
+            // let pathname = window.location.pathname;
+            var path = 'http://' + window.location.hostname + ':' + window.location.port;
+            if (orgType == 'FLEET_OWNER') {
+                window.location.replace(path + "/tracknet");
+            }
+            else if (orgType == 'FLEET_OWNER_AGENT') {
+                this.logoutService.logout();
+            }
         }
-        else if (orgType == 'FLEET_OWNER_AGENT') {
+        else
             this.logoutService.logout();
-        }
         this.unsub_token = this._store.select('token').subscribe(function (value) {
             var token = _this.localStorageService.get("AUTH_TOKEN"); //check this
             console.log(token);

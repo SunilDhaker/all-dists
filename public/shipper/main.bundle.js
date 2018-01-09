@@ -464,7 +464,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/HMEL-admin/dashboard/add-business-partner/add-business-partner.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" style=\"position: absolute;\" class=\"spinner\"></mat-spinner>\r\n<div (keyup.Enter)=\"addFreightLocation()\">\r\n  <div style=\"font-size:21px;color:#8a8c8e;padding: 5px;\" >\r\n    <span>Add Business Partner</span>\r\n  </div>\r\n\r\n  <div>\r\n    <div  style=\"display:flex;flex-wrap: wrap;\">\r\n      <div  style=\"min-width: 200px;position: relative;padding: 10px;margin-top: 5px;width: 60%;\" >\r\n        <div style=\"position: relative;\" >\r\n          <div style=\"width:95%; margin-left: auto; margin-right: auto;margin-bottom: -31px;\">\r\n            <div class=\"my-map-search\">\r\n              <input [disabled]=\"type !='customer'\" id=\"pac-input\" type=\"text\" class=\"search\" matTooltip=\"Address search Here\" placeholder=\"Address Search Here\" >\r\n              <i class=\"fa fa-search\" aria-hidden=\"true\" style=\"right: 10px;top: 7px;font-size: 15px;position: absolute;\"></i>\r\n            </div>\r\n          </div>\r\n\r\n          <mat-button-toggle-group [disabled] =\"type != 'customer'\"  class=\"my-toggle\" #group=\"matButtonToggleGroup\" [(ngModel)]=\"mapType\">\r\n            <mat-button-toggle value=\"hybrid\">\r\n              <span>Satellite</span>\r\n            </mat-button-toggle>\r\n            <mat-button-toggle value=\"roadmap\" style=\"background-color:floralwhite;\" [style.opacity]=\"(mapType =='roadmap')?'.8':'.6'\">\r\n              <span>Map</span>\r\n            </mat-button-toggle>\r\n          </mat-button-toggle-group>\r\n\r\n          <agm-map [streetViewControl]=\"mapOption.streetViewControl\" [zoomControl]=\"mapOption.zoomControl\" [mapDraggable]=\"mapOption.isMapDraggable\" [disableDefaultUI]=\"mapOption.disableDefaultUI\" [scrollwheel]=\"mapOption.scrollwheel\" [clickableIcons]=\"mapOption.clickableIcons\"\r\n                   [mapTypeId]=\"mapType\" style=\"height: 50vh;\" [latitude]=\"latitude\" [longitude]=\"longitude\" [zoom]=\"5\">\r\n            <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\">\r\n            </agm-marker>\r\n          </agm-map>\r\n        </div>\r\n      </div>\r\n\r\n      <div fxFlex style=\"padding: 5px\" >\r\n        <mat-form-field style=\"width: 100%\">\r\n          <mat-select [disabled]=\"isClicked ==true\" [(ngModel)]='type' placeholder=\"Type\" (change)=\"disableMap()\" required>\r\n            <mat-option value=\"customer\">Customer</mat-option>\r\n            <mat-option value=\"transporter\">Transporter</mat-option>\r\n          </mat-select>\r\n        </mat-form-field>\r\n\r\n        <div>\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input matInput [disabled]=\"isClicked ==true\"   [style.color]=\"isFRNValid==true?'red':'black'\"   [(ngModel)]=\"fretronRefNo\" placeholder=\"Fretron Reference No\" (keyup)=\"checkFretronReferenceNumber(fretronRefNo)\">\r\n          </mat-form-field>\r\n\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"businessPartnerName\" placeholder=\"Business Partner Name\" required>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input [disabled]=\"isClicked ==true\"  matInput [(ngModel)]=\"address\" placeholder=\"Address\">\r\n          </mat-form-field>\r\n\r\n          <div style=\"display: flex;flex-wrap: wrap;\" >\r\n            <mat-form-field style=\"margin-right: auto\" >\r\n              <input [disabled]=\"isClicked ==true\"  matInput  [(ngModel)]=\"state\" placeholder=\"State\" >\r\n            </mat-form-field>\r\n\r\n            <mat-form-field style=\"margin-left: 2px\" >\r\n              <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"zip\" placeholder=\"PIN/ZIP\">\r\n            </mat-form-field>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"contact-detail\">\r\n      <mat-form-field style=\"margin-right: 10px;width: 30%;min-width: 200px;\">\r\n        <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"contactPersonName\" placeholder=\"Contact Person Name\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field style=\"margin-right :10px;margin-left :10px;width: 30%;min-width: 200px;\" >\r\n        <input [disabled]=\"isClicked ==true\"  matInput type=\"email\" [(ngModel)]=\"email\" placeholder=\"Email\"\r\n               pattern=\"[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}\" >\r\n      </mat-form-field>\r\n\r\n      <mat-form-field style=\"margin-left :10px;width: 30%;min-width: 200px;\">\r\n        <input [disabled]=\"isClicked ==true\"  matInput type=\"number\" [(ngModel)]=\"mobileNo\" placeholder=\"MobileNo\" onkeydown=\"if(event.target.value.length>=10 && event.keyCode!=8 && event.keyCode!=13 )return false;\"\r\n               pattern=\"[0-9]{10}\" >\r\n      </mat-form-field>\r\n    </div>\r\n  </div>\r\n\r\n  <div style=\"text-align: right;padding: 12px;\" >\r\n    <button matTooltip=\"CANCEL / BACK\"  mat-raised-button (click)=\"cancel()\" class=\"status-button\" >Cancel</button>\r\n    <button [disabled]=\"businessPartnerName =='' || isClicked ==true\" matTooltip=\"Add New Business Partner\" color=\"primary\"  mat-raised-button (click)=\"addFreightLocation()\" class=\"status-button\" >Add Business Partner</button>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" style=\"position: absolute;\" class=\"spinner\"></mat-spinner>\r\n<div (keyup.Enter)=\"addFreightLocation()\">\r\n  <div style=\"font-size:21px;color:#8a8c8e;padding: 5px;\" >\r\n    <span>Add Business Partner</span>\r\n  </div>\r\n\r\n  <div>\r\n    <div  style=\"display:flex;flex-wrap: wrap;\">\r\n      <div  style=\"min-width: 200px;position: relative;padding: 10px;margin-top: 5px;width: 60%;\" >\r\n        <div style=\"position: relative;\" >\r\n          <div style=\"width:95%; margin-left: auto; margin-right: auto;margin-bottom: -31px;\">\r\n            <div class=\"my-map-search\">\r\n              <input [disabled]=\"type !='customer'\" id=\"pac-input\" type=\"text\" class=\"search\" matTooltip=\"Address search Here\" placeholder=\"Address Search Here\" >\r\n              <i class=\"fa fa-search\" aria-hidden=\"true\" style=\"right: 10px;top: 7px;font-size: 15px;position: absolute;\"></i>\r\n            </div>\r\n          </div>\r\n\r\n          <mat-button-toggle-group [disabled] =\"type != 'customer'\"  class=\"my-toggle\" #group=\"matButtonToggleGroup\" [(ngModel)]=\"mapType\">\r\n            <mat-button-toggle value=\"hybrid\">\r\n              <span>Satellite</span>\r\n            </mat-button-toggle>\r\n            <mat-button-toggle value=\"roadmap\" style=\"background-color:floralwhite;\" [style.opacity]=\"(mapType =='roadmap')?'.8':'.6'\">\r\n              <span>Map</span>\r\n            </mat-button-toggle>\r\n          </mat-button-toggle-group>\r\n\r\n          <agm-map [streetViewControl]=\"mapOption.streetViewControl\" [zoomControl]=\"mapOption.zoomControl\" [mapDraggable]=\"mapOption.isMapDraggable\" [disableDefaultUI]=\"mapOption.disableDefaultUI\" [scrollwheel]=\"mapOption.scrollwheel\" [clickableIcons]=\"mapOption.clickableIcons\"\r\n                   [mapTypeId]=\"mapType\" style=\"height: 50vh;\" [latitude]=\"latitude\" [longitude]=\"longitude\" [zoom]=\"5\">\r\n            <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\">\r\n            </agm-marker>\r\n          </agm-map>\r\n        </div>\r\n      </div>\r\n\r\n      <div fxFlex style=\"padding: 5px\" >\r\n        <mat-form-field style=\"width: 100%\">\r\n          <mat-select [disabled]=\"isClicked ==true\" [(ngModel)]='type' placeholder=\"Type\" (change)=\"disableMap(); checkFRN()\" required>\r\n            <mat-option value=\"customer\">Customer</mat-option>\r\n            <mat-option value=\"transporter\">Transporter</mat-option>\r\n          </mat-select>\r\n        </mat-form-field>\r\n\r\n        <div>\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input matInput [disabled]=\"isClicked ==true\"   [style.color]=\"isFRNValid?'black':'red'\" [(ngModel)]=\"fretronRefNo\" placeholder=\"Fretron Reference No\" (keyup)=\"checkFretronReferenceNumber(fretronRefNo)\">\r\n          </mat-form-field>\r\n\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"businessPartnerName\" placeholder=\"Business Partner Name\" required>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input [disabled]=\"isClicked ==true\"  matInput [(ngModel)]=\"address\" placeholder=\"Address\">\r\n          </mat-form-field>\r\n\r\n          <div style=\"display: flex;flex-wrap: wrap;\" >\r\n            <mat-form-field style=\"margin-right: auto\" >\r\n              <input [disabled]=\"isClicked ==true\"  matInput  [(ngModel)]=\"state\" placeholder=\"State\" >\r\n            </mat-form-field>\r\n\r\n            <mat-form-field style=\"margin-left: 2px\" >\r\n              <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"zip\" placeholder=\"PIN/ZIP\">\r\n            </mat-form-field>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"contact-detail\">\r\n      <mat-form-field style=\"margin-right: 10px;width: 30%;min-width: 200px;\">\r\n        <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"contactPersonName\" placeholder=\"Contact Person Name\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field style=\"margin-right :10px;margin-left :10px;width: 30%;min-width: 200px;\" >\r\n        <input [disabled]=\"isClicked ==true\"  matInput type=\"email\" [(ngModel)]=\"email\" placeholder=\"Email\"\r\n               pattern=\"[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}\" >\r\n      </mat-form-field>\r\n\r\n      <mat-form-field style=\"margin-left :10px;width: 30%;min-width: 200px;\">\r\n        <input [disabled]=\"isClicked ==true\"  matInput type=\"number\" [(ngModel)]=\"mobileNo\" placeholder=\"MobileNo\" onkeydown=\"if(event.target.value.length>=10 && event.keyCode!=8 && event.keyCode!=13 )return false;\"\r\n               pattern=\"[0-9]{10}\" >\r\n      </mat-form-field>\r\n    </div>\r\n  </div>\r\n\r\n  <div style=\"text-align: right;padding: 12px;\" >\r\n    <button matTooltip=\"CANCEL / BACK\"  mat-raised-button (click)=\"cancel()\" class=\"status-button\" >Cancel</button>\r\n    <button [disabled]=\"businessPartnerName =='' || isClicked ==true\" matTooltip=\"Add New Business Partner\" color=\"primary\"  mat-raised-button (click)=\"addFreightLocation()\" class=\"status-button\" >Add Business Partner</button>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -532,7 +532,8 @@ var AddBusinessPartnerComponent = (function () {
         this.unSub_checkFretronReferenceNumber = null;
         this.orgId = null;
         this.fretronReferenceNoUuid = null;
-        this.isFRNValid = false;
+        this.isFRNValid = true;
+        this.orgType = '';
         this.fretronReferenceNumberPath = __WEBPACK_IMPORTED_MODULE_7__environments_environment__["b" /* path */].CHECK_FRETRON_REFERECE_NUMBER;
         console.log("constructor");
         // dispatched from create freight location services
@@ -578,19 +579,32 @@ var AddBusinessPartnerComponent = (function () {
             console.log(res);
             if (res == null)
                 return;
-            if (res['status'] == 200) {
+            if (res['status'] == 200 && res['organisation'] != undefined) {
+                _this.orgType = res['organisation']['type'];
                 _this.fretronReferenceNoUuid = res['organisation']['uuid'];
-                _this.isFRNValid = false;
+                _this.isFRNValid = true;
             }
             else {
-                if (_this.fretronRefNo != null || _this.fretronRefNo != undefined || _this.fretronRefNo != '') {
-                    if (_this.fretronRefNo.length > 0) {
+                _this.orgType = null;
+                _this.fretronReferenceNoUuid = null;
+                _this.isFRNValid = false;
+            }
+            if (_this.orgType != null) {
+                if (_this.type.toUpperCase() == "TRANSPORTER") {
+                    if (_this.type.toUpperCase() == _this.orgType)
                         _this.isFRNValid = true;
-                        _this.fretronReferenceNoUuid = null;
-                    }
-                    _this.fretronReferenceNoUuid = null;
+                    else
+                        _this.isFRNValid = false;
+                }
+                else {
+                    if (_this.orgType == "TRANSPORTER")
+                        _this.isFRNValid = false;
+                    else
+                        _this.isFRNValid = true;
                 }
             }
+            if (_this.fretronRefNo == undefined || _this.fretronRefNo.length == 0)
+                _this.isFRNValid = true;
         });
     } // close constructor
     AddBusinessPartnerComponent.prototype.ngOnDestroy = function () {
@@ -778,7 +792,7 @@ var AddBusinessPartnerComponent = (function () {
         this.map.setZoom(14);
     };
     AddBusinessPartnerComponent.prototype.addFreightLocation = function () {
-        if (!this.isFRNValid) {
+        if (this.isFRNValid) {
             if (this.type == 'transporter') {
                 if (this.checkValidation()) {
                     this.isClicked = true;
@@ -867,6 +881,9 @@ var AddBusinessPartnerComponent = (function () {
             mobileNo: this.mobileNo,
             'fretronReferenceNoUuid': this.fretronReferenceNoUuid
         };
+        if (this.fretronReferenceNoUuid == null) {
+            obj['fretronReferenceNo'] = null;
+        }
         if (this.fretronRefNo != '') {
             obj['fretronReferenceNo'] = this.fretronRefNo;
         }
@@ -885,18 +902,15 @@ var AddBusinessPartnerComponent = (function () {
     };
     //method to check existance of fretron reference number
     AddBusinessPartnerComponent.prototype.checkFretronReferenceNumber = function (fretronReferenceNumber) {
-        if (fretronReferenceNumber == null || fretronReferenceNumber == undefined || fretronReferenceNumber == '') {
-            if (fretronReferenceNumber.length == 0)
-                this.isFRNValid = false;
-        }
-        var frPath = __WEBPACK_IMPORTED_MODULE_7__environments_environment__["b" /* path */].CHECK_FRETRON_REFERECE_NUMBER + '?fretronReferenceNumber=' + fretronReferenceNumber;
-        if (fretronReferenceNumber != '') {
+        if (fretronReferenceNumber != null || fretronReferenceNumber != undefined || fretronReferenceNumber != '') {
+            var frPath = __WEBPACK_IMPORTED_MODULE_7__environments_environment__["b" /* path */].CHECK_FRETRON_REFERECE_NUMBER + '?fretronReferenceNumber=' + fretronReferenceNumber;
             this.businessPartnerService.getFretronReferenceNumber.emit(frPath);
         }
-        else {
-            this.fretronRefNo = null;
-            this.fretronReferenceNoUuid = null;
-        }
+    };
+    AddBusinessPartnerComponent.prototype.checkFRN = function () {
+        var frPath = __WEBPACK_IMPORTED_MODULE_7__environments_environment__["b" /* path */].CHECK_FRETRON_REFERECE_NUMBER + '?fretronReferenceNumber=' + this.fretronRefNo;
+        if (this.fretronRefNo != '' || this.fretronRefNo != null || this.fretronRefNo != undefined)
+            this.businessPartnerService.getFretronReferenceNumber.emit(frPath);
     };
     return AddBusinessPartnerComponent;
 }()); //close class
@@ -1285,7 +1299,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/HMEL-admin/dashboard/update-business-partner/update-business-partner.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" style=\"position: absolute;\" class=\"spinner\"></mat-spinner>\r\n<div (keyup.Enter)=\"updateBusinesPart()\">\r\n  <div style=\"font-size:21px;color:#8a8c8e;padding: 5px;\" >\r\n    <span>Update Business Partner</span>\r\n  </div>\r\n\r\n  <div>\r\n    <div  style=\"display:flex;flex-wrap: wrap;\">\r\n      <div  style=\"min-width: 200px;position: relative;padding: 10px;margin-top: 5px;width: 60%;\" >\r\n        <div style=\"position: relative;\" >\r\n\r\n          <div style=\"width:95%; margin-left: auto; margin-right: auto;margin-bottom: -31px;\">\r\n            <div class=\"my-map-search\">\r\n              <input [disabled]=\"businesPartnerObject.type != 'customer'\" id=\"pac-input\" type=\"text\" class=\"search\" matTooltip=\"Address search Here\" placeholder=\"Address Search Here\" >\r\n              <i class=\"fa fa-search\" aria-hidden=\"true\" style=\"right: 10px;top: 7px;font-size: 15px;position: absolute;\"></i>\r\n            </div>\r\n          </div>\r\n\r\n          <mat-button-toggle-group [disabled] =\"businesPartnerObject.type != 'customer'\"  class=\"my-toggle\" #group=\"matButtonToggleGroup\" [(ngModel)]=\"mapType\">\r\n            <mat-button-toggle value=\"hybrid\">\r\n              <span>Satellite</span>\r\n            </mat-button-toggle>\r\n            <mat-button-toggle value=\"roadmap\" style=\"background-color:floralwhite;\" [style.opacity]=\"(mapType =='roadmap')?'.8':'.6'\">\r\n              <span>Map</span>\r\n            </mat-button-toggle>\r\n          </mat-button-toggle-group>\r\n\r\n          <agm-map  [mapTypeId]=\"mapType\" style=\"height: 50vh;\" >\r\n              <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\"></agm-marker>\r\n          </agm-map>\r\n        </div>\r\n      </div>\r\n\r\n      <div fxFlex style=\"padding: 5px\" >\r\n        <mat-form-field style=\"width: 100%\">\r\n          <input matInput [disabled]=true  [value]=\"businesPartnerObject.type\" placeholder=\"Type\">\r\n        </mat-form-field>\r\n\r\n        <div>\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input matInput [disabled]=\"isClicked ==true\"  [style.color]=\"isFRNValid==true?'red':'black'\" [(ngModel)]=\"fretronReferenceNo\" placeholder=\"Fretron Reference No\" (keyup)=\"checkFretronReferenceNumber(fretronReferenceNo)\">\r\n          </mat-form-field>\r\n\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"businesPartnerObject.partnerName\" placeholder=\"Business Partner Name\" required>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input [disabled]=\"isClicked ==true\"  matInput [(ngModel)]=\"businesPartnerObject.address\" placeholder=\"Address\">\r\n          </mat-form-field>\r\n\r\n          <div style=\"display: flex;flex-wrap: wrap;\" >\r\n            <mat-form-field style=\"margin-right: auto\" >\r\n              <input [disabled]=\"isClicked ==true\"  matInput  [(ngModel)]=\"businesPartnerObject.state\" placeholder=\"State\" >\r\n            </mat-form-field>\r\n\r\n            <mat-form-field style=\"margin-left: 2px\" >\r\n              <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"businesPartnerObject.zip\" placeholder=\"PIN/ZIP\">\r\n            </mat-form-field>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"contact-detail\">\r\n      <mat-form-field style=\"margin-right: 10px;width: 30%;min-width: 200px;\">\r\n        <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"businesPartnerObject.contactPersonName\" placeholder=\"Contact Person Name\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field style=\"margin-right :10px;margin-left :10px;width: 30%;min-width: 200px;\" >\r\n        <input [disabled]=\"isClicked ==true\"  matInput type=\"email\" [(ngModel)]=\"businesPartnerObject.emailId\" placeholder=\"Email\"\r\n               pattern=\"[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}\" >\r\n      </mat-form-field>\r\n\r\n      <mat-form-field style=\"margin-left :10px;width: 30%;min-width: 200px;\">\r\n        <input [disabled]=\"isClicked ==true\"  matInput type=\"number\" [(ngModel)]=\"businesPartnerObject.mobileNo\" placeholder=\"MobileNo\" onkeydown=\"if(event.target.value.length>=10 && event.keyCode!=8 && event.keyCode!=13 )return false;\"\r\n               pattern=\"[0-9]{10}\" >\r\n      </mat-form-field>\r\n    </div>\r\n  </div>\r\n\r\n  <div style=\"text-align: right;padding: 12px;\" >\r\n    <button matTooltip=\"CANCEL / BACK\"  mat-raised-button (click)=\"cancel()\" class=\"status-button\" >Cancel</button>\r\n    <button [disabled]=\"businesPartnerObject.partnerName =='' || isClicked ==true\" matTooltip=\"Add New Business Partner\" color=\"primary\"  mat-raised-button (click)=\"updateBusinesPart()\" class=\"status-button\" >Update</button>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" style=\"position: absolute;\" class=\"spinner\"></mat-spinner>\r\n<div (keyup.Enter)=\"updateBusinesPart()\">\r\n  <div style=\"font-size:21px;color:#8a8c8e;padding: 5px;\" >\r\n    <span>Update Business Partner</span>\r\n  </div>\r\n\r\n  <div>\r\n    <div  style=\"display:flex;flex-wrap: wrap;\">\r\n      <div  style=\"min-width: 200px;position: relative;padding: 10px;margin-top: 5px;width: 60%;\" >\r\n        <div style=\"position: relative;\" >\r\n\r\n          <div style=\"width:95%; margin-left: auto; margin-right: auto;margin-bottom: -31px;\">\r\n            <div class=\"my-map-search\">\r\n              <input [disabled]=\"businesPartnerObject.type != 'customer'\" id=\"pac-input\" type=\"text\" class=\"search\" matTooltip=\"Address search Here\" placeholder=\"Address Search Here\" >\r\n              <i class=\"fa fa-search\" aria-hidden=\"true\" style=\"right: 10px;top: 7px;font-size: 15px;position: absolute;\"></i>\r\n            </div>\r\n          </div>\r\n\r\n          <mat-button-toggle-group [disabled] =\"businesPartnerObject.type != 'customer'\"  class=\"my-toggle\" #group=\"matButtonToggleGroup\" [(ngModel)]=\"mapType\">\r\n            <mat-button-toggle value=\"hybrid\">\r\n              <span>Satellite</span>\r\n            </mat-button-toggle>\r\n            <mat-button-toggle value=\"roadmap\" style=\"background-color:floralwhite;\" [style.opacity]=\"(mapType =='roadmap')?'.8':'.6'\">\r\n              <span>Map</span>\r\n            </mat-button-toggle>\r\n          </mat-button-toggle-group>\r\n\r\n          <agm-map  [mapTypeId]=\"mapType\" style=\"height: 50vh;\" >\r\n              <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\"></agm-marker>\r\n          </agm-map>\r\n        </div>\r\n      </div>\r\n\r\n      <div fxFlex style=\"padding: 5px\" >\r\n        <mat-form-field style=\"width: 100%\">\r\n          <input matInput [disabled]=true  [value]=\"businesPartnerObject.type\" placeholder=\"Type\">\r\n        </mat-form-field>\r\n\r\n        <div>\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input matInput [disabled]=\"isClicked ==true\" [style.color]=\"isFRNValid?'black':'red'\" [(ngModel)]=\"fretronReferenceNo\" placeholder=\"Fretron Reference No\" (keyup)=\"checkFretronReferenceNumber(fretronReferenceNo)\">\r\n          </mat-form-field>\r\n\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"businesPartnerObject.partnerName\" placeholder=\"Business Partner Name\" required>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field style=\"width: 100%;\" >\r\n            <input [disabled]=\"isClicked ==true\"  matInput [(ngModel)]=\"businesPartnerObject.address\" placeholder=\"Address\">\r\n          </mat-form-field>\r\n\r\n          <div style=\"display: flex;flex-wrap: wrap;\" >\r\n            <mat-form-field style=\"margin-right: auto\" >\r\n              <input [disabled]=\"isClicked ==true\"  matInput  [(ngModel)]=\"businesPartnerObject.state\" placeholder=\"State\" >\r\n            </mat-form-field>\r\n\r\n            <mat-form-field style=\"margin-left: 2px\" >\r\n              <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"businesPartnerObject.zip\" placeholder=\"PIN/ZIP\">\r\n            </mat-form-field>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"contact-detail\">\r\n      <mat-form-field style=\"margin-right: 10px;width: 30%;min-width: 200px;\">\r\n        <input matInput [disabled]=\"isClicked ==true\"  [(ngModel)]=\"businesPartnerObject.contactPersonName\" placeholder=\"Contact Person Name\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field style=\"margin-right :10px;margin-left :10px;width: 30%;min-width: 200px;\" >\r\n        <input [disabled]=\"isClicked ==true\"  matInput type=\"email\" [(ngModel)]=\"businesPartnerObject.emailId\" placeholder=\"Email\"\r\n               pattern=\"[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}\" >\r\n      </mat-form-field>\r\n\r\n      <mat-form-field style=\"margin-left :10px;width: 30%;min-width: 200px;\">\r\n        <input [disabled]=\"isClicked ==true\"  matInput type=\"number\" [(ngModel)]=\"businesPartnerObject.mobileNo\" placeholder=\"MobileNo\" onkeydown=\"if(event.target.value.length>=10 && event.keyCode!=8 && event.keyCode!=13 )return false;\"\r\n               pattern=\"[0-9]{10}\" >\r\n      </mat-form-field>\r\n    </div>\r\n  </div>\r\n\r\n  <div style=\"text-align: right;padding: 12px;\" >\r\n    <button matTooltip=\"CANCEL / BACK\"  mat-raised-button (click)=\"cancel()\" class=\"status-button\" >Cancel</button>\r\n    <button [disabled]=\"businesPartnerObject.partnerName =='' || isClicked ==true\" matTooltip=\"Add New Business Partner\" color=\"primary\"  mat-raised-button (click)=\"updateBusinesPart()\" class=\"status-button\" >Update</button>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1361,7 +1375,8 @@ var UpdateBusinessPartner = (function () {
         this.unSub_selectedfreightLoc = null;
         this.unSub_updateBusinessPartner = null;
         this.unSub_checkFretronReferenceNumber = null;
-        this.isFRNValid = false;
+        this.isFRNValid = true;
+        this.orgType = '';
         this.unSub_selectedBusinessPartnerObj = this.store.select('selectedBusinessPartnerObj').subscribe(function (value) {
             if (value == null) {
                 _this.router.navigate(["mainDashboard/dashboard/businessPartner"]);
@@ -1401,21 +1416,35 @@ var UpdateBusinessPartner = (function () {
         });
         this.unSub_checkFretronReferenceNumber = this.store.select('fretronReferenceNumber').subscribe(function (res) {
             console.log(res);
+            console.log(res);
             if (res == null)
                 return;
-            if (res['status'] == 200) {
+            if (res['status'] == 200 && res['organisation'] != undefined) {
+                _this.orgType = res['organisation']['type'];
                 _this.fretronReferenceNoUuid = res['organisation']['uuid'];
-                _this.isFRNValid = false;
+                _this.isFRNValid = true;
             }
             else {
-                if (_this.fretronReferenceNo != null || _this.fretronReferenceNo != undefined || _this.fretronReferenceNo != '') {
-                    if (_this.fretronReferenceNo.length > 0) {
-                        _this.isFRNValid = true;
-                        _this.fretronReferenceNoUuid = null;
-                    }
-                }
+                _this.orgType = null;
                 _this.fretronReferenceNoUuid = null;
+                _this.isFRNValid = false;
             }
+            if (_this.orgType != null) {
+                if (_this.businesPartnerObject['type'].toUpperCase() == "TRANSPORTER") {
+                    if (_this.businesPartnerObject['type'].toUpperCase() == _this.orgType)
+                        _this.isFRNValid = true;
+                    else
+                        _this.isFRNValid = false;
+                }
+                else {
+                    if (_this.orgType == "TRANSPORTER")
+                        _this.isFRNValid = false;
+                    else
+                        _this.isFRNValid = true;
+                }
+            }
+            if (_this.fretronReferenceNo == undefined || _this.fretronReferenceNo.length == 0)
+                _this.isFRNValid = true;
         });
     } // close constructor
     UpdateBusinessPartner.prototype.ngOnInit = function () {
@@ -1492,7 +1521,7 @@ var UpdateBusinessPartner = (function () {
         // this.map.streetViewControl =false;
     };
     UpdateBusinessPartner.prototype.updateBusinesPart = function () {
-        if (!this.isFRNValid) {
+        if (this.isFRNValid) {
             var businessPart = JSON.parse(JSON.stringify(this.businesPartnerObject));
             if (businessPart.type == 'customer') {
                 var obj = null;
@@ -1514,6 +1543,9 @@ var UpdateBusinessPartner = (function () {
                 if (JSON.stringify(this.oldPolyBoundry) != JSON.stringify(polygonPoints)) {
                     businessPart['boundary'] = polygonPoints;
                 }
+            }
+            if (this.fretronReferenceNoUuid == null || this.fretronReferenceNoUuid == null) {
+                businessPart.fretronReferenceNo = null;
             }
             if (this.fretronReferenceNo != '') {
                 businessPart.fretronReferenceNo = this.fretronReferenceNo;
@@ -1669,18 +1701,15 @@ var UpdateBusinessPartner = (function () {
         this.matSnackBar.open(message, "OK", { duration: 4000 });
     };
     UpdateBusinessPartner.prototype.checkFretronReferenceNumber = function (fretronReferenceNumber) {
-        if (fretronReferenceNumber == null || fretronReferenceNumber == undefined || fretronReferenceNumber == '') {
-            if (fretronReferenceNumber.length == 0)
-                this.isFRNValid = false;
-        }
-        var frPath = __WEBPACK_IMPORTED_MODULE_8__environments_environment__["b" /* path */].CHECK_FRETRON_REFERECE_NUMBER + '?fretronReferenceNumber=' + fretronReferenceNumber;
-        if (fretronReferenceNumber != '') {
+        if (fretronReferenceNumber != null || fretronReferenceNumber != undefined || fretronReferenceNumber != '') {
+            var frPath = __WEBPACK_IMPORTED_MODULE_8__environments_environment__["b" /* path */].CHECK_FRETRON_REFERECE_NUMBER + '?fretronReferenceNumber=' + fretronReferenceNumber;
             this.businessPartnerService.getFretronReferenceNumber.emit(frPath);
         }
-        else {
-            this.fretronReferenceNo = null;
-            this.fretronReferenceNoUuid = null;
-        }
+    };
+    UpdateBusinessPartner.prototype.checkFRN = function () {
+        var frPath = __WEBPACK_IMPORTED_MODULE_8__environments_environment__["b" /* path */].CHECK_FRETRON_REFERECE_NUMBER + '?fretronReferenceNumber=' + this.fretronReferenceNo;
+        if (this.fretronReferenceNo != '' || this.fretronReferenceNo != null || this.fretronReferenceNo != undefined)
+            this.businessPartnerService.getFretronReferenceNumber.emit(frPath);
     };
     return UpdateBusinessPartner;
 }()); //close class
@@ -3296,7 +3325,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/HMEL-admin/shipment-orders/browse-shipment/browse-shipment.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"overflow: hidden\"  >\r\n  <div style=\"display:flex;padding:7px\" >\r\n    <div style=\"display:flex;padding-top: 7px;\">\r\n      <button (click)=\"selectedFilter = '';filterValue()\" mat-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == ''?'#1976d2':''\"  [style.color]=\"selectedFilter == ''?'#FFFFFF':''\">{{countFilterData['all']}} <span>All</span></button>\r\n      <button (click)=\"selectedFilter = 'active';filterValue()\" mat-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == 'active'?'#1976d2':''\" [style.color]=\"selectedFilter == 'active'?'#FFFFFF':''\" style=\"margin-left: 15px\">{{countFilterData['active']}} <span>Active</span></button>\r\n      <button (click)=\"selectedFilter = 'completed';filterValue()\" mat-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == 'completed'?'#1976d2':''\" [style.color]=\"selectedFilter == 'completed'?'#FFFFFF':''\" style=\"margin-left: 15px\">{{countFilterData['completed']}} <span>Completed</span></button>\r\n    </div>\r\n  </div>\r\n\r\n  <div style=\"margin-top:15px;text-align:center;font-size:18px;color:#e27560;\" *ngIf=\"isSpinner ==false\" >\r\n       <span>{{msg}}</span>\r\n  </div>\r\n  <mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></mat-spinner>\r\n  <div id=\"mainDiv\" style=\"margin-top: 10px;overflow: auto;height: calc(100vh - 125px);\" >\r\n    <!-- [expanded]=true  means close by default-->\r\n    <mat-expansion-panel  [expanded]=true class=\"my-expansion-panel-body\" style=\"margin-top: 10px;padding: 12px\" *ngFor=\"let shipmentOrder of shipmentOrders;let ind=index\" id=\"{{ind}}\">\r\n      <mat-expansion-panel-header style=\"padding-left: 0px;\">\r\n        <div class=\"card-span\" >\r\n          <span ><b>Shipment Order Number :</b> {{(shipmentOrder?.shipmentOrderNumber)?(shipmentOrder?.shipmentOrderNumber):'N/A'}}</span>\r\n          <span><b>Shipment Order Creation Time :</b> {{(shipmentOrder?.shipmentOrderCreateDate)?(shipmentOrder?.shipmentOrderCreateDate | date:'dd-MMM-yyyy'):'N/A'}}</span>\r\n          <span><b>Shipment Order Type :</b> {{(shipmentOrder?.shipmentType)?(shipmentOrder?.shipmentType):'N/A'}}</span>\r\n          <span><b>Vehicle No :</b> {{(shipmentOrder?.vehicleRegistrationNumber)?(shipmentOrder?.vehicleRegistrationNumber):'N/A'}}</span>\r\n          <span><b>Transporter Name :</b> {{(shipmentOrder?.transporterName)?(shipmentOrder?.transporterName):'N/A'}}</span>\r\n          <span><b>Orgnization ID :</b> {{(shipmentOrder?.orgId)?(shipmentOrder?.orgId):'N/A'}}</span>\r\n          <span><b>Distance :</b> {{(shipmentOrder?.distance)?(shipmentOrder?.distance/1000):'N/A'}} KM</span>\r\n        </div>\r\n      </mat-expansion-panel-header>\r\n      <div style=\"margin-top: 10px\">\r\n        <div style=\"font-size: 14px;color: #7d7a7a;\"><b>Freight Unit:</b></div>\r\n        <div class=\"card-sub-span\"  *ngFor=\"let freightUnit of shipmentOrder?.freightUnits\" >\r\n          <div style=\"margin-bottom: 2px;display: flex;flex-wrap: wrap;justify-content: space-between;\" >\r\n            <span ><b>Freight Unit Number : </b>{{(freightUnit?.freightUnitNumber)?(freightUnit?.freightUnitNumber):'N/A'}}</span>\r\n            <span ><b>State : </b><span class=\"shipment-tracking-state\">{{(freightUnit?.shipmentState?.state)?(freightUnit?.shipmentState?.state):'N/A'}}</span></span>\r\n            <span ><b>Last Known Location : </b><span class=\"shipment-tracking-state\">{{(freightUnit?.shipmentState?.address)?(freightUnit?.shipmentState?.address):'N/A'}}</span></span>\r\n          </div>\r\n          <div style=\"display: flex;flex-wrap: wrap;justify-content: space-between;\">\r\n            <span><b>Consignor : </b>{{(freightUnit?.consignerName)?(freightUnit?.consignerName):'N/A'}}</span>\r\n            <span><b>Consignee : </b>{{(freightUnit?.consigneeName)?(freightUnit?.consigneeName):'N/A'}}</span>\r\n            <span><b>Material : </b>{{(freightUnit?.material)?(freightUnit?.material):'N/A'}}</span>\r\n            <span><b>Quantity : </b>{{(freightUnit?.quantity != 'null')?(freightUnit?.quantity):'N/A'}}</span>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </mat-expansion-panel>\r\n    <div style=\"height: 50px\"></div>\r\n  </div>\r\n\r\n  <button [matTooltipPosition]=\"'left'\" matTooltip=\"Add new Shipment Order\" mat-fab color=\"primary\" name=\"createShipment\" (click)=\"createShipmentOrder()\" style=\"position:absolute;bottom:10px;right:10px\" >\r\n    <i class=\"fa fa-plus\" aria-hidden=\"true\" style=\"font-size: 24px;line-height: 24px;color: white;\"></i>\r\n  </button>\r\n</div>\r\n\r\n\r\n\r\n\r\n"
+module.exports = "<div style=\"overflow: hidden\"  >\r\n  <div style=\"display:flex;padding:7px\" >\r\n    <div style=\"display:flex;padding-top: 7px;\">\r\n      <button (click)=\"selectedFilter = '';filterValue()\" mat-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == ''?'#1976d2':''\"  [style.color]=\"selectedFilter == ''?'#FFFFFF':''\">{{countFilterData['all']}} <span>All</span></button>\r\n      <button (click)=\"selectedFilter = 'active';filterValue()\" mat-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == 'active'?'#1976d2':''\" [style.color]=\"selectedFilter == 'active'?'#FFFFFF':''\" style=\"margin-left: 15px\">{{countFilterData['active']}} <span>Active</span></button>\r\n      <button (click)=\"selectedFilter = 'completed';filterValue()\" mat-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == 'completed'?'#1976d2':''\" [style.color]=\"selectedFilter == 'completed'?'#FFFFFF':''\" style=\"margin-left: 15px\">{{countFilterData['completed']}} <span>Completed</span></button>\r\n    </div>\r\n    <button matTooltip =\"Expand All\"   *ngIf=\"!isAllExpended\" style=\"color: #8e82f0;padding-top:7px;margin-left:auto;font-size:18px;line-height:26px;height:40px;\" (click)=\"isAllExpended =!isAllExpended\" mat-button >\r\n      <i class=\"fa fa-angle-double-down\" aria-hidden=\"true\"></i>\r\n    </button>\r\n    <button matTooltip =\"collapse All\" *ngIf=\"isAllExpended\" style=\"color: #8e82f0;padding-top:7px;margin-left:auto;font-size:18px;line-height:26px;height:40px;\" (click)=\"isAllExpended =!isAllExpended\" mat-button >\r\n      <i class=\"fa fa-angle-double-up\" aria-hidden=\"true\"></i>\r\n    </button>\r\n  </div>\r\n\r\n  <div style=\"margin-top:15px;text-align:center;font-size:18px;color:#e27560;\" *ngIf=\"isSpinner ==false\" >\r\n       <span>{{msg}}</span>\r\n  </div>\r\n  <mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></mat-spinner>\r\n  <div id=\"mainDiv\" style=\"margin-top: 10px;overflow: auto;height: calc(100vh - 125px);\" >\r\n    <!-- [expanded]=true  means close by default-->\r\n    <mat-expansion-panel  [expanded]=\"isAllExpended\" class=\"my-expansion-panel-body\" style=\"margin-top: 10px;padding: 12px\" *ngFor=\"let shipmentOrder of shipmentOrders;let ind=index\" id=\"{{ind}}\">\r\n      <mat-expansion-panel-header style=\"padding-left: 0px;\">\r\n        <div class=\"card-span\" >\r\n          <span ><b>Shipment Order Number :</b> {{(shipmentOrder?.shipmentOrderNumber)?(shipmentOrder?.shipmentOrderNumber):'N/A'}}</span>\r\n          <span><b>Shipment Order Creation Time :</b> {{(shipmentOrder?.shipmentOrderCreateDate)?(shipmentOrder?.shipmentOrderCreateDate | date:'dd-MMM-yyyy'):'N/A'}}</span>\r\n          <span><b>Shipment Order Type :</b> {{(shipmentOrder?.shipmentType)?(shipmentOrder?.shipmentType):'N/A'}}</span>\r\n          <span><b>Vehicle No :</b> {{(shipmentOrder?.vehicleRegistrationNumber)?(shipmentOrder?.vehicleRegistrationNumber):'N/A'}}</span>\r\n          <span><b>Transporter Name :</b> {{(shipmentOrder?.transporterName)?(shipmentOrder?.transporterName):'N/A'}}</span>\r\n          <!--<span><b>Orgnization ID :</b> {{(shipmentOrder?.orgId)?(shipmentOrder?.orgId):'N/A'}}</span>-->\r\n          <span><b>Distance :</b> {{(shipmentOrder?.distance)?(shipmentOrder?.distance/1000):'N/A'}} KM</span>\r\n        </div>\r\n      </mat-expansion-panel-header>\r\n      <div style=\"margin-top: 10px\">\r\n        <div style=\"font-size: 14px;color: #7d7a7a;\"><b>Freight Unit:</b></div>\r\n        <div class=\"card-sub-span\"  *ngFor=\"let freightUnit of shipmentOrder?.freightUnits\" >\r\n          <div style=\"margin-bottom: 2px;display: flex;flex-wrap: wrap;justify-content: space-between;\" >\r\n            <span ><b>Freight Unit Number : </b>{{(freightUnit?.freightUnitNumber)?(freightUnit?.freightUnitNumber):'N/A'}}</span>\r\n            <span ><b>State : </b><span class=\"shipment-tracking-state\">{{(freightUnit?.shipmentState?.state)?(freightUnit?.shipmentState?.state):'N/A'}}</span></span>\r\n            <span ><b>Last Known Location : </b><span class=\"shipment-tracking-state\">{{(freightUnit?.shipmentState?.address)?(freightUnit?.shipmentState?.address):'N/A'}}</span></span>\r\n          </div>\r\n          <div style=\"display: flex;flex-wrap: wrap;justify-content: space-between;\">\r\n            <span><b>Consignor : </b>{{(freightUnit?.consignerName)?(freightUnit?.consignerName):'N/A'}}</span>\r\n            <span><b>Consignee : </b>{{(freightUnit?.consigneeName)?(freightUnit?.consigneeName):'N/A'}}</span>\r\n            <span><b>Material : </b>{{(freightUnit?.material)?(freightUnit?.material):'N/A'}}</span>\r\n            <span><b>Quantity : </b>{{(freightUnit?.quantity != 'null')?(freightUnit?.quantity):'N/A'}}</span>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </mat-expansion-panel>\r\n    <div style=\"height: 50px\"></div>\r\n  </div>\r\n\r\n  <button [matTooltipPosition]=\"'left'\" matTooltip=\"Add new Shipment Order\" mat-fab color=\"primary\" name=\"createShipment\" (click)=\"createShipmentOrder()\" style=\"position:absolute;bottom:10px;right:10px\" >\r\n    <i class=\"fa fa-plus\" aria-hidden=\"true\" style=\"font-size: 24px;line-height: 24px;color: white;\"></i>\r\n  </button>\r\n</div>\r\n\r\n\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -3337,10 +3366,11 @@ var BrowseShipment = (function () {
         this.isSpinner = false;
         this.msg = '';
         this.selectedFilter = '';
+        this.isAllExpended = true;
         this.countFilterData = { all: 0, active: 0, completed: 0 };
         this.pageNo = 1;
-        this.records = 5;
-        this.totalFetchRecords = 5;
+        this.records = 10;
+        this.totalFetchRecords = 10;
         this.shipmentOrderService.getShipmentOrderList.emit({ pageNo: this.pageNo, records: this.records });
         this.isSpinner = true;
         console.log("browse shipment component");
@@ -3634,7 +3664,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/HMEL-admin/shipment-orders/create-shipment-order/create-shipment-order.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\" style=\"position: absolute;\"></mat-spinner>\r\n\r\n<div style=\"padding: 15px;height: calc(100vh - 91px);overflow:auto\">\r\n  <div>\r\n    <span class=\"header-text\">Create Shipment Order</span>\r\n  </div>\r\n\r\n  <div class=\"form-box\">\r\n    <div style=\"margin-top: 20px\" fxLayout=\"row\">\r\n      <mat-form-field fxFlex style=\"margin-right: 15px\">\r\n        <input matInput [(ngModel)]=\"shipmentOrderNo\" placeholder=\"Shipment Order No\" required>\r\n      </mat-form-field>\r\n\r\n      <div fxFlex style=\"margin-right: 5px;\" [style.margin-top]=\"(shipmentOrderDate ==null)?'22px':'0px'\">\r\n        <div *ngIf=\"shipmentOrderDate !=null\" style=\"margin-bottom: 4px;\">\r\n          <span style=\"white-space: nowrap;font-size:12px\">\r\n            <b>Order Date</b>\r\n          </span>\r\n        </div>\r\n        <owl-date-time matInput hourFormat='12' [autoClose]=\"false\" dateFormat=\"DD/MMM/YYYY hh:mm a\" [(ngModel)]=\"shipmentOrderDate\"\r\n          placeHolder=\"Select Order Date\" required></owl-date-time>\r\n      </div>\r\n\r\n      <mat-form-field fxFlex>\r\n        <mat-select [(ngModel)]=\"shipmentOrderType\" placeholder=\"Shipment Order Type\">\r\n          <mat-option value=\"Inbound\">Inbound</mat-option>\r\n          <mat-option value=\"Outbound\">Outbound</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n    </div>\r\n\r\n    <div style=\"margin-top: 10px\" fxLayout=\"row\">\r\n        <mat-form-field fxFlex style=\"margin-right: 15px\">\r\n            <mat-select [(ngModel)]=\"TBPName\" placeholder=\"Transport business partner name\" required>\r\n              <!--<mat-option value=\"\">select</mat-option>-->\r\n              <mat-option *ngFor=\"let trBusinessPart of trBusinessPartners\" value=\"{{trBusinessPart['uuid']}}\">{{trBusinessPart['partnerName']}}</mat-option>\r\n            </mat-select>\r\n          </mat-form-field>\r\n\r\n      <mat-form-field fxFlex style=\"margin-right: 10px\">\r\n        <mat-select [(ngModel)]=\"consignor\" placeholder=\" Select Consignor\" required>\r\n          <mat-option *ngFor=\"let selConsignor of consignorList\" value=\"{{selConsignor.freightLocationId}}\">{{selConsignor.name}}</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n\r\n      <mat-form-field fxFlex>\r\n        <mat-select [(ngModel)]=\"consignee\" placeholder=\"Consignee\" required>\r\n          <mat-option *ngFor=\"let selConsignee of consigneeList\" value=\"{{selConsignee.freightLocation}}\" (click)=\"consigneeObj =selConsignee\">{{selConsignee.partnerName}}</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n    </div>\r\n\r\n    <div style=\"margin-top: 10px\" fxLayout=\"row\">\r\n        <mat-form-field fxFlex style=\"margin-right: 15px;\">\r\n            <input matInput [(ngModel)]=\"material\" placeholder=\"Material\">\r\n          </mat-form-field>\r\n\r\n      <mat-form-field fxFlex style=\"margin-right: 15px\">\r\n        <input matInput type=\"number\" [(ngModel)]=\"quantity\" placeholder=\"Quantity\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field fxFlex>\r\n        <mat-select [(ngModel)]=\"UOM\" placeholder=\"Quantity UOM\">\r\n          <mat-option value=\"tonne\">Tonne</mat-option>\r\n          <mat-option value=\"pieces\">Pieces</mat-option>\r\n          <mat-option value=\"packets\">Packets</mat-option>\r\n          <mat-option value=\"litres\">Litres</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n    </div>\r\n\r\n    <div style=\"margin-top: 10px\" fxLayout=\"row\">\r\n\r\n        <div fxFlex style=\"margin-right: 15px; margin-top: 22px;\">\r\n            <owl-date-time matInput [autoClose]=\"true\" hourFormat='12' dateFormat=\"DD/MMM/YYYY hh:mm a\" [(ngModel)]=\"plannedStartTime\"\r\n              placeHolder=\"Planned Start Time\" required></owl-date-time>\r\n          </div>\r\n\r\n      <div fxFlex style=\"margin-right:15px; margin-top: 22px;\">\r\n        <owl-date-time matInput [autoClose]=\"true\" hourFormat='12' dateFormat=\"DD/MMM/YYYY hh:mm a\" [(ngModel)]=\"plannedEndTime\"\r\n          placeHolder=\"Planned End Time\"></owl-date-time>\r\n      </div>\r\n\r\n      <mat-form-field fxFlex style=\"margin-right: 15px;\">\r\n          <input matInput style='text-transform:uppercase' (blur)=\"checkVehicleRegNoExist()\" [(ngModel)]=\"vehicleRegNo\" placeholder=\"vehicle reg No\"\r\n            required>\r\n        </mat-form-field>\r\n\r\n    </div>\r\n\r\n\r\n\r\n    <div style=\"margin-top: 10px\" fxLayout=\"row\">\r\n      <div style=\"margin-right: 15px;\" fxFlex>\r\n        <mat-form-field style=\"width: calc(100% - 22px);\">\r\n          <input type=\"number\" matInput [(ngModel)]=\"distance\" placeholder=\"distance\">\r\n        </mat-form-field>\r\n        <span style=\"font-size:12px\"> km</span>\r\n      </div>\r\n\r\n      <mat-form-field fxFlex style=\"margin-right: 15px\">\r\n        <mat-select [(ngModel)]=\"trackMode\" placeholder=\"Select Track Mode\" required>\r\n          <mat-option value=\"Manual\">Manual</mat-option>\r\n          <mat-option value=\"Tracker\">Tracker</mat-option>\r\n          <mat-option *ngIf=\"isVehicleExist\" value=\"Trip\">Tracknet</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n\r\n      <div fxFlex style=\"margin-left: 15px;\">\r\n        <mat-form-field *ngIf=\"trackMode =='Tracker'\" style=\"width:100%;\">\r\n          <input matInput [(ngModel)]=\"imei\" placeholder=\"IMEI\" required>\r\n        </mat-form-field>\r\n      </div>\r\n    </div>\r\n\r\n    <div style=\"margin-top: 10px;text-align: right;padding: 10px 10px\">\r\n      <button mat-raised-button style=\"margin-right: 15px\" (click)=\"cancel()\">Cancel</button>\r\n      <button mat-raised-button color=\"primary\" (click)=\"createShipmentOrder()\">Create</button>\r\n    </div>\r\n  </div>\r\n</div>\r\n<div style=\"left: 16px;position: absolute;width: calc(100% - 29px);bottom: 8px;\" >\r\n  <button style=\"text-align: left;line-height: 1.9;background-color: #e1cfe4;\" *ngFor=\"let recentShimentOrder of recentShimentOrders\" mat-raised-button\r\n          (click)=\"setValueFromHistory(recentShimentOrder)\"\r\n  ><b>To:</b>{{recentShimentOrder['selectedConsignee']['partnerName']}} <br> <b>By:</b>{{recentShimentOrder['selectedBusinessPartner']['partnerName']}}</button>\r\n</div>\r\n"
+module.exports = "<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\" style=\"position: absolute;\"></mat-spinner>\r\n\r\n<div style=\"padding: 15px;height: calc(100vh - 91px);overflow:auto\">\r\n  <div>\r\n    <span class=\"header-text\">Create Shipment Order</span>\r\n  </div>\r\n\r\n  <div class=\"form-box\">\r\n    <div style=\"margin-top: 20px\" fxLayout=\"row\">\r\n      <mat-form-field fxFlex style=\"margin-right: 15px\">\r\n        <input matInput [(ngModel)]=\"shipmentOrderNo\" placeholder=\"Shipment Order No\" required>\r\n      </mat-form-field>\r\n\r\n      <div fxFlex style=\"margin-right: 5px;\" [style.margin-top]=\"(shipmentOrderDate ==null)?'22px':'0px'\">\r\n        <div *ngIf=\"shipmentOrderDate !=null\" style=\"margin-bottom: 4px;\">\r\n          <span style=\"white-space: nowrap;font-size:12px\">\r\n            <b>Order Date</b>\r\n          </span>\r\n        </div>\r\n        <owl-date-time matInput hourFormat='12' [autoClose]=\"false\" dateFormat=\"DD/MMM/YYYY hh:mm a\" [(ngModel)]=\"shipmentOrderDate\"\r\n          placeHolder=\"Select Order Date\" required></owl-date-time>\r\n      </div>\r\n\r\n      <mat-form-field fxFlex>\r\n        <mat-select [(ngModel)]=\"shipmentOrderType\" placeholder=\"Shipment Order Type\">\r\n          <mat-option value=\"Inbound\">Inbound</mat-option>\r\n          <mat-option value=\"Outbound\">Outbound</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n    </div>\r\n\r\n    <div style=\"margin-top: 10px\" fxLayout=\"row\">\r\n        <mat-form-field fxFlex style=\"margin-right: 15px\">\r\n            <mat-select [(ngModel)]=\"TBPName\" placeholder=\"Transport business partner name\" required>\r\n              <!--<mat-option value=\"\">select</mat-option>-->\r\n              <mat-option *ngFor=\"let trBusinessPart of trBusinessPartners\" value=\"{{trBusinessPart['uuid']}}\">{{trBusinessPart['partnerName']}}</mat-option>\r\n            </mat-select>\r\n          </mat-form-field>\r\n\r\n      <mat-form-field fxFlex style=\"margin-right: 10px\">\r\n        <mat-select [(ngModel)]=\"consignor\" placeholder=\" Select Consignor\" required>\r\n          <mat-option *ngFor=\"let selConsignor of consignorList\" value=\"{{selConsignor.freightLocationId}}\">{{selConsignor.name}}</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n\r\n      <mat-form-field fxFlex>\r\n        <mat-select [(ngModel)]=\"consignee\" placeholder=\"Consignee\" required>\r\n          <mat-option *ngFor=\"let selConsignee of consigneeList\" value=\"{{selConsignee.freightLocation}}\" (click)=\"consigneeObj =selConsignee\">{{selConsignee.partnerName}}</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n    </div>\r\n\r\n    <div style=\"margin-top: 10px\" fxLayout=\"row\">\r\n        <mat-form-field fxFlex style=\"margin-right: 15px;\">\r\n            <input matInput [(ngModel)]=\"material\" placeholder=\"Material\">\r\n          </mat-form-field>\r\n\r\n      <mat-form-field fxFlex style=\"margin-right: 15px\">\r\n        <input matInput type=\"number\" [(ngModel)]=\"quantity\" placeholder=\"Quantity\">\r\n      </mat-form-field>\r\n\r\n      <mat-form-field fxFlex>\r\n        <mat-select [(ngModel)]=\"UOM\" placeholder=\"Quantity UOM\">\r\n          <mat-option value=\"tonne\">Tonne</mat-option>\r\n          <mat-option value=\"pieces\">Pieces</mat-option>\r\n          <mat-option value=\"packets\">Packets</mat-option>\r\n          <mat-option value=\"litres\">Litres</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n    </div>\r\n\r\n    <div style=\"margin-top: 10px\" fxLayout=\"row\">\r\n\r\n        <div fxFlex style=\"margin-right: 15px; margin-top: 22px;\">\r\n            <owl-date-time matInput [autoClose]=\"true\" hourFormat='12' dateFormat=\"DD/MMM/YYYY hh:mm a\" [(ngModel)]=\"plannedStartTime\"\r\n              placeHolder=\"Planned Start Time\" required></owl-date-time>\r\n          </div>\r\n\r\n      <div fxFlex style=\"margin-right:15px; margin-top: 22px;\">\r\n        <owl-date-time matInput [autoClose]=\"true\" hourFormat='12' dateFormat=\"DD/MMM/YYYY hh:mm a\" [(ngModel)]=\"plannedEndTime\"\r\n          placeHolder=\"Planned End Time\"></owl-date-time>\r\n      </div>\r\n\r\n      <mat-form-field fxFlex style=\"margin-right: 15px;\">\r\n          <input matInput style='text-transform:uppercase' (blur)=\"checkVehicleRegNoExist()\" [(ngModel)]=\"vehicleRegNo\" placeholder=\"vehicle reg No\"\r\n            required>\r\n        </mat-form-field>\r\n\r\n    </div>\r\n\r\n\r\n\r\n    <div style=\"margin-top: 10px\" fxLayout=\"row\">\r\n      <div style=\"margin-right: 15px;\" fxFlex>\r\n        <mat-form-field style=\"width: calc(100% - 22px);\">\r\n          <input type=\"number\" matInput [(ngModel)]=\"distance\" placeholder=\"distance\">\r\n        </mat-form-field>\r\n        <span style=\"font-size:12px\"> km</span>\r\n      </div>\r\n\r\n      <mat-form-field fxFlex style=\"margin-right: 15px\">\r\n        <mat-select [(ngModel)]=\"trackMode\" placeholder=\"Select Track Mode\" required>\r\n          <mat-option value=\"Manual\">Manual</mat-option>\r\n          <mat-option value=\"Tracker\">Tracker</mat-option>\r\n          <mat-option *ngIf=\"isVehicleExist\" value=\"Trip\">Tracknet</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n\r\n      <div fxFlex style=\"margin-left: 15px;\">\r\n        <mat-form-field *ngIf=\"trackMode =='Tracker'\" style=\"width:100%;\">\r\n          <input matInput [(ngModel)]=\"imei\" placeholder=\"IMEI\" required>\r\n        </mat-form-field>\r\n      </div>\r\n    </div>\r\n\r\n    <div style=\"margin-top: 10px;text-align: right;padding: 10px 10px\">\r\n      <button mat-raised-button style=\"margin-right: 15px\" (click)=\"cancel()\">Cancel</button>\r\n      <button mat-raised-button color=\"primary\" (click)=\"createShipmentOrder()\">Create</button>\r\n    </div>\r\n  </div>\r\n</div>\r\n<div style=\"left: 16px;position: absolute;width: calc(100% - 29px);bottom: 8px;\" >\r\n  <button style=\"text-align: left;line-height: 1.9;background-color: #e1cfe4;margin-left: 5px\" *ngFor=\"let recentShimentOrder of recentShimentOrders\" mat-raised-button\r\n          (click)=\"setValueFromHistory(recentShimentOrder)\"\r\n  ><b>To:</b>{{recentShimentOrder['selectedConsignee']['partnerName']}} <br> <b>By:</b>{{recentShimentOrder['selectedBusinessPartner']['partnerName']}}</button>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -3696,7 +3726,7 @@ var CreateShipmentOrder = (function () {
         this.consignee = '';
         this.material = '';
         this.quantity = '';
-        this.UOM = '';
+        this.UOM = 'tonne';
         this.consigneeList = [];
         this.consignorList = [];
         // public selectedBusinessPartner: any;
@@ -3769,6 +3799,7 @@ var CreateShipmentOrder = (function () {
             _this.consignorList = [];
             _this.consignorList.push(response['data']);
         });
+        this.shipmentOrderDate = new Date();
     } //constructor close
     CreateShipmentOrder.prototype.ngOnDestroy = function () {
         console.log("add freight dialog close");
@@ -3793,6 +3824,10 @@ var CreateShipmentOrder = (function () {
     };
     CreateShipmentOrder.prototype.ngOnInit = function () {
         this.recentShimentOrders = this.localStorageService.get('RECENT_SHO');
+        var shoNo = this.localStorageService.get('PREVIOUS_SHO_NO');
+        if (shoNo != null) {
+            this.shipmentOrderNo = "" + shoNo;
+        }
         console.log(this.recentShimentOrders);
     };
     //this method use for : take data from localstorage and show at the bottom of page
@@ -3800,6 +3835,7 @@ var CreateShipmentOrder = (function () {
         console.log(value);
         var isConsigneeAvaiable = false;
         var isTBPAvaiable = false;
+        var isConsignorAvaiable = false;
         for (var i = 0; i < this.consigneeList.length; i++) {
             if (value['selectedConsignee']['freightLocation'] == this.consigneeList[i]['freightLocation']) {
                 isConsigneeAvaiable = true;
@@ -3810,10 +3846,17 @@ var CreateShipmentOrder = (function () {
                 isTBPAvaiable = true;
             }
         }
+        for (var i = 0; i < this.consignorList.length; i++) {
+            if (value['freightUnits'][0]['consigner'] == this.consignorList[i]['freightLocationId']) {
+                isConsignorAvaiable = true;
+            }
+        }
         this.consignee = (isConsigneeAvaiable) ? value['selectedConsignee']['freightLocation'] : '';
+        this.consignor = (isConsignorAvaiable) ? value['freightUnits'][0]['consigner'] : '';
         this.TBPName = (isTBPAvaiable) ? value['selectedBusinessPartner']['uuid'] : '';
         this.material = value['freightUnits'][0]['material'];
         this.distance = ((value['freightUnits'][0]['distance']) / 1000);
+        this.shipmentOrderType = value['shipmentType'];
     };
     // **************************************************************************************************
     CreateShipmentOrder.prototype.checkVehicleRegNoExist = function () {
@@ -3898,7 +3941,7 @@ var CreateShipmentOrder = (function () {
                 break;
             }
         }
-        recentSho['unicKey'] = recentSho['selectedConsignee']['freightLocation'] + '_' + recentSho['selectedBusinessPartner']['uuid'];
+        recentSho['unicKey'] = freightUnit['consigner'] + '_' + recentSho['selectedConsignee']['freightLocation'] + '_' + recentSho['selectedBusinessPartner']['uuid'];
         var recentSHO_LIST = this.localStorageService.get('RECENT_SHO');
         console.log(recentSHO_LIST);
         if (recentSHO_LIST != undefined && recentSHO_LIST != null) {
@@ -3922,9 +3965,9 @@ var CreateShipmentOrder = (function () {
             var shoList = [];
             shoList.push(recentSho);
             this.localStorageService.set('RECENT_SHO', shoList);
-            // console.log(shoList);
         }
-    };
+        this.localStorageService.set('PREVIOUS_SHO_NO', this.shipmentOrderNo);
+    }; //close recentSho methods
     CreateShipmentOrder.prototype.checkValidation = function () {
         if (this.shipmentOrderNo == '' || this.shipmentOrderNo == null) {
             this.openSnackBar("Please fill Shipment order Number");
@@ -3936,10 +3979,6 @@ var CreateShipmentOrder = (function () {
         }
         if (this.consignee == '' || this.consignee == null) {
             this.openSnackBar("Please select Consignee");
-            return false;
-        }
-        if (this.shipmentOrderDate == '' || this.shipmentOrderDate == null) {
-            this.openSnackBar("Please fill Shipment order date");
             return false;
         }
         if (this.plannedStartTime == '' || this.plannedStartTime == null) {
@@ -5930,7 +5969,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/main-dashboard/main-dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"isUserAuthorized ==false\" style=\"height:100vh;background-color: #1f2021;opacity: .3;\">\n  <label style=\"font-size: 21px;color: #e8dbdb; position: absolute;top: 36%;left: 50%;transform: translate(-50%,-50%);\">{{loginMsg}}</label>\n  <label style=\"color: red;color: #ff000a !important;position: absolute;left: 50%;top: 17%;transform: translate(-50%,-50%);font-size: 20px;font-weight: bold;\">{{errorMsg}}</label>\n</div>\n\n<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\" style=\"position: absolute\"></mat-spinner>\n\n<div *ngIf=\"isUserAuthorized\" class=\"header\" fxLayout=\"row\" style=\"min-width: 768px;\" >\n  <img class=\"logo\" src=\"logo-light.png\" alt=\"Fretron Logo\" >\n  <span class=\"service-name\" >Shipper Portal</span>\n  <button  mat-button class=\"button-basic1\" (click)=\"goToShipment_OrdersView()\" >Shipment Orders</button>\n  <button  mat-button class=\"button-basic1\" (click)=\"goToLR_TrackingView()\">LR Tracking</button>\n  <!--<button  mat-button class=\"button-basic1\" >Payment Status</button>-->\n  <!--<button  mat-button class=\"button-basic1\" >Statement of Accounts</button>-->\n\n  <button mat-button class=\"button-basic1 fa fa-cog\" style=\"margin-left:auto;\"  (click)=\"goToSettingView()\"></button>\n\n  <button mat-button [matMenuTriggerFor]=\"menu\" style=\"cursor: pointer;z-index: 1000;\" >\n    <i  class=\"fa fa-user-o\" aria-hidden=\"true\" >&#9662;</i>\n  </button>\n  <mat-menu #menu=\"matMenu\">\n    <app-user-profile></app-user-profile>\n  </mat-menu>\n</div>\n<div *ngIf=\"isUserAuthorized\" style=\"padding: 5px\">\n  <router-outlet></router-outlet>\n</div>\n"
+module.exports = "<div *ngIf=\"isUserAuthorized ==false\" style=\"height:100vh;background-color: #1f2021;opacity: .3;\">\n  <label style=\"font-size: 21px;color: #e8dbdb; position: absolute;top: 36%;left: 50%;transform: translate(-50%,-50%);\">{{loginMsg}}</label>\n  <label style=\"color: red;color: #ff000a !important;position: absolute;left: 50%;top: 17%;transform: translate(-50%,-50%);font-size: 20px;font-weight: bold;\">{{errorMsg}}</label>\n</div>\n\n<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\" style=\"position: absolute\"></mat-spinner>\n\n<div *ngIf=\"isUserAuthorized\" class=\"header\" fxLayout=\"row\" style=\"min-width: 768px;\" >\n  <img class=\"logo\" src=\"logo-light.png\" alt=\"Fretron Logo\" >\n  <span class=\"service-name\" >Shipper Portal</span>\n  <button  mat-button class=\"button-basic1\" (click)=\"goToShipment_OrdersView()\" >Shipment Orders</button>\n  <!--<button  mat-button class=\"button-basic1\" (click)=\"goToLR_TrackingView()\">LR Tracking</button>-->\n  <!--<button  mat-button class=\"button-basic1\" >Payment Status</button>-->\n  <!--<button  mat-button class=\"button-basic1\" >Statement of Accounts</button>-->\n\n  <button mat-button class=\"button-basic1 fa fa-cog\" style=\"margin-left:auto;\"  (click)=\"goToSettingView()\"></button>\n\n  <button mat-button [matMenuTriggerFor]=\"menu\" style=\"cursor: pointer;z-index: 1000;\" >\n    <i  class=\"fa fa-user-o\" aria-hidden=\"true\" >&#9662;</i>\n  </button>\n  <mat-menu #menu=\"matMenu\">\n    <app-user-profile></app-user-profile>\n  </mat-menu>\n</div>\n<div *ngIf=\"isUserAuthorized\" style=\"padding: 5px\">\n  <router-outlet></router-outlet>\n</div>\n"
 
 /***/ }),
 
@@ -6391,7 +6430,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/user-profile/user-profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n  <div class=\"profile-container-desktop\" >\r\n    <img class=\"logo\" src=\"../../images/fretron_logo.png\" alt=\"Avatar\"  >\r\n    <img class=\"profile-pic\" src=\"../../images/default-profile.png\" alt=\"profile\"  >\r\n    <div style=\"display: grid;position: absolute;top:81px;left: 23px;color:white\">\r\n      <span style=\"font-size: 18px;margin-bottom: 3px;\">{{customerName}}</span>\r\n      <span style=\"font-size: 12px\">{{customerMobile}}</span>\r\n      <span style=\"font-size: 12px\">{{userDetails?.email}}</span>\r\n    </div>\r\n  </div>\r\n  <!--<div style=\"margin: 10px 0px 10px 10px;overflow: auto;max-height: 250px;\" >-->\r\n    <!--<div class=\"org-list-element\" *ngFor=\"let currentOrg of orgList\" (click)=\"switchOrg(currentOrg)\" >-->\r\n      <!--<div  style=\"padding: 5px;\" [style.background-color]=\"(currentOrgId === currentOrg['uuid']? 'lightblue': 'white')\">-->\r\n        <!--<span >{{currentOrg['organisationName']}}</span>-->\r\n      <!--</div>-->\r\n    <!--</div>-->\r\n  <!--</div>-->\r\n  <div style=\"width: 95%;text-align: right;\" >\r\n    <!--<button  (click)=\"goToAddOrganisation()\" mat-button >Add Organisation</button>-->\r\n    <button  (click)=\"logout();\" mat-button >Logout</button>\r\n  </div>\r\n</div>\r\n\r\n"
+module.exports = "<div>\r\n  <div class=\"profile-container-desktop\" >\r\n    <img class=\"logo\" src=\"../../images/fretron_logo.png\" alt=\"Avatar\"  >\r\n    <img class=\"profile-pic\" src=\"../../images/default-profile.png\" alt=\"profile\"  >\r\n    <div style=\"display: grid;position: absolute;top:81px;left: 23px;color:white\">\r\n      <span style=\"font-size: 18px;margin-bottom: 3px;\">{{customerName}}</span>\r\n      <span style=\"font-size: 12px\">{{customerMobile}}</span>\r\n      <span style=\"font-size: 12px\">{{userDetails?.email}}</span>\r\n    </div>\r\n  </div>\r\n  <!--<div style=\"margin: 10px 0px 10px 10px;overflow: auto;max-height: 250px;\" >-->\r\n    <!--<div class=\"org-list-element\" *ngFor=\"let currentOrg of orgList\" (click)=\"switchOrg(currentOrg)\" >-->\r\n      <!--<div  style=\"padding: 5px;\" [style.background-color]=\"(currentOrgId === currentOrg['uuid']? 'lightblue': 'white')\">-->\r\n        <!--<span >{{currentOrg['organisationName']}}</span>-->\r\n      <!--</div>-->\r\n    <!--</div>-->\r\n  <!--</div>-->\r\n  <div style=\"text-align: center;\">\r\n    <span style=\"font-size: 13px;\"><b>Org Id :</b> {{userDetails['orgId']}}</span>\r\n  </div>\r\n  <div style=\"width: 95%;text-align: right;\" >\r\n\r\n    <!--<button  (click)=\"goToAddOrganisation()\" mat-button >Add Organisation</button>-->\r\n    <button  (click)=\"logout();\" mat-button >Logout</button>\r\n  </div>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -6472,11 +6511,10 @@ var UserProfile = (function () {
     };
     UserProfile.prototype.logout = function () {
         this.localStorageService.remove('AUTH_TOKEN_SHIPPER');
-        this.localStorageService.clearAll();
+        // this.localStorageService.clearAll();
         this._store.dispatch({ type: "USER_INFO", payload: null });
         this._store.dispatch({ type: "SIGNUP_RES", payload: null });
         this._store.dispatch({ type: "AUTHORIZATION", payload: null });
-        console.log(this.localStorageService.get('AUTH_TOKEN_SHIPPER'));
         this._router.navigate(['login']);
     };
     UserProfile.prototype.goToAddOrganisation = function () {
@@ -6540,8 +6578,8 @@ var path = {
     SHIPMENT_ORDER_PATH: BASE_IP.BASE + '/shipper/shipment/order/create',
     GET_SHIPMENT_ORDER_PATH: BASE_IP.BASE + '/shipper/shipment/order/get',
     CHECK_VEHICLE_EXIST_PATH: BASE_IP.BASE + '/shipper/shipment/validateVehicle?vehicleRegistrattionNumber=',
-    SWITCH_ORG_PATH: BASE_IP.IP + "/user/switchorg?orgId=",
-    ORGANIZATION_LIST_PATH: BASE_IP.ORG_MANAGER + "/organizations",
+    // SWITCH_ORG_PATH: BASE_IP.IP+"/user/switchorg?orgId=",
+    // ORGANIZATION_LIST_PATH: BASE_IP.ORG_MANAGER+"/organizations",
     CHECK_FRETRON_REFERECE_NUMBER: BASE_IP.BASE + "/shipper/check/fretron/reference/number",
     PATH: BASE_IP.BASE + '/shipper/user',
     DUPATH: BASE_IP.BASE + '/shipper/user/delete/',
@@ -7321,7 +7359,7 @@ var AuthorizationService = (function () {
                 var res = response;
                 if (res == null) {
                     _this.localStorageService.remove('AUTH_TOKEN_SHIPPER');
-                    _this.localStorageService.clearAll();
+                    // this.localStorageService.clearAll();
                     _this._store.dispatch({ type: "AUTHORIZATION", payload: { error: 'X', errorMsg: 'server response with null' } });
                 }
                 else if (res.status >= 200 && res.status < 300 && res['isValid'] == true) {
@@ -7338,7 +7376,7 @@ var AuthorizationService = (function () {
                 }
                 else {
                     _this.localStorageService.remove('AUTH_TOKEN_SHIPPER');
-                    _this.localStorageService.clearAll();
+                    // this.localStorageService.clearAll();
                     _this._store.dispatch({ type: "AUTHORIZATION", payload: { error: 'X', errorMsg: res.error } });
                 }
             }, function (err) {
@@ -9529,7 +9567,8 @@ var LoginServices = (function () {
             console.log(pathURL);
             console.log(reqObj);
             _this.userLogin(pathURL, reqObj).subscribe(function (response) {
-                _this.localStorageService.clearAll();
+                // this.localStorageService.clearAll();
+                _this.localStorageService.remove('AUTH_TOKEN_SHIPPER');
                 console.log(response);
                 var res = response;
                 if (res == null) {
