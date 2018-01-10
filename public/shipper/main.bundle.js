@@ -5798,7 +5798,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/log_in/log-in.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" style=\"position: absolute;\" class=\"spinner\"></mat-spinner>\r\n<div class=\"main\" >\r\n    <!--<div style=\"text-align: center\">-->\r\n      <!--<label>LOGIN</label>-->\r\n    <!--</div>-->\r\n    <mat-card class=\"login-card\">\r\n      <div class=\"imgcontainer\" >\r\n        <img style=\"padding: 5px;background-color: darkgray; width: 60%;\" src=\"../../../../images/fretron_logo.png\" alt=\"Avatar\"  >\r\n      </div>\r\n      <div fxLayout=\"row\" >\r\n        <button (click)=\"loginWithGoogle()\" color=\"primary\" style=\"width: 100%;margin-bottom: 10px\" mat-raised-button >\r\n          Login with Google\r\n        </button>\r\n      </div>\r\n    </mat-card>\r\n</div>\r\n"
+module.exports = "<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" style=\"position: absolute;\" class=\"spinner\"></mat-spinner>\r\n<div class=\"main\" >\r\n    <!--<div style=\"text-align: center\">-->\r\n      <!--<label>LOGIN</label>-->\r\n    <!--</div>-->\r\n    <mat-card class=\"login-card\">\r\n      <div class=\"imgcontainer\" >\r\n        <img style=\"padding: 5px;background-color: darkgray; width: 60%;\" src=\"../../../../images/fretron_logo.png\" alt=\"Avatar\"  >\r\n      </div>\r\n      <div fxLayout=\"row\" >\r\n        <button id=\"google-login\" (click)=\"loginWithGoogle()\" color=\"primary\" style=\"width: 100%;margin-bottom: 10px\" mat-raised-button >\r\n          Login with Google\r\n        </button>\r\n      </div>\r\n    </mat-card>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -5862,6 +5862,7 @@ var LogInComponent = (function () {
                 }
                 else if (value['data']['isExist'] == false) {
                     _this.isSpinner = false;
+                    console.log(_this.isSpinner);
                     _this.openSnackBar("user not Registered Please Signup");
                     _this.router.navigate(["signup"]);
                 }
@@ -5904,29 +5905,31 @@ var LogInComponent = (function () {
     LogInComponent.prototype.loginWithGoogle = function () {
         var _this = this;
         console.log("google auth");
-        this.isSpinner = true;
         this.un_subGoogleLogin = this._auth.login('google').subscribe(function (data) {
-            _this.isSpinner = false;
-            console.log(data);
-            //user data
-            //name, image, uid, provider, uid, email, token (accessToken for Facebook & google, no token for linkedIn),
-            // idToken(only for google)
-            var reqObj = {
-                "loginType": "google",
-                "authToken": {
-                    "token": data['token'],
-                    "email": data['email'],
-                    "name": data['name']
-                }
-            };
-            console.log(reqObj);
-            _this.isSpinner = true;
-            _this._store.dispatch({ type: "USER_INFO", payload: null });
-            _this._store.dispatch({ type: "AUTHORIZATION", payload: null });
-            _this._loginServices.login.emit(reqObj); // call api for checking user existing or not
-        }, function (err) {
-            _this.isSpinner = false;
-            console.log(err);
+            if (_this.un_subGoogleLogin != null && _this.un_subGoogleLogin != undefined) {
+                _this.un_subGoogleLogin.unsubscribe();
+                _this.un_subGoogleLogin = null;
+                document.getElementById('google-login').click(); // 
+            }
+            else {
+                _this.isSpinner = true;
+                console.log(data);
+                //user data
+                //name, image, uid, provider, uid, email, token (accessToken for Facebook & google, no token for linkedIn),
+                // idToken(only for google)
+                var reqObj = {
+                    "loginType": "google",
+                    "authToken": {
+                        "token": data['token'],
+                        "email": data['email'],
+                        "name": data['name']
+                    }
+                };
+                console.log(reqObj);
+                _this._store.dispatch({ type: "USER_INFO", payload: null });
+                _this._store.dispatch({ type: "AUTHORIZATION", payload: null });
+                _this._loginServices.login.emit(reqObj); // call api for checking user existing or not
+            }
         });
     }; // close loginWithGoogle
     LogInComponent.prototype.openSnackBar = function (message) {
@@ -6014,9 +6017,12 @@ var MainDashboardComponent = (function () {
         this.loginMsg = 'LOGIN...';
         this.errorMsg = '';
         console.log("main dashboard");
-        // let currentPath='http://'+window.location.hostname+':'+window.location.port;
-        // window.location.replace(currentPath);
-        // console.log(currentPath);
+        // let iframe =document.getElementById('ssIFrame_google'); // this is google login dialog box frame id
+        // if(iframe != null){
+        //   let currentPath='http://'+window.location.hostname+':'+window.location.port+window.location.pathname;
+        //   window.location.replace(currentPath);
+        //   console.log(window.location.pathname);
+        // }
         var authToken = this.localStorageService.get('AUTH_TOKEN_SHIPPER'); // if token not found then it will check in app.component.
         var isAlreadyAuthorized = false;
         this.unSub_authorization = this._store.select('authorization').subscribe(function (value) {
@@ -6233,7 +6239,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/signup/signup.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main\">\n  <mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></mat-spinner>\n  <mat-card >\n    <form (ngSubmit)=\"userSignup()\" #signupForm=\"ngForm\" >\n      <div class=\"imgcontainer\" >\n        <img style=\"padding: 5px;background-color: darkgray; width: 60%;\" src=\"../../../../images/fretron_logo.png\" alt=\"Avatar\"  >\n      </div>\n\n      <div>\n        <div class=\"fade-header\" style=\"text-align: center;margin-bottom: 30px\" >\n          <span>Create New Account</span>\n        </div>\n\n        <div fxLayout=\"row\" >\n          <mat-input-container class=\"login-text-color\" style=\"width: 100%\" >\n            <input  matTooltip=\"{{'This field is required'}}\" value=\" \" matInput [(ngModel)]=\"name\" placeholder=\"Enter Name\" disabled name=\"name\" id=\"name\" required>\n          </mat-input-container>\n        </div>\n\n        <div fxLayout=\"row\" style=\"margin-top: 5px\" >\n          <mat-input-container class=\"login-text-color\" style=\"width: 100%\" >\n            <input  matTooltip=\"{{'This field is required'}}\" value=\" \" matInput [(ngModel)]=\"email\" placeholder=\"Enter Email\" disabled name=\"email\" id=\"email\">\n          </mat-input-container>\n        </div>\n\n        <div fxLayout=\"row\" style=\"margin-top: 5px\" >\n          <mat-input-container class=\"login-text-color\" style=\"width: 100%\" >\n            <input type=\"number\" min=\"0\" matTooltip=\"{{'This field is required'}}\"  matInput [(ngModel)]=\"mobileNo\"\n                   onkeydown=\"if(event.target.value.length>=10 && event.keyCode!=8 && event.keyCode!=13 )return false;\"\n                   pattern=\"[0-9]{10}\" placeholder=\"{{'Enter Mobile Number'}}\" name=\"mobileNo\" id=\"mobileNo\" >\n          </mat-input-container>\n        </div>\n        <div fxLayout=\"row\" style=\"margin-top:15px;\" >\n          <button style=\"margin-left: auto\" name=\"cancel\" type=\"reset\"  (click)=\"cancel()\"  matTooltip=\"{{'cancel'}}\"  mat-button >\n            cancel\n          </button>\n          <button  name=\"ok\"  type=\"submit\"  matTooltip=\"{{'ok'}}\"  mat-button  [disabled]=\"!signupForm.form.valid || isClicked ==true\" >\n            Signup\n          </button>\n        </div>\n      </div>\n    </form>\n  </mat-card>\n</div>\n\n"
+module.exports = "<div class=\"main\">\n  <mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></mat-spinner>\n  <mat-card >\n    <form (ngSubmit)=\"userSignup()\" #signupForm=\"ngForm\" >\n      <div class=\"imgcontainer\" >\n        <img style=\"padding: 5px;background-color: darkgray; width: 60%;\" src=\"../../../../images/fretron_logo.png\" alt=\"Avatar\"  >\n      </div>\n\n      <div>\n        <div class=\"fade-header\" style=\"text-align: center;margin-bottom: 30px\" >\n          <span>Create New Account</span>\n        </div>\n\n        <div fxLayout=\"row\" >\n          <mat-input-container class=\"login-text-color\" style=\"width: 100%\" >\n            <input type=\"text\" matTooltip=\"{{'This field is required'}}\" value=\" \" matInput [(ngModel)]=\"name\" placeholder=\"Enter Name\" disabled name=\"name\" id=\"name\" required>\n          </mat-input-container>\n        </div>\n\n        <div fxLayout=\"row\" style=\"margin-top: 5px\" >\n          <mat-input-container class=\"login-text-color\" style=\"width: 100%\" >\n            <input  matTooltip=\"{{'This field is required'}}\" value=\" \" matInput [(ngModel)]=\"email\" placeholder=\"Enter Email\" disabled name=\"email\" id=\"email\" required>\n          </mat-input-container>\n        </div>\n\n        <div fxLayout=\"row\" style=\"margin-top: 5px\" >\n          <mat-input-container class=\"login-text-color\" style=\"width: 100%\" >\n            <input type=\"number\" min=\"0\" matTooltip=\"{{'This field is required'}}\"  matInput [(ngModel)]=\"mobileNo\"\n                   onkeydown=\"if(event.target.value.length>=10 && event.keyCode!=8 && event.keyCode!=13 )return false;\"\n                   pattern=\"[0-9]{10}\" placeholder=\"{{'Enter Mobile Number'}}\" name=\"mobileNo\" id=\"mobileNo\" >\n          </mat-input-container>\n        </div>\n        <div fxLayout=\"row\" style=\"margin-top:15px;\" >\n          <button style=\"margin-left: auto\" name=\"cancel\" type=\"reset\"  (click)=\"cancel()\"  matTooltip=\"{{'cancel'}}\"  mat-button >\n            cancel\n          </button>\n          <button  name=\"ok\"  type=\"submit\"  matTooltip=\"{{'ok'}}\"  mat-button  [disabled]=\"!signupForm.form.valid || isClicked ==true\" >\n            Signup\n          </button>\n        </div>\n      </div>\n    </form>\n  </mat-card>\n</div>\n\n"
 
 /***/ }),
 
