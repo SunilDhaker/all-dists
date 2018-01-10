@@ -19905,11 +19905,13 @@ var VehiclePickerAutocompleteComponent = (function () {
     VehiclePickerAutocompleteComponent.prototype.makeChip = function (event, inputValue) {
         console.log(event);
         console.log(inputValue);
-        if (event.keyCode == 32 || event.keyCode == 186 || event.keyCode == 188 || event.type == "blur") {
+        if (event.keyCode == 13 || event.keyCode == 32 || event.keyCode == 186 || event.keyCode == 188 || event.type == "blur") {
             // let value= inputValue.toString().trim();
             var value = inputValue.toString().toUpperCase();
             var selectedVal = {};
-            value = value.substring(0, value.length - 1);
+            if (event.keyCode != 13) {
+                value = value.substring(0, value.length - 1);
+            }
             var valid = false;
             for (var k = 0; k < this._vehiclesForList.length; k++) {
                 if (this._vehiclesForList[k]['_name'].toString().toUpperCase() == value) {
