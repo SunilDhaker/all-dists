@@ -3485,15 +3485,16 @@ var LogoutServices = (function () {
     };
     LogoutServices.prototype.logout = function () {
         console.log(localStorage);
-        // this.localStorageService.remove("TOKEN");
-        // this.localStorageService.remove("USER-MOB-NO");
-        // this.localStorageService.remove("COUNTRY-CODE");
-        // this.localStorageService.remove("VEHICLE_TIMELINE_REQUEST_OBJ");
-        // this.localStorageService.remove("VEHICLE-TRIP-DETAIL-OBJ"); //created in vehicle trip status details
-        // this.localStorageService.remove("SELECTED-LOCATION-HIS-VEHICLE");
+        this.localStorageService.remove("AUTH_TOKEN");
+        this.localStorageService.remove("USER-MOB-NO");
+        this.localStorageService.remove("COUNTRY-CODE");
+        this.localStorageService.remove("VEHICLE_TIMELINE_REQUEST_OBJ");
+        this.localStorageService.remove("VEHICLE-TRIP-DETAIL-OBJ"); //created in vehicle trip status details
+        this.localStorageService.remove("SELECTED-LOCATION-HIS-VEHICLE");
         // this._store.dispatch({type: "LOGOUT",payload:null});
-        this.localStorageService.clearAll();
-        this._store.dispatch({ type: "CUSTOMER_DETAILS", payload: null });
+        // this.localStorageService.clearAll();
+        this._store.dispatch({ type: "CUST" +
+                "OMER_DETAILS", payload: null });
         this._store.dispatch({ type: "CURRENT_TRIP_VEHICLE", payload: null });
         this._store.dispatch({ type: "AUTHORIZATION", payload: null });
         this._store.dispatch({ type: "VEHICLE_LIST", payload: null });
@@ -5774,20 +5775,23 @@ var AddTrip = (function () {
         this.unSub_etaDistance = null;
         this.unSub_templateList = null;
         this.unSub_PickedVehicles = null;
+        this.unSub_SelectedVehiclesFromStore = null;
         this.selectedTripLocation = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.selectedTemplateLocation = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.search = '';
         this.commandType = null;
         this.tripTemplateList = [];
         this.selectedVehicleList = [];
+        this.selectedVehiclesFromStore = [];
         this.typeOfLocationCreator = { type: "Polygon" };
         this.sourceFromTemplate = "";
         this.destinationFromTemplate = "";
         this.locationFromTemplate = { source: this.sourceFromTemplate, destination: this.destinationFromTemplate };
         this.orgId = this.localStorageService.get("ORGID");
         if (this.localStorageService.get("SELECTED_VEHICLE_LIST") != null)
-            this.selectedVehicleList = this.localStorageService.get("SELECTED_VEHICLE_LIST");
-        // console.log(this.localStorageService.get("SELECTED_VEHICLE_LIST"));
+            // this.selectedVehiclesFromStore= this.localStorageService.get("SELECTED_VEHICLE_LIST");
+            console.log(this.localStorageService.get("SELECTED_VEHICLE_LIST"));
+        console.log(this.selectedVehicleList);
         this.commandType = this.localStorageService.get("TEMPLATE_TYPE");
         console.log(this.commandType);
         if (this.commandType == 'continue') {
@@ -5866,6 +5870,16 @@ var AddTrip = (function () {
             _this._store.dispatch(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__ngrx_router_store__["c" /* go */])(['/vtsdashboard/trip/status']));
             // }
         });
+        this.unSub_SelectedVehiclesFromStore = _store.select('selectedVehicleList').subscribe(function (value) {
+            if (value == null) {
+                return;
+            }
+            console.log(value);
+            // this.selectedVehiclesFromStore=value;
+            _this.editVehicleList = value;
+            console.log("editVehicleList");
+            console.log(_this.editVehicleList);
+        });
         this.unSub_PickedVehicles = _store.select('PickedVehicles').subscribe(function (value) {
             console.log(value);
             _this.vehicleList = value;
@@ -5900,6 +5914,13 @@ var AddTrip = (function () {
                 console.log(_this.vehicleList);
                 for (var i = 0; i < _this.vehicleList.length; i++) {
                     _this.vehicleList[i]['select'] = false;
+                    for (var k = 0; k < _this.selectedVehiclesFromStore.length; k++) {
+                        if (_this.selectedVehiclesFromStore[k] == _this.vehicleList[i]['vehicleRegistrationNumber']) {
+                            console.log("matched");
+                            // this.editVehicleList.push(this.vehicleList[i]['uuid']);
+                            break;
+                        }
+                    }
                     for (var j = 0; j < _this.selectedVehicleList.length; j++) {
                         if (_this.selectedVehicleList[j] == _this.vehicleList[i]['vehicleRegistrationNumber']) {
                             _this.vehicleList[i]['select'] = true;
@@ -5932,6 +5953,7 @@ var AddTrip = (function () {
         this._store.dispatch({ type: "IS_BACK", payload: { isBack: false, backToComponent: '' } });
         this._store.dispatch({ type: "ETA_DISTANCE", payload: null });
         this._store.dispatch({ type: "CREATE_QUICK_TRIP_DETAILS", payload: null });
+        this._store.dispatch({ type: "SELECTED_VEHICLE_FOR_TRIP", payload: null });
         if (typeof this.unSub_sourceAddress != 'undefined' && this.unSub_sourceAddress != null && this.unSub_sourceAddress != undefined) {
             // console.log(" unSub_sourceAddress");
             this.unSub_sourceAddress.unsubscribe();
@@ -5962,6 +5984,9 @@ var AddTrip = (function () {
         }
         if (typeof this.unSub_PickedVehicles != 'undefined' && this.unSub_PickedVehicles != null && this.unSub_PickedVehicles != undefined) {
             this.unSub_PickedVehicles.unsubscribe();
+        }
+        if (typeof this.unSub_SelectedVehiclesFromStore != 'undefined' && this.unSub_SelectedVehiclesFromStore != null && this.unSub_SelectedVehiclesFromStore != undefined) {
+            this.unSub_SelectedVehiclesFromStore.unsubscribe();
         }
     };
     AddTrip.prototype.ngOnInit = function () {
@@ -18103,10 +18128,11 @@ var TripStatusDesktop = (function () {
         this.localStorageService.set("TEMPLATE_TYPE", type);
         for (var i = 0; i < this.tripStatusList.length; i++) {
             if (this.tripStatusList[i]._isChecked === true)
-                this.vehicleObjList.push(this.tripStatusList[i].vehicleRegistrationNumber);
+                this.vehicleObjList.push(this.tripStatusList[i].uuid);
         }
         console.log(this.vehicleObjList);
         this.localStorageService.set("SELECTED_VEHICLE_LIST", this.vehicleObjList);
+        this._store.dispatch({ type: "SELECTED_VEHICLE_FOR_TRIP", payload: this.vehicleObjList });
         this._store.dispatch(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__ngrx_router_store__["c" /* go */])(['/vtsdashboard/addTrip']));
     };
     TripStatusDesktop.prototype.goselectedTemplate = function (template) {
@@ -19812,7 +19838,7 @@ var VehiclePickerAutocompleteComponent = (function () {
                     console.log(value['errorMsg']);
                     _this.errorMsg = value['errorMsg'];
                 }
-                _this.selectedVehiclesForEdit();
+                // this.selectedVehiclesForEdit();
                 console.log("this._vehiclesForList");
                 console.log(_this._vehiclesForList);
             });
@@ -19833,6 +19859,7 @@ var VehiclePickerAutocompleteComponent = (function () {
                             if (_this.vehicles[k]['groups'].indexOf(_this.vehicleGroupList[i]['uuid']) != -1) {
                                 console.log("matched");
                                 vehList.push(_this.vehicles[k]);
+                                break;
                             }
                         }
                         var obj = {
@@ -19865,6 +19892,8 @@ var VehiclePickerAutocompleteComponent = (function () {
         //   this.unSub_vehicleList.unsubscribe();
         if (typeof this.unSub_customerDetails != 'undefined' && this.unSub_customerDetails != null && this.unSub_customerDetails != undefined)
             this.unSub_customerDetails.unsubscribe();
+        console.log(this.editableVehicleList);
+        console.log(this.selectedChipList);
     };
     VehiclePickerAutocompleteComponent.prototype.filteredVehList = function (vehicle) {
         // return this.vehicles.filter(vehi =>
@@ -19951,13 +19980,19 @@ var VehiclePickerAutocompleteComponent = (function () {
         this._store.dispatch({ type: "PICKED_VEHICLES", payload: selval });
     };
     VehiclePickerAutocompleteComponent.prototype.selectedVehiclesForEdit = function () {
+        console.log("Selected Vehcile for edit");
+        console.log(this.editableVehicleList);
         if ((this.editableVehicleList.length > 0) && (this.vehicles.length > 0)) {
+            console.log(this.editableVehicleList.length);
+            console.log(this.vehicles.length);
             var selectedList = [];
             for (var i = 0; i < this.editableVehicleList.length; i++) {
                 for (var k = 0; k < this.vehicles.length; k++) {
                     if (this.vehicles[k]['uuid'] == this.editableVehicleList[i]) {
+                        console.log("matched for create chip");
                         selectedList.push(this.vehicles[k]);
                         this.selectedChipList.push(this.vehicles[k]['vehicleRegistrationNumber']);
+                        break;
                     }
                 }
             }
@@ -19971,6 +20006,7 @@ var VehiclePickerAutocompleteComponent = (function () {
                 selval.push(arr[i]);
             }
             console.log(selval);
+            console.log(this.selectedChipList);
             this._store.dispatch({ type: "PICKED_VEHICLES", payload: selval });
         }
     };
@@ -21367,7 +21403,8 @@ var reducers = {
     scheduleJobEventEmitter: __WEBPACK_IMPORTED_MODULE_5__info_store__["v" /* scheduleJobEventEmitter */],
     integratedVehList: __WEBPACK_IMPORTED_MODULE_5__info_store__["w" /* integratedVehList */],
     etransVehicleList: __WEBPACK_IMPORTED_MODULE_5__info_store__["x" /* etransVehicleList */],
-    deleteVehiclesFromOrg: __WEBPACK_IMPORTED_MODULE_16__vehicle_management_store__["s" /* deleteVehiclesFromOrg */]
+    deleteVehiclesFromOrg: __WEBPACK_IMPORTED_MODULE_16__vehicle_management_store__["s" /* deleteVehiclesFromOrg */],
+    selectedVehicleList: __WEBPACK_IMPORTED_MODULE_8__trip_store__["i" /* selectedVehicleList */]
 };
 var rootReducer = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__ngrx_core__["b" /* compose */])(__WEBPACK_IMPORTED_MODULE_0__ngrx_store__["d" /* combineReducers */])(reducers);
 function mainReducer(state, action) {
@@ -21481,6 +21518,7 @@ function signUpNewUserData(state, action) {
 /* harmony export (immutable) */ __webpack_exports__["f"] = searchLocationName;
 /* harmony export (immutable) */ __webpack_exports__["g"] = updateTripData;
 /* harmony export (immutable) */ __webpack_exports__["h"] = refreshTripTemplate;
+/* harmony export (immutable) */ __webpack_exports__["i"] = selectedVehicleList;
 
 var obj = new __WEBPACK_IMPORTED_MODULE_0__services_actionRecorder_service__["a" /* ActionRecorderServices */]();
 function tripStatusList(state, action) {
@@ -21564,6 +21602,17 @@ function refreshTripTemplate(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
         case "REFERSH_TRIP_TEMPALTE": {
+            obj.addAction(action);
+            return action.payload;
+        }
+        default:
+            return state;
+    }
+}
+function selectedVehicleList(state, action) {
+    if (state === void 0) { state = null; }
+    switch (action.type) {
+        case "SELECTED_VEHICLE_FOR_TRIP": {
             obj.addAction(action);
             return action.payload;
         }
@@ -24158,7 +24207,7 @@ module.exports = "<div style=\"width: 100%;top: 0px;z-index:100\" class=\"slow-d
 /* 723 */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"width: 100%;top: 0px;z-index:100\">\n    <!--<div class=\"top-header\" id=\"top-head\" >-->\n      <!--<div fxLayout=\"row\" style=\" background-color: #3F51B5; height: 48px;padding-top: 15px; padding-left: 12px;\">-->\n        <!--<span  (click)=\"back()\" >-->\n          <!--<i style=\"color:white;\" class=\"fa fa-arrow-left\" aria-hidden=\"true\" ></i>-->\n        <!--</span>-->\n        <!--<span>-->\n          <!--<label style=\"color:white;margin-left: 17px;margin-top: 4px;font-weight:bold;font-size:large;font-family: Gotham-Rounded-Medium, Sans-Serif\">Add Trip</label>-->\n        <!--</span>-->\n      <!--</div>-->\n\n    <!--</div>-->\n\n  <div class=\"main-container\" style=\"padding-bottom:10px;height: calc(100vh - 61px)\" >\n\n    <div class=\"trip-container\">\n\n      <!--<div style=\"padding: 6px 6px;display:flex\">-->\n          <!--<input class=\"design\" placeholder=\"{{'Pickup Time' | translate }}\" [autoClose] = \"false\" style=\"min-width: 100%;\" [ngModel]=\"pickupTime | date: 'dd/MM/yyyy ,hh:mm  a'\" [(dateTimePicker)]=\"pickupTime\" [pickerType]=\"'both'\"-->\n                 <!--[hourTime]=\"'12'\" readonly />-->\n        <!--</div>-->\n\n      <!--OLD VEHICLE PICKER CODE IN COMPONENT STARTS HERE-->\n\n      <!--<div style=\"padding: 12px 6px 6px 6px;\">-->\n        <!--<div>-->\n            <!--<md-chip-list style=\"margin-bottom:-10px\">-->\n                <!--<md-chip style=\"margin: 3px\" *ngFor=\"let vehicle of selectedVehicleList; let i = index;\"-->\n                         <!--color=\"accent\">-->\n                  <!--{{vehicle}}-->\n                  <!--<i class=\"fa fa-close\" (click)=\"remove(i)\"></i>-->\n                <!--</md-chip>-->\n              <!--</md-chip-list>-->\n        <!--</div>-->\n        <!--<md-input-container style=\"width: 100%;margin-top: -10px\">-->\n              <!--<input mdInput-->\n              <!--placeholder=\"Vehicle Numbers\"-->\n\n              <!--(focus)=\"showVehicleListDialogue()\"-->\n              <!--#chip  readonly >-->\n              <!--&lt;!&ndash; (keydown.enter)=\"add(chip.value)\"      &ndash;&gt;-->\n        <!--</md-input-container>-->\n      <!--</div>-->\n\n      <!--OLD VEHICLE PICKER CODE IN COMPONENT ENDS HERE-->\n\n\n\n      <!--NEW VEHICLE PICKER COMPONENT STARTS HERE-->\n\n      <div style=\"width: 100%\">\n        <app-vehicle-picker-autocomplete [editableVehicleList]=\"selectedVehicleList\" ></app-vehicle-picker-autocomplete>\n      </div>\n\n      <!--NEW VEHICLE PICKER COMPONENT ENDS HERE-->\n\n\n\n\n\n      <!--&lt;!&ndash;   *************  choose location box **************** &ndash;&gt;-->\n      <!--<div *ngIf=\"isShowLocationDialog\"   class=\"mycustomDialog\" style=\"padding-top: 70px;\">-->\n        <!--<div class=\"modal-content\" style=\"width:40%;min-width:250px;overflow: hidden;max-width: 400px;\">-->\n\n        <!--<div class=\"modal-header\">-->\n          <!--<span class=\"close\" (click)=\"isShowLocationDialog=false;\" >&times;</span>-->\n          <!--<label style=\"color: white; font-weight: bold\">{{'Select Location' | translate }}</label>-->\n        <!--</div>-->\n\n        <!--<app-freight-location-picker  (onLocationPick)='setLocation($event)'></app-freight-location-picker>-->\n        <!--</div>-->\n      <!--</div>-->\n     <!--&lt;!&ndash;choose location dialog ends here&ndash;&gt;-->\n\n      <!--   *************  add new vehicle box **************** -->\n      <div *ngIf=\"isAddVehicleDialog\"   class=\"mycustomDialog\" style=\"padding-top: 70px;\">\n        <div class=\"modal-content\" style=\"padding:0px;width:40%;min-width:250px;overflow: hidden;max-width: 400px;\">\n          <div class=\"modal-header\">\n            <span class=\"close\" (click)=\"isAddVehicleDialog=false;\" >&times;</span>\n            <label style=\"color: white; font-weight: bold\">{{'Select Vehicle' | translate }}</label>\n          </div>\n          <!--<div style=\"padding: 5px;margin-top:5px;text-align: right\">-->\n            <!--<md-input-container style=\"width: 100%;margin-bottom: -16px\"  >-->\n              <!--<input mdTooltip=\"{{'Search' | translate }}\" mdInput  placeholder=\"{{'Search' | translate }}\" [(ngModel)]=\"search\" >-->\n            <!--</md-input-container>-->\n          <!--</div>-->\n          <div  style=\"padding: 5px;font-size: 13px;\">\n\n            <div style=\"padding: 5px;display: flex\">\n                <div style=\"width: 100%;\">\n                  <md-input-container style=\"width: 96%;\" >\n                    <input mdTooltip=\"{{'Search' | translate }}\" mdInput  placeholder=\"{{'Search' | translate }}\" [(ngModel)]=\"search\" >\n                  </md-input-container>\n                </div>\n                <div style=\"padding-top: 6px;\">\n                  <button md-raised-button style=\"width:47px;line-height: 27px;\" (click)=\"isAddVehicleDialog=false;\">{{'OK' | translate }}</button>\n                </div>\n              </div>\n\n            <div style=\"height: 250px;overflow: auto;padding-bottom: 3px;\" >\n\n              <div *ngFor=\"let vehicle of vehicleList | vehicleFilter: ['vehicleRegistrationNumber', search]; let ind=index\" >\n                <md-card  style=\"margin-top: 2px;cursor: pointer;padding:16px;display: flex;\" class=\"vehicle-hover\"\n                          (click)=\"vehicle['select']=!vehicle['select'];checkValid(ind,vehicle['vehicleRegistrationNumber'])\" >\n                  <div style=\"min-width: 40px\">\n                 <span *ngIf=\"vehicle['select']\" class=\"select-vehicle\" style=\"background-color: deepskyblue;\">\n                   <i class=\"fa fa-check\" aria-hidden=\"true\"></i>\n                 </span>\n\n                 <span *ngIf=\"!vehicle['select']\" class=\"select-vehicle\" style=\"background-color: grey;\">\n                   <i class=\"fa fa-slack\" aria-hidden=\"true\"></i>\n                 </span>\n\n                  </div>\n                  <span style=\"margin-left: 18px;font-size: 16px;color: #000;\">{{vehicle['vehicleRegistrationNumber']}}</span>\n                </md-card>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <!--Add new vehicle dialog ends here-->\n\n      <!--<div style=\"padding: 6px 6px;margin-top: -13px;\">-->\n        <!--<md-input-container style=\"width: 100%;\" >-->\n          <!--<input  placeholder=\"Trip Origin\" (focus)=\"setLocationType('origin');\"   mdInput [ngModel]=\"originTripAddress\" name=\"tripOrigin\" id=\"tripOrigin\"-->\n                 <!--onkeydown=\"if(((event.keyCode<=65 &&  event.keyCode>=122)) && event.keyCode!=8 && event.keyCode!=13 )return false;\" required>-->\n        <!--</md-input-container>-->\n      <!--</div>-->\n\n      <div style=\"padding: 6px 6px;margin-top: -13px;\">\n        <md-input-container style=\"width: 100%;\" >\n          <input  placeholder=\"Trip origin\" (focus)=\"showOriginLocationPickerPopup()\"   mdInput [ngModel]=\"originTripAddress\" name=\"tripOrigin\" id=\"tripOrigin\"\n                  onkeydown=\"if(((event.keyCode<=65 &&  event.keyCode>=122)) && event.keyCode!=8 && event.keyCode!=13 )return false;\">\n        </md-input-container>\n      </div>\n\n\n      <!--<div>-->\n        <!--<app-freight-location-picker [inputType]=\"'origin'\" [locationFromTemplate]=\"selectedTemplateLocation\"  [pickerLocationType]=\"typeOfLocationCreator\" (onLocationPick)='setOriginLocation($event)'></app-freight-location-picker>-->\n      <!--</div>-->\n\n\n\n    <!--<div style=\"z-index: 5;overflow: visible; position: fixed;background-color: rgba(245,245,245,1);width: 97%;margin-top: -21px;\" *ngIf=\"showAddressList\">-->\n      <!--<span *ngFor=\"let location of locationNameList\">-->\n        <!--<ul style=\"list-style: none;margin-left: -32px;\">-->\n          <!--<li (click)=\"setOrigin(location)\">{{location?.name}}<hr></li>-->\n        <!--</ul>-->\n      <!--</span>-->\n      <!--<span>-->\n        <!--<ul>-->\n          <!--<li (click)=\"tripOriginDialog('origin')\">ADD NEW ADDRESS</li>-->\n        <!--</ul>-->\n      <!--</span>-->\n    <!--</div>-->\n\n      <!--<div style=\"padding: 6px 6px;margin-top: -13px;\">-->\n        <!--<md-input-container style=\"width: 100%;\" >-->\n          <!--<input  placeholder=\"Trip Destination\" (focus)=\"setLocationType('destination')\"  mdInput [ngModel]=\"destinationTripAddress\" name=\"tripDestination\" id=\"tripDestination\"-->\n                 <!--onkeydown=\"if(((event.keyCode<=65 &&  event.keyCode>=122)) && event.keyCode!=8 && event.keyCode!=13 )return false;\"  required>-->\n        <!--</md-input-container>-->\n      <!--</div>-->\n\n\n      <div style=\"padding: 6px 6px;margin-top: -13px;\">\n        <md-input-container style=\"width: 100%;\" >\n          <input  placeholder=\"Trip destination\" (focus)=\"showDestinLocationPickerPopup()\"   mdInput [ngModel]=\"destinationTripAddress\" name=\"tripDestin\" id=\"tripDestination\"\n                  onkeydown=\"if(((event.keyCode<=65 &&  event.keyCode>=122)) && event.keyCode!=8 && event.keyCode!=13 )return false;\">\n        </md-input-container>\n      </div>\n\n\n      <!--<div>-->\n        <!--<app-freight-location-picker [inputType]=\"'destination'\"  [locationFromTemplate]=\"selectedTemplateLocation\" [pickerLocationType]=\"typeOfLocationCreator\" (onLocationPick)='setDestinationLocation($event)'></app-freight-location-picker>-->\n      <!--</div>-->\n\n\n\n      <div style=\"padding: 6px 6px;display:flex\">\n        <input class=\"design\" placeholder=\"{{'Pickup Time' | translate }}\" [autoClose] = \"false\" style=\"min-width: 100%;\" [ngModel]=\"pickupTime | date: 'dd/MM/yyyy ,hh:mm  a'\" [(dateTimePicker)]=\"pickupTime\" [pickerType]=\"'both'\"\n               [hourTime]=\"'12'\" readonly />\n      </div>\n\n      <div style=\"padding: 6px 6px;display:flex\">\n\n        <div style=\"width: 50%\">\n          <md-input-container style=\"width: 90%\" >\n          <input type=\"number\" placeholder=\"Transit Days\"  mdInput [(ngModel)]=\"transitDays\" required>\n          </md-input-container>\n        </div>\n\n        <md-input-container style=\"width: 50%\" >\n          <input type=\"number\" placeholder=\"Distance in km\"  mdInput [(ngModel)]=\"distance\">\n        </md-input-container>\n      </div>\n\n      <div style=\"padding: 0px 6px;display:flex;margin-top: -10px;\">\n\n        <div style=\"width: 50%;\">\n          <md-input-container style=\"width: 90%\" >\n            <input placeholder=\"Material\"  mdInput [(ngModel)]=\"material\" >\n          </md-input-container>\n        </div>\n\n        <div style=\"width: 50%;\">\n          <md-input-container style=\"width: 90%\" >\n            <input type=\"number\" placeholder=\"Quantity\"  mdInput [(ngModel)]=\"quantity\" >\n          </md-input-container>\n        </div>\n\n      </div>\n\n\n      <div style=\"padding: 0px 6px;display:flex\">\n\n        <div style=\"width: 50%\">\n          <md-input-container style=\"width: 90%\" >\n            <input placeholder=\"Driver's Name\"  mdInput [(ngModel)]=\"driverName\" >\n          </md-input-container>\n        </div>\n\n        <div style=\"width: 50%\">\n          <md-input-container style=\"width: 90%\" >\n            <input type=\"number\"  onkeydown=\"if(event.target.value.length>=10 && event.keyCode!=8 && event.keyCode!=13 )return false;\"\n                   placeholder=\"Driver Mob\"  mdInput [(ngModel)]=\"driverMob\" >\n          </md-input-container>\n        </div>\n\n      </div>\n\n\n\n      <div style=\"padding: 0px 6px;display: flex\">\n        <md-input-container style=\"width: 100%\" >\n          <input placeholder=\"Remarks\"  mdInput [(ngModel)]=\"remarks\" >\n        </md-input-container>\n      </div>\n\n      <div style=\"margin-top:-10px;text-align:right;\" >\n        <button md-raised-button  (click)=\"cancelAddTrip()\" style=\"margin-right: 15px\">{{'Cancel' | translate}}</button>\n        <button md-raised-button [disabled]=\"isClicked\" (click)=\"addQuickTripData()\"  >{{'Add Trip' | translate}}</button>\n      </div>\n      <div *ngIf=\"commandType=='skip'\" style=\"overflow-x:auto;\">\n        <table>\n         <tr>\n           <td  *ngFor=\"let template of tripTemplateList\" >\n             <md-card style=\"font-size:13px;height:40px\"  (click)=\"goselectedTemplate(template)\">\n                <div fxLayout=\"row\" style=\"width:100%\">\n                    <span fxFlex>{{template?.origin?.name}}</span>\n                    <span><i class=\"fa fa-minus\" style=\"width:20px\"></i></span>\n                    <span fxFlex>{{template?.destination?.name}}</span>\n                </div>\n                <div fxLayout=\"row\" style=\"width:100%\">\n                      <span fxFlex>{{template.material}}</span>&nbsp;\n                      <span fxFlex>{{template.distance}}KM</span>&nbsp;\n                      <span fxFlex>{{template.quantity}}MT</span>\n                </div>\n              </md-card>\n        </td>\n        </tr>\n        </table>\n      </div>\n  </div>\n\n  </div>\n\n</div>\n\n\n<!--Add Trip Modal  starts here-->\n<div (blur)=\"isShowOriginLocationPickerPopup=false\"  *ngIf=\"isShowOriginLocationPickerPopup\" id=\"locationOriginPickerModal\" class=\"modal\">\n  <!--Invite User Modal content -->\n  <div class=\"modal-content\">\n    <span class=\"close\" (click)=\"isShowOriginLocationPickerPopup=false\">&times;</span>\n    <app-freight-location-picker [inputType]=\"'origin'\" [locationFromTemplate]=\"selectedTemplateLocation\"  [pickerLocationType]=\"typeOfLocationCreator\" (onLocationPick)='setOriginLocation($event)'></app-freight-location-picker>\n\n    <div>\n      <button md-raised-button color=\"primary\" (click)=\"isShowOriginLocationPickerPopup=false\">OK</button>\n    </div>\n  </div>\n\n\n</div>\n<!--Add Trip Modal ends here-->\n\n\n\n<!--Add Trip Modal  starts here-->\n<div (blur)=\"isShowDesLocationPickerPopup=false\"  *ngIf=\"isShowDesLocationPickerPopup\" id=\"locationDestPickerModal\" class=\"modal\">\n  <!--Invite User Modal content -->\n  <div class=\"modal-content\">\n    <span class=\"close\" (click)=\"isShowDesLocationPickerPopup=false\">&times;</span>\n    <app-freight-location-picker [inputType]=\"'destination'\"  [locationFromTemplate]=\"selectedTemplateLocation\" [pickerLocationType]=\"typeOfLocationCreator\" (onLocationPick)='setDestinationLocation($event)'></app-freight-location-picker>\n\n    <div>\n      <button md-raised-button color=\"primary\" (click)=\"isShowDesLocationPickerPopup=false\">OK</button>\n    </div>\n  </div>\n\n\n</div>\n<!--Add Trip Modal ends here-->\n"
+module.exports = "<div style=\"width: 100%;top: 0px;z-index:100\">\n    <!--<div class=\"top-header\" id=\"top-head\" >-->\n      <!--<div fxLayout=\"row\" style=\" background-color: #3F51B5; height: 48px;padding-top: 15px; padding-left: 12px;\">-->\n        <!--<span  (click)=\"back()\" >-->\n          <!--<i style=\"color:white;\" class=\"fa fa-arrow-left\" aria-hidden=\"true\" ></i>-->\n        <!--</span>-->\n        <!--<span>-->\n          <!--<label style=\"color:white;margin-left: 17px;margin-top: 4px;font-weight:bold;font-size:large;font-family: Gotham-Rounded-Medium, Sans-Serif\">Add Trip</label>-->\n        <!--</span>-->\n      <!--</div>-->\n\n    <!--</div>-->\n\n  <div class=\"main-container\" style=\"padding-bottom:10px;height: calc(100vh - 61px)\" >\n\n    <div class=\"trip-container\">\n\n      <!--<div style=\"padding: 6px 6px;display:flex\">-->\n          <!--<input class=\"design\" placeholder=\"{{'Pickup Time' | translate }}\" [autoClose] = \"false\" style=\"min-width: 100%;\" [ngModel]=\"pickupTime | date: 'dd/MM/yyyy ,hh:mm  a'\" [(dateTimePicker)]=\"pickupTime\" [pickerType]=\"'both'\"-->\n                 <!--[hourTime]=\"'12'\" readonly />-->\n        <!--</div>-->\n\n      <!--OLD VEHICLE PICKER CODE IN COMPONENT STARTS HERE-->\n\n      <!--<div style=\"padding: 12px 6px 6px 6px;\">-->\n        <!--<div>-->\n            <!--<md-chip-list style=\"margin-bottom:-10px\">-->\n                <!--<md-chip style=\"margin: 3px\" *ngFor=\"let vehicle of selectedVehicleList; let i = index;\"-->\n                         <!--color=\"accent\">-->\n                  <!--{{vehicle}}-->\n                  <!--<i class=\"fa fa-close\" (click)=\"remove(i)\"></i>-->\n                <!--</md-chip>-->\n              <!--</md-chip-list>-->\n        <!--</div>-->\n        <!--<md-input-container style=\"width: 100%;margin-top: -10px\">-->\n              <!--<input mdInput-->\n              <!--placeholder=\"Vehicle Numbers\"-->\n\n              <!--(focus)=\"showVehicleListDialogue()\"-->\n              <!--#chip  readonly >-->\n              <!--&lt;!&ndash; (keydown.enter)=\"add(chip.value)\"      &ndash;&gt;-->\n        <!--</md-input-container>-->\n      <!--</div>-->\n\n      <!--OLD VEHICLE PICKER CODE IN COMPONENT ENDS HERE-->\n\n\n\n      <!--NEW VEHICLE PICKER COMPONENT STARTS HERE-->\n\n      <div style=\"width: 100%\">\n        <app-vehicle-picker-autocomplete [editableVehicleList]=\"editVehicleList\" ></app-vehicle-picker-autocomplete>\n      </div>\n\n      <!--NEW VEHICLE PICKER COMPONENT ENDS HERE-->\n\n\n\n\n\n      <!--&lt;!&ndash;   *************  choose location box **************** &ndash;&gt;-->\n      <!--<div *ngIf=\"isShowLocationDialog\"   class=\"mycustomDialog\" style=\"padding-top: 70px;\">-->\n        <!--<div class=\"modal-content\" style=\"width:40%;min-width:250px;overflow: hidden;max-width: 400px;\">-->\n\n        <!--<div class=\"modal-header\">-->\n          <!--<span class=\"close\" (click)=\"isShowLocationDialog=false;\" >&times;</span>-->\n          <!--<label style=\"color: white; font-weight: bold\">{{'Select Location' | translate }}</label>-->\n        <!--</div>-->\n\n        <!--<app-freight-location-picker  (onLocationPick)='setLocation($event)'></app-freight-location-picker>-->\n        <!--</div>-->\n      <!--</div>-->\n     <!--&lt;!&ndash;choose location dialog ends here&ndash;&gt;-->\n\n      <!--   *************  add new vehicle box **************** -->\n      <div *ngIf=\"isAddVehicleDialog\"   class=\"mycustomDialog\" style=\"padding-top: 70px;\">\n        <div class=\"modal-content\" style=\"padding:0px;width:40%;min-width:250px;overflow: hidden;max-width: 400px;\">\n          <div class=\"modal-header\">\n            <span class=\"close\" (click)=\"isAddVehicleDialog=false;\" >&times;</span>\n            <label style=\"color: white; font-weight: bold\">{{'Select Vehicle' | translate }}</label>\n          </div>\n          <!--<div style=\"padding: 5px;margin-top:5px;text-align: right\">-->\n            <!--<md-input-container style=\"width: 100%;margin-bottom: -16px\"  >-->\n              <!--<input mdTooltip=\"{{'Search' | translate }}\" mdInput  placeholder=\"{{'Search' | translate }}\" [(ngModel)]=\"search\" >-->\n            <!--</md-input-container>-->\n          <!--</div>-->\n          <div  style=\"padding: 5px;font-size: 13px;\">\n\n            <div style=\"padding: 5px;display: flex\">\n                <div style=\"width: 100%;\">\n                  <md-input-container style=\"width: 96%;\" >\n                    <input mdTooltip=\"{{'Search' | translate }}\" mdInput  placeholder=\"{{'Search' | translate }}\" [(ngModel)]=\"search\" >\n                  </md-input-container>\n                </div>\n                <div style=\"padding-top: 6px;\">\n                  <button md-raised-button style=\"width:47px;line-height: 27px;\" (click)=\"isAddVehicleDialog=false;\">{{'OK' | translate }}</button>\n                </div>\n              </div>\n\n            <div style=\"height: 250px;overflow: auto;padding-bottom: 3px;\" >\n\n              <div *ngFor=\"let vehicle of vehicleList | vehicleFilter: ['vehicleRegistrationNumber', search]; let ind=index\" >\n                <md-card  style=\"margin-top: 2px;cursor: pointer;padding:16px;display: flex;\" class=\"vehicle-hover\"\n                          (click)=\"vehicle['select']=!vehicle['select'];checkValid(ind,vehicle['vehicleRegistrationNumber'])\" >\n                  <div style=\"min-width: 40px\">\n                 <span *ngIf=\"vehicle['select']\" class=\"select-vehicle\" style=\"background-color: deepskyblue;\">\n                   <i class=\"fa fa-check\" aria-hidden=\"true\"></i>\n                 </span>\n\n                 <span *ngIf=\"!vehicle['select']\" class=\"select-vehicle\" style=\"background-color: grey;\">\n                   <i class=\"fa fa-slack\" aria-hidden=\"true\"></i>\n                 </span>\n\n                  </div>\n                  <span style=\"margin-left: 18px;font-size: 16px;color: #000;\">{{vehicle['vehicleRegistrationNumber']}}</span>\n                </md-card>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <!--Add new vehicle dialog ends here-->\n\n      <!--<div style=\"padding: 6px 6px;margin-top: -13px;\">-->\n        <!--<md-input-container style=\"width: 100%;\" >-->\n          <!--<input  placeholder=\"Trip Origin\" (focus)=\"setLocationType('origin');\"   mdInput [ngModel]=\"originTripAddress\" name=\"tripOrigin\" id=\"tripOrigin\"-->\n                 <!--onkeydown=\"if(((event.keyCode<=65 &&  event.keyCode>=122)) && event.keyCode!=8 && event.keyCode!=13 )return false;\" required>-->\n        <!--</md-input-container>-->\n      <!--</div>-->\n\n      <div style=\"padding: 6px 6px;margin-top: -3px;\">\n        <md-input-container style=\"width: 100%;\" >\n          <input  placeholder=\"Trip origin\" (focus)=\"showOriginLocationPickerPopup()\"   mdInput [ngModel]=\"originTripAddress\" name=\"tripOrigin\" id=\"tripOrigin\"\n                  onkeydown=\"if(((event.keyCode<=65 &&  event.keyCode>=122)) && event.keyCode!=8 && event.keyCode!=13 )return false;\">\n        </md-input-container>\n      </div>\n\n\n      <!--<div>-->\n        <!--<app-freight-location-picker [inputType]=\"'origin'\" [locationFromTemplate]=\"selectedTemplateLocation\"  [pickerLocationType]=\"typeOfLocationCreator\" (onLocationPick)='setOriginLocation($event)'></app-freight-location-picker>-->\n      <!--</div>-->\n\n\n\n    <!--<div style=\"z-index: 5;overflow: visible; position: fixed;background-color: rgba(245,245,245,1);width: 97%;margin-top: -21px;\" *ngIf=\"showAddressList\">-->\n      <!--<span *ngFor=\"let location of locationNameList\">-->\n        <!--<ul style=\"list-style: none;margin-left: -32px;\">-->\n          <!--<li (click)=\"setOrigin(location)\">{{location?.name}}<hr></li>-->\n        <!--</ul>-->\n      <!--</span>-->\n      <!--<span>-->\n        <!--<ul>-->\n          <!--<li (click)=\"tripOriginDialog('origin')\">ADD NEW ADDRESS</li>-->\n        <!--</ul>-->\n      <!--</span>-->\n    <!--</div>-->\n\n      <!--<div style=\"padding: 6px 6px;margin-top: -13px;\">-->\n        <!--<md-input-container style=\"width: 100%;\" >-->\n          <!--<input  placeholder=\"Trip Destination\" (focus)=\"setLocationType('destination')\"  mdInput [ngModel]=\"destinationTripAddress\" name=\"tripDestination\" id=\"tripDestination\"-->\n                 <!--onkeydown=\"if(((event.keyCode<=65 &&  event.keyCode>=122)) && event.keyCode!=8 && event.keyCode!=13 )return false;\"  required>-->\n        <!--</md-input-container>-->\n      <!--</div>-->\n\n\n      <div style=\"padding: 6px 6px;margin-top: -13px;\">\n        <md-input-container style=\"width: 100%;\" >\n          <input  placeholder=\"Trip destination\" (focus)=\"showDestinLocationPickerPopup()\"   mdInput [ngModel]=\"destinationTripAddress\" name=\"tripDestin\" id=\"tripDestination\"\n                  onkeydown=\"if(((event.keyCode<=65 &&  event.keyCode>=122)) && event.keyCode!=8 && event.keyCode!=13 )return false;\">\n        </md-input-container>\n      </div>\n\n\n      <!--<div>-->\n        <!--<app-freight-location-picker [inputType]=\"'destination'\"  [locationFromTemplate]=\"selectedTemplateLocation\" [pickerLocationType]=\"typeOfLocationCreator\" (onLocationPick)='setDestinationLocation($event)'></app-freight-location-picker>-->\n      <!--</div>-->\n\n\n\n      <div style=\"padding: 6px 6px;display:flex\">\n        <input class=\"design\" placeholder=\"{{'Pickup Time' | translate }}\" [autoClose] = \"false\" style=\"min-width: 100%;\" [ngModel]=\"pickupTime | date: 'dd/MM/yyyy ,hh:mm  a'\" [(dateTimePicker)]=\"pickupTime\" [pickerType]=\"'both'\"\n               [hourTime]=\"'12'\" readonly />\n      </div>\n\n      <div style=\"padding: 6px 6px;display:flex\">\n\n        <div style=\"width: 50%\">\n          <md-input-container style=\"width: 90%\" >\n          <input type=\"number\" placeholder=\"Transit Days\"  mdInput [(ngModel)]=\"transitDays\" required>\n          </md-input-container>\n        </div>\n\n        <md-input-container style=\"width: 50%\" >\n          <input type=\"number\" placeholder=\"Distance in km\"  mdInput [(ngModel)]=\"distance\">\n        </md-input-container>\n      </div>\n\n      <div style=\"padding: 0px 6px;display:flex;margin-top: -10px;\">\n\n        <div style=\"width: 50%;\">\n          <md-input-container style=\"width: 90%\" >\n            <input placeholder=\"Material\"  mdInput [(ngModel)]=\"material\" >\n          </md-input-container>\n        </div>\n\n        <div style=\"width: 50%;\">\n          <md-input-container style=\"width: 90%\" >\n            <input type=\"number\" placeholder=\"Quantity\"  mdInput [(ngModel)]=\"quantity\" >\n          </md-input-container>\n        </div>\n\n      </div>\n\n\n      <!--<div style=\"padding: 0px 6px;display:flex\">-->\n\n        <!--<div style=\"width: 50%\">-->\n          <!--<md-input-container style=\"width: 90%\" >-->\n            <!--<input placeholder=\"Driver's Name\"  mdInput [(ngModel)]=\"driverName\" >-->\n          <!--</md-input-container>-->\n        <!--</div>-->\n\n        <!--<div style=\"width: 50%\">-->\n          <!--<md-input-container style=\"width: 90%\" >-->\n            <!--<input type=\"number\"  onkeydown=\"if(event.target.value.length>=10 && event.keyCode!=8 && event.keyCode!=13 )return false;\"-->\n                   <!--placeholder=\"Driver Mob\"  mdInput [(ngModel)]=\"driverMob\" >-->\n          <!--</md-input-container>-->\n        <!--</div>-->\n\n      <!--</div>-->\n\n\n\n      <div style=\"padding: 0px 6px;display: flex\">\n        <md-input-container style=\"width: 100%\" >\n          <input placeholder=\"Remarks\"  mdInput [(ngModel)]=\"remarks\" >\n        </md-input-container>\n      </div>\n\n      <div style=\"margin-top:-10px;text-align:right;\" >\n        <button md-raised-button  (click)=\"cancelAddTrip()\" style=\"margin-right: 15px\">{{'Cancel' | translate}}</button>\n        <button md-raised-button [disabled]=\"isClicked\" (click)=\"addQuickTripData()\"  >{{'Add Trip' | translate}}</button>\n      </div>\n      <div *ngIf=\"commandType=='skip'\" style=\"overflow-x:auto;\">\n        <table>\n         <tr>\n           <td  *ngFor=\"let template of tripTemplateList\" >\n             <md-card style=\"font-size:13px;height:40px\"  (click)=\"goselectedTemplate(template)\">\n                <div fxLayout=\"row\" style=\"width:100%\">\n                    <span fxFlex>{{template?.origin?.name}}</span>\n                    <span><i class=\"fa fa-minus\" style=\"width:20px\"></i></span>\n                    <span fxFlex>{{template?.destination?.name}}</span>\n                </div>\n                <div fxLayout=\"row\" style=\"width:100%\">\n                      <span fxFlex>{{template.material}}</span>&nbsp;\n                      <span fxFlex>{{template.distance}}KM</span>&nbsp;\n                      <span fxFlex>{{template.quantity}}MT</span>\n                </div>\n              </md-card>\n        </td>\n        </tr>\n        </table>\n      </div>\n  </div>\n\n  </div>\n\n</div>\n\n\n<!--Add Trip Modal  starts here-->\n<div (blur)=\"isShowOriginLocationPickerPopup=false\"  *ngIf=\"isShowOriginLocationPickerPopup\" id=\"locationOriginPickerModal\" class=\"modal\">\n  <!--Invite User Modal content -->\n  <div class=\"modal-content\">\n    <span class=\"close\" (click)=\"isShowOriginLocationPickerPopup=false\">&times;</span>\n    <app-freight-location-picker [inputType]=\"'origin'\" [locationFromTemplate]=\"selectedTemplateLocation\"  [pickerLocationType]=\"typeOfLocationCreator\" (onLocationPick)='setOriginLocation($event)'></app-freight-location-picker>\n\n    <div>\n      <button md-raised-button color=\"primary\" (click)=\"isShowOriginLocationPickerPopup=false\">OK</button>\n    </div>\n  </div>\n\n\n</div>\n<!--Add Trip Modal ends here-->\n\n\n\n<!--Add Trip Modal  starts here-->\n<div (blur)=\"isShowDesLocationPickerPopup=false\"  *ngIf=\"isShowDesLocationPickerPopup\" id=\"locationDestPickerModal\" class=\"modal\">\n  <!--Invite User Modal content -->\n  <div class=\"modal-content\">\n    <span class=\"close\" (click)=\"isShowDesLocationPickerPopup=false\">&times;</span>\n    <app-freight-location-picker [inputType]=\"'destination'\"  [locationFromTemplate]=\"selectedTemplateLocation\" [pickerLocationType]=\"typeOfLocationCreator\" (onLocationPick)='setDestinationLocation($event)'></app-freight-location-picker>\n\n    <div>\n      <button md-raised-button color=\"primary\" (click)=\"isShowDesLocationPickerPopup=false\">OK</button>\n    </div>\n  </div>\n\n\n</div>\n<!--Add Trip Modal ends here-->\n"
 
 /***/ }),
 /* 724 */
@@ -24500,7 +24549,7 @@ module.exports = "<!--Top Header to be shown in mobile view only -->\n\n<div cla
 /* 780 */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n    <div>\n        <md-chip-list style=\"margin-bottom:-10px\">\n            <md-chip style=\"margin: 3px\" *ngFor=\"let selectedVeh of selectedChipList; let i = index;\"\n                     color=\"accent\">\n              {{selectedVeh}}\n              <i class=\"fa fa-close\" (click)=\"remove(i,selectedVeh)\"></i>\n            </md-chip>\n          </md-chip-list>\n    </div>\n\n\n<form class=\"example-form\">\n  <div class=\"example-full-width\">\n      <md-input-container style=\"width: 180%\">\n    <input #vehNumber mdInput placeholder=\"Vehicle Number\" aria-label=\"State\" [mdAutocomplete]=\"auto\" [formControl]=\"vehcileControl\" [(ngModel)]=\"selectedVehicle\" (keyup)=\"makeChip($event,vehNumber.value);\" >\n    </md-input-container>\n    <md-autocomplete #auto=\"mdAutocomplete\">\n      <md-option *ngFor=\"let vehicle of filteredList | async\" [value]=\"vehicle._name\">\n        <span>{{ vehicle['_name'] }}</span>\n      </md-option>\n    </md-autocomplete>\n  </div>\n</form>\n\n</div>\n"
+module.exports = "<div>\n    <div>\n        <md-chip-list style=\"margin-bottom:-10px\">\n            <md-chip style=\"margin: 3px\" *ngFor=\"let selectedVeh of selectedChipList; let i = index;\"\n                     color=\"accent\">\n              {{selectedVeh}}\n              <i class=\"fa fa-close\" (click)=\"remove(i,selectedVeh)\"></i>\n            </md-chip>\n          </md-chip-list>\n    </div>\n\n\n<form class=\"example-form\">\n  <div class=\"example-full-width\">\n      <md-input-container style=\"width: 180%\">\n    <input #vehNumber mdInput placeholder=\"Vehicle Number\" aria-label=\"State\" [mdAutocomplete]=\"auto\" [formControl]=\"vehcileControl\" [(ngModel)]=\"selectedVehicle\" (keyup)=\"makeChip($event,vehNumber.value);\" >\n        <md-hint>Select value from list and press 'Space', ';' or ',' to select value in chip.</md-hint>\n    </md-input-container>\n    <md-autocomplete #auto=\"mdAutocomplete\">\n      <md-option *ngFor=\"let vehicle of filteredList | async\" [value]=\"vehicle._name\">\n        <span>{{ vehicle['_name'] }}</span>\n      </md-option>\n    </md-autocomplete>\n  </div>\n</form>\n\n</div>\n"
 
 /***/ }),
 /* 781 */
