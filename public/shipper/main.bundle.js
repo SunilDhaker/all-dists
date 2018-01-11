@@ -547,6 +547,8 @@ var AddBusinessPartnerComponent = (function () {
                 _this.freightLocUuid = value['data']['data']['uuid'];
                 console.log(_this.freightLocUuid);
                 if (_this.freightLocUuid == '' || _this.freightLocUuid == null) {
+                    _this.isSpinner = false;
+                    _this.isClicked = false;
                     _this.openSnackBar('error please try again');
                     return;
                 }
@@ -577,8 +579,9 @@ var AddBusinessPartnerComponent = (function () {
         });
         this.unSub_checkFretronReferenceNumber = this.store.select('fretronReferenceNumber').subscribe(function (res) {
             console.log(res);
-            if (res == null)
+            if (res == null) {
                 return;
+            }
             if (res['status'] == 200 && res['organisation'] != undefined) {
                 _this.orgType = res['organisation']['type'];
                 _this.fretronReferenceNoUuid = res['organisation']['uuid'];
@@ -996,7 +999,7 @@ var BusinessPartnerComponent = (function () {
         this.store = store;
         this.matSnackBar = matSnackBar;
         this.businesPartList = [];
-        this.pageSize = 5;
+        this.pageSize = 10;
         this.pageIndex = 1;
         this.totalRecord = 0;
         this.search = '';
@@ -1195,7 +1198,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "div{\r\n    font-family: Helvetica;\r\n  }\r\n\r\n  .logo{\r\n    width: 100px;\r\n    padding: 2px;\r\n    height: 19px;\r\n  }\r\n\r\n  .service-name{\r\n    white-space: nowrap;\r\n    font-size: 12px;\r\n    position: absolute;\r\n    margin-top:6px;\r\n    top: 28px;\r\n    left: 45px;\r\n    font-family: Helvetica;\r\n  }\r\n\r\n  .header{\r\n    padding:5px 0px 4px 15px;\r\n    background-color: #3F51B5;\r\n    color: white;\r\n    height: 45px;\r\n    box-shadow: 0px 0px 6px darkgrey;\r\n  }\r\n\r\n  .setting-button{\r\n    margin-left: auto;\r\n    padding: 11px;\r\n    margin-right: 15px;\r\n  }\r\n\r\n  .menu-button{\r\n    color: white;\r\n  }\r\n\r\n  .menu-button >>> .mat-button-focus-overlay{\r\n    background-color: rgba(255, 255, 255, 0);\r\n  }\r\n\r\n  .menu-button:hover{\r\n    color: white !important;\r\n  }\r\n\r\n  .button-basic1 {\r\n    background-color: #3F51B5;\r\n    border: none;\r\n    font-size: 12px;\r\n    color: white;\r\n    margin-left:20px\r\n  }\r\n\r\n  .button-basic2 {\r\n    background-color: white;\r\n    border: none;\r\n    font-size: 12px;\r\n    /*margin-bottom:16px;*/\r\n    color:gray;\r\n    margin-left:20px;\r\n  }\r\n\r\n  .div-class {\r\n      /*margin-top:14px; */\r\n      border-bottom: 1px solid gray;\r\n  }\r\n\r\n  .button-basic2:focus {\r\n    background-color:#5b89ff !important;\r\n    color: white;\r\n  }\r\n", ""]);
+exports.push([module.i, "div{\r\n    font-family: Helvetica;\r\n  }\r\n\r\n  /*.logo{*/\r\n    /*width: 100px;*/\r\n    /*padding: 2px;*/\r\n    /*height: 19px;*/\r\n  /*}*/\r\n\r\n  /*.service-name{*/\r\n    /*white-space: nowrap;*/\r\n    /*font-size: 12px;*/\r\n    /*position: absolute;*/\r\n    /*margin-top:6px;*/\r\n    /*top: 28px;*/\r\n    /*left: 45px;*/\r\n    /*font-family: Helvetica;*/\r\n  /*}*/\r\n\r\n  /*.header{*/\r\n    /*padding:5px 0px 4px 15px;*/\r\n    /*background-color: #3F51B5;*/\r\n    /*color: white;*/\r\n    /*height: 45px;*/\r\n    /*box-shadow: 0px 0px 6px darkgrey;*/\r\n  /*}*/\r\n\r\n  /*.setting-button{*/\r\n    /*margin-left: auto;*/\r\n    /*padding: 11px;*/\r\n    /*margin-right: 15px;*/\r\n  /*}*/\r\n\r\n  /*.menu-button{*/\r\n    /*color: white;*/\r\n  /*}*/\r\n\r\n  /*.menu-button >>> .mat-button-focus-overlay{*/\r\n    /*background-color: rgba(255, 255, 255, 0);*/\r\n  /*}*/\r\n\r\n  /*.menu-button:hover{*/\r\n    /*color: white !important;*/\r\n  /*}*/\r\n\r\n  /*.button-basic1 {*/\r\n    /*background-color: #3F51B5;*/\r\n    /*border: none;*/\r\n    /*font-size: 12px;*/\r\n    /*color: white;*/\r\n    /*margin-left:20px*/\r\n  /*}*/\r\n\r\n  .button-basic2 {\r\n    background-color: white;\r\n    border: none;\r\n    font-size: 12px;\r\n    /*margin-bottom:16px;*/\r\n    color:gray;\r\n    margin-left:20px;\r\n  }\r\n\r\n  .div-class {\r\n      /*margin-top:14px; */\r\n      border-bottom: 1px solid gray;\r\n  }\r\n\r\n  .selected-button {\r\n    background-color:#5b89ff !important;\r\n    color: white;\r\n  }\r\n", ""]);
 
 // exports
 
@@ -1208,7 +1211,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/HMEL-admin/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"height: calc(100vh - 55px);overflow: hidden;\" >\r\n    <!-- <div class=\"header\" fxLayout=\"row\" >\r\n      <img class=\"logo\" src=\"logo-light.png\" alt=\"Fretron Logo\"  >\r\n      <span class=\"service-name\" >Shipper Portal</span>\r\n      <button *ngFor = \"let button of headerButtons\" mat-button class=\"button-basic1\">\r\n             {{button}}\r\n        </button>   -->\r\n\r\n  <div mat-button class=\"div-class\">\r\n  <button *ngFor=\"let button of buttons\"   mat-button class=\"button-basic2\" (click)='onClick(button)'>\r\n    {{button}}\r\n  </button>\r\n</div>\r\n  <div>\r\n      <router-outlet></router-outlet>\r\n  </div>\r\n     <!-- </div> -->\r\n</div>\r\n"
+module.exports = "<div style=\"height: calc(100vh - 55px);overflow: hidden;\" >\r\n  <!-- <div class=\"header\" fxLayout=\"row\" >\r\n    <img class=\"logo\" src=\"logo-light.png\" alt=\"Fretron Logo\"  >\r\n    <span class=\"service-name\" >Shipper Portal</span>\r\n    <button *ngFor = \"let button of headerButtons\" mat-button class=\"button-basic1\">\r\n           {{button}}\r\n      </button>   -->\r\n\r\n  <div mat-button class=\"div-class\">\r\n    <button *ngFor=\"let button of buttons\"   mat-button class=\"button-basic2\" [class.selected-button]=\"button == selectedMenu\" (click)='onClick(button);selectedMenu =button'>\r\n      {{button}}\r\n    </button>\r\n  </div>\r\n  <div>\r\n    <router-outlet></router-outlet>\r\n  </div>\r\n  <!-- </div> -->\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1233,17 +1236,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var DashBoardComponent = (function () {
     function DashBoardComponent(router) {
         this.router = router;
-        // public headerButtons : any[] = [
-        //     "FTL Orders",
-        //     "LR Tracking",
-        //     " Payment Status",
-        //     "Statement of Accounts"
-        // ]
+        this.selectedMenu = "";
         this.buttons = [
             "Users",
             "Business Partner",
         ];
+        this.selectMenuButton();
+        console.log(this.selectedMenu);
     }
+    DashBoardComponent.prototype.selectMenuButton = function () {
+        var tempArray = this.router.url.split('/');
+        var lastPathString = tempArray[tempArray.length - 1];
+        if (lastPathString == "user") {
+            this.selectedMenu = "Users";
+        }
+        else if (lastPathString == "businessPartner") {
+            this.selectedMenu = "Business Partner";
+        }
+    };
     DashBoardComponent.prototype.onClick = function (value) {
         if (value === "Users")
             this.router.navigate(["mainDashboard/dashboard/user"]);
@@ -5909,7 +5919,7 @@ var LogInComponent = (function () {
             if (_this.un_subGoogleLogin != null && _this.un_subGoogleLogin != undefined) {
                 _this.un_subGoogleLogin.unsubscribe();
                 _this.un_subGoogleLogin = null;
-                document.getElementById('google-login').click(); // 
+                document.getElementById('google-login').click(); //
             }
             else {
                 _this.isSpinner = true;
