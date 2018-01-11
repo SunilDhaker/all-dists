@@ -10669,8 +10669,8 @@ var TpiIdentifiedVehiclesComponent = (function () {
             }
             else {
                 console.log(value['errorMsg']);
-                ;
             }
+            _store.dispatch({ type: "ETRANS_VEHICLE_LIST", payload: null });
         });
         //************************************************************************************ */
         this.unSub_scheduleJobEventEmitter = _store.select('scheduleJobEventEmitter').subscribe(function (value) {
