@@ -1,35 +1,31 @@
-webpackJsonp(["main"],{
+webpackJsonp([1],{
 
-/***/ "../../../../../src/$$_gendir lazy recursive":
+/***/ "../../../../../src async recursive":
 /***/ (function(module, exports) {
 
-function webpackEmptyAsyncContext(req) {
-	// Here Promise.resolve().then() is used instead of new Promise() to prevent
-	// uncatched exception popping up in devtools
-	return Promise.resolve().then(function() {
-		throw new Error("Cannot find module '" + req + "'.");
-	});
+function webpackEmptyContext(req) {
+	throw new Error("Cannot find module '" + req + "'.");
 }
-webpackEmptyAsyncContext.keys = function() { return []; };
-webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
-module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = "../../../../../src/$$_gendir lazy recursive";
+webpackEmptyContext.keys = function() { return []; };
+webpackEmptyContext.resolve = webpackEmptyContext;
+module.exports = webpackEmptyContext;
+webpackEmptyContext.id = "../../../../../src async recursive";
 
 /***/ }),
 
 /***/ "../../../../../src/app/app.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'app';
@@ -37,106 +33,159 @@ var AppComponent = (function () {
     return AppComponent;
 }());
 AppComponent = __decorate([
-    core_1.Component({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-root',
         template: '<router-outlet></router-outlet>'
     })
 ], AppComponent);
-exports.AppComponent = AppComponent;
+
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/app.module.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/@angular/platform-browser/animations.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__router_module_router_module_routing_module__ = __webpack_require__("../../../../../src/app/router-module/router-module-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angular_font_awesome_angular_font_awesome__ = __webpack_require__("../../../../angular-font-awesome/angular-font-awesome.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_shipment_status_shipment_status_component__ = __webpack_require__("../../../../../src/app/components/shipment-status/shipment-status.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_ng2_charts__ = __webpack_require__("../../../../ng2-charts/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_ng2_charts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_ng2_charts__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_flex_layout__ = __webpack_require__("../../../flex-layout/@angular/flex-layout.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_manual_shipment_status_manual_shipment_status_component__ = __webpack_require__("../../../../../src/app/components/manual-shipment-status/manual-shipment-status.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__filters_filter__ = __webpack_require__("../../../../../src/app/filters/filter.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__filters_deviceFilter__ = __webpack_require__("../../../../../src/app/filters/deviceFilter.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__filters_shipmentFilter__ = __webpack_require__("../../../../../src/app/filters/shipmentFilter.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__filters_searchOrgFilter__ = __webpack_require__("../../../../../src/app/filters/searchOrgFilter.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__filters_sortFilter__ = __webpack_require__("../../../../../src/app/filters/sortFilter.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__filters_searchDeviceFilter__ = __webpack_require__("../../../../../src/app/filters/searchDeviceFilter.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_device_dashboard_device_dashboard_component__ = __webpack_require__("../../../../../src/app/components/device-dashboard/device-dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_new_shipment_new_shipment_component__ = __webpack_require__("../../../../../src/app/components/new-shipment/new-shipment.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_ng_pick_datetime_picker_module__ = __webpack_require__("../../../../ng-pick-datetime/picker.module.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_ng_pick_datetime_picker_module___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_22_ng_pick_datetime_picker_module__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_shipment_services__ = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__services_tracker_services__ = __webpack_require__("../../../../../src/app/services/tracker-services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__services_manage_organisation_services__ = __webpack_require__("../../../../../src/app/services/manage-organisation-services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__services_authorization_services__ = __webpack_require__("../../../../../src/app/services/authorization-services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__services_device_services__ = __webpack_require__("../../../../../src/app/services/device-services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_30_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__ = __webpack_require__("../../../../../src/app/reducers/info_store.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_dialog_confirm_device_return_confirm_device_return_component__ = __webpack_require__("../../../../../src/app/components/dialog/confirm-device-return/confirm-device-return.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_dialog_assign_vehicle_assign_vehicle_component__ = __webpack_require__("../../../../../src/app/components/dialog/assign-vehicle/assign-vehicle.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_dialog_mark_as_required_mark_as_required_component__ = __webpack_require__("../../../../../src/app/components/dialog/mark-as-required/mark-as-required.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_tracker_shipment_status_tracker_shipment_status_component__ = __webpack_require__("../../../../../src/app/components/tracker-shipment-status/tracker-shipment-status.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_edit_shipment_location_edit_shipment_location_component__ = __webpack_require__("../../../../../src/app/components/edit-shipment-location/edit-shipment-location.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__components_user_profile_user_profile_component__ = __webpack_require__("../../../../../src/app/components/user-profile/user-profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__components_add_organisation_add_organisation_component__ = __webpack_require__("../../../../../src/app/components/add-organisation/add-organisation.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__components_settings_component_settings_component_component__ = __webpack_require__("../../../../../src/app/components/settings-component/settings-component.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__components_manage_organisation_manage_organisation_component__ = __webpack_require__("../../../../../src/app/components/manage-organisation/manage-organisation.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__components_shipment_management_shipment_management_component__ = __webpack_require__("../../../../../src/app/components/shipment-management/shipment-management.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__services_shipment_mgmt_services__ = __webpack_require__("../../../../../src/app/services/shipment-mgmt-services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__services_manual_shipment_service__ = __webpack_require__("../../../../../src/app/services/manual-shipment-service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__components_user_management_console_user_management_console_component__ = __webpack_require__("../../../../../src/app/components/user-management-console/user-management-console.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__components_user_management_console_users_list_users_list_component__ = __webpack_require__("../../../../../src/app/components/user-management-console/users-list/users-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__services_user_management_services__ = __webpack_require__("../../../../../src/app/services/user-management-services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__components_freight_location_components_freight_location_picker_freight_location_picker_component__ = __webpack_require__("../../../../../src/app/components/freight-location-components/freight-location-picker/freight-location-picker.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__components_freight_location_components_freight_location_creater_freight_location_creater_component__ = __webpack_require__("../../../../../src/app/components/freight-location-components/freight-location-creater/freight-location-creater.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__reducers_user_management_store__ = __webpack_require__("../../../../../src/app/reducers/user-management-store.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__services_logout_service__ = __webpack_require__("../../../../../src/app/services/logout-service.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var platform_browser_1 = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var core_2 = __webpack_require__("../../../../@agm/core/index.js");
-var app_component_1 = __webpack_require__("../../../../../src/app/app.component.ts");
-var animations_1 = __webpack_require__("../../../platform-browser/@angular/platform-browser/animations.es5.js");
-var dashboard_component_1 = __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.ts");
-var router_module_routing_module_1 = __webpack_require__("../../../../../src/app/router-module/router-module-routing.module.ts");
-var material_1 = __webpack_require__("../../../material/@angular/material.es5.js");
-var angular_font_awesome_1 = __webpack_require__("../../../../angular-font-awesome/angular-font-awesome.ts");
-var shipment_status_component_1 = __webpack_require__("../../../../../src/app/components/shipment-status/shipment-status.component.ts");
-var ng2_charts_1 = __webpack_require__("../../../../ng2-charts/index.js");
-var flex_layout_1 = __webpack_require__("../../../flex-layout/@angular/flex-layout.es5.js");
-var manual_shipment_status_component_1 = __webpack_require__("../../../../../src/app/components/manual-shipment-status/manual-shipment-status.component.ts");
-var core_3 = __webpack_require__("../../../../@agm/core/index.js");
-var forms_1 = __webpack_require__("../../../forms/@angular/forms.es5.js");
-var filter_1 = __webpack_require__("../../../../../src/app/filters/filter.ts");
-var deviceFilter_1 = __webpack_require__("../../../../../src/app/filters/deviceFilter.ts");
-var shipmentFilter_1 = __webpack_require__("../../../../../src/app/filters/shipmentFilter.ts");
-var searchOrgFilter_1 = __webpack_require__("../../../../../src/app/filters/searchOrgFilter.ts");
-var sortFilter_1 = __webpack_require__("../../../../../src/app/filters/sortFilter.ts");
-var searchDeviceFilter_1 = __webpack_require__("../../../../../src/app/filters/searchDeviceFilter.ts");
-var device_dashboard_component_1 = __webpack_require__("../../../../../src/app/components/device-dashboard/device-dashboard.component.ts");
-var new_shipment_component_1 = __webpack_require__("../../../../../src/app/components/new-shipment/new-shipment.component.ts");
-var picker_module_1 = __webpack_require__("../../../../ng-pick-datetime/picker.module.js");
-var shipment_services_1 = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
-var tracker_services_1 = __webpack_require__("../../../../../src/app/services/tracker-services.ts");
-var manage_organisation_services_1 = __webpack_require__("../../../../../src/app/services/manage-organisation-services.ts");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // import {TripServices} from "./services/tripServices";
-var authorization_services_1 = __webpack_require__("../../../../../src/app/services/authorization-services.ts");
-var device_services_1 = __webpack_require__("../../../../../src/app/services/device-services.ts");
-var http_1 = __webpack_require__("../../../http/@angular/http.es5.js");
-var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
-var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+
+
+
+
+
 //import {TranslateModule} from 'ng2-translate';
-var info_store_1 = __webpack_require__("../../../../../src/app/reducers/info_store.ts");
-var confirm_device_return_component_1 = __webpack_require__("../../../../../src/app/components/dialog/confirm-device-return/confirm-device-return.component.ts");
-var assign_vehicle_component_1 = __webpack_require__("../../../../../src/app/components/dialog/assign-vehicle/assign-vehicle.component.ts");
-var mark_as_required_component_1 = __webpack_require__("../../../../../src/app/components/dialog/mark-as-required/mark-as-required.component.ts");
-var tracker_shipment_status_component_1 = __webpack_require__("../../../../../src/app/components/tracker-shipment-status/tracker-shipment-status.component.ts");
-var edit_shipment_location_component_1 = __webpack_require__("../../../../../src/app/components/edit-shipment-location/edit-shipment-location.component.ts");
-var user_profile_component_1 = __webpack_require__("../../../../../src/app/components/user-profile/user-profile.component.ts");
-var add_organisation_component_1 = __webpack_require__("../../../../../src/app/components/add-organisation/add-organisation.component.ts");
-var settings_component_component_1 = __webpack_require__("../../../../../src/app/components/settings-component/settings-component.component.ts");
-var manage_organisation_component_1 = __webpack_require__("../../../../../src/app/components/manage-organisation/manage-organisation.component.ts");
-var shipment_management_component_1 = __webpack_require__("../../../../../src/app/components/shipment-management/shipment-management.component.ts");
+
+
+
+
+
+
+
+
+
+
+
 // import { ShipmentGroupsListComponent } from './components/shipment-management/shipment-groups-list/shipment-groups-list.component';
 // import { EditShipmentGroupsComponent } from './components/shipment-management/edit-shipment-groups/edit-shipment-groups.component';
 // import { ShipmentListInGroupComponent } from './components/shipment-management/shipment-list-in-group/shipment-list-in-group.component';
-var shipment_mgmt_services_1 = __webpack_require__("../../../../../src/app/services/shipment-mgmt-services.ts");
-var manual_shipment_service_1 = __webpack_require__("../../../../../src/app/services/manual-shipment-service.ts");
-var user_management_console_component_1 = __webpack_require__("../../../../../src/app/components/user-management-console/user-management-console.component.ts");
-var users_list_component_1 = __webpack_require__("../../../../../src/app/components/user-management-console/users-list/users-list.component.ts");
-var user_management_services_1 = __webpack_require__("../../../../../src/app/services/user-management-services.ts");
-var freight_location_picker_component_1 = __webpack_require__("../../../../../src/app/components/freight-location-components/freight-location-picker/freight-location-picker.component.ts");
-var freight_location_creater_component_1 = __webpack_require__("../../../../../src/app/components/freight-location-components/freight-location-creater/freight-location-creater.component.ts");
-var user_management_store_1 = __webpack_require__("../../../../../src/app/reducers/user-management-store.ts");
-var logout_service_1 = __webpack_require__("../../../../../src/app/services/logout-service.ts");
-var stores = { shipmentIdList: info_store_1.shipmentIdList,
-    token: info_store_1.token,
-    allShipmentList: info_store_1.allShipmentList,
-    shipmentDetail: info_store_1.shipmentDetail,
-    newShipment: info_store_1.newShipment,
-    allDevicesList: info_store_1.allDevicesList,
-    checkVehicle: info_store_1.checkVehicle,
-    deviceDetails: info_store_1.deviceDetails,
-    closeDialog: info_store_1.closeDialog,
-    createOrgRes: info_store_1.createOrgRes,
-    switchOrganisationResp: info_store_1.switchOrganisationResp,
-    customerDetails: info_store_1.customerDetails,
-    shipmentGroupList: info_store_1.shipmentGroupList,
-    createGroupRes: info_store_1.createGroupRes,
-    deleteUserResponse: user_management_store_1.deleteUserResponse,
-    getAllUserList: user_management_store_1.getAllUserList,
-    updateUserStatusResponse: user_management_store_1.updateUserStatusResponse,
-    existingUserResponse: user_management_store_1.existingUserResponse,
-    switchShipment: info_store_1.switchShipment,
-    addDevice: info_store_1.addDevice,
-    authorization: info_store_1.authorization
+
+
+
+
+
+
+
+
+
+var stores = { shipmentIdList: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["a" /* shipmentIdList */],
+    token: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["b" /* token */],
+    allShipmentList: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["c" /* allShipmentList */],
+    shipmentDetail: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["d" /* shipmentDetail */],
+    newShipment: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["e" /* newShipment */],
+    allDevicesList: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["f" /* allDevicesList */],
+    checkVehicle: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["g" /* checkVehicle */],
+    deviceDetails: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["h" /* deviceDetails */],
+    closeDialog: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["i" /* closeDialog */],
+    createOrgRes: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["j" /* createOrgRes */],
+    switchOrganisationResp: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["k" /* switchOrganisationResp */],
+    customerDetails: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["l" /* customerDetails */],
+    shipmentGroupList: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["m" /* shipmentGroupList */],
+    createGroupRes: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["n" /* createGroupRes */],
+    deleteUserResponse: __WEBPACK_IMPORTED_MODULE_49__reducers_user_management_store__["a" /* deleteUserResponse */],
+    getAllUserList: __WEBPACK_IMPORTED_MODULE_49__reducers_user_management_store__["b" /* getAllUserList */],
+    updateUserStatusResponse: __WEBPACK_IMPORTED_MODULE_49__reducers_user_management_store__["c" /* updateUserStatusResponse */],
+    existingUserResponse: __WEBPACK_IMPORTED_MODULE_49__reducers_user_management_store__["d" /* existingUserResponse */],
+    switchShipment: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["o" /* switchShipment */],
+    addDevice: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["p" /* addDevice */],
+    authorization: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["q" /* authorization */]
     // checkDevice
 };
 var AppModule = (function () {
@@ -145,79 +194,79 @@ var AppModule = (function () {
     return AppModule;
 }());
 AppModule = __decorate([
-    core_1.NgModule({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
         declarations: [
-            app_component_1.AppComponent,
-            dashboard_component_1.DashboardComponent,
-            shipment_status_component_1.ShipmentStatusComponent,
-            manual_shipment_status_component_1.ManualShipmentStatusComponent,
-            deviceFilter_1.DeviceFilter, shipmentFilter_1.ShipmentFilter, filter_1.SearchFilter, sortFilter_1.SortFilter, searchDeviceFilter_1.SearchDeviceFilter, searchOrgFilter_1.SearchOrgFilter,
-            device_dashboard_component_1.DeviceDashboard, new_shipment_component_1.NewShipment,
-            confirm_device_return_component_1.ConfirmDeviceReturnComponent, assign_vehicle_component_1.AssignVehicleComponent, mark_as_required_component_1.MarkAsRequiredComponent,
-            tracker_shipment_status_component_1.TrackerShipmentStatusComponent,
-            edit_shipment_location_component_1.EditShipmentLocationComponent,
-            user_profile_component_1.UserProfile,
-            add_organisation_component_1.AddOrganisationComponent,
-            settings_component_component_1.SettingsComponentComponent,
-            manage_organisation_component_1.ManageOrganisationComponent,
-            shipment_management_component_1.ShipmentManagementComponent,
+            __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_5__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__components_shipment_status_shipment_status_component__["a" /* ShipmentStatusComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__components_manual_shipment_status_manual_shipment_status_component__["a" /* ManualShipmentStatusComponent */],
+            __WEBPACK_IMPORTED_MODULE_15__filters_deviceFilter__["a" /* DeviceFilter */], __WEBPACK_IMPORTED_MODULE_16__filters_shipmentFilter__["a" /* ShipmentFilter */], __WEBPACK_IMPORTED_MODULE_14__filters_filter__["a" /* SearchFilter */], __WEBPACK_IMPORTED_MODULE_18__filters_sortFilter__["a" /* SortFilter */], __WEBPACK_IMPORTED_MODULE_19__filters_searchDeviceFilter__["a" /* SearchDeviceFilter */], __WEBPACK_IMPORTED_MODULE_17__filters_searchOrgFilter__["a" /* SearchOrgFilter */],
+            __WEBPACK_IMPORTED_MODULE_20__components_device_dashboard_device_dashboard_component__["a" /* DeviceDashboard */], __WEBPACK_IMPORTED_MODULE_21__components_new_shipment_new_shipment_component__["a" /* NewShipment */],
+            __WEBPACK_IMPORTED_MODULE_32__components_dialog_confirm_device_return_confirm_device_return_component__["a" /* ConfirmDeviceReturnComponent */], __WEBPACK_IMPORTED_MODULE_33__components_dialog_assign_vehicle_assign_vehicle_component__["a" /* AssignVehicleComponent */], __WEBPACK_IMPORTED_MODULE_34__components_dialog_mark_as_required_mark_as_required_component__["a" /* MarkAsRequiredComponent */],
+            __WEBPACK_IMPORTED_MODULE_35__components_tracker_shipment_status_tracker_shipment_status_component__["a" /* TrackerShipmentStatusComponent */],
+            __WEBPACK_IMPORTED_MODULE_36__components_edit_shipment_location_edit_shipment_location_component__["a" /* EditShipmentLocationComponent */],
+            __WEBPACK_IMPORTED_MODULE_37__components_user_profile_user_profile_component__["a" /* UserProfile */],
+            __WEBPACK_IMPORTED_MODULE_38__components_add_organisation_add_organisation_component__["a" /* AddOrganisationComponent */],
+            __WEBPACK_IMPORTED_MODULE_39__components_settings_component_settings_component_component__["a" /* SettingsComponentComponent */],
+            __WEBPACK_IMPORTED_MODULE_40__components_manage_organisation_manage_organisation_component__["a" /* ManageOrganisationComponent */],
+            __WEBPACK_IMPORTED_MODULE_41__components_shipment_management_shipment_management_component__["a" /* ShipmentManagementComponent */],
             // ShipmentGroupsListComponent,
             // EditShipmentGroupsComponent,
-            users_list_component_1.UsersListComponent,
+            __WEBPACK_IMPORTED_MODULE_45__components_user_management_console_users_list_users_list_component__["a" /* UsersListComponent */],
             // ShipmentListInGroupComponent,
-            user_management_console_component_1.UserManagementConsoleComponent,
+            __WEBPACK_IMPORTED_MODULE_44__components_user_management_console_user_management_console_component__["a" /* UserManagementConsoleComponent */],
             //*************freight picker */
-            freight_location_picker_component_1.FreightLocationPickerComponent,
-            freight_location_creater_component_1.FreightLocationCreaterComponent,
+            __WEBPACK_IMPORTED_MODULE_47__components_freight_location_components_freight_location_picker_freight_location_picker_component__["a" /* FreightLocationPickerComponent */],
+            __WEBPACK_IMPORTED_MODULE_48__components_freight_location_components_freight_location_creater_freight_location_creater_component__["a" /* FreightLocationCreaterComponent */],
         ],
         entryComponents: [
-            confirm_device_return_component_1.ConfirmDeviceReturnComponent,
-            assign_vehicle_component_1.AssignVehicleComponent,
-            mark_as_required_component_1.MarkAsRequiredComponent,
+            __WEBPACK_IMPORTED_MODULE_32__components_dialog_confirm_device_return_confirm_device_return_component__["a" /* ConfirmDeviceReturnComponent */],
+            __WEBPACK_IMPORTED_MODULE_33__components_dialog_assign_vehicle_assign_vehicle_component__["a" /* AssignVehicleComponent */],
+            __WEBPACK_IMPORTED_MODULE_34__components_dialog_mark_as_required_mark_as_required_component__["a" /* MarkAsRequiredComponent */],
         ],
         imports: [
-            angular_2_local_storage_1.LocalStorageModule.withConfig({
+            __WEBPACK_IMPORTED_MODULE_30_angular_2_local_storage__["LocalStorageModule"].withConfig({
                 prefix: "my-app",
                 storageType: "localStorage"
             }),
-            platform_browser_1.BrowserModule, http_1.HttpModule, http_1.JsonpModule,
-            animations_1.BrowserAnimationsModule,
-            router_module_routing_module_1.RouterModuleRoutingModule,
-            core_3.AgmCoreModule.forRoot({
+            __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */], __WEBPACK_IMPORTED_MODULE_28__angular_http__["a" /* HttpModule */], __WEBPACK_IMPORTED_MODULE_28__angular_http__["b" /* JsonpModule */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+            __WEBPACK_IMPORTED_MODULE_6__router_module_router_module_routing_module__["a" /* RouterModuleRoutingModule */],
+            __WEBPACK_IMPORTED_MODULE_2__agm_core__["a" /* AgmCoreModule */].forRoot({
                 apiKey: 'AIzaSyBCRowVqghQTO8iJDgOc4QY-GlFwsn85_I',
                 libraries: ["places"]
             }),
-            forms_1.FormsModule,
-            forms_1.ReactiveFormsModule,
-            store_1.StoreModule.provideStore(stores),
-            angular_font_awesome_1.AngularFontAwesomeModule, picker_module_1.DateTimePickerModule,
-            material_1.MdInputModule,
-            material_1.MdToolbarModule,
-            material_1.MdGridListModule,
-            material_1.MdTabsModule,
-            material_1.MdCardModule,
-            material_1.MdCheckboxModule,
-            material_1.MdMenuModule,
-            material_1.MdRadioModule,
-            ng2_charts_1.ChartsModule,
-            material_1.MdButtonModule,
-            flex_layout_1.FlexLayoutModule,
-            material_1.MdSnackBarModule,
-            material_1.MdSelectModule,
-            material_1.MdButtonToggleModule, material_1.MdPaginatorModule, material_1.MdExpansionModule,
-            material_1.MdChipsModule,
-            material_1.MdDialogModule,
-            material_1.MdProgressSpinnerModule,
-            material_1.MdSlideToggleModule,
+            __WEBPACK_IMPORTED_MODULE_13__angular_forms__["FormsModule"],
+            __WEBPACK_IMPORTED_MODULE_13__angular_forms__["ReactiveFormsModule"],
+            __WEBPACK_IMPORTED_MODULE_29__ngrx_store__["a" /* StoreModule */].provideStore(stores),
+            __WEBPACK_IMPORTED_MODULE_8_angular_font_awesome_angular_font_awesome__["a" /* AngularFontAwesomeModule */], __WEBPACK_IMPORTED_MODULE_22_ng_pick_datetime_picker_module__["DateTimePickerModule"],
+            __WEBPACK_IMPORTED_MODULE_7__angular_material__["a" /* MdInputModule */],
+            __WEBPACK_IMPORTED_MODULE_7__angular_material__["b" /* MdToolbarModule */],
+            __WEBPACK_IMPORTED_MODULE_7__angular_material__["c" /* MdGridListModule */],
+            __WEBPACK_IMPORTED_MODULE_7__angular_material__["d" /* MdTabsModule */],
+            __WEBPACK_IMPORTED_MODULE_7__angular_material__["e" /* MdCardModule */],
+            __WEBPACK_IMPORTED_MODULE_7__angular_material__["f" /* MdCheckboxModule */],
+            __WEBPACK_IMPORTED_MODULE_7__angular_material__["g" /* MdMenuModule */],
+            __WEBPACK_IMPORTED_MODULE_7__angular_material__["h" /* MdRadioModule */],
+            __WEBPACK_IMPORTED_MODULE_10_ng2_charts__["ChartsModule"],
+            __WEBPACK_IMPORTED_MODULE_7__angular_material__["i" /* MdButtonModule */],
+            __WEBPACK_IMPORTED_MODULE_11__angular_flex_layout__["a" /* FlexLayoutModule */],
+            __WEBPACK_IMPORTED_MODULE_7__angular_material__["j" /* MdSnackBarModule */],
+            __WEBPACK_IMPORTED_MODULE_7__angular_material__["k" /* MdSelectModule */],
+            __WEBPACK_IMPORTED_MODULE_7__angular_material__["l" /* MdButtonToggleModule */], __WEBPACK_IMPORTED_MODULE_7__angular_material__["m" /* MdPaginatorModule */], __WEBPACK_IMPORTED_MODULE_7__angular_material__["n" /* MdExpansionModule */],
+            __WEBPACK_IMPORTED_MODULE_7__angular_material__["o" /* MdChipsModule */],
+            __WEBPACK_IMPORTED_MODULE_7__angular_material__["p" /* MdDialogModule */],
+            __WEBPACK_IMPORTED_MODULE_7__angular_material__["q" /* MdProgressSpinnerModule */],
+            __WEBPACK_IMPORTED_MODULE_7__angular_material__["r" /* MdSlideToggleModule */],
         ],
-        providers: [material_1.MdIconRegistry,
-            forms_1.NgModel, store_1.StoreModule, shipment_services_1.ShipmentServices, authorization_services_1.AuthorizationServices,
-            device_services_1.DeviceServices, core_2.GoogleMapsAPIWrapper, tracker_services_1.TrackerServices,
-            manage_organisation_services_1.ManageOrganisationService, shipment_mgmt_services_1.ShipmentMgmtService, user_management_services_1.UserManagementService, logout_service_1.LogoutServices, manual_shipment_service_1.ManualShipmentServices],
-        bootstrap: [app_component_1.AppComponent]
+        providers: [__WEBPACK_IMPORTED_MODULE_7__angular_material__["s" /* MdIconRegistry */],
+            __WEBPACK_IMPORTED_MODULE_13__angular_forms__["NgModel"], __WEBPACK_IMPORTED_MODULE_29__ngrx_store__["a" /* StoreModule */], __WEBPACK_IMPORTED_MODULE_23__services_shipment_services__["a" /* ShipmentServices */], __WEBPACK_IMPORTED_MODULE_26__services_authorization_services__["a" /* AuthorizationServices */],
+            __WEBPACK_IMPORTED_MODULE_27__services_device_services__["a" /* DeviceServices */], __WEBPACK_IMPORTED_MODULE_2__agm_core__["b" /* GoogleMapsAPIWrapper */], __WEBPACK_IMPORTED_MODULE_24__services_tracker_services__["a" /* TrackerServices */],
+            __WEBPACK_IMPORTED_MODULE_25__services_manage_organisation_services__["a" /* ManageOrganisationService */], __WEBPACK_IMPORTED_MODULE_42__services_shipment_mgmt_services__["a" /* ShipmentMgmtService */], __WEBPACK_IMPORTED_MODULE_46__services_user_management_services__["a" /* UserManagementService */], __WEBPACK_IMPORTED_MODULE_50__services_logout_service__["a" /* LogoutServices */], __WEBPACK_IMPORTED_MODULE_43__services_manual_shipment_service__["a" /* ManualShipmentServices */]],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
-exports.AppModule = AppModule;
+
 //# sourceMappingURL=app.module.js.map
 
 /***/ }),
@@ -230,7 +279,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".main{\n  min-width: 200px;\n  max-width: 390px;\n  margin: 50px auto;\n  padding: 8px\n}\n", ""]);
+exports.push([module.i, ".main{\r\n  min-width: 200px;\r\n  max-width: 390px;\r\n  margin: 50px auto;\r\n  padding: 8px\r\n}\r\n", ""]);
 
 // exports
 
@@ -243,15 +292,22 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/add-organisation/add-organisation.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main\">\n  <md-card>\n    <md-card-content>\n      <div>\n        <span>Add New Organisation here : </span>\n      </div>\n      <div>\n        <md-input-container style=\"width: 100%\" >\n          <input placeholder=\"Organisation Name\" type=\"text\"  mdInput required [(ngModel)]=\"orgName\">\n        </md-input-container>\n      </div>\n      <div>\n        <md-input-container style=\"width: 100%\" >\n          <input placeholder=\"Organisation Id\" type=\"text\"  mdInput required [(ngModel)]=\"userOrgId\">\n        </md-input-container>\n      </div>\n\n      <div>\n        <md-select  placeholder=\"Organisation Type\"  style=\"width: 100%\" floatPlaceholder=\"never\"  [(ngModel)]=\"orgType\">\n          <md-option  value=\"TRANSPORTER\">TRANSPORTER</md-option>\n          <md-option  value=\"FLEET_OWNER\">FLEET OWNER</md-option>\n          <md-option  value=\"FLEET_OWNER_AGENT\">FLEET OWNER AGENT</md-option>\n        </md-select>\n      </div>\n\n      <div style=\"margin-top: 20px;text-align: right;\">\n        <!-- (click)=\"goToDashboard()\" -->\n        <button md-raised-button>CANCEL</button>\n        <button md-raised-button color=\"primary\" (click)=\"addNewOrganisation()\">ADD ORGANISATION</button>\n      </div>\n    </md-card-content>\n  </md-card>\n</div>\n"
+module.exports = "<div class=\"main\">\r\n  <md-card>\r\n    <md-card-content>\r\n      <div>\r\n        <span>Add New Organisation here : </span>\r\n      </div>\r\n      <div>\r\n        <md-input-container style=\"width: 100%\" >\r\n          <input placeholder=\"Organisation Name\" type=\"text\"  mdInput required [(ngModel)]=\"orgName\">\r\n        </md-input-container>\r\n      </div>\r\n      <div>\r\n        <md-input-container style=\"width: 100%\" >\r\n          <input placeholder=\"Organisation Id\" type=\"text\"  mdInput required [(ngModel)]=\"userOrgId\">\r\n        </md-input-container>\r\n      </div>\r\n\r\n      <div>\r\n        <md-select  placeholder=\"Organisation Type\"  style=\"width: 100%\" floatPlaceholder=\"never\"  [(ngModel)]=\"orgType\">\r\n          <md-option  value=\"TRANSPORTER\">TRANSPORTER</md-option>\r\n          <md-option  value=\"FLEET_OWNER\">FLEET OWNER</md-option>\r\n          <md-option  value=\"FLEET_OWNER_AGENT\">FLEET OWNER AGENT</md-option>\r\n        </md-select>\r\n      </div>\r\n\r\n      <div style=\"margin-top: 20px;text-align: right;\">\r\n        <!-- (click)=\"goToDashboard()\" -->\r\n        <button md-raised-button>CANCEL</button>\r\n        <button md-raised-button color=\"primary\" (click)=\"addNewOrganisation()\">ADD ORGANISATION</button>\r\n      </div>\r\n    </md-card-content>\r\n  </md-card>\r\n</div>\r\n"
 
 /***/ }),
 
 /***/ "../../../../../src/app/components/add-organisation/add-organisation.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_manage_organisation_services__ = __webpack_require__("../../../../../src/app/services/manage-organisation-services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddOrganisationComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -261,13 +317,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-var router_1 = __webpack_require__("../../../router/@angular/router.es5.js");
-var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
-var manage_organisation_services_1 = __webpack_require__("../../../../../src/app/services/manage-organisation-services.ts");
-var material_1 = __webpack_require__("../../../material/@angular/material.es5.js");
+
+
+
+
+
+
 var AddOrganisationComponent = (function () {
     function AddOrganisationComponent(localStorageService, _router, _store, _manageOrganisationServices, snackBar) {
         var _this = this;
@@ -383,14 +438,14 @@ var AddOrganisationComponent = (function () {
     return AddOrganisationComponent;
 }());
 AddOrganisationComponent = __decorate([
-    core_1.Component({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-add-organisation',
         template: __webpack_require__("../../../../../src/app/components/add-organisation/add-organisation.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/add-organisation/add-organisation.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _a || Object, typeof (_b = typeof router_1.Router !== "undefined" && router_1.Router) === "function" && _b || Object, typeof (_c = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _c || Object, typeof (_d = typeof manage_organisation_services_1.ManageOrganisationService !== "undefined" && manage_organisation_services_1.ManageOrganisationService) === "function" && _d || Object, typeof (_e = typeof material_1.MdSnackBar !== "undefined" && material_1.MdSnackBar) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__services_manage_organisation_services__["a" /* ManageOrganisationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_manage_organisation_services__["a" /* ManageOrganisationService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__angular_material__["t" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_material__["t" /* MdSnackBar */]) === "function" && _e || Object])
 ], AddOrganisationComponent);
-exports.AddOrganisationComponent = AddOrganisationComponent;
+
 var _a, _b, _c, _d, _e;
 //# sourceMappingURL=add-organisation.component.js.map
 
@@ -404,7 +459,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/* abhinav code here*/\n/*md-toolbar{*/\n  /*background-color: #1976d2 ;*/\n  /*color:white*/\n\n/*}*/\n\n/*.title{*/\n /*position: relative;*/\n  /*left: 4%;*/\n  /*font-family: Trebuchet MS;*/\n  /*font-size: larger;*/\n/*}*/\n\n/* abhinav code here */\n\ndiv{\n  font-family: Helvetica;\n}\n\n.logo{\n  width: 100px;\n  padding: 2px;\n  height: 19px;\n}\n\n.service-name{\n  white-space: nowrap;\n  font-size: 11px;\n  position: absolute;\n  top: 28px;\n  left: 38px;\n  font-family: Helvetica;\n}\n\n.header{\n  padding:5px 0px 4px 15px;\n  background-color: #3F51B5;\n  color: white;\n  height: 45px;\n  box-shadow: 0px 0px 6px darkgrey;\n}\n\n.setting-button{\n  margin-left: auto;\n  margin-right: 15px;\n\n}\n\n.menu-button{\n  color: #D7D6D2;\n}\n\n.menu-button >>> .mat-button-focus-overlay{\n  background-color: rgba(255, 255, 255, 0);\n}\n\n.menu-button:hover{\n  color: white !important;\n}\n\n/*.menu-button:active{*/\n  /*color: white !important;*/\n/*}*/\n", ""]);
+exports.push([module.i, "/* abhinav code here*/\r\n/*md-toolbar{*/\r\n  /*background-color: #1976d2 ;*/\r\n  /*color:white*/\r\n\r\n/*}*/\r\n\r\n/*.title{*/\r\n /*position: relative;*/\r\n  /*left: 4%;*/\r\n  /*font-family: Trebuchet MS;*/\r\n  /*font-size: larger;*/\r\n/*}*/\r\n\r\n/* abhinav code here */\r\n\r\ndiv{\r\n  font-family: Helvetica;\r\n}\r\n\r\n.logo{\r\n  width: 100px;\r\n  padding: 2px;\r\n  height: 19px;\r\n}\r\n\r\n.service-name{\r\n  white-space: nowrap;\r\n  font-size: 11px;\r\n  position: absolute;\r\n  top: 28px;\r\n  left: 38px;\r\n  font-family: Helvetica;\r\n}\r\n\r\n.header{\r\n  padding:5px 0px 4px 15px;\r\n  background-color: #3F51B5;\r\n  color: white;\r\n  height: 45px;\r\n  box-shadow: 0px 0px 6px darkgrey;\r\n}\r\n\r\n.setting-button{\r\n  margin-left: auto;\r\n  margin-right: 15px;\r\n\r\n}\r\n\r\n.menu-button{\r\n  color: #D7D6D2;\r\n}\r\n\r\n.menu-button >>> .mat-button-focus-overlay{\r\n  background-color: rgba(255, 255, 255, 0);\r\n}\r\n\r\n.menu-button:hover{\r\n  color: white !important;\r\n}\r\n\r\n/*.menu-button:active{*/\r\n  /*color: white !important;*/\r\n/*}*/\r\n", ""]);
 
 // exports
 
@@ -417,15 +472,23 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n\n<!--    ************************ abhinav code ********************* -->\n<!--<md-toolbar>-->\n  <!--<span><img src=\"logo-light.png\"></span>-->\n  <!--<span class=title >Shipment Dashboard</span>-->\n  <!--<span style=\"position: relative; left: 65%;\"><fa name=\"cog\" ></fa></span>-->\n<!--</md-toolbar>-->\n<!--<nav md-tab-nav-bar>-->\n  <!--<a md-tab-link-->\n     <!--*ngFor=\"let link of navLinks\"-->\n     <!--[routerLink]=\"link.link\"-->\n     <!--routerLinkActive #rla=\"routerLinkActive\"-->\n     <!--[active]=\"rla.isActive\"-->\n  <!--style=\"color: #1976d2; font-size: medium\">-->\n    <!--{{link.label}}-->\n  <!--</a>-->\n<!--</nav>-->\n<!--<router-outlet></router-outlet>-->\n<!-- ********************************************************* -->\n\n<div style=\"height: 100vh;overflow: hidden;\" >\n  <div class=\"header\" fxLayout=\"row\" >\n    <img class=\"logo\" src=\"logo-light.png\" alt=\"Fretron Logo\"  >\n    <span class=\"service-name\" >Shipment Tracking</span>\n   <div style=\"margin-left: 80px\" >\n      <button [style.color]=\"selectedView == 'shipment' ? '#FFFFFF':''\" md-button class=\"menu-button\" (click)=\"goToShipmentDashboardView();selectedView = 'shipment'\" >\n            Shipment Dashboard\n      </button>\n\n      <button [style.color]=\"selectedView == 'device' ? '#FFFFFF':''\"   md-button class=\"menu-button\" (click)=\"goToDeviceDashboardView();selectedView = 'device'\"  >\n            Device Dashboard\n      </button>\n   </div>\n\n    <div class=\"setting-button\">\n\n      <button md-icon-button style=\"cursor: pointer;z-index: 1000;\" (click)=\"goTosettingView()\"  >\n        <i class=\"fa fa-cog\" aria-hidden=\"true\"></i>\n      </button>\n\n      <button [mdMenuTriggerFor]=\"logoutMenu\"  md-icon-button style=\"cursor: pointer;z-index: 1000;\"   >\n        <i  class=\"fa fa-user-o\" aria-hidden=\"true\" >&#9662;</i>\n      </button>\n      <md-menu #logoutMenu=\"mdMenu\" >\n        <app-user-profile [view]=\"web\" ></app-user-profile>\n      </md-menu>\n    </div>\n  </div>\n  <router-outlet></router-outlet>\n</div>\n"
+module.exports = "\r\n\r\n<!--    ************************ abhinav code ********************* -->\r\n<!--<md-toolbar>-->\r\n  <!--<span><img src=\"logo-light.png\"></span>-->\r\n  <!--<span class=title >Shipment Dashboard</span>-->\r\n  <!--<span style=\"position: relative; left: 65%;\"><fa name=\"cog\" ></fa></span>-->\r\n<!--</md-toolbar>-->\r\n<!--<nav md-tab-nav-bar>-->\r\n  <!--<a md-tab-link-->\r\n     <!--*ngFor=\"let link of navLinks\"-->\r\n     <!--[routerLink]=\"link.link\"-->\r\n     <!--routerLinkActive #rla=\"routerLinkActive\"-->\r\n     <!--[active]=\"rla.isActive\"-->\r\n  <!--style=\"color: #1976d2; font-size: medium\">-->\r\n    <!--{{link.label}}-->\r\n  <!--</a>-->\r\n<!--</nav>-->\r\n<!--<router-outlet></router-outlet>-->\r\n<!-- ********************************************************* -->\r\n\r\n<div style=\"height: 100vh;overflow: hidden;\" >\r\n  <div class=\"header\" fxLayout=\"row\" >\r\n    <img class=\"logo\" src=\"logo-light.png\" alt=\"Fretron Logo\"  >\r\n    <span class=\"service-name\" >Shipment Tracking</span>\r\n   <div style=\"margin-left: 80px\" >\r\n      <button [style.color]=\"selectedView == 'shipment' ? '#FFFFFF':''\" md-button class=\"menu-button\" (click)=\"goToShipmentDashboardView();selectedView = 'shipment'\" >\r\n            Shipment Dashboard\r\n      </button>\r\n\r\n      <button [style.color]=\"selectedView == 'device' ? '#FFFFFF':''\"   md-button class=\"menu-button\" (click)=\"goToDeviceDashboardView();selectedView = 'device'\"  >\r\n            Device Dashboard\r\n      </button>\r\n   </div>\r\n\r\n    <div class=\"setting-button\">\r\n\r\n      <button md-icon-button style=\"cursor: pointer;z-index: 1000;\" (click)=\"goTosettingView()\"  >\r\n        <i class=\"fa fa-cog\" aria-hidden=\"true\"></i>\r\n      </button>\r\n\r\n      <button [mdMenuTriggerFor]=\"logoutMenu\"  md-icon-button style=\"cursor: pointer;z-index: 1000;\"   >\r\n        <i  class=\"fa fa-user-o\" aria-hidden=\"true\" >&#9662;</i>\r\n      </button>\r\n      <md-menu #logoutMenu=\"mdMenu\" >\r\n        <app-user-profile [view]=\"web\" ></app-user-profile>\r\n      </md-menu>\r\n    </div>\r\n  </div>\r\n  <router-outlet></router-outlet>\r\n</div>\r\n"
 
 /***/ }),
 
 /***/ "../../../../../src/app/components/dashboard/dashboard.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_authorization_services__ = __webpack_require__("../../../../../src/app/services/authorization-services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_logout_service__ = __webpack_require__("../../../../../src/app/services/logout-service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -435,14 +498,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var router_1 = __webpack_require__("../../../router/@angular/router.es5.js");
-var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-var authorization_services_1 = __webpack_require__("../../../../../src/app/services/authorization-services.ts");
-var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
-var logout_service_1 = __webpack_require__("../../../../../src/app/services/logout-service.ts");
-var material_1 = __webpack_require__("../../../material/@angular/material.es5.js");
+
+
+
+
+
+
+
 var DashboardComponent = (function () {
     function DashboardComponent(logoutService, snackBar, _store, authorization, localStorageService, _router) {
         var _this = this;
@@ -556,14 +618,14 @@ var DashboardComponent = (function () {
     return DashboardComponent;
 }());
 DashboardComponent = __decorate([
-    core_1.Component({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-dashboard',
         template: __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof logout_service_1.LogoutServices !== "undefined" && logout_service_1.LogoutServices) === "function" && _a || Object, typeof (_b = typeof material_1.MdSnackBar !== "undefined" && material_1.MdSnackBar) === "function" && _b || Object, typeof (_c = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _c || Object, typeof (_d = typeof authorization_services_1.AuthorizationServices !== "undefined" && authorization_services_1.AuthorizationServices) === "function" && _d || Object, typeof (_e = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _e || Object, typeof (_f = typeof router_1.Router !== "undefined" && router_1.Router) === "function" && _f || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5__services_logout_service__["a" /* LogoutServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_logout_service__["a" /* LogoutServices */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_6__angular_material__["t" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__angular_material__["t" /* MdSnackBar */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ngrx_store__["b" /* Store */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_authorization_services__["a" /* AuthorizationServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_authorization_services__["a" /* AuthorizationServices */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__["LocalStorageService"]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _f || Object])
 ], DashboardComponent);
-exports.DashboardComponent = DashboardComponent;
+
 var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=dashboard.component.js.map
 
@@ -577,7 +639,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "div{\n  font-family: Helvetica;\n}\n\n.container{\n  padding: 5px 10px 5px 5px;\n  width: 100%;\n}\n\nmd-card{\n  padding: 15px;\n  font-family: Helvetica;\n}\n\n.custome-button {\n  height: 26px;\n  font-size: 13px;\n  line-height: 26px;\n  border-radius: 5px;\n}\n\n.status-button{\n  font-size: 12px;\n  line-height: 26px;\n  height: 33px;\n  width: 19%;\n  /* overflow: hidden; */\n  line-height: 1.2;\n  white-space: initial;\n  border-radius: 2px;\n}\n\n.status-button:hover\n{\n  background-color: #5b89ff !important;\n  color: white;\n}\n\n.current-status-button{\n  background-color: #FFB75A;\n  font-size: 12px;\n  line-height: 26px;\n  height: 25px;\n  border-radius: 5px;\n  color:#FFFFFF;\n}\n\n.expand-search {\n  border: 1.5px solid #b0bcc1;\n  width: 100%;\n  font-size: 12px;\n  padding: 5px 26px 5px 12px;\n  display: inline-block;\n  border-radius: 17px;\n  box-sizing: border-box;\n  outline: none;\n}\n\n/* search box*/\n.expand-search:focus{\n  outline: none;\n  border: 1.5px solid #03a9f4;\n}\n\n.margins span{\n  margin-left: 5px;\n}\n\n.custome-circle i{\n  font-size: 8px;\n  margin-top: 35%;\n  margin-left: -30%;\n  position: absolute;\n}\n\n.custome-circle{\n  font-size: 9px;\n  padding: 1px 6px;\n  border: 1px solid;\n  position: relative;\n  border-radius: 50%;\n}\n\n", ""]);
+exports.push([module.i, "div{\r\n  font-family: Helvetica;\r\n}\r\n\r\n.container{\r\n  padding: 5px 10px 5px 5px;\r\n  width: 100%;\r\n}\r\n\r\nmd-card{\r\n  padding: 15px;\r\n  font-family: Helvetica;\r\n}\r\n\r\n.custome-button {\r\n  height: 26px;\r\n  font-size: 13px;\r\n  line-height: 26px;\r\n  border-radius: 5px;\r\n}\r\n\r\n.status-button{\r\n  font-size: 12px;\r\n  line-height: 26px;\r\n  height: 33px;\r\n  width: 19%;\r\n  /* overflow: hidden; */\r\n  line-height: 1.2;\r\n  white-space: initial;\r\n  border-radius: 2px;\r\n}\r\n\r\n.status-button:hover\r\n{\r\n  background-color: #5b89ff !important;\r\n  color: white;\r\n}\r\n\r\n.current-status-button{\r\n  background-color: #FFB75A;\r\n  font-size: 12px;\r\n  line-height: 26px;\r\n  height: 25px;\r\n  border-radius: 5px;\r\n  color:#FFFFFF;\r\n}\r\n\r\n.expand-search {\r\n  border: 1.5px solid #b0bcc1;\r\n  width: 100%;\r\n  font-size: 12px;\r\n  padding: 5px 26px 5px 12px;\r\n  display: inline-block;\r\n  border-radius: 17px;\r\n  box-sizing: border-box;\r\n  outline: none;\r\n}\r\n\r\n/* search box*/\r\n.expand-search:focus{\r\n  outline: none;\r\n  border: 1.5px solid #03a9f4;\r\n}\r\n\r\n.margins span{\r\n  margin-left: 5px;\r\n}\r\n\r\n.custome-circle i{\r\n  font-size: 8px;\r\n  margin-top: 35%;\r\n  margin-left: -30%;\r\n  position: absolute;\r\n}\r\n\r\n.custome-circle{\r\n  font-size: 9px;\r\n  padding: 1px 6px;\r\n  border: 1px solid;\r\n  position: relative;\r\n  border-radius: 50%;\r\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -590,15 +652,26 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/device-dashboard/device-dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" style=\"min-width: 700px;box-sizing: border-box;overflow: auto\">\n  <md-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></md-spinner>\n  <div style=\"display:flex;padding:7px\" >\n    <div style=\"display:flex;\">\n      <button (click)=\"selectedFilter = ''\" md-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == ''?'#1976d2':''\"  [style.color]=\"selectedFilter == ''?'#FFFFFF':''\">{{countFilterData['all']}} <span>All</span></button>\n      <button (click)=\"selectedFilter = 'active'\" md-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == 'active'?'#1976d2':''\" [style.color]=\"selectedFilter == 'active'?'#FFFFFF':''\" style=\"margin-left: 15px\">{{countFilterData['active']}} <span>Active</span></button>\n      <button (click)=\"selectedFilter = 'available'\" md-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == 'available'?'#1976d2':''\" [style.color]=\"selectedFilter == 'available'?'#FFFFFF':''\" style=\"margin-left: 15px\">{{countFilterData['available']}} <span>Available</span></button>\n      <!--<button (click)=\"selectedFilter = 'repairing'\" md-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == 'repairing'?'#1976d2':''\" [style.color]=\"selectedFilter == 'repairing'?'#FFFFFF':''\" style=\"margin-left: 15px;width: 23%;\"> {{countFilterData['repairing']}} <span style=\"white-space: nowrap\">Not Working</span></button>-->\n    </div>\n    <div style=\"margin-left: auto;display: flex\">\n      <div >\n        <button class=\"custome-button align-vert-center\"  md-button  (click)=\"showAddDevice()\">+add Tracker</button>\n      </div>\n\n      <div style=\"position:relative;margin-top: 4px;\" >\n        <i  class=\"fa fa-search \"  aria-hidden=\"true\" style=\"margin-top: 7px;right: 7px;position: absolute;font-size: 13px;color: black;\"></i>\n        <input myAutofocus  [(ngModel)]=\"search\" class=\"expand-search\"  placeholder=\"Search\">\n      </div>\n    </div>\n  </div>\n  <hr>\n  <!--************************  dialog *********************************-->\n  <div *ngIf=\"isAddDeviceDialog\"  class=\"mycustomDialog\" style=\"padding-top: 70px;overflow:unset\">\n    <div class=\"modal-content\" style=\"width: 60%;min-width: 250px;overflow:unset;max-width: 360px;height:40vh;\">\n      <div class=\"modal-header\">\n        <span class=\"close\" (click)=\"isAddDeviceDialog=false\" >&times;</span>\n        <div>\n          <label>Add Device</label>\n        </div>\n      </div>\n\n      <div  style=\"font-size: 15px;margin-left:20px;margin-top: 20px;\">          \n        <md-input-container style=\"width: 80%;\">\n          <input   style=\"width: 100%;\" placeholder=\"IMEI Number\" mdInput [(ngModel)]=\"deviceIMEI\"  name=\"deviceIMEI\" id=\"deviceIMEI\" required>\n        </md-input-container>\n      </div>\n      <div  style=\"font-size: 15px;margin-left:20px\" >          \n        <md-input-container style=\"width: 80%;\">\n          <input style=\"width:100%;\" placeholder=\"Manufacturer Name\" mdInput [(ngModel)]=\"manufacturerName\"  name=\"manufacturerName\" id=\"manufacturerName\">\n        </md-input-container>\n      </div>\n      <div style=\"margin-top: 30px;\">\n          <button md-raised-button  style=\"margin-left: 50px;\" (click)=\"isAddDeviceDialog=false\" >Cancel</button>\n          <button md-raised-button  style=\"margin-left: 20px;width: 30%\" (click)=\"confirmAddDevice()\" >Ok</button>\n      </div>\n    </div>\n  </div>\n<!-- close Switch Shipment dialog -->\n<div  style=\"overflow:auto;max-height:100vh;display:flex\" >\n    <div style=\"overflow-y:auto;overflow-x:hidden;max-height:100vh; width: 100%;margin-right: -1px;\" >\n      <div  *ngFor=\"let selDevice of allDeviceList | deviceType: ['status' ,selectedFilter] | searchDeviceFilter:['imei',search]\" >\n        <md-card  *ngIf=\"selDevice['device']['status'] =='active'\" style=\"margin-top:5px;\" (click)=\"selectedShipmentDetail(selDevice['shipment'])\" >\n          <div fxLayout=\"row\" >\n            <div style=\"font-size: 12px;width: 100%\" >\n              <div fxLayout=\"row\" class=\"margins\" >\n                <span fxFlex=20>{{selDevice['device']?.imei}}</span>\n                <span fxFlex=13>{{selDevice['shipment']?.shipmentNoExtended}}</span>\n                <span style=\"margin-right: 12px\"  fxFlex=10><i style=\"margin-right: 3px\" class=\"fa fa-truck\" aria-hidden=\"true\"></i>{{selDevice['shipment']?.vehicleRegistrationNo}}</span>\n                <!-- <span fxFlex ><i style=\"margin-right: 3px\" class=\"fa fa-user-o\" aria-hidden=\"true\"></i>{{selDevice['shipment']?.driverName}}</span> -->\n              <!-- </div> -->\n  \n              <!-- <div style=\"margin-top: 8px\"  fxLayout=\"row\" class=\"margins\"  > -->\n                <span fxFlex=13 *ngIf=\"!(selDevice.latestGpsState)\" ><i style=\"margin-right: 3px\" class=\"fa fa-location-arrow\" aria-hidden=\"true\"></i>N/A1</span>\n                <span fxFlex=13 *ngIf=\"((selDevice.latestGpsState) && !(selDevice.latestGpsState?.startLocation?.address) && !(selDevice.latestGpsState?.endLocation?.address))\" ><i style=\"margin-right: 3px\" class=\"fa fa-location-arrow\" aria-hidden=\"true\"></i>N/A2</span>                                \n                <span fxFlex=13 *ngIf=\"(selDevice.latestGpsState?.endLocation?.address)\" ><i style=\"margin-right: 3px\" class=\"fa fa-location-arrow\" aria-hidden=\"true\"></i>{{(selDevice?.latestGpsState?.endLocation?.address)?selDevice?.latestGpsState?.endLocation?.address:'N/A'}}</span>\n                <span fxFlex=13 *ngIf=\"(selDevice.latestGpsState?.startLocation?.address && !(selDevice.latestGpsState?.endLocation?.address))\" ><i style=\"margin-right: 3px\" class=\"fa fa-location-arrow\" aria-hidden=\"true\"></i>{{(selDevice?.latestGpsState?.startLocation?.address)?selDevice?.latestGpsState?.startLocation?.address:'N/A'}}</span>                \n                <span fxFlex=13><label style=\"margin-right: 3px\" ><i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i></label>{{(selDevice['shipment']?.startLocation?.freightLocation?.name)?selDevice['shipment']?.startLocation?.freightLocation?.name:'N/A'}}</span>\n                \n                <span fxFlex=13 ><i style=\"margin-right: 3px\" class=\"fa fa-circle\" aria-hidden=\"true\"></i>{{(selDevice['shipment']?.endLocation?.freightLocation?.name)?selDevice['shipment']?.endLocation?.freightLocation?.name:'N/A'}}</span>\n                \n                <!-- <span fxFlex  ><i style=\"margin-right: 3px\" class=\"fa fa-phone\" aria-hidden=\"true\"></i>{{selDevice['shipment']?.mobileNo}}</span> -->\n                <span fxFlex=\"10\" *ngIf=\"selDevice['shipment']['actualStartTime'] != null\" style=\"white-space: nowrap;\" >Since: {{(selDevice['shipment']?._stateDuration)?selDevice['shipment']?._stateDuration:'0 min'}}</span>\n                \n              </div>\n            </div>\n            <!-- <div style=\"font-size: 11px;\">\n              <div style=\"margin-top: 8px;width: 100px;\" >\n              </div>\n            </div> -->\n            <div style=\"margin-right: 30px;\">\n              <button md-raised-button style=\"margin-top: 3px\" class=\"current-status-button\" >Active</button>\n            </div>\n            <!-- <div style=\"margin-left: auto;margin-right: 10px;\">\n              <button class=\"custome-button fade-sub-header-text align-vert-center\"  md-button (click)=\"openDialogConfirmDeviceReturn(selDevice)\" >+confirm device Return</button>\n            </div> -->\n          </div>\n        </md-card>\n\n        <md-card style=\"margin-top:5px;\"  *ngIf=\"selDevice['device']['status'] =='available'\" >\n          <div fxLayout=\"row\">\n            <div style=\"font-size: 12px;width: 100%\" >\n              <div fxLayout=\"row\" class=\"margins\" >\n                <span fxFlex=20 >{{selDevice['device']['imei']}}</span>\n                <span fxFlex=22 ><i style=\"color: #e39f41;margin-right: 5px;font-size: 14px;\" class=\"fa fa-exclamation-circle\" aria-hidden=\"true\"></i>(Since 29 aug 2017)</span>\n              </div>\n            </div>\n  \n            <div style=\"margin-right: 30px;\">\n              <button md-raised-button style=\"margin-top: 3px;background-color: #21b22e\" class=\"current-status-button\" >Available</button>\n            </div>\n  \n            <!-- <div style=\"margin-right: 30px;\">\n              <button class=\"custome-button fade-sub-header-text align-vert-center\"  md-button (click)=\"openDialogAssignVehicle(selDevice)\">+assign Vehicle</button>\n            </div> -->\n          </div>\n        </md-card>\n      </div>\n    </div>\n    <div *ngIf=\"isShowDetails\" class=\"mycustomDialog\" style=\"padding: 8px 10px;width: 100%;margin-bottom: 10px;\" >\n      <div class=\"modal-content\"  style=\"min-width: 280px;overflow:unset;max-width: 400px;height:45vh;margin-top: 70px;\">\n        <i (click)=\"isShowDetails = false;\" style=\"font-size:24px;float: right;margin-top: 3px;color: rgb(82, 80, 80);cursor:pointer\" class=\"fa fa-times-circle-o\" aria-hidden=\"true\"></i>\n        <div *ngIf=\"trackingType=='Tracker'\"><app-tracker-shipment-status></app-tracker-shipment-status></div>\n      </div>\n    </div>\n</div>\n\n  <!-- <div style=\"overflow:auto;height:calc(100vh - 115px);\" >\n  <div style=\"margin-top: 10px\" *ngFor=\"let selDevice of allDeviceList | deviceType: ['status' ,selectedFilter]\"> -->\n      <!--<div style=\"margin-top: 10px\" *ngFor=\"let selDevice of allDeviceList\">-->\n     \n\n      <!--<md-card style=\"margin-top:5px;\" *ngIf=\"selDevice.device.status=='repairing'\" >-->\n        <!--<div fxLayout=\"row\">-->\n          <!--<div style=\"font-size: 12px;width: 100%\" >-->\n            <!--<div fxLayout=\"row\" class=\"margins\" >-->\n              <!--<span fxFlex >363251425152</span>-->\n            <!--</div>-->\n\n            <!--<div style=\"margin-top: 8px\"  fxLayout=\"row\" class=\"margins\"  >-->\n              <!--<span fxFlex=\"50\" >-->\n                <!--<i style=\"color: #dc2019;margin-right: 5px;font-size: 14px;\" class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i>-->\n                <!--Under Repairing - since 8 days</span>-->\n            <!--</div>-->\n          <!--</div>-->\n\n          <!--<div style=\"margin-right: 30px;\">-->\n            <!--<button md-raised-button style=\"margin-top: 3px;background-color: #dc2019\" class=\"current-status-button\" >Repairing</button>-->\n          <!--</div>-->\n          <!--<div style=\"margin-right: 10px;\">-->\n            <!--<button class=\"custome-button fade-sub-header-text align-vert-center\"  md-button (click)=\"openDialogMarkAsRequired(selDevice)\">+mark as Required</button>-->\n          <!--</div>-->\n        <!--</div>-->\n      <!--</md-card>-->\n  <!-- </div>\n  <div style=\"height:30px\"></div>\n  </div> -->\n</div>\n"
+module.exports = "<div class=\"container\" style=\"min-width: 700px;box-sizing: border-box;overflow: auto\">\r\n  <md-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></md-spinner>\r\n  <div style=\"display:flex;padding:7px\" >\r\n    <div style=\"display:flex;\">\r\n      <button (click)=\"selectedFilter = ''\" md-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == ''?'#1976d2':''\"  [style.color]=\"selectedFilter == ''?'#FFFFFF':''\">{{countFilterData['all']}} <span>All</span></button>\r\n      <button (click)=\"selectedFilter = 'active'\" md-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == 'active'?'#1976d2':''\" [style.color]=\"selectedFilter == 'active'?'#FFFFFF':''\" style=\"margin-left: 15px\">{{countFilterData['active']}} <span>Active</span></button>\r\n      <button (click)=\"selectedFilter = 'available'\" md-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == 'available'?'#1976d2':''\" [style.color]=\"selectedFilter == 'available'?'#FFFFFF':''\" style=\"margin-left: 15px\">{{countFilterData['available']}} <span>Available</span></button>\r\n      <!--<button (click)=\"selectedFilter = 'repairing'\" md-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == 'repairing'?'#1976d2':''\" [style.color]=\"selectedFilter == 'repairing'?'#FFFFFF':''\" style=\"margin-left: 15px;width: 23%;\"> {{countFilterData['repairing']}} <span style=\"white-space: nowrap\">Not Working</span></button>-->\r\n    </div>\r\n    <div style=\"margin-left: auto;display: flex\">\r\n      <div >\r\n        <button class=\"custome-button align-vert-center\"  md-button  (click)=\"showAddDevice()\">+add Tracker</button>\r\n      </div>\r\n\r\n      <div style=\"position:relative;margin-top: 4px;\" >\r\n        <i  class=\"fa fa-search \"  aria-hidden=\"true\" style=\"margin-top: 7px;right: 7px;position: absolute;font-size: 13px;color: black;\"></i>\r\n        <input myAutofocus  [(ngModel)]=\"search\" class=\"expand-search\"  placeholder=\"Search\">\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <hr>\r\n  <!--************************  dialog *********************************-->\r\n  <div *ngIf=\"isAddDeviceDialog\"  class=\"mycustomDialog\" style=\"padding-top: 70px;overflow:unset\">\r\n    <div class=\"modal-content\" style=\"width: 60%;min-width: 250px;overflow:unset;max-width: 360px;height:40vh;\">\r\n      <div class=\"modal-header\">\r\n        <span class=\"close\" (click)=\"isAddDeviceDialog=false\" >&times;</span>\r\n        <div>\r\n          <label>Add Device</label>\r\n        </div>\r\n      </div>\r\n\r\n      <div  style=\"font-size: 15px;margin-left:20px;margin-top: 20px;\">          \r\n        <md-input-container style=\"width: 80%;\">\r\n          <input   style=\"width: 100%;\" placeholder=\"IMEI Number\" mdInput [(ngModel)]=\"deviceIMEI\"  name=\"deviceIMEI\" id=\"deviceIMEI\" required>\r\n        </md-input-container>\r\n      </div>\r\n      <div  style=\"font-size: 15px;margin-left:20px\" >          \r\n        <md-input-container style=\"width: 80%;\">\r\n          <input style=\"width:100%;\" placeholder=\"Manufacturer Name\" mdInput [(ngModel)]=\"manufacturerName\"  name=\"manufacturerName\" id=\"manufacturerName\">\r\n        </md-input-container>\r\n      </div>\r\n      <div style=\"margin-top: 30px;\">\r\n          <button md-raised-button  style=\"margin-left: 50px;\" (click)=\"isAddDeviceDialog=false\" >Cancel</button>\r\n          <button md-raised-button  style=\"margin-left: 20px;width: 30%\" (click)=\"confirmAddDevice()\" >Ok</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n<!-- close Switch Shipment dialog -->\r\n<div  style=\"overflow:auto;max-height:100vh;display:flex\" >\r\n    <div style=\"overflow-y:auto;overflow-x:hidden;max-height:100vh; width: 100%;margin-right: -1px;\" >\r\n      <div  *ngFor=\"let selDevice of allDeviceList | deviceType: ['status' ,selectedFilter] | searchDeviceFilter:['imei',search]\" >\r\n        <md-card  *ngIf=\"selDevice['device']['status'] =='active'\" style=\"margin-top:5px;\" (click)=\"selectedShipmentDetail(selDevice['shipment'])\" >\r\n          <div fxLayout=\"row\" >\r\n            <div style=\"font-size: 12px;width: 100%\" >\r\n              <div fxLayout=\"row\" class=\"margins\" >\r\n                <span fxFlex=20>{{selDevice['device']?.imei}}</span>\r\n                <span fxFlex=13>{{selDevice['shipment']?.shipmentNoExtended}}</span>\r\n                <span style=\"margin-right: 12px\"  fxFlex=10><i style=\"margin-right: 3px\" class=\"fa fa-truck\" aria-hidden=\"true\"></i>{{selDevice['shipment']?.vehicleRegistrationNo}}</span>\r\n                <!-- <span fxFlex ><i style=\"margin-right: 3px\" class=\"fa fa-user-o\" aria-hidden=\"true\"></i>{{selDevice['shipment']?.driverName}}</span> -->\r\n              <!-- </div> -->\r\n  \r\n              <!-- <div style=\"margin-top: 8px\"  fxLayout=\"row\" class=\"margins\"  > -->\r\n                <span fxFlex=13 *ngIf=\"!(selDevice.latestGpsState)\" ><i style=\"margin-right: 3px\" class=\"fa fa-location-arrow\" aria-hidden=\"true\"></i>N/A1</span>\r\n                <span fxFlex=13 *ngIf=\"((selDevice.latestGpsState) && !(selDevice.latestGpsState?.startLocation?.address) && !(selDevice.latestGpsState?.endLocation?.address))\" ><i style=\"margin-right: 3px\" class=\"fa fa-location-arrow\" aria-hidden=\"true\"></i>N/A2</span>                                \r\n                <span fxFlex=13 *ngIf=\"(selDevice.latestGpsState?.endLocation?.address)\" ><i style=\"margin-right: 3px\" class=\"fa fa-location-arrow\" aria-hidden=\"true\"></i>{{(selDevice?.latestGpsState?.endLocation?.address)?selDevice?.latestGpsState?.endLocation?.address:'N/A'}}</span>\r\n                <span fxFlex=13 *ngIf=\"(selDevice.latestGpsState?.startLocation?.address && !(selDevice.latestGpsState?.endLocation?.address))\" ><i style=\"margin-right: 3px\" class=\"fa fa-location-arrow\" aria-hidden=\"true\"></i>{{(selDevice?.latestGpsState?.startLocation?.address)?selDevice?.latestGpsState?.startLocation?.address:'N/A'}}</span>                \r\n                <span fxFlex=13><label style=\"margin-right: 3px\" ><i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i></label>{{(selDevice['shipment']?.startLocation?.freightLocation?.name)?selDevice['shipment']?.startLocation?.freightLocation?.name:'N/A'}}</span>\r\n                \r\n                <span fxFlex=13 ><i style=\"margin-right: 3px\" class=\"fa fa-circle\" aria-hidden=\"true\"></i>{{(selDevice['shipment']?.endLocation?.freightLocation?.name)?selDevice['shipment']?.endLocation?.freightLocation?.name:'N/A'}}</span>\r\n                \r\n                <!-- <span fxFlex  ><i style=\"margin-right: 3px\" class=\"fa fa-phone\" aria-hidden=\"true\"></i>{{selDevice['shipment']?.mobileNo}}</span> -->\r\n                <span fxFlex=\"10\" *ngIf=\"selDevice['shipment']['actualStartTime'] != null\" style=\"white-space: nowrap;\" >Since: {{(selDevice['shipment']?._stateDuration)?selDevice['shipment']?._stateDuration:'0 min'}}</span>\r\n                \r\n              </div>\r\n            </div>\r\n            <!-- <div style=\"font-size: 11px;\">\r\n              <div style=\"margin-top: 8px;width: 100px;\" >\r\n              </div>\r\n            </div> -->\r\n            <div style=\"margin-right: 30px;\">\r\n              <button md-raised-button style=\"margin-top: 3px\" class=\"current-status-button\" >Active</button>\r\n            </div>\r\n            <!-- <div style=\"margin-left: auto;margin-right: 10px;\">\r\n              <button class=\"custome-button fade-sub-header-text align-vert-center\"  md-button (click)=\"openDialogConfirmDeviceReturn(selDevice)\" >+confirm device Return</button>\r\n            </div> -->\r\n          </div>\r\n        </md-card>\r\n\r\n        <md-card style=\"margin-top:5px;\"  *ngIf=\"selDevice['device']['status'] =='available'\" >\r\n          <div fxLayout=\"row\">\r\n            <div style=\"font-size: 12px;width: 100%\" >\r\n              <div fxLayout=\"row\" class=\"margins\" >\r\n                <span fxFlex=20 >{{selDevice['device']['imei']}}</span>\r\n                <span fxFlex=22 ><i style=\"color: #e39f41;margin-right: 5px;font-size: 14px;\" class=\"fa fa-exclamation-circle\" aria-hidden=\"true\"></i>(Since 29 aug 2017)</span>\r\n              </div>\r\n            </div>\r\n  \r\n            <div style=\"margin-right: 30px;\">\r\n              <button md-raised-button style=\"margin-top: 3px;background-color: #21b22e\" class=\"current-status-button\" >Available</button>\r\n            </div>\r\n  \r\n            <!-- <div style=\"margin-right: 30px;\">\r\n              <button class=\"custome-button fade-sub-header-text align-vert-center\"  md-button (click)=\"openDialogAssignVehicle(selDevice)\">+assign Vehicle</button>\r\n            </div> -->\r\n          </div>\r\n        </md-card>\r\n      </div>\r\n    </div>\r\n    <div *ngIf=\"isShowDetails\" class=\"mycustomDialog\" style=\"padding: 8px 10px;width: 100%;margin-bottom: 10px;\" >\r\n      <div class=\"modal-content\"  style=\"min-width: 280px;overflow:unset;max-width: 400px;height:45vh;margin-top: 70px;\">\r\n        <i (click)=\"isShowDetails = false;\" style=\"font-size:24px;float: right;margin-top: 3px;color: rgb(82, 80, 80);cursor:pointer\" class=\"fa fa-times-circle-o\" aria-hidden=\"true\"></i>\r\n        <div *ngIf=\"trackingType=='Tracker'\"><app-tracker-shipment-status></app-tracker-shipment-status></div>\r\n      </div>\r\n    </div>\r\n</div>\r\n\r\n  <!-- <div style=\"overflow:auto;height:calc(100vh - 115px);\" >\r\n  <div style=\"margin-top: 10px\" *ngFor=\"let selDevice of allDeviceList | deviceType: ['status' ,selectedFilter]\"> -->\r\n      <!--<div style=\"margin-top: 10px\" *ngFor=\"let selDevice of allDeviceList\">-->\r\n     \r\n\r\n      <!--<md-card style=\"margin-top:5px;\" *ngIf=\"selDevice.device.status=='repairing'\" >-->\r\n        <!--<div fxLayout=\"row\">-->\r\n          <!--<div style=\"font-size: 12px;width: 100%\" >-->\r\n            <!--<div fxLayout=\"row\" class=\"margins\" >-->\r\n              <!--<span fxFlex >363251425152</span>-->\r\n            <!--</div>-->\r\n\r\n            <!--<div style=\"margin-top: 8px\"  fxLayout=\"row\" class=\"margins\"  >-->\r\n              <!--<span fxFlex=\"50\" >-->\r\n                <!--<i style=\"color: #dc2019;margin-right: 5px;font-size: 14px;\" class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i>-->\r\n                <!--Under Repairing - since 8 days</span>-->\r\n            <!--</div>-->\r\n          <!--</div>-->\r\n\r\n          <!--<div style=\"margin-right: 30px;\">-->\r\n            <!--<button md-raised-button style=\"margin-top: 3px;background-color: #dc2019\" class=\"current-status-button\" >Repairing</button>-->\r\n          <!--</div>-->\r\n          <!--<div style=\"margin-right: 10px;\">-->\r\n            <!--<button class=\"custome-button fade-sub-header-text align-vert-center\"  md-button (click)=\"openDialogMarkAsRequired(selDevice)\">+mark as Required</button>-->\r\n          <!--</div>-->\r\n        <!--</div>-->\r\n      <!--</md-card>-->\r\n  <!-- </div>\r\n  <div style=\"height:30px\"></div>\r\n  </div> -->\r\n</div>\r\n"
 
 /***/ }),
 
 /***/ "../../../../../src/app/components/device-dashboard/device-dashboard.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_device_services__ = __webpack_require__("../../../../../src/app/services/device-services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_shipment_services__ = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_util__ = __webpack_require__("../../../../util/util.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_util___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_util__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_dialog_confirm_device_return_confirm_device_return_component__ = __webpack_require__("../../../../../src/app/components/dialog/confirm-device-return/confirm-device-return.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_dialog_assign_vehicle_assign_vehicle_component__ = __webpack_require__("../../../../../src/app/components/dialog/assign-vehicle/assign-vehicle.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_dialog_mark_as_required_mark_as_required_component__ = __webpack_require__("../../../../../src/app/components/dialog/mark-as-required/mark-as-required.component.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DeviceDashboard; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -608,17 +681,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var router_1 = __webpack_require__("../../../router/@angular/router.es5.js");
-var device_services_1 = __webpack_require__("../../../../../src/app/services/device-services.ts");
-var shipment_services_1 = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
-var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
-var util_1 = __webpack_require__("../../../../util/util.js");
-var material_1 = __webpack_require__("../../../material/@angular/material.es5.js");
-var confirm_device_return_component_1 = __webpack_require__("../../../../../src/app/components/dialog/confirm-device-return/confirm-device-return.component.ts");
-var assign_vehicle_component_1 = __webpack_require__("../../../../../src/app/components/dialog/assign-vehicle/assign-vehicle.component.ts");
-var mark_as_required_component_1 = __webpack_require__("../../../../../src/app/components/dialog/mark-as-required/mark-as-required.component.ts");
+
+
+
+
+
+
+
+
+
+
 var DeviceDashboard = (function () {
     // public unSub_allActiveDeviceList=null;
     // public unSub_allAvailableDeviceList=null;
@@ -713,7 +785,7 @@ var DeviceDashboard = (function () {
     };
     DeviceDashboard.prototype.confirmAddDevice = function () {
         console.log(this.deviceIMEI);
-        if (util_1.isNullOrUndefined(this.deviceIMEI) || this.deviceIMEI == '') {
+        if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_util__["isNullOrUndefined"])(this.deviceIMEI) || this.deviceIMEI == '') {
             this.openSnackBar('please fill device IMEI ');
             return;
         }
@@ -730,7 +802,7 @@ var DeviceDashboard = (function () {
     };
     DeviceDashboard.prototype.selectedShipmentDetail = function (shipment) {
         console.log(shipment);
-        if (!util_1.isNullOrUndefined(shipment)) {
+        if (!__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_util__["isNullOrUndefined"])(shipment)) {
             this.trackingType = shipment.trackingType;
             var id = shipment.shipmentId;
             this.shipmentServices.getShipmentDetail.emit(id);
@@ -753,7 +825,7 @@ var DeviceDashboard = (function () {
         var res = device;
         console.log(res);
         this._store.dispatch({ type: "DEVICE_DETAILS", payload: { error: '', data: res } });
-        var dialogRef = this.dialog.open(confirm_device_return_component_1.ConfirmDeviceReturnComponent);
+        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_7__components_dialog_confirm_device_return_confirm_device_return_component__["a" /* ConfirmDeviceReturnComponent */]);
         dialogRef.afterClosed().subscribe(function (result) {
             console.log("Dialog result: " + result);
         });
@@ -762,7 +834,7 @@ var DeviceDashboard = (function () {
         var res = device;
         console.log(res);
         this._store.dispatch({ type: "DEVICE_DETAILS", payload: { error: '', data: res } });
-        var dialogRef = this.dialog.open(assign_vehicle_component_1.AssignVehicleComponent, {
+        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_8__components_dialog_assign_vehicle_assign_vehicle_component__["a" /* AssignVehicleComponent */], {
             height: '350px', width: '500px'
         });
         dialogRef.afterClosed().subscribe(function (result) {
@@ -773,7 +845,7 @@ var DeviceDashboard = (function () {
         var res = device;
         console.log(res);
         this._store.dispatch({ type: "DEVICE_DETAILS", payload: { error: '', data: res } });
-        var dialogRef = this.dialog.open(mark_as_required_component_1.MarkAsRequiredComponent, {
+        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_9__components_dialog_mark_as_required_mark_as_required_component__["a" /* MarkAsRequiredComponent */], {
             height: '350px', width: '500px'
         });
         dialogRef.afterClosed().subscribe(function (result) {
@@ -819,14 +891,14 @@ var DeviceDashboard = (function () {
     return DeviceDashboard;
 }());
 DeviceDashboard = __decorate([
-    core_1.Component({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-device-dashboard',
         template: __webpack_require__("../../../../../src/app/components/device-dashboard/device-dashboard.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/device-dashboard/device-dashboard.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof material_1.MdSnackBar !== "undefined" && material_1.MdSnackBar) === "function" && _a || Object, typeof (_b = typeof router_1.Router !== "undefined" && router_1.Router) === "function" && _b || Object, typeof (_c = typeof device_services_1.DeviceServices !== "undefined" && device_services_1.DeviceServices) === "function" && _c || Object, typeof (_d = typeof shipment_services_1.ShipmentServices !== "undefined" && shipment_services_1.ShipmentServices) === "function" && _d || Object, typeof (_e = typeof material_1.MdDialog !== "undefined" && material_1.MdDialog) === "function" && _e || Object, typeof (_f = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _f || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_6__angular_material__["t" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__angular_material__["t" /* MdSnackBar */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_device_services__["a" /* DeviceServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_device_services__["a" /* DeviceServices */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_shipment_services__["a" /* ShipmentServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_shipment_services__["a" /* ShipmentServices */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_6__angular_material__["v" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__angular_material__["v" /* MdDialog */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ngrx_store__["b" /* Store */]) === "function" && _f || Object])
 ], DeviceDashboard);
-exports.DeviceDashboard = DeviceDashboard;
+
 var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=device-dashboard.component.js.map
 
@@ -853,15 +925,18 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/dialog/assign-vehicle/assign-vehicle.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h1 md-dialog-title><u>Assign Vehicle</u></h1> \n<div md-dialog-content>\n  <p style=\"margin-left:30px\">Device &nbsp;Id &nbsp;:<i>{{device.imei}}</i></p> \n  <div style=\"margin-left:30px\" >\n    <label>Vehicle&nbsp;&nbsp; Number&nbsp;*:&nbsp;&nbsp;&nbsp; </label>\n    <md-input-container>\n      <input  mdInput [(ngModel)]=\"vehicleNumber\" name=\"vehicleNumber\" id=\"vehicleNumber\" required>\n    </md-input-container>\n  </div>\n</div>\n<div md-dialog-actions>\n  <div style=\"margin-left:auto;margin-right: 60px;margin-top: 50px;\">\n      <button md-raised-button   style=\"margin-left:auto;margin-right: 30px;\" (click)=\"closeDialog()\" >Cancel</button>\n      <button md-raised-button  style=\"margin-left:auto;margin-right: 20px;\" (click)=\"closeDialog()\" >Confirm</button>\n  </div>\n  \n</div>"
+module.exports = "<h1 md-dialog-title><u>Assign Vehicle</u></h1> \r\n<div md-dialog-content>\r\n  <p style=\"margin-left:30px\">Device &nbsp;Id &nbsp;:<i>{{device.imei}}</i></p> \r\n  <div style=\"margin-left:30px\" >\r\n    <label>Vehicle&nbsp;&nbsp; Number&nbsp;*:&nbsp;&nbsp;&nbsp; </label>\r\n    <md-input-container>\r\n      <input  mdInput [(ngModel)]=\"vehicleNumber\" name=\"vehicleNumber\" id=\"vehicleNumber\" required>\r\n    </md-input-container>\r\n  </div>\r\n</div>\r\n<div md-dialog-actions>\r\n  <div style=\"margin-left:auto;margin-right: 60px;margin-top: 50px;\">\r\n      <button md-raised-button   style=\"margin-left:auto;margin-right: 30px;\" (click)=\"closeDialog()\" >Cancel</button>\r\n      <button md-raised-button  style=\"margin-left:auto;margin-right: 20px;\" (click)=\"closeDialog()\" >Confirm</button>\r\n  </div>\r\n  \r\n</div>"
 
 /***/ }),
 
 /***/ "../../../../../src/app/components/dialog/assign-vehicle/assign-vehicle.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AssignVehicleComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -871,10 +946,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
-var material_1 = __webpack_require__("../../../material/@angular/material.es5.js");
+
+
+
 var AssignVehicleComponent = (function () {
     function AssignVehicleComponent(dialogRef, _store) {
         var _this = this;
@@ -908,14 +982,14 @@ var AssignVehicleComponent = (function () {
     return AssignVehicleComponent;
 }());
 AssignVehicleComponent = __decorate([
-    core_1.Component({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-assign-vehicle',
         template: __webpack_require__("../../../../../src/app/components/dialog/assign-vehicle/assign-vehicle.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/dialog/assign-vehicle/assign-vehicle.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof material_1.MdDialogRef !== "undefined" && material_1.MdDialogRef) === "function" && _a || Object, typeof (_b = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["u" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_material__["u" /* MdDialogRef */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__ngrx_store__["b" /* Store */]) === "function" && _b || Object])
 ], AssignVehicleComponent);
-exports.AssignVehicleComponent = AssignVehicleComponent;
+
 var _a, _b;
 //# sourceMappingURL=assign-vehicle.component.js.map
 
@@ -929,7 +1003,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "div{\n  font-family: Helvetica;\n}\n", ""]);
+exports.push([module.i, "div{\r\n  font-family: Helvetica;\r\n}\r\n", ""]);
 
 // exports
 
@@ -942,15 +1016,18 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/dialog/confirm-device-return/confirm-device-return.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"padding: 10px\">\n  <span md-dialog-title>Confirm Device Return</span>\n\n  <div md-dialog-content style=\"font-size: 15px;\">\n    <div  style=\"margin-left:40px;\" >Device <b>{{device?.device?.imei}}</b> is allocated to Vehicle <b>{{device['shipment']?.vehicleRegistrationNo}}</b></div>\n    <div style=\"margin-top: 10px;margin-left:40px;\" >\n      <label style=\"vertical-align: -8px\">Device Condition :</label>\n      <md-select  style=\"width: 140px;margin-left: 14px;\" [(ngModel)]=\"deviceStatus\" floatPlaceholder=\"never\">\n        <md-option [value]=\"condition.value\" *ngFor=\"let condition of deviceCondition\">{{condition.viewName}}</md-option>\n      </md-select>\n    </div>\n  </div>\n\n  <div md-dialog-actions>\n    <button md-raised-button   (click)=\"closeDialog()\" >Cancel</button>\n    <button md-raised-button color=\"primary\" (click)=\"confirmDeviceReturnDialog()\" >Confirm</button>\n  </div>\n\n</div>\n"
+module.exports = "<div style=\"padding: 10px\">\r\n  <span md-dialog-title>Confirm Device Return</span>\r\n\r\n  <div md-dialog-content style=\"font-size: 15px;\">\r\n    <div  style=\"margin-left:40px;\" >Device <b>{{device?.device?.imei}}</b> is allocated to Vehicle <b>{{device['shipment']?.vehicleRegistrationNo}}</b></div>\r\n    <div style=\"margin-top: 10px;margin-left:40px;\" >\r\n      <label style=\"vertical-align: -8px\">Device Condition :</label>\r\n      <md-select  style=\"width: 140px;margin-left: 14px;\" [(ngModel)]=\"deviceStatus\" floatPlaceholder=\"never\">\r\n        <md-option [value]=\"condition.value\" *ngFor=\"let condition of deviceCondition\">{{condition.viewName}}</md-option>\r\n      </md-select>\r\n    </div>\r\n  </div>\r\n\r\n  <div md-dialog-actions>\r\n    <button md-raised-button   (click)=\"closeDialog()\" >Cancel</button>\r\n    <button md-raised-button color=\"primary\" (click)=\"confirmDeviceReturnDialog()\" >Confirm</button>\r\n  </div>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
 /***/ "../../../../../src/app/components/dialog/confirm-device-return/confirm-device-return.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConfirmDeviceReturnComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -960,10 +1037,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var material_1 = __webpack_require__("../../../material/@angular/material.es5.js");
-var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
+
+
+
 var ConfirmDeviceReturnComponent = (function () {
     function ConfirmDeviceReturnComponent(dialogRef, _store) {
         var _this = this;
@@ -1004,14 +1080,14 @@ var ConfirmDeviceReturnComponent = (function () {
     return ConfirmDeviceReturnComponent;
 }());
 ConfirmDeviceReturnComponent = __decorate([
-    core_1.Component({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-confirm-device-return',
         template: __webpack_require__("../../../../../src/app/components/dialog/confirm-device-return/confirm-device-return.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/dialog/confirm-device-return/confirm-device-return.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof material_1.MdDialogRef !== "undefined" && material_1.MdDialogRef) === "function" && _a || Object, typeof (_b = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["u" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["u" /* MdDialogRef */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["b" /* Store */]) === "function" && _b || Object])
 ], ConfirmDeviceReturnComponent);
-exports.ConfirmDeviceReturnComponent = ConfirmDeviceReturnComponent;
+
 var _a, _b;
 //# sourceMappingURL=confirm-device-return.component.js.map
 
@@ -1038,15 +1114,18 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/dialog/mark-as-required/mark-as-required.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h1 md-dialog-title><u>Assign Vehicle</u></h1> \n<div md-dialog-content>\n  <p style=\"margin-left:30px\">Device &nbsp;Id &nbsp;:<i>{{device.imei}}</i></p> \n  <div style=\"margin-left:30px\" >\n    <label>Confirm Device Status&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp; </label>\n    <md-select  style=\"width: 50%\" [(ngModel)]=\"deviceStatus\" floatPlaceholder=\"never\">\n        <md-option [value]=\"condition.value\" *ngFor=\"let condition of deviceCondition\">{{condition.viewName}}</md-option>\n    </md-select>\n  </div>\n</div>\n<div md-dialog-actions>\n  <div style=\"margin-left:auto;margin-right: 60px;margin-top: 50px;\">\n      <button md-raised-button   style=\"margin-left:auto;margin-right: 30px;\" (click)=\"closeDialog()\" >Cancel</button>\n      <button md-raised-button  style=\"margin-left:auto;margin-right: 20px;\" (click)=\"closeDialog()\" >Confirm</button>\n  </div>\n  \n</div>"
+module.exports = "<h1 md-dialog-title><u>Assign Vehicle</u></h1> \r\n<div md-dialog-content>\r\n  <p style=\"margin-left:30px\">Device &nbsp;Id &nbsp;:<i>{{device.imei}}</i></p> \r\n  <div style=\"margin-left:30px\" >\r\n    <label>Confirm Device Status&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp; </label>\r\n    <md-select  style=\"width: 50%\" [(ngModel)]=\"deviceStatus\" floatPlaceholder=\"never\">\r\n        <md-option [value]=\"condition.value\" *ngFor=\"let condition of deviceCondition\">{{condition.viewName}}</md-option>\r\n    </md-select>\r\n  </div>\r\n</div>\r\n<div md-dialog-actions>\r\n  <div style=\"margin-left:auto;margin-right: 60px;margin-top: 50px;\">\r\n      <button md-raised-button   style=\"margin-left:auto;margin-right: 30px;\" (click)=\"closeDialog()\" >Cancel</button>\r\n      <button md-raised-button  style=\"margin-left:auto;margin-right: 20px;\" (click)=\"closeDialog()\" >Confirm</button>\r\n  </div>\r\n  \r\n</div>"
 
 /***/ }),
 
 /***/ "../../../../../src/app/components/dialog/mark-as-required/mark-as-required.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MarkAsRequiredComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1056,10 +1135,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
-var material_1 = __webpack_require__("../../../material/@angular/material.es5.js");
+
+
+
 var MarkAsRequiredComponent = (function () {
     function MarkAsRequiredComponent(dialogRef, _store) {
         var _this = this;
@@ -1097,14 +1175,14 @@ var MarkAsRequiredComponent = (function () {
     return MarkAsRequiredComponent;
 }());
 MarkAsRequiredComponent = __decorate([
-    core_1.Component({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-mark-as-required',
         template: __webpack_require__("../../../../../src/app/components/dialog/mark-as-required/mark-as-required.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/dialog/mark-as-required/mark-as-required.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof material_1.MdDialogRef !== "undefined" && material_1.MdDialogRef) === "function" && _a || Object, typeof (_b = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["u" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_material__["u" /* MdDialogRef */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__ngrx_store__["b" /* Store */]) === "function" && _b || Object])
 ], MarkAsRequiredComponent);
-exports.MarkAsRequiredComponent = MarkAsRequiredComponent;
+
 var _a, _b;
 //# sourceMappingURL=mark-as-required.component.js.map
 
@@ -1118,7 +1196,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".trip-header{\n    background-color: #1976d2;\n    width: 100%;\n    /*padding-bottom: 3px;*/\n    padding: 8px;\n    height: 40px;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    color: #ffffff;\n  }\n  \n  md-card{\n    padding: 9px;\n    min-width: 200px;\n  }\n  \n  div {\n    font-family: Helvetica !important;\n    /*color: #46465f;*/\n  }\n  \n  .my-hr{\n    border-style:ridge;\n    border-width:1px;\n    margin-top: 6px;\n    min-width: 250px;\n    margin-bottom:3px;\n  }\n  \n  .my-map-search{\n    left: 5%;\n    width: 90%;\n    position: absolute;\n    z-index: 10;\n    margin-top: 10px;\n  }\n  \n  \n  .my-toggle{\n    /*margin-top: auto;*/\n  }\n  \n  .my-toggle >>> .mat-button-toggle-label-content {\n    line-height: 23px;\n    padding: 0px 10px;\n  }\n  /*button {*/\n    /*color:#ffffff;*/\n    /*background-color:#1E88E5;*/\n  /*}*/\n  \n  ", ""]);
+exports.push([module.i, ".trip-header{\r\n    background-color: #1976d2;\r\n    width: 100%;\r\n    /*padding-bottom: 3px;*/\r\n    padding: 8px;\r\n    height: 40px;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    color: #ffffff;\r\n  }\r\n  \r\n  md-card{\r\n    padding: 9px;\r\n    min-width: 200px;\r\n  }\r\n  \r\n  div {\r\n    font-family: Helvetica !important;\r\n    /*color: #46465f;*/\r\n  }\r\n  \r\n  .my-hr{\r\n    border-style:ridge;\r\n    border-width:1px;\r\n    margin-top: 6px;\r\n    min-width: 250px;\r\n    margin-bottom:3px;\r\n  }\r\n  \r\n  .my-map-search{\r\n    left: 5%;\r\n    width: 90%;\r\n    position: absolute;\r\n    z-index: 10;\r\n    margin-top: 10px;\r\n  }\r\n  \r\n  \r\n  .my-toggle{\r\n    /*margin-top: auto;*/\r\n  }\r\n  \r\n  .my-toggle >>> .mat-button-toggle-label-content {\r\n    line-height: 23px;\r\n    padding: 0px 10px;\r\n  }\r\n  /*button {*/\r\n    /*color:#ffffff;*/\r\n    /*background-color:#1E88E5;*/\r\n  /*}*/\r\n  \r\n  ", ""]);
 
 // exports
 
@@ -1131,15 +1209,24 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/edit-shipment-location/edit-shipment-location.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"width: 100%;top: 0px;z-index:100\" class=\"slow-down\">\n  <!--<div class=\"trip-header\"   fxLayout=\"row\">-->\n    <!--<span  (click)=\"back()\" >-->\n      <!--<i style=\"width: 40px\" class=\"fa fa-arrow-left\" aria-hidden=\"true\" ></i>-->\n    <!--</span>-->\n    <!--<span>{{headerName}}</span>-->\n  <!--</div>-->\n\n  <!--   *************  discard vehicle **************** -->\n  <div *ngIf=\"isDiscardDialog\"  class=\"mycustomDialog\" style=\"padding-top: 70px;\">\n    <div class=\"modal-content\" style=\"width:40%;min-width:200px;overflow: hidden;max-width: 200px;\">\n      <div class=\"modal-header\">\n        <span class=\"close\" (click)=\"isDiscardDialog=false;\" >&times;</span>\n        <label>Are you Sure?</label>\n      </div>\n      <div  style=\"padding: 5px;font-size: 13px;\">\n        <div style=\"padding: 5px;margin-top:5px;text-align: right\">\n          <button md-raised-button  style=\"width:47px;line-height: 27px;\" (click)=\"isDiscardDialog=false;\" > cancel </button>\n          <button md-raised-button  style=\"width:47px;line-height: 27px;\" (click)=\"discard();isDiscardDialog=false;\" > Discard</button>\n        </div>\n      </div>\n    </div>\n  </div>\n  <!--  discard vehicle -->\n\n  <!--   *************  update confirmation by movement legs**************** -->\n  <div *ngIf=\"isUpdateConfirmDialog\"  class=\"mycustomDialog\" style=\"padding-top: 70px;\">\n    <div class=\"modal-content\" style=\"width:40%;min-width:250px;overflow: hidden;max-width: 400px;\">\n      <div class=\"modal-header\">\n        <span class=\"close\" (click)=\"isUpdateConfirmDialog=false;\" >&times;</span>\n        <label>Are you Sure?</label>\n      </div>\n      <div  style=\"padding: 5px;font-size: 13px;\">\n        <div style=\"min-height: 100px;max-height:250px;overflow: auto;padding-bottom: 3px;\" >\n          <md-card style=\"margin-bottom: 1px\" >\n            <div style=\"display: grid\" >\n              <span >{{(selectedConfirmLocation?.endLocation?.address)?(selectedConfirmLocation?.endLocation?.address):(selectedConfirmLocation?.startLocation?.address)}}</span>\n              <span style=\"margin-top: 2px\" class=\"sub-header-text\">{{selectedConfirmLocation?.startTime | date :'medium'}}</span>\n              <span style=\"margin-top: 2px\" class=\"sub-header-text\">{{selectedConfirmLocation?._totalTime}}</span>\n            </div>\n          </md-card>\n        </div>\n      </div>\n\n      <div  style=\"padding: 5px;font-size: 13px;\">\n        <div style=\"padding: 5px;margin-top:5px;text-align: right\">\n          <button md-raised-button  style=\"width:47px;line-height: 27px;\" (click)=\"isUpdateConfirmDialog=false;\" > cancel</button>\n          <button md-raised-button  style=\"width:47px;line-height: 27px;\" (click)=\"isUpdateConfirmDialog=false;editLocationByMovementLog(selectedConfirmLocation);\" > ok</button>\n        </div>\n      </div>\n    </div>\n  </div>\n  <!--  discard vehicle -->\n\n\n  <!--   *************  update from movementlegs vehicle **************** -->\n  <div *ngIf=\"isUpdateDialog\"  class=\"mycustomDialog\" style=\"padding-top: 70px;\">\n    <div class=\"modal-content\" style=\"width:40%;min-width:250px;overflow: hidden;max-width: 400px;\">\n      <div class=\"modal-header\">\n        <span class=\"close\" (click)=\"isUpdateDialog=false;\" >&times;</span>\n        <label> Confirm Location</label>\n      </div>\n       <div style=\"text-align: center;padding: 4px;background-color: rgba(68, 148, 217, 0.03)\">\n         <span>Select location</span>\n       </div>\n        <div  style=\"padding: 5px;font-size: 13px;\">\n          <div style=\"min-height: 100px;max-height:250px;overflow: auto;padding-bottom: 3px;\" >\n            <md-card style=\"margin-bottom: 1px\" *ngFor=\"let movementLog of shipmentDetailsObject.selectedShipment.movementLegs\">\n              <div style=\"display: grid\" (click)=\"isUpdateDialog=false;isUpdateConfirmDialog=true;selectedConfirmLocation = movementLog\" >\n                <span >{{(movementLog?.endLocation?.address)?(movementLog?.endLocation?.address):(movementLog?.startLocation?.address)}}</span>\n                <span style=\"margin-top: 2px\" class=\"sub-header-text\">{{movementLog?.startTime | date :'medium'}}</span>\n                <span style=\"margin-top: 2px\" class=\"sub-header-text\">{{movementLog?._totalTime}}</span>\n              </div>\n            </md-card>\n          </div>\n          <div style=\"padding: 5px;margin-top:5px;text-align: center\">\n            <button md-raised-button style=\"width:auto;color:#ffffff;background-color:#1E88E5;\" (click)=\"editLocation();isUpdateDialog=false;\" > Edit from Map </button>\n          </div>\n        </div>\n    </div>\n  </div>\n  <!--   *************close  update from movementlegs vehicle **************** -->\n  <!--  discard vehicle -->\n\n<div style=\"overflow:auto;height:calc(100vh - 40px);\" >\n   <section [style.display]=\"isPolygonEditable?'block':'none'\" class=\"my-map-search\" >\n     <!--<input id=\"pac-input\" class=\"controls\" type=\"text\" placeholder=\"Search Box\">-->\n     <i class=\"fa fa-search\" aria-hidden=\"true\" style=\"right: 8px;position: absolute;margin-top: 7px;font-size: 15px;\"></i>\n     <input id=\"pac-input\"  type=\"text\" class=\"search\"  mdTooltip=\" search Here \"   placeholder=\" Search \"  >\n   </section>\n<!-- ************************ map start here  ******************************************** -->\n  <div>\n    <section style=\"position:absolute;z-index:10;margin-top: 40px;left:5px;\" >\n      <md-button-toggle-group class=\"my-toggle\" #group=\"mdButtonToggleGroup\" [(ngModel)]=\"mapType\">\n        <md-button-toggle value=\"hybrid\" >\n          <span>Satellite</span>\n        </md-button-toggle>\n        <md-button-toggle value=\"roadmap\" style=\"background-color:floralwhite;opacity: .6;\">\n          <span>Map</span>\n        </md-button-toggle>\n      </md-button-toggle-group>\n    </section>\n\n    <agm-map [mapTypeId]=\"mapType\" [style.height]=\"view == 'web'?'calc(100vh - 320px)':'calc(100vh - 218px)'\" [latitude]=\"latitude\" [longitude]=\"longitude\" [zoom]=\"zoom\"  >\n      <agm-marker *ngFor=\"let marker of markers\"\n        [latitude]=\"marker.position.lat()\" [longitude]=\"marker.position.lng()\">\n        <agm-info-window  style=\"color:blue;\" [isOpen]=\"markers.length == 1?true:false\" >\n          <div style=\"color:blue;max-width: 150px;text-align:center\" (click)=\"setNewLocation(marker)\">Add Location</div>\n          <!--<button (click)=\"setNewLocation(marker)\">ADD Location</button>-->\n        </agm-info-window>\n      </agm-marker>\n    </agm-map>\n  </div>\n  <!-- ************************ map end here  ******************************************** -->\n\n  <md-card style=\"margin: 3px\">\n    <div style=\"display: grid\" >\n      <div style=\"margin-left: 15px;margin-right: 15px\">\n        <md-input-container  style=\"width: 100%;\">\n          <input name=\"location_name\" [disabled]=\"!isPolygonEditable\"  mdTooltip=\" This field is required \" mdInput [(ngModel)]=\"selectedLocation\"  required >\n        </md-input-container>\n      </div>\n\n      <div style=\"margin-left: 15px;margin-right: 15px;font-size:12px;border-bottom:1px solid #D0D0D0;margin-bottom: 15px;color: #959595;\" >\n          <span *ngIf=\"selectedFromTime\" >From: {{selectedFromTime | date:'medium' }}</span>\n          <span *ngIf=\"!selectedFromTime\" >From: Yet to Report</span>\n          <span *ngIf=\"selectedTillTime\" > - {{selectedTillTime | date:'medium' }}</span>\n          <span *ngIf=\"!selectedTillTime\" > - Yet to Report</span>\n      </div>\n\n      <div style=\"width: 100%;\" *ngIf=\"!isPolygonEditable\" fxLayout=\"row\">\n        <button  *ngIf=\"isDiscard\" mdTooltip=\" Discard \"  md-raised-button (click)=\"isDiscardDialog = true\" >\n           Discard \n        </button>\n\n        <button  *ngIf=\"!isEditPlaceFromList\" style=\"width: auto;margin-left: auto;color:#ffffff;background-color:#1E88E5;\" mdTooltip=\" Click here to Edit\"  md-raised-button (click)=\"editLocation()\" >\n          Edit Location \n        </button>\n\n        <button  *ngIf=\"isEditPlaceFromList\" style=\"width: auto;margin-left: auto;color:#ffffff;background-color:#1E88E5;\" mdTooltip=\" Click here to Edit \"  md-raised-button (click)=\"isUpdateDialog =true\" >\n          Edit Location \n        </button>\n      </div>\n\n      <div *ngIf=\"isPolygonEditable\" style=\"width: 100%;\" fxLayout=\"row\">\n        <button  mdTooltip=\"cancel\" (click)=\"back()\"  md-raised-button >\n           cancel \n        </button>\n\n        <button style=\"margin-left: auto;color:#ffffff;background-color:#1E88E5;\" mdTooltip=\" Save new location \"  md-raised-button (click)=\"save()\" >\n           save \n        </button>\n\n      </div>\n    </div>\n  </md-card>\n  <div style=\"height: 40px\"></div>\n</div>\n</div>\n"
+module.exports = "<div style=\"width: 100%;top: 0px;z-index:100\" class=\"slow-down\">\r\n  <!--<div class=\"trip-header\"   fxLayout=\"row\">-->\r\n    <!--<span  (click)=\"back()\" >-->\r\n      <!--<i style=\"width: 40px\" class=\"fa fa-arrow-left\" aria-hidden=\"true\" ></i>-->\r\n    <!--</span>-->\r\n    <!--<span>{{headerName}}</span>-->\r\n  <!--</div>-->\r\n\r\n  <!--   *************  discard vehicle **************** -->\r\n  <div *ngIf=\"isDiscardDialog\"  class=\"mycustomDialog\" style=\"padding-top: 70px;\">\r\n    <div class=\"modal-content\" style=\"width:40%;min-width:200px;overflow: hidden;max-width: 200px;\">\r\n      <div class=\"modal-header\">\r\n        <span class=\"close\" (click)=\"isDiscardDialog=false;\" >&times;</span>\r\n        <label>Are you Sure?</label>\r\n      </div>\r\n      <div  style=\"padding: 5px;font-size: 13px;\">\r\n        <div style=\"padding: 5px;margin-top:5px;text-align: right\">\r\n          <button md-raised-button  style=\"width:47px;line-height: 27px;\" (click)=\"isDiscardDialog=false;\" > cancel </button>\r\n          <button md-raised-button  style=\"width:47px;line-height: 27px;\" (click)=\"discard();isDiscardDialog=false;\" > Discard</button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <!--  discard vehicle -->\r\n\r\n  <!--   *************  update confirmation by movement legs**************** -->\r\n  <div *ngIf=\"isUpdateConfirmDialog\"  class=\"mycustomDialog\" style=\"padding-top: 70px;\">\r\n    <div class=\"modal-content\" style=\"width:40%;min-width:250px;overflow: hidden;max-width: 400px;\">\r\n      <div class=\"modal-header\">\r\n        <span class=\"close\" (click)=\"isUpdateConfirmDialog=false;\" >&times;</span>\r\n        <label>Are you Sure?</label>\r\n      </div>\r\n      <div  style=\"padding: 5px;font-size: 13px;\">\r\n        <div style=\"min-height: 100px;max-height:250px;overflow: auto;padding-bottom: 3px;\" >\r\n          <md-card style=\"margin-bottom: 1px\" >\r\n            <div style=\"display: grid\" >\r\n              <span >{{(selectedConfirmLocation?.endLocation?.address)?(selectedConfirmLocation?.endLocation?.address):(selectedConfirmLocation?.startLocation?.address)}}</span>\r\n              <span style=\"margin-top: 2px\" class=\"sub-header-text\">{{selectedConfirmLocation?.startTime | date :'medium'}}</span>\r\n              <span style=\"margin-top: 2px\" class=\"sub-header-text\">{{selectedConfirmLocation?._totalTime}}</span>\r\n            </div>\r\n          </md-card>\r\n        </div>\r\n      </div>\r\n\r\n      <div  style=\"padding: 5px;font-size: 13px;\">\r\n        <div style=\"padding: 5px;margin-top:5px;text-align: right\">\r\n          <button md-raised-button  style=\"width:47px;line-height: 27px;\" (click)=\"isUpdateConfirmDialog=false;\" > cancel</button>\r\n          <button md-raised-button  style=\"width:47px;line-height: 27px;\" (click)=\"isUpdateConfirmDialog=false;editLocationByMovementLog(selectedConfirmLocation);\" > ok</button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <!--  discard vehicle -->\r\n\r\n\r\n  <!--   *************  update from movementlegs vehicle **************** -->\r\n  <div *ngIf=\"isUpdateDialog\"  class=\"mycustomDialog\" style=\"padding-top: 70px;\">\r\n    <div class=\"modal-content\" style=\"width:40%;min-width:250px;overflow: hidden;max-width: 400px;\">\r\n      <div class=\"modal-header\">\r\n        <span class=\"close\" (click)=\"isUpdateDialog=false;\" >&times;</span>\r\n        <label> Confirm Location</label>\r\n      </div>\r\n       <div style=\"text-align: center;padding: 4px;background-color: rgba(68, 148, 217, 0.03)\">\r\n         <span>Select location</span>\r\n       </div>\r\n        <div  style=\"padding: 5px;font-size: 13px;\">\r\n          <div style=\"min-height: 100px;max-height:250px;overflow: auto;padding-bottom: 3px;\" >\r\n            <md-card style=\"margin-bottom: 1px\" *ngFor=\"let movementLog of shipmentDetailsObject.selectedShipment.movementLegs\">\r\n              <div style=\"display: grid\" (click)=\"isUpdateDialog=false;isUpdateConfirmDialog=true;selectedConfirmLocation = movementLog\" >\r\n                <span >{{(movementLog?.endLocation?.address)?(movementLog?.endLocation?.address):(movementLog?.startLocation?.address)}}</span>\r\n                <span style=\"margin-top: 2px\" class=\"sub-header-text\">{{movementLog?.startTime | date :'medium'}}</span>\r\n                <span style=\"margin-top: 2px\" class=\"sub-header-text\">{{movementLog?._totalTime}}</span>\r\n              </div>\r\n            </md-card>\r\n          </div>\r\n          <div style=\"padding: 5px;margin-top:5px;text-align: center\">\r\n            <button md-raised-button style=\"width:auto;color:#ffffff;background-color:#1E88E5;\" (click)=\"editLocation();isUpdateDialog=false;\" > Edit from Map </button>\r\n          </div>\r\n        </div>\r\n    </div>\r\n  </div>\r\n  <!--   *************close  update from movementlegs vehicle **************** -->\r\n  <!--  discard vehicle -->\r\n\r\n<div style=\"overflow:auto;height:calc(100vh - 40px);\" >\r\n   <section [style.display]=\"isPolygonEditable?'block':'none'\" class=\"my-map-search\" >\r\n     <!--<input id=\"pac-input\" class=\"controls\" type=\"text\" placeholder=\"Search Box\">-->\r\n     <i class=\"fa fa-search\" aria-hidden=\"true\" style=\"right: 8px;position: absolute;margin-top: 7px;font-size: 15px;\"></i>\r\n     <input id=\"pac-input\"  type=\"text\" class=\"search\"  mdTooltip=\" search Here \"   placeholder=\" Search \"  >\r\n   </section>\r\n<!-- ************************ map start here  ******************************************** -->\r\n  <div>\r\n    <section style=\"position:absolute;z-index:10;margin-top: 40px;left:5px;\" >\r\n      <md-button-toggle-group class=\"my-toggle\" #group=\"mdButtonToggleGroup\" [(ngModel)]=\"mapType\">\r\n        <md-button-toggle value=\"hybrid\" >\r\n          <span>Satellite</span>\r\n        </md-button-toggle>\r\n        <md-button-toggle value=\"roadmap\" style=\"background-color:floralwhite;opacity: .6;\">\r\n          <span>Map</span>\r\n        </md-button-toggle>\r\n      </md-button-toggle-group>\r\n    </section>\r\n\r\n    <agm-map [mapTypeId]=\"mapType\" [style.height]=\"view == 'web'?'calc(100vh - 320px)':'calc(100vh - 218px)'\" [latitude]=\"latitude\" [longitude]=\"longitude\" [zoom]=\"zoom\"  >\r\n      <agm-marker *ngFor=\"let marker of markers\"\r\n        [latitude]=\"marker.position.lat()\" [longitude]=\"marker.position.lng()\">\r\n        <agm-info-window  style=\"color:blue;\" [isOpen]=\"markers.length == 1?true:false\" >\r\n          <div style=\"color:blue;max-width: 150px;text-align:center\" (click)=\"setNewLocation(marker)\">Add Location</div>\r\n          <!--<button (click)=\"setNewLocation(marker)\">ADD Location</button>-->\r\n        </agm-info-window>\r\n      </agm-marker>\r\n    </agm-map>\r\n  </div>\r\n  <!-- ************************ map end here  ******************************************** -->\r\n\r\n  <md-card style=\"margin: 3px\">\r\n    <div style=\"display: grid\" >\r\n      <div style=\"margin-left: 15px;margin-right: 15px\">\r\n        <md-input-container  style=\"width: 100%;\">\r\n          <input name=\"location_name\" [disabled]=\"!isPolygonEditable\"  mdTooltip=\" This field is required \" mdInput [(ngModel)]=\"selectedLocation\"  required >\r\n        </md-input-container>\r\n      </div>\r\n\r\n      <div style=\"margin-left: 15px;margin-right: 15px;font-size:12px;border-bottom:1px solid #D0D0D0;margin-bottom: 15px;color: #959595;\" >\r\n          <span *ngIf=\"selectedFromTime\" >From: {{selectedFromTime | date:'medium' }}</span>\r\n          <span *ngIf=\"!selectedFromTime\" >From: Yet to Report</span>\r\n          <span *ngIf=\"selectedTillTime\" > - {{selectedTillTime | date:'medium' }}</span>\r\n          <span *ngIf=\"!selectedTillTime\" > - Yet to Report</span>\r\n      </div>\r\n\r\n      <div style=\"width: 100%;\" *ngIf=\"!isPolygonEditable\" fxLayout=\"row\">\r\n        <button  *ngIf=\"isDiscard\" mdTooltip=\" Discard \"  md-raised-button (click)=\"isDiscardDialog = true\" >\r\n           Discard \r\n        </button>\r\n\r\n        <button  *ngIf=\"!isEditPlaceFromList\" style=\"width: auto;margin-left: auto;color:#ffffff;background-color:#1E88E5;\" mdTooltip=\" Click here to Edit\"  md-raised-button (click)=\"editLocation()\" >\r\n          Edit Location \r\n        </button>\r\n\r\n        <button  *ngIf=\"isEditPlaceFromList\" style=\"width: auto;margin-left: auto;color:#ffffff;background-color:#1E88E5;\" mdTooltip=\" Click here to Edit \"  md-raised-button (click)=\"isUpdateDialog =true\" >\r\n          Edit Location \r\n        </button>\r\n      </div>\r\n\r\n      <div *ngIf=\"isPolygonEditable\" style=\"width: 100%;\" fxLayout=\"row\">\r\n        <button  mdTooltip=\"cancel\" (click)=\"back()\"  md-raised-button >\r\n           cancel \r\n        </button>\r\n\r\n        <button style=\"margin-left: auto;color:#ffffff;background-color:#1E88E5;\" mdTooltip=\" Save new location \"  md-raised-button (click)=\"save()\" >\r\n           save \r\n        </button>\r\n\r\n      </div>\r\n    </div>\r\n  </md-card>\r\n  <div style=\"height: 40px\"></div>\r\n</div>\r\n</div>\r\n"
 
 /***/ }),
 
 /***/ "../../../../../src/app/components/edit-shipment-location/edit-shipment-location.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__agm_core_services_google_maps_types__ = __webpack_require__("../../../../@agm/core/services/google-maps-types.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_tracker_services__ = __webpack_require__("../../../../../src/app/services/tracker-services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_shipment_services__ = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditShipmentLocationComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1149,16 +1236,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var core_2 = __webpack_require__("../../../../@agm/core/index.js");
-var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
+
+
+
 //import {Polygon} from "angular2-google-maps/esm/core/services/google-maps-types";
-var google_maps_types_1 = __webpack_require__("../../../../@agm/core/services/google-maps-types.js");
-var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-var tracker_services_1 = __webpack_require__("../../../../../src/app/services/tracker-services.ts");
-var shipment_services_1 = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
-var router_1 = __webpack_require__("../../../router/@angular/router.es5.js");
+
+
+
+
+
 // import poly = google.maps.geometry.poly;
 var EditShipmentLocationComponent = (function () {
     function EditShipmentLocationComponent(_router, localStorageService, mapApiWrapper, _store, trackerServices, shipmentServices) {
@@ -1511,7 +1597,7 @@ var EditShipmentLocationComponent = (function () {
     EditShipmentLocationComponent.prototype.addPolygone = function (map, points, editable, fillColor, strokeColor) {
         // Map Center
         // Styling & Controls
-        var myPolygon = new google_maps_types_1.google.maps.Polygon({
+        var myPolygon = new __WEBPACK_IMPORTED_MODULE_3__agm_core_services_google_maps_types__["a" /* google */].maps.Polygon({
             paths: points,
             // draggable: true, // turn off if it gets annoying
             editable: editable,
@@ -1548,7 +1634,7 @@ var EditShipmentLocationComponent = (function () {
             var lon2 = lon1 + Math.atan2(Math.sin(brng) * Math.sin(dist) * Math.cos(lat1), Math.cos(dist) - Math.sin(lat1) * Math.sin(lat2));
             if (isNaN(lat2) || isNaN(lon2))
                 return null;
-            return new google_maps_types_1.google.maps.LatLng(toDeg(lat2), toDeg(lon2));
+            return new __WEBPACK_IMPORTED_MODULE_3__agm_core_services_google_maps_types__["a" /* google */].maps.LatLng(toDeg(lat2), toDeg(lon2));
         }
         ;
         return polygonePoint;
@@ -1573,7 +1659,7 @@ var EditShipmentLocationComponent = (function () {
         // Create the search box and link it to the UI element.
         var input = document.getElementById('pac-input');
         console.log(input);
-        var searchBox = new google_maps_types_1.google.maps.places.SearchBox(input);
+        var searchBox = new __WEBPACK_IMPORTED_MODULE_3__agm_core_services_google_maps_types__["a" /* google */].maps.places.SearchBox(input);
         // this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
         // Bias the SearchBox results towards current map's viewport.
         this.map.addListener('bounds_changed', function () {
@@ -1593,7 +1679,7 @@ var EditShipmentLocationComponent = (function () {
             });
             _this.markers = [];
             // For each place, get the icon, name and location.
-            var bounds = new google_maps_types_1.google.maps.LatLngBounds();
+            var bounds = new __WEBPACK_IMPORTED_MODULE_3__agm_core_services_google_maps_types__["a" /* google */].maps.LatLngBounds();
             places.forEach(function (place) {
                 if (!place.geometry) {
                     console.log("Returned place contains no geometry");
@@ -1601,10 +1687,10 @@ var EditShipmentLocationComponent = (function () {
                 }
                 var icon = {
                     url: place.icon,
-                    size: new google_maps_types_1.google.maps.Size(71, 71),
-                    origin: new google_maps_types_1.google.maps.Point(0, 0),
-                    anchor: new google_maps_types_1.google.maps.Point(17, 34),
-                    scaledSize: new google_maps_types_1.google.maps.Size(25, 25)
+                    size: new __WEBPACK_IMPORTED_MODULE_3__agm_core_services_google_maps_types__["a" /* google */].maps.Size(71, 71),
+                    origin: new __WEBPACK_IMPORTED_MODULE_3__agm_core_services_google_maps_types__["a" /* google */].maps.Point(0, 0),
+                    anchor: new __WEBPACK_IMPORTED_MODULE_3__agm_core_services_google_maps_types__["a" /* google */].maps.Point(17, 34),
+                    scaledSize: new __WEBPACK_IMPORTED_MODULE_3__agm_core_services_google_maps_types__["a" /* google */].maps.Size(25, 25)
                 };
                 // let currentInfowindow = new google.maps.InfoWindow({
                 //   content: place.name
@@ -1612,7 +1698,7 @@ var EditShipmentLocationComponent = (function () {
                 _this.selectedAddress = place.formatted_address;
                 console.log(_this.selectedAddress);
                 // Create a marker for each place.
-                var currentMarker = new google_maps_types_1.google.maps.Marker({
+                var currentMarker = new __WEBPACK_IMPORTED_MODULE_3__agm_core_services_google_maps_types__["a" /* google */].maps.Marker({
                     // map: this.map,
                     // icon: icon,
                     title: place.name,
@@ -1798,18 +1884,18 @@ var EditShipmentLocationComponent = (function () {
     return EditShipmentLocationComponent;
 }()); // class close
 __decorate([
-    core_1.ViewChild(core_2.AgmMap),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1__agm_core__["c" /* AgmMap */]),
     __metadata("design:type", Object)
 ], EditShipmentLocationComponent.prototype, "agmMap", void 0);
 EditShipmentLocationComponent = __decorate([
-    core_1.Component({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-edit-shipment-location',
         template: __webpack_require__("../../../../../src/app/components/edit-shipment-location/edit-shipment-location.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/edit-shipment-location/edit-shipment-location.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof router_1.Router !== "undefined" && router_1.Router) === "function" && _a || Object, typeof (_b = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _b || Object, typeof (_c = typeof core_2.GoogleMapsAPIWrapper !== "undefined" && core_2.GoogleMapsAPIWrapper) === "function" && _c || Object, typeof (_d = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _d || Object, typeof (_e = typeof tracker_services_1.TrackerServices !== "undefined" && tracker_services_1.TrackerServices) === "function" && _e || Object, typeof (_f = typeof shipment_services_1.ShipmentServices !== "undefined" && shipment_services_1.ShipmentServices) === "function" && _f || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_7__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__agm_core__["b" /* GoogleMapsAPIWrapper */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__agm_core__["b" /* GoogleMapsAPIWrapper */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["b" /* Store */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__services_tracker_services__["a" /* TrackerServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_tracker_services__["a" /* TrackerServices */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_6__services_shipment_services__["a" /* ShipmentServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__services_shipment_services__["a" /* ShipmentServices */]) === "function" && _f || Object])
 ], EditShipmentLocationComponent);
-exports.EditShipmentLocationComponent = EditShipmentLocationComponent;
+
 var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=edit-shipment-location.component.js.map
 
@@ -1823,7 +1909,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".input {\n    width: 100%;\n    padding: 12px 20px;\n    margin: 8px 0;\n    box-sizing: border-box;\n    border: none\n}\n\n.my-map-search{\n    left: 3%;\n    width: 91%;\n    position: absolute;\n    z-index: 10;\n    margin-top: 5px;\n  }", ""]);
+exports.push([module.i, ".input {\r\n    width: 100%;\r\n    padding: 12px 20px;\r\n    margin: 8px 0;\r\n    box-sizing: border-box;\r\n    border: none\r\n}\r\n\r\n.my-map-search{\r\n    left: 3%;\r\n    width: 91%;\r\n    position: absolute;\r\n    z-index: 10;\r\n    margin-top: 5px;\r\n  }", ""]);
 
 // exports
 
@@ -1836,15 +1922,17 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/freight-location-components/freight-location-creater/freight-location-creater.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"slow-down\">\n  <!-- <div> -->\n    <!-- <section class=\"my-map-search\"> -->\n      <!-- <input id=\"pac-input\" class=\"controls\" type=\"text\" placeholder=\"Search Box\"> -->\n      <!-- <i class=\"fa fa-search\" aria-hidden=\"true\" style=\"right: 30px; margin-top: 7px;font-size: 15px; position: absolute\"></i>\n      <input id=\"pac-input\" type=\"text\" class=\"search\" mdTooltip=\"search Here\" placeholder=\"'Search'\">\n    </section> -->\n\n    <!-- ************************ map start here  ******************************************** -->\n    <div style=\"display:flex\">\n        <div>\n            <section class=\"my-map-search\">\n                <!-- <input id=\"pac-input\" class=\"controls\" type=\"text\" placeholder=\"Search Box\"> -->\n                <i class=\"fa fa-search\" aria-hidden=\"true\" style=\"right: 20px; margin-top: 7px;font-size: 15px; position: absolute\"></i>\n                <input id=\"pac-input\" type=\"text\" class=\"search\" mdTooltip=\"search Here\" placeholder=\"'Search'\">\n              </section>\n          <section style=\"position:absolute;z-index:10; left:5px; margin-top :30px;\">\n            <md-button-toggle-group class=\"my-toggle\" #group=\"mdButtonToggleGroup\" [(ngModel)]=\"mapType\">\n              <md-button-toggle value=\"hybrid\">\n                <span>'Satellite'</span>\n              </md-button-toggle>\n              <md-button-toggle value=\"roadmap\" style=\"background-color:floralwhite;opacity: .6;\">\n                <span>'Map'</span>\n              </md-button-toggle>\n            </md-button-toggle-group>\n          </section>\n\n          <agm-map [mapTypeId]=\"mapType\" style=\"height: 38vh; width : 80vh\" [latitude]=\"latitude\" [longitude]=\"longitude\" [zoom]=\"5\">\n            <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\">\n            </agm-marker>\n          </agm-map>\n        </div>\n      </div>\n    <!-- ************************ map end here  ******************************************** -->\n    <div fxLayout=\"column\">\n        <div fxFlex=50>\n          <md-input-container style=\"width:100%\">\n              <input placeholder=\"Name\" [(ngModel)]= \"name\" mdInput required>\n            </md-input-container>\n          </div>\n          <div fxFlex=50>\n            <md-input-container style=\"width:100%\">\n                <input placeholder=\"Address\" [disabled]=\"true\" [(ngModel)]=\"address\" mdInput required>\n              </md-input-container>\n            </div>\n      </div>\n      <div *ngIf=\"isSearched\" >\n          <md-radio-group value=\"radioSelector\" >\n            <div fxLayout=\"row\">\n              <div *ngIf=\"toAddBoundary\" fxFlex=40>\n                <md-radio-button [value]=\"bundary\" (change)=\"onAddLocation()\">Add Boundary</md-radio-button>\n              </div>\n\n              <div *ngIf = \"toAddProximity\" fxFlex=40>\n                <md-radio-button [value]=\"proximity\" (change)=\" onAddProximity()\"> Add Proximity </md-radio-button>\n              </div>\n\n              <div fxFlex=\"20\"></div>\n            </div>\n          </md-radio-group>\n        </div>\n    <div *ngIf = \"isVisible\" >\n        <md-input-container style=\"width: 100%;\" >\n            <input placeholder=\"radius(in meters)\" [(ngModel)]=\"radius\" mdInput required (keyup)=\"onKeyEvent($event)\">\n          </md-input-container>\n    </div>\n    <div style=\"float : left; margin-top: 0px\" >\n        <!-- <button md-raised-button  (click)=\"cancel()\" style=\"margin-right: 15px\">{{'Cancel' | translate}}</button> -->\n        <button md-raised-button (click)=\"saveLocation()\"  >Save</button>\n    </div>\n    <div>\n  <!-- </div> -->\n"
+module.exports = "<div class=\"slow-down\">\r\n  <!-- <div> -->\r\n    <!-- <section class=\"my-map-search\"> -->\r\n      <!-- <input id=\"pac-input\" class=\"controls\" type=\"text\" placeholder=\"Search Box\"> -->\r\n      <!-- <i class=\"fa fa-search\" aria-hidden=\"true\" style=\"right: 30px; margin-top: 7px;font-size: 15px; position: absolute\"></i>\r\n      <input id=\"pac-input\" type=\"text\" class=\"search\" mdTooltip=\"search Here\" placeholder=\"'Search'\">\r\n    </section> -->\r\n\r\n    <!-- ************************ map start here  ******************************************** -->\r\n    <div style=\"display:flex\">\r\n        <div>\r\n            <section class=\"my-map-search\">\r\n                <!-- <input id=\"pac-input\" class=\"controls\" type=\"text\" placeholder=\"Search Box\"> -->\r\n                <i class=\"fa fa-search\" aria-hidden=\"true\" style=\"right: 20px; margin-top: 7px;font-size: 15px; position: absolute\"></i>\r\n                <input id=\"pac-input\" type=\"text\" class=\"search\" mdTooltip=\"search Here\" placeholder=\"'Search'\">\r\n              </section>\r\n          <section style=\"position:absolute;z-index:10; left:5px; margin-top :30px;\">\r\n            <md-button-toggle-group class=\"my-toggle\" #group=\"mdButtonToggleGroup\" [(ngModel)]=\"mapType\">\r\n              <md-button-toggle value=\"hybrid\">\r\n                <span>'Satellite'</span>\r\n              </md-button-toggle>\r\n              <md-button-toggle value=\"roadmap\" style=\"background-color:floralwhite;opacity: .6;\">\r\n                <span>'Map'</span>\r\n              </md-button-toggle>\r\n            </md-button-toggle-group>\r\n          </section>\r\n\r\n          <agm-map [mapTypeId]=\"mapType\" style=\"height: 38vh; width : 80vh\" [latitude]=\"latitude\" [longitude]=\"longitude\" [zoom]=\"5\">\r\n            <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\">\r\n            </agm-marker>\r\n          </agm-map>\r\n        </div>\r\n      </div>\r\n    <!-- ************************ map end here  ******************************************** -->\r\n    <div fxLayout=\"column\">\r\n        <div fxFlex=50>\r\n          <md-input-container style=\"width:100%\">\r\n              <input placeholder=\"Name\" [(ngModel)]= \"name\" mdInput required>\r\n            </md-input-container>\r\n          </div>\r\n          <div fxFlex=50>\r\n            <md-input-container style=\"width:100%\">\r\n                <input placeholder=\"Address\" [disabled]=\"true\" [(ngModel)]=\"address\" mdInput required>\r\n              </md-input-container>\r\n            </div>\r\n      </div>\r\n      <div *ngIf=\"isSearched\" >\r\n          <md-radio-group value=\"radioSelector\" >\r\n            <div fxLayout=\"row\">\r\n              <div *ngIf=\"toAddBoundary\" fxFlex=40>\r\n                <md-radio-button [value]=\"bundary\" (change)=\"onAddLocation()\">Add Boundary</md-radio-button>\r\n              </div>\r\n\r\n              <div *ngIf = \"toAddProximity\" fxFlex=40>\r\n                <md-radio-button [value]=\"proximity\" (change)=\" onAddProximity()\"> Add Proximity </md-radio-button>\r\n              </div>\r\n\r\n              <div fxFlex=\"20\"></div>\r\n            </div>\r\n          </md-radio-group>\r\n        </div>\r\n    <div *ngIf = \"isVisible\" >\r\n        <md-input-container style=\"width: 100%;\" >\r\n            <input placeholder=\"radius(in meters)\" [(ngModel)]=\"radius\" mdInput required (keyup)=\"onKeyEvent($event)\">\r\n          </md-input-container>\r\n    </div>\r\n    <div style=\"float : left; margin-top: 0px\" >\r\n        <!-- <button md-raised-button  (click)=\"cancel()\" style=\"margin-right: 15px\">{{'Cancel' | translate}}</button> -->\r\n        <button md-raised-button (click)=\"saveLocation()\"  >Save</button>\r\n    </div>\r\n    <div>\r\n  <!-- </div> -->\r\n"
 
 /***/ }),
 
 /***/ "../../../../../src/app/components/freight-location-components/freight-location-creater/freight-location-creater.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FreightLocationCreaterComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1854,9 +1942,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var core_2 = __webpack_require__("../../../../@agm/core/index.js");
+
+
 var FreightLocationCreaterComponent = (function () {
     function FreightLocationCreaterComponent(mapApiWrapper) {
         this.mapApiWrapper = mapApiWrapper;
@@ -1875,7 +1962,7 @@ var FreightLocationCreaterComponent = (function () {
         this.toAddProximity = true;
         this.toAddBoundary = true;
         // public id: any;
-        this.onLocationCreation = new core_1.EventEmitter();
+        this.onLocationCreation = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.latitude = null;
         this.longitude = null;
         console.log(this.latitude);
@@ -2133,26 +2220,26 @@ var FreightLocationCreaterComponent = (function () {
     return FreightLocationCreaterComponent;
 }());
 __decorate([
-    core_1.ViewChild(core_2.AgmMap),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1__agm_core__["c" /* AgmMap */]),
     __metadata("design:type", Object)
 ], FreightLocationCreaterComponent.prototype, "agmMap", void 0);
 __decorate([
-    core_1.Output(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
     __metadata("design:type", Object)
 ], FreightLocationCreaterComponent.prototype, "onLocationCreation", void 0);
 __decorate([
-    core_1.Input(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
     __metadata("design:type", Object)
 ], FreightLocationCreaterComponent.prototype, "selectedValueFromParent", void 0);
 FreightLocationCreaterComponent = __decorate([
-    core_1.Component({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-freight-location-creater',
         template: __webpack_require__("../../../../../src/app/components/freight-location-components/freight-location-creater/freight-location-creater.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/freight-location-components/freight-location-creater/freight-location-creater.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof core_2.GoogleMapsAPIWrapper !== "undefined" && core_2.GoogleMapsAPIWrapper) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__agm_core__["b" /* GoogleMapsAPIWrapper */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__agm_core__["b" /* GoogleMapsAPIWrapper */]) === "function" && _a || Object])
 ], FreightLocationCreaterComponent);
-exports.FreightLocationCreaterComponent = FreightLocationCreaterComponent;
+
 var _a;
 //# sourceMappingURL=freight-location-creater.component.js.map
 
@@ -2166,7 +2253,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".mycustomDialog-Location {\n  position: fixed; /* Stay in place */\n  z-index: 999; /* Sit on top */\n  padding-top: 10%; /* Location of the box */\n  left: 0;\n  top: 0;\n  width: 100%; /* Full width */\n  height: 100%; /* Full height */\n  overflow: auto; /* Enable scroll if needed */\n  background-color: rgb(0,0,0); /* Fallback color */\n  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\n}\n\n.modal-content {\n    position: relative;\n    background-color: #fefefe;\n    margin: auto;\n    padding: 0;\n    border-radius: 5px;\n    border: 1px solid #888;\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.3);\n    -webkit-animation-name: animatetop;\n    -webkit-animation-duration: 0.4s;\n    animation-name: animatetop;\n    -webkit-animation-duration: 0.2s;\n            animation-duration: 0.2s\n}\n\n.modal-header {\n    font-family: Gotham-Rounded-Medium,Sans-Serif!important;\n    font-size: 16px;\n    padding: 5px 5px;\n    background-color:#1E88E5;;\n    color: white;\n    text-align: center;\n}\n\n.button1 {\n    /* padding: 10px; */\n    /* margin-left: 20px; */\n    /* background:rgba(245,245,245,1); */\n    color: gray;\n     line-height: 40px;\n    font-size: 13px;\n    font-weight: 500;\n    text-overflow: ellipsis;\n    font-family: Arial, Helvetica, sans-serif;\n}\n\n.button1 :focus{\n    background-color:#5b89ff !important;\n    color: white;\n}\n\nul {\n    list-style: none; margin-left: -32px;\n}\n\nli {\n    border: 1px solid #ddd;\n    margin-top: -1px; /* Prevent double borders */\n    background-color: white;\n    padding: 12px;\n    text-decoration: none;\n    font-size: 14px;\n    /* font-family: Arial, Helvetica, sans-serif; */\n    color: black;\n    display: block;\n    color: #333;\n    font-size: 14px;\n}\n\n\n", ""]);
+exports.push([module.i, ".mycustomDialog-Location {\r\n  position: fixed; /* Stay in place */\r\n  z-index: 999; /* Sit on top */\r\n  padding-top: 10%; /* Location of the box */\r\n  left: 0;\r\n  top: 0;\r\n  width: 100%; /* Full width */\r\n  height: 100%; /* Full height */\r\n  overflow: auto; /* Enable scroll if needed */\r\n  background-color: rgb(0,0,0); /* Fallback color */\r\n  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\r\n}\r\n\r\n.modal-content {\r\n    position: relative;\r\n    background-color: #fefefe;\r\n    margin: auto;\r\n    padding: 0;\r\n    border-radius: 5px;\r\n    border: 1px solid #888;\r\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.3);\r\n    -webkit-animation-name: animatetop;\r\n    -webkit-animation-duration: 0.4s;\r\n    animation-name: animatetop;\r\n    -webkit-animation-duration: 0.2s;\r\n            animation-duration: 0.2s\r\n}\r\n\r\n.modal-header {\r\n    font-family: Gotham-Rounded-Medium,Sans-Serif!important;\r\n    font-size: 16px;\r\n    padding: 5px 5px;\r\n    background-color:#1E88E5;;\r\n    color: white;\r\n    text-align: center;\r\n}\r\n\r\n.button1 {\r\n    /* padding: 10px; */\r\n    /* margin-left: 20px; */\r\n    /* background:rgba(245,245,245,1); */\r\n    color: gray;\r\n     line-height: 40px;\r\n    font-size: 13px;\r\n    font-weight: 500;\r\n    text-overflow: ellipsis;\r\n    font-family: Arial, Helvetica, sans-serif;\r\n}\r\n\r\n.button1 :focus{\r\n    background-color:#5b89ff !important;\r\n    color: white;\r\n}\r\n\r\nul {\r\n    list-style: none; margin-left: -32px;\r\n}\r\n\r\nli {\r\n    border: 1px solid #ddd;\r\n    margin-top: -1px; /* Prevent double borders */\r\n    background-color: white;\r\n    padding: 12px;\r\n    text-decoration: none;\r\n    font-size: 14px;\r\n    /* font-family: Arial, Helvetica, sans-serif; */\r\n    color: black;\r\n    display: block;\r\n    color: #333;\r\n    font-size: 14px;\r\n}\r\n\r\n\r\n", ""]);
 
 // exports
 
@@ -2179,15 +2266,21 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/freight-location-components/freight-location-picker/freight-location-picker.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<md-input-container style=\"width: 100%;margin-top:-20px\">\n  <input #tripLocation mdInput [(ngModel)]=\"locationName\" (keyup)=\"searchName(tripLocation.value)\" (click)=\"isSearchClicked=true; onFilterClick('PUBLIC')\"\n    onkeydown=\"if(((event.keyCode<=65 &&  event.keyCode>=122)) && event.keyCode!=8 && event.keyCode!=13 )return false;\" required (blur)=\"hideList(true);hideDropdownMenu()\" >\n  <!--(blur)=\"hideDropdownMenu()\"-->\n</md-input-container>\n<br>\n\n\n<div *ngIf=\"isSearchClicked\" style=\"z-index: 11; position:absolute; width: 96%;\">\n  <div fxLayout=\"row\" style = \"margin: 0px 0px;background-color: whitesmoke;padding-top: 1%; padding-bottom: 1%;margin-top: -2%;\">\n    <!--style=\"border-right: solid; border-right-color:#aaaaaa;padding: 0px 5px\"-->\n    <div fxFlex=\"25\" style=\"padding-left: 7%\" >\n           <span [style.color]=\"clickFilter==='PUBLIC'?'blue':'gray'\" (click)=\"hideList(false);onFilterClick('PUBLIC')\"><label style=\"font-size: smaller\">Public</label></span>\n    </div>\n    <div fxFlex=\"50\" style=\"padding-left: 11%\">\n      <span [style.color]=\"clickFilter==='MYLOCATIONS'?'blue':'gray'\" (click)=\"hideList(false);isHideList=false;onFilterClick('MYLOCATIONS')\"><label style=\"font-size: smaller\">My Locations</label></span>\n    </div>\n    <div fxFlex=\"25\">\n      <span [style.color]=\"clickFilter==='FAVOURITES'?'blue':'gray'\" (click)=\"hideList(false);isHideList=false;onFilterClick('FAVOURITES')\"><label style=\"font-size: smaller\">Favourite</label></span>\n    </div>\n  </div>\n</div>\n\n\n\n<!--<md-select placeholder=\"Proximity/Boundary Selector\" [(ngModel)]=\"selected_value\" (change)=\"onSelection()\" style=\"width:100%; margin-top: 18px;\">-->\n  <!--<md-option value=\"add_boundary\">Add Boundary</md-option>-->\n  <!--<md-option value=\"add_proximity\">Add Proximity</md-option>-->\n  <!--<md-option value=\"both\">Both</md-option>-->\n<!--</md-select>-->\n<div style=\" z-index: 9; overflow: hidden; position: absolute; background-color: white; min-width: 100%; margin-top: 20px; margin-left: 0px;\"\n  *ngIf=\"locationAvailable\">\n  <div style=\"height: 250px; overflow-y: scroll;width: 96%\">\n\n  <div *ngIf=\"isRecentAvailable\">\n      <h4 style=\"height:0px\">Recently Used</h4>\n    <ul style=\"list-style-type: none; padding: 0; margin: 0;\" *ngFor=\"let location of recentLocationList\">\n      <li (click)=\"setLocation(location)\"><i class=\"fa fa-map-marker\" aria-hidden=\"true\"  style=\"margin-right: 8px; font-size: 15px\"></i>{{location['name']}}</li>\n    </ul>\n  </div>\n  <!--location['freightLocation']['name']-->\n  <h4 style=\"height:0px\">Public</h4>\n  <ul style=\"list-style-type: none; padding: 0; margin: 0;\" *ngFor=\"let publiclocation of locationNameList;let ind=index\">\n    <li>\n      <i class=\"fa fa-map-marker\" aria-hidden=\"true\"  style=\"margin-right: 8px; font-size: 15px\"></i>\n      <span (click)=\"setLocation(publiclocation)\" >{{publiclocation['freightLocation']['name']}}</span>\n      <span style=\"float: right\" (click)=\"setFavouriteLocation(publiclocation.freightLocation)\">\n        <i  [style.color]=\"(publiclocation.freightLocation.isStared)?'blue':'black'\" class=\"fa fa-star-o\" aria-hidden=\"true\" ></i>\n      </span>\n    </li>\n  </ul>\n\n  <ul style=\"list-style-type: none; padding: 0; margin: 0;\">\n    <li (click)=\"onAddLocation()\">+add new location</li>\n  </ul>\n  </div>\n\n </div>\n\n<div style=\" z-index: 9; overflow: visible; position: absolute; background-color: white; min-width: 100%; margin-top: 20px; margin-left: 0px;\"\n  *ngIf=\"isPrivateLocationAvailable\">\n<!--\n  <ul style=\"list-style-type: none; padding: 0; margin: 0;\" *ngFor=\"let location of locationNameList\">\n    <li (click)=\"setLocation(location)\"><i class=\"fa fa-map-marker\" aria-hidden=\"true\"  style=\"margin-right: 8px; font-size: 15px\"></i>{{location.freightLocation.name}}<span (click)=\"setLocation(location)\"><i class=\"fa fa-star-o\" aria-hidden=\"true\" style=\"float: right\"></i></span></li>\n  </ul> -->\n\n  <ul style=\"list-style-type: none; padding: 0; margin: 0;\" *ngFor=\"let location of locationNameList\">\n      <li><i class=\"fa fa-map-marker\" aria-hidden=\"true\"  style=\"margin-right: 8px; font-size: 15px\"></i><span (click)=\"setLocation(location)\">{{location.freightLocation.name}}</span><span style=\"float: right\" (click)=\"setFavouriteLocation(location.freightLocation)\"><i [style.color]=\"(location.freightLocation.isStared)?'blue':'black'\" class=\"fa fa-star-o\" aria-hidden=\"true\" ></i></span></li>\n    </ul>\n\n  <ul style=\"list-style-type: none; padding: 0; margin: 0;\">\n    <li (click)=\"onAddLocation()\">+add new location</li>\n  </ul>\n</div>\n\n<div style=\" z-index: 9; overflow: visible; position: absolute; background-color: white; min-width: 100%; margin-top: 20px; margin-left: 0px;\"\n  *ngIf=\"isFavouriteLocationAvailable\">\n\n  <!-- <ul style=\"list-style-type: none; padding: 0; margin: 0;\" *ngFor=\"let location of locationNameList\">\n    <li (click)=\"setLocation(location)\"><i class=\"fa fa-map-marker\" aria-hidden=\"true\"  style=\"margin-right: 8px; font-size: 15px\"></i>{{location.favFreightLocation.name}}</li>\n  </ul> -->\n\n  <ul style=\"list-style-type: none; padding: 0; margin: 0;\" *ngFor=\"let location of locationNameList\">\n      <li><i class=\"fa fa-map-marker\" aria-hidden=\"true\"  style=\"margin-right: 8px; font-size: 15px\"></i><span (click)=\"setLocation(location)\">{{location.favFreightLocation.name}}</span><span style=\"float: right\" ><i [style.color]=\"(location.favFreightLocation.isStared)?'blue':'black'\" class=\"fa fa-star-o\" aria-hidden=\"true\" (click)=\"removeFavouriteLocation(location)\"></i></span></li>\n    </ul>\n\n  <ul style=\"list-style-type: none; padding: 0; margin: 0;\">\n    <li (click)=\"onAddLocation()\">+add new location</li>\n  </ul>\n</div>\n\n\n<div *ngIf=\"isDialogOpen\" class=\"mycustomDialog-Location\" style=\"padding-top: 70px;\">\n  <div class=\"modal-content\" style=\"width: 60%;min-width: 250px;overflow: hidden;max-width: 560px;height: calc(100vh - 140px);\">\n    <div class=\"modal-header\">\n      <span class=\"close\" (click)=\"isDialogOpen=false; locationAvailable=false\">&times;</span>\n      <div>\n        <label>Location</label>\n      </div>\n    </div>\n\n    <div style=\"padding: 5px;font-size: 13px;overflow: auto;width: calc(99vw - 16px);height: auto;\">\n      <app-freight-location-creater [selectedValueFromParent]=\"selected_value\" (onLocationCreation)=\"getFreightLocationObject($event)\"></app-freight-location-creater>\n    </div>\n  </div>\n</div>\n"
+module.exports = "\r\n<md-input-container style=\"width: 100%;margin-top:-20px\">\r\n  <input #tripLocation mdInput [(ngModel)]=\"locationName\" (keyup)=\"searchName(tripLocation.value)\" (click)=\"isSearchClicked=true; onFilterClick('PUBLIC')\"\r\n    onkeydown=\"if(((event.keyCode<=65 &&  event.keyCode>=122)) && event.keyCode!=8 && event.keyCode!=13 )return false;\" required (blur)=\"hideList(true);hideDropdownMenu()\" >\r\n  <!--(blur)=\"hideDropdownMenu()\"-->\r\n</md-input-container>\r\n<br>\r\n\r\n\r\n<div *ngIf=\"isSearchClicked\" style=\"z-index: 11; position:absolute; width: 96%;\">\r\n  <div fxLayout=\"row\" style = \"margin: 0px 0px;background-color: whitesmoke;padding-top: 1%; padding-bottom: 1%;margin-top: -2%;\">\r\n    <!--style=\"border-right: solid; border-right-color:#aaaaaa;padding: 0px 5px\"-->\r\n    <div fxFlex=\"25\" style=\"padding-left: 7%\" >\r\n           <span [style.color]=\"clickFilter==='PUBLIC'?'blue':'gray'\" (click)=\"hideList(false);onFilterClick('PUBLIC')\"><label style=\"font-size: smaller\">Public</label></span>\r\n    </div>\r\n    <div fxFlex=\"50\" style=\"padding-left: 11%\">\r\n      <span [style.color]=\"clickFilter==='MYLOCATIONS'?'blue':'gray'\" (click)=\"hideList(false);isHideList=false;onFilterClick('MYLOCATIONS')\"><label style=\"font-size: smaller\">My Locations</label></span>\r\n    </div>\r\n    <div fxFlex=\"25\">\r\n      <span [style.color]=\"clickFilter==='FAVOURITES'?'blue':'gray'\" (click)=\"hideList(false);isHideList=false;onFilterClick('FAVOURITES')\"><label style=\"font-size: smaller\">Favourite</label></span>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n\r\n\r\n<!--<md-select placeholder=\"Proximity/Boundary Selector\" [(ngModel)]=\"selected_value\" (change)=\"onSelection()\" style=\"width:100%; margin-top: 18px;\">-->\r\n  <!--<md-option value=\"add_boundary\">Add Boundary</md-option>-->\r\n  <!--<md-option value=\"add_proximity\">Add Proximity</md-option>-->\r\n  <!--<md-option value=\"both\">Both</md-option>-->\r\n<!--</md-select>-->\r\n<div style=\" z-index: 9; overflow: hidden; position: absolute; background-color: white; min-width: 100%; margin-top: 20px; margin-left: 0px;\"\r\n  *ngIf=\"locationAvailable\">\r\n  <div style=\"height: 250px; overflow-y: scroll;width: 96%\">\r\n\r\n  <div *ngIf=\"isRecentAvailable\">\r\n      <h4 style=\"height:0px\">Recently Used</h4>\r\n    <ul style=\"list-style-type: none; padding: 0; margin: 0;\" *ngFor=\"let location of recentLocationList\">\r\n      <li (click)=\"setLocation(location)\"><i class=\"fa fa-map-marker\" aria-hidden=\"true\"  style=\"margin-right: 8px; font-size: 15px\"></i>{{location['name']}}</li>\r\n    </ul>\r\n  </div>\r\n  <!--location['freightLocation']['name']-->\r\n  <h4 style=\"height:0px\">Public</h4>\r\n  <ul style=\"list-style-type: none; padding: 0; margin: 0;\" *ngFor=\"let publiclocation of locationNameList;let ind=index\">\r\n    <li>\r\n      <i class=\"fa fa-map-marker\" aria-hidden=\"true\"  style=\"margin-right: 8px; font-size: 15px\"></i>\r\n      <span (click)=\"setLocation(publiclocation)\" >{{publiclocation['freightLocation']['name']}}</span>\r\n      <span style=\"float: right\" (click)=\"setFavouriteLocation(publiclocation.freightLocation)\">\r\n        <i  [style.color]=\"(publiclocation.freightLocation.isStared)?'blue':'black'\" class=\"fa fa-star-o\" aria-hidden=\"true\" ></i>\r\n      </span>\r\n    </li>\r\n  </ul>\r\n\r\n  <ul style=\"list-style-type: none; padding: 0; margin: 0;\">\r\n    <li (click)=\"onAddLocation()\">+add new location</li>\r\n  </ul>\r\n  </div>\r\n\r\n </div>\r\n\r\n<div style=\" z-index: 9; overflow: visible; position: absolute; background-color: white; min-width: 100%; margin-top: 20px; margin-left: 0px;\"\r\n  *ngIf=\"isPrivateLocationAvailable\">\r\n<!--\r\n  <ul style=\"list-style-type: none; padding: 0; margin: 0;\" *ngFor=\"let location of locationNameList\">\r\n    <li (click)=\"setLocation(location)\"><i class=\"fa fa-map-marker\" aria-hidden=\"true\"  style=\"margin-right: 8px; font-size: 15px\"></i>{{location.freightLocation.name}}<span (click)=\"setLocation(location)\"><i class=\"fa fa-star-o\" aria-hidden=\"true\" style=\"float: right\"></i></span></li>\r\n  </ul> -->\r\n\r\n  <ul style=\"list-style-type: none; padding: 0; margin: 0;\" *ngFor=\"let location of locationNameList\">\r\n      <li><i class=\"fa fa-map-marker\" aria-hidden=\"true\"  style=\"margin-right: 8px; font-size: 15px\"></i><span (click)=\"setLocation(location)\">{{location.freightLocation.name}}</span><span style=\"float: right\" (click)=\"setFavouriteLocation(location.freightLocation)\"><i [style.color]=\"(location.freightLocation.isStared)?'blue':'black'\" class=\"fa fa-star-o\" aria-hidden=\"true\" ></i></span></li>\r\n    </ul>\r\n\r\n  <ul style=\"list-style-type: none; padding: 0; margin: 0;\">\r\n    <li (click)=\"onAddLocation()\">+add new location</li>\r\n  </ul>\r\n</div>\r\n\r\n<div style=\" z-index: 9; overflow: visible; position: absolute; background-color: white; min-width: 100%; margin-top: 20px; margin-left: 0px;\"\r\n  *ngIf=\"isFavouriteLocationAvailable\">\r\n\r\n  <!-- <ul style=\"list-style-type: none; padding: 0; margin: 0;\" *ngFor=\"let location of locationNameList\">\r\n    <li (click)=\"setLocation(location)\"><i class=\"fa fa-map-marker\" aria-hidden=\"true\"  style=\"margin-right: 8px; font-size: 15px\"></i>{{location.favFreightLocation.name}}</li>\r\n  </ul> -->\r\n\r\n  <ul style=\"list-style-type: none; padding: 0; margin: 0;\" *ngFor=\"let location of locationNameList\">\r\n      <li><i class=\"fa fa-map-marker\" aria-hidden=\"true\"  style=\"margin-right: 8px; font-size: 15px\"></i><span (click)=\"setLocation(location)\">{{location.favFreightLocation.name}}</span><span style=\"float: right\" ><i [style.color]=\"(location.favFreightLocation.isStared)?'blue':'black'\" class=\"fa fa-star-o\" aria-hidden=\"true\" (click)=\"removeFavouriteLocation(location)\"></i></span></li>\r\n    </ul>\r\n\r\n  <ul style=\"list-style-type: none; padding: 0; margin: 0;\">\r\n    <li (click)=\"onAddLocation()\">+add new location</li>\r\n  </ul>\r\n</div>\r\n\r\n\r\n<div *ngIf=\"isDialogOpen\" class=\"mycustomDialog-Location\" style=\"padding-top: 70px;\">\r\n  <div class=\"modal-content\" style=\"width: 60%;min-width: 250px;overflow: hidden;max-width: 560px;height: calc(100vh - 140px);\">\r\n    <div class=\"modal-header\">\r\n      <span class=\"close\" (click)=\"isDialogOpen=false; locationAvailable=false\">&times;</span>\r\n      <div>\r\n        <label>Location</label>\r\n      </div>\r\n    </div>\r\n\r\n    <div style=\"padding: 5px;font-size: 13px;overflow: auto;width: calc(99vw - 16px);height: auto;\">\r\n      <app-freight-location-creater [selectedValueFromParent]=\"selected_value\" (onLocationCreation)=\"getFreightLocationObject($event)\"></app-freight-location-creater>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
 /***/ "../../../../../src/app/components/freight-location-components/freight-location-picker/freight-location-picker.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FreightLocationPickerComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2197,14 +2290,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var http_1 = __webpack_require__("../../../http/@angular/http.es5.js");
-var http_2 = __webpack_require__("../../../http/@angular/http.es5.js");
+
+
+
 // import { FreightLocationServices } from "../../../services/freightLocation.service";
-var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-var environment_1 = __webpack_require__("../../../../../src/environments/environment.ts");
-var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
+
+
+
 var FreightLocationPickerComponent = (function () {
     function FreightLocationPickerComponent(http, localStorageService, _store) {
         var _this = this;
@@ -2213,7 +2305,7 @@ var FreightLocationPickerComponent = (function () {
         this._store = _store;
         this.PATH = 'http://tracknet.fretron.com';
         this.FREIGHT = 'http://tracknet.fretron.com';
-        this.defaultHeaders = new http_1.Headers();
+        this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]();
         this.unSub_searchName = null;
         this.waitForLastResp = false;
         this.locationNameList = [];
@@ -2225,18 +2317,18 @@ var FreightLocationPickerComponent = (function () {
         this.isFavouriteLocationAvailable = false;
         this.isHideList = true;
         this.clickFilter = "PUBLIC";
-        this.addTripFreightLocation = new core_1.EventEmitter();
-        this.publicFreightLocation = new core_1.EventEmitter();
-        this.recentFreightLocation = new core_1.EventEmitter();
-        this.privateFreightLocation = new core_1.EventEmitter();
-        this.favouriteFreightLocation = new core_1.EventEmitter();
-        this.addFavouriteLocation = new core_1.EventEmitter();
-        this.removeFavouriteFLocation = new core_1.EventEmitter();
+        this.addTripFreightLocation = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.publicFreightLocation = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.recentFreightLocation = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.privateFreightLocation = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.favouriteFreightLocation = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.addFavouriteLocation = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.removeFavouriteFLocation = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.isDialogOpen = false;
         this.unSub_customerDetails = null;
-        this.onLocationPick = new core_1.EventEmitter();
-        this.searchLocation = new core_1.EventEmitter();
-        this.locationFromTemplate = new core_1.EventEmitter();
+        this.onLocationPick = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.searchLocation = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.locationFromTemplate = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.token = this.localStorageService.get("AUTH_TOKEN");
         // this.orgId=this.localStorageService.get("ORGID");
         this.unSub_customerDetails = _store.select('customerDetails').subscribe(function (value) {
@@ -2251,7 +2343,7 @@ var FreightLocationPickerComponent = (function () {
         });
         //console.log(this.locationType);
         this.searchLocation.subscribe(function (obj) {
-            var path = environment_1.BASE_IP.FERIGHT_LOCATION + "/search?type=" + obj['type'] + "&name=" + obj['name'] + "&geofenceType=" + _this.selected_value['type'];
+            var path = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["c" /* BASE_IP */].FERIGHT_LOCATION + "/search?type=" + obj['type'] + "&name=" + obj['name'] + "&geofenceType=" + _this.selected_value['type'];
             // console.log(path);
             _this.searchLocationByName(path, name).subscribe(function (response) {
                 console.log(response);
@@ -2262,7 +2354,7 @@ var FreightLocationPickerComponent = (function () {
         });
         this.addTripFreightLocation.subscribe(function (fretObj) {
             console.log(fretObj);
-            var path = environment_1.BASE_IP.FERIGHT_LOCATION + "/locations/add";
+            var path = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["c" /* BASE_IP */].FERIGHT_LOCATION + "/locations/add";
             console.log(path);
             _this.addFretLocation(fretObj, path).subscribe(function (response) {
                 // TODO
@@ -2382,13 +2474,13 @@ var FreightLocationPickerComponent = (function () {
         });
     };
     FreightLocationPickerComponent.prototype.searchLocationByName = function (path, name) {
-        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */](this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
         // console.log(headers);
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Get,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
             headers: headers,
         });
         return this.http.request(path, requestOptions).map(function (response) {
@@ -2427,18 +2519,18 @@ var FreightLocationPickerComponent = (function () {
         }
     };
     FreightLocationPickerComponent.prototype.setFavouriteFreightLocation = function (location) {
-        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */](this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
         // headers.set("orgUuid",this.orgId);
         // console.log(headers);
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Post,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
             headers: headers,
             body: location
         });
-        var path4 = environment_1.BASE_IP.FERIGHT_LOCATION + '/favourite/add';
+        var path4 = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["c" /* BASE_IP */].FERIGHT_LOCATION + '/favourite/add';
         console.log(path4);
         return this.http.request(path4, requestOptions).map(function (response) {
             console.log(response.status);
@@ -2450,18 +2542,18 @@ var FreightLocationPickerComponent = (function () {
         });
     };
     FreightLocationPickerComponent.prototype.removeFavouriteFreightLocation = function (location) {
-        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */](this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
         // headers.set('orguuid',this.orgId);
         // headers.set("orgUuid",this.orgId);
         // console.log(headers);
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Get,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
             headers: headers,
         });
-        var path4 = environment_1.BASE_IP.FERIGHT_LOCATION + '/favourite/remove?uuid=' + location['favFreightLocation']['uuid'];
+        var path4 = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["c" /* BASE_IP */].FERIGHT_LOCATION + '/favourite/remove?uuid=' + location['favFreightLocation']['uuid'];
         console.log(path4);
         return this.http.request(path4, requestOptions).map(function (response) {
             console.log(response.status);
@@ -2473,17 +2565,17 @@ var FreightLocationPickerComponent = (function () {
         });
     };
     FreightLocationPickerComponent.prototype.getFavouriteFreight = function () {
-        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */](this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
         // headers.set("orgUuid",this.orgId);
         // console.log(headers);
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Get,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
             headers: headers,
         });
-        var path4 = environment_1.BASE_IP.FERIGHT_LOCATION + '/get/favourite?geofenceType=' + this.selected_value['type'];
+        var path4 = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["c" /* BASE_IP */].FERIGHT_LOCATION + '/get/favourite?geofenceType=' + this.selected_value['type'];
         console.log(path4);
         return this.http.request(path4, requestOptions).map(function (response) {
             console.log(response.status);
@@ -2495,18 +2587,18 @@ var FreightLocationPickerComponent = (function () {
         });
     };
     FreightLocationPickerComponent.prototype.privateFreight = function () {
-        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */](this.defaultHeaders.toJSON());
         // let headers = new Headers();
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
         // headers.set("orgUuid",this.orgId);
         console.log(headers);
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Get,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
             headers: headers,
         });
-        var path3 = environment_1.BASE_IP.FERIGHT_LOCATION + '/get/private?geofenceType=' + this.selected_value['type'];
+        var path3 = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["c" /* BASE_IP */].FERIGHT_LOCATION + '/get/private?geofenceType=' + this.selected_value['type'];
         console.log(path3);
         return this.http.request(path3, requestOptions).map(function (response) {
             console.log(response.status);
@@ -2518,17 +2610,17 @@ var FreightLocationPickerComponent = (function () {
         });
     };
     FreightLocationPickerComponent.prototype.recentFreight = function () {
-        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */](this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
         // headers.set("orgUuid",this.orgId);
         // console.log(headers);
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Get,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
             headers: headers,
         });
-        var path2 = environment_1.BASE_IP.FERIGHT_LOCATION + '/get/recent?geofenceType=' + this.selected_value['type'];
+        var path2 = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["c" /* BASE_IP */].FERIGHT_LOCATION + '/get/recent?geofenceType=' + this.selected_value['type'];
         console.log(path2);
         return this.http.request(path2, requestOptions).map(function (response) {
             console.log(response.status);
@@ -2540,17 +2632,17 @@ var FreightLocationPickerComponent = (function () {
         });
     };
     FreightLocationPickerComponent.prototype.publicFreight = function () {
-        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */](this.defaultHeaders.toJSON());
         var bearerToken = "Bearer " + this.token;
         headers.set('Content-Type', 'application/json');
         headers.set('authorization', bearerToken);
         // headers.set("orgUuid",this.orgId);
         // console.log(headers);
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Get,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
             headers: headers,
         });
-        var path = environment_1.BASE_IP.FERIGHT_LOCATION + '/get/public?geofenceType=' + this.selected_value['type'];
+        var path = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["c" /* BASE_IP */].FERIGHT_LOCATION + '/get/public?geofenceType=' + this.selected_value['type'];
         console.log(path);
         return this.http.request(path, requestOptions).map(function (response) {
             console.log(response.status);
@@ -2564,14 +2656,14 @@ var FreightLocationPickerComponent = (function () {
     FreightLocationPickerComponent.prototype.onFilterClick = function (button) {
         this.isSearchClicked = true;
         console.log(button);
-        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */](this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
         headers.set("orgUuid", this.orgId);
         // console.log(headers);
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Get,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
             headers: headers,
         });
         if (button === "PUBLIC") {
@@ -2679,13 +2771,13 @@ var FreightLocationPickerComponent = (function () {
     };
     // *********************** add fret Location service  **********************
     FreightLocationPickerComponent.prototype.addFretLocation = function (fretObj, path) {
-        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */](this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
         console.log(fretObj);
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Post,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
             headers: headers,
             body: fretObj,
         });
@@ -2708,38 +2800,38 @@ var FreightLocationPickerComponent = (function () {
     return FreightLocationPickerComponent;
 }());
 __decorate([
-    core_1.Output(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
     __metadata("design:type", Object)
 ], FreightLocationPickerComponent.prototype, "onLocationPick", void 0);
 __decorate([
-    core_1.ViewChild("searchOrigin"),
-    __metadata("design:type", typeof (_a = typeof core_1.ElementRef !== "undefined" && core_1.ElementRef) === "function" && _a || Object)
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])("searchOrigin"),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object)
 ], FreightLocationPickerComponent.prototype, "searchOrigineElementRef", void 0);
 __decorate([
-    core_1.ViewChild("searchDestination"),
-    __metadata("design:type", typeof (_b = typeof core_1.ElementRef !== "undefined" && core_1.ElementRef) === "function" && _b || Object)
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])("searchDestination"),
+    __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _b || Object)
 ], FreightLocationPickerComponent.prototype, "searchDestElementRef", void 0);
 __decorate([
-    core_1.Input(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
     __metadata("design:type", Object)
 ], FreightLocationPickerComponent.prototype, "pickerLocationType", void 0);
 __decorate([
-    core_1.Input(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
     __metadata("design:type", Object)
 ], FreightLocationPickerComponent.prototype, "inputType", void 0);
 __decorate([
-    core_1.Input(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
     __metadata("design:type", Object)
 ], FreightLocationPickerComponent.prototype, "locationFromTemplate", void 0);
 FreightLocationPickerComponent = __decorate([
-    core_1.Component({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-freight-location-picker',
         template: __webpack_require__("../../../../../src/app/components/freight-location-components/freight-location-picker/freight-location-picker.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/freight-location-components/freight-location-picker/freight-location-picker.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_c = typeof http_1.Http !== "undefined" && http_1.Http) === "function" && _c || Object, typeof (_d = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _d || Object, typeof (_e = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* Http */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__["LocalStorageService"]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ngrx_store__["b" /* Store */]) === "function" && _e || Object])
 ], FreightLocationPickerComponent);
-exports.FreightLocationPickerComponent = FreightLocationPickerComponent;
+
 var _a, _b, _c, _d, _e;
 //# sourceMappingURL=freight-location-picker.component.js.map
 
@@ -2766,15 +2858,17 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/manage-organisation/manage-organisation.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<md-card style=\"cursor: pointer\" (click)=\"goToShipmentGroupsManagement()\">\n  <md-card-content>\n    <div>\n      <label><b>Shipment Groups</b></label>\n    </div>\n  </md-card-content>\n</md-card>\n\n<md-card style=\"cursor: pointer\" (click)=\"goToUserManagement()\">\n  <md-card-content>\n    <div>\n      <label><b>Members</b></label>\n    </div>\n  </md-card-content>\n</md-card>\n"
+module.exports = "<md-card style=\"cursor: pointer\" (click)=\"goToShipmentGroupsManagement()\">\r\n  <md-card-content>\r\n    <div>\r\n      <label><b>Shipment Groups</b></label>\r\n    </div>\r\n  </md-card-content>\r\n</md-card>\r\n\r\n<md-card style=\"cursor: pointer\" (click)=\"goToUserManagement()\">\r\n  <md-card-content>\r\n    <div>\r\n      <label><b>Members</b></label>\r\n    </div>\r\n  </md-card-content>\r\n</md-card>\r\n"
 
 /***/ }),
 
 /***/ "../../../../../src/app/components/manage-organisation/manage-organisation.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ManageOrganisationComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2784,9 +2878,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var router_1 = __webpack_require__("../../../router/@angular/router.es5.js");
+
+
 var ManageOrganisationComponent = (function () {
     function ManageOrganisationComponent(_router) {
         this._router = _router;
@@ -2803,14 +2896,14 @@ var ManageOrganisationComponent = (function () {
     return ManageOrganisationComponent;
 }());
 ManageOrganisationComponent = __decorate([
-    core_1.Component({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-manage-organisation',
         template: __webpack_require__("../../../../../src/app/components/manage-organisation/manage-organisation.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/manage-organisation/manage-organisation.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof router_1.Router !== "undefined" && router_1.Router) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object])
 ], ManageOrganisationComponent);
-exports.ManageOrganisationComponent = ManageOrganisationComponent;
+
 var _a;
 //# sourceMappingURL=manage-organisation.component.js.map
 
@@ -2824,7 +2917,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".top-header{\n  background-color: #1976d2;\n  width: 100%;\n  padding-bottom: 3px;\n}\n\n\n.custom-button button{\n  height: 23px;\n  font-size: 11px;\n  line-height: 23px;\n  border-radius: 4px;\n  min-width: 5px;\n}\n\nmd-card{\n  padding: 9px;\n  min-width: 250px;\n}\n\ndiv {\n  font-family: Helvetica !important;\n  /*color: #46465f;*/\n}\n\n.confirm-location{\n  padding: 22px;\n  min-height: 100px;\n  max-height: 200px;\n  overflow: auto;\n  border: 1px solid #D1D1D1;\n  min-width:175px;\n}\n/* ****************** For Custom dialog show********************************************88*/\n.mycustomDialog {\n  position: fixed; /* Stay in place */\n  z-index: 990; /* Sit on top */\n  padding-top: 30%; /* Location of the box */\n  left: 0;\n  top: 0;\n  width: 100%; /* Full width */\n  height: 100%; /* Full height */\n  overflow: auto; /* Enable scroll if needed */\n  background-color: rgb(0,0,0); /* Fallback color */\n  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\n}\n\n.mycustomDialog button{\n  /*background-color: #2B81AF;*/\n  /*min-width: 0px;*/\n  /*color:white;*/\n  /*padding: 0px 8px 2px 9px;*/\n  width: 10%;\n}\n\n\n.my-hr{\n  border-style:ridge;\n  border-width:1px;\n  margin-top: 6px;\n  min-width: 250px;\n  margin-bottom:3px;\n}\n/* time line css start here*/\n\n.timeline-icon{\n  top: 50px;\n  position: absolute;\n  left: 71px;\n}\n\n.timeline-image{\n  position: absolute;\n  left: 71px;\n}\n\n.wfl-imeline-image{\n  position: absolute;\n  left: 50px;\n  color: #428fd4;\n}\n\n.EFP_icon{\n  position: absolute;\n  height: 100%;\n  margin-left: 54px;\n}\n\n.EFP_timeline_icon{\n  position: absolute;\n  background-color: white;\n  left: 48px;\n  top: -3px;\n  font-size: 18px;\n}\n\n\n.cd-timeline {\n  position: relative;\n}\n.cd-timeline::before {\n  /* this is the vertical line */\n  /*top: 21px;*/\n  bottom: 37px;\n  content: '';\n  position: absolute;\n  border-radius: 1px;\n  left: 85px;\n  height: 100%;\n  width: 1.40px;\n  background: #9b9b9b;\n  /*box-shadow: 0px 0px 10px lightsteelblue;*/\n}\n\n\n\n.wfl-timeline {\n  position: relative;\n}\n\n.wfl-timeline::before {\n  content: '';\n  position: absolute;\n  border-radius: 1px;\n  left: 55px;\n  height: 100%;\n  width: 3.4px;\n  background: #428fd4;\n}\n.DP-timeline1 {\n  position: relative;\n}\n\n.DP-timeline1::before {\n  top: -17px;\n  content: '';\n  position: absolute;\n  border-radius: 1px;\n  left: 53px;\n  height: 150%;\n  width: 3.4px;\n  background: #428fd4;\n}\n\n.DP-timeline {\n  position: relative;\n}\n\n.DP-timeline::before {\n  top: -17px;\n  content: '';\n  position: absolute;\n  border-radius: 1px;\n  left: 53px;\n  height: 100%;\n  width: 3.4px;\n  background: #428fd4;\n}\n\n.DP_timeline-image{\n  /*position: absolute;*/\n  /*left: 53px;*/\n  margin-left: 41px;\n  color: #428fd4;\n  font-size: 20px;\n  /*margin-top: 10px;*/\n}\n\n\n.unvisited-timeline {\n  position: relative;\n}\n.unvisited-timeline::before {\n  /* this is the vertical line */\n  content: '';\n  position: absolute;\n  border-radius: 1px;\n\n  left: 85px;\n  height: 100%;\n  border-left: 1.40px dashed #9b9b9b;\n  /*width: 1.40px;*/\n  /*background: #9b9b9b;*/\n  /*box-shadow: 0px 0px 10px lightsteelblue;*/\n}\n\n.EFP_unvisited-timeline {\n  position: relative;\n}\n.EFP_unvisited-timeline::before {\n  /* this is the vertical line */\n  top:15px;\n  content: '';\n  position: absolute;\n  border-radius: 1px;\n  left: 55px;\n  height: 100%;\n  border-width: 6px;\n  border-left: dotted #D0D0D0;\n  /*width: 1.40px;*/\n  /*background: #9b9b9b;*/\n  /*box-shadow: 0px 0px 10px lightsteelblue;*/\n}\n.EFP_unvisited-timeline1 {\n  position: relative;\n}\n.EFP_unvisited-timeline1::before {\n  /* this is the vertical line */\n  top:15px;\n  content: '';\n  position: absolute;\n  border-radius: 1px;\n  left: 55px;\n  height: 150%;\n  border-width: 6px;\n  border-left: dotted #D0D0D0;\n  /*width: 1.40px;*/\n  /*background: #9b9b9b;*/\n  /*box-shadow: 0px 0px 10px lightsteelblue;*/\n}\n\n\n\n.timeline-header{\n  text-align:center;\n  display: -ms-grid;\n  display: grid;\n  margin: -8px -8px 2px -8px;\n  box-shadow: 0px 1px 1px #999999;\n  padding: 10px;\n  display: list-item;\n}\n/* end here time line css*/\n\n/********** this will work when click on up-down button and div appear like a shutter  **************/\n.show-down-Slowly {\n  margin-top: 8px !important;\n  transition: margin-top .3s ;\n  -webkit-transition: margin-top .3s ;\n}\n.data-box {\n  /*margin-top: -2000px;*/\n  margin-left: 8px;\n  width:98%;\n  font-size: 11px;\n  color: #9b9b9b;\n}\n/****************************************************************************/\n\n/********** this will work when click on up-down button and div appear like a shutter  **************/\n.hide-up-Slowly{\n  /*margin-top: -2000px !important;*/\n  transition: margin-top .3s ;\n  -webkit-transition: margin-top .3s ;\n}\n\n/****************************************************************************/\n\n.vehicle-no{\n  font-size:20px;\n  color:rgba(255, 255, 255, 0.94);\n  margin-left:10px;\n}\n\n.vehicle-status{\n  padding: 4px;\n  text-align: center;\n  font-size: 16px;\n  background-color: #1d6be7;\n  color: white;\n}\n.vehicle-status1{\n  padding: 4px;\n  text-align: center;\n  font-size: 16px;\n  background-color: #6d6f74;\n  color: white;\n}\n\n.current-vehicle-card{\n  background-color:#dbdee2;\n  color: rgb(20, 5, 5);\n  padding-top: 15px;\n  padding-bottom: 10px;\n  /*margin-bottom:13px;*/\n}\n.current-vehicle-card1{\n  background-color:#acaeb3;\n  color: white;\n  padding-top: 15px;\n  padding-bottom: 10px;\n  /*margin-bottom:13px;*/\n}\n\n.driver-name{\n  margin-left: auto;\n  font-size: 15px;\n  color:rgba(255, 255, 255, 0.87);\n  padding: 2px 8px;\n}\n\n.phone-icon{\n  margin-left: 8px;\n  color: white;\n  font-size: 16px;\n}\n\n.alert-box{\n  font-size: 13px;\n  line-height:1.67;\n  color:rgba(0, 0, 0, 0.54);\n}\n\n.disconnected{\n  background-color: #ff5252;\n  border: solid 1px #ff5252;\n  color: white;\n  font-size: 18px;\n  text-align: center;\n  padding: 3px;\n}\n\n.time{\n  color: #9b9b9b;\n  text-align: center;\n  display: -ms-grid;\n  display: grid;\n  font-size: 11px;\n  min-width: 50px;\n  max-width: 60px;\n  overflow: hidden;\n}\n\n.rotate{ /* IE 9 */\n  -webkit-transform: rotate(90deg); /* Safari */\n  transform: rotate(90deg);\n  font-size: 13px\n}\n\n.travling-time{\n  position: absolute;\n  margin-left: -133px;\n  display: -ms-grid;\n  display: grid;\n  text-align: center;\n  height: 100%;\n  /*margin-top : -34px;*/\n  min-width: 50px;\n  max-width: 68px;\n  margin-top: -15px;\n}\n\n.customExpansionPanel >>> .mat-expansion-panel-body{\n  padding: 0px !important;\n}\n.custom-modal-container {\n  padding: 15px;\n}\n\n.custom-modal-header {\n  background-color: #219161;\n  color: #fff;\n  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);\n  margin-top: -15px;\n  margin-bottom: 40px;\n}\n/* Modal Content */\n.modal-content {\n  position: relative;\n  background-color: #fefefe;\n  margin: auto;\n  padding: 0;\n  border-radius: 5px;\n  border: 1px solid #888;\n  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.3);\n  -webkit-animation-name: animatetop;\n  -webkit-animation-duration: 0.4s;\n  animation-name: animatetop;\n  -webkit-animation-duration: 0.2s;\n          animation-duration: 0.2s\n}\n", ""]);
+exports.push([module.i, ".top-header{\r\n  background-color: #1976d2;\r\n  width: 100%;\r\n  padding-bottom: 3px;\r\n}\r\n\r\n\r\n.custom-button button{\r\n  height: 23px;\r\n  font-size: 11px;\r\n  line-height: 23px;\r\n  border-radius: 4px;\r\n  min-width: 5px;\r\n}\r\n\r\nmd-card{\r\n  padding: 9px;\r\n  min-width: 250px;\r\n}\r\n\r\ndiv {\r\n  font-family: Helvetica !important;\r\n  /*color: #46465f;*/\r\n}\r\n\r\n.confirm-location{\r\n  padding: 22px;\r\n  min-height: 100px;\r\n  max-height: 200px;\r\n  overflow: auto;\r\n  border: 1px solid #D1D1D1;\r\n  min-width:175px;\r\n}\r\n/* ****************** For Custom dialog show********************************************88*/\r\n.mycustomDialog {\r\n  position: fixed; /* Stay in place */\r\n  z-index: 990; /* Sit on top */\r\n  padding-top: 30%; /* Location of the box */\r\n  left: 0;\r\n  top: 0;\r\n  width: 100%; /* Full width */\r\n  height: 100%; /* Full height */\r\n  overflow: auto; /* Enable scroll if needed */\r\n  background-color: rgb(0,0,0); /* Fallback color */\r\n  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\r\n}\r\n\r\n.mycustomDialog button{\r\n  /*background-color: #2B81AF;*/\r\n  /*min-width: 0px;*/\r\n  /*color:white;*/\r\n  /*padding: 0px 8px 2px 9px;*/\r\n  width: 10%;\r\n}\r\n\r\n\r\n.my-hr{\r\n  border-style:ridge;\r\n  border-width:1px;\r\n  margin-top: 6px;\r\n  min-width: 250px;\r\n  margin-bottom:3px;\r\n}\r\n/* time line css start here*/\r\n\r\n.timeline-icon{\r\n  top: 50px;\r\n  position: absolute;\r\n  left: 71px;\r\n}\r\n\r\n.timeline-image{\r\n  position: absolute;\r\n  left: 71px;\r\n}\r\n\r\n.wfl-imeline-image{\r\n  position: absolute;\r\n  left: 50px;\r\n  color: #428fd4;\r\n}\r\n\r\n.EFP_icon{\r\n  position: absolute;\r\n  height: 100%;\r\n  margin-left: 54px;\r\n}\r\n\r\n.EFP_timeline_icon{\r\n  position: absolute;\r\n  background-color: white;\r\n  left: 48px;\r\n  top: -3px;\r\n  font-size: 18px;\r\n}\r\n\r\n\r\n.cd-timeline {\r\n  position: relative;\r\n}\r\n.cd-timeline::before {\r\n  /* this is the vertical line */\r\n  /*top: 21px;*/\r\n  bottom: 37px;\r\n  content: '';\r\n  position: absolute;\r\n  border-radius: 1px;\r\n  left: 85px;\r\n  height: 100%;\r\n  width: 1.40px;\r\n  background: #9b9b9b;\r\n  /*box-shadow: 0px 0px 10px lightsteelblue;*/\r\n}\r\n\r\n\r\n\r\n.wfl-timeline {\r\n  position: relative;\r\n}\r\n\r\n.wfl-timeline::before {\r\n  content: '';\r\n  position: absolute;\r\n  border-radius: 1px;\r\n  left: 55px;\r\n  height: 100%;\r\n  width: 3.4px;\r\n  background: #428fd4;\r\n}\r\n.DP-timeline1 {\r\n  position: relative;\r\n}\r\n\r\n.DP-timeline1::before {\r\n  top: -17px;\r\n  content: '';\r\n  position: absolute;\r\n  border-radius: 1px;\r\n  left: 53px;\r\n  height: 150%;\r\n  width: 3.4px;\r\n  background: #428fd4;\r\n}\r\n\r\n.DP-timeline {\r\n  position: relative;\r\n}\r\n\r\n.DP-timeline::before {\r\n  top: -17px;\r\n  content: '';\r\n  position: absolute;\r\n  border-radius: 1px;\r\n  left: 53px;\r\n  height: 100%;\r\n  width: 3.4px;\r\n  background: #428fd4;\r\n}\r\n\r\n.DP_timeline-image{\r\n  /*position: absolute;*/\r\n  /*left: 53px;*/\r\n  margin-left: 41px;\r\n  color: #428fd4;\r\n  font-size: 20px;\r\n  /*margin-top: 10px;*/\r\n}\r\n\r\n\r\n.unvisited-timeline {\r\n  position: relative;\r\n}\r\n.unvisited-timeline::before {\r\n  /* this is the vertical line */\r\n  content: '';\r\n  position: absolute;\r\n  border-radius: 1px;\r\n\r\n  left: 85px;\r\n  height: 100%;\r\n  border-left: 1.40px dashed #9b9b9b;\r\n  /*width: 1.40px;*/\r\n  /*background: #9b9b9b;*/\r\n  /*box-shadow: 0px 0px 10px lightsteelblue;*/\r\n}\r\n\r\n.EFP_unvisited-timeline {\r\n  position: relative;\r\n}\r\n.EFP_unvisited-timeline::before {\r\n  /* this is the vertical line */\r\n  top:15px;\r\n  content: '';\r\n  position: absolute;\r\n  border-radius: 1px;\r\n  left: 55px;\r\n  height: 100%;\r\n  border-width: 6px;\r\n  border-left: dotted #D0D0D0;\r\n  /*width: 1.40px;*/\r\n  /*background: #9b9b9b;*/\r\n  /*box-shadow: 0px 0px 10px lightsteelblue;*/\r\n}\r\n.EFP_unvisited-timeline1 {\r\n  position: relative;\r\n}\r\n.EFP_unvisited-timeline1::before {\r\n  /* this is the vertical line */\r\n  top:15px;\r\n  content: '';\r\n  position: absolute;\r\n  border-radius: 1px;\r\n  left: 55px;\r\n  height: 150%;\r\n  border-width: 6px;\r\n  border-left: dotted #D0D0D0;\r\n  /*width: 1.40px;*/\r\n  /*background: #9b9b9b;*/\r\n  /*box-shadow: 0px 0px 10px lightsteelblue;*/\r\n}\r\n\r\n\r\n\r\n.timeline-header{\r\n  text-align:center;\r\n  display: -ms-grid;\r\n  display: grid;\r\n  margin: -8px -8px 2px -8px;\r\n  box-shadow: 0px 1px 1px #999999;\r\n  padding: 10px;\r\n  display: list-item;\r\n}\r\n/* end here time line css*/\r\n\r\n/********** this will work when click on up-down button and div appear like a shutter  **************/\r\n.show-down-Slowly {\r\n  margin-top: 8px !important;\r\n  transition: margin-top .3s ;\r\n  -webkit-transition: margin-top .3s ;\r\n}\r\n.data-box {\r\n  /*margin-top: -2000px;*/\r\n  margin-left: 8px;\r\n  width:98%;\r\n  font-size: 11px;\r\n  color: #9b9b9b;\r\n}\r\n/****************************************************************************/\r\n\r\n/********** this will work when click on up-down button and div appear like a shutter  **************/\r\n.hide-up-Slowly{\r\n  /*margin-top: -2000px !important;*/\r\n  transition: margin-top .3s ;\r\n  -webkit-transition: margin-top .3s ;\r\n}\r\n\r\n/****************************************************************************/\r\n\r\n.vehicle-no{\r\n  font-size:20px;\r\n  color:rgba(255, 255, 255, 0.94);\r\n  margin-left:10px;\r\n}\r\n\r\n.vehicle-status{\r\n  padding: 4px;\r\n  text-align: center;\r\n  font-size: 16px;\r\n  background-color: #1d6be7;\r\n  color: white;\r\n}\r\n.vehicle-status1{\r\n  padding: 4px;\r\n  text-align: center;\r\n  font-size: 16px;\r\n  background-color: #6d6f74;\r\n  color: white;\r\n}\r\n\r\n.current-vehicle-card{\r\n  background-color:#dbdee2;\r\n  color: rgb(20, 5, 5);\r\n  padding-top: 15px;\r\n  padding-bottom: 10px;\r\n  /*margin-bottom:13px;*/\r\n}\r\n.current-vehicle-card1{\r\n  background-color:#acaeb3;\r\n  color: white;\r\n  padding-top: 15px;\r\n  padding-bottom: 10px;\r\n  /*margin-bottom:13px;*/\r\n}\r\n\r\n.driver-name{\r\n  margin-left: auto;\r\n  font-size: 15px;\r\n  color:rgba(255, 255, 255, 0.87);\r\n  padding: 2px 8px;\r\n}\r\n\r\n.phone-icon{\r\n  margin-left: 8px;\r\n  color: white;\r\n  font-size: 16px;\r\n}\r\n\r\n.alert-box{\r\n  font-size: 13px;\r\n  line-height:1.67;\r\n  color:rgba(0, 0, 0, 0.54);\r\n}\r\n\r\n.disconnected{\r\n  background-color: #ff5252;\r\n  border: solid 1px #ff5252;\r\n  color: white;\r\n  font-size: 18px;\r\n  text-align: center;\r\n  padding: 3px;\r\n}\r\n\r\n.time{\r\n  color: #9b9b9b;\r\n  text-align: center;\r\n  display: -ms-grid;\r\n  display: grid;\r\n  font-size: 11px;\r\n  min-width: 50px;\r\n  max-width: 60px;\r\n  overflow: hidden;\r\n}\r\n\r\n.rotate{ /* IE 9 */\r\n  -webkit-transform: rotate(90deg); /* Safari */\r\n  transform: rotate(90deg);\r\n  font-size: 13px\r\n}\r\n\r\n.travling-time{\r\n  position: absolute;\r\n  margin-left: -133px;\r\n  display: -ms-grid;\r\n  display: grid;\r\n  text-align: center;\r\n  height: 100%;\r\n  /*margin-top : -34px;*/\r\n  min-width: 50px;\r\n  max-width: 68px;\r\n  margin-top: -15px;\r\n}\r\n\r\n.customExpansionPanel >>> .mat-expansion-panel-body{\r\n  padding: 0px !important;\r\n}\r\n.custom-modal-container {\r\n  padding: 15px;\r\n}\r\n\r\n.custom-modal-header {\r\n  background-color: #219161;\r\n  color: #fff;\r\n  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);\r\n  margin-top: -15px;\r\n  margin-bottom: 40px;\r\n}\r\n/* Modal Content */\r\n.modal-content {\r\n  position: relative;\r\n  background-color: #fefefe;\r\n  margin: auto;\r\n  padding: 0;\r\n  border-radius: 5px;\r\n  border: 1px solid #888;\r\n  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.3);\r\n  -webkit-animation-name: animatetop;\r\n  -webkit-animation-duration: 0.4s;\r\n  animation-name: animatetop;\r\n  -webkit-animation-duration: 0.2s;\r\n          animation-duration: 0.2s\r\n}\r\n", ""]);
 
 // exports
 
@@ -2837,15 +2930,21 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/manual-shipment-status/manual-shipment-status.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"width: 100%;top: 0px;z-index:100;background-color: white;\" class=\"slow-down\">\n    <md-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></md-spinner>\n    <div>\n        <div>\n           <span class=\"driver-name-web\" >Driver</span>\n        </div>\n        <div>\n           <a class=\"driver-name-web\" href=\"tel:{{selectedShipment['currentShipment']?.mobileNo}}\" >\n             <i  class=\"fa fa-phone\" aria-hidden=\"true\"></i>&nbsp;+91{{selectedShipment['currentShipment']?.mobileNo}}\n           </a>\n        </div>\n    </div>\n    <!--************************ confirm pickup dialog *********************************-->\n    <div *ngIf=\"isConfirmPickupDialog\"  class=\"mycustomDialog\" style=\"padding-top: 70px;overflow:unset\">\n      <div class=\"modal-content\" style=\"width: 60%;min-width: 250px;overflow:unset;max-width: 560px;margin-top: 34px;height:60vh;\">\n        <div class=\"modal-header\">\n          <span class=\"close\" (click)=\"isConfirmPickupDialog=false;\" >&times;</span>\n          <div>\n            <label>{{forEditPlace}}</label>\n          </div>\n        </div>\n\n        <div  style=\"padding: 18px;font-size: 17px;margin-top:40px;overflow:unset;\" >\n          <div >\n            <span style=\"color:red;font-size: 13px;margin-left: 70px;\" >{{validationErrorMgs}}</span>\n            <div style=\"margin-left: 60px\" >\n              <label>Pickup Location&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;</label><span> {{pickupLocation}}</span>\n            </div>\n            <div style=\"margin-left: 60px;margin-top: 15px;\">\n              <label>Reporting Time&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;</label>\n              <div fxFlex=\"48\" style=\"width:65%;\">\n                <owl-date-time [autoClose]=true placeholder=\"ReportingTime\" [(ngModel)]=\"reportingTime\" id=\"reportingTime\"  [dateFormat]=\"'DD-MM-YYYY hh:mm'\" (onFocus)=\"validationErrorMgs=null\" ></owl-date-time>\n              </div>\n              <!-- <md-input-container>\n                <input mdInput [(ngModel)]=\"reportingTime\" name=\"reportingTime\"   (focus)=\"changeTime1()\"\n                onkeydown=\"if(((event.keyCode<=65 &&  event.keyCode>=122)) && event.keyCode!=8 && event.keyCode!=13 )return false;\">\n              </md-input-container> -->\n            </div>\n            <div style=\"margin-left: 60px;margin-top: 15px;\">\n              <label>Departure Time&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp; </label>\n              <div fxFlex=\"48\" style=\"width:65%;\">                  \n                <owl-date-time [autoClose]=true placeholder=\"Deptature Time\" [(ngModel)]=\"deptatureTime\" id=\"deptatureTime\"  [dateFormat]=\"'DD-MM-YYYY hh:mm'\" (onFocus)=\"validationErrorMgs=null\"></owl-date-time>\n              </div>\n            </div>\n          </div>\n          <div style=\"margin-top: 40px;\">\n              <button md-raised-button  style=\"margin-left: 120px;margin-top: 30px\" (click)=\"isConfirmPickupDialog=false;\" >Cancel</button>\n              <button md-raised-button  style=\"margin-left: 60px;margin-top: 30px;width: 30%\" (click)=\"confirmPickup()\" >Confirm Pickup</button>\n          </div>\n        </div>\n      </div>\n    </div>\n    <!-- close edit trip dialog -->\n    <!--************************ confirm delivery dialog *********************************-->\n    <div *ngIf=\"isConfirmDeliveryDialog\"  class=\"mycustomDialog\" style=\"padding-top: 70px;overflow:unset\">\n      <div class=\"modal-content\" style=\"width: 60%;min-width: 250px;overflow:unset;max-width: 560px;height:60vh;\">\n        <div class=\"modal-header\">\n          <span class=\"close\" (click)=\"isConfirmDeliveryDialog=false;\" >&times;</span>\n          <div>\n            <label>{{forEditPlace}}</label>\n          </div>\n        </div>\n\n        <div  style=\"padding: 18px;font-size: 17px;margin-top:40px ;\" >\n            <span style=\"color:red;font-size: 13px;margin-left: 70px;\" >{{validationErrorMgs}}</span>\n            <div style=\"margin-left: 60px\" >\n                <label>Delivery Location&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp; </label><span>{{deliveryLocation}}</span>\n              </div>\n            <div style=\"margin-left: 60px;margin-top: 15px;\">\n                <label>Reporting Time &nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp; </label>\n                <div fxFlex=\"48\" style=\"width:65%;\">                 \n                  <owl-date-time [autoClose]=true placeholder=\"'DD-MM-YYYY hh:mm'\" [(ngModel)]=\"reportingTime\" id=\"reportingTime\"  [dateFormat]=\"'DD-MM-YYYY hh:mm'\"  (onFocus)=\"validationErrorMgs=null\"></owl-date-time>              \n                </div>\n            </div>\n            <div style=\"margin-left: 60px;margin-top: 15px;\">\n              <label>Departure Time&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;</label>\n              <div fxFlex=\"48\" style=\"width:65%;overflow:unset\">                  \n               <owl-date-time [autoClose]=true placeholder=\"'DD-MM-YYYY hh:mm'\" [(ngModel)]=\"deptatureTime\" id=\"deptatureTime\"  [dateFormat]=\"'DD-MM-YYYY hh:mm'\" (onFocus)=\"validationErrorMgs=null\"></owl-date-time>              \n              </div>\n            </div>\n\n        </div>\n        <div style=\"margin-top: 40px;\">\n            <button md-raised-button  style=\"margin-left: 120px;margin-top: 30px\" (click)=\"isConfirmDeliveryDialog=false;\" >Cancel</button>\n            <button md-raised-button  style=\"margin-left: 60px;margin-top: 30px;width: 30%\" (click)=\"confirmDelivery()\" >Confirm Delivery</button>\n        </div>\n      </div>\n    </div>\n    <!-- close edit trip dialog -->\n\n    <!--************************ add loaction dialog *********************************-->\n    <div *ngIf=\"isConfirmUpdateLocationDialog\"  class=\"mycustomDialog\" style=\"padding-top: 70px;overflow:unset\">\n      <div class=\"modal-content\" style=\"width: 60%;min-width: 250px;overflow: unset;max-width: 560px;height:60vh;\">\n        <div class=\"modal-header\">\n          <span class=\"close\" (click)=\"isConfirmUpdateLocationDialog=false;\" >&times;</span>\n          <div>\n            <label>{{forEditPlace}}</label>\n          </div>\n        </div>\n\n        <div  style=\"padding: 18px;font-size: 17px;margin-top:40px;overflow:unset;\" >\n            <span style=\"color:red;font-size: 13px\" >{{validationErrorMgs}}</span>            \n            <div style=\"margin-left: 60px\">\n                <label>Current Location &nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp; </label>\n                <md-input-container>\n                  <input mdInput [(ngModel)]=\"currentLocationName\" name=\"currentLocationName\" id=\"currentLocationName\">\n                </md-input-container>\n            </div>\n            <div style=\"margin-left: 60px\">\n              <label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;</label>\n              <div fxFlex=\"48\" style=\"width:65%;\">\n                <owl-date-time [autoClose]=true placeholder=\"Update Time\" [(ngModel)]=\"updateTime\" id=\"updateTime\"  [dateFormat]=\"'DD-MM-YYYY hh:mm'\" (onFocus)=\"validationErrorMgs=null\"></owl-date-time>\n              </div>\n              <!-- <md-input-container>\n                <input  mdInput [(ngModel)]=\"updateTime\" name=\"updateTime\" id=\"updateTime\" (focus)=\"changeTime2()\"\n                onkeydown=\"if(((event.keyCode<=65 &&  event.keyCode>=122)) && event.keyCode!=8 && event.keyCode!=13 )return false;\">\n              </md-input-container> -->\n            </div>\n\n        </div>\n        <div style=\"margin-top: 30px\">\n            <button md-raised-button  style=\"margin-left: 120px;margin-top: 30px\" (click)=\"isConfirmUpdateLocationDialog=false;\" >Cancel</button>\n            <button md-raised-button  style=\"margin-left: 60px;margin-top: 30px;width: 30%\" (click)=\"addLocation()\" >Update Location</button>\n        </div>\n      </div>\n    </div>\n    <!-- close add location dialog -->\n\n    <!-- done    selected vahicle for Manually Shipment Tracking -->\n    <!-- done -->\n\n    <div *ngIf=\"vehicleStatus == 'EnrouteForPickUp'\" style=\"background-color: white\">\n      <div style=\"color:rgba(0, 0, 0, 0.54);padding: 5px;border: 2px solid lightgrey;\">\n        <div style=\"overflow: hidden;font-size:12px\">\n          <div>\n            <div class=\"fade-sub-header-text\" style=\"margin: 8px 5px;\">\n              <span style=\"margin-left: 64px;\">Delivery</span>\n            </div>\n            <div class=\"EFP_unvisited-timeline\">\n              <i style=\"color: #D0D0D0\" class=\"fa fa-circle-thin  EFP_timeline_icon\" aria-hidden=\"true\"></i>\n              <div style=\"display:flex\">\n                <span style=\"margin-left: 75px;font-weight: bold;color:#7d7d86;\">{{selectedShipment.currentShipment.endLocation.freightLocation.name}}</span>\n              </div>\n\n              <div class=\"fade-sub-header-text\" style=\"margin-left:60px;text-align:left;padding: 18px;font-size:11px;\">\n                <span>Transite Time :</span>\n                <span>{{selectedShipment?.currentShipment?._transiteTime}}</span>\n              </div>\n              <span class=\"custom-button\" style=\"float:right;margin-top:10px;\">\n                <button   md-raised-button style=\"background-color:#428fd4;color:rgba(255, 255, 255, 0.94);\"  (click)=\"goToConfirmPickupView()\">Confirm Pickup</button>\n                </span>\n            </div>\n          </div>\n\n\n          <i style=\"margin-left:48px;margin-top:15px;font-size: 18px;\" class=\"fa fa-circle-thin fade-sub-header-text\" aria-hidden=\"true\"></i>\n          <div style=\"display:flex;\" class=\"fade-sub-header-text\">\n            <span style=\"margin-left: 68px; margin-top:-30px\">Pickup</span>\n            <span style=\"margin-left: -30px;margin-top:-5px;font-weight: bold;color:#7d7d86;\">{{selectedShipment.currentShipment.startLocation.freightLocation.name}}</span>\n          </div>\n\n          </div>\n        </div>\n      </div>\n\n\n    <!-- done -->\n    <div *ngIf=\"vehicleStatus == 'AtPickUpPoint'\" style=\"background-color: white\">\n      <div style=\"color:rgba(0, 0, 0, 0.54);padding: 5px;border: 2px solid lightgrey;\">\n\n        <div style=\"overflow: hidden\">\n          <div class=\"fade-sub-header-text sub-header-text-size\" style=\"margin: 8px 5px 2px 5px;\">\n            <span style=\"margin-left: 64px;\">Delivery</span>\n          </div>\n          <div class=\"EFP_unvisited-timeline\">\n            <i style=\"color: #D0D0D0\" class=\"fa fa-circle-thin  EFP_timeline_icon\" aria-hidden=\"true\"></i>\n            <div style=\"display:flex;font-size:15px;font-weight: bold\">\n              <span class=\"fade-sub-header-text\" style=\"margin-left: 75px;\">{{selectedShipment.currentShipment.endLocation.freightLocation.name}}</span>\n            </div>\n\n            <div class=\"fade-sub-header-text sub-header-text-size\" style=\"text-align:left;padding: 18px;padding-bottom:60px;\">\n              <span style=\"margin-left:50px\">Transit :1440 Km in {{selectedShipment?.currentShipment?._transiteTime}}</span>\n            </div>\n          </div>\n        </div>\n        <!-- **************** for in case of device disconnect ********************** -->\n        <div class=\"vehicle-status1\">\n          <span>At Pickup point</span>\n        </div>\n        <!--   ************************************  -->\n\n        <md-card fxLayout=\"row\" class=\"current-vehicle-card\">\n          <div style=\"margin-left: 31px;\">\n            <img style=\"height:30px;\" src=\"../../../images/trip-icons/Enroute.png\" alt=\"image\">\n          </div>\n          <div style=\"width: 100%\">\n            <div style=\"font-size:14px;padding-left: 8px;padding-right: 5px;\" class=\"custom-button\">\n              <span style=\"line-height: 1.43\">{{selectedShipment.currentShipment.startLocation.freightLocation.name}}</span>\n              <button  md-raised-button color=\"primary\" style=\"background-color:#428fd4;color:rgba(255, 255, 255, 0.94);float:right\" (click)=\"goToConfirmPickupView()\">Confirm Pickup</button>\n            </div>\n\n            <div style=\"white-space: nowrap;margin-bottom: -10px;margin-left:15px\">\n              <span class=\"sub-header-text-size\">Since {{selectedShipment?.currentShipment?.startLocation?._sinceTime}}</span>\n            </div>\n          </div>\n        </md-card>\n      </div>\n    </div>\n\n    <!--done-->\n    <div *ngIf=\"vehicleStatus == 'EnrouteForDestination'\" style=\"background-color: white\">\n      <!-- *****************************     current trip start here *************************** -->\n      <div style=\"color:rgba(0, 0, 0, 0.54);padding: 5px;margin: 5px;border: 2px solid lightgrey;\">\n        <div style=\"overflow: hidden;font-size:12px\">\n          <div>\n            <div class=\"fade-sub-header-text\" style=\"margin: 8px 5px;\">\n              <span style=\"margin-left: 64px;\">Delivery</span>\n              <span class=\"fade-sub-header-text sub-header-text-size\" style=\"float: right;\"> {{selectedShipment['currentShipment']['startLocation']['_endTime']}}</span>\n            </div>\n            <div class=\"EFP_unvisited-timeline\">\n              <i style=\"color: #D0D0D0\" class=\"fa fa-circle-thin  EFP_timeline_icon\" aria-hidden=\"true\"></i>\n              <div style=\"display:flex\" class=\"custom-button\">\n                <span style=\"margin-left: 75px;font-weight: bold;color:#7d7d86;\">{{selectedShipment.currentShipment.endLocation.freightLocation.name}}</span>\n                <button   md-raised-button  style=\"font-size:14px;margin-left:auto;margin-right: -10px;\" (click)=\"goToConfirmDeliveryView()\">Confirm Delivery</button>\n              </div>\n\n              <div class=\"fade-sub-header-text\" style=\"text-align:right;padding: 15px;font-size:11px;\">\n                <!--<span>Transite Time :</span><span>16 hrs</span>-->\n              </div>\n\n            </div>\n          </div>\n        </div>\n        <div class=\"vehicle-status1\">\n          <span>Enroute for Delivery</span>\n        </div>\n\n        <div style=\"overflow: hidden;\">\n          <section class=\"DP-timeline\" style=\"padding: 5px;\">\n              <span class=\"custom-button\"> <button  md-raised-button color=\"primary\" style=\"margin-left:60px;margin-top:-10px;font-size:11px\" (click)=\"goToupdateLocationView()\">add Location</button></span>\n              <div style=\"margin-left:60px;margin-top:10px;font-size: 11px\" *ngIf=\"isShowLocation\">\n                <div fxLayout=\"row\" *ngIf=\"(movLegLength)>=1\" style=\"width:100%;color: #323232;\"><span fxFlex=35>{{movementLegs[0].endLocation.address}}</span>  <span  fxFlex=5></span> <span  fxFlex=60 class=\"fade-sub-header-text sub-header-text-size\" >{{movementLegs[0]?._date}}</span></div><br>\n                <div fxLayout=\"row\"  *ngIf=\"movLegLength>=2\" style=\"width:100%;color: #323232;\"  ><span fxFlex=35 >{{movementLegs[1].endLocation.address}}</span><span  fxFlex=5></span> <span  fxFlex=60 class=\"fade-sub-header-text sub-header-text-size\" >{{movementLegs[1]?._date}}</span></div>\n              </div>\n            <md-expansion-panel class=\"customExpansionPanel\" style=\"box-shadow:none;margin-bottom:20px\" hideToggle=\"true\" >\n              <md-expansion-panel-header (click)=\"isExtended = !isExtended;isShowLocation=!isShowLocation\" style=\"margin-left: 61px;padding:0px;\" *ngIf=\"movLegLength-2>0\">\n                <!-- ******************* when extended == true ******************-->\n                <div *ngIf=\"isExtended\" style=\"width: 100%;\">\n                  <i class=\"fa fa-angle-up\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\"></i>\n                </div>\n                <!-- *******************close when extended == true ******************-->\n\n                <!-- ******************* when extended == false ******************-->\n                <div *ngIf=\"!isExtended\" style=\"display: flex;width: 100%;\" class=\"fade-sub-header-text sub-header-text-size\">\n                  <div style=\"display: grid\">\n                    <i class=\"fa fa-angle-up\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\"></i>\n                    <i class=\"fa fa-angle-down\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\"></i>\n                  </div>\n                  <div style=\"margin-left: 5px;margin-top: 10px;width: 100%;\" >\n                    <span *ngIf=\"(movLegLength-2)>0\">{{movLegLength-2}} &nbsp;&nbsp;more Location</span>\n                  </div>\n                </div>\n                <!-- *******************close when extended == false ******************-->\n              </md-expansion-panel-header>\n\n              <!-- ******************* when extended == true  body containt******************-->\n              <div *ngFor=\"let movmentLeg of movementLegs\" style=\"margin-left: 70px;display:grid\" class=\"fade-sub-header-text sub-header-text-size\" >\n                <div style=\"margin-top: 5px\" fxLayout=\"row\">\n                 <span fxFlex=35>{{movmentLeg.endLocation.address}}</span><span  fxFlex=5></span><span fxFlex=60>{{movmentLeg?._date}}</span>\n               </div>\n              </div>\n              <!-- ******************* close when extended == true  expansion panel body******************-->\n            </md-expansion-panel>\n\n            <div>\n              <i class=\"fa fa-circle DP_timeline-image\" aria-hidden=\"true\"></i>\n            </div>\n          </section>\n          <div style=\"margin-left: 68px;margin-top: -20px;\">\n            <div class=\"fade-sub-header-text sub-header-text-size\" style=\"display:flex;\">\n              <span>Pickup</span>\n              <span style=\"margin-left: auto;\"> {{selectedShipment['currentShipment']['startLocation']['_dateTime']}}</span>\n            </div>\n            <div style=\"display: grid;margin-left: 5px;margin-top: 4px;\">\n              <span class=\"fade-header-text\" style=\"font-size: 13px\">{{selectedShipment?.currentShipment?.startLocation?.freightLocation?.name}}</span>\n              <span style=\"margin-top: 3px;\" class=\"fade-sub-header-text sub-header-text-size\">Loading duration {{selectedShipment['currentShipment']['startLocation']['_loadTime']}}</span>\n            </div>\n          </div>\n        </div>\n      </div>\n      <!-- ************ close current trip ***** -->\n    </div>\n\n    <!--done-->\n    <div *ngIf=\"vehicleStatus == 'AtDestination' && tillTime==null\" style=\"background-color: white\">\n      <div style=\"padding: 5px;border:2px solid lightgrey;\">\n        <div class=\"vehicle-status1\" >\n          <span>At Delivery Point</span>\n        </div>\n\n        <md-card fxLayout=\"row\" class=\"current-vehicle-card\">\n          <div style=\"margin-left: 31px;\">\n            <i style=\"font-size: 38px;\" class=\"fa fa-stop-circle\" aria-hidden=\"true\"></i>\n          </div>\n          <div style=\"width: 100%\">\n            <div class=\"custom-button\" style=\"font-size:16px;padding-left: 8px;padding-right: 5px;display: flex\">\n              <span style=\"line-height: 1.43;margin-right: 5px;margin-top:5px;font-size:13px\">{{selectedShipment?.currentShipment?.endLocation?.freightLocation?.name}}</span>\n              <button  md-raised-button  color=\"primary\" style=\"margin-left:auto;margin-right: -10px;\" (click)=\"goToConfirmDeliveryView()\">Confirm Delivery</button>\n            </div>\n            <div style=\"margin-top: 8px;font-size: 11px;\">\n              <span>Since {{selectedShipment?.currentShipment?.endLocation?._sinceTime}}</span>\n            </div>\n          </div>\n        </md-card>\n\n        <div style=\"overflow: hidden;\">\n          <section class=\"DP-timeline\" style=\"padding: 5px;\">\n            <div style=\"margin-left:60px;margin-top:10px;font-size: 11px\" *ngIf=\"isShowLocation\">\n                <div fxLayout=\"row\" *ngIf=\"movLegLength>=1\"  style=\"width:100%;color: #323232;\"><span fxFlex=35>{{movementLegs[0]?.endLocation?.address}}</span>  <span  fxFlex=5></span> <span  fxFlex=60 class=\"fade-sub-header-text sub-header-text-size\" >{{movementLegs[0]?._date}}</span></div><br>\n                <div fxLayout=\"row\"  *ngIf=\"movLegLength>=2\" style=\"width:100%;color: #323232;\"><span fxFlex=35 >{{movementLegs[1]?.endLocation?.address}}</span>  <span  fxFlex=5></span><span  fxFlex=60 class=\"fade-sub-header-text sub-header-text-size\" >{{movementLegs[1]?._date}}</span></div>\n            </div>\n            <md-expansion-panel class=\"customExpansionPanel\" style=\"box-shadow:none;margin-bottom:40px\" hideToggle=\"true\">\n              <md-expansion-panel-header (click)=\"isExtended = !isExtended;isShowLocation=!isShowLocation\" style=\"margin-left: 61px;padding:0px;\">\n                <!-- ******************* when extended == true ******************-->\n                <div *ngIf=\"isExtended\" style=\"width: 100%;\">\n                  <i class=\"fa fa-angle-up\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\"></i>\n                </div>\n                <!-- *******************close when extended == true ******************-->\n\n                <!-- ******************* when extended == false ******************-->\n                <div *ngIf=\"!isExtended\" style=\"display: flex;width: 100%;\" class=\"fade-sub-header-text sub-header-text-size\">\n                  <div style=\"display: grid\">\n                    <i class=\"fa fa-angle-up\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\"></i>\n                    <i class=\"fa fa-angle-down\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\"></i>\n                  </div>\n                  <div style=\"margin-left: 5px;margin-top: 10px;width: 100%;\">\n                    <span *ngIf=\"movLegLength-2>0\">{{movLegLength-2}} more stops </span>\n                  </div>\n                </div>\n                <!-- *******************close when extended == false ******************-->\n              </md-expansion-panel-header>\n\n              <!-- ******************* when extended == true  body containt******************-->\n              <div *ngFor=\"let movmentLeg of movementLegs\" style=\"margin-left: 70px;display:grid\" class=\"fade-sub-header-text sub-header-text-size\">\n                  <div style=\"margin-top: 5px\" fxLayout=\"row\">\n                      <span fxFlex=35>{{movmentLeg.endLocation.address}}</span><span fxFlex=5></span><span fxFlex=60>{{movmentLeg?._date}}</span>\n                  </div>\n              </div>\n              <!-- ******************* close when extended == true  expansion panel body******************-->\n            </md-expansion-panel>\n\n            <div>\n              <i class=\"fa fa-circle DP_timeline-image\" aria-hidden=\"true\"></i>\n            </div>\n          </section>\n          <div style=\"margin-left: 68px;margin-top: -20px;\">\n            <div class=\"fade-sub-header-text sub-header-text-size\" style=\"display:flex;\">\n              <span>Pickup</span>\n              <span style=\"margin-left: auto;\">{{selectedShipment['currentShipment']['startLocation']['_dateTime']}}</span>\n            </div>\n            <div style=\"display: grid;margin-left: 5px;margin-top: 4px;\">\n              <span class=\"fade-header-text\" style=\"font-size: 13px\">{{selectedShipment.currentShipment.startLocation.freightLocation.name}}</span>\n              <span style=\"margin-top: 3px;\" class=\"fade-sub-header-text sub-header-text-size\">Loading duration {{selectedShipment['currentShipment']['startLocation']['_loadTime']}}</span>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n    <!--done-->\n    <div *ngIf=\"vehicleStatus == 'AtDestination' && tillTime!=null\" style=\"background-color: white\">\n        <div style=\"padding: 5px;border:2px solid lightgrey;\">\n\n          <div style=\"margin-top:10px\">\n                <i class=\"fa fa-circle DP_timeline-image\" style=\"padding: 5px;\" aria-hidden=\"true\"></i>\n                <section class=\"DP-timeline1\" style=\"padding: 5px;\">\n                  <div  style=\"margin-left: 68px;margin-top:-40px\">\n                      <div  style=\"display:flex;\" class=\" fade-sub-header-text sub-header-text-size\">\n                        <span >Delivery</span>\n                        <span style=\"margin-left: auto;\">{{selectedShipment['currentShipment']['endLocation']['_destDateTime']}}</span>              \n                      </div>\n                      <div style=\"display: grid;margin-left: 5px;margin-top: 4px;\">\n                        <span class=\"fade-header-text\" style=\"font-size: 13px\">{{selectedShipment.currentShipment.endLocation.freightLocation.name}}</span>\n                        <span style=\"margin-top: 3px;\" class=\"fade-sub-header-text sub-header-text-size\">Unloading duration {{selectedShipment['currentShipment']['endLocation']['_unLoadTime']}}</span>\n                      </div>\n                      <div>\n                        <span style=\"margin-left:-35px;margin-top:20px;font-size: 13px\"></span>\n                        <div  style=\"margin-top:10px;font-size: 11px;margin-left: 5px;\" *ngIf=\"isShowLocation\">\n                          <div fxLayout=\"row\" style=\"width:100%\"  *ngIf=\"movLegLength>1\"><span fxFlex=35 >{{movementLegs[0].endLocation.address}}</span> <span  fxFlex=5></span><span  fxFlex=60 class=\"fade-sub-header-text sub-header-text-size\" >{{movementLegs[0]?._date}}</span></div><br>\n                          <div  fxLayout=\"row\" style=\"width:100%\" *ngIf=\"movLegLength>2\"> <span fxFlex=35 >{{movementLegs[1].endLocation.address}}</span>  <span  fxFlex=5></span><span  fxFlex=60 class=\"fade-sub-header-text sub-header-text-size\" >{{movementLegs[1]?._date}}</span></div>\n                        </div>\n\n                      </div>\n                  </div>\n                </section>\n          </div>\n\n          <div style=\"overflow: hidden;\">\n            <section class=\"DP-timeline\" style=\"padding: 5px; margin-top:-10px\">\n              <md-expansion-panel class=\"customExpansionPanel\" style=\"box-shadow:none;margin-bottom:40px\" hideToggle=\"true\">\n                <md-expansion-panel-header (click)=\"isExtended = !isExtended;isShowLocation=!isShowLocation\" style=\"margin-left: 61px;padding:0px;\">\n                  <!-- ******************* when extended == true ******************-->\n                  <div *ngIf=\"isExtended\" style=\"width: 100%;\">\n                    <i class=\"fa fa-angle-up\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\"></i>\n                  </div>\n                  <!-- *******************close when extended == true ******************-->\n\n                  <!-- ******************* when extended == false ******************-->\n                  <div *ngIf=\"!isExtended\" style=\"display: flex;width: 100%;\" class=\"fade-sub-header-text sub-header-text-size\">\n                    <div style=\"display: grid\">\n                      <i class=\"fa fa-angle-up\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\"></i>\n                      <i class=\"fa fa-angle-down\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\"></i>\n                    </div>\n                    <div style=\"margin-left: 5px;margin-top: 10px;width: 100%;\">\n                      <span *ngIf=\"movLegLength-2>0\">{{movLegLength-2}} more&nbsp;locations</span>\n                    </div>\n                  </div>\n                  <!-- *******************close when extended == false ******************-->\n                </md-expansion-panel-header>\n\n                <!-- ******************* when extended == true  body containt******************-->\n                <div *ngFor=\"let movmentLeg of movementLegs\" style=\"margin-left: 70px;display:grid\" class=\"fade-sub-header-text sub-header-text-size\">\n                    <div style=\"margin-top: 5px\" fxLayout=\"row\">\n                        <span fxFlex=35>{{movmentLeg?.endLocation?.address}}</span> <span  fxFlex=5></span><span fxFlex=60>{{movmentLeg?._date}}</span>\n                      </div> </div>\n                <!-- ******************* close when extended == true  expansion panel body******************-->\n              </md-expansion-panel>\n\n              <div>\n                <i class=\"fa fa-circle DP_timeline-image\" aria-hidden=\"true\"></i>\n              </div>\n            </section>\n            <div style=\"margin-left: 68px;margin-top: -20px;\">\n              <div class=\"fade-sub-header-text sub-header-text-size\" style=\"display:flex;\">\n                <span>Pickup</span>\n                <span style=\"margin-left: auto;\">{{selectedShipment['currentShipment']['startLocation']['_dateTime']}}</span>\n              </div>\n              <div style=\"display: grid;margin-left: 5px;margin-top: 4px;\">\n                <span class=\"fade-header-text\" style=\"font-size: 13px\">{{selectedShipment.currentShipment.startLocation.freightLocation.name}}</span>\n                <span style=\"margin-top: 3px;\" class=\"fade-sub-header-text sub-header-text-size\">Loading duration {{selectedShipment['currentShipment']['startLocation']['_loadTime']}}</span>\n              </div>\n            </div>\n          </div>\n        </div>\n    </div>\n\n</div>\n"
+module.exports = "<div style=\"width: 100%;top: 0px;z-index:100;background-color: white;\" class=\"slow-down\">\r\n    <md-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></md-spinner>\r\n    <div>\r\n        <div>\r\n           <span class=\"driver-name-web\" >Driver</span>\r\n        </div>\r\n        <div>\r\n           <a class=\"driver-name-web\" href=\"tel:{{selectedShipment['currentShipment']?.mobileNo}}\" >\r\n             <i  class=\"fa fa-phone\" aria-hidden=\"true\"></i>&nbsp;+91{{selectedShipment['currentShipment']?.mobileNo}}\r\n           </a>\r\n        </div>\r\n    </div>\r\n    <!--************************ confirm pickup dialog *********************************-->\r\n    <div *ngIf=\"isConfirmPickupDialog\"  class=\"mycustomDialog\" style=\"padding-top: 70px;overflow:unset\">\r\n      <div class=\"modal-content\" style=\"width: 60%;min-width: 250px;overflow:unset;max-width: 560px;margin-top: 34px;height:60vh;\">\r\n        <div class=\"modal-header\">\r\n          <span class=\"close\" (click)=\"isConfirmPickupDialog=false;\" >&times;</span>\r\n          <div>\r\n            <label>{{forEditPlace}}</label>\r\n          </div>\r\n        </div>\r\n\r\n        <div  style=\"padding: 18px;font-size: 17px;margin-top:40px;overflow:unset;\" >\r\n          <div >\r\n            <span style=\"color:red;font-size: 13px;margin-left: 70px;\" >{{validationErrorMgs}}</span>\r\n            <div style=\"margin-left: 60px\" >\r\n              <label>Pickup Location&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;</label><span> {{pickupLocation}}</span>\r\n            </div>\r\n            <div style=\"margin-left: 60px;margin-top: 15px;\">\r\n              <label>Reporting Time&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;</label>\r\n              <div fxFlex=\"48\" style=\"width:65%;\">\r\n                <owl-date-time [autoClose]=true placeholder=\"ReportingTime\" [(ngModel)]=\"reportingTime\" id=\"reportingTime\"  [dateFormat]=\"'DD-MM-YYYY hh:mm'\" (onFocus)=\"validationErrorMgs=null\" ></owl-date-time>\r\n              </div>\r\n              <!-- <md-input-container>\r\n                <input mdInput [(ngModel)]=\"reportingTime\" name=\"reportingTime\"   (focus)=\"changeTime1()\"\r\n                onkeydown=\"if(((event.keyCode<=65 &&  event.keyCode>=122)) && event.keyCode!=8 && event.keyCode!=13 )return false;\">\r\n              </md-input-container> -->\r\n            </div>\r\n            <div style=\"margin-left: 60px;margin-top: 15px;\">\r\n              <label>Departure Time&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp; </label>\r\n              <div fxFlex=\"48\" style=\"width:65%;\">                  \r\n                <owl-date-time [autoClose]=true placeholder=\"Deptature Time\" [(ngModel)]=\"deptatureTime\" id=\"deptatureTime\"  [dateFormat]=\"'DD-MM-YYYY hh:mm'\" (onFocus)=\"validationErrorMgs=null\"></owl-date-time>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div style=\"margin-top: 40px;\">\r\n              <button md-raised-button  style=\"margin-left: 120px;margin-top: 30px\" (click)=\"isConfirmPickupDialog=false;\" >Cancel</button>\r\n              <button md-raised-button  style=\"margin-left: 60px;margin-top: 30px;width: 30%\" (click)=\"confirmPickup()\" >Confirm Pickup</button>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <!-- close edit trip dialog -->\r\n    <!--************************ confirm delivery dialog *********************************-->\r\n    <div *ngIf=\"isConfirmDeliveryDialog\"  class=\"mycustomDialog\" style=\"padding-top: 70px;overflow:unset\">\r\n      <div class=\"modal-content\" style=\"width: 60%;min-width: 250px;overflow:unset;max-width: 560px;height:60vh;\">\r\n        <div class=\"modal-header\">\r\n          <span class=\"close\" (click)=\"isConfirmDeliveryDialog=false;\" >&times;</span>\r\n          <div>\r\n            <label>{{forEditPlace}}</label>\r\n          </div>\r\n        </div>\r\n\r\n        <div  style=\"padding: 18px;font-size: 17px;margin-top:40px ;\" >\r\n            <span style=\"color:red;font-size: 13px;margin-left: 70px;\" >{{validationErrorMgs}}</span>\r\n            <div style=\"margin-left: 60px\" >\r\n                <label>Delivery Location&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp; </label><span>{{deliveryLocation}}</span>\r\n              </div>\r\n            <div style=\"margin-left: 60px;margin-top: 15px;\">\r\n                <label>Reporting Time &nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp; </label>\r\n                <div fxFlex=\"48\" style=\"width:65%;\">                 \r\n                  <owl-date-time [autoClose]=true placeholder=\"'DD-MM-YYYY hh:mm'\" [(ngModel)]=\"reportingTime\" id=\"reportingTime\"  [dateFormat]=\"'DD-MM-YYYY hh:mm'\"  (onFocus)=\"validationErrorMgs=null\"></owl-date-time>              \r\n                </div>\r\n            </div>\r\n            <div style=\"margin-left: 60px;margin-top: 15px;\">\r\n              <label>Departure Time&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;</label>\r\n              <div fxFlex=\"48\" style=\"width:65%;overflow:unset\">                  \r\n               <owl-date-time [autoClose]=true placeholder=\"'DD-MM-YYYY hh:mm'\" [(ngModel)]=\"deptatureTime\" id=\"deptatureTime\"  [dateFormat]=\"'DD-MM-YYYY hh:mm'\" (onFocus)=\"validationErrorMgs=null\"></owl-date-time>              \r\n              </div>\r\n            </div>\r\n\r\n        </div>\r\n        <div style=\"margin-top: 40px;\">\r\n            <button md-raised-button  style=\"margin-left: 120px;margin-top: 30px\" (click)=\"isConfirmDeliveryDialog=false;\" >Cancel</button>\r\n            <button md-raised-button  style=\"margin-left: 60px;margin-top: 30px;width: 30%\" (click)=\"confirmDelivery()\" >Confirm Delivery</button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <!-- close edit trip dialog -->\r\n\r\n    <!--************************ add loaction dialog *********************************-->\r\n    <div *ngIf=\"isConfirmUpdateLocationDialog\"  class=\"mycustomDialog\" style=\"padding-top: 70px;overflow:unset\">\r\n      <div class=\"modal-content\" style=\"width: 60%;min-width: 250px;overflow: unset;max-width: 560px;height:60vh;\">\r\n        <div class=\"modal-header\">\r\n          <span class=\"close\" (click)=\"isConfirmUpdateLocationDialog=false;\" >&times;</span>\r\n          <div>\r\n            <label>{{forEditPlace}}</label>\r\n          </div>\r\n        </div>\r\n\r\n        <div  style=\"padding: 18px;font-size: 17px;margin-top:40px;overflow:unset;\" >\r\n            <span style=\"color:red;font-size: 13px\" >{{validationErrorMgs}}</span>            \r\n            <div style=\"margin-left: 60px\">\r\n                <label>Current Location &nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp; </label>\r\n                <md-input-container>\r\n                  <input mdInput [(ngModel)]=\"currentLocationName\" name=\"currentLocationName\" id=\"currentLocationName\">\r\n                </md-input-container>\r\n            </div>\r\n            <div style=\"margin-left: 60px\">\r\n              <label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;</label>\r\n              <div fxFlex=\"48\" style=\"width:65%;\">\r\n                <owl-date-time [autoClose]=true placeholder=\"Update Time\" [(ngModel)]=\"updateTime\" id=\"updateTime\"  [dateFormat]=\"'DD-MM-YYYY hh:mm'\" (onFocus)=\"validationErrorMgs=null\"></owl-date-time>\r\n              </div>\r\n              <!-- <md-input-container>\r\n                <input  mdInput [(ngModel)]=\"updateTime\" name=\"updateTime\" id=\"updateTime\" (focus)=\"changeTime2()\"\r\n                onkeydown=\"if(((event.keyCode<=65 &&  event.keyCode>=122)) && event.keyCode!=8 && event.keyCode!=13 )return false;\">\r\n              </md-input-container> -->\r\n            </div>\r\n\r\n        </div>\r\n        <div style=\"margin-top: 30px\">\r\n            <button md-raised-button  style=\"margin-left: 120px;margin-top: 30px\" (click)=\"isConfirmUpdateLocationDialog=false;\" >Cancel</button>\r\n            <button md-raised-button  style=\"margin-left: 60px;margin-top: 30px;width: 30%\" (click)=\"addLocation()\" >Update Location</button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <!-- close add location dialog -->\r\n\r\n    <!-- done    selected vahicle for Manually Shipment Tracking -->\r\n    <!-- done -->\r\n\r\n    <div *ngIf=\"vehicleStatus == 'EnrouteForPickUp'\" style=\"background-color: white\">\r\n      <div style=\"color:rgba(0, 0, 0, 0.54);padding: 5px;border: 2px solid lightgrey;\">\r\n        <div style=\"overflow: hidden;font-size:12px\">\r\n          <div>\r\n            <div class=\"fade-sub-header-text\" style=\"margin: 8px 5px;\">\r\n              <span style=\"margin-left: 64px;\">Delivery</span>\r\n            </div>\r\n            <div class=\"EFP_unvisited-timeline\">\r\n              <i style=\"color: #D0D0D0\" class=\"fa fa-circle-thin  EFP_timeline_icon\" aria-hidden=\"true\"></i>\r\n              <div style=\"display:flex\">\r\n                <span style=\"margin-left: 75px;font-weight: bold;color:#7d7d86;\">{{selectedShipment.currentShipment.endLocation.freightLocation.name}}</span>\r\n              </div>\r\n\r\n              <div class=\"fade-sub-header-text\" style=\"margin-left:60px;text-align:left;padding: 18px;font-size:11px;\">\r\n                <span>Transite Time :</span>\r\n                <span>{{selectedShipment?.currentShipment?._transiteTime}}</span>\r\n              </div>\r\n              <span class=\"custom-button\" style=\"float:right;margin-top:10px;\">\r\n                <button   md-raised-button style=\"background-color:#428fd4;color:rgba(255, 255, 255, 0.94);\"  (click)=\"goToConfirmPickupView()\">Confirm Pickup</button>\r\n                </span>\r\n            </div>\r\n          </div>\r\n\r\n\r\n          <i style=\"margin-left:48px;margin-top:15px;font-size: 18px;\" class=\"fa fa-circle-thin fade-sub-header-text\" aria-hidden=\"true\"></i>\r\n          <div style=\"display:flex;\" class=\"fade-sub-header-text\">\r\n            <span style=\"margin-left: 68px; margin-top:-30px\">Pickup</span>\r\n            <span style=\"margin-left: -30px;margin-top:-5px;font-weight: bold;color:#7d7d86;\">{{selectedShipment.currentShipment.startLocation.freightLocation.name}}</span>\r\n          </div>\r\n\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n\r\n    <!-- done -->\r\n    <div *ngIf=\"vehicleStatus == 'AtPickUpPoint'\" style=\"background-color: white\">\r\n      <div style=\"color:rgba(0, 0, 0, 0.54);padding: 5px;border: 2px solid lightgrey;\">\r\n\r\n        <div style=\"overflow: hidden\">\r\n          <div class=\"fade-sub-header-text sub-header-text-size\" style=\"margin: 8px 5px 2px 5px;\">\r\n            <span style=\"margin-left: 64px;\">Delivery</span>\r\n          </div>\r\n          <div class=\"EFP_unvisited-timeline\">\r\n            <i style=\"color: #D0D0D0\" class=\"fa fa-circle-thin  EFP_timeline_icon\" aria-hidden=\"true\"></i>\r\n            <div style=\"display:flex;font-size:15px;font-weight: bold\">\r\n              <span class=\"fade-sub-header-text\" style=\"margin-left: 75px;\">{{selectedShipment.currentShipment.endLocation.freightLocation.name}}</span>\r\n            </div>\r\n\r\n            <div class=\"fade-sub-header-text sub-header-text-size\" style=\"text-align:left;padding: 18px;padding-bottom:60px;\">\r\n              <span style=\"margin-left:50px\">Transit :1440 Km in {{selectedShipment?.currentShipment?._transiteTime}}</span>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <!-- **************** for in case of device disconnect ********************** -->\r\n        <div class=\"vehicle-status1\">\r\n          <span>At Pickup point</span>\r\n        </div>\r\n        <!--   ************************************  -->\r\n\r\n        <md-card fxLayout=\"row\" class=\"current-vehicle-card\">\r\n          <div style=\"margin-left: 31px;\">\r\n            <img style=\"height:30px;\" src=\"../../../images/trip-icons/Enroute.png\" alt=\"image\">\r\n          </div>\r\n          <div style=\"width: 100%\">\r\n            <div style=\"font-size:14px;padding-left: 8px;padding-right: 5px;\" class=\"custom-button\">\r\n              <span style=\"line-height: 1.43\">{{selectedShipment.currentShipment.startLocation.freightLocation.name}}</span>\r\n              <button  md-raised-button color=\"primary\" style=\"background-color:#428fd4;color:rgba(255, 255, 255, 0.94);float:right\" (click)=\"goToConfirmPickupView()\">Confirm Pickup</button>\r\n            </div>\r\n\r\n            <div style=\"white-space: nowrap;margin-bottom: -10px;margin-left:15px\">\r\n              <span class=\"sub-header-text-size\">Since {{selectedShipment?.currentShipment?.startLocation?._sinceTime}}</span>\r\n            </div>\r\n          </div>\r\n        </md-card>\r\n      </div>\r\n    </div>\r\n\r\n    <!--done-->\r\n    <div *ngIf=\"vehicleStatus == 'EnrouteForDestination'\" style=\"background-color: white\">\r\n      <!-- *****************************     current trip start here *************************** -->\r\n      <div style=\"color:rgba(0, 0, 0, 0.54);padding: 5px;margin: 5px;border: 2px solid lightgrey;\">\r\n        <div style=\"overflow: hidden;font-size:12px\">\r\n          <div>\r\n            <div class=\"fade-sub-header-text\" style=\"margin: 8px 5px;\">\r\n              <span style=\"margin-left: 64px;\">Delivery</span>\r\n              <span class=\"fade-sub-header-text sub-header-text-size\" style=\"float: right;\"> {{selectedShipment['currentShipment']['startLocation']['_endTime']}}</span>\r\n            </div>\r\n            <div class=\"EFP_unvisited-timeline\">\r\n              <i style=\"color: #D0D0D0\" class=\"fa fa-circle-thin  EFP_timeline_icon\" aria-hidden=\"true\"></i>\r\n              <div style=\"display:flex\" class=\"custom-button\">\r\n                <span style=\"margin-left: 75px;font-weight: bold;color:#7d7d86;\">{{selectedShipment.currentShipment.endLocation.freightLocation.name}}</span>\r\n                <button   md-raised-button  style=\"font-size:14px;margin-left:auto;margin-right: -10px;\" (click)=\"goToConfirmDeliveryView()\">Confirm Delivery</button>\r\n              </div>\r\n\r\n              <div class=\"fade-sub-header-text\" style=\"text-align:right;padding: 15px;font-size:11px;\">\r\n                <!--<span>Transite Time :</span><span>16 hrs</span>-->\r\n              </div>\r\n\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"vehicle-status1\">\r\n          <span>Enroute for Delivery</span>\r\n        </div>\r\n\r\n        <div style=\"overflow: hidden;\">\r\n          <section class=\"DP-timeline\" style=\"padding: 5px;\">\r\n              <span class=\"custom-button\"> <button  md-raised-button color=\"primary\" style=\"margin-left:60px;margin-top:-10px;font-size:11px\" (click)=\"goToupdateLocationView()\">add Location</button></span>\r\n              <div style=\"margin-left:60px;margin-top:10px;font-size: 11px\" *ngIf=\"isShowLocation\">\r\n                <div fxLayout=\"row\" *ngIf=\"(movLegLength)>=1\" style=\"width:100%;color: #323232;\"><span fxFlex=35>{{movementLegs[0].endLocation.address}}</span>  <span  fxFlex=5></span> <span  fxFlex=60 class=\"fade-sub-header-text sub-header-text-size\" >{{movementLegs[0]?._date}}</span></div><br>\r\n                <div fxLayout=\"row\"  *ngIf=\"movLegLength>=2\" style=\"width:100%;color: #323232;\"  ><span fxFlex=35 >{{movementLegs[1].endLocation.address}}</span><span  fxFlex=5></span> <span  fxFlex=60 class=\"fade-sub-header-text sub-header-text-size\" >{{movementLegs[1]?._date}}</span></div>\r\n              </div>\r\n            <md-expansion-panel class=\"customExpansionPanel\" style=\"box-shadow:none;margin-bottom:20px\" hideToggle=\"true\" >\r\n              <md-expansion-panel-header (click)=\"isExtended = !isExtended;isShowLocation=!isShowLocation\" style=\"margin-left: 61px;padding:0px;\" *ngIf=\"movLegLength-2>0\">\r\n                <!-- ******************* when extended == true ******************-->\r\n                <div *ngIf=\"isExtended\" style=\"width: 100%;\">\r\n                  <i class=\"fa fa-angle-up\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\"></i>\r\n                </div>\r\n                <!-- *******************close when extended == true ******************-->\r\n\r\n                <!-- ******************* when extended == false ******************-->\r\n                <div *ngIf=\"!isExtended\" style=\"display: flex;width: 100%;\" class=\"fade-sub-header-text sub-header-text-size\">\r\n                  <div style=\"display: grid\">\r\n                    <i class=\"fa fa-angle-up\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\"></i>\r\n                    <i class=\"fa fa-angle-down\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\"></i>\r\n                  </div>\r\n                  <div style=\"margin-left: 5px;margin-top: 10px;width: 100%;\" >\r\n                    <span *ngIf=\"(movLegLength-2)>0\">{{movLegLength-2}} &nbsp;&nbsp;more Location</span>\r\n                  </div>\r\n                </div>\r\n                <!-- *******************close when extended == false ******************-->\r\n              </md-expansion-panel-header>\r\n\r\n              <!-- ******************* when extended == true  body containt******************-->\r\n              <div *ngFor=\"let movmentLeg of movementLegs\" style=\"margin-left: 70px;display:grid\" class=\"fade-sub-header-text sub-header-text-size\" >\r\n                <div style=\"margin-top: 5px\" fxLayout=\"row\">\r\n                 <span fxFlex=35>{{movmentLeg.endLocation.address}}</span><span  fxFlex=5></span><span fxFlex=60>{{movmentLeg?._date}}</span>\r\n               </div>\r\n              </div>\r\n              <!-- ******************* close when extended == true  expansion panel body******************-->\r\n            </md-expansion-panel>\r\n\r\n            <div>\r\n              <i class=\"fa fa-circle DP_timeline-image\" aria-hidden=\"true\"></i>\r\n            </div>\r\n          </section>\r\n          <div style=\"margin-left: 68px;margin-top: -20px;\">\r\n            <div class=\"fade-sub-header-text sub-header-text-size\" style=\"display:flex;\">\r\n              <span>Pickup</span>\r\n              <span style=\"margin-left: auto;\"> {{selectedShipment['currentShipment']['startLocation']['_dateTime']}}</span>\r\n            </div>\r\n            <div style=\"display: grid;margin-left: 5px;margin-top: 4px;\">\r\n              <span class=\"fade-header-text\" style=\"font-size: 13px\">{{selectedShipment?.currentShipment?.startLocation?.freightLocation?.name}}</span>\r\n              <span style=\"margin-top: 3px;\" class=\"fade-sub-header-text sub-header-text-size\">Loading duration {{selectedShipment['currentShipment']['startLocation']['_loadTime']}}</span>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <!-- ************ close current trip ***** -->\r\n    </div>\r\n\r\n    <!--done-->\r\n    <div *ngIf=\"vehicleStatus == 'AtDestination' && tillTime==null\" style=\"background-color: white\">\r\n      <div style=\"padding: 5px;border:2px solid lightgrey;\">\r\n        <div class=\"vehicle-status1\" >\r\n          <span>At Delivery Point</span>\r\n        </div>\r\n\r\n        <md-card fxLayout=\"row\" class=\"current-vehicle-card\">\r\n          <div style=\"margin-left: 31px;\">\r\n            <i style=\"font-size: 38px;\" class=\"fa fa-stop-circle\" aria-hidden=\"true\"></i>\r\n          </div>\r\n          <div style=\"width: 100%\">\r\n            <div class=\"custom-button\" style=\"font-size:16px;padding-left: 8px;padding-right: 5px;display: flex\">\r\n              <span style=\"line-height: 1.43;margin-right: 5px;margin-top:5px;font-size:13px\">{{selectedShipment?.currentShipment?.endLocation?.freightLocation?.name}}</span>\r\n              <button  md-raised-button  color=\"primary\" style=\"margin-left:auto;margin-right: -10px;\" (click)=\"goToConfirmDeliveryView()\">Confirm Delivery</button>\r\n            </div>\r\n            <div style=\"margin-top: 8px;font-size: 11px;\">\r\n              <span>Since {{selectedShipment?.currentShipment?.endLocation?._sinceTime}}</span>\r\n            </div>\r\n          </div>\r\n        </md-card>\r\n\r\n        <div style=\"overflow: hidden;\">\r\n          <section class=\"DP-timeline\" style=\"padding: 5px;\">\r\n            <div style=\"margin-left:60px;margin-top:10px;font-size: 11px\" *ngIf=\"isShowLocation\">\r\n                <div fxLayout=\"row\" *ngIf=\"movLegLength>=1\"  style=\"width:100%;color: #323232;\"><span fxFlex=35>{{movementLegs[0]?.endLocation?.address}}</span>  <span  fxFlex=5></span> <span  fxFlex=60 class=\"fade-sub-header-text sub-header-text-size\" >{{movementLegs[0]?._date}}</span></div><br>\r\n                <div fxLayout=\"row\"  *ngIf=\"movLegLength>=2\" style=\"width:100%;color: #323232;\"><span fxFlex=35 >{{movementLegs[1]?.endLocation?.address}}</span>  <span  fxFlex=5></span><span  fxFlex=60 class=\"fade-sub-header-text sub-header-text-size\" >{{movementLegs[1]?._date}}</span></div>\r\n            </div>\r\n            <md-expansion-panel class=\"customExpansionPanel\" style=\"box-shadow:none;margin-bottom:40px\" hideToggle=\"true\">\r\n              <md-expansion-panel-header (click)=\"isExtended = !isExtended;isShowLocation=!isShowLocation\" style=\"margin-left: 61px;padding:0px;\">\r\n                <!-- ******************* when extended == true ******************-->\r\n                <div *ngIf=\"isExtended\" style=\"width: 100%;\">\r\n                  <i class=\"fa fa-angle-up\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\"></i>\r\n                </div>\r\n                <!-- *******************close when extended == true ******************-->\r\n\r\n                <!-- ******************* when extended == false ******************-->\r\n                <div *ngIf=\"!isExtended\" style=\"display: flex;width: 100%;\" class=\"fade-sub-header-text sub-header-text-size\">\r\n                  <div style=\"display: grid\">\r\n                    <i class=\"fa fa-angle-up\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\"></i>\r\n                    <i class=\"fa fa-angle-down\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\"></i>\r\n                  </div>\r\n                  <div style=\"margin-left: 5px;margin-top: 10px;width: 100%;\">\r\n                    <span *ngIf=\"movLegLength-2>0\">{{movLegLength-2}} more stops </span>\r\n                  </div>\r\n                </div>\r\n                <!-- *******************close when extended == false ******************-->\r\n              </md-expansion-panel-header>\r\n\r\n              <!-- ******************* when extended == true  body containt******************-->\r\n              <div *ngFor=\"let movmentLeg of movementLegs\" style=\"margin-left: 70px;display:grid\" class=\"fade-sub-header-text sub-header-text-size\">\r\n                  <div style=\"margin-top: 5px\" fxLayout=\"row\">\r\n                      <span fxFlex=35>{{movmentLeg.endLocation.address}}</span><span fxFlex=5></span><span fxFlex=60>{{movmentLeg?._date}}</span>\r\n                  </div>\r\n              </div>\r\n              <!-- ******************* close when extended == true  expansion panel body******************-->\r\n            </md-expansion-panel>\r\n\r\n            <div>\r\n              <i class=\"fa fa-circle DP_timeline-image\" aria-hidden=\"true\"></i>\r\n            </div>\r\n          </section>\r\n          <div style=\"margin-left: 68px;margin-top: -20px;\">\r\n            <div class=\"fade-sub-header-text sub-header-text-size\" style=\"display:flex;\">\r\n              <span>Pickup</span>\r\n              <span style=\"margin-left: auto;\">{{selectedShipment['currentShipment']['startLocation']['_dateTime']}}</span>\r\n            </div>\r\n            <div style=\"display: grid;margin-left: 5px;margin-top: 4px;\">\r\n              <span class=\"fade-header-text\" style=\"font-size: 13px\">{{selectedShipment.currentShipment.startLocation.freightLocation.name}}</span>\r\n              <span style=\"margin-top: 3px;\" class=\"fade-sub-header-text sub-header-text-size\">Loading duration {{selectedShipment['currentShipment']['startLocation']['_loadTime']}}</span>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <!--done-->\r\n    <div *ngIf=\"vehicleStatus == 'AtDestination' && tillTime!=null\" style=\"background-color: white\">\r\n        <div style=\"padding: 5px;border:2px solid lightgrey;\">\r\n\r\n          <div style=\"margin-top:10px\">\r\n                <i class=\"fa fa-circle DP_timeline-image\" style=\"padding: 5px;\" aria-hidden=\"true\"></i>\r\n                <section class=\"DP-timeline1\" style=\"padding: 5px;\">\r\n                  <div  style=\"margin-left: 68px;margin-top:-40px\">\r\n                      <div  style=\"display:flex;\" class=\" fade-sub-header-text sub-header-text-size\">\r\n                        <span >Delivery</span>\r\n                        <span style=\"margin-left: auto;\">{{selectedShipment['currentShipment']['endLocation']['_destDateTime']}}</span>              \r\n                      </div>\r\n                      <div style=\"display: grid;margin-left: 5px;margin-top: 4px;\">\r\n                        <span class=\"fade-header-text\" style=\"font-size: 13px\">{{selectedShipment.currentShipment.endLocation.freightLocation.name}}</span>\r\n                        <span style=\"margin-top: 3px;\" class=\"fade-sub-header-text sub-header-text-size\">Unloading duration {{selectedShipment['currentShipment']['endLocation']['_unLoadTime']}}</span>\r\n                      </div>\r\n                      <div>\r\n                        <span style=\"margin-left:-35px;margin-top:20px;font-size: 13px\"></span>\r\n                        <div  style=\"margin-top:10px;font-size: 11px;margin-left: 5px;\" *ngIf=\"isShowLocation\">\r\n                          <div fxLayout=\"row\" style=\"width:100%\"  *ngIf=\"movLegLength>1\"><span fxFlex=35 >{{movementLegs[0].endLocation.address}}</span> <span  fxFlex=5></span><span  fxFlex=60 class=\"fade-sub-header-text sub-header-text-size\" >{{movementLegs[0]?._date}}</span></div><br>\r\n                          <div  fxLayout=\"row\" style=\"width:100%\" *ngIf=\"movLegLength>2\"> <span fxFlex=35 >{{movementLegs[1].endLocation.address}}</span>  <span  fxFlex=5></span><span  fxFlex=60 class=\"fade-sub-header-text sub-header-text-size\" >{{movementLegs[1]?._date}}</span></div>\r\n                        </div>\r\n\r\n                      </div>\r\n                  </div>\r\n                </section>\r\n          </div>\r\n\r\n          <div style=\"overflow: hidden;\">\r\n            <section class=\"DP-timeline\" style=\"padding: 5px; margin-top:-10px\">\r\n              <md-expansion-panel class=\"customExpansionPanel\" style=\"box-shadow:none;margin-bottom:40px\" hideToggle=\"true\">\r\n                <md-expansion-panel-header (click)=\"isExtended = !isExtended;isShowLocation=!isShowLocation\" style=\"margin-left: 61px;padding:0px;\">\r\n                  <!-- ******************* when extended == true ******************-->\r\n                  <div *ngIf=\"isExtended\" style=\"width: 100%;\">\r\n                    <i class=\"fa fa-angle-up\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\"></i>\r\n                  </div>\r\n                  <!-- *******************close when extended == true ******************-->\r\n\r\n                  <!-- ******************* when extended == false ******************-->\r\n                  <div *ngIf=\"!isExtended\" style=\"display: flex;width: 100%;\" class=\"fade-sub-header-text sub-header-text-size\">\r\n                    <div style=\"display: grid\">\r\n                      <i class=\"fa fa-angle-up\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\"></i>\r\n                      <i class=\"fa fa-angle-down\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\"></i>\r\n                    </div>\r\n                    <div style=\"margin-left: 5px;margin-top: 10px;width: 100%;\">\r\n                      <span *ngIf=\"movLegLength-2>0\">{{movLegLength-2}} more&nbsp;locations</span>\r\n                    </div>\r\n                  </div>\r\n                  <!-- *******************close when extended == false ******************-->\r\n                </md-expansion-panel-header>\r\n\r\n                <!-- ******************* when extended == true  body containt******************-->\r\n                <div *ngFor=\"let movmentLeg of movementLegs\" style=\"margin-left: 70px;display:grid\" class=\"fade-sub-header-text sub-header-text-size\">\r\n                    <div style=\"margin-top: 5px\" fxLayout=\"row\">\r\n                        <span fxFlex=35>{{movmentLeg?.endLocation?.address}}</span> <span  fxFlex=5></span><span fxFlex=60>{{movmentLeg?._date}}</span>\r\n                      </div> </div>\r\n                <!-- ******************* close when extended == true  expansion panel body******************-->\r\n              </md-expansion-panel>\r\n\r\n              <div>\r\n                <i class=\"fa fa-circle DP_timeline-image\" aria-hidden=\"true\"></i>\r\n              </div>\r\n            </section>\r\n            <div style=\"margin-left: 68px;margin-top: -20px;\">\r\n              <div class=\"fade-sub-header-text sub-header-text-size\" style=\"display:flex;\">\r\n                <span>Pickup</span>\r\n                <span style=\"margin-left: auto;\">{{selectedShipment['currentShipment']['startLocation']['_dateTime']}}</span>\r\n              </div>\r\n              <div style=\"display: grid;margin-left: 5px;margin-top: 4px;\">\r\n                <span class=\"fade-header-text\" style=\"font-size: 13px\">{{selectedShipment.currentShipment.startLocation.freightLocation.name}}</span>\r\n                <span style=\"margin-top: 3px;\" class=\"fade-sub-header-text sub-header-text-size\">Loading duration {{selectedShipment['currentShipment']['startLocation']['_loadTime']}}</span>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n    </div>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
 /***/ "../../../../../src/app/components/manual-shipment-status/manual-shipment-status.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_shipment_services__ = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_manual_shipment_service__ = __webpack_require__("../../../../../src/app/services/manual-shipment-service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ManualShipmentStatusComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2855,13 +2954,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var router_1 = __webpack_require__("../../../router/@angular/router.es5.js");
-var material_1 = __webpack_require__("../../../material/@angular/material.es5.js");
-var shipment_services_1 = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
-var manual_shipment_service_1 = __webpack_require__("../../../../../src/app/services/manual-shipment-service.ts");
-var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
+
+
+
+
+
+
 var ManualShipmentStatusComponent = (function () {
     function ManualShipmentStatusComponent(_router, dialog, shipmentServices, _store, manualShipment) {
         var _this = this;
@@ -3203,14 +3301,14 @@ var ManualShipmentStatusComponent = (function () {
     return ManualShipmentStatusComponent;
 }());
 ManualShipmentStatusComponent = __decorate([
-    core_1.Component({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-manual-shipment-status',
         template: __webpack_require__("../../../../../src/app/components/manual-shipment-status/manual-shipment-status.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/manual-shipment-status/manual-shipment-status.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof router_1.Router !== "undefined" && router_1.Router) === "function" && _a || Object, typeof (_b = typeof material_1.MdDialog !== "undefined" && material_1.MdDialog) === "function" && _b || Object, typeof (_c = typeof shipment_services_1.ShipmentServices !== "undefined" && shipment_services_1.ShipmentServices) === "function" && _c || Object, typeof (_d = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _d || Object, typeof (_e = typeof manual_shipment_service_1.ManualShipmentServices !== "undefined" && manual_shipment_service_1.ManualShipmentServices) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["v" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_material__["v" /* MdDialog */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_shipment_services__["a" /* ShipmentServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_shipment_services__["a" /* ShipmentServices */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__ngrx_store__["b" /* Store */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__services_manual_shipment_service__["a" /* ManualShipmentServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_manual_shipment_service__["a" /* ManualShipmentServices */]) === "function" && _e || Object])
 ], ManualShipmentStatusComponent);
-exports.ManualShipmentStatusComponent = ManualShipmentStatusComponent;
+
 var _a, _b, _c, _d, _e;
 //# sourceMappingURL=manual-shipment-status.component.js.map
 
@@ -3224,7 +3322,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "div{\n  font-family: Helvetica;\n}\n\n.stepperIcon{\n  position: relative;\n  border-radius: 50%;\n  padding: 11px;\n  color: #ffffff;\n  background-color: #3f51b5;\n  font-size: 13px;\n  height: 0px;\n}\n\n.change-mode-button{\n  background-color: #42d35d;\n  font-size: 12px;\n  line-height: 26px;\n  height: 25px;\n  border-radius: 13px;\n  color:#FFFFFF;\n}\n\n.element{\n  /*padding: 6px 6px;*/\n  height: 55px;\n}\n", ""]);
+exports.push([module.i, "div{\r\n  font-family: Helvetica;\r\n}\r\n\r\n.stepperIcon{\r\n  position: relative;\r\n  border-radius: 50%;\r\n  padding: 11px;\r\n  color: #ffffff;\r\n  background-color: #3f51b5;\r\n  font-size: 13px;\r\n  height: 0px;\r\n}\r\n\r\n.change-mode-button{\r\n  background-color: #42d35d;\r\n  font-size: 12px;\r\n  line-height: 26px;\r\n  height: 25px;\r\n  border-radius: 13px;\r\n  color:#FFFFFF;\r\n}\r\n\r\n.element{\r\n  /*padding: 6px 6px;*/\r\n  height: 55px;\r\n}\r\n", ""]);
 
 // exports
 
@@ -3237,15 +3335,25 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/new-shipment/new-shipment.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div style=\"overflow: hidden;height: 100vh;\">\n      <div  fxLayout=\"row\" style=\"padding: 9px;\">\n        <div  fxFlex=\"33\" >\n          <div  style=\"display:flex;\" >\n            <label class=\"stepperIcon\" [style.background-color]=\"steperNo >= 1 ?'#3f51b5':'grey'\" >\n              <span style=\"position: absolute;margin-left: -4px;margin-top: -8px;\">1</span>\n            </label>\n            <!--<hr>-->\n            <span style=\"margin-left: 5px\">Enter Shipment Detail</span>\n          </div>\n        </div>\n        <div fxFlex=\"33\">\n          <div style=\"text-align: center;display: flex;\" >\n            <label class=\"stepperIcon\" [style.background-color]=\"steperNo >= 2 ?'#3f51b5':'grey'\" >\n              <span style=\"position: absolute;margin-left: -4px;margin-top: -8px;\">2</span>\n            </label>\n            <!--<hr>-->\n            <span style=\"margin-left: 5px\">Add Vehicle Tracking device</span>\n            <!--<span style=\"margin-left: 5px\">Tracking Configuration</span>-->\n          </div>\n        </div>\n\n        <div fxFlex=\"33\">\n          <div  style=\"display: flex;\" >\n            <label class=\"stepperIcon\" [style.background-color]=\"steperNo == 3 ?'#3f51b5':'grey'\" >\n              <span style=\"position: absolute;margin-left: -4px;margin-top: -8px;\">3</span>\n            </label>\n            <span style=\"margin-left: 5px\">Add Driver Details</span>\n          </div>\n        </div>\n      </div>\n\n      <div style=\"overflow:hidden;height: calc(100vh - 80px);\">\n        <div *ngIf=\"steperNo == 1\" style=\"padding: 30px;font-size: 13px;\" >\n          \n          <div>\n            <label  class=\"fade-sub-header-text\">Consignor Name*</label>\n            <app-freight-location-picker [inputType]=\"'origin'\"    [locationFromTemplate]=\"selectedTemplateLocation\" [pickerLocationType]=\"typeOfLocationCreator\" (onLocationPick)='setOriginLocation($event)' ></app-freight-location-picker>\n          </div>\n          <!--(click)=\"tripOriginDialog()\"-->\n           \n          <div>\n              <label class=\"fade-sub-header-text\">Consignee Name*</label>              \n            <app-freight-location-picker [inputType]=\"'destination'\"  [locationFromTemplate]=\"selectedTemplateLocation\" [pickerLocationType]=\"typeOfLocationCreator\" (onLocationPick)='setDestinationLocation($event)' ></app-freight-location-picker>\n          </div>\n           <!--(click)=\"tripOriginDialog()\"-->\n            \n           \n\n\n          <div class=\"element\" >\n            <md-input-container style=\"width: 100%;\">\n              <input style=\"width: 100%;\" placeholder=\"Shipment Number\" mdInput [(ngModel)]=\"shipmentNumber\" name=\"shipmentNumber\" id=\"shipmentNumber\" >\n            </md-input-container>\n          </div>\n\n\n          <div class=\"element\" >\n            <md-input-container style=\"width: 100%;\">\n              <input style=\"width: 100%;\" placeholder=\"Consignment Number\" mdInput [(ngModel)]=\"consignmentNumber\" name=\"consignmentNumber\"\n                     id=\"consignmentNumber\">\n            </md-input-container>\n          </div>\n\n          <div fxLayout=\"row\" >\n            <div fxFlex=\"48\" style=\"margin-top: 12px;height:60px;top:281px;\">\n              <owl-date-time mdInput [autoClose]=true [(ngModel)]=\"plannedStartDate\" placeHolder=\"Planned Start Date\"></owl-date-time>\n            </div>\n            <div fxFlex=\"48\" style=\"margin-left:auto\">\n              <md-input-container style=\"width: 100%;\">\n                <input type=\"number\" placeholder=\"Transit Days\" mdInput  [(ngModel)]=\"transitDays\" name=\"transitDays\" id=\"transitDays\">\n              </md-input-container>\n            </div>\n          </div>\n\n          \n          <div fxLayout=\"row\" class=\"element\" ><!-- *ngFor=\"let item of itemList\" -->\n            <div fxFlex=\"48\" style=\"margin-top: 4px\">\n              <md-input-container style=\"width: 90%;\">\n                <input style=\"width: 100%;\" placeholder=\"Quantity\" mdInput  [(ngModel)]=\"quantity\" name=\"quantity\" id=\"quantity\">\n              </md-input-container>\n            </div>\n\n            <div fxFlex=\"48\" style=\"margin-top: 11px\">\n              <md-select  placeholder=\"Measurement Type\" style=\"width: 80%\" [(ngModel)]=\"mesurementType\" (change)=\"selectMesurementType()\" >\n                <md-option *ngFor=\"let mesurement of mesurements\" [value]=\"mesurement.name\" >\n                   {{mesurement.viewValue}}\n                </md-option>\n              </md-select>\n            </div>\n            <div fxFlex=\"48\" style=\"margin-top: 11px\" *ngIf=\"isShowUnits\">\n              <md-select  placeholder=\"Select Units\" style=\"width: 60%\" [(ngModel)]=\"selectedUnit\" floatPlaceholder=\"never\">\n                <md-option *ngFor=\"let unit of selectUnit\" [value]=\"unit\">\n                   {{unit}}\n                </md-option>\n              </md-select>\n            </div>\n            <div fxFlex=\"48\" style=\"margin-top: 7px\" *ngIf=\"isShowUnitInput\">\n                <md-input-container style=\"width: 90%;\">\n                    <input style=\"width: 60%;\" placeholder=\"No. Of Package\" mdInput  [(ngModel)]=\"selectedUnit\" >\n                  </md-input-container>\n            </div>\n          </div>\n          <!-- <div style=\"width: 100%;margin-top: 10px;text-align:right;\">\n            <button md-raised-button  class=\"change-mode-button\" style=\"background-color: #bebebe;\" (click)=\"addItem()\">+add</button>\n         </div> -->\n          \n\n\n          <div style=\"margin-top: 10px;\">\n            <md-input-container style=\"width: 100%;\">\n              <input style=\"width: 100%;\" placeholder=\"Vehicle Number\" mdInput [(ngModel)]=\"vehicleNumber\" name=\"vehicleNumber\" id=\"vehicleNumber\">\n            </md-input-container>\n          </div>\n\n          <div style=\"margin-top: 20px;text-align: right;\">\n            <button md-raised-button color=\"primary\" (click)=\"step2();convertTime();\">Next</button>\n            <!--<button md-raised-button>BACK</button>-->\n          </div>\n\n        </div>\n\n        <!-- step 2 ************************************-->\n        <div *ngIf=\"steperNo == 2\" style=\"margin-top:60px;text-align: center\" >\n        <md-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></md-spinner>       \n          <div style=\"margin-top: 21px;\">\n             <button [style.background-color]=\"(trackerType == 'Trip')?(isShowTripDisconnected)?'red':'green':'gray'\" md-raised-button  class=\"change-mode-button\"  (click)=\"setTrackType('Trip');isShowTracknetEnable=true\" *ngIf=\"isShowTrip\">Tracknet</button>              \n             <button [style.background-color]=\"trackerType == 'Tracker'?'green':'gray'\" md-raised-button  class=\"change-mode-button\" style=\"margin-left: 20px;\" (click)=\"setTrackType('Tracker');isShowTracknetEnable=false\">Tracker</button>\n             <button [style.background-color]=\"trackerType == 'Manual'?'green':'gray'\" md-raised-button style=\"margin-left: 20px;\" class=\"change-mode-button\" (click)=\"setTrackType('Manual');isShowTracknetEnable=false\">Manual mode</button>\n          </div>\n          <div style=\"margin-top: 15px\" *ngIf=\"trackerType == 'Trip' && isShowTracknetEnable\">\n            <div  ><span><u>Tracknet Enabled </u></span></div>\n            <div  *ngIf=\"isShowTripDisconnected\"><span>Since {{sinceTime}}</span></div>   \n          </div>\n          <div style=\"margin-top: 15px\" *ngIf=\"trackerType == 'Tracker'\">\n            <md-input-container style=\"width: 250px;\" >\n              <input style=\"width: 100%;\" placeholder=\"Tracker IMEI\" mdInput [(ngModel)]=\"trackerIMEI\"  name=\"TrackerIMEI\" id=\"TrackerIMEI\" readonly (focus)=\"onClickIMEI()\">\n            </md-input-container>\n            <div *ngIf=\"showIMEI\" style=\"min-height: 90px;max-height: 190px;overflow-y: auto;width: 280px;margin-left:40%;margin-top: -22px;    background-color: rgb(236, 236, 241);\">\n              <ul style=\"list-style-type: none;\" *ngFor=\"let device of allDeviceList\">\n                <li  (click)=\"onSelectIMEI(device)\">{{device?.device?.imei}}</li><hr style=\"margin-left:-40px\">\n              </ul>\n            </div>\n          </div>\n\n          <div style=\"margin-top: 60px;\">\n\n            <button md-raised-button color=\"primary\" (click)=\"step1()\">Previous</button>\n\n            <button md-raised-button color=\"primary\" (click)=\"step3();\">Next</button>\n            <!--<button md-raised-button>BACK</button>-->\n          </div>\n        </div>\n\n        <div *ngIf=\"steperNo ==  3\" style=\"text-align: center;margin-top: 60px\">\n          <div  *ngIf=\"isShowchip\"style=\"margin-top: 15px;\">\n            <md-chip-list style=\"justify-content: center;display: flex;\">\n                <md-chip >{{driverName}}  {{mobileNo}} <i class=\"fa fa-times-circle\" mdChipRemove *ngIf=\"true\" (click)=\"isShowchip=false\"></i> </md-chip>\n            </md-chip-list>\n          </div>\n\n          <div style=\"margin-top: 15px \">\n             <button md-raised-button  class=\"change-mode-button\" style=\"background-color: #bebebe\" (click)=\"isAddDriverDetail=true\">+add Driver</button>\n          </div>\n          <div *ngIf=\"isAddDriverDetail\">\n            <md-input-container>\n              <input style=\"width: 100%;\" placeholder=\"Driver Name\" mdInput [(ngModel)]=\"driverName\"  name=\"driverName\" id=\"driverName\">\n            </md-input-container>\n            <md-input-container>\n              <input style=\"width: 100%;\" placeholder=\"Mobile No\" mdInput [(ngModel)]=\"mobileNo\"  name=\"mobileNo\" id=\"mobileNo\">\n            </md-input-container>\n          </div>\n          <div style=\"margin-top: 60px\">\n             <button md-raised-button color=\"primary\" (click)=\"step2()\">Previous</button>\n             <button md-raised-button color=\"primary\" (click)=\"createShipment()\">Done</button>\n          </div>\n        </div>\n      </div>\n</div>\n\n"
+module.exports = "\r\n<div style=\"overflow: hidden;height: 100vh;\">\r\n      <div  fxLayout=\"row\" style=\"padding: 9px;\">\r\n        <div  fxFlex=\"33\" >\r\n          <div  style=\"display:flex;\" >\r\n            <label class=\"stepperIcon\" [style.background-color]=\"steperNo >= 1 ?'#3f51b5':'grey'\" >\r\n              <span style=\"position: absolute;margin-left: -4px;margin-top: -8px;\">1</span>\r\n            </label>\r\n            <!--<hr>-->\r\n            <span style=\"margin-left: 5px\">Enter Shipment Detail</span>\r\n          </div>\r\n        </div>\r\n        <div fxFlex=\"33\">\r\n          <div style=\"text-align: center;display: flex;\" >\r\n            <label class=\"stepperIcon\" [style.background-color]=\"steperNo >= 2 ?'#3f51b5':'grey'\" >\r\n              <span style=\"position: absolute;margin-left: -4px;margin-top: -8px;\">2</span>\r\n            </label>\r\n            <!--<hr>-->\r\n            <span style=\"margin-left: 5px\">Add Vehicle Tracking device</span>\r\n            <!--<span style=\"margin-left: 5px\">Tracking Configuration</span>-->\r\n          </div>\r\n        </div>\r\n\r\n        <div fxFlex=\"33\">\r\n          <div  style=\"display: flex;\" >\r\n            <label class=\"stepperIcon\" [style.background-color]=\"steperNo == 3 ?'#3f51b5':'grey'\" >\r\n              <span style=\"position: absolute;margin-left: -4px;margin-top: -8px;\">3</span>\r\n            </label>\r\n            <span style=\"margin-left: 5px\">Add Driver Details</span>\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n      <div style=\"overflow:hidden;height: calc(100vh - 80px);\">\r\n        <div *ngIf=\"steperNo == 1\" style=\"padding: 30px;font-size: 13px;\" >\r\n          \r\n          <div>\r\n            <label  class=\"fade-sub-header-text\">Consignor Name*</label>\r\n            <app-freight-location-picker [inputType]=\"'origin'\"    [locationFromTemplate]=\"selectedTemplateLocation\" [pickerLocationType]=\"typeOfLocationCreator\" (onLocationPick)='setOriginLocation($event)' ></app-freight-location-picker>\r\n          </div>\r\n          <!--(click)=\"tripOriginDialog()\"-->\r\n           \r\n          <div>\r\n              <label class=\"fade-sub-header-text\">Consignee Name*</label>              \r\n            <app-freight-location-picker [inputType]=\"'destination'\"  [locationFromTemplate]=\"selectedTemplateLocation\" [pickerLocationType]=\"typeOfLocationCreator\" (onLocationPick)='setDestinationLocation($event)' ></app-freight-location-picker>\r\n          </div>\r\n           <!--(click)=\"tripOriginDialog()\"-->\r\n            \r\n           \r\n\r\n\r\n          <div class=\"element\" >\r\n            <md-input-container style=\"width: 100%;\">\r\n              <input style=\"width: 100%;\" placeholder=\"Shipment Number\" mdInput [(ngModel)]=\"shipmentNumber\" name=\"shipmentNumber\" id=\"shipmentNumber\" >\r\n            </md-input-container>\r\n          </div>\r\n\r\n\r\n          <div class=\"element\" >\r\n            <md-input-container style=\"width: 100%;\">\r\n              <input style=\"width: 100%;\" placeholder=\"Consignment Number\" mdInput [(ngModel)]=\"consignmentNumber\" name=\"consignmentNumber\"\r\n                     id=\"consignmentNumber\">\r\n            </md-input-container>\r\n          </div>\r\n\r\n          <div fxLayout=\"row\" >\r\n            <div fxFlex=\"48\" style=\"margin-top: 12px;height:60px;top:281px;\">\r\n              <owl-date-time mdInput [autoClose]=true [(ngModel)]=\"plannedStartDate\" placeHolder=\"Planned Start Date\"></owl-date-time>\r\n            </div>\r\n            <div fxFlex=\"48\" style=\"margin-left:auto\">\r\n              <md-input-container style=\"width: 100%;\">\r\n                <input type=\"number\" placeholder=\"Transit Days\" mdInput  [(ngModel)]=\"transitDays\" name=\"transitDays\" id=\"transitDays\">\r\n              </md-input-container>\r\n            </div>\r\n          </div>\r\n\r\n          \r\n          <div fxLayout=\"row\" class=\"element\" ><!-- *ngFor=\"let item of itemList\" -->\r\n            <div fxFlex=\"48\" style=\"margin-top: 4px\">\r\n              <md-input-container style=\"width: 90%;\">\r\n                <input style=\"width: 100%;\" placeholder=\"Quantity\" mdInput  [(ngModel)]=\"quantity\" name=\"quantity\" id=\"quantity\">\r\n              </md-input-container>\r\n            </div>\r\n\r\n            <div fxFlex=\"48\" style=\"margin-top: 11px\">\r\n              <md-select  placeholder=\"Measurement Type\" style=\"width: 80%\" [(ngModel)]=\"mesurementType\" (change)=\"selectMesurementType()\" >\r\n                <md-option *ngFor=\"let mesurement of mesurements\" [value]=\"mesurement.name\" >\r\n                   {{mesurement.viewValue}}\r\n                </md-option>\r\n              </md-select>\r\n            </div>\r\n            <div fxFlex=\"48\" style=\"margin-top: 11px\" *ngIf=\"isShowUnits\">\r\n              <md-select  placeholder=\"Select Units\" style=\"width: 60%\" [(ngModel)]=\"selectedUnit\" floatPlaceholder=\"never\">\r\n                <md-option *ngFor=\"let unit of selectUnit\" [value]=\"unit\">\r\n                   {{unit}}\r\n                </md-option>\r\n              </md-select>\r\n            </div>\r\n            <div fxFlex=\"48\" style=\"margin-top: 7px\" *ngIf=\"isShowUnitInput\">\r\n                <md-input-container style=\"width: 90%;\">\r\n                    <input style=\"width: 60%;\" placeholder=\"No. Of Package\" mdInput  [(ngModel)]=\"selectedUnit\" >\r\n                  </md-input-container>\r\n            </div>\r\n          </div>\r\n          <!-- <div style=\"width: 100%;margin-top: 10px;text-align:right;\">\r\n            <button md-raised-button  class=\"change-mode-button\" style=\"background-color: #bebebe;\" (click)=\"addItem()\">+add</button>\r\n         </div> -->\r\n          \r\n\r\n\r\n          <div style=\"margin-top: 10px;\">\r\n            <md-input-container style=\"width: 100%;\">\r\n              <input style=\"width: 100%;\" placeholder=\"Vehicle Number\" mdInput [(ngModel)]=\"vehicleNumber\" name=\"vehicleNumber\" id=\"vehicleNumber\">\r\n            </md-input-container>\r\n          </div>\r\n\r\n          <div style=\"margin-top: 20px;text-align: right;\">\r\n            <button md-raised-button color=\"primary\" (click)=\"step2();convertTime();\">Next</button>\r\n            <!--<button md-raised-button>BACK</button>-->\r\n          </div>\r\n\r\n        </div>\r\n\r\n        <!-- step 2 ************************************-->\r\n        <div *ngIf=\"steperNo == 2\" style=\"margin-top:60px;text-align: center\" >\r\n        <md-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></md-spinner>       \r\n          <div style=\"margin-top: 21px;\">\r\n             <button [style.background-color]=\"(trackerType == 'Trip')?(isShowTripDisconnected)?'red':'green':'gray'\" md-raised-button  class=\"change-mode-button\"  (click)=\"setTrackType('Trip');isShowTracknetEnable=true\" *ngIf=\"isShowTrip\">Tracknet</button>              \r\n             <button [style.background-color]=\"trackerType == 'Tracker'?'green':'gray'\" md-raised-button  class=\"change-mode-button\" style=\"margin-left: 20px;\" (click)=\"setTrackType('Tracker');isShowTracknetEnable=false\">Tracker</button>\r\n             <button [style.background-color]=\"trackerType == 'Manual'?'green':'gray'\" md-raised-button style=\"margin-left: 20px;\" class=\"change-mode-button\" (click)=\"setTrackType('Manual');isShowTracknetEnable=false\">Manual mode</button>\r\n          </div>\r\n          <div style=\"margin-top: 15px\" *ngIf=\"trackerType == 'Trip' && isShowTracknetEnable\">\r\n            <div  ><span><u>Tracknet Enabled </u></span></div>\r\n            <div  *ngIf=\"isShowTripDisconnected\"><span>Since {{sinceTime}}</span></div>   \r\n          </div>\r\n          <div style=\"margin-top: 15px\" *ngIf=\"trackerType == 'Tracker'\">\r\n            <md-input-container style=\"width: 250px;\" >\r\n              <input style=\"width: 100%;\" placeholder=\"Tracker IMEI\" mdInput [(ngModel)]=\"trackerIMEI\"  name=\"TrackerIMEI\" id=\"TrackerIMEI\" readonly (focus)=\"onClickIMEI()\">\r\n            </md-input-container>\r\n            <div *ngIf=\"showIMEI\" style=\"min-height: 90px;max-height: 190px;overflow-y: auto;width: 280px;margin-left:40%;margin-top: -22px;    background-color: rgb(236, 236, 241);\">\r\n              <ul style=\"list-style-type: none;\" *ngFor=\"let device of allDeviceList\">\r\n                <li  (click)=\"onSelectIMEI(device)\">{{device?.device?.imei}}</li><hr style=\"margin-left:-40px\">\r\n              </ul>\r\n            </div>\r\n          </div>\r\n\r\n          <div style=\"margin-top: 60px;\">\r\n\r\n            <button md-raised-button color=\"primary\" (click)=\"step1()\">Previous</button>\r\n\r\n            <button md-raised-button color=\"primary\" (click)=\"step3();\">Next</button>\r\n            <!--<button md-raised-button>BACK</button>-->\r\n          </div>\r\n        </div>\r\n\r\n        <div *ngIf=\"steperNo ==  3\" style=\"text-align: center;margin-top: 60px\">\r\n          <div  *ngIf=\"isShowchip\"style=\"margin-top: 15px;\">\r\n            <md-chip-list style=\"justify-content: center;display: flex;\">\r\n                <md-chip >{{driverName}}  {{mobileNo}} <i class=\"fa fa-times-circle\" mdChipRemove *ngIf=\"true\" (click)=\"isShowchip=false\"></i> </md-chip>\r\n            </md-chip-list>\r\n          </div>\r\n\r\n          <div style=\"margin-top: 15px \">\r\n             <button md-raised-button  class=\"change-mode-button\" style=\"background-color: #bebebe\" (click)=\"isAddDriverDetail=true\">+add Driver</button>\r\n          </div>\r\n          <div *ngIf=\"isAddDriverDetail\">\r\n            <md-input-container>\r\n              <input style=\"width: 100%;\" placeholder=\"Driver Name\" mdInput [(ngModel)]=\"driverName\"  name=\"driverName\" id=\"driverName\">\r\n            </md-input-container>\r\n            <md-input-container>\r\n              <input style=\"width: 100%;\" placeholder=\"Mobile No\" mdInput [(ngModel)]=\"mobileNo\"  name=\"mobileNo\" id=\"mobileNo\">\r\n            </md-input-container>\r\n          </div>\r\n          <div style=\"margin-top: 60px\">\r\n             <button md-raised-button color=\"primary\" (click)=\"step2()\">Previous</button>\r\n             <button md-raised-button color=\"primary\" (click)=\"createShipment()\">Done</button>\r\n          </div>\r\n        </div>\r\n      </div>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
 /***/ "../../../../../src/app/components/new-shipment/new-shipment.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_device_services__ = __webpack_require__("../../../../../src/app/services/device-services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_shipment_services__ = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_util__ = __webpack_require__("../../../../util/util.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_util___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_util__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewShipment; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3255,15 +3363,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var router_1 = __webpack_require__("../../../router/@angular/router.es5.js");
-var device_services_1 = __webpack_require__("../../../../../src/app/services/device-services.ts");
-var shipment_services_1 = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
-var material_1 = __webpack_require__("../../../material/@angular/material.es5.js");
-var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-var util_1 = __webpack_require__("../../../../util/util.js");
-var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
+
+
+
+
+
+
+
+
 var NewShipment = (function () {
     function NewShipment(_router, deviceServices, shipmentServices, _store, service, snackBar) {
         var _this = this;
@@ -3302,7 +3409,7 @@ var NewShipment = (function () {
         //unSubscribe variables
         this.unSub_allFreightList = null;
         this.unSub_allDeviceList = null;
-        this.selectedTemplateLocation = new core_1.EventEmitter();
+        this.selectedTemplateLocation = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         //validation variables
         this.isEventSelected = false;
         this.isShowEvent = true;
@@ -3448,7 +3555,7 @@ var NewShipment = (function () {
             console.log('contains No freight location Obj source');
             obj1 = value;
         }
-        if (util_1.isNullOrUndefined(obj1['address']) || obj1['address'] == "") {
+        if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_util__["isNullOrUndefined"])(obj1['address']) || obj1['address'] == "") {
             obj1['address'] = value['name'];
         }
         // console.log(obj1);
@@ -3473,7 +3580,7 @@ var NewShipment = (function () {
             console.log('contains No freight location Obj Destination');
             obj = value;
         }
-        if (util_1.isNullOrUndefined(obj['address']) || obj['address'] == "") {
+        if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_util__["isNullOrUndefined"])(obj['address']) || obj['address'] == "") {
             obj['address'] = value['name'];
         }
         this.consigneeName = obj['name'];
@@ -3579,23 +3686,23 @@ var NewShipment = (function () {
         this.snackBar.open(message, 'OK', { duration: 4000 });
     };
     NewShipment.prototype.step2 = function () {
-        if (util_1.isNullOrUndefined(this.consigner) || this.consigner == "") {
+        if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_util__["isNullOrUndefined"])(this.consigner) || this.consigner == "") {
             this.openSnackBar("Please fill Consigner");
             this.steperNo = 1;
         }
-        else if (util_1.isNullOrUndefined(this.consignee) || this.consignee == "") {
+        else if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_util__["isNullOrUndefined"])(this.consignee) || this.consignee == "") {
             this.openSnackBar("Please fill Consinee");
             this.steperNo = 1;
         }
-        else if (util_1.isNullOrUndefined(this.plannedStartDate) || this.plannedStartDate == "") {
+        else if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_util__["isNullOrUndefined"])(this.plannedStartDate) || this.plannedStartDate == "") {
             this.openSnackBar("Please fill Shipment start time");
             this.steperNo = 1;
         }
-        else if (util_1.isNullOrUndefined(this.transitDays) || this.transitDays == "") {
+        else if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_util__["isNullOrUndefined"])(this.transitDays) || this.transitDays == "") {
             this.openSnackBar("Please fill Transite Days");
             this.steperNo = 1;
         }
-        else if (util_1.isNullOrUndefined(this.vehicleNumber) || this.vehicleNumber == "") {
+        else if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_util__["isNullOrUndefined"])(this.vehicleNumber) || this.vehicleNumber == "") {
             this.openSnackBar("Please fill Vehicle No");
             this.steperNo = 1;
         }
@@ -3633,14 +3740,14 @@ var NewShipment = (function () {
     return NewShipment;
 }());
 NewShipment = __decorate([
-    core_1.Component({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-new-shipment',
         template: __webpack_require__("../../../../../src/app/components/new-shipment/new-shipment.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/new-shipment/new-shipment.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof router_1.Router !== "undefined" && router_1.Router) === "function" && _a || Object, typeof (_b = typeof device_services_1.DeviceServices !== "undefined" && device_services_1.DeviceServices) === "function" && _b || Object, typeof (_c = typeof shipment_services_1.ShipmentServices !== "undefined" && shipment_services_1.ShipmentServices) === "function" && _c || Object, typeof (_d = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _d || Object, typeof (_e = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _e || Object, typeof (_f = typeof material_1.MdSnackBar !== "undefined" && material_1.MdSnackBar) === "function" && _f || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_device_services__["a" /* DeviceServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_device_services__["a" /* DeviceServices */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_shipment_services__["a" /* ShipmentServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_shipment_services__["a" /* ShipmentServices */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_7__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__ngrx_store__["b" /* Store */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__angular_material__["t" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_material__["t" /* MdSnackBar */]) === "function" && _f || Object])
 ], NewShipment);
-exports.NewShipment = NewShipment;
+
 var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=new-shipment.component.js.map
 
@@ -3667,15 +3774,17 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/settings-component/settings-component.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<md-card style=\"cursor: pointer\" (click)=\"goToManageOrganisation()\">\n  <md-card-content>\n    <div style=\"padding: 15px\">\n      <label style=\"vertical-align: -6px;margin-right: 5px\">{{'Manage Organsation'}}</label>\n    </div>\n  </md-card-content>\n</md-card>\n"
+module.exports = "<md-card style=\"cursor: pointer\" (click)=\"goToManageOrganisation()\">\r\n  <md-card-content>\r\n    <div style=\"padding: 15px\">\r\n      <label style=\"vertical-align: -6px;margin-right: 5px\">{{'Manage Organsation'}}</label>\r\n    </div>\r\n  </md-card-content>\r\n</md-card>\r\n"
 
 /***/ }),
 
 /***/ "../../../../../src/app/components/settings-component/settings-component.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SettingsComponentComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3685,9 +3794,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var router_1 = __webpack_require__("../../../router/@angular/router.es5.js");
+
+
 var SettingsComponentComponent = (function () {
     function SettingsComponentComponent(_router) {
         this._router = _router;
@@ -3700,14 +3808,14 @@ var SettingsComponentComponent = (function () {
     return SettingsComponentComponent;
 }());
 SettingsComponentComponent = __decorate([
-    core_1.Component({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-settings-component',
         template: __webpack_require__("../../../../../src/app/components/settings-component/settings-component.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/settings-component/settings-component.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof router_1.Router !== "undefined" && router_1.Router) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object])
 ], SettingsComponentComponent);
-exports.SettingsComponentComponent = SettingsComponentComponent;
+
 var _a;
 //# sourceMappingURL=settings-component.component.js.map
 
@@ -3734,15 +3842,20 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/shipment-management/shipment-management.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n  <md-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></md-spinner>\n  <div *ngIf=\"isShowAddNewGroupDialog\"   class=\"mycustomDialog\" style=\"padding-top: 70px;\">\n    <div class=\"modal-content\" style=\"width:40%;min-width:250px;overflow: hidden;max-width: 400px;\">\n      <div class=\"modal-header\">\n        <span class=\"close\" (click)=\"isShowAddNewGroupDialog=false;\" >&times;</span>\n        <label>Create Group</label>\n      </div>\n      <div  style=\"padding: 10px;font-size: 13px;\">\n        <div style=\"padding: 5px;\" >\n          <div style=\"width: 100%;text-align:center\" >\n            <md-input-container style=\"width:85%\" >\n              <input placeholder=\"Group Name\"  mdInput required [(ngModel)]=\"groupName\" >\n            </md-input-container>\n          </div>\n          <div style=\"padding-top: 10px;text-align: center\" >\n            <button md-raised-button (click)=\"isShowAddNewGroupDialog=false\">CANCEL</button>\n            <button [disabled]=\"groupName ==''\" md-raised-button color=\"primary\" style=\"margin-left: 15%\" (click)=\"createNewGroup()\">SAVE</button>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div style=\"padding:14px;font-size:16px;color:#858585;font-weight:bold;\" >\n    <span>Shipment Groups</span>\n  </div>\n\n  <div style=\"height:calc(100vh - 95px);overflow:auto;padding:2px\" >\n   <md-card *ngFor=\"let shipment of shipmentGrpList\" >\n     <span style=\"margin-left: 12px;\">{{shipment['groupName']}}</span>\n   </md-card>\n  </div>\n\n   <button [disabled]=\"this.customerDetails['orgId'] ==null || this.customerDetails['orgId'] == undefined\" md-fab color=\"primary\" (click)=\"isShowAddNewGroupDialog =true\" style=\"position:absolute;bottom: 10px;right: 10px;\" >\n     <i class=\"fa fa-plus\" aria-hidden=\"true\" style=\"font-size: 20px;color: white \"></i>\n   </button>\n</div>\n"
+module.exports = "<div>\r\n  <md-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></md-spinner>\r\n  <div *ngIf=\"isShowAddNewGroupDialog\"   class=\"mycustomDialog\" style=\"padding-top: 70px;\">\r\n    <div class=\"modal-content\" style=\"width:40%;min-width:250px;overflow: hidden;max-width: 400px;\">\r\n      <div class=\"modal-header\">\r\n        <span class=\"close\" (click)=\"isShowAddNewGroupDialog=false;\" >&times;</span>\r\n        <label>Create Group</label>\r\n      </div>\r\n      <div  style=\"padding: 10px;font-size: 13px;\">\r\n        <div style=\"padding: 5px;\" >\r\n          <div style=\"width: 100%;text-align:center\" >\r\n            <md-input-container style=\"width:85%\" >\r\n              <input placeholder=\"Group Name\"  mdInput required [(ngModel)]=\"groupName\" >\r\n            </md-input-container>\r\n          </div>\r\n          <div style=\"padding-top: 10px;text-align: center\" >\r\n            <button md-raised-button (click)=\"isShowAddNewGroupDialog=false\">CANCEL</button>\r\n            <button [disabled]=\"groupName ==''\" md-raised-button color=\"primary\" style=\"margin-left: 15%\" (click)=\"createNewGroup()\">SAVE</button>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <div style=\"padding:14px;font-size:16px;color:#858585;font-weight:bold;\" >\r\n    <span>Shipment Groups</span>\r\n  </div>\r\n\r\n  <div style=\"height:calc(100vh - 95px);overflow:auto;padding:2px\" >\r\n   <md-card *ngFor=\"let shipment of shipmentGrpList\" >\r\n     <span style=\"margin-left: 12px;\">{{shipment['groupName']}}</span>\r\n   </md-card>\r\n  </div>\r\n\r\n   <button [disabled]=\"this.customerDetails['orgId'] ==null || this.customerDetails['orgId'] == undefined\" md-fab color=\"primary\" (click)=\"isShowAddNewGroupDialog =true\" style=\"position:absolute;bottom: 10px;right: 10px;\" >\r\n     <i class=\"fa fa-plus\" aria-hidden=\"true\" style=\"font-size: 20px;color: white \"></i>\r\n   </button>\r\n</div>\r\n"
 
 /***/ }),
 
 /***/ "../../../../../src/app/components/shipment-management/shipment-management.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_shipment_mgmt_services__ = __webpack_require__("../../../../../src/app/services/shipment-mgmt-services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShipmentManagementComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3752,12 +3865,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var router_1 = __webpack_require__("../../../router/@angular/router.es5.js");
-var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
-var shipment_mgmt_services_1 = __webpack_require__("../../../../../src/app/services/shipment-mgmt-services.ts");
-var material_1 = __webpack_require__("../../../material/@angular/material.es5.js");
+
+
+
+
+
 var ShipmentManagementComponent = (function () {
     function ShipmentManagementComponent(_router, _store, snackBar, shipmentMgmtService) {
         var _this = this;
@@ -3859,14 +3971,14 @@ var ShipmentManagementComponent = (function () {
     return ShipmentManagementComponent;
 }());
 ShipmentManagementComponent = __decorate([
-    core_1.Component({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-shipment-management',
         template: __webpack_require__("../../../../../src/app/components/shipment-management/shipment-management.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/shipment-management/shipment-management.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof router_1.Router !== "undefined" && router_1.Router) === "function" && _a || Object, typeof (_b = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _b || Object, typeof (_c = typeof material_1.MdSnackBar !== "undefined" && material_1.MdSnackBar) === "function" && _c || Object, typeof (_d = typeof shipment_mgmt_services_1.ShipmentMgmtService !== "undefined" && shipment_mgmt_services_1.ShipmentMgmtService) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["b" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__angular_material__["t" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_material__["t" /* MdSnackBar */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_shipment_mgmt_services__["a" /* ShipmentMgmtService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_shipment_mgmt_services__["a" /* ShipmentMgmtService */]) === "function" && _d || Object])
 ], ShipmentManagementComponent);
-exports.ShipmentManagementComponent = ShipmentManagementComponent;
+
 var _a, _b, _c, _d;
 //# sourceMappingURL=shipment-management.component.js.map
 
@@ -3880,7 +3992,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/*.container{*/\n  /*padding: 20px;*/\n  /*margin: 15px;*/\n  /*width: 100%;*/\n/*}*/\n\n/*.cards-toggle*/\n/*{*/\n  /*width: 15%;*/\n  /*float: left;*/\n/*}*/\n\n/*.cards-toggle:hover*/\n/*{*/\n  /*background-color: #1976d2;*/\n  /*color: white;*/\n  /*width: 15%;*/\n  /*float: left;*/\n/*}*/\n\n/*.cards-toggle:active*/\n/*{*/\n  /*background-color: #1976d2;*/\n  /*color: white;*/\n  /*width: 15%;*/\n  /*float: left;*/\n/*}*/\n\n/*.expand-search {*/\n  /*border: 1.5px solid #03a9f4;*/\n  /*font-size: 14px;*/\n  /*padding: 5px 26px 6px 12px;*/\n  /*display: inline-block;*/\n  /*!*border: 1.5px solid #ccc;*!*/\n  /*border-radius: 17px;*/\n  /*box-sizing: border-box;*/\n  /*outline: none;*/\n  /*}*/\n\n/*.overlay{*/\n/*position: relative;*/\n  /*display: none;*/\n  /*z-index: 10;*/\n  /*left: 137px;*/\n  /*top: 72px;*/\n  /*width: 0%;*/\n/*}*/\n\ndiv{\n  font-family: Helvetica;\n}\n\n.container{\n  padding: 5px 10px 5px 5px;\n  /*margin: 15px;*/\n  width: 100%;\n}\n\nmd-card{\n  /*min-width: 190px;*/\n  padding: 15px;\n  /*margin-top: 8px;*/\n  /*margin: 5px;*/\n  font-family: Helvetica;\n}\n\n.cards-toggle\n{\n  height: 30px;\n  font-size: 12px;\n  margin-left: 8px;\n  width: 13%;\n  /*width: 15%;*/\n  /*float: left;*/\n}\n\n.cards-toggle div{\n  text-align: center;\n}\n\n.cards-toggle:hover\n{\n  background-color: #5b89ff !important;\n  color: white;\n  cursor: pointer;\n  /*width: 15%;*/\n  /*float: left;*/\n}\n\n/*.cards-toggle:active*/\n/*{*/\n  /*background-color: #512da1;*/\n  /*color: white;*/\n  /*!*width: 15%;*!*/\n  /*!*float: left;*!*/\n/*}*/\n\n\n\n\n\n\n/*.expand-search {*/\n/*border: 1.5px solid #03a9f4;*/\n/*font-size: 14px;*/\n/*padding: 5px 26px 6px 12px;*/\n/*display: inline-block;*/\n/*!*border: 1.5px solid #ccc;*!*/\n/*border-radius: 17px;*/\n/*box-sizing: border-box;*/\n/*outline: none;*/\n/*}*/\n\n.overlay{\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  display: -ms-grid;\n  display: grid;\n}\n\n.doughnut-chart{\n  position: relative;\n  margin-top: -19px;\n  width: 196px;\n  margin-right: -43px;\n}\n\n.expand-search {\n  border: 1.5px solid #b0bcc1;\n  width: 100%;\n  font-size: 12px;\n  padding: 5px 26px 5px 12px;\n  display: inline-block;\n  /*border: 1.5px solid #ccc;*/\n  border-radius: 17px;\n  box-sizing: border-box;\n  outline: none;\n}\n\n/* search box*/\n.expand-search:focus{\n  outline: none;\n  border: 1.5px solid #03a9f4;\n}\n\n.doughnut-chart-label{\n  padding:0px 6px;font-size: 10px;margin-right:5px\n}\n\n.custome-button button{\n  height: 26px;\n  font-size: 13px;\n  line-height: 26px;\n  border-radius: 5px;\n}\n\n\ntable {\n  font-family: Helvetica;\n  color: #46465f;\n  font-size: 11px;\n  border-collapse: collapse;\n  width: 100%;\n}\n\ntd, th {\n  /*border: 1px solid #eee;*/\n  border-right: 1px solid #eee;\n  text-align: center;\n  padding: 8px;\n}\n.list-header1{\n  color: #46465f;\n  font-size: 13px;\n  font-weight: bold;\n  padding: 8px;\n  width: 160%;\n}\n.list-body1 {\n  font-size: 12px;\n  padding: 8px;\n  /*margin-top: 5px;*/\n}\n\n.list-body1 span{\n  margin-left: 5px;\n}\n\n\n/*tr:nth-child(even) {*/\n  /*!*background-color: #f1faff;*!*/\n  /*!*background-color: #f6f9fd;*!*/\n  /*background-color: aliceblue;*/\n/*}*/\n\n.select-row:hover\n{\n  background-color: aliceblue;\n}\n\n\n.button-align button\n{\n  line-height:25px\n}\n\n.imgcontainer {\n  /*margin: 24px 0 20px 0;*/\n  padding-left: 20px;\n}\n\n.pagination-button{\n  line-height: 25px;\n  min-width: 0px;\n  padding: 0px 10px 0px 10px;\n  color: #46465f;\n  background-color:whitesmoke;\n}\n\n.pagination-text {\n  color: #828395;\n  text-align: center !important;\n  font-weight: bolder;\n  font-size: 14px;\n  padding: 0 5px;\n  width:200px;\n}\n\n.pagination-text span{\n  display: inline-block;\n  min-width: 30px;\n}\n\nmd-option{\n  height: 35px;\n  line-height: 35px;\n}\n\n.my-select {\n  width: 130px;\n  padding: 0px 16px;\n  vertical-align: 6px;\n}\n\n\n.add-button{\n  width: 22px;\n  height: 22px;\n  line-height: 22px;\n}\n\n.customCheckBox >>> .mat-checkbox-inner-container{\n  height: 15px !important;\n  width: 15px !important;\n}\n\n.customePaginator >>> .mat-paginator-range-label{\n  min-width: 92px;\n}\n \n\n.my-download{\n  color:rgb(48, 2, 2);\n  cursor: pointer;\n}\n\n.my-download:hover,\n.my-download:focus {\n  color: rgba(193, 208, 234, 0.97);\n  text-decoration: none;\n  cursor: pointer;\n}\n\n.download-csv{\n  font-size: 14px;\n  vertical-align: 8px;\n  margin-left: 13px;\n}\n.change-mode-button{\n  background-color: #42d35d;\n  font-size: 12px;\n  line-height: 26px;\n  height: 25px;\n  border-radius: 13px;\n  color:#FFFFFF;\n}\n", ""]);
+exports.push([module.i, "/*.container{*/\r\n  /*padding: 20px;*/\r\n  /*margin: 15px;*/\r\n  /*width: 100%;*/\r\n/*}*/\r\n\r\n/*.cards-toggle*/\r\n/*{*/\r\n  /*width: 15%;*/\r\n  /*float: left;*/\r\n/*}*/\r\n\r\n/*.cards-toggle:hover*/\r\n/*{*/\r\n  /*background-color: #1976d2;*/\r\n  /*color: white;*/\r\n  /*width: 15%;*/\r\n  /*float: left;*/\r\n/*}*/\r\n\r\n/*.cards-toggle:active*/\r\n/*{*/\r\n  /*background-color: #1976d2;*/\r\n  /*color: white;*/\r\n  /*width: 15%;*/\r\n  /*float: left;*/\r\n/*}*/\r\n\r\n/*.expand-search {*/\r\n  /*border: 1.5px solid #03a9f4;*/\r\n  /*font-size: 14px;*/\r\n  /*padding: 5px 26px 6px 12px;*/\r\n  /*display: inline-block;*/\r\n  /*!*border: 1.5px solid #ccc;*!*/\r\n  /*border-radius: 17px;*/\r\n  /*box-sizing: border-box;*/\r\n  /*outline: none;*/\r\n  /*}*/\r\n\r\n/*.overlay{*/\r\n/*position: relative;*/\r\n  /*display: none;*/\r\n  /*z-index: 10;*/\r\n  /*left: 137px;*/\r\n  /*top: 72px;*/\r\n  /*width: 0%;*/\r\n/*}*/\r\n\r\ndiv{\r\n  font-family: Helvetica;\r\n}\r\n\r\n.container{\r\n  padding: 5px 10px 5px 5px;\r\n  /*margin: 15px;*/\r\n  width: 100%;\r\n}\r\n\r\nmd-card{\r\n  /*min-width: 190px;*/\r\n  padding: 15px;\r\n  /*margin-top: 8px;*/\r\n  /*margin: 5px;*/\r\n  font-family: Helvetica;\r\n}\r\n\r\n.cards-toggle\r\n{\r\n  height: 30px;\r\n  font-size: 12px;\r\n  margin-left: 8px;\r\n  width: 13%;\r\n  /*width: 15%;*/\r\n  /*float: left;*/\r\n}\r\n\r\n.cards-toggle div{\r\n  text-align: center;\r\n}\r\n\r\n.cards-toggle:hover\r\n{\r\n  background-color: #5b89ff !important;\r\n  color: white;\r\n  cursor: pointer;\r\n  /*width: 15%;*/\r\n  /*float: left;*/\r\n}\r\n\r\n/*.cards-toggle:active*/\r\n/*{*/\r\n  /*background-color: #512da1;*/\r\n  /*color: white;*/\r\n  /*!*width: 15%;*!*/\r\n  /*!*float: left;*!*/\r\n/*}*/\r\n\r\n\r\n\r\n\r\n\r\n\r\n/*.expand-search {*/\r\n/*border: 1.5px solid #03a9f4;*/\r\n/*font-size: 14px;*/\r\n/*padding: 5px 26px 6px 12px;*/\r\n/*display: inline-block;*/\r\n/*!*border: 1.5px solid #ccc;*!*/\r\n/*border-radius: 17px;*/\r\n/*box-sizing: border-box;*/\r\n/*outline: none;*/\r\n/*}*/\r\n\r\n.overlay{\r\n  position: absolute;\r\n  left: 50%;\r\n  top: 50%;\r\n  -webkit-transform: translate(-50%, -50%);\r\n          transform: translate(-50%, -50%);\r\n  display: -ms-grid;\r\n  display: grid;\r\n}\r\n\r\n.doughnut-chart{\r\n  position: relative;\r\n  margin-top: -19px;\r\n  width: 196px;\r\n  margin-right: -43px;\r\n}\r\n\r\n.expand-search {\r\n  border: 1.5px solid #b0bcc1;\r\n  width: 100%;\r\n  font-size: 12px;\r\n  padding: 5px 26px 5px 12px;\r\n  display: inline-block;\r\n  /*border: 1.5px solid #ccc;*/\r\n  border-radius: 17px;\r\n  box-sizing: border-box;\r\n  outline: none;\r\n}\r\n\r\n/* search box*/\r\n.expand-search:focus{\r\n  outline: none;\r\n  border: 1.5px solid #03a9f4;\r\n}\r\n\r\n.doughnut-chart-label{\r\n  padding:0px 6px;font-size: 10px;margin-right:5px\r\n}\r\n\r\n.custome-button button{\r\n  height: 26px;\r\n  font-size: 13px;\r\n  line-height: 26px;\r\n  border-radius: 5px;\r\n}\r\n\r\n\r\ntable {\r\n  font-family: Helvetica;\r\n  color: #46465f;\r\n  font-size: 11px;\r\n  border-collapse: collapse;\r\n  width: 100%;\r\n}\r\n\r\ntd, th {\r\n  /*border: 1px solid #eee;*/\r\n  border-right: 1px solid #eee;\r\n  text-align: center;\r\n  padding: 8px;\r\n}\r\n.list-header1{\r\n  color: #46465f;\r\n  font-size: 13px;\r\n  font-weight: bold;\r\n  padding: 8px;\r\n  width: 160%;\r\n}\r\n.list-body1 {\r\n  font-size: 12px;\r\n  padding: 8px;\r\n  /*margin-top: 5px;*/\r\n}\r\n\r\n.list-body1 span{\r\n  margin-left: 5px;\r\n}\r\n\r\n\r\n/*tr:nth-child(even) {*/\r\n  /*!*background-color: #f1faff;*!*/\r\n  /*!*background-color: #f6f9fd;*!*/\r\n  /*background-color: aliceblue;*/\r\n/*}*/\r\n\r\n.select-row:hover\r\n{\r\n  background-color: aliceblue;\r\n}\r\n\r\n\r\n.button-align button\r\n{\r\n  line-height:25px\r\n}\r\n\r\n.imgcontainer {\r\n  /*margin: 24px 0 20px 0;*/\r\n  padding-left: 20px;\r\n}\r\n\r\n.pagination-button{\r\n  line-height: 25px;\r\n  min-width: 0px;\r\n  padding: 0px 10px 0px 10px;\r\n  color: #46465f;\r\n  background-color:whitesmoke;\r\n}\r\n\r\n.pagination-text {\r\n  color: #828395;\r\n  text-align: center !important;\r\n  font-weight: bolder;\r\n  font-size: 14px;\r\n  padding: 0 5px;\r\n  width:200px;\r\n}\r\n\r\n.pagination-text span{\r\n  display: inline-block;\r\n  min-width: 30px;\r\n}\r\n\r\nmd-option{\r\n  height: 35px;\r\n  line-height: 35px;\r\n}\r\n\r\n.my-select {\r\n  width: 130px;\r\n  padding: 0px 16px;\r\n  vertical-align: 6px;\r\n}\r\n\r\n\r\n.add-button{\r\n  width: 22px;\r\n  height: 22px;\r\n  line-height: 22px;\r\n}\r\n\r\n.customCheckBox >>> .mat-checkbox-inner-container{\r\n  height: 15px !important;\r\n  width: 15px !important;\r\n}\r\n\r\n.customePaginator >>> .mat-paginator-range-label{\r\n  min-width: 92px;\r\n}\r\n \r\n\r\n.my-download{\r\n  color:rgb(48, 2, 2);\r\n  cursor: pointer;\r\n}\r\n\r\n.my-download:hover,\r\n.my-download:focus {\r\n  color: rgba(193, 208, 234, 0.97);\r\n  text-decoration: none;\r\n  cursor: pointer;\r\n}\r\n\r\n.download-csv{\r\n  font-size: 14px;\r\n  vertical-align: 8px;\r\n  margin-left: 13px;\r\n}\r\n.change-mode-button{\r\n  background-color: #42d35d;\r\n  font-size: 12px;\r\n  line-height: 26px;\r\n  height: 25px;\r\n  border-radius: 13px;\r\n  color:#FFFFFF;\r\n}\r\n", ""]);
 
 // exports
 
@@ -3893,15 +4005,23 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/shipment-status/shipment-status.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" style=\"min-width: 700px;box-sizing: border-box;\">\n    <md-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></md-spinner>    \n  <div style=\"display:flex;padding:20px 5px 10px 12px;\" >\n    <md-card class=\"cards-toggle\" (click)=\"selectedFilter = '';changeFilterList('')\" [style.background-color]=\"selectedFilter == ''?'#1976d2':''\"  [style.color]=\"selectedFilter == ''?'#FFFFFF':''\">\n      <div ><span >{{length}}</span></div>\n      <div style=\"margin-top: 6px;\" ><span  >All Shipments</span></div>\n    </md-card>\n\n    <md-card class=\"cards-toggle\" (click)=\"selectedFilter = 'active';changeFilterList('active')\" [style.background-color]=\"selectedFilter == 'active'?'#1976d2':''\"  [style.color]=\"selectedFilter == 'active'?'#FFFFFF':''\" style=\"margin-left: 20px\" >\n      <div  ><span > {{active}}</span></div>\n      <div style=\"margin-top: 6px;\" ><span  >Active</span></div>\n    </md-card>\n\n    <md-card class=\"cards-toggle\" (click)=\"selectedFilter = 'deliverd';changeFilterList('deliverd')\" [style.background-color]=\"selectedFilter == 'deliverd'?'#1976d2':''\"  [style.color]=\"selectedFilter == 'deliverd'?'#FFFFFF':''\" style=\"margin-left: 20px\" >\n      <div  ><span >{{deliverd}}</span></div>\n      <div  style=\"margin-top: 6px;\"><span  >Delivered</span></div>\n    </md-card>\n\n    <div style=\"display: flex;margin-left: auto;margin-right: 45px;\" >\n      <div class=\"doughnut-chart\" >\n        <div class=\"overlay\">\n          <i style=\"color: #1976d2\" class=\"fa fa-wifi\" aria-hidden=\"true\"></i>\n          <i style=\"color: #1976d2\" class=\"fa fa-mobile\" style=\"margin-left:6px\" aria-hidden=\"true\"></i>\n        </div>\n        <canvas baseChart\n                [options]=\"doughnutChartOptions\"\n                [data]=\"doughnutChartData\"\n                [chartType]=\"doughnutChartType\"\n                [colors]=\"doughnutColor\">\n        </canvas>\n      </div>\n\n      <div  style=\"margin-top: -10px;\">\n        <span style=\"font-size: 14px\">Tracking Status</span>\n        <div >\n          <span class=\"doughnut-chart-label\" style=\"background-color:#71a2ec;\" ></span>\n          <span style=\"font-size: 11px;\" >{{doughnutChartData[0]}}: Tracknet</span>\n        </div>\n        <div style=\"margin-top: 5px;\">\n          <span class=\"doughnut-chart-label\" style=\"background-color:#a1f2f5;\"></span>\n          <span style=\"font-size: 11px;\" >{{doughnutChartData[1]}}: Trip Tracker</span>\n        </div>\n\n        <div style=\"margin-top: 5px;\">\n          <span class=\"doughnut-chart-label\" style=\"background-color:#d7d8df;\"></span>\n          <span style=\"font-size: 11px;\" >{{doughnutChartData[2]}}: Manual Mode</span>\n        </div>\n      </div>\n    </div>\n    \n  </div>\n\n   \n  <div style=\"display: flex;padding: 5px 5px;margin-top: 10px\" >\n    <div class=\"custome-button\" >\n      <button md-button (click)=\"createNewShipment()\" >+Create New Shipment</button>\n      <button md-raised-button color=\"primary\" style=\"margin-left: 16px;\" >Import Shipment</button>\n    </div>\n    <div style=\"display: flex;padding: 5px 5px;margin-left: 13px;\">\n      <i   (click)=\"download()\" class=\"fa fa-download my-download\" aria-hidden=\"true\">\n        <span class=\"download-csv\">CSV</span>\n      </i>\n    </div>\n    \n    <div class=\"custome-button\" style=\"display: inline-flex;margin-left: auto;\" >\n      <button md-raised-button color=\"primary\" style=\"margin-right: 40px\">Share</button>\n      <div style=\"position:relative;margin-top: -1px;\" >\n        <i  class=\"fa fa-search \"  aria-hidden=\"true\" style=\"margin-top: 7px;right: 7px;position: absolute;font-size: 13px;color: black;\"></i>\n        <input myAutofocus  [(ngModel)]=\"search\" class=\"expand-search\"  placeholder=\"Search\">\n      </div>\n    </div>\n  </div>\n    \n   <!--************************ Switch Shipment dialog *********************************-->\n    <div *ngIf=\"isSwitchShipmentDialog\"  class=\"mycustomDialog\" style=\"padding-top: 70px;overflow:unset\">\n      <div class=\"modal-content\" style=\"width: 60%;min-width: 250px;overflow:unset;max-width: 560px;height:60vh;\">\n        <div class=\"modal-header\">\n          <span class=\"close\" (click)=\"closeToggle()\" >&times;</span>\n          <div>\n            <label>Switch Shipment</label>\n          </div>\n        </div>\n\n        <div  style=\"padding: 18px;font-size: 17px;margin-top:10px;margin-left:150px\" >\n          <md-spinner *ngIf=\"isSpin\" mode=\"indeterminate\" class=\"spinner\"></md-spinner>\n            <div *ngIf=\"isEnabled\"><span><u>Tracknet Enabled </u></span></div>\n            <div style=\"margin-top: 21px;\">\n               <button [style.background-color]=\"trackerType == 'Trip'?'green':'gray'\" md-raised-button  class=\"change-mode-button\"  (click)=\"setTrackType('Trip');isEnabled=true\" *ngIf=\"isShowTrip\">Tracknet</button>              \n               <button [style.background-color]=\"trackerType == 'Tracker'?'green':'gray'\" md-raised-button  class=\"change-mode-button\" style=\"margin-left: 20px;\" (click)=\"setTrackType('Tracker');isEnabled=false\">Tracker</button>\n            </div>\n            <div style=\"margin-top: 15px\" *ngIf=\"trackerType == 'Tracker'\">\n            <md-input-container style=\"width: 250px;\" >\n              <input style=\"width: 100%;\" placeholder=\"Tracker IMEI\" mdInput [(ngModel)]=\"trackerIMEI\"  name=\"TrackerIMEI\" id=\"TrackerIMEI\" readonly (focus)=\"onClickIMEI()\">\n            </md-input-container>\n            <div *ngIf=\"showIMEI\" style=\"min-height:50px;max-height: 100px;overflow-y: auto;width: 280px;margin-left:0%;margin-top: -22px;    background-color: rgb(236, 236, 241);\">\n              <ul style=\"list-style-type: none;\" *ngFor=\"let device of allDeviceList\">\n                <li  (click)=\"onSelectIMEI(device)\">{{device?.device?.imei}}</li><hr style=\"margin-left:-40px\">\n              </ul>\n            </div>\n          </div>\n        </div>\n        <div style=\"margin-top: 25px;position:inherit\">\n            <button md-raised-button  style=\"margin-left: 120px;margin-top: 30px\" (click)=\"closeToggle()\" >Cancel</button>\n            <button md-raised-button  style=\"margin-left: 60px;margin-top: 30px;width: 30%\" (click)=\"confirmSwitchShipment()\" >Switch Shipment</button>\n        </div>\n      </div>\n    </div>\n  <!-- close Switch Shipment dialog -->\n\n  <div style=\"padding: 25px 5px 0px 20px;min-width: 700px\">\n    <div style=\"box-shadow: 0px 4px 19px darkgrey;\">\n      <table style=\"border: 1px solid #e1e6ef;\">\n        <tr style=\"height: 50px\">\n          <td style=\"font-size:17px;border:none;\" ><label>All Shipments</label></td>\n          <td colspan=\"4\" style=\"float: right;padding: 0px\">\n            <md-paginator class=\"customePaginator\" [length]=\"length\"\n                          [pageSize]=\"pageSize\"\n                          [pageSizeOptions]=\"pageSizeOptions\"\n                          (page)=\"pageEvent = $event;selectTableHeight()\" >\n            </md-paginator>\n          </td>\n        </tr>\n         \n        <div fxLayout=\"row\" class=\"list-header1\" [style.width]=\"(isShowDetails || this.previousSelectedVehicle['_isShowDetails'])?'calc(160% - 330px)':'160%'\">\n          <span fxFlex=3><md-checkbox class=\"customCheckBox\" [(ngModel)]=\"s\" (change)=\"allChecked()\" ></md-checkbox></span>\n          <span fxFlex=14 >Shipment No</span>\n          <span fxFlex=13 >Vehicle No</span>\n          <span fxFlex=16 >Shipment Status</span>\n          <span fxFlex=14  >Consignor</span>\n          <span fxFlex=14  >Consignee</span>\n          <span fxFlex=14 >Distance to go</span>\n          <span fxFlex=13  >Current Status</span>\n      </div>\n      </table>\n      <div  style=\"overflow:auto;max-height:calc(100vh - 340px);display:flex\" >\n        <div style=\"overflow-y:auto;overflow-x:hidden;max-height:calc(100vh - 340px); width: 100%;margin-right: -1px;\" >\n        <table  style=\"border-top: 1px solid #e1e6ef;border-bottom: 4px solid rgba(225, 230, 239, 0);\">\n          <div fxLayout=\"row\" *ngFor=\"let shipment of selectedVehicleList | searchFilter : ['vehicleRegistrationNumber','shipmentNo', search] | shipmentType: ['_shipmentStatus', selectedFilter] | orderBy:['plannedStartTime']\">\n            <div fxFlex=2 style=\"margin-top: 10px;margin-left: 10px;\">\n              <span> <md-checkbox class=\"customCheckBox\" [(ngModel)]=\"shipment.isChecked\" (change)=\"allTestChecked()\" ></md-checkbox></span>                \n            </div>\n            <div fxFlex=97 >\n              <md-card   (click)=\"isShowDetails = true;selectedShipmentDetail(shipment);changeBgColor(shipment)\"\n              [style.background-color]=\"shipment._isShowDetails?'aliceblue':''\" style=\"cursor: alias;padding: 12px;\"  fxLayout=\"row\" class=\"list-body1\" >      \n                <span fxFlex=13 *ngIf=\"shipment.shipmentNo!=null\">{{shipment.shipmentNo}}</span>\n                <span fxFlex=13 *ngIf=\"shipment.shipmentNoExtended!=null\">{{shipment.shipmentNoExtended}}</span>\n                \n                <span fxFlex=12 ><i   class=\"fa fa-truck\" aria-hidden=\"true\"></i>&nbsp;&nbsp;{{shipment.vehicleRegistrationNumber}}</span>\n                <span fxFlex=14 *ngIf=\"shipment.vts=='EnrouteForPickUp'\"><i   aria-hidden=\"true\">Enroute For Pickup</i></span>\n                <span fxFlex=14 *ngIf=\"shipment.vts=='AtPickUpPoint'\"><i   aria-hidden=\"true\">At Pickup Point</i></span>\n                <span fxFlex=14 *ngIf=\"shipment.vts=='EnrouteForDestination'\"><i   aria-hidden=\"true\">Enroute For Delivery</i></span>\n                <span  fxFlex=14 *ngIf=\"shipment.vts=='AtDestination' && shipment.shipmentState=='Started'\"><i   aria-hidden=\"true\">At Destination</i></span>\n                <span  fxFlex=14 *ngIf=\"shipment.vts=='AtDestination' && shipment.shipmentState=='Completed'\"><i   aria-hidden=\"true\">Delivered</i></span>\n                \n                <!-- <span style=\"margin-left: 45px\" *ngIf=\"shipment.vts=='AtDestination'\"><i   aria-hidden=\"true\">Enroute For Pickup</i></span>                    -->\n                <span  fxFlex=14><i  class=\"fa fa-map-marker\" aria-hidden=\"true\"></i>&nbsp;&nbsp;{{shipment.startLocationName}} </span>\n                <span fxFlex=13 ><i   class=\"fa fa-circle\" aria-hidden=\"true\"></i>&nbsp;&nbsp;{{shipment.endLocationName}} </span>\n                <span fxFlex=14 ><i   *ngIf=false class=\"fa fa-location-arrow\" aria-hidden=\"true\"></i>&nbsp;&nbsp;</span>\n                <span fxFlex=14 *ngIf=\"shipment.trackingType=='Tracker'\"><i  style=\"color:rgb(27, 238, 245);\" class=\"fa fa fa-rss-square\" aria-hidden=\"true\"  ></i>&nbsp;&nbsp;{{shipment.currentLocationName}}</span>\n                <span fxFlex=14 *ngIf=\"shipment.trackingType=='Manual'\"> <i  style=\"color:#bfc0c5\" class=\"fa fa fa-square\" aria-hidden=\"true\"  ></i>&nbsp;&nbsp;{{shipment.currentLocationName}}</span>\n                <span fxFlex=14 *ngIf=\"shipment.trackingType=='Trip'\"> <i  style=\"color:rgb(27, 114, 245);\" class=\"fa fa fa-square\" aria-hidden=\"true\" ></i>&nbsp;&nbsp;{{shipment.currentLocationName}}</span>\n              </md-card>\n            </div>\n            <div fxFlex=1  class=\"custome-button\" style=\"margin-left: -45px;margin-top:8px\" *ngIf=\"shipment.trackingType=='Manual'\">\n                <md-slide-toggle [checked]=\"shipment['isToggle'] && switchShipment['isToggle']\" (change)=\"checkVehicle(shipment)\" ></md-slide-toggle>\n            </div>\n          </div>\n        </table>\n        </div>\n        <div *ngIf=\"isShowDetails\" style=\"background-color: aliceblue;padding: 8px 10px;width: 100%;max-width: 330px;margin-bottom: 10px;\" >\n          <i (click)=\"isShowDetails = false;closeDetails()\" style=\"float: right;margin-top: -7px;color: #9E9E9E;cursor:pointer\" class=\"fa fa-times-circle-o\" aria-hidden=\"true\"></i>\n          <div *ngIf=\"trackingType=='Manual'\"><app-manual-shipment-status></app-manual-shipment-status></div>\n          <div *ngIf=\"trackingType=='Tracker'\"><app-tracker-shipment-status></app-tracker-shipment-status></div>\n          <div *ngIf=\"trackingType=='Trip'\"><app-tracker-shipment-status></app-tracker-shipment-status></div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n"
+module.exports = "<div class=\"container\" style=\"min-width: 700px;box-sizing: border-box;\">\r\n    <md-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></md-spinner>    \r\n  <div style=\"display:flex;padding:20px 5px 10px 12px;\" >\r\n    <md-card class=\"cards-toggle\" (click)=\"selectedFilter = '';changeFilterList('')\" [style.background-color]=\"selectedFilter == ''?'#1976d2':''\"  [style.color]=\"selectedFilter == ''?'#FFFFFF':''\">\r\n      <div ><span >{{length}}</span></div>\r\n      <div style=\"margin-top: 6px;\" ><span  >All Shipments</span></div>\r\n    </md-card>\r\n\r\n    <md-card class=\"cards-toggle\" (click)=\"selectedFilter = 'active';changeFilterList('active')\" [style.background-color]=\"selectedFilter == 'active'?'#1976d2':''\"  [style.color]=\"selectedFilter == 'active'?'#FFFFFF':''\" style=\"margin-left: 20px\" >\r\n      <div  ><span > {{active}}</span></div>\r\n      <div style=\"margin-top: 6px;\" ><span  >Active</span></div>\r\n    </md-card>\r\n\r\n    <md-card class=\"cards-toggle\" (click)=\"selectedFilter = 'deliverd';changeFilterList('deliverd')\" [style.background-color]=\"selectedFilter == 'deliverd'?'#1976d2':''\"  [style.color]=\"selectedFilter == 'deliverd'?'#FFFFFF':''\" style=\"margin-left: 20px\" >\r\n      <div  ><span >{{deliverd}}</span></div>\r\n      <div  style=\"margin-top: 6px;\"><span  >Delivered</span></div>\r\n    </md-card>\r\n\r\n    <div style=\"display: flex;margin-left: auto;margin-right: 45px;\" >\r\n      <div class=\"doughnut-chart\" >\r\n        <div class=\"overlay\">\r\n          <i style=\"color: #1976d2\" class=\"fa fa-wifi\" aria-hidden=\"true\"></i>\r\n          <i style=\"color: #1976d2\" class=\"fa fa-mobile\" style=\"margin-left:6px\" aria-hidden=\"true\"></i>\r\n        </div>\r\n        <canvas baseChart\r\n                [options]=\"doughnutChartOptions\"\r\n                [data]=\"doughnutChartData\"\r\n                [chartType]=\"doughnutChartType\"\r\n                [colors]=\"doughnutColor\">\r\n        </canvas>\r\n      </div>\r\n\r\n      <div  style=\"margin-top: -10px;\">\r\n        <span style=\"font-size: 14px\">Tracking Status</span>\r\n        <div >\r\n          <span class=\"doughnut-chart-label\" style=\"background-color:#71a2ec;\" ></span>\r\n          <span style=\"font-size: 11px;\" >{{doughnutChartData[0]}}: Tracknet</span>\r\n        </div>\r\n        <div style=\"margin-top: 5px;\">\r\n          <span class=\"doughnut-chart-label\" style=\"background-color:#a1f2f5;\"></span>\r\n          <span style=\"font-size: 11px;\" >{{doughnutChartData[1]}}: Trip Tracker</span>\r\n        </div>\r\n\r\n        <div style=\"margin-top: 5px;\">\r\n          <span class=\"doughnut-chart-label\" style=\"background-color:#d7d8df;\"></span>\r\n          <span style=\"font-size: 11px;\" >{{doughnutChartData[2]}}: Manual Mode</span>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    \r\n  </div>\r\n\r\n   \r\n  <div style=\"display: flex;padding: 5px 5px;margin-top: 10px\" >\r\n    <div class=\"custome-button\" >\r\n      <button md-button (click)=\"createNewShipment()\" >+Create New Shipment</button>\r\n      <button md-raised-button color=\"primary\" style=\"margin-left: 16px;\" >Import Shipment</button>\r\n    </div>\r\n    <div style=\"display: flex;padding: 5px 5px;margin-left: 13px;\">\r\n      <i   (click)=\"download()\" class=\"fa fa-download my-download\" aria-hidden=\"true\">\r\n        <span class=\"download-csv\">CSV</span>\r\n      </i>\r\n    </div>\r\n    \r\n    <div class=\"custome-button\" style=\"display: inline-flex;margin-left: auto;\" >\r\n      <button md-raised-button color=\"primary\" style=\"margin-right: 40px\">Share</button>\r\n      <div style=\"position:relative;margin-top: -1px;\" >\r\n        <i  class=\"fa fa-search \"  aria-hidden=\"true\" style=\"margin-top: 7px;right: 7px;position: absolute;font-size: 13px;color: black;\"></i>\r\n        <input myAutofocus  [(ngModel)]=\"search\" class=\"expand-search\"  placeholder=\"Search\">\r\n      </div>\r\n    </div>\r\n  </div>\r\n    \r\n   <!--************************ Switch Shipment dialog *********************************-->\r\n    <div *ngIf=\"isSwitchShipmentDialog\"  class=\"mycustomDialog\" style=\"padding-top: 70px;overflow:unset\">\r\n      <div class=\"modal-content\" style=\"width: 60%;min-width: 250px;overflow:unset;max-width: 560px;height:60vh;\">\r\n        <div class=\"modal-header\">\r\n          <span class=\"close\" (click)=\"closeToggle()\" >&times;</span>\r\n          <div>\r\n            <label>Switch Shipment</label>\r\n          </div>\r\n        </div>\r\n\r\n        <div  style=\"padding: 18px;font-size: 17px;margin-top:10px;margin-left:150px\" >\r\n          <md-spinner *ngIf=\"isSpin\" mode=\"indeterminate\" class=\"spinner\"></md-spinner>\r\n            <div *ngIf=\"isEnabled\"><span><u>Tracknet Enabled </u></span></div>\r\n            <div style=\"margin-top: 21px;\">\r\n               <button [style.background-color]=\"trackerType == 'Trip'?'green':'gray'\" md-raised-button  class=\"change-mode-button\"  (click)=\"setTrackType('Trip');isEnabled=true\" *ngIf=\"isShowTrip\">Tracknet</button>              \r\n               <button [style.background-color]=\"trackerType == 'Tracker'?'green':'gray'\" md-raised-button  class=\"change-mode-button\" style=\"margin-left: 20px;\" (click)=\"setTrackType('Tracker');isEnabled=false\">Tracker</button>\r\n            </div>\r\n            <div style=\"margin-top: 15px\" *ngIf=\"trackerType == 'Tracker'\">\r\n            <md-input-container style=\"width: 250px;\" >\r\n              <input style=\"width: 100%;\" placeholder=\"Tracker IMEI\" mdInput [(ngModel)]=\"trackerIMEI\"  name=\"TrackerIMEI\" id=\"TrackerIMEI\" readonly (focus)=\"onClickIMEI()\">\r\n            </md-input-container>\r\n            <div *ngIf=\"showIMEI\" style=\"min-height:50px;max-height: 100px;overflow-y: auto;width: 280px;margin-left:0%;margin-top: -22px;    background-color: rgb(236, 236, 241);\">\r\n              <ul style=\"list-style-type: none;\" *ngFor=\"let device of allDeviceList\">\r\n                <li  (click)=\"onSelectIMEI(device)\">{{device?.device?.imei}}</li><hr style=\"margin-left:-40px\">\r\n              </ul>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div style=\"margin-top: 25px;position:inherit\">\r\n            <button md-raised-button  style=\"margin-left: 120px;margin-top: 30px\" (click)=\"closeToggle()\" >Cancel</button>\r\n            <button md-raised-button  style=\"margin-left: 60px;margin-top: 30px;width: 30%\" (click)=\"confirmSwitchShipment()\" >Switch Shipment</button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  <!-- close Switch Shipment dialog -->\r\n\r\n  <div style=\"padding: 25px 5px 0px 20px;min-width: 700px\">\r\n    <div style=\"box-shadow: 0px 4px 19px darkgrey;\">\r\n      <table style=\"border: 1px solid #e1e6ef;\">\r\n        <tr style=\"height: 50px\">\r\n          <td style=\"font-size:17px;border:none;\" ><label>All Shipments</label></td>\r\n          <td colspan=\"4\" style=\"float: right;padding: 0px\">\r\n            <md-paginator class=\"customePaginator\" [length]=\"length\"\r\n                          [pageSize]=\"pageSize\"\r\n                          [pageSizeOptions]=\"pageSizeOptions\"\r\n                          (page)=\"pageEvent = $event;selectTableHeight()\" >\r\n            </md-paginator>\r\n          </td>\r\n        </tr>\r\n         \r\n        <div fxLayout=\"row\" class=\"list-header1\" [style.width]=\"(isShowDetails || this.previousSelectedVehicle['_isShowDetails'])?'calc(160% - 330px)':'160%'\">\r\n          <span fxFlex=3><md-checkbox class=\"customCheckBox\" [(ngModel)]=\"s\" (change)=\"allChecked()\" ></md-checkbox></span>\r\n          <span fxFlex=14 >Shipment No</span>\r\n          <span fxFlex=13 >Vehicle No</span>\r\n          <span fxFlex=16 >Shipment Status</span>\r\n          <span fxFlex=14  >Consignor</span>\r\n          <span fxFlex=14  >Consignee</span>\r\n          <span fxFlex=14 >Distance to go</span>\r\n          <span fxFlex=13  >Current Status</span>\r\n      </div>\r\n      </table>\r\n      <div  style=\"overflow:auto;max-height:calc(100vh - 340px);display:flex\" >\r\n        <div style=\"overflow-y:auto;overflow-x:hidden;max-height:calc(100vh - 340px); width: 100%;margin-right: -1px;\" >\r\n        <table  style=\"border-top: 1px solid #e1e6ef;border-bottom: 4px solid rgba(225, 230, 239, 0);\">\r\n          <div fxLayout=\"row\" *ngFor=\"let shipment of selectedVehicleList | searchFilter : ['vehicleRegistrationNumber','shipmentNo', search] | shipmentType: ['_shipmentStatus', selectedFilter] | orderBy:['plannedStartTime']\">\r\n            <div fxFlex=2 style=\"margin-top: 10px;margin-left: 10px;\">\r\n              <span> <md-checkbox class=\"customCheckBox\" [(ngModel)]=\"shipment.isChecked\" (change)=\"allTestChecked()\" ></md-checkbox></span>                \r\n            </div>\r\n            <div fxFlex=97 >\r\n              <md-card   (click)=\"isShowDetails = true;selectedShipmentDetail(shipment);changeBgColor(shipment)\"\r\n              [style.background-color]=\"shipment._isShowDetails?'aliceblue':''\" style=\"cursor: alias;padding: 12px;\"  fxLayout=\"row\" class=\"list-body1\" >      \r\n                <span fxFlex=13 *ngIf=\"shipment.shipmentNo!=null\">{{shipment.shipmentNo}}</span>\r\n                <span fxFlex=13 *ngIf=\"shipment.shipmentNoExtended!=null\">{{shipment.shipmentNoExtended}}</span>\r\n                \r\n                <span fxFlex=12 ><i   class=\"fa fa-truck\" aria-hidden=\"true\"></i>&nbsp;&nbsp;{{shipment.vehicleRegistrationNumber}}</span>\r\n                <span fxFlex=14 *ngIf=\"shipment.vts=='EnrouteForPickUp'\"><i   aria-hidden=\"true\">Enroute For Pickup</i></span>\r\n                <span fxFlex=14 *ngIf=\"shipment.vts=='AtPickUpPoint'\"><i   aria-hidden=\"true\">At Pickup Point</i></span>\r\n                <span fxFlex=14 *ngIf=\"shipment.vts=='EnrouteForDestination'\"><i   aria-hidden=\"true\">Enroute For Delivery</i></span>\r\n                <span  fxFlex=14 *ngIf=\"shipment.vts=='AtDestination' && shipment.shipmentState=='Started'\"><i   aria-hidden=\"true\">At Destination</i></span>\r\n                <span  fxFlex=14 *ngIf=\"shipment.vts=='AtDestination' && shipment.shipmentState=='Completed'\"><i   aria-hidden=\"true\">Delivered</i></span>\r\n                \r\n                <!-- <span style=\"margin-left: 45px\" *ngIf=\"shipment.vts=='AtDestination'\"><i   aria-hidden=\"true\">Enroute For Pickup</i></span>                    -->\r\n                <span  fxFlex=14><i  class=\"fa fa-map-marker\" aria-hidden=\"true\"></i>&nbsp;&nbsp;{{shipment.startLocationName}} </span>\r\n                <span fxFlex=13 ><i   class=\"fa fa-circle\" aria-hidden=\"true\"></i>&nbsp;&nbsp;{{shipment.endLocationName}} </span>\r\n                <span fxFlex=14 ><i   *ngIf=false class=\"fa fa-location-arrow\" aria-hidden=\"true\"></i>&nbsp;&nbsp;</span>\r\n                <span fxFlex=14 *ngIf=\"shipment.trackingType=='Tracker'\"><i  style=\"color:rgb(27, 238, 245);\" class=\"fa fa fa-rss-square\" aria-hidden=\"true\"  ></i>&nbsp;&nbsp;{{shipment.currentLocationName}}</span>\r\n                <span fxFlex=14 *ngIf=\"shipment.trackingType=='Manual'\"> <i  style=\"color:#bfc0c5\" class=\"fa fa fa-square\" aria-hidden=\"true\"  ></i>&nbsp;&nbsp;{{shipment.currentLocationName}}</span>\r\n                <span fxFlex=14 *ngIf=\"shipment.trackingType=='Trip'\"> <i  style=\"color:rgb(27, 114, 245);\" class=\"fa fa fa-square\" aria-hidden=\"true\" ></i>&nbsp;&nbsp;{{shipment.currentLocationName}}</span>\r\n              </md-card>\r\n            </div>\r\n            <div fxFlex=1  class=\"custome-button\" style=\"margin-left: -45px;margin-top:8px\" *ngIf=\"shipment.trackingType=='Manual'\">\r\n                <md-slide-toggle [checked]=\"shipment['isToggle'] && switchShipment['isToggle']\" (change)=\"checkVehicle(shipment)\" ></md-slide-toggle>\r\n            </div>\r\n          </div>\r\n        </table>\r\n        </div>\r\n        <div *ngIf=\"isShowDetails\" style=\"background-color: aliceblue;padding: 8px 10px;width: 100%;max-width: 330px;margin-bottom: 10px;\" >\r\n          <i (click)=\"isShowDetails = false;closeDetails()\" style=\"float: right;margin-top: -7px;color: #9E9E9E;cursor:pointer\" class=\"fa fa-times-circle-o\" aria-hidden=\"true\"></i>\r\n          <div *ngIf=\"trackingType=='Manual'\"><app-manual-shipment-status></app-manual-shipment-status></div>\r\n          <div *ngIf=\"trackingType=='Tracker'\"><app-tracker-shipment-status></app-tracker-shipment-status></div>\r\n          <div *ngIf=\"trackingType=='Trip'\"><app-tracker-shipment-status></app-tracker-shipment-status></div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
 /***/ "../../../../../src/app/components/shipment-status/shipment-status.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_shipment_services__ = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_device_services__ = __webpack_require__("../../../../../src/app/services/device-services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShipmentStatusComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3911,14 +4031,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var router_1 = __webpack_require__("../../../router/@angular/router.es5.js");
-var shipment_services_1 = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
-var device_services_1 = __webpack_require__("../../../../../src/app/services/device-services.ts");
-var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
-var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-var material_1 = __webpack_require__("../../../material/@angular/material.es5.js");
+
+
+
+
+
+
+
 var ShipmentStatusComponent = (function () {
     //close for pagination
     function ShipmentStatusComponent(_router, shipmentServices, deviceServices, _store, localStorgeService, snackBar) {
@@ -4352,14 +4471,14 @@ var ShipmentStatusComponent = (function () {
     return ShipmentStatusComponent;
 }());
 ShipmentStatusComponent = __decorate([
-    core_1.Component({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-shipment-status',
         template: __webpack_require__("../../../../../src/app/components/shipment-status/shipment-status.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/shipment-status/shipment-status.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof router_1.Router !== "undefined" && router_1.Router) === "function" && _a || Object, typeof (_b = typeof shipment_services_1.ShipmentServices !== "undefined" && shipment_services_1.ShipmentServices) === "function" && _b || Object, typeof (_c = typeof device_services_1.DeviceServices !== "undefined" && device_services_1.DeviceServices) === "function" && _c || Object, typeof (_d = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _d || Object, typeof (_e = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _e || Object, typeof (_f = typeof material_1.MdSnackBar !== "undefined" && material_1.MdSnackBar) === "function" && _f || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_shipment_services__["a" /* ShipmentServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_shipment_services__["a" /* ShipmentServices */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_device_services__["a" /* DeviceServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_device_services__["a" /* DeviceServices */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ngrx_store__["b" /* Store */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_6__angular_material__["t" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__angular_material__["t" /* MdSnackBar */]) === "function" && _f || Object])
 ], ShipmentStatusComponent);
-exports.ShipmentStatusComponent = ShipmentStatusComponent;
+
 var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=shipment-status.component.js.map
 
@@ -4373,7 +4492,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".top-header{\n  background-color: #3F51B5;\n  width: 100%;\n  padding-bottom: 3px;\n}\n\nmd-card{\n  padding: 9px;\n  min-width: 250px;\n}\n\ndiv {\n  font-family: Helvetica !important;\n  /*color: #46465f;*/\n}\n\n.confirm-location{\n  padding: 22px;\n  min-height: 100px;\n  max-height: 200px;\n  \n  border: 1px solid #D1D1D1;\n  min-width:175px;\n}\n\n\n\n.my-hr{\n  border-style:ridge;\n  border-width:1px;\n  margin-top: 6px;\n  min-width: 250px;\n  margin-bottom:3px;\n}\n/* time line css start here*/\n\n.timeline-icon{\n  top: 50px;\n  position: absolute;\n  left: 71px;\n}\n\n.timeline-image{\n  position: absolute;\n  left: 71px;\n}\n\n.wfl-imeline-image{\n  position: absolute;\n  left: 50px;\n  color: #428fd4;\n}\n\n.EFP_icon{\n  position: absolute;\n  height: 100%;\n  margin-left: 54px;\n}\n\n.EFP_timeline_icon{\n  position: absolute;\n  background-color: white;\n  left: 48px;\n  top: -6px;\n  font-size: 18px;\n}\n\n\n.cd-timeline {\n  position: relative;\n}\n.cd-timeline::before {\n  /* this is the vertical line */\n  /*top: 21px;*/\n  bottom: 37px;\n  content: '';\n  position: absolute;\n  border-radius: 1px;\n  left: 85px;\n  height: 100%;\n  width: 1.40px;\n  background: #9b9b9b;\n  /*box-shadow: 0px 0px 10px lightsteelblue;*/\n}\n\n\n\n.wfl-timeline {\n  position: relative;\n}\n\n.wfl-timeline::before {\n  content: '';\n  position: absolute;\n  border-radius: 1px;\n  left: 55px;\n  height: 100%;\n  width: 3.4px;\n  background: #428fd4;\n}\n\n\n.DP-timeline {\n  position: relative;\n}\n\n.DP-timeline::before {\n  top: -17px;\n  content: '';\n  position: absolute;\n  border-radius: 1px;\n  left: 85px;\n  height: 100%;\n  width: 3.4px;\n  background: #428fd4;\n}\n\n.DP_timeline-image{\n  position: absolute;\n  left: 66px;\n  color: #428fd4;\n  font-size: 25px;\n  margin-top: 10px;\n}\n\n\n.unvisited-timeline {\n  position: relative;\n}\n.unvisited-timeline::before {\n  /* this is the vertical line */\n  content: '';\n  position: absolute;\n  border-radius: 1px;\n  left: 85px;\n  height: 100%;\n  border-left: 1.40px dashed #9b9b9b;\n  /*width: 1.40px;*/\n  /*background: #9b9b9b;*/\n  /*box-shadow: 0px 0px 10px lightsteelblue;*/\n}\n\n.EFP_unvisited-timeline {\n  position: relative;\n}\n.EFP_unvisited-timeline::before {\n  /* this is the vertical line */\n  top:15px;\n  content: '';\n  position: absolute;\n  border-radius: 1px;\n  left: 55px;\n  height: 100%;\n  border-left: 1.40px dashed #D0D0D0;\n  /*width: 1.40px;*/\n  /*background: #9b9b9b;*/\n  /*box-shadow: 0px 0px 10px lightsteelblue;*/\n}\n\n\n\n.timeline-header{\n  text-align:center;\n  display: -ms-grid;\n  display: grid;\n  margin: -8px -8px 2px -8px;\n  box-shadow: 0px 1px 1px #999999;\n  padding: 10px;\n  display: list-item;\n}\n/* end here time line css*/\n\n/********** this will work when click on up-down button and div appear like a shutter  **************/\n.show-down-Slowly {\n  margin-top: 8px !important;\n  transition: margin-top .3s ;\n  -webkit-transition: margin-top .3s ;\n}\n.data-box {\n  /*margin-top: -2000px;*/\n  margin-left: 8px;\n  width:98%;\n  font-size: 11px;\n  color: #9b9b9b;\n}\n/****************************************************************************/\n\n/********** this will work when click on up-down button and div appear like a shutter  **************/\n.hide-up-Slowly{\n  /*margin-top: -2000px !important;*/\n  transition: margin-top .3s ;\n  -webkit-transition: margin-top .3s ;\n}\n\n/****************************************************************************/\n\n.vehicle-no{\n  font-size:20px;\n  color:rgba(255, 255, 255, 0.94);\n  margin-left:10px;\n}\n\n.vehicle-status-trip{\n  margin-top:10px;\n  padding: 4px;\n  text-align: center;\n  font-size: 18px;\n  background-color: #a1f2f5;\n  color: white;\n}\n.vehicle-status-tracker{\n  margin-top:10px;\n  padding: 4px;\n  text-align: center;\n  font-size: 18px;\n  background-color: #4a6ad8;\n  color: white;\n}\n\n.current-vehicle-card{\n  background-color:#8398ba;\n  color: white;\n  padding-top: 15px;\n  padding-bottom: 19px;\n  margin-bottom:13px;\n}\n\n.driver-name{\n  margin-left: auto;\n  font-size: 15px;\n  color:rgba(255, 255, 255, 0.87);\n  padding: 2px 8px;\n}\n\n.driver-name-web{\n  /*margin-left: auto;*/\n  font-size: 13px;\n  /*color:rgba(255, 255, 255, 0.87);*/\n  padding: 2px 8px;\n}\n\n.phone-icon{\n  margin-left: 8px;\n  color: white;\n  font-size: 16px;\n}\n\n.alert-box{\n  font-size: 13px;\n  line-height:1.67;\n  color:rgba(0, 0, 0, 0.54);\n}\n\n.disconnected{\n  margin-top: 10px;\n  background-color: #ff5252;\n  border: solid 1px #ff5252;\n  color: white;\n  font-size: 18px;\n  text-align: center;\n  padding: 3px;\n  cursor: pointer;\n}\n\n\n.time{\n  color: #9b9b9b;\n  text-align: center;\n  display: -ms-grid;\n  display: grid;\n  font-size: 11px;\n  min-width: 50px;\n  max-width: 60px;\n  overflow: hidden;\n}\n\n.rotate{ /* IE 9 */\n  -webkit-transform: rotate(90deg); /* Safari */\n  transform: rotate(90deg);\n  font-size: 13px\n}\n\n.travling-time{\n  position: absolute;\n  margin-left: -133px;\n  display: -ms-grid;\n  display: grid;\n  text-align: center;\n  height: 100%;\n  /*margin-top : -34px;*/\n  min-width: 50px;\n  max-width: 68px;\n  margin-top: -15px;\n}\n", ""]);
+exports.push([module.i, ".top-header{\r\n  background-color: #3F51B5;\r\n  width: 100%;\r\n  padding-bottom: 3px;\r\n}\r\n\r\nmd-card{\r\n  padding: 9px;\r\n  min-width: 250px;\r\n}\r\n\r\ndiv {\r\n  font-family: Helvetica !important;\r\n  /*color: #46465f;*/\r\n}\r\n\r\n.confirm-location{\r\n  padding: 22px;\r\n  min-height: 100px;\r\n  max-height: 200px;\r\n  \r\n  border: 1px solid #D1D1D1;\r\n  min-width:175px;\r\n}\r\n\r\n\r\n\r\n.my-hr{\r\n  border-style:ridge;\r\n  border-width:1px;\r\n  margin-top: 6px;\r\n  min-width: 250px;\r\n  margin-bottom:3px;\r\n}\r\n/* time line css start here*/\r\n\r\n.timeline-icon{\r\n  top: 50px;\r\n  position: absolute;\r\n  left: 71px;\r\n}\r\n\r\n.timeline-image{\r\n  position: absolute;\r\n  left: 71px;\r\n}\r\n\r\n.wfl-imeline-image{\r\n  position: absolute;\r\n  left: 50px;\r\n  color: #428fd4;\r\n}\r\n\r\n.EFP_icon{\r\n  position: absolute;\r\n  height: 100%;\r\n  margin-left: 54px;\r\n}\r\n\r\n.EFP_timeline_icon{\r\n  position: absolute;\r\n  background-color: white;\r\n  left: 48px;\r\n  top: -6px;\r\n  font-size: 18px;\r\n}\r\n\r\n\r\n.cd-timeline {\r\n  position: relative;\r\n}\r\n.cd-timeline::before {\r\n  /* this is the vertical line */\r\n  /*top: 21px;*/\r\n  bottom: 37px;\r\n  content: '';\r\n  position: absolute;\r\n  border-radius: 1px;\r\n  left: 85px;\r\n  height: 100%;\r\n  width: 1.40px;\r\n  background: #9b9b9b;\r\n  /*box-shadow: 0px 0px 10px lightsteelblue;*/\r\n}\r\n\r\n\r\n\r\n.wfl-timeline {\r\n  position: relative;\r\n}\r\n\r\n.wfl-timeline::before {\r\n  content: '';\r\n  position: absolute;\r\n  border-radius: 1px;\r\n  left: 55px;\r\n  height: 100%;\r\n  width: 3.4px;\r\n  background: #428fd4;\r\n}\r\n\r\n\r\n.DP-timeline {\r\n  position: relative;\r\n}\r\n\r\n.DP-timeline::before {\r\n  top: -17px;\r\n  content: '';\r\n  position: absolute;\r\n  border-radius: 1px;\r\n  left: 85px;\r\n  height: 100%;\r\n  width: 3.4px;\r\n  background: #428fd4;\r\n}\r\n\r\n.DP_timeline-image{\r\n  position: absolute;\r\n  left: 66px;\r\n  color: #428fd4;\r\n  font-size: 25px;\r\n  margin-top: 10px;\r\n}\r\n\r\n\r\n.unvisited-timeline {\r\n  position: relative;\r\n}\r\n.unvisited-timeline::before {\r\n  /* this is the vertical line */\r\n  content: '';\r\n  position: absolute;\r\n  border-radius: 1px;\r\n  left: 85px;\r\n  height: 100%;\r\n  border-left: 1.40px dashed #9b9b9b;\r\n  /*width: 1.40px;*/\r\n  /*background: #9b9b9b;*/\r\n  /*box-shadow: 0px 0px 10px lightsteelblue;*/\r\n}\r\n\r\n.EFP_unvisited-timeline {\r\n  position: relative;\r\n}\r\n.EFP_unvisited-timeline::before {\r\n  /* this is the vertical line */\r\n  top:15px;\r\n  content: '';\r\n  position: absolute;\r\n  border-radius: 1px;\r\n  left: 55px;\r\n  height: 100%;\r\n  border-left: 1.40px dashed #D0D0D0;\r\n  /*width: 1.40px;*/\r\n  /*background: #9b9b9b;*/\r\n  /*box-shadow: 0px 0px 10px lightsteelblue;*/\r\n}\r\n\r\n\r\n\r\n.timeline-header{\r\n  text-align:center;\r\n  display: -ms-grid;\r\n  display: grid;\r\n  margin: -8px -8px 2px -8px;\r\n  box-shadow: 0px 1px 1px #999999;\r\n  padding: 10px;\r\n  display: list-item;\r\n}\r\n/* end here time line css*/\r\n\r\n/********** this will work when click on up-down button and div appear like a shutter  **************/\r\n.show-down-Slowly {\r\n  margin-top: 8px !important;\r\n  transition: margin-top .3s ;\r\n  -webkit-transition: margin-top .3s ;\r\n}\r\n.data-box {\r\n  /*margin-top: -2000px;*/\r\n  margin-left: 8px;\r\n  width:98%;\r\n  font-size: 11px;\r\n  color: #9b9b9b;\r\n}\r\n/****************************************************************************/\r\n\r\n/********** this will work when click on up-down button and div appear like a shutter  **************/\r\n.hide-up-Slowly{\r\n  /*margin-top: -2000px !important;*/\r\n  transition: margin-top .3s ;\r\n  -webkit-transition: margin-top .3s ;\r\n}\r\n\r\n/****************************************************************************/\r\n\r\n.vehicle-no{\r\n  font-size:20px;\r\n  color:rgba(255, 255, 255, 0.94);\r\n  margin-left:10px;\r\n}\r\n\r\n.vehicle-status-trip{\r\n  margin-top:10px;\r\n  padding: 4px;\r\n  text-align: center;\r\n  font-size: 18px;\r\n  background-color: #a1f2f5;\r\n  color: white;\r\n}\r\n.vehicle-status-tracker{\r\n  margin-top:10px;\r\n  padding: 4px;\r\n  text-align: center;\r\n  font-size: 18px;\r\n  background-color: #4a6ad8;\r\n  color: white;\r\n}\r\n\r\n.current-vehicle-card{\r\n  background-color:#8398ba;\r\n  color: white;\r\n  padding-top: 15px;\r\n  padding-bottom: 19px;\r\n  margin-bottom:13px;\r\n}\r\n\r\n.driver-name{\r\n  margin-left: auto;\r\n  font-size: 15px;\r\n  color:rgba(255, 255, 255, 0.87);\r\n  padding: 2px 8px;\r\n}\r\n\r\n.driver-name-web{\r\n  /*margin-left: auto;*/\r\n  font-size: 13px;\r\n  /*color:rgba(255, 255, 255, 0.87);*/\r\n  padding: 2px 8px;\r\n}\r\n\r\n.phone-icon{\r\n  margin-left: 8px;\r\n  color: white;\r\n  font-size: 16px;\r\n}\r\n\r\n.alert-box{\r\n  font-size: 13px;\r\n  line-height:1.67;\r\n  color:rgba(0, 0, 0, 0.54);\r\n}\r\n\r\n.disconnected{\r\n  margin-top: 10px;\r\n  background-color: #ff5252;\r\n  border: solid 1px #ff5252;\r\n  color: white;\r\n  font-size: 18px;\r\n  text-align: center;\r\n  padding: 3px;\r\n  cursor: pointer;\r\n}\r\n\r\n\r\n.time{\r\n  color: #9b9b9b;\r\n  text-align: center;\r\n  display: -ms-grid;\r\n  display: grid;\r\n  font-size: 11px;\r\n  min-width: 50px;\r\n  max-width: 60px;\r\n  overflow: hidden;\r\n}\r\n\r\n.rotate{ /* IE 9 */\r\n  -webkit-transform: rotate(90deg); /* Safari */\r\n  transform: rotate(90deg);\r\n  font-size: 13px\r\n}\r\n\r\n.travling-time{\r\n  position: absolute;\r\n  margin-left: -133px;\r\n  display: -ms-grid;\r\n  display: grid;\r\n  text-align: center;\r\n  height: 100%;\r\n  /*margin-top : -34px;*/\r\n  min-width: 50px;\r\n  max-width: 68px;\r\n  margin-top: -15px;\r\n}\r\n", ""]);
 
 // exports
 
@@ -4386,15 +4505,23 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/tracker-shipment-status/tracker-shipment-status.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"width: 100%;top: 0px;z-index:100;background-color: white;\" class=\"slow-down\">\n  <md-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></md-spinner>\n\n  <!-- <div *ngIf=\"view !='web'\" class=\"top-header\" id=\"top-head\" >\n    <div fxLayout=\"row\" style=\"padding-left:8px;padding-bottom:9px;padding-top:5px\">\n      <span class=\"vehicle-no\"  >{{vehicleNo}}</span>\n      <label class=\"driver-name\">{{vehicleTripDetails['currentTrip']?.driverName}}\n                <a href=\"tel:{{vehicleTripDetails['currentTrip']?.driverMobNumber}}\" ><i  class=\"fa fa-phone phone-icon\" aria-hidden=\"true\"></i></a>\n     </label>\n    </div>\n  </div> -->\n\n  <div *ngIf=\"view =='web'\">\n    <div>\n      <div>\n        <span class=\"driver-name-web\" >Driver&nbsp;:{{selectedShipment['currentShipment']?.driverName}}</span>\n      </div>\n      <div>\n        <a class=\"driver-name-web\" href=\"tel:{{selectedShipment['currentShipment']?.mobileNo}}\" >\n          <i  class=\"fa fa-phone\" aria-hidden=\"true\"></i>&nbsp;+91{{selectedShipment['currentShipment']?.mobileNo}}\n        </a>\n      </div>\n    </div>\n\n\n    <!--************************ edit trip dialog *********************************-->\n    <div *ngIf=\"isEditTripLocationDialog\"  class=\"mycustomDialog-editLocation\" style=\"padding-top: 70px;\">\n      <div class=\"modal-content\" style=\"width: 60%;min-width: 250px;overflow: hidden;max-width: 560px;height: calc(100vh - 140px);\">\n        <div class=\"modal-header\">\n          <span class=\"close\" (click)=\"isEditTripLocationDialog=false;\" >&times;</span>\n          <div>\n            <label>Edit {{forEditPlace}}</label>\n          </div>\n        </div>\n\n        <div  style=\"padding: 5px;font-size: 13px;overflow: auto;width: calc(100% - 12px);\" >\n          <app-edit-shipment-location></app-edit-shipment-location>\n        </div>\n      </div>\n    </div>\n    <!-- close edit trip dialog -->\n\n\n    <!--************************ disconnected dialog *********************************-->\n    <div *ngIf=\"isDisconnectDialog\"  class=\"mycustomDialog\" style=\"padding-top: 70px;\">\n      <div class=\"modal-content\" style=\"width:40%;min-width:250px;overflow:unset;max-width: 400px;\">\n        <div class=\"modal-header\">\n          <span class=\"close\" (click)=\"isDisconnectDialog=false;\" >&times;</span>\n          <div>\n            <label>Confirm {{forConfirmPlace}}</label>\n          </div>\n        </div>\n\n        <div  style=\"padding: 5px;font-size: 13px;\">\n          <div class=\"confirm-location\" style=\"text-align: center;overflow: unset;\">\n            <span style=\"color:red\" >{{validationErrorMgs}}</span>\n              <div>\n                <div *ngIf=\"forConfirmPlace == 'Pickup'\" style=\"display: grid\" >\n                  <span class=\"fade-sub-header-text\">{{forConfirmPlace}} Location</span>\n                  <span class=\"header-text\" style=\"margin-top: 6px;margin-left: 5px;\" >{{selectedShipment?.currentShipment?.startLocation?.freightLocation?.name}}</span>\n                </div>\n\n                <div *ngIf=\"forConfirmPlace == 'Destination'\"  style=\"display: grid\" >\n                  <span class=\"fade-sub-header-text\">{{forConfirmPlace}} Location</span>\n                  <span class=\"header-text\" style=\"margin-top: 6px;margin-left: 5px;\" >{{selectedShipment?.currentShipment?.endLocation?.freightLocation?.name}}</span>\n                </div>\n\n                  <owl-date-time [disabled]=\"isStartTimeDisable\" [autoClose]=true placeholder=\"Start Time\" [(ngModel)]=\"startTime\" id=\"startTime\"  [dateFormat]=\"'YYYY/MM/DD hh:mm'\" \n                        ></owl-date-time>\n\n                  <owl-date-time placeholder=\"End Time\" [autoClose]=true [(ngModel)]=\"tillTime\" id=\"tillTime\" [dateFormat]=\"'YYYY/MM/DD hh:mm'\" \n                        ></owl-date-time>\n              </div>\n          </div>\n          <div style=\"padding: 5px;margin-top:5px;text-align: center\">\n            <button *ngIf=\"!isStartTimeDisable\" [style.background-color]=\"(startTime == null)?'grey':'#1E88E5'\" [disabled]=\"startTime == null\" md-raised-button style=\"width:auto;color:#ffffff\" (click)=\"confirmPlace()\" >Confirm</button>\n            <button  *ngIf=\"isStartTimeDisable\" [style.background-color]=\"(startTime == null || tillTime == null)?'grey':'#1E88E5'\" [disabled]=\"startTime == null || tillTime == null\" md-raised-button style=\"width:auto;color:#ffffff\" (click)=\"confirmPlace()\" >Confirm</button>\n          </div>\n        </div>\n      </div>\n    </div>\n    <!-- disconnected dialog -->\n\n\n      <!--  -->\n      <div *ngIf=\"vehicleState == 'Enroute for Pickup'\">\n          <!-- <div *ngIf=\"view !='web'\" style=\"padding: 15px 15px 10px 25px;\">\n            <div>\n              <i class =\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i>\n              <span class=\"alert-box\">No Impediment</span>\n            </div>\n            <div>\n              <i class=\"fa fa-bell\" aria-hidden=\"true\"></i>\n              <span class=\"alert-box\">No Alert</span>\n            </div>\n          </div> -->\n\n          <hr class=\"my-hr\">\n\n          <div  [style.height]=\"(view =='web')?'auto':'calc(100vh - 156px)'\" style=\"overflow: auto;\">\n\n            <div style=\"color:rgba(0, 0, 0, 0.54);padding: 5px;margin: 5px;border: 2px solid lightgrey;\">\n              <div  >\n                <span style=\"font-size: 12px\">Current Shipment</span>\n              </div>\n              <div style=\"overflow: hidden\">\n                <div>\n                  <div class=\"fade-sub-header-text\" style=\"margin: 8px 5px;\">\n                    <span style=\"margin-left: 64px;\">Delivery</span>\n                  </div>\n                  <div class=\"EFP_unvisited-timeline\">\n                    <i style=\"color: #D0D0D0\" class=\"fa fa-circle-thin  EFP_timeline_icon\" aria-hidden=\"true\"></i>\n                    <!--<img class=\"EFP_icon\" src=\"../../../../images/trip-icons/at_pickup_point_timeline.png\" alt=\"image\" >-->\n                    <div style=\"display:flex\"  >\n                      <span class=\"fade-header\" (click)=\"goToEditTripPickupView('destination','CT')\"   style=\"margin-left: 75px;cursor: pointer\" >{{selectedShipment?.currentShipment?.endLocation?.freightLocation?.name}}</span>\n                      <span  (click)=\"goToEditTripPickupView('destination','CT')\"  style=\"cursor: pointer;color: #9b9b9b;font-size: 11px;margin-left: auto\"><i class=\"fa fa-chevron-right\" aria-hidden=\"true\" style=\"color: #00b0ff;\"></i></span>\n                    </div>\n\n                    <div class=\"fade-sub-header-text\" style=\"width: 98%; margin-left : 80px; margin-top: 10px;\">\n                      <span>Transite Time :</span><span>{{selectedShipment?.currentShipment?._transiteTime}}</span><br>\n                      <span *ngIf = \"isDelayed\" style=\"color : red\"><span>(running late by</span><span style=\"margin-left:2px\">{{delayedBy}}</span><span>)</span></span>\n                    </div>\n                  </div>\n                </div>\n\n                <div>\n                  <div class=\"fade-sub-header-text\" style=\"margin: 8px 5px;\">\n                    <span style=\"margin-left: 64px;\">Pickup</span>\n                  </div>\n                  <div class=\"EFP_unvisited-timeline\">\n                    <i style=\"color: #D0D0D0\" class=\"fa fa-circle-thin  EFP_timeline_icon\" aria-hidden=\"true\"></i>\n                    <!--<img class=\"EFP_icon\" src=\"../../../../images/trip-icons/at_pickup_point_timeline.png\" alt=\"image\" >-->\n                    <div style=\"display:flex\"  >\n                      <span (click)=\"goToEditTripPickupView('pickup','CT')\"  class=\"fade-header\" style=\"margin-left: 75px;cursor: pointer\" >{{selectedShipment?.currentShipment?.startLocation?.freightLocation?.name}}</span>\n                      <span (click)=\"goToEditTripPickupView('pickup','CT')\"  style=\"cursor: pointer;color: #9b9b9b;font-size: 11px;margin-left: auto\"><i class=\"fa fa-chevron-right\" aria-hidden=\"true\" style=\"color: #00b0ff;\"></i></span>\n                    </div>\n\n                    <div class=\"fade-sub-header-text\" style=\"width: 98%; margin-left : 80px; margin-top: 10px;\">\n                      <!-- <span>ETA : {{vehicleTripDetails['currentTrip']?.plannedStartTime | date:'medium'}}</span> -->\n                      <span >ETA :</span><span> {{eta}}</span><br>\n                      <span >{{distanceToGo}}</span>\n                    </div>\n                  </div>\n                </div>\n              </div>\n              <!-- **************** disconnected case **************************** -->\n              <div *ngIf=\"selectedShipment.latestGpsState?.state != 'Disconnected' && selectedShipment.latestGpsState?.state != null && selectedShipment.currentShipment?.trackingType=='Trip'\"  class=\"vehicle-status-trip\">\n                <span >{{vehicleState}}</span>\n              </div>\n              <div *ngIf=\"selectedShipment.latestGpsState?.state != 'Disconnected' && selectedShipment.latestGpsState?.state != null && selectedShipment.currentShipment?.trackingType=='Tracker'\"  class=\"vehicle-status-tracker\">\n                  <span >{{vehicleState}}</span>\n                </div>\n\n              <div (click)=\"openConfirmPointDialog('Pickup')\"  *ngIf=\"selectedShipment.latestGpsState?.state == 'Disconnected' ||  selectedShipment.latestGpsState?.state == null\"  class=\"disconnected\">\n                <span>{{vehicleState}}<span style=\"font-size:12px;color:#ffdead;\" *ngIf=\"selectedShipment.latestGpsState?.state == null\"> No GPS Found</span></span>\n                <i class=\"fa fa-chevron-right\" aria-hidden=\"true\" style=\"color:white;float:right;margin-top: 2px;\" ></i>\n              </div>\n              <!-- ******************************************* -->\n\n              <md-card fxLayout=\"row\" class=\"current-vehicle-card\">\n                <div>\n                  <img style=\"height:32px;\" src=\"../../../../images/trip-icons/truck_moving.png\" alt=\"location\" >\n                </div>\n                <div style=\"width: 100%\">\n                  <div style=\"font-size:14px;padding-left: 8px;padding-right: 5px;\">\n                    <span style=\"line-height: 1.43\" *ngIf=\"!(selectedShipment?.latestGpsState)\">N/A</span>\n                    <span style=\"line-height: 1.43\" *ngIf=\"(selectedShipment?.latestGpsState?.endLocation?.address)\">{{(selectedShipment?.latestGpsState?.endLocation?.address)?selectedShipment?.latestGpsState?.endLocation?.address:'N/A'}}</span>\n                    <span style=\"line-height: 1.43\" *ngIf=\"(selectedShipment?.latestGpsState?.startLocation?.address && !(selectedShipment?.latestGpsState?.endLocation?.address))\">{{(selectedShipment?.latestGpsState?.startLocation?.address)?selectedShipment?.latestGpsState?.startLocation?.address:'N/A'}}</span>\n                    \n                    <!--<span *ngIf=\"!vehicleTripDetails.movementLegs\" style=\"line-height: 1.43\"> Address Not Available !</span>-->\n                  </div>\n                  <!-- ************************* vehicle status **************************   -->\n                  <div  style=\"white-space: nowrap;margin-bottom: -10px;text-align: right\">\n                    <span style=\"font-size:12px\">Since {{selectedShipment['vts']?._stateDuration}}</span>\n                  </div>\n                </div>\n                \n              </md-card>\n            </div>\n  \n          </div>\n      </div>\n      <!--done-->\n      <div *ngIf=\"vehicleState == 'At Pickup Point'\">\n\n        <!-- <div *ngIf=\"view !='web'\"  style=\"padding: 15px 15px 10px 25px;\">\n          <div>\n            <i class =\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i>\n            <span class=\"alert-box\">No Impediment</span>\n          </div>\n          <div>\n            <i class=\"fa fa-bell\" aria-hidden=\"true\"></i>\n            <span class=\"alert-box\">No Alert</span>\n          </div>\n        </div> -->\n\n        <hr class=\"my-hr\">\n\n        <div [style.height]=\"(view =='web')?'auto':'calc(100vh - 156px)'\"  style=\"overflow: auto;\">\n\n          <div style=\"color:rgba(0, 0, 0, 0.54);padding: 5px;margin: 5px;border: 2px solid lightgrey;\">\n            <div  >\n              <span style=\"font-size: 12px\">Current Shipment</span>\n            </div>\n            <div style=\"overflow: hidden\">\n              <div class=\"fade-sub-header-text\" style=\"margin: 8px 5px;\">\n                <span style=\"margin-left: 64px;\">Delivery</span>\n              </div>\n              <div class=\"EFP_unvisited-timeline\">\n                <i style=\"color: #D0D0D0\" class=\"fa fa-circle-thin  EFP_timeline_icon\" aria-hidden=\"true\"></i>\n                <!--<img class=\"EFP_icon\" src=\"../../../../images/trip-icons/at_pickup_point_timeline.png\" alt=\"image\" >-->\n                <div style=\"display:flex\"  >\n                  <span (click)=\"goToEditTripPickupView('destination','CT')\" class=\"fade-header\" style=\"cursor: pointer;margin-left: 75px;\" >{{selectedShipment?.currentShipment?.endLocation?.freightLocation?.name}}</span>\n                  <span (click)=\"goToEditTripPickupView('destination','CT')\" style=\"cursor: pointer;color: #9b9b9b;font-size: 11px;margin-left: auto\"><i class=\"fa fa-chevron-right\" aria-hidden=\"true\" style=\"color: #00b0ff;\"></i></span>\n                </div>\n\n                <div class=\"fade-sub-header-text\" style=\"width: 98%; margin-left : 80px; margin-top: 10px;\">\n                  <!-- <span>ETA : {{vehicleTripDetails['currentTrip']?.plannedEndTime | date:'medium'}}</span> -->\n                  <span>Transite Time :</span><span>{{selectedShipment?.currentShipment?._transiteTime}}</span><br>\n                </div>\n              </div>\n            </div>\n            <!-- **************** for in case of device disconnect ********************** -->\n            <div *ngIf=\"selectedShipment.latestGpsState?.state != 'Disconnected' && selectedShipment.latestGpsState?.state != null && selectedShipment.currentShipment?.trackingType=='Trip'\"  class=\"vehicle-status-trip\">\n                <span >{{vehicleState}}</span>\n              </div>\n            <div *ngIf=\"selectedShipment.latestGpsState?.state != 'Disconnected' && selectedShipment.latestGpsState?.state != null && selectedShipment.currentShipment?.trackingType=='Tracker'\"  class=\"vehicle-status-tracker\">\n                <span >{{vehicleState}}</span>\n            </div>\n            <div (click)=\"openConfirmPointDialog('Pickup')\" *ngIf=\"selectedShipment.latestGpsState?.state == 'Disconnected' ||  selectedShipment.latestGpsState?.state == null\"  class=\"disconnected\">\n              <span>{{vehicleState}}<span style=\"font-size:12px;color:#ffdead;\" *ngIf=\"selectedShipment.latestGpsState?.state == null\"> No GPS Found</span></span>\n              <i class=\"fa fa-chevron-right\" aria-hidden=\"true\" style=\"color:white;float:right;margin-top: 2px;\" ></i>\n            </div>\n          <!--   ************************************  -->\n\n            <md-card fxLayout=\"row\" (click)=\"goToEditTripPickupView('pickup','CT')\" class=\"current-vehicle-card\">\n              <div>\n                <img style=\"height:32px;\" src=\"../../../../images/trip-icons/stop_truck_white.png\" alt=\"location\" >\n              </div>\n              <div style=\"width: 100%\">\n                <div style=\"font-size:14px;padding-left: 8px;padding-right: 5px;\">\n                  <span *ngIf=\"selectedShipment.currentShipment\" style=\"line-height: 1.43\">{{selectedShipment?.currentShipment?.startLocation?.freightLocation?.name}}</span>\n                  <span *ngIf=\"selectedShipment.currentShipment\" style=\"line-height: 1.43\"><i class=\"fa fa-chevron-right\" aria-hidden=\"true\" style=\"color: #00b0ff;float: right\"></i></span>\n                  <span  *ngIf=\"!selectedShipment.currentShipment\"  style=\"line-height: 1.43;font-size: 20px\" > N/A !</span>\n                </div>\n                <!-- ************************* vehicle status **************************   -->\n                <div  style=\"white-space: nowrap;margin-bottom: -10px;text-align: right\">\n                  <span style=\"font-size:12px\">Since {{selectedShipment['vts']?._stateDuration}}</span>\n                </div>\n              </div>\n              <!--<div style=\"white-space: nowrap;margin-top: auto;margin-left:auto;margin-bottom: -10px\">-->\n              <!--<i class=\"fa fa-stop-circle-o\" aria-hidden=\"true\"></i>-->\n              <!--<span style=\"font-size:14px\">Stop</span>-->\n              <!--</div>-->\n              <!-- **-->\n            </md-card>\n          </div>\n\n          <!-- <div style=\"overflow: hidden;margin-top: 15px\">\n            <section *ngIf=\"vehicleTripDetails.lastTrip\" style=\"margin:5px;padding:5px;border:2px solid lightgrey;position: relative\" >\n              <div style=\"font-size:12px;color:#9E9E9E;height: 28px\">\n                <span>Last Trip</span>\n                <span style=\"margin-left: 19px;vertical-align: -8px;\">Delivery</span>\n              </div>\n\n              <div style=\"margin-top: 7px;\" class=\"wfl-timeline\" >\n                <i style=\"margin-top: -13px;\" class=\"fa fa-circle wfl-imeline-image\" aria-hidden=\"true\"></i>\n                <div style=\"display:flex\"  >\n                  <span style=\"cursor: pointer;font-size: 13px;font-weight: bold;margin-left: 75px;color:#4a4a4a;\"\n                        (click)=\"goToEditTripPickupView('destination','LT')\" >{{selectedShipment?.lastTrip?.destination[0]?.freightLocation?.name}}</span>\n                  <span (click)=\"goToEditTripPickupView('destination','LT')\" style=\"cursor: pointer;color: #9b9b9b;font-size: 11px;margin-left: auto\"><i class=\"fa fa-chevron-right\" aria-hidden=\"true\" style=\"color: #00b0ff;\"></i></span>\n                </div>\n\n                <div class=\"sub-header-text\" style=\"text-align: center;margin-left: 40px;margin-top: 5px;margin-bottom: 20px;\">\n                  <span>unloading duration {{vehicleTripDetails['lastTrip']?.destination[0]['_unloadingDuration']}}</span>\n                </div>\n\n                <div class=\"sub-header-text\" style=\"text-align:right;font-size:11px\">\n                  <span>Trip Duration :{{vehicleTripDetails['lastTrip']?._tripCompletionDuration}}</span>\n                </div>\n\n                <div class=\"sub-header-text\" style=\"margin-left: 71px;    margin-top: 7px;\">\n                  <span>Pickup</span>\n                </div>\n\n                <div style=\"display:flex;position: relative;\" >\n                  <i class=\"fa fa-circle wfl-imeline-image\"  style=\"bottom: -2px;\" aria-hidden=\"true\"></i>\n                  <div class=\"time\" style=\"margin-top: 5px;\">\n                    <span >{{vehicleTripDetails['lastTrip'].origin[0]['fromTime'] | date :'d MMM'}}</span>\n                    <span style=\"white-space:nowrap\" >{{vehicleTripDetails['lastTrip'].origin[0]['fromTime'] | date :'jm'}}</span>\n                  </div>\n                  <span style=\"cursor: pointer;font-size: 13px;font-weight: bold;margin-left: 25px;color:#4a4a4a;margin-top:5px;\"\n                        (click)=\"goToEditTripPickupView('pickup','LT')\" >{{vehicleTripDetails?.lastTrip?.origin[0]?.freightLocation?.name}}</span>\n                  <div style=\"margin-left: auto;cursor: pointer\" (click)=\"goToEditTripPickupView('pickup','LT')\" >\n                    <span style=\"white-space: nowrap;color: #9b9b9b;font-size: 11px\"><i class=\"fa fa-chevron-right\" aria-hidden=\"true\" style=\"color: #00b0ff;\"></i></span>\n                  </div>\n                </div>\n              </div>\n              <div class=\"sub-header-text\" style=\"text-align:center;margin-left: 22px;margin-top:-5px;font-size: 11px;\" >\n                <span>Loading Duration {{vehicleTripDetails['lastTrip']?.origin[0]['_loadingDuration']}}</span>\n              </div>\n            </section>\n\n            <div style=\"height: 50px\"></div>\n          </div> -->\n        </div>\n\n      </div>\n      <!--done-->\n      <div *ngIf=\"vehicleState == 'Enroute for Delivery'\">\n        <!-- <div *ngIf=\"view !='web'\" style=\"padding: 15px 15px 10px 25px;\">\n          <div>\n            <i class =\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i>\n            <span class=\"alert-box\">No Impediment</span>\n          </div>\n          <div>\n            <i class=\"fa fa-bell\" aria-hidden=\"true\"></i>\n            <span class=\"alert-box\">No Alerts</span>\n          </div>\n        </div> -->\n\n        <hr class=\"my-hr\">\n\n        <div [style.height]=\"(view =='web')?'auto':'calc(100vh - 156px)'\"  style=\"overflow: auto;\">\n          \n          <!-- *****************************     current trip start here *************************** -->\n          <div style=\"color:rgba(0, 0, 0, 0.54);padding: 5px;margin: 5px;border: 2px solid lightgrey;\">\n            <div  style=\"margin-bottom: 5px\">\n              <span style=\"font-size: 12px\">Current Shipment</span>\n            </div>\n\n          <!--delivery point of current trip -->\n            <div style=\"overflow: hidden\">\n              <div class=\"fade-sub-header-text\" style=\"margin: 8px 5px;\">\n                <span style=\"margin-left: 64px;\">Delivery</span>\n              </div>\n              <div class=\"EFP_unvisited-timeline\" style=\"padding-bottom: 31px;\">\n                <i style=\"color: #D0D0D0\" class=\"fa fa-circle-thin  EFP_timeline_icon\" aria-hidden=\"true\"></i>\n                <!--<img class=\"EFP_icon\" src=\"../../../../images/trip-icons/at_pickup_point_timeline.png\" alt=\"image\" >-->\n                <div style=\"display:flex\"  >\n                  <span (click)=\"goToEditTripPickupView('destination','CT')\"  class=\"fade-header\" style=\"margin-left: 75px;cursor: pointer\" >{{selectedShipment?.currentShipment?.endLocation?.freightLocation?.name}}</span>\n                  <span (click)=\"goToEditTripPickupView('destination','CT')\"  style=\"color: #9b9b9b;font-size: 11px;margin-left: auto\"><i class=\"fa fa-chevron-right\" aria-hidden=\"true\" style=\"color: #00b0ff;\"></i></span>\n                </div>\n\n                <div class=\"fade-sub-header-text\" style=\"width: 98%; margin-left : 80px; margin-top: 10px;\">\n                  <span>ETA :{{selectedShipment?.currentShipment?.planedEndTime | date :'medium' }}</span><br>\n                  <div *ngIf = \"isDelayed\" style=\"margin-top: 2px; color : red\">\n                  <span>(running late by</span><span style=\"margin-left:2px\">{{delayedBy}}</span><span>)</span><br>\n                  </div>\n                  <div style=\"margin-top: 2px\">             \n                  <span>{{distanceToGo}}</span>\n                </div>\n                </div>\n              </div>\n            </div>\n          <!-- ************************** -->\n\n            <!-- *************** when disconnect *************************** -->\n            <div *ngIf=\"selectedShipment.latestGpsState?.state != 'Disconnected' && selectedShipment.latestGpsState?.state != null && selectedShipment.currentShipment?.trackingType=='Trip'\"  class=\"vehicle-status-trip\">\n                <span >{{vehicleState}}</span>\n              </div>\n            <div *ngIf=\"selectedShipment.latestGpsState?.state != 'Disconnected' && selectedShipment.latestGpsState?.state != null && selectedShipment.currentShipment?.trackingType=='Tracker'\"  class=\"vehicle-status-tracker\">\n                <span >{{vehicleState}}</span>\n            </div>\n            <div (click)=\"openConfirmPointDialog('Destination')\"   *ngIf=\"selectedShipment.latestGpsState?.state == 'Disconnected' ||  selectedShipment.latestGpsState?.state == null\"  class=\"disconnected\">\n              <span>{{vehicleState}}<span style=\"font-size:12px;color:#ffdead;\" *ngIf=\"selectedShipment.latestGpsState?.state == null\"> No GPS Found</span></span>\n              <i class=\"fa fa-chevron-right\" aria-hidden=\"true\" style=\"color:white;float:right;margin-top: 2px;\" ></i>\n            </div>\n            <!-- *********************************************************** -->\n\n            <md-card fxLayout=\"row\" class=\"current-vehicle-card\">\n              <div>\n                <img style=\"height:32px;\" src=\"../../../../images/trip-icons/truck_moving.png\" alt=\"location\" >\n              </div>\n              <div style=\"width: 100%\">\n                <div style=\"font-size:14px;padding-left: 8px;padding-right: 5px;\">\n                    <span style=\"line-height: 1.43\" *ngIf=\"!(selectedShipment?.latestGpsState)\">N/A</span>\n                    <span style=\"line-height: 1.43\" *ngIf=\"(selectedShipment?.latestGpsState?.endLocation?.address)\">{{(selectedShipment?.latestGpsState?.endLocation?.address)?selectedShipment?.latestGpsState?.endLocation?.address:'N/A'}}</span>\n                    <span style=\"line-height: 1.43\" *ngIf=\"(selectedShipment?.latestGpsState?.startLocation?.address && !(selectedShipment?.latestGpsState?.endLocation?.address))\">{{(selectedShipment?.latestGpsState?.startLocation?.address)?selectedShipment?.latestGpsState?.startLocation?.address:'N/A'}}</span>\n                    <!--<span  *ngIf=\"!vehicleTripDetails.currentTrip\"  style=\"line-height: 1.43;font-size: 20px\" > N/A !</span>-->\n                </div>\n                <!-- ************************* vehicle status **************************   -->\n                <div  style=\"white-space: nowrap;margin-bottom: -10px;text-align: right;\">\n                  <span style=\"font-size:12px\">Since {{selectedShipment['vts']?._stateDuration}}</span>\n                </div>\n              </div>\n            </md-card>\n\n            <div style=\"overflow: hidden;margin-top: -13px;\">\n              <section class=\"DP-timeline\" style=\"padding: 5px;\" >\n                <div style=\"padding: 5px;margin-top: 5px;\">\n                  <!-- *************** for expand up-down arrow icon ************  -->\n                  <div style=\"overflow: hidden;margin-top: 20px;padding-bottom: 20px\" fxLayout=\"row\" >\n                    <!-- ******** total travling time **************** -->\n                    <div style=\"min-width: 43px\">\n                      <div *ngIf=\"!isExpand\" class=\"time\">\n                        <span class=\"rotate\" >&#8676;</span>\n                        <span name=\"totalTravelDistance\" style=\"white-space:nowrap;\">{{movementLogs?._totalTravlingDistance | number : '1.1-1'}} km</span>\n                        <span name=\"totalTravlingTime\" style=\"border-top: 1px solid;\" >{{movementLogs?._totalTravlingTime}}</span>\n                        <span class=\"rotate\">&#8677;</span>\n                      </div>\n                    </div>\n                    <!-- ********************************* -->\n\n                    <div *ngIf=\"!isExpand\" fxLayout=\"column\" (click)=\"isExpand = true\" style=\"margin-left:65px;    margin-top: 10px;\">\n                      <i class=\"fa fa-angle-up\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\" ></i>\n                      <i  class=\"fa fa-angle-down\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\" ></i>\n                    </div>\n                    <div *ngIf=\"isExpand\" fxLayout=\"column\" (click)=\"isExpand = false\" style=\"margin-left:65px;margin-top: -6px;\">\n                      <i class=\"fa fa-angle-up\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\" ></i>\n                    </div>\n\n                    <div fxLayout=\"column\" style=\"margin-bottom: 30px;width:100%\">\n                      <!-- when not expanded -->\n                      <div *ngIf=\"!isExpand\" style=\"margin-left:8px;display:grid;margin-top: 15px;\" >\n                        <div style=\"display: grid\">\n                          <span style=\"font-size: 11px;color: #9b9b9b;white-space:nowrap;\">{{movementLogs?.stopped}} Stops</span>\n                          <span style=\"font-size: 11px;color: #9b9b9b;white-space:nowrap;margin-top:4px;\">{{movementLogs?.disconnected }} Disconnects</span>\n                        </div>\n                      </div>\n                      <!-- ******** this is show when log value expanded ********* -->\n\n                      <div [style.height]=\"isExpand?'auto':'0px'\"  class=\"data-box\" id=\"expandable-box\" [style.margin-top]=\"!isExpand?upSideHeight:'8px'\"  [class.hide-up-Slowly]=\"!isExpand\" [class.show-down-Slowly]=\"isExpand == true\"  fxLayout=\"column\"  >\n\n                        <!-- loop for movement logs / this data show when click to expand movement logs  -->\n                        <div  *ngFor=\"let movementleg of selectedShipment['movementLegs']\" style=\"margin-top:15px;padding:5px;margin-bottom:10px;position:relative\" >    <!--loop here-->\n                        <div *ngIf=\"isExpand\" >\n                          <div *ngIf=\"movementleg.state == 'Moving'\" class=\"travling-time\" > <!-- left side of time line-->\n                            <span  >{{movementleg?._totalDuration }}</span>\n                            <span  >{{movementleg?.totalDistance/1000 | number : '1.1-1'}} km</span>\n                          </div>\n                          <i *ngIf=\"movementleg.state == 'Stopped' || movementleg.state == 'Disconnected'\"  style=\"position: absolute;margin-left: -61px;background-color: white;\"\n                            [style.color]=\"movementleg.state == 'Disconnected'?'red':'#858585'\" class=\"fa fa-stop-circle\" aria-hidden=\"true\"></i>\n                          <div *ngIf=\"movementleg.state == 'Stopped' || movementleg.state == 'Disconnected'\" [style.color]=\"movementleg.state == 'Disconnected'?'red':'#858585'\" > <!-- right side of time line-->\n                            <span style=\"font-weight: bold;\">{{movementleg.endLocation?.address?movementleg.endLocation?.address:'N/A'}}</span>\n                            <div style=\"padding-top: 4px;float:right;text-align:right;display:grid;\" >\n                              <span style=\"white-space:nowrap;\">{{movementleg?._totalDuration }}</span>\n                              <span style=\"white-space:nowrap;\">{{movementleg?.startTime | date: 'dd MMM yy hh:mm a'}}</span>\n                            </div>\n                            </div>\n                        </div>\n                        </div>\n                      </div>\n                    </div>\n                  </div>\n                  <!-- ***************************close for expand up-down arrow icon **************************  -->\n                  <div style=\"display:flex;position: relative;\" >\n                    <i   class=\"fa fa-circle DP_timeline-image \" aria-hidden=\"true\"></i>\n                    <div class=\"time\" style=\"margin-top: 5px;\">\n                      <span >{{selectedShipment['currentShipment'].startLocation['fromTime'] | date :'d MMM'}}</span>\n                      <span style=\"white-space:nowrap\" >{{selectedShipment['currentShipment'].startLocation['fromTime'] | date :'jm'}}</span>\n                    </div>\n                    <div style=\"font-size: 13px;font-weight: bold;margin-left: 54px;color:#4a4a4a;display: grid\" >\n                      <span class=\"fade-sub-header-text\" style=\"margin-top: -13px;margin-left: -10px;\">Pickup</span>\n                      <span (click)=\"goToEditTripPickupView('pickup','CT')\"  >{{(selectedShipment?.currentShipment?.startLocation?.freightLocation?.name)?selectedShipment?.currentShipment?.startLocation?.freightLocation?.name:'N/A'}}</span>\n                    </div>\n                    <div (click)=\"goToEditTripPickupView('pickup','CT')\"  style=\"cursor: pointer;margin-left: auto;display: grid;text-align: center;\">\n                      <span style=\"white-space: nowrap;color: #9b9b9b;font-size: 11px\"><i class=\"fa fa-chevron-right\" aria-hidden=\"true\" style=\"color: #00b0ff;\"></i></span>\n                    </div>\n                  </div>\n                  <div class=\"sub-header-text\" style=\"margin-left: 104px;margin-top: -5px;font-size: 11px\">\n                    <span>Loading Duration {{selectedShipment['currentShipment'].startLocation['_loadingDuration']}}</span>\n                  </div>\n                </div>\n              </section>\n\n            </div>\n          </div>\n          <!-- ************ close current trip *****8 -->\n          <div style=\"height: 50px\"></div>\n        </div>\n      </div>\n      <!--done-->\n      <div *ngIf=\"vehicleState == 'At Delivery Point' && tillTimeCheck==null\">\n        <hr class=\"my-hr\">\n\n        <div  [style.height]=\"(view =='web')?'auto':'calc(100vh - 156px)'\" style=\"overflow: auto;\">\n          \n\n          <!-- *****************************     current trip start here *************************** -->\n          <div style=\"color:rgba(0, 0, 0, 0.54);padding: 5px;margin: 5px;border: 2px solid lightgrey;\">\n            <div  style=\"margin-bottom: 5px\">\n              <span style=\"font-size: 12px\">Current Shipment</span>\n            </div>\n\n            <!--   foor in case of disconnection -->\n            <div *ngIf=\"selectedShipment.latestGpsState?.state != 'Disconnected' && selectedShipment.latestGpsState?.state != null && selectedShipment.currentShipment?.trackingType=='Trip'\"  class=\"vehicle-status-trip\">\n                <span >{{vehicleState}}</span>\n              </div>\n            <div *ngIf=\"selectedShipment.latestGpsState?.state != 'Disconnected' && selectedShipment.latestGpsState?.state != null && selectedShipment.currentShipment?.trackingType=='Tracker'\"  class=\"vehicle-status-tracker\">\n                <span >{{vehicleState}}</span>\n            </div>\n            <div (click)=\"openConfirmPointDialog('Destination')\" *ngIf=\"selectedShipment.latestGpsState?.state == 'Disconnected' ||  selectedShipment.latestGpsState?.state == null\"  class=\"disconnected\">\n              <span>{{vehicleState}}<span style=\"font-size:12px;color:#ffdead;\" *ngIf=\"selectedShipment.latestGpsState?.state == null\"> No GPS Found</span></span>\n              <i class=\"fa fa-chevron-right\" aria-hidden=\"true\" style=\"color:white;float:right;margin-top: 2px;\" ></i>\n            </div>\n            <!-- ************************************************* -->\n\n            <md-card (click)=\"goToEditTripPickupView('destination','CT')\"  fxLayout=\"row\" class=\"current-vehicle-card\">\n              <div>\n                <img style=\"height:32px;\" src=\"../../../../images/trip-icons/stop_truck_white.png\" alt=\"location\" >\n              </div>\n              <div style=\"width: 100%\">\n              <div style=\"font-size:14px;padding-left: 8px;padding-right: 5px;\">\n                <span *ngIf=\"selectedShipment.currentShipment\" style=\"line-height: 1.43\">{{selectedShipment?.currentShipment?.endLocation?.freightLocation?.name}}</span>\n                <span *ngIf=\"selectedShipment.currentShipment\" style=\"line-height: 1.43\"><i  class=\"fa fa-chevron-right\" aria-hidden=\"true\" style=\"color: #00b0ff;float:right;\"></i></span>\n                <span  *ngIf=\"!selectedShipment.currentShipment\"  style=\"line-height: 1.43;font-size: 20px\" > N/A !</span>\n              </div>\n              <!-- ************************* vehicle status **************************   -->\n              <div  style=\"white-space: nowrap;margin-bottom: -10px;text-align: right;\">\n                <span style=\"font-size:12px\">Since {{selectedShipment['vts']?._stateDuration}}</span>\n              </div>\n              </div>\n            </md-card>\n\n            <div style=\"overflow: hidden;margin-top: -13px;\">\n              <section class=\"DP-timeline\" style=\"padding: 5px;\" >\n                <div style=\"padding: 5px;margin-top: 5px;\">\n                  <!-- *************** for expand up-down arrow icon ************  -->\n                  <div style=\"overflow: hidden;margin-top: 20px;padding-bottom: 20px\" fxLayout=\"row\" >\n                  <!-- ******** total travling time **************** -->\n                    <div style=\"min-width: 43px\">\n                      <div *ngIf=\"!isExpand\" class=\"time\">\n                        <span class=\"rotate\" >&#8676;</span>\n                        <span name=\"totalTravelDistance\" style=\"white-space:nowrap;\">{{movementLogs?._totalTravlingDistance | number : '1.1-1'}} km</span>\n                        <span name=\"totalTravlingTime\" style=\"border-top: 1px solid;\" >{{movementLogs?._totalTravlingTime}}</span>\n                        <span class=\"rotate\">&#8677;</span>\n                      </div>\n                    </div>\n                    <!-- ********************************* -->\n\n                    <div *ngIf=\"!isExpand\" fxLayout=\"column\" (click)=\"isExpand = true\" style=\"margin-left:65px;    margin-top: 10px;\">\n                      <i class=\"fa fa-angle-up\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\" ></i>\n                      <i  class=\"fa fa-angle-down\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\" ></i>\n                    </div>\n                    <div *ngIf=\"isExpand\" fxLayout=\"column\" (click)=\"isExpand = false\" style=\"margin-left:65px;margin-top: -6px;\">\n                      <i class=\"fa fa-angle-up\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\" ></i>\n                    </div>\n\n                    <div fxLayout=\"column\" style=\"margin-bottom: 30px;width:100%\">\n                      <!-- when not expanded -->\n                      <div *ngIf=\"!isExpand\" style=\"margin-left:8px;display:grid;margin-top: 15px;\" >\n                        <div style=\"display: grid\">\n                          <span style=\"font-size: 11px;color: #9b9b9b;white-space:nowrap;\">{{movementLogs?.stopped}} Stops</span>\n                          <span style=\"font-size: 11px;color: #9b9b9b;white-space:nowrap;margin-top:4px;\">{{movementLogs?.disconnected }} Disconnects</span>\n                        </div>\n                      </div>\n                      <!-- ******** this is show when log value expanded ********* -->\n                      <div [style.height]=\"isExpand?'auto':'0px'\"  class=\"data-box\" id=\"expandable-box\" [style.margin-top]=\"!isExpand?upSideHeight:'8px'\"  [class.hide-up-Slowly]=\"!isExpand\" [class.show-down-Slowly]=\"isExpand == true\"  fxLayout=\"column\"  >\n\n                      <!-- loop for movement logs / this data show when click to expand movement logs  -->\n                        <div *ngFor=\"let movementleg of selectedShipment['movementLegs']\" style=\"margin-top:15px;padding:5px;margin-bottom:10px;position:relative\" >    <!--loop here-->\n                          <div *ngIf=\"isExpand\" >\n                          <div *ngIf=\"movementleg.state == 'Moving'\" class=\"travling-time\" > <!-- left side of time line-->\n                            <span  >{{movementleg?._totalDuration }}</span>\n                            <span  >{{movementleg?.totalDistance/1000 | number : '1.1-1'}} km</span>\n                          </div>\n                          <i *ngIf=\"movementleg.state == 'Stopped' || movementleg.state == 'Disconnected'\"  style=\"position: absolute;margin-left: -61px;background-color: white;\"\n                            [style.color]=\"movementleg.state == 'Disconnected'?'red':'#858585'\" class=\"fa fa-stop-circle\" aria-hidden=\"true\"></i>\n                          <div *ngIf=\"movementleg.state == 'Stopped' || movementleg.state == 'Disconnected'\" [style.color]=\"movementleg.state == 'Disconnected'?'red':'#858585'\" > <!-- right side of time line-->\n                            <span style=\"font-weight: bold;\">{{movementleg.endLocation?.address?movementleg.endLocation?.address:'N/A'}}</span>\n\n                            <div style=\"padding-top: 4px;float:right;text-align:right;display:grid;\" >\n                              <span  style=\"white-space:nowrap;\">{{movementleg?._totalDuration }}</span>\n                              <span style=\"white-space:nowrap;\">{{movementleg?.startTime | date: 'dd MMM yy hh:mm a'}}</span>\n                            </div>\n                          </div>\n                          </div>\n                        </div>\n                      </div>\n                    </div>\n                  </div>\n                  <!-- ***************************close for expand up-down arrow icon **************************  -->\n                  <div style=\"display:flex;position: relative;\" >\n                    <i  class=\"fa fa-circle DP_timeline-image\" aria-hidden=\"true\"></i>\n                    <div class=\"time\" style=\"margin-top: 5px;\">\n                      <span >{{selectedShipment['currentShipment'].startLocation['fromTime'] | date :'d MMM'}}</span>\n                      <span style=\"white-space:nowrap\" >{{selectedShipment['currentShipment'].startLocation['fromTime'] | date :'jm'}}</span>\n                    </div>\n                    <div style=\"font-size: 13px;font-weight: bold;margin-left: 60px;color:#4a4a4a;display: grid\" >\n                      <span class=\"fade-sub-header-text\" style=\"margin-top: -13px;margin-left: -10px;\">Pickup</span>\n                      <span (click)=\"goToEditTripPickupView('pickup','CT')\"  >{{(selectedShipment?.currentShipment?.startLocation.freightLocation?.name)?selectedShipment?.currentShipment?.startLocation?.freightLocation?.name:'N/A'}}</span>\n                    </div>\n                    <div (click)=\"goToEditTripPickupView('pickup','CT')\"  style=\"margin-left: auto;display: grid;text-align: center;\">\n                      <span style=\"white-space: nowrap;color: #9b9b9b;font-size: 11px\"><i class=\"fa fa-chevron-right\" aria-hidden=\"true\" style=\"color: #00b0ff;\"></i></span>\n                    </div>\n                  </div>\n                  <div class=\"sub-header-text\" style=\"margin-left: 90px;margin-top: -5px;font-size: 11px\">\n                      <span>Loading Duration {{selectedShipment['currentShipment'].startLocation['_loadingDuration']}}</span>\n                  </div>\n                </div>\n              </section>\n\n            </div>\n          </div>\n          <!-- ************ close current trip *****8 -->\n          <div style=\"height: 50px\"></div>\n        </div>\n      </div>\n      <!--done-->\n\n    <div *ngIf=\"vehicleState == 'At Delivery Point' && tillTimeCheck!=null\" style=\"background-color: white\">\n      <hr class=\"my-hr\">\n  \n      <div  [style.height]=\"(view =='web')?'auto':'calc(100vh - 156px)'\" style=\"overflow: auto;\">\n  \n          <!-- *****************************     current trip start here *************************** -->\n        <div style=\"color:rgba(0, 0, 0, 0.54);padding: 5px;margin: 5px;border: 2px solid lightgrey;\">\n          <div  style=\"margin-bottom: 5px\">\n            <span style=\"font-size: 12px\">Current Shipment</span>\n          </div>  \n          <div (click)=\"goToEditTripPickupView('destination','CT')\"  fxLayout=\"row\">\n            <div>\n              <img style=\"height:32px;\" src=\"../../../../images/trip-icons/stop_truck_white.png\" alt=\"location\" >\n            </div>\n            <div style=\"width: 100%\">\n            <div style=\"font-size:14px;padding-left: 8px;padding-right: 5px;\">\n              <span style=\"margin-left: 25px;color: #428fd4;font-size: 25px;\"><i  class=\"fa fa-circle\" aria-hidden=\"true\"></i></span>\n              <span *ngIf=\"selectedShipment.currentShipment\" style=\"line-height: 1.43\" (click)=\"goToEditTripPickupView('destination','CT')\" >{{selectedShipment?.currentShipment?.endLocation?.freightLocation?.name}}</span>\n              <span *ngIf=\"selectedShipment.currentShipment\" style=\"line-height: 1.43\" (click)=\"goToEditTripPickupView('destination','CT')\" ><i  class=\"fa fa-chevron-right\" aria-hidden=\"true\" style=\"color: #00b0ff;float:right;\"></i></span>\n              <span  *ngIf=\"!selectedShipment.currentShipment\"  style=\"line-height: 1.43;font-size: 20px\" > N/A !</span>\n            </div>\n            <!-- ************************* vehicle status **************************   -->\n            <div  style=\"white-space: nowrap;margin-bottom: -10px;text-align: right;\">\n              <span style=\"font-size:12px\">Since {{selectedShipment['vts']?._stateDuration}}</span>\n            </div>\n            </div>\n          </div>\n  \n          <div style=\"overflow: hidden;margin-top: -13px;\">\n            <section class=\"DP-timeline\" style=\"padding: 5px;\" >\n              <div style=\"padding: 5px;margin-top: 5px;\">\n                <!-- *************** for expand up-down arrow icon ************  -->\n                <div style=\"overflow: hidden;margin-top: 20px;padding-bottom: 20px\" fxLayout=\"row\" >\n                <!-- ******** total travling time **************** -->\n                  <div style=\"min-width: 43px\">\n                    <div *ngIf=\"!isExpand\" class=\"time\">\n                      <span class=\"rotate\" >&#8676;</span>\n                      <span name=\"totalTravelDistance\" style=\"white-space:nowrap;\">{{movementLogs?._totalTravlingDistance | number : '1.1-1'}} km</span>\n                      <span name=\"totalTravlingTime\" style=\"border-top: 1px solid;\" >{{movementLogs?._totalTravlingTime}}</span>\n                      <span class=\"rotate\">&#8677;</span>\n                    </div>\n                  </div>\n                  <!-- ********************************* -->\n    \n                  <div *ngIf=\"!isExpand\" fxLayout=\"column\" (click)=\"isExpand = true\" style=\"margin-left:65px;    margin-top: 10px;\">\n                    <i class=\"fa fa-angle-up\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\" ></i>\n                    <i  class=\"fa fa-angle-down\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\" ></i>\n                  </div>\n                  <div *ngIf=\"isExpand\" fxLayout=\"column\" (click)=\"isExpand = false\" style=\"margin-left:65px;margin-top: -6px;\">\n                    <i class=\"fa fa-angle-up\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\" ></i>\n                  </div>\n    \n                  <div fxLayout=\"column\" style=\"margin-bottom: 30px;width:100%\">\n                    <!-- when not expanded -->\n                    <div *ngIf=\"!isExpand\" style=\"margin-left:8px;display:grid;margin-top: 15px;\" >\n                      <div style=\"display: grid\">\n                        <span style=\"font-size: 11px;color: #9b9b9b;white-space:nowrap;\">{{movementLogs?.stopped}} Stops</span>\n                        <span style=\"font-size: 11px;color: #9b9b9b;white-space:nowrap;margin-top:4px;\">{{movementLogs?.disconnected }} Disconnects</span>\n                      </div>\n                    </div>\n                    <!-- ******** this is show when log value expanded ********* -->\n                    <div [style.height]=\"isExpand?'auto':'0px'\"  class=\"data-box\" id=\"expandable-box\" [style.margin-top]=\"!isExpand?upSideHeight:'8px'\"  [class.hide-up-Slowly]=\"!isExpand\" [class.show-down-Slowly]=\"isExpand == true\"  fxLayout=\"column\"  >\n    \n                    <!-- loop for movement logs / this data show when click to expand movement logs  -->\n                      <div *ngFor=\"let movementleg of selectedShipment['movementLegs']\" style=\"margin-top:15px;padding:5px;margin-bottom:10px;position:relative\" >    <!--loop here-->\n                        <div *ngIf=\"isExpand\" >\n                        <div *ngIf=\"movementleg.state == 'Moving'\" class=\"travling-time\" > <!-- left side of time line-->\n                          <span  >{{movementleg?._totalDuration }}</span>\n                          <span  >{{movementleg?.totalDistance/1000 | number : '1.1-1'}} km</span>\n                        </div>\n                        <i *ngIf=\"movementleg.state == 'Stopped' || movementleg.state == 'Disconnected'\"  style=\"position: absolute;margin-left: -61px;background-color: white;\"\n                          [style.color]=\"movementleg.state == 'Disconnected'?'red':'#858585'\" class=\"fa fa-stop-circle\" aria-hidden=\"true\"></i>\n                        <div *ngIf=\"movementleg.state == 'Stopped' || movementleg.state == 'Disconnected'\" [style.color]=\"movementleg.state == 'Disconnected'?'red':'#858585'\" > <!-- right side of time line-->\n                          <span style=\"font-weight: bold;\">{{movementleg.endLocation?.address?movementleg.endLocation?.address:'N/A'}}</span>\n    \n                          <div style=\"padding-top: 4px;float:right;text-align:right;display:grid;\" >\n                            <span  style=\"white-space:nowrap;\">{{movementleg?._totalDuration }}</span>\n                            <span style=\"white-space:nowrap;\">{{movementleg?.startTime | date: 'dd MMM yy hh:mm a'}}</span>\n                          </div>\n                        </div>\n                        </div>\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <!-- ***************************close for expand up-down arrow icon **************************  -->\n                <div style=\"display:flex;position: relative;\" >\n                  <i  class=\"fa fa-circle DP_timeline-image\" aria-hidden=\"true\"></i>\n                  <div class=\"time\" style=\"margin-top: 5px;\">\n                    <span >{{selectedShipment['currentShipment'].startLocation['fromTime'] | date :'d MMM'}}</span>\n                    <span style=\"white-space:nowrap\" >{{selectedShipment['currentShipment'].startLocation['fromTime'] | date :'jm'}}</span>\n                  </div>\n                  <div style=\"font-size: 13px;font-weight: bold;margin-left: 60px;color:#4a4a4a;display: grid\" >\n                    <span class=\"fade-sub-header-text\" style=\"margin-top: -13px;margin-left: -10px;\">Pickup</span>\n                    <span (click)=\"goToEditTripPickupView('pickup','CT')\"  >{{(selectedShipment?.currentShipment?.startLocation.freightLocation?.name)?selectedShipment?.currentShipment?.startLocation?.freightLocation?.name:'N/A'}}</span>\n                  </div>\n                  <div (click)=\"goToEditTripPickupView('pickup','CT')\"  style=\"margin-left: auto;display: grid;text-align: center;\">\n                    <span style=\"white-space: nowrap;color: #9b9b9b;font-size: 11px\"><i class=\"fa fa-chevron-right\" aria-hidden=\"true\" style=\"color: #00b0ff;\"></i></span>\n                  </div>\n                </div>\n                <div class=\"sub-header-text\" style=\"margin-left: 90px;margin-top: -5px;font-size: 11px\">\n                    <span>Loading Duration {{selectedShipment['currentShipment'].startLocation['_loadingDuration']}}</span>\n                </div>\n              </div>\n            </section>\n    \n          </div>\n        </div>\n        <!-- ************ close current trip *****8 -->\n        <div style=\"height: 50px\"></div>\n      </div>\n  </div>\n</div>\n\n"
+module.exports = "<div style=\"width: 100%;top: 0px;z-index:100;background-color: white;\" class=\"slow-down\">\r\n  <md-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></md-spinner>\r\n\r\n  <!-- <div *ngIf=\"view !='web'\" class=\"top-header\" id=\"top-head\" >\r\n    <div fxLayout=\"row\" style=\"padding-left:8px;padding-bottom:9px;padding-top:5px\">\r\n      <span class=\"vehicle-no\"  >{{vehicleNo}}</span>\r\n      <label class=\"driver-name\">{{vehicleTripDetails['currentTrip']?.driverName}}\r\n                <a href=\"tel:{{vehicleTripDetails['currentTrip']?.driverMobNumber}}\" ><i  class=\"fa fa-phone phone-icon\" aria-hidden=\"true\"></i></a>\r\n     </label>\r\n    </div>\r\n  </div> -->\r\n\r\n  <div *ngIf=\"view =='web'\">\r\n    <div>\r\n      <div>\r\n        <span class=\"driver-name-web\" >Driver&nbsp;:{{selectedShipment['currentShipment']?.driverName}}</span>\r\n      </div>\r\n      <div>\r\n        <a class=\"driver-name-web\" href=\"tel:{{selectedShipment['currentShipment']?.mobileNo}}\" >\r\n          <i  class=\"fa fa-phone\" aria-hidden=\"true\"></i>&nbsp;+91{{selectedShipment['currentShipment']?.mobileNo}}\r\n        </a>\r\n      </div>\r\n    </div>\r\n\r\n\r\n    <!--************************ edit trip dialog *********************************-->\r\n    <div *ngIf=\"isEditTripLocationDialog\"  class=\"mycustomDialog-editLocation\" style=\"padding-top: 70px;\">\r\n      <div class=\"modal-content\" style=\"width: 60%;min-width: 250px;overflow: hidden;max-width: 560px;height: calc(100vh - 140px);\">\r\n        <div class=\"modal-header\">\r\n          <span class=\"close\" (click)=\"isEditTripLocationDialog=false;\" >&times;</span>\r\n          <div>\r\n            <label>Edit {{forEditPlace}}</label>\r\n          </div>\r\n        </div>\r\n\r\n        <div  style=\"padding: 5px;font-size: 13px;overflow: auto;width: calc(100% - 12px);\" >\r\n          <app-edit-shipment-location></app-edit-shipment-location>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <!-- close edit trip dialog -->\r\n\r\n\r\n    <!--************************ disconnected dialog *********************************-->\r\n    <div *ngIf=\"isDisconnectDialog\"  class=\"mycustomDialog\" style=\"padding-top: 70px;\">\r\n      <div class=\"modal-content\" style=\"width:40%;min-width:250px;overflow:unset;max-width: 400px;\">\r\n        <div class=\"modal-header\">\r\n          <span class=\"close\" (click)=\"isDisconnectDialog=false;\" >&times;</span>\r\n          <div>\r\n            <label>Confirm {{forConfirmPlace}}</label>\r\n          </div>\r\n        </div>\r\n\r\n        <div  style=\"padding: 5px;font-size: 13px;\">\r\n          <div class=\"confirm-location\" style=\"text-align: center;overflow: unset;\">\r\n            <span style=\"color:red\" >{{validationErrorMgs}}</span>\r\n              <div>\r\n                <div *ngIf=\"forConfirmPlace == 'Pickup'\" style=\"display: grid\" >\r\n                  <span class=\"fade-sub-header-text\">{{forConfirmPlace}} Location</span>\r\n                  <span class=\"header-text\" style=\"margin-top: 6px;margin-left: 5px;\" >{{selectedShipment?.currentShipment?.startLocation?.freightLocation?.name}}</span>\r\n                </div>\r\n\r\n                <div *ngIf=\"forConfirmPlace == 'Destination'\"  style=\"display: grid\" >\r\n                  <span class=\"fade-sub-header-text\">{{forConfirmPlace}} Location</span>\r\n                  <span class=\"header-text\" style=\"margin-top: 6px;margin-left: 5px;\" >{{selectedShipment?.currentShipment?.endLocation?.freightLocation?.name}}</span>\r\n                </div>\r\n\r\n                  <owl-date-time [disabled]=\"isStartTimeDisable\" [autoClose]=true placeholder=\"Start Time\" [(ngModel)]=\"startTime\" id=\"startTime\"  [dateFormat]=\"'YYYY/MM/DD hh:mm'\" \r\n                        ></owl-date-time>\r\n\r\n                  <owl-date-time placeholder=\"End Time\" [autoClose]=true [(ngModel)]=\"tillTime\" id=\"tillTime\" [dateFormat]=\"'YYYY/MM/DD hh:mm'\" \r\n                        ></owl-date-time>\r\n              </div>\r\n          </div>\r\n          <div style=\"padding: 5px;margin-top:5px;text-align: center\">\r\n            <button *ngIf=\"!isStartTimeDisable\" [style.background-color]=\"(startTime == null)?'grey':'#1E88E5'\" [disabled]=\"startTime == null\" md-raised-button style=\"width:auto;color:#ffffff\" (click)=\"confirmPlace()\" >Confirm</button>\r\n            <button  *ngIf=\"isStartTimeDisable\" [style.background-color]=\"(startTime == null || tillTime == null)?'grey':'#1E88E5'\" [disabled]=\"startTime == null || tillTime == null\" md-raised-button style=\"width:auto;color:#ffffff\" (click)=\"confirmPlace()\" >Confirm</button>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <!-- disconnected dialog -->\r\n\r\n\r\n      <!--  -->\r\n      <div *ngIf=\"vehicleState == 'Enroute for Pickup'\">\r\n          <!-- <div *ngIf=\"view !='web'\" style=\"padding: 15px 15px 10px 25px;\">\r\n            <div>\r\n              <i class =\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i>\r\n              <span class=\"alert-box\">No Impediment</span>\r\n            </div>\r\n            <div>\r\n              <i class=\"fa fa-bell\" aria-hidden=\"true\"></i>\r\n              <span class=\"alert-box\">No Alert</span>\r\n            </div>\r\n          </div> -->\r\n\r\n          <hr class=\"my-hr\">\r\n\r\n          <div  [style.height]=\"(view =='web')?'auto':'calc(100vh - 156px)'\" style=\"overflow: auto;\">\r\n\r\n            <div style=\"color:rgba(0, 0, 0, 0.54);padding: 5px;margin: 5px;border: 2px solid lightgrey;\">\r\n              <div  >\r\n                <span style=\"font-size: 12px\">Current Shipment</span>\r\n              </div>\r\n              <div style=\"overflow: hidden\">\r\n                <div>\r\n                  <div class=\"fade-sub-header-text\" style=\"margin: 8px 5px;\">\r\n                    <span style=\"margin-left: 64px;\">Delivery</span>\r\n                  </div>\r\n                  <div class=\"EFP_unvisited-timeline\">\r\n                    <i style=\"color: #D0D0D0\" class=\"fa fa-circle-thin  EFP_timeline_icon\" aria-hidden=\"true\"></i>\r\n                    <!--<img class=\"EFP_icon\" src=\"../../../../images/trip-icons/at_pickup_point_timeline.png\" alt=\"image\" >-->\r\n                    <div style=\"display:flex\"  >\r\n                      <span class=\"fade-header\" (click)=\"goToEditTripPickupView('destination','CT')\"   style=\"margin-left: 75px;cursor: pointer\" >{{selectedShipment?.currentShipment?.endLocation?.freightLocation?.name}}</span>\r\n                      <span  (click)=\"goToEditTripPickupView('destination','CT')\"  style=\"cursor: pointer;color: #9b9b9b;font-size: 11px;margin-left: auto\"><i class=\"fa fa-chevron-right\" aria-hidden=\"true\" style=\"color: #00b0ff;\"></i></span>\r\n                    </div>\r\n\r\n                    <div class=\"fade-sub-header-text\" style=\"width: 98%; margin-left : 80px; margin-top: 10px;\">\r\n                      <span>Transite Time :</span><span>{{selectedShipment?.currentShipment?._transiteTime}}</span><br>\r\n                      <span *ngIf = \"isDelayed\" style=\"color : red\"><span>(running late by</span><span style=\"margin-left:2px\">{{delayedBy}}</span><span>)</span></span>\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n\r\n                <div>\r\n                  <div class=\"fade-sub-header-text\" style=\"margin: 8px 5px;\">\r\n                    <span style=\"margin-left: 64px;\">Pickup</span>\r\n                  </div>\r\n                  <div class=\"EFP_unvisited-timeline\">\r\n                    <i style=\"color: #D0D0D0\" class=\"fa fa-circle-thin  EFP_timeline_icon\" aria-hidden=\"true\"></i>\r\n                    <!--<img class=\"EFP_icon\" src=\"../../../../images/trip-icons/at_pickup_point_timeline.png\" alt=\"image\" >-->\r\n                    <div style=\"display:flex\"  >\r\n                      <span (click)=\"goToEditTripPickupView('pickup','CT')\"  class=\"fade-header\" style=\"margin-left: 75px;cursor: pointer\" >{{selectedShipment?.currentShipment?.startLocation?.freightLocation?.name}}</span>\r\n                      <span (click)=\"goToEditTripPickupView('pickup','CT')\"  style=\"cursor: pointer;color: #9b9b9b;font-size: 11px;margin-left: auto\"><i class=\"fa fa-chevron-right\" aria-hidden=\"true\" style=\"color: #00b0ff;\"></i></span>\r\n                    </div>\r\n\r\n                    <div class=\"fade-sub-header-text\" style=\"width: 98%; margin-left : 80px; margin-top: 10px;\">\r\n                      <!-- <span>ETA : {{vehicleTripDetails['currentTrip']?.plannedStartTime | date:'medium'}}</span> -->\r\n                      <span >ETA :</span><span> {{eta}}</span><br>\r\n                      <span >{{distanceToGo}}</span>\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n              <!-- **************** disconnected case **************************** -->\r\n              <div *ngIf=\"selectedShipment.latestGpsState?.state != 'Disconnected' && selectedShipment.latestGpsState?.state != null && selectedShipment.currentShipment?.trackingType=='Trip'\"  class=\"vehicle-status-trip\">\r\n                <span >{{vehicleState}}</span>\r\n              </div>\r\n              <div *ngIf=\"selectedShipment.latestGpsState?.state != 'Disconnected' && selectedShipment.latestGpsState?.state != null && selectedShipment.currentShipment?.trackingType=='Tracker'\"  class=\"vehicle-status-tracker\">\r\n                  <span >{{vehicleState}}</span>\r\n                </div>\r\n\r\n              <div (click)=\"openConfirmPointDialog('Pickup')\"  *ngIf=\"selectedShipment.latestGpsState?.state == 'Disconnected' ||  selectedShipment.latestGpsState?.state == null\"  class=\"disconnected\">\r\n                <span>{{vehicleState}}<span style=\"font-size:12px;color:#ffdead;\" *ngIf=\"selectedShipment.latestGpsState?.state == null\"> No GPS Found</span></span>\r\n                <i class=\"fa fa-chevron-right\" aria-hidden=\"true\" style=\"color:white;float:right;margin-top: 2px;\" ></i>\r\n              </div>\r\n              <!-- ******************************************* -->\r\n\r\n              <md-card fxLayout=\"row\" class=\"current-vehicle-card\">\r\n                <div>\r\n                  <img style=\"height:32px;\" src=\"../../../../images/trip-icons/truck_moving.png\" alt=\"location\" >\r\n                </div>\r\n                <div style=\"width: 100%\">\r\n                  <div style=\"font-size:14px;padding-left: 8px;padding-right: 5px;\">\r\n                    <span style=\"line-height: 1.43\" *ngIf=\"!(selectedShipment?.latestGpsState)\">N/A</span>\r\n                    <span style=\"line-height: 1.43\" *ngIf=\"(selectedShipment?.latestGpsState?.endLocation?.address)\">{{(selectedShipment?.latestGpsState?.endLocation?.address)?selectedShipment?.latestGpsState?.endLocation?.address:'N/A'}}</span>\r\n                    <span style=\"line-height: 1.43\" *ngIf=\"(selectedShipment?.latestGpsState?.startLocation?.address && !(selectedShipment?.latestGpsState?.endLocation?.address))\">{{(selectedShipment?.latestGpsState?.startLocation?.address)?selectedShipment?.latestGpsState?.startLocation?.address:'N/A'}}</span>\r\n                    \r\n                    <!--<span *ngIf=\"!vehicleTripDetails.movementLegs\" style=\"line-height: 1.43\"> Address Not Available !</span>-->\r\n                  </div>\r\n                  <!-- ************************* vehicle status **************************   -->\r\n                  <div  style=\"white-space: nowrap;margin-bottom: -10px;text-align: right\">\r\n                    <span style=\"font-size:12px\">Since {{selectedShipment['vts']?._stateDuration}}</span>\r\n                  </div>\r\n                </div>\r\n                \r\n              </md-card>\r\n            </div>\r\n  \r\n          </div>\r\n      </div>\r\n      <!--done-->\r\n      <div *ngIf=\"vehicleState == 'At Pickup Point'\">\r\n\r\n        <!-- <div *ngIf=\"view !='web'\"  style=\"padding: 15px 15px 10px 25px;\">\r\n          <div>\r\n            <i class =\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i>\r\n            <span class=\"alert-box\">No Impediment</span>\r\n          </div>\r\n          <div>\r\n            <i class=\"fa fa-bell\" aria-hidden=\"true\"></i>\r\n            <span class=\"alert-box\">No Alert</span>\r\n          </div>\r\n        </div> -->\r\n\r\n        <hr class=\"my-hr\">\r\n\r\n        <div [style.height]=\"(view =='web')?'auto':'calc(100vh - 156px)'\"  style=\"overflow: auto;\">\r\n\r\n          <div style=\"color:rgba(0, 0, 0, 0.54);padding: 5px;margin: 5px;border: 2px solid lightgrey;\">\r\n            <div  >\r\n              <span style=\"font-size: 12px\">Current Shipment</span>\r\n            </div>\r\n            <div style=\"overflow: hidden\">\r\n              <div class=\"fade-sub-header-text\" style=\"margin: 8px 5px;\">\r\n                <span style=\"margin-left: 64px;\">Delivery</span>\r\n              </div>\r\n              <div class=\"EFP_unvisited-timeline\">\r\n                <i style=\"color: #D0D0D0\" class=\"fa fa-circle-thin  EFP_timeline_icon\" aria-hidden=\"true\"></i>\r\n                <!--<img class=\"EFP_icon\" src=\"../../../../images/trip-icons/at_pickup_point_timeline.png\" alt=\"image\" >-->\r\n                <div style=\"display:flex\"  >\r\n                  <span (click)=\"goToEditTripPickupView('destination','CT')\" class=\"fade-header\" style=\"cursor: pointer;margin-left: 75px;\" >{{selectedShipment?.currentShipment?.endLocation?.freightLocation?.name}}</span>\r\n                  <span (click)=\"goToEditTripPickupView('destination','CT')\" style=\"cursor: pointer;color: #9b9b9b;font-size: 11px;margin-left: auto\"><i class=\"fa fa-chevron-right\" aria-hidden=\"true\" style=\"color: #00b0ff;\"></i></span>\r\n                </div>\r\n\r\n                <div class=\"fade-sub-header-text\" style=\"width: 98%; margin-left : 80px; margin-top: 10px;\">\r\n                  <!-- <span>ETA : {{vehicleTripDetails['currentTrip']?.plannedEndTime | date:'medium'}}</span> -->\r\n                  <span>Transite Time :</span><span>{{selectedShipment?.currentShipment?._transiteTime}}</span><br>\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <!-- **************** for in case of device disconnect ********************** -->\r\n            <div *ngIf=\"selectedShipment.latestGpsState?.state != 'Disconnected' && selectedShipment.latestGpsState?.state != null && selectedShipment.currentShipment?.trackingType=='Trip'\"  class=\"vehicle-status-trip\">\r\n                <span >{{vehicleState}}</span>\r\n              </div>\r\n            <div *ngIf=\"selectedShipment.latestGpsState?.state != 'Disconnected' && selectedShipment.latestGpsState?.state != null && selectedShipment.currentShipment?.trackingType=='Tracker'\"  class=\"vehicle-status-tracker\">\r\n                <span >{{vehicleState}}</span>\r\n            </div>\r\n            <div (click)=\"openConfirmPointDialog('Pickup')\" *ngIf=\"selectedShipment.latestGpsState?.state == 'Disconnected' ||  selectedShipment.latestGpsState?.state == null\"  class=\"disconnected\">\r\n              <span>{{vehicleState}}<span style=\"font-size:12px;color:#ffdead;\" *ngIf=\"selectedShipment.latestGpsState?.state == null\"> No GPS Found</span></span>\r\n              <i class=\"fa fa-chevron-right\" aria-hidden=\"true\" style=\"color:white;float:right;margin-top: 2px;\" ></i>\r\n            </div>\r\n          <!--   ************************************  -->\r\n\r\n            <md-card fxLayout=\"row\" (click)=\"goToEditTripPickupView('pickup','CT')\" class=\"current-vehicle-card\">\r\n              <div>\r\n                <img style=\"height:32px;\" src=\"../../../../images/trip-icons/stop_truck_white.png\" alt=\"location\" >\r\n              </div>\r\n              <div style=\"width: 100%\">\r\n                <div style=\"font-size:14px;padding-left: 8px;padding-right: 5px;\">\r\n                  <span *ngIf=\"selectedShipment.currentShipment\" style=\"line-height: 1.43\">{{selectedShipment?.currentShipment?.startLocation?.freightLocation?.name}}</span>\r\n                  <span *ngIf=\"selectedShipment.currentShipment\" style=\"line-height: 1.43\"><i class=\"fa fa-chevron-right\" aria-hidden=\"true\" style=\"color: #00b0ff;float: right\"></i></span>\r\n                  <span  *ngIf=\"!selectedShipment.currentShipment\"  style=\"line-height: 1.43;font-size: 20px\" > N/A !</span>\r\n                </div>\r\n                <!-- ************************* vehicle status **************************   -->\r\n                <div  style=\"white-space: nowrap;margin-bottom: -10px;text-align: right\">\r\n                  <span style=\"font-size:12px\">Since {{selectedShipment['vts']?._stateDuration}}</span>\r\n                </div>\r\n              </div>\r\n              <!--<div style=\"white-space: nowrap;margin-top: auto;margin-left:auto;margin-bottom: -10px\">-->\r\n              <!--<i class=\"fa fa-stop-circle-o\" aria-hidden=\"true\"></i>-->\r\n              <!--<span style=\"font-size:14px\">Stop</span>-->\r\n              <!--</div>-->\r\n              <!-- **-->\r\n            </md-card>\r\n          </div>\r\n\r\n          <!-- <div style=\"overflow: hidden;margin-top: 15px\">\r\n            <section *ngIf=\"vehicleTripDetails.lastTrip\" style=\"margin:5px;padding:5px;border:2px solid lightgrey;position: relative\" >\r\n              <div style=\"font-size:12px;color:#9E9E9E;height: 28px\">\r\n                <span>Last Trip</span>\r\n                <span style=\"margin-left: 19px;vertical-align: -8px;\">Delivery</span>\r\n              </div>\r\n\r\n              <div style=\"margin-top: 7px;\" class=\"wfl-timeline\" >\r\n                <i style=\"margin-top: -13px;\" class=\"fa fa-circle wfl-imeline-image\" aria-hidden=\"true\"></i>\r\n                <div style=\"display:flex\"  >\r\n                  <span style=\"cursor: pointer;font-size: 13px;font-weight: bold;margin-left: 75px;color:#4a4a4a;\"\r\n                        (click)=\"goToEditTripPickupView('destination','LT')\" >{{selectedShipment?.lastTrip?.destination[0]?.freightLocation?.name}}</span>\r\n                  <span (click)=\"goToEditTripPickupView('destination','LT')\" style=\"cursor: pointer;color: #9b9b9b;font-size: 11px;margin-left: auto\"><i class=\"fa fa-chevron-right\" aria-hidden=\"true\" style=\"color: #00b0ff;\"></i></span>\r\n                </div>\r\n\r\n                <div class=\"sub-header-text\" style=\"text-align: center;margin-left: 40px;margin-top: 5px;margin-bottom: 20px;\">\r\n                  <span>unloading duration {{vehicleTripDetails['lastTrip']?.destination[0]['_unloadingDuration']}}</span>\r\n                </div>\r\n\r\n                <div class=\"sub-header-text\" style=\"text-align:right;font-size:11px\">\r\n                  <span>Trip Duration :{{vehicleTripDetails['lastTrip']?._tripCompletionDuration}}</span>\r\n                </div>\r\n\r\n                <div class=\"sub-header-text\" style=\"margin-left: 71px;    margin-top: 7px;\">\r\n                  <span>Pickup</span>\r\n                </div>\r\n\r\n                <div style=\"display:flex;position: relative;\" >\r\n                  <i class=\"fa fa-circle wfl-imeline-image\"  style=\"bottom: -2px;\" aria-hidden=\"true\"></i>\r\n                  <div class=\"time\" style=\"margin-top: 5px;\">\r\n                    <span >{{vehicleTripDetails['lastTrip'].origin[0]['fromTime'] | date :'d MMM'}}</span>\r\n                    <span style=\"white-space:nowrap\" >{{vehicleTripDetails['lastTrip'].origin[0]['fromTime'] | date :'jm'}}</span>\r\n                  </div>\r\n                  <span style=\"cursor: pointer;font-size: 13px;font-weight: bold;margin-left: 25px;color:#4a4a4a;margin-top:5px;\"\r\n                        (click)=\"goToEditTripPickupView('pickup','LT')\" >{{vehicleTripDetails?.lastTrip?.origin[0]?.freightLocation?.name}}</span>\r\n                  <div style=\"margin-left: auto;cursor: pointer\" (click)=\"goToEditTripPickupView('pickup','LT')\" >\r\n                    <span style=\"white-space: nowrap;color: #9b9b9b;font-size: 11px\"><i class=\"fa fa-chevron-right\" aria-hidden=\"true\" style=\"color: #00b0ff;\"></i></span>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n              <div class=\"sub-header-text\" style=\"text-align:center;margin-left: 22px;margin-top:-5px;font-size: 11px;\" >\r\n                <span>Loading Duration {{vehicleTripDetails['lastTrip']?.origin[0]['_loadingDuration']}}</span>\r\n              </div>\r\n            </section>\r\n\r\n            <div style=\"height: 50px\"></div>\r\n          </div> -->\r\n        </div>\r\n\r\n      </div>\r\n      <!--done-->\r\n      <div *ngIf=\"vehicleState == 'Enroute for Delivery'\">\r\n        <!-- <div *ngIf=\"view !='web'\" style=\"padding: 15px 15px 10px 25px;\">\r\n          <div>\r\n            <i class =\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i>\r\n            <span class=\"alert-box\">No Impediment</span>\r\n          </div>\r\n          <div>\r\n            <i class=\"fa fa-bell\" aria-hidden=\"true\"></i>\r\n            <span class=\"alert-box\">No Alerts</span>\r\n          </div>\r\n        </div> -->\r\n\r\n        <hr class=\"my-hr\">\r\n\r\n        <div [style.height]=\"(view =='web')?'auto':'calc(100vh - 156px)'\"  style=\"overflow: auto;\">\r\n          \r\n          <!-- *****************************     current trip start here *************************** -->\r\n          <div style=\"color:rgba(0, 0, 0, 0.54);padding: 5px;margin: 5px;border: 2px solid lightgrey;\">\r\n            <div  style=\"margin-bottom: 5px\">\r\n              <span style=\"font-size: 12px\">Current Shipment</span>\r\n            </div>\r\n\r\n          <!--delivery point of current trip -->\r\n            <div style=\"overflow: hidden\">\r\n              <div class=\"fade-sub-header-text\" style=\"margin: 8px 5px;\">\r\n                <span style=\"margin-left: 64px;\">Delivery</span>\r\n              </div>\r\n              <div class=\"EFP_unvisited-timeline\" style=\"padding-bottom: 31px;\">\r\n                <i style=\"color: #D0D0D0\" class=\"fa fa-circle-thin  EFP_timeline_icon\" aria-hidden=\"true\"></i>\r\n                <!--<img class=\"EFP_icon\" src=\"../../../../images/trip-icons/at_pickup_point_timeline.png\" alt=\"image\" >-->\r\n                <div style=\"display:flex\"  >\r\n                  <span (click)=\"goToEditTripPickupView('destination','CT')\"  class=\"fade-header\" style=\"margin-left: 75px;cursor: pointer\" >{{selectedShipment?.currentShipment?.endLocation?.freightLocation?.name}}</span>\r\n                  <span (click)=\"goToEditTripPickupView('destination','CT')\"  style=\"color: #9b9b9b;font-size: 11px;margin-left: auto\"><i class=\"fa fa-chevron-right\" aria-hidden=\"true\" style=\"color: #00b0ff;\"></i></span>\r\n                </div>\r\n\r\n                <div class=\"fade-sub-header-text\" style=\"width: 98%; margin-left : 80px; margin-top: 10px;\">\r\n                  <span>ETA :{{selectedShipment?.currentShipment?.planedEndTime | date :'medium' }}</span><br>\r\n                  <div *ngIf = \"isDelayed\" style=\"margin-top: 2px; color : red\">\r\n                  <span>(running late by</span><span style=\"margin-left:2px\">{{delayedBy}}</span><span>)</span><br>\r\n                  </div>\r\n                  <div style=\"margin-top: 2px\">             \r\n                  <span>{{distanceToGo}}</span>\r\n                </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          <!-- ************************** -->\r\n\r\n            <!-- *************** when disconnect *************************** -->\r\n            <div *ngIf=\"selectedShipment.latestGpsState?.state != 'Disconnected' && selectedShipment.latestGpsState?.state != null && selectedShipment.currentShipment?.trackingType=='Trip'\"  class=\"vehicle-status-trip\">\r\n                <span >{{vehicleState}}</span>\r\n              </div>\r\n            <div *ngIf=\"selectedShipment.latestGpsState?.state != 'Disconnected' && selectedShipment.latestGpsState?.state != null && selectedShipment.currentShipment?.trackingType=='Tracker'\"  class=\"vehicle-status-tracker\">\r\n                <span >{{vehicleState}}</span>\r\n            </div>\r\n            <div (click)=\"openConfirmPointDialog('Destination')\"   *ngIf=\"selectedShipment.latestGpsState?.state == 'Disconnected' ||  selectedShipment.latestGpsState?.state == null\"  class=\"disconnected\">\r\n              <span>{{vehicleState}}<span style=\"font-size:12px;color:#ffdead;\" *ngIf=\"selectedShipment.latestGpsState?.state == null\"> No GPS Found</span></span>\r\n              <i class=\"fa fa-chevron-right\" aria-hidden=\"true\" style=\"color:white;float:right;margin-top: 2px;\" ></i>\r\n            </div>\r\n            <!-- *********************************************************** -->\r\n\r\n            <md-card fxLayout=\"row\" class=\"current-vehicle-card\">\r\n              <div>\r\n                <img style=\"height:32px;\" src=\"../../../../images/trip-icons/truck_moving.png\" alt=\"location\" >\r\n              </div>\r\n              <div style=\"width: 100%\">\r\n                <div style=\"font-size:14px;padding-left: 8px;padding-right: 5px;\">\r\n                    <span style=\"line-height: 1.43\" *ngIf=\"!(selectedShipment?.latestGpsState)\">N/A</span>\r\n                    <span style=\"line-height: 1.43\" *ngIf=\"(selectedShipment?.latestGpsState?.endLocation?.address)\">{{(selectedShipment?.latestGpsState?.endLocation?.address)?selectedShipment?.latestGpsState?.endLocation?.address:'N/A'}}</span>\r\n                    <span style=\"line-height: 1.43\" *ngIf=\"(selectedShipment?.latestGpsState?.startLocation?.address && !(selectedShipment?.latestGpsState?.endLocation?.address))\">{{(selectedShipment?.latestGpsState?.startLocation?.address)?selectedShipment?.latestGpsState?.startLocation?.address:'N/A'}}</span>\r\n                    <!--<span  *ngIf=\"!vehicleTripDetails.currentTrip\"  style=\"line-height: 1.43;font-size: 20px\" > N/A !</span>-->\r\n                </div>\r\n                <!-- ************************* vehicle status **************************   -->\r\n                <div  style=\"white-space: nowrap;margin-bottom: -10px;text-align: right;\">\r\n                  <span style=\"font-size:12px\">Since {{selectedShipment['vts']?._stateDuration}}</span>\r\n                </div>\r\n              </div>\r\n            </md-card>\r\n\r\n            <div style=\"overflow: hidden;margin-top: -13px;\">\r\n              <section class=\"DP-timeline\" style=\"padding: 5px;\" >\r\n                <div style=\"padding: 5px;margin-top: 5px;\">\r\n                  <!-- *************** for expand up-down arrow icon ************  -->\r\n                  <div style=\"overflow: hidden;margin-top: 20px;padding-bottom: 20px\" fxLayout=\"row\" >\r\n                    <!-- ******** total travling time **************** -->\r\n                    <div style=\"min-width: 43px\">\r\n                      <div *ngIf=\"!isExpand\" class=\"time\">\r\n                        <span class=\"rotate\" >&#8676;</span>\r\n                        <span name=\"totalTravelDistance\" style=\"white-space:nowrap;\">{{movementLogs?._totalTravlingDistance | number : '1.1-1'}} km</span>\r\n                        <span name=\"totalTravlingTime\" style=\"border-top: 1px solid;\" >{{movementLogs?._totalTravlingTime}}</span>\r\n                        <span class=\"rotate\">&#8677;</span>\r\n                      </div>\r\n                    </div>\r\n                    <!-- ********************************* -->\r\n\r\n                    <div *ngIf=\"!isExpand\" fxLayout=\"column\" (click)=\"isExpand = true\" style=\"margin-left:65px;    margin-top: 10px;\">\r\n                      <i class=\"fa fa-angle-up\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\" ></i>\r\n                      <i  class=\"fa fa-angle-down\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\" ></i>\r\n                    </div>\r\n                    <div *ngIf=\"isExpand\" fxLayout=\"column\" (click)=\"isExpand = false\" style=\"margin-left:65px;margin-top: -6px;\">\r\n                      <i class=\"fa fa-angle-up\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\" ></i>\r\n                    </div>\r\n\r\n                    <div fxLayout=\"column\" style=\"margin-bottom: 30px;width:100%\">\r\n                      <!-- when not expanded -->\r\n                      <div *ngIf=\"!isExpand\" style=\"margin-left:8px;display:grid;margin-top: 15px;\" >\r\n                        <div style=\"display: grid\">\r\n                          <span style=\"font-size: 11px;color: #9b9b9b;white-space:nowrap;\">{{movementLogs?.stopped}} Stops</span>\r\n                          <span style=\"font-size: 11px;color: #9b9b9b;white-space:nowrap;margin-top:4px;\">{{movementLogs?.disconnected }} Disconnects</span>\r\n                        </div>\r\n                      </div>\r\n                      <!-- ******** this is show when log value expanded ********* -->\r\n\r\n                      <div [style.height]=\"isExpand?'auto':'0px'\"  class=\"data-box\" id=\"expandable-box\" [style.margin-top]=\"!isExpand?upSideHeight:'8px'\"  [class.hide-up-Slowly]=\"!isExpand\" [class.show-down-Slowly]=\"isExpand == true\"  fxLayout=\"column\"  >\r\n\r\n                        <!-- loop for movement logs / this data show when click to expand movement logs  -->\r\n                        <div  *ngFor=\"let movementleg of selectedShipment['movementLegs']\" style=\"margin-top:15px;padding:5px;margin-bottom:10px;position:relative\" >    <!--loop here-->\r\n                        <div *ngIf=\"isExpand\" >\r\n                          <div *ngIf=\"movementleg.state == 'Moving'\" class=\"travling-time\" > <!-- left side of time line-->\r\n                            <span  >{{movementleg?._totalDuration }}</span>\r\n                            <span  >{{movementleg?.totalDistance/1000 | number : '1.1-1'}} km</span>\r\n                          </div>\r\n                          <i *ngIf=\"movementleg.state == 'Stopped' || movementleg.state == 'Disconnected'\"  style=\"position: absolute;margin-left: -61px;background-color: white;\"\r\n                            [style.color]=\"movementleg.state == 'Disconnected'?'red':'#858585'\" class=\"fa fa-stop-circle\" aria-hidden=\"true\"></i>\r\n                          <div *ngIf=\"movementleg.state == 'Stopped' || movementleg.state == 'Disconnected'\" [style.color]=\"movementleg.state == 'Disconnected'?'red':'#858585'\" > <!-- right side of time line-->\r\n                            <span style=\"font-weight: bold;\">{{movementleg.endLocation?.address?movementleg.endLocation?.address:'N/A'}}</span>\r\n                            <div style=\"padding-top: 4px;float:right;text-align:right;display:grid;\" >\r\n                              <span style=\"white-space:nowrap;\">{{movementleg?._totalDuration }}</span>\r\n                              <span style=\"white-space:nowrap;\">{{movementleg?.startTime | date: 'dd MMM yy hh:mm a'}}</span>\r\n                            </div>\r\n                            </div>\r\n                        </div>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n                  </div>\r\n                  <!-- ***************************close for expand up-down arrow icon **************************  -->\r\n                  <div style=\"display:flex;position: relative;\" >\r\n                    <i   class=\"fa fa-circle DP_timeline-image \" aria-hidden=\"true\"></i>\r\n                    <div class=\"time\" style=\"margin-top: 5px;\">\r\n                      <span >{{selectedShipment['currentShipment'].startLocation['fromTime'] | date :'d MMM'}}</span>\r\n                      <span style=\"white-space:nowrap\" >{{selectedShipment['currentShipment'].startLocation['fromTime'] | date :'jm'}}</span>\r\n                    </div>\r\n                    <div style=\"font-size: 13px;font-weight: bold;margin-left: 54px;color:#4a4a4a;display: grid\" >\r\n                      <span class=\"fade-sub-header-text\" style=\"margin-top: -13px;margin-left: -10px;\">Pickup</span>\r\n                      <span (click)=\"goToEditTripPickupView('pickup','CT')\"  >{{(selectedShipment?.currentShipment?.startLocation?.freightLocation?.name)?selectedShipment?.currentShipment?.startLocation?.freightLocation?.name:'N/A'}}</span>\r\n                    </div>\r\n                    <div (click)=\"goToEditTripPickupView('pickup','CT')\"  style=\"cursor: pointer;margin-left: auto;display: grid;text-align: center;\">\r\n                      <span style=\"white-space: nowrap;color: #9b9b9b;font-size: 11px\"><i class=\"fa fa-chevron-right\" aria-hidden=\"true\" style=\"color: #00b0ff;\"></i></span>\r\n                    </div>\r\n                  </div>\r\n                  <div class=\"sub-header-text\" style=\"margin-left: 104px;margin-top: -5px;font-size: 11px\">\r\n                    <span>Loading Duration {{selectedShipment['currentShipment'].startLocation['_loadingDuration']}}</span>\r\n                  </div>\r\n                </div>\r\n              </section>\r\n\r\n            </div>\r\n          </div>\r\n          <!-- ************ close current trip *****8 -->\r\n          <div style=\"height: 50px\"></div>\r\n        </div>\r\n      </div>\r\n      <!--done-->\r\n      <div *ngIf=\"vehicleState == 'At Delivery Point' && tillTimeCheck==null\">\r\n        <hr class=\"my-hr\">\r\n\r\n        <div  [style.height]=\"(view =='web')?'auto':'calc(100vh - 156px)'\" style=\"overflow: auto;\">\r\n          \r\n\r\n          <!-- *****************************     current trip start here *************************** -->\r\n          <div style=\"color:rgba(0, 0, 0, 0.54);padding: 5px;margin: 5px;border: 2px solid lightgrey;\">\r\n            <div  style=\"margin-bottom: 5px\">\r\n              <span style=\"font-size: 12px\">Current Shipment</span>\r\n            </div>\r\n\r\n            <!--   foor in case of disconnection -->\r\n            <div *ngIf=\"selectedShipment.latestGpsState?.state != 'Disconnected' && selectedShipment.latestGpsState?.state != null && selectedShipment.currentShipment?.trackingType=='Trip'\"  class=\"vehicle-status-trip\">\r\n                <span >{{vehicleState}}</span>\r\n              </div>\r\n            <div *ngIf=\"selectedShipment.latestGpsState?.state != 'Disconnected' && selectedShipment.latestGpsState?.state != null && selectedShipment.currentShipment?.trackingType=='Tracker'\"  class=\"vehicle-status-tracker\">\r\n                <span >{{vehicleState}}</span>\r\n            </div>\r\n            <div (click)=\"openConfirmPointDialog('Destination')\" *ngIf=\"selectedShipment.latestGpsState?.state == 'Disconnected' ||  selectedShipment.latestGpsState?.state == null\"  class=\"disconnected\">\r\n              <span>{{vehicleState}}<span style=\"font-size:12px;color:#ffdead;\" *ngIf=\"selectedShipment.latestGpsState?.state == null\"> No GPS Found</span></span>\r\n              <i class=\"fa fa-chevron-right\" aria-hidden=\"true\" style=\"color:white;float:right;margin-top: 2px;\" ></i>\r\n            </div>\r\n            <!-- ************************************************* -->\r\n\r\n            <md-card (click)=\"goToEditTripPickupView('destination','CT')\"  fxLayout=\"row\" class=\"current-vehicle-card\">\r\n              <div>\r\n                <img style=\"height:32px;\" src=\"../../../../images/trip-icons/stop_truck_white.png\" alt=\"location\" >\r\n              </div>\r\n              <div style=\"width: 100%\">\r\n              <div style=\"font-size:14px;padding-left: 8px;padding-right: 5px;\">\r\n                <span *ngIf=\"selectedShipment.currentShipment\" style=\"line-height: 1.43\">{{selectedShipment?.currentShipment?.endLocation?.freightLocation?.name}}</span>\r\n                <span *ngIf=\"selectedShipment.currentShipment\" style=\"line-height: 1.43\"><i  class=\"fa fa-chevron-right\" aria-hidden=\"true\" style=\"color: #00b0ff;float:right;\"></i></span>\r\n                <span  *ngIf=\"!selectedShipment.currentShipment\"  style=\"line-height: 1.43;font-size: 20px\" > N/A !</span>\r\n              </div>\r\n              <!-- ************************* vehicle status **************************   -->\r\n              <div  style=\"white-space: nowrap;margin-bottom: -10px;text-align: right;\">\r\n                <span style=\"font-size:12px\">Since {{selectedShipment['vts']?._stateDuration}}</span>\r\n              </div>\r\n              </div>\r\n            </md-card>\r\n\r\n            <div style=\"overflow: hidden;margin-top: -13px;\">\r\n              <section class=\"DP-timeline\" style=\"padding: 5px;\" >\r\n                <div style=\"padding: 5px;margin-top: 5px;\">\r\n                  <!-- *************** for expand up-down arrow icon ************  -->\r\n                  <div style=\"overflow: hidden;margin-top: 20px;padding-bottom: 20px\" fxLayout=\"row\" >\r\n                  <!-- ******** total travling time **************** -->\r\n                    <div style=\"min-width: 43px\">\r\n                      <div *ngIf=\"!isExpand\" class=\"time\">\r\n                        <span class=\"rotate\" >&#8676;</span>\r\n                        <span name=\"totalTravelDistance\" style=\"white-space:nowrap;\">{{movementLogs?._totalTravlingDistance | number : '1.1-1'}} km</span>\r\n                        <span name=\"totalTravlingTime\" style=\"border-top: 1px solid;\" >{{movementLogs?._totalTravlingTime}}</span>\r\n                        <span class=\"rotate\">&#8677;</span>\r\n                      </div>\r\n                    </div>\r\n                    <!-- ********************************* -->\r\n\r\n                    <div *ngIf=\"!isExpand\" fxLayout=\"column\" (click)=\"isExpand = true\" style=\"margin-left:65px;    margin-top: 10px;\">\r\n                      <i class=\"fa fa-angle-up\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\" ></i>\r\n                      <i  class=\"fa fa-angle-down\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\" ></i>\r\n                    </div>\r\n                    <div *ngIf=\"isExpand\" fxLayout=\"column\" (click)=\"isExpand = false\" style=\"margin-left:65px;margin-top: -6px;\">\r\n                      <i class=\"fa fa-angle-up\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\" ></i>\r\n                    </div>\r\n\r\n                    <div fxLayout=\"column\" style=\"margin-bottom: 30px;width:100%\">\r\n                      <!-- when not expanded -->\r\n                      <div *ngIf=\"!isExpand\" style=\"margin-left:8px;display:grid;margin-top: 15px;\" >\r\n                        <div style=\"display: grid\">\r\n                          <span style=\"font-size: 11px;color: #9b9b9b;white-space:nowrap;\">{{movementLogs?.stopped}} Stops</span>\r\n                          <span style=\"font-size: 11px;color: #9b9b9b;white-space:nowrap;margin-top:4px;\">{{movementLogs?.disconnected }} Disconnects</span>\r\n                        </div>\r\n                      </div>\r\n                      <!-- ******** this is show when log value expanded ********* -->\r\n                      <div [style.height]=\"isExpand?'auto':'0px'\"  class=\"data-box\" id=\"expandable-box\" [style.margin-top]=\"!isExpand?upSideHeight:'8px'\"  [class.hide-up-Slowly]=\"!isExpand\" [class.show-down-Slowly]=\"isExpand == true\"  fxLayout=\"column\"  >\r\n\r\n                      <!-- loop for movement logs / this data show when click to expand movement logs  -->\r\n                        <div *ngFor=\"let movementleg of selectedShipment['movementLegs']\" style=\"margin-top:15px;padding:5px;margin-bottom:10px;position:relative\" >    <!--loop here-->\r\n                          <div *ngIf=\"isExpand\" >\r\n                          <div *ngIf=\"movementleg.state == 'Moving'\" class=\"travling-time\" > <!-- left side of time line-->\r\n                            <span  >{{movementleg?._totalDuration }}</span>\r\n                            <span  >{{movementleg?.totalDistance/1000 | number : '1.1-1'}} km</span>\r\n                          </div>\r\n                          <i *ngIf=\"movementleg.state == 'Stopped' || movementleg.state == 'Disconnected'\"  style=\"position: absolute;margin-left: -61px;background-color: white;\"\r\n                            [style.color]=\"movementleg.state == 'Disconnected'?'red':'#858585'\" class=\"fa fa-stop-circle\" aria-hidden=\"true\"></i>\r\n                          <div *ngIf=\"movementleg.state == 'Stopped' || movementleg.state == 'Disconnected'\" [style.color]=\"movementleg.state == 'Disconnected'?'red':'#858585'\" > <!-- right side of time line-->\r\n                            <span style=\"font-weight: bold;\">{{movementleg.endLocation?.address?movementleg.endLocation?.address:'N/A'}}</span>\r\n\r\n                            <div style=\"padding-top: 4px;float:right;text-align:right;display:grid;\" >\r\n                              <span  style=\"white-space:nowrap;\">{{movementleg?._totalDuration }}</span>\r\n                              <span style=\"white-space:nowrap;\">{{movementleg?.startTime | date: 'dd MMM yy hh:mm a'}}</span>\r\n                            </div>\r\n                          </div>\r\n                          </div>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n                  </div>\r\n                  <!-- ***************************close for expand up-down arrow icon **************************  -->\r\n                  <div style=\"display:flex;position: relative;\" >\r\n                    <i  class=\"fa fa-circle DP_timeline-image\" aria-hidden=\"true\"></i>\r\n                    <div class=\"time\" style=\"margin-top: 5px;\">\r\n                      <span >{{selectedShipment['currentShipment'].startLocation['fromTime'] | date :'d MMM'}}</span>\r\n                      <span style=\"white-space:nowrap\" >{{selectedShipment['currentShipment'].startLocation['fromTime'] | date :'jm'}}</span>\r\n                    </div>\r\n                    <div style=\"font-size: 13px;font-weight: bold;margin-left: 60px;color:#4a4a4a;display: grid\" >\r\n                      <span class=\"fade-sub-header-text\" style=\"margin-top: -13px;margin-left: -10px;\">Pickup</span>\r\n                      <span (click)=\"goToEditTripPickupView('pickup','CT')\"  >{{(selectedShipment?.currentShipment?.startLocation.freightLocation?.name)?selectedShipment?.currentShipment?.startLocation?.freightLocation?.name:'N/A'}}</span>\r\n                    </div>\r\n                    <div (click)=\"goToEditTripPickupView('pickup','CT')\"  style=\"margin-left: auto;display: grid;text-align: center;\">\r\n                      <span style=\"white-space: nowrap;color: #9b9b9b;font-size: 11px\"><i class=\"fa fa-chevron-right\" aria-hidden=\"true\" style=\"color: #00b0ff;\"></i></span>\r\n                    </div>\r\n                  </div>\r\n                  <div class=\"sub-header-text\" style=\"margin-left: 90px;margin-top: -5px;font-size: 11px\">\r\n                      <span>Loading Duration {{selectedShipment['currentShipment'].startLocation['_loadingDuration']}}</span>\r\n                  </div>\r\n                </div>\r\n              </section>\r\n\r\n            </div>\r\n          </div>\r\n          <!-- ************ close current trip *****8 -->\r\n          <div style=\"height: 50px\"></div>\r\n        </div>\r\n      </div>\r\n      <!--done-->\r\n\r\n    <div *ngIf=\"vehicleState == 'At Delivery Point' && tillTimeCheck!=null\" style=\"background-color: white\">\r\n      <hr class=\"my-hr\">\r\n  \r\n      <div  [style.height]=\"(view =='web')?'auto':'calc(100vh - 156px)'\" style=\"overflow: auto;\">\r\n  \r\n          <!-- *****************************     current trip start here *************************** -->\r\n        <div style=\"color:rgba(0, 0, 0, 0.54);padding: 5px;margin: 5px;border: 2px solid lightgrey;\">\r\n          <div  style=\"margin-bottom: 5px\">\r\n            <span style=\"font-size: 12px\">Current Shipment</span>\r\n          </div>  \r\n          <div (click)=\"goToEditTripPickupView('destination','CT')\"  fxLayout=\"row\">\r\n            <div>\r\n              <img style=\"height:32px;\" src=\"../../../../images/trip-icons/stop_truck_white.png\" alt=\"location\" >\r\n            </div>\r\n            <div style=\"width: 100%\">\r\n            <div style=\"font-size:14px;padding-left: 8px;padding-right: 5px;\">\r\n              <span style=\"margin-left: 25px;color: #428fd4;font-size: 25px;\"><i  class=\"fa fa-circle\" aria-hidden=\"true\"></i></span>\r\n              <span *ngIf=\"selectedShipment.currentShipment\" style=\"line-height: 1.43\" (click)=\"goToEditTripPickupView('destination','CT')\" >{{selectedShipment?.currentShipment?.endLocation?.freightLocation?.name}}</span>\r\n              <span *ngIf=\"selectedShipment.currentShipment\" style=\"line-height: 1.43\" (click)=\"goToEditTripPickupView('destination','CT')\" ><i  class=\"fa fa-chevron-right\" aria-hidden=\"true\" style=\"color: #00b0ff;float:right;\"></i></span>\r\n              <span  *ngIf=\"!selectedShipment.currentShipment\"  style=\"line-height: 1.43;font-size: 20px\" > N/A !</span>\r\n            </div>\r\n            <!-- ************************* vehicle status **************************   -->\r\n            <div  style=\"white-space: nowrap;margin-bottom: -10px;text-align: right;\">\r\n              <span style=\"font-size:12px\">Since {{selectedShipment['vts']?._stateDuration}}</span>\r\n            </div>\r\n            </div>\r\n          </div>\r\n  \r\n          <div style=\"overflow: hidden;margin-top: -13px;\">\r\n            <section class=\"DP-timeline\" style=\"padding: 5px;\" >\r\n              <div style=\"padding: 5px;margin-top: 5px;\">\r\n                <!-- *************** for expand up-down arrow icon ************  -->\r\n                <div style=\"overflow: hidden;margin-top: 20px;padding-bottom: 20px\" fxLayout=\"row\" >\r\n                <!-- ******** total travling time **************** -->\r\n                  <div style=\"min-width: 43px\">\r\n                    <div *ngIf=\"!isExpand\" class=\"time\">\r\n                      <span class=\"rotate\" >&#8676;</span>\r\n                      <span name=\"totalTravelDistance\" style=\"white-space:nowrap;\">{{movementLogs?._totalTravlingDistance | number : '1.1-1'}} km</span>\r\n                      <span name=\"totalTravlingTime\" style=\"border-top: 1px solid;\" >{{movementLogs?._totalTravlingTime}}</span>\r\n                      <span class=\"rotate\">&#8677;</span>\r\n                    </div>\r\n                  </div>\r\n                  <!-- ********************************* -->\r\n    \r\n                  <div *ngIf=\"!isExpand\" fxLayout=\"column\" (click)=\"isExpand = true\" style=\"margin-left:65px;    margin-top: 10px;\">\r\n                    <i class=\"fa fa-angle-up\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\" ></i>\r\n                    <i  class=\"fa fa-angle-down\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\" ></i>\r\n                  </div>\r\n                  <div *ngIf=\"isExpand\" fxLayout=\"column\" (click)=\"isExpand = false\" style=\"margin-left:65px;margin-top: -6px;\">\r\n                    <i class=\"fa fa-angle-up\" aria-hidden=\"true\" style=\"font-size:18px;font-weight:bold;color:#d8d8d8;\" ></i>\r\n                  </div>\r\n    \r\n                  <div fxLayout=\"column\" style=\"margin-bottom: 30px;width:100%\">\r\n                    <!-- when not expanded -->\r\n                    <div *ngIf=\"!isExpand\" style=\"margin-left:8px;display:grid;margin-top: 15px;\" >\r\n                      <div style=\"display: grid\">\r\n                        <span style=\"font-size: 11px;color: #9b9b9b;white-space:nowrap;\">{{movementLogs?.stopped}} Stops</span>\r\n                        <span style=\"font-size: 11px;color: #9b9b9b;white-space:nowrap;margin-top:4px;\">{{movementLogs?.disconnected }} Disconnects</span>\r\n                      </div>\r\n                    </div>\r\n                    <!-- ******** this is show when log value expanded ********* -->\r\n                    <div [style.height]=\"isExpand?'auto':'0px'\"  class=\"data-box\" id=\"expandable-box\" [style.margin-top]=\"!isExpand?upSideHeight:'8px'\"  [class.hide-up-Slowly]=\"!isExpand\" [class.show-down-Slowly]=\"isExpand == true\"  fxLayout=\"column\"  >\r\n    \r\n                    <!-- loop for movement logs / this data show when click to expand movement logs  -->\r\n                      <div *ngFor=\"let movementleg of selectedShipment['movementLegs']\" style=\"margin-top:15px;padding:5px;margin-bottom:10px;position:relative\" >    <!--loop here-->\r\n                        <div *ngIf=\"isExpand\" >\r\n                        <div *ngIf=\"movementleg.state == 'Moving'\" class=\"travling-time\" > <!-- left side of time line-->\r\n                          <span  >{{movementleg?._totalDuration }}</span>\r\n                          <span  >{{movementleg?.totalDistance/1000 | number : '1.1-1'}} km</span>\r\n                        </div>\r\n                        <i *ngIf=\"movementleg.state == 'Stopped' || movementleg.state == 'Disconnected'\"  style=\"position: absolute;margin-left: -61px;background-color: white;\"\r\n                          [style.color]=\"movementleg.state == 'Disconnected'?'red':'#858585'\" class=\"fa fa-stop-circle\" aria-hidden=\"true\"></i>\r\n                        <div *ngIf=\"movementleg.state == 'Stopped' || movementleg.state == 'Disconnected'\" [style.color]=\"movementleg.state == 'Disconnected'?'red':'#858585'\" > <!-- right side of time line-->\r\n                          <span style=\"font-weight: bold;\">{{movementleg.endLocation?.address?movementleg.endLocation?.address:'N/A'}}</span>\r\n    \r\n                          <div style=\"padding-top: 4px;float:right;text-align:right;display:grid;\" >\r\n                            <span  style=\"white-space:nowrap;\">{{movementleg?._totalDuration }}</span>\r\n                            <span style=\"white-space:nowrap;\">{{movementleg?.startTime | date: 'dd MMM yy hh:mm a'}}</span>\r\n                          </div>\r\n                        </div>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n                <!-- ***************************close for expand up-down arrow icon **************************  -->\r\n                <div style=\"display:flex;position: relative;\" >\r\n                  <i  class=\"fa fa-circle DP_timeline-image\" aria-hidden=\"true\"></i>\r\n                  <div class=\"time\" style=\"margin-top: 5px;\">\r\n                    <span >{{selectedShipment['currentShipment'].startLocation['fromTime'] | date :'d MMM'}}</span>\r\n                    <span style=\"white-space:nowrap\" >{{selectedShipment['currentShipment'].startLocation['fromTime'] | date :'jm'}}</span>\r\n                  </div>\r\n                  <div style=\"font-size: 13px;font-weight: bold;margin-left: 60px;color:#4a4a4a;display: grid\" >\r\n                    <span class=\"fade-sub-header-text\" style=\"margin-top: -13px;margin-left: -10px;\">Pickup</span>\r\n                    <span (click)=\"goToEditTripPickupView('pickup','CT')\"  >{{(selectedShipment?.currentShipment?.startLocation.freightLocation?.name)?selectedShipment?.currentShipment?.startLocation?.freightLocation?.name:'N/A'}}</span>\r\n                  </div>\r\n                  <div (click)=\"goToEditTripPickupView('pickup','CT')\"  style=\"margin-left: auto;display: grid;text-align: center;\">\r\n                    <span style=\"white-space: nowrap;color: #9b9b9b;font-size: 11px\"><i class=\"fa fa-chevron-right\" aria-hidden=\"true\" style=\"color: #00b0ff;\"></i></span>\r\n                  </div>\r\n                </div>\r\n                <div class=\"sub-header-text\" style=\"margin-left: 90px;margin-top: -5px;font-size: 11px\">\r\n                    <span>Loading Duration {{selectedShipment['currentShipment'].startLocation['_loadingDuration']}}</span>\r\n                </div>\r\n              </div>\r\n            </section>\r\n    \r\n          </div>\r\n        </div>\r\n        <!-- ************ close current trip *****8 -->\r\n        <div style=\"height: 50px\"></div>\r\n      </div>\r\n  </div>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
 /***/ "../../../../../src/app/components/tracker-shipment-status/tracker-shipment-status.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_shipment_services__ = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_tracker_services__ = __webpack_require__("../../../../../src/app/services/tracker-services.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TrackerShipmentStatusComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4404,15 +4531,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var material_1 = __webpack_require__("../../../material/@angular/material.es5.js");
-var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
+
+
+
 // import {Services} from "../../services/services";
-var router_1 = __webpack_require__("../../../router/@angular/router.es5.js");
-var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-var shipment_services_1 = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
-var tracker_services_1 = __webpack_require__("../../../../../src/app/services/tracker-services.ts");
+
+
+
+
 var TrackerShipmentStatusComponent = (function () {
     function TrackerShipmentStatusComponent(_router, localStorageService, snackBar, _store, shipmentServices, trackerService, route) {
         var _this = this;
@@ -4734,14 +4860,14 @@ var TrackerShipmentStatusComponent = (function () {
     return TrackerShipmentStatusComponent;
 }());
 TrackerShipmentStatusComponent = __decorate([
-    core_1.Component({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-tracker-shipment-status',
         template: __webpack_require__("../../../../../src/app/components/tracker-shipment-status/tracker-shipment-status.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/tracker-shipment-status/tracker-shipment-status.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof router_1.Router !== "undefined" && router_1.Router) === "function" && _a || Object, typeof (_b = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _b || Object, typeof (_c = typeof material_1.MdSnackBar !== "undefined" && material_1.MdSnackBar) === "function" && _c || Object, typeof (_d = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _d || Object, typeof (_e = typeof shipment_services_1.ShipmentServices !== "undefined" && shipment_services_1.ShipmentServices) === "function" && _e || Object, typeof (_f = typeof tracker_services_1.TrackerServices !== "undefined" && tracker_services_1.TrackerServices) === "function" && _f || Object, typeof (_g = typeof router_1.ActivatedRoute !== "undefined" && router_1.ActivatedRoute) === "function" && _g || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["t" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["t" /* MdSnackBar */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["b" /* Store */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__services_shipment_services__["a" /* ShipmentServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_shipment_services__["a" /* ShipmentServices */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_6__services_tracker_services__["a" /* TrackerServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__services_tracker_services__["a" /* TrackerServices */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* ActivatedRoute */]) === "function" && _g || Object])
 ], TrackerShipmentStatusComponent);
-exports.TrackerShipmentStatusComponent = TrackerShipmentStatusComponent;
+
 var _a, _b, _c, _d, _e, _f, _g;
 //# sourceMappingURL=tracker-shipment-status.component.js.map
 
@@ -4755,7 +4881,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".top-header{\n  /*background-color: #1976d2;*/\n  width: 100%;\n  padding-bottom: 3px;\n  top: 0px;\n  z-index:100;\n  position: absolute;\n}\n", ""]);
+exports.push([module.i, ".top-header{\r\n  /*background-color: #1976d2;*/\r\n  width: 100%;\r\n  padding-bottom: 3px;\r\n  top: 0px;\r\n  z-index:100;\r\n  position: absolute;\r\n}\r\n", ""]);
 
 // exports
 
@@ -4768,15 +4894,17 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/user-management-console/user-management-console.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--Top Header to be shown in mobile view only -->\n\n<!--<div class=\"top-header\" id=\"top-head\" *ngIf=\"view!='web'\" >-->\n  <!--<div fxLayout=\"row\" style=\" background-color: #3F51B5; height: 48px;padding-top: 15px; padding-left: 12px;\">-->\n      <!--<span >-->\n        <!--<i style=\"color:white;\" (click)=\"goToManageOrganisationView()\" class=\"fa fa-arrow-left\" aria-hidden=\"true\" ></i>-->\n      <!--</span>-->\n    <!--<span>-->\n        <!--<label style=\"color:white;margin-left: 10px;margin-top: 4px;font-weight:bold;font-size:large;font-family: Gotham-Rounded-Medium, Sans-Serif\">User Management</label>-->\n      <!--</span>-->\n\n    <!--&lt;!&ndash;<span style=\"margin-left: auto;margin-right:45px;\" >&ndash;&gt;-->\n    <!--&lt;!&ndash;</span>&ndash;&gt;-->\n  <!--</div>-->\n<!--</div>-->\n\n<!--Top header ends here-->\n\n<!--<app-usermanagement-web-view></app-usermanagement-web-view>-->\n<app-users-list></app-users-list>\n\n"
+module.exports = "<!--Top Header to be shown in mobile view only -->\r\n\r\n<!--<div class=\"top-header\" id=\"top-head\" *ngIf=\"view!='web'\" >-->\r\n  <!--<div fxLayout=\"row\" style=\" background-color: #3F51B5; height: 48px;padding-top: 15px; padding-left: 12px;\">-->\r\n      <!--<span >-->\r\n        <!--<i style=\"color:white;\" (click)=\"goToManageOrganisationView()\" class=\"fa fa-arrow-left\" aria-hidden=\"true\" ></i>-->\r\n      <!--</span>-->\r\n    <!--<span>-->\r\n        <!--<label style=\"color:white;margin-left: 10px;margin-top: 4px;font-weight:bold;font-size:large;font-family: Gotham-Rounded-Medium, Sans-Serif\">User Management</label>-->\r\n      <!--</span>-->\r\n\r\n    <!--&lt;!&ndash;<span style=\"margin-left: auto;margin-right:45px;\" >&ndash;&gt;-->\r\n    <!--&lt;!&ndash;</span>&ndash;&gt;-->\r\n  <!--</div>-->\r\n<!--</div>-->\r\n\r\n<!--Top header ends here-->\r\n\r\n<!--<app-usermanagement-web-view></app-usermanagement-web-view>-->\r\n<app-users-list></app-users-list>\r\n\r\n"
 
 /***/ }),
 
 /***/ "../../../../../src/app/components/user-management-console/user-management-console.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserManagementConsoleComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4786,9 +4914,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var router_1 = __webpack_require__("../../../router/@angular/router.es5.js");
+
+
 var UserManagementConsoleComponent = (function () {
     function UserManagementConsoleComponent(_router) {
         this._router = _router;
@@ -4799,14 +4926,14 @@ var UserManagementConsoleComponent = (function () {
     return UserManagementConsoleComponent;
 }());
 UserManagementConsoleComponent = __decorate([
-    core_1.Component({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-user-management-console',
         template: __webpack_require__("../../../../../src/app/components/user-management-console/user-management-console.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/user-management-console/user-management-console.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof router_1.Router !== "undefined" && router_1.Router) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object])
 ], UserManagementConsoleComponent);
-exports.UserManagementConsoleComponent = UserManagementConsoleComponent;
+
 var _a;
 //# sourceMappingURL=user-management-console.component.js.map
 
@@ -4820,7 +4947,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "md-card\n{\n  padding-top: 0px;\n}\n\n.align-center{\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  display: -ms-grid;\n  display: grid;\n}\n\n\n.modal {\n  /*display: none; !* Hidden by default *!*/\n  position: fixed; /* Stay in place */\n  z-index: 99999; /* Sit on top */\n  left: 0;\n  top: 0;\n  width: 100%; /* Full width */\n  height: 100%; /* Full height */\n  overflow: auto; /* Enable scroll if needed */\n  background-color: rgb(0,0,0); /* Fallback color */\n  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\n}\n\n/* Modal Content/Box */\n.modal-content {\n  background-color: #fefefe;\n  margin: 15% auto; /* 15% from the top and centered */\n  padding: 20px;\n  border: 1px solid #888;\n  width: 80%; /* Could be more or less, depending on screen size */\n  /*top:20%*/\n}\n\n/* The Close Button */\n.close {\n  color: #aaa;\n  float: right;\n  font-size: 28px;\n  font-weight: bold;\n}\n\n.close:hover,\n.close:focus {\n  color: black;\n  text-decoration: none;\n  cursor: pointer;\n}\n", ""]);
+exports.push([module.i, "md-card\r\n{\r\n  padding-top: 0px;\r\n}\r\n\r\n.align-center{\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 50%;\r\n  -webkit-transform: translate(-50%, -50%);\r\n          transform: translate(-50%, -50%);\r\n  display: -ms-grid;\r\n  display: grid;\r\n}\r\n\r\n\r\n.modal {\r\n  /*display: none; !* Hidden by default *!*/\r\n  position: fixed; /* Stay in place */\r\n  z-index: 99999; /* Sit on top */\r\n  left: 0;\r\n  top: 0;\r\n  width: 100%; /* Full width */\r\n  height: 100%; /* Full height */\r\n  overflow: auto; /* Enable scroll if needed */\r\n  background-color: rgb(0,0,0); /* Fallback color */\r\n  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\r\n}\r\n\r\n/* Modal Content/Box */\r\n.modal-content {\r\n  background-color: #fefefe;\r\n  margin: 15% auto; /* 15% from the top and centered */\r\n  padding: 20px;\r\n  border: 1px solid #888;\r\n  width: 80%; /* Could be more or less, depending on screen size */\r\n  /*top:20%*/\r\n}\r\n\r\n/* The Close Button */\r\n.close {\r\n  color: #aaa;\r\n  float: right;\r\n  font-size: 28px;\r\n  font-weight: bold;\r\n}\r\n\r\n.close:hover,\r\n.close:focus {\r\n  color: black;\r\n  text-decoration: none;\r\n  cursor: pointer;\r\n}\r\n", ""]);
 
 // exports
 
@@ -4833,15 +4960,21 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/user-management-console/users-list/users-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n  <md-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></md-spinner>\n<div style=\"overflow: auto; height: calc( 100vh - 50px)\">\n  <div *ngFor=\"let users of allUsersList\" >\n<md-card>\n  <md-card-content>\n  <div fxLayout=\"row\" fxLayoutAlign=\"center stretch\">\n    <div fxFlex=\"90\"><h3>{{users['user']?.name}}</h3></div>\n    <!-- <div fxFlex=\"40\"><h3>{{users['accessLevel']}}</h3></div> -->\n    <div fxFlex=\"10\">\n      <button md-icon-button (click)=\"deleteUserConfirmationBox(users)\">\n      <i class=\"fa fa-trash\" aria-hidden=\"true\" style=\"font-size: large\" ></i>\n      </button>\n    </div>\n  </div>\n\n  <div fxLayout=\"row\">\n    <div fxFlex=\"90\"><span><label><b>{{users['user']?.email}}</b></label></span></div>\n    <!-- <div fxFlex=\"40\"><span><label><b>{{users['user']['mobileNumber']}}</b></label></span></div> -->\n      <div fxFlex=\"10\">\n        <md-slide-toggle [checked]=\"users['accessLevel']== 'admin'\" (change)=\"changeUserStatus(users)\" ></md-slide-toggle>\n        <!--<md-slide-toggle [checked]=\"schedule['activeStatus']\" (change)=\"changeScheduleState(schedule)\" ></md-slide-toggle>-->\n      </div>\n  </div>\n\n    <!--<div fxLayout=\"row\">-->\n      <!--<div fxFlex=\"50\"><span><label><b>Active since </b>2 months</label></span></div>-->\n      <!--<div fxFlex=\"50\"></div>-->\n    <!--</div>-->\n\n  </md-card-content>\n</md-card>\n  </div>\n  <div style=\"height: 50px;width: 100%\"></div>\n</div>\n\n  <button md-fab color=\"primary\" style=\"position: absolute;bottom:10px;right: 10px\"  (click)=\"showInviteUser()\" >\n    <i class=\"fa fa-plus\" aria-hidden=\"true\" style=\"font-size: 20px;color: white \"></i>\n  </button>\n</div>\n\n<!--Invite User Modal  starts here-->\n<div  *ngIf=\"isShowInviteUser\" id=\"myParameterModal\" class=\"modal\">\n  <!--Invite User Modal content -->\n  <div class=\"modal-content\">\n    <span class=\"close\" (click)=\"isShowInviteUser=false\">&times;</span>\n    <h3 style=\"text-align: center\"> Add User</h3>\n\n    <md-tab-group>\n      <md-tab label=\"By Email\">\n        <div style=\"width: 100%\">\n          <md-input-container style=\"width:85%\" >\n            <input placeholder=\"Email Id\"  mdInput required [(ngModel)]=\"emailId\" >\n          </md-input-container>\n        </div>\n      </md-tab>\n      <md-tab label=\"By Mobile\">\n        <div style=\"width: 100%\">\n          <md-input-container style=\"width:85%\" >\n            <input placeholder=\"Mobile Number\"  mdInput required [(ngModel)]=\"mobileNo\" onkeydown=\"if(event.target.value.length>=10 && event.keyCode!=8 && event.keyCode!=13 )return false;\" >\n          </md-input-container>\n        </div>\n      </md-tab>\n    </md-tab-group>\n\n    <div>\n      <button md-raised-button color=\"primary\" (click)=\"confirmAddUser()\">Add</button>\n      <button md-button (click)=\"isShowInviteUser=false\">Cancel</button>\n    </div>\n  </div>\n</div>\n<!--Invite user Modal ends here-->\n\n\n<!--Invite User Modal  starts here-->\n<div  *ngIf=\"isShowUserDetails\" id=\"userDetailsModal\" class=\"modal\">\n  <!--Invite User Modal content -->\n  <div class=\"modal-content\">\n    <span class=\"close\" (click)=\"isShowUserDetails=false\">&times;</span>\n    <h3 style=\"text-align: center\">User Details</h3>\n    <div>\n      <div style=\"width: 100%\" *ngIf=\"isShowExistingUserDetails\">\n        <label><b>Name : </b> {{existingUserName}} </label><br>\n        <label><b>Email : </b> {{existingUserEmail}} </label><br>\n        <label><b>Number : </b> {{existingUserMobile}} </label>\n      </div>\n\n      <div style=\"width: 100%\" *ngIf=\"!isShowExistingUserDetails\">\n        <h4>Invited User is not registered with FRETRON Platform. Kindly ask the user to sign up first.</h4>\n      </div>\n    </div>\n    <div style=\"margin-top: 2%\">\n      <button md-raised-button color=\"primary\" (click)=\"addUser()\">OK</button>\n      <button md-button (click)=\"isShowUserDetails=false\">Cancel</button>\n    </div>\n  </div>\n</div>\n<!--Invite user Modal ends here-->\n\n\n<!--Delete User Modal  starts here-->\n<div  *ngIf=\"isShowDeleteUserConfirmation\" id=\"deleteUserModal\" class=\"modal\">\n  <!--Invite User Modal content -->\n  <div class=\"modal-content\">\n    <span class=\"close\" (click)=\"isShowDeleteUserConfirmation=false\">&times;</span>\n    <h3 style=\"text-align: center\">Confirm Delete</h3>\n    <div>\n      <div style=\"width: 100%\">\n      <label>Are you sure to delete selected user?</label>\n      </div>\n    </div>\n    <div style=\"margin-top: 2%\">\n      <button md-raised-button color=\"primary\" (click)=\"deleteSelecetdUser()\" >YES</button>\n      <button md-button (click)=\"isShowDeleteUserConfirmation=false\">NO</button>\n    </div>\n  </div>\n</div>\n<!--Delete user Modal ends here-->\n\n\n\n"
+module.exports = "<div>\r\n  <md-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></md-spinner>\r\n<div style=\"overflow: auto; height: calc( 100vh - 50px)\">\r\n  <div *ngFor=\"let users of allUsersList\" >\r\n<md-card>\r\n  <md-card-content>\r\n  <div fxLayout=\"row\" fxLayoutAlign=\"center stretch\">\r\n    <div fxFlex=\"90\"><h3>{{users['user']?.name}}</h3></div>\r\n    <!-- <div fxFlex=\"40\"><h3>{{users['accessLevel']}}</h3></div> -->\r\n    <div fxFlex=\"10\">\r\n      <button md-icon-button (click)=\"deleteUserConfirmationBox(users)\">\r\n      <i class=\"fa fa-trash\" aria-hidden=\"true\" style=\"font-size: large\" ></i>\r\n      </button>\r\n    </div>\r\n  </div>\r\n\r\n  <div fxLayout=\"row\">\r\n    <div fxFlex=\"90\"><span><label><b>{{users['user']?.email}}</b></label></span></div>\r\n    <!-- <div fxFlex=\"40\"><span><label><b>{{users['user']['mobileNumber']}}</b></label></span></div> -->\r\n      <div fxFlex=\"10\">\r\n        <md-slide-toggle [checked]=\"users['accessLevel']== 'admin'\" (change)=\"changeUserStatus(users)\" ></md-slide-toggle>\r\n        <!--<md-slide-toggle [checked]=\"schedule['activeStatus']\" (change)=\"changeScheduleState(schedule)\" ></md-slide-toggle>-->\r\n      </div>\r\n  </div>\r\n\r\n    <!--<div fxLayout=\"row\">-->\r\n      <!--<div fxFlex=\"50\"><span><label><b>Active since </b>2 months</label></span></div>-->\r\n      <!--<div fxFlex=\"50\"></div>-->\r\n    <!--</div>-->\r\n\r\n  </md-card-content>\r\n</md-card>\r\n  </div>\r\n  <div style=\"height: 50px;width: 100%\"></div>\r\n</div>\r\n\r\n  <button md-fab color=\"primary\" style=\"position: absolute;bottom:10px;right: 10px\"  (click)=\"showInviteUser()\" >\r\n    <i class=\"fa fa-plus\" aria-hidden=\"true\" style=\"font-size: 20px;color: white \"></i>\r\n  </button>\r\n</div>\r\n\r\n<!--Invite User Modal  starts here-->\r\n<div  *ngIf=\"isShowInviteUser\" id=\"myParameterModal\" class=\"modal\">\r\n  <!--Invite User Modal content -->\r\n  <div class=\"modal-content\">\r\n    <span class=\"close\" (click)=\"isShowInviteUser=false\">&times;</span>\r\n    <h3 style=\"text-align: center\"> Add User</h3>\r\n\r\n    <md-tab-group>\r\n      <md-tab label=\"By Email\">\r\n        <div style=\"width: 100%\">\r\n          <md-input-container style=\"width:85%\" >\r\n            <input placeholder=\"Email Id\"  mdInput required [(ngModel)]=\"emailId\" >\r\n          </md-input-container>\r\n        </div>\r\n      </md-tab>\r\n      <md-tab label=\"By Mobile\">\r\n        <div style=\"width: 100%\">\r\n          <md-input-container style=\"width:85%\" >\r\n            <input placeholder=\"Mobile Number\"  mdInput required [(ngModel)]=\"mobileNo\" onkeydown=\"if(event.target.value.length>=10 && event.keyCode!=8 && event.keyCode!=13 )return false;\" >\r\n          </md-input-container>\r\n        </div>\r\n      </md-tab>\r\n    </md-tab-group>\r\n\r\n    <div>\r\n      <button md-raised-button color=\"primary\" (click)=\"confirmAddUser()\">Add</button>\r\n      <button md-button (click)=\"isShowInviteUser=false\">Cancel</button>\r\n    </div>\r\n  </div>\r\n</div>\r\n<!--Invite user Modal ends here-->\r\n\r\n\r\n<!--Invite User Modal  starts here-->\r\n<div  *ngIf=\"isShowUserDetails\" id=\"userDetailsModal\" class=\"modal\">\r\n  <!--Invite User Modal content -->\r\n  <div class=\"modal-content\">\r\n    <span class=\"close\" (click)=\"isShowUserDetails=false\">&times;</span>\r\n    <h3 style=\"text-align: center\">User Details</h3>\r\n    <div>\r\n      <div style=\"width: 100%\" *ngIf=\"isShowExistingUserDetails\">\r\n        <label><b>Name : </b> {{existingUserName}} </label><br>\r\n        <label><b>Email : </b> {{existingUserEmail}} </label><br>\r\n        <label><b>Number : </b> {{existingUserMobile}} </label>\r\n      </div>\r\n\r\n      <div style=\"width: 100%\" *ngIf=\"!isShowExistingUserDetails\">\r\n        <h4>Invited User is not registered with FRETRON Platform. Kindly ask the user to sign up first.</h4>\r\n      </div>\r\n    </div>\r\n    <div style=\"margin-top: 2%\">\r\n      <button md-raised-button color=\"primary\" (click)=\"addUser()\">OK</button>\r\n      <button md-button (click)=\"isShowUserDetails=false\">Cancel</button>\r\n    </div>\r\n  </div>\r\n</div>\r\n<!--Invite user Modal ends here-->\r\n\r\n\r\n<!--Delete User Modal  starts here-->\r\n<div  *ngIf=\"isShowDeleteUserConfirmation\" id=\"deleteUserModal\" class=\"modal\">\r\n  <!--Invite User Modal content -->\r\n  <div class=\"modal-content\">\r\n    <span class=\"close\" (click)=\"isShowDeleteUserConfirmation=false\">&times;</span>\r\n    <h3 style=\"text-align: center\">Confirm Delete</h3>\r\n    <div>\r\n      <div style=\"width: 100%\">\r\n      <label>Are you sure to delete selected user?</label>\r\n      </div>\r\n    </div>\r\n    <div style=\"margin-top: 2%\">\r\n      <button md-raised-button color=\"primary\" (click)=\"deleteSelecetdUser()\" >YES</button>\r\n      <button md-button (click)=\"isShowDeleteUserConfirmation=false\">NO</button>\r\n    </div>\r\n  </div>\r\n</div>\r\n<!--Delete user Modal ends here-->\r\n\r\n\r\n\r\n"
 
 /***/ }),
 
 /***/ "../../../../../src/app/components/user-management-console/users-list/users-list.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_user_management_services__ = __webpack_require__("../../../../../src/app/services/user-management-services.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UsersListComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4851,12 +4984,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
-var material_1 = __webpack_require__("../../../material/@angular/material.es5.js");
-var user_management_services_1 = __webpack_require__("../../../../../src/app/services/user-management-services.ts");
-var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+
+
+
+
+
 var UsersListComponent = (function () {
     function UsersListComponent(_store, userMgmntService, snackBar, _localStorageServices) {
         var _this = this;
@@ -5040,14 +5172,14 @@ var UsersListComponent = (function () {
     return UsersListComponent;
 }());
 UsersListComponent = __decorate([
-    core_1.Component({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-users-list',
         template: __webpack_require__("../../../../../src/app/components/user-management-console/users-list/users-list.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/user-management-console/users-list/users-list.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _a || Object, typeof (_b = typeof user_management_services_1.UserManagementService !== "undefined" && user_management_services_1.UserManagementService) === "function" && _b || Object, typeof (_c = typeof material_1.MdSnackBar !== "undefined" && material_1.MdSnackBar) === "function" && _c || Object, typeof (_d = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__ngrx_store__["b" /* Store */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_user_management_services__["a" /* UserManagementService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_user_management_services__["a" /* UserManagementService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["t" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_material__["t" /* MdSnackBar */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _d || Object])
 ], UsersListComponent);
-exports.UsersListComponent = UsersListComponent;
+
 var _a, _b, _c, _d;
 //# sourceMappingURL=users-list.component.js.map
 
@@ -5061,7 +5193,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".profile-container {\n  position: relative;\n  height: 150px;\n  margin: -8px -9px 10px -6px;\n  background-image: url(" + __webpack_require__("../../../../../src/images/background-profile.png") + ");\n}\n\n.profile-container-desktop {\n  position: relative;\n  height: 150px;\n  width: 280px;\n  margin-top: -8px;\n  background-image: url(" + __webpack_require__("../../../../../src/images/background-profile.png") + ");\n}\n\n.logo{\n  padding: 2px;\n  background-color: darkgray;\n  width: 90%;\n  width: 27%;\n  float:right;\n}\n\n\n.org-list-element{\n  margin-bottom: 5px;\n  border-bottom: 1px solid aliceblue;\n  padding:7px;\n}\n\n\n.org-list-element:hover{\n  background-color: #dfe9ff;\n}\n\n\n.profile-pic{\n  position: absolute;\n  left:10px;\n  top: 18px;\n  background-size: cover;\n  height: 60px;\n  width: 60px;\n  background-color: whitesmoke;\n  border-radius: 50%;\n  background-repeat: no-repeat;\n  background-position: 50%;\n}\n\n.user-org-details{\n  position: absolute;\n  bottom: 5px;\n  right: 5px;\n}\n\n\n.org-list{\n  overflow: auto;\n  z-index: 1;\n  width: 95%;\n  height: calc(100vh - 160px);\n  background-color: white;\n  position: absolute;\n}\n.expand-search {\n  border: 1.5px solid #b0bcc1;\n  width: 100%;\n  font-size: 12px;\n  padding: 5px 26px 5px 12px;\n  display: inline-block;\n  /*border: 1.5px solid #ccc;*/\n  border-radius: 17px;\n  box-sizing: border-box;\n  outline: none;\n}\n", ""]);
+exports.push([module.i, ".profile-container {\r\n  position: relative;\r\n  height: 150px;\r\n  margin: -8px -9px 10px -6px;\r\n  background-image: url(" + __webpack_require__("../../../../../src/images/background-profile.png") + ");\r\n}\r\n\r\n.profile-container-desktop {\r\n  position: relative;\r\n  height: 150px;\r\n  width: 280px;\r\n  margin-top: -8px;\r\n  background-image: url(" + __webpack_require__("../../../../../src/images/background-profile.png") + ");\r\n}\r\n\r\n.logo{\r\n  padding: 2px;\r\n  background-color: darkgray;\r\n  width: 90%;\r\n  width: 27%;\r\n  float:right;\r\n}\r\n\r\n\r\n.org-list-element{\r\n  margin-bottom: 5px;\r\n  border-bottom: 1px solid aliceblue;\r\n  padding:7px;\r\n}\r\n\r\n\r\n.org-list-element:hover{\r\n  background-color: #dfe9ff;\r\n}\r\n\r\n\r\n.profile-pic{\r\n  position: absolute;\r\n  left:10px;\r\n  top: 18px;\r\n  background-size: cover;\r\n  height: 60px;\r\n  width: 60px;\r\n  background-color: whitesmoke;\r\n  border-radius: 50%;\r\n  background-repeat: no-repeat;\r\n  background-position: 50%;\r\n}\r\n\r\n.user-org-details{\r\n  position: absolute;\r\n  bottom: 5px;\r\n  right: 5px;\r\n}\r\n\r\n\r\n.org-list{\r\n  overflow: auto;\r\n  z-index: 1;\r\n  width: 95%;\r\n  height: calc(100vh - 160px);\r\n  background-color: white;\r\n  position: absolute;\r\n}\r\n.expand-search {\r\n  border: 1.5px solid #b0bcc1;\r\n  width: 100%;\r\n  font-size: 12px;\r\n  padding: 5px 26px 5px 12px;\r\n  display: inline-block;\r\n  /*border: 1.5px solid #ccc;*/\r\n  border-radius: 17px;\r\n  box-sizing: border-box;\r\n  outline: none;\r\n}\r\n", ""]);
 
 // exports
 
@@ -5074,15 +5206,23 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/user-profile/user-profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n  <div class=\"profile-container-desktop\" >\n    <img class=\"logo\" src=\"../../../../images/fretron_logo.png\" alt=\"Avatar\"  >\n    <img class=\"profile-pic\" src=\"../../../../images/default-profile.png\" alt=\"profile\"  >\n    <div style=\"display: grid;position: absolute;top:81px;left: 23px;color:white\">\n      <span style=\"font-size: 18px;margin-bottom: 3px;\">{{customerName}}</span>\n      <span style=\"font-size: 12px\">{{customerMobile}}</span>\n    </div>\n  </div>\n  <div style=\"position:relative;margin-top: -1px;\" *ngIf=\"(orgListNew?.length)>=5\" >\n      <i  class=\"fa fa-search \"  aria-hidden=\"true\" style=\"margin-top: 7px;right: 7px;position: absolute;font-size: 13px;color: black;\"></i>\n      <input myAutofocus  [(ngModel)]=\"search\" class=\"expand-search\"  placeholder=\"Search\" (click)=\"$event.stopPropagation()\">\n  </div>\n  <div style=\"margin: 10px 0px 10px 10px;overflow: auto;max-height: 250px;\" >\n    <div class=\"org-list-element\" *ngFor=\"let currentOrg of orgListNew | searchOrgFilter: ['organisationName',search]\" (click)=\"switchOrg(currentOrg,currentOrg['isGodOrg'])\" >\n      <div  style=\"padding: 5px;\" [style.background-color]=\"(currentOrgId === currentOrg['uuid']? 'lightblue': 'white')\">\n        <span >{{currentOrg['organisationName']}}</span><br>\n        <span style=\"font-size: 11px\" >{{currentOrg['orgId']}}</span>        \n      </div>\n    </div>\n  </div>\n  <div style=\"margin-bottom: -8px;width: 95%;text-align: right;\" >\n    <button  (click)=\"goToAddOrganisation()\" md-button >Add Organisation</button>\n    <button  (click)=\"logout();\" md-button >Logout</button>\n  </div>\n</div>\n\n\n<!-- ************************ mobile view code start here *2* ************************************** -->\n<!--<div *ngIf=\"viewType =='mobile'\" class=\"profile-container\" >-->\n  <!--<img class=\"logo\" src=\"../../../../images/fretron_logo.png\" alt=\"Avatar\"  >-->\n  <!--<img class=\"profile-pic\" src=\"../../../../images/default-profile.png\" alt=\"profile\"  >-->\n  <!--<div style=\"display: grid;position: absolute;top:81px;left: 23px;color:white\">-->\n    <!--<span style=\"font-size: 18px;margin-bottom: 3px;\">{{customerName}}</span>-->\n    <!--<span style=\"font-size: 12px\">{{customerMobile}}</span>-->\n  <!--</div>-->\n  <!--<div class=\"user-org-details\" (click)=\"isOrgList =!isOrgList\">-->\n    <!--<button md-icon-button style=\"cursor: pointer;z-index: 1000;font-size:15px;color: #ffffff\"   >-->\n      <!--<span *ngIf=\"isOrgList\" >&#9650;</span>-->\n      <!--<span *ngIf=\"!isOrgList\">&#9660;</span>-->\n    <!--</button>-->\n  <!--</div>-->\n<!--</div>-->\n<!--<div *ngIf=\"viewType =='mobile' && isOrgList\" class=\"org-list\">-->\n  <!--<div class=\"org-list-element\" *ngFor=\"let currentOrg of orgList\" (click)=\"switchOrg(currentOrg)\" >-->\n    <!--<span >{{currentOrg['organisationName']}}</span>-->\n  <!--</div>-->\n<!--</div>-->\n<!-- ************************ end mobile view code start here  ************************************** -->\n"
+module.exports = "<div>\r\n  <div class=\"profile-container-desktop\" >\r\n    <img class=\"logo\" src=\"../../../../images/fretron_logo.png\" alt=\"Avatar\"  >\r\n    <img class=\"profile-pic\" src=\"../../../../images/default-profile.png\" alt=\"profile\"  >\r\n    <div style=\"display: grid;position: absolute;top:81px;left: 23px;color:white\">\r\n      <span style=\"font-size: 18px;margin-bottom: 3px;\">{{customerName}}</span>\r\n      <span style=\"font-size: 12px\">{{customerMobile}}</span>\r\n    </div>\r\n  </div>\r\n  <div style=\"position:relative;margin-top: -1px;\" *ngIf=\"(orgListNew?.length)>=5\" >\r\n      <i  class=\"fa fa-search \"  aria-hidden=\"true\" style=\"margin-top: 7px;right: 7px;position: absolute;font-size: 13px;color: black;\"></i>\r\n      <input myAutofocus  [(ngModel)]=\"search\" class=\"expand-search\"  placeholder=\"Search\" (click)=\"$event.stopPropagation()\">\r\n  </div>\r\n  <div style=\"margin: 10px 0px 10px 10px;overflow: auto;max-height: 250px;\" >\r\n    <div class=\"org-list-element\" *ngFor=\"let currentOrg of orgListNew | searchOrgFilter: ['organisationName',search]\" (click)=\"switchOrg(currentOrg,currentOrg['isGodOrg'])\" >\r\n      <div  style=\"padding: 5px;\" [style.background-color]=\"(currentOrgId === currentOrg['uuid']? 'lightblue': 'white')\">\r\n        <span >{{currentOrg['organisationName']}}</span><br>\r\n        <span style=\"font-size: 11px\" >{{currentOrg['orgId']}}</span>        \r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div style=\"margin-bottom: -8px;width: 95%;text-align: right;\" >\r\n    <button  (click)=\"goToAddOrganisation()\" md-button >Add Organisation</button>\r\n    <button  (click)=\"logout();\" md-button >Logout</button>\r\n  </div>\r\n</div>\r\n\r\n\r\n<!-- ************************ mobile view code start here *2* ************************************** -->\r\n<!--<div *ngIf=\"viewType =='mobile'\" class=\"profile-container\" >-->\r\n  <!--<img class=\"logo\" src=\"../../../../images/fretron_logo.png\" alt=\"Avatar\"  >-->\r\n  <!--<img class=\"profile-pic\" src=\"../../../../images/default-profile.png\" alt=\"profile\"  >-->\r\n  <!--<div style=\"display: grid;position: absolute;top:81px;left: 23px;color:white\">-->\r\n    <!--<span style=\"font-size: 18px;margin-bottom: 3px;\">{{customerName}}</span>-->\r\n    <!--<span style=\"font-size: 12px\">{{customerMobile}}</span>-->\r\n  <!--</div>-->\r\n  <!--<div class=\"user-org-details\" (click)=\"isOrgList =!isOrgList\">-->\r\n    <!--<button md-icon-button style=\"cursor: pointer;z-index: 1000;font-size:15px;color: #ffffff\"   >-->\r\n      <!--<span *ngIf=\"isOrgList\" >&#9650;</span>-->\r\n      <!--<span *ngIf=\"!isOrgList\">&#9660;</span>-->\r\n    <!--</button>-->\r\n  <!--</div>-->\r\n<!--</div>-->\r\n<!--<div *ngIf=\"viewType =='mobile' && isOrgList\" class=\"org-list\">-->\r\n  <!--<div class=\"org-list-element\" *ngFor=\"let currentOrg of orgList\" (click)=\"switchOrg(currentOrg)\" >-->\r\n    <!--<span >{{currentOrg['organisationName']}}</span>-->\r\n  <!--</div>-->\r\n<!--</div>-->\r\n<!-- ************************ end mobile view code start here  ************************************** -->\r\n"
 
 /***/ }),
 
 /***/ "../../../../../src/app/components/user-profile/user-profile.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_logout_service__ = __webpack_require__("../../../../../src/app/services/logout-service.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserProfile; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5092,15 +5232,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var http_1 = __webpack_require__("../../../http/@angular/http.es5.js");
-var http_2 = __webpack_require__("../../../http/@angular/http.es5.js");
-var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-var router_1 = __webpack_require__("../../../router/@angular/router.es5.js");
-var environment_1 = __webpack_require__("../../../../../src/environments/environment.ts");
-var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
-var logout_service_1 = __webpack_require__("../../../../../src/app/services/logout-service.ts");
+
+
+
+
+
+
+
+
 var UserProfile = (function () {
     function UserProfile(zone, http, localStorageService, logoutService, _router, _store) {
         this.zone = zone;
@@ -5118,7 +5257,7 @@ var UserProfile = (function () {
         this.viewType = '';
         this.isOrgList = false;
         this.authToken = null;
-        this.defaultHeaders = new http_1.Headers();
+        this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]();
         this.orgList = [];
         this.orgListNew = [];
         this.search = '';
@@ -5176,13 +5315,13 @@ var UserProfile = (function () {
         if (!isGodOrg) {
             console.log(currentOrg);
             console.log(this.userDetails);
-            var path = environment_1.paths.SWITCH_ORG_PATH + currentOrg['uuid'];
-            var headers = new http_1.Headers(this.defaultHeaders.toJSON());
+            var path = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* paths */].SWITCH_ORG_PATH + currentOrg['uuid'];
+            var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */](this.defaultHeaders.toJSON());
             headers.set('Content-Type', 'application/json');
             var bearerToken = "Bearer " + this.authToken;
             headers.set('authorization', bearerToken);
-            var requestOptions = new http_2.RequestOptions({
-                method: http_2.RequestMethod.Get,
+            var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+                method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
                 headers: headers,
             });
             console.log(path);
@@ -5195,7 +5334,8 @@ var UserProfile = (function () {
                 console.log(response);
                 if (response['status'] >= 200 && response['status'] < 300) {
                     if (_this.userDetails['details']['orgType'] == currentOrg['type']) {
-                        _this.localStorageService.clearAll();
+                        // this.localStorageService.clearAll();
+                        _this.localStorageService.remove("AUTH_TOKEN");
                         _this.localStorageService.set("AUTH_TOKEN", response['token']);
                         _this.authToken = _this.localStorageService.get("AUTH_TOKEN");
                         _this.refreshUser();
@@ -5204,7 +5344,8 @@ var UserProfile = (function () {
                         });
                     }
                     else {
-                        _this.localStorageService.clearAll();
+                        // this.localStorageService.clearAll();
+                        _this.localStorageService.remove("AUTH_TOKEN");
                         _this.localStorageService.set("AUTH_TOKEN", response['token']);
                         var path_1 = 'http://' + window.location.hostname + ':' + window.location.port;
                         console.log(path_1 + "/transporter");
@@ -5235,13 +5376,13 @@ var UserProfile = (function () {
             console.log("is God User user");
             console.log(currentOrg);
             console.log(this.userDetails);
-            var path = environment_1.paths.SWITCH_ORG_PATH + currentOrg['uuid'];
-            var headers = new http_1.Headers(this.defaultHeaders.toJSON());
+            var path = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* paths */].SWITCH_ORG_PATH + currentOrg['uuid'];
+            var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */](this.defaultHeaders.toJSON());
             headers.set('Content-Type', 'application/json');
             var bearerToken = "Bearer " + this.authToken;
             headers.set('authorization', bearerToken);
-            var requestOptions = new http_2.RequestOptions({
-                method: http_2.RequestMethod.Get,
+            var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+                method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
                 headers: headers,
             });
             console.log(path);
@@ -5254,7 +5395,8 @@ var UserProfile = (function () {
                 console.log(response);
                 if (response['status'] >= 200 && response['status'] < 300) {
                     if (_this.userDetails['details']['orgType'] == currentOrg['type']) {
-                        _this.localStorageService.clearAll();
+                        // this.localStorageService.clearAll();
+                        _this.localStorageService.remove("AUTH_TOKEN");
                         _this.localStorageService.set("AUTH_TOKEN", response['token']);
                         _this.authToken = _this.localStorageService.get("AUTH_TOKEN");
                         _this.refreshUser();
@@ -5263,7 +5405,8 @@ var UserProfile = (function () {
                         });
                     }
                     else {
-                        _this.localStorageService.clearAll();
+                        // this.localStorageService.clearAll();
+                        _this.localStorageService.remove("AUTH_TOKEN");
                         _this.localStorageService.set("AUTH_TOKEN", response['token']);
                         var path_2 = 'http://' + window.location.hostname + ':' + window.location.port;
                         console.log(path_2 + "/transporter");
@@ -5295,13 +5438,13 @@ var UserProfile = (function () {
     UserProfile.prototype.getOrganization = function (token) {
         var _this = this;
         this.orgList = [];
-        var path = environment_1.paths.ORGANIZATION_LIST_PATH;
-        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
+        var path = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* paths */].ORGANIZATION_LIST_PATH;
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */](this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + token;
         headers.set('authorization', bearerToken);
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Get,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
             headers: headers,
         });
         this.http.request(path, requestOptions).map(function (response) {
@@ -5336,36 +5479,36 @@ var UserProfile = (function () {
     return UserProfile;
 }()); // class close
 __decorate([
-    core_1.Input(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
     __metadata("design:type", Object)
 ], UserProfile.prototype, "view", void 0);
 UserProfile = __decorate([
-    core_1.Component({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-user-profile',
         template: __webpack_require__("../../../../../src/app/components/user-profile/user-profile.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/user-profile/user-profile.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof core_1.NgZone !== "undefined" && core_1.NgZone) === "function" && _a || Object, typeof (_b = typeof http_1.Http !== "undefined" && http_1.Http) === "function" && _b || Object, typeof (_c = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _c || Object, typeof (_d = typeof logout_service_1.LogoutServices !== "undefined" && logout_service_1.LogoutServices) === "function" && _d || Object, typeof (_e = typeof router_1.Router !== "undefined" && router_1.Router) === "function" && _e || Object, typeof (_f = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _f || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__["LocalStorageService"]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_6__services_logout_service__["a" /* LogoutServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__services_logout_service__["a" /* LogoutServices */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_5__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__ngrx_store__["b" /* Store */]) === "function" && _f || Object])
 ], UserProfile);
-exports.UserProfile = UserProfile;
+
 var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=user-profile.component.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/filters/deviceFilter.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DeviceFilter; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+
 var DeviceFilter = (function () {
     function DeviceFilter() {
     }
@@ -5388,26 +5531,26 @@ var DeviceFilter = (function () {
     return DeviceFilter;
 }());
 DeviceFilter = __decorate([
-    core_1.Pipe({ name: "deviceType", pure: true })
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Pipe"])({ name: "deviceType", pure: true })
 ], DeviceFilter);
-exports.DeviceFilter = DeviceFilter;
+
 //# sourceMappingURL=deviceFilter.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/filters/filter.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchFilter; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+
 var SearchFilter = (function () {
     function SearchFilter() {
     }
@@ -5429,26 +5572,26 @@ var SearchFilter = (function () {
     return SearchFilter;
 }());
 SearchFilter = __decorate([
-    core_1.Pipe({ name: 'searchFilter', pure: true })
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Pipe"])({ name: 'searchFilter', pure: true })
 ], SearchFilter);
-exports.SearchFilter = SearchFilter;
+
 //# sourceMappingURL=filter.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/filters/searchDeviceFilter.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchDeviceFilter; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+
 var SearchDeviceFilter = (function () {
     function SearchDeviceFilter() {
     }
@@ -5468,26 +5611,26 @@ var SearchDeviceFilter = (function () {
     return SearchDeviceFilter;
 }());
 SearchDeviceFilter = __decorate([
-    core_1.Pipe({ name: 'searchDeviceFilter', pure: true })
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Pipe"])({ name: 'searchDeviceFilter', pure: true })
 ], SearchDeviceFilter);
-exports.SearchDeviceFilter = SearchDeviceFilter;
+
 //# sourceMappingURL=searchDeviceFilter.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/filters/searchOrgFilter.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchOrgFilter; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+
 var SearchOrgFilter = (function () {
     function SearchOrgFilter() {
     }
@@ -5507,26 +5650,26 @@ var SearchOrgFilter = (function () {
     return SearchOrgFilter;
 }());
 SearchOrgFilter = __decorate([
-    core_1.Pipe({ name: 'searchOrgFilter', pure: true })
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Pipe"])({ name: 'searchOrgFilter', pure: true })
 ], SearchOrgFilter);
-exports.SearchOrgFilter = SearchOrgFilter;
+
 //# sourceMappingURL=searchOrgFilter.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/filters/shipmentFilter.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShipmentFilter; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+
 var ShipmentFilter = (function () {
     function ShipmentFilter() {
     }
@@ -5549,26 +5692,26 @@ var ShipmentFilter = (function () {
     return ShipmentFilter;
 }());
 ShipmentFilter = __decorate([
-    core_1.Pipe({ name: "shipmentType", pure: true })
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Pipe"])({ name: "shipmentType", pure: true })
 ], ShipmentFilter);
-exports.ShipmentFilter = ShipmentFilter;
+
 //# sourceMappingURL=shipmentFilter.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/filters/sortFilter.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SortFilter; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+
 var SortFilter = (function () {
     function SortFilter() {
     }
@@ -5589,19 +5732,34 @@ var SortFilter = (function () {
     return SortFilter;
 }());
 SortFilter = __decorate([
-    core_1.Pipe({ name: 'orderBy', pure: false })
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Pipe"])({ name: 'orderBy', pure: false })
 ], SortFilter);
-exports.SortFilter = SortFilter;
+
 //# sourceMappingURL=sortFilter.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/reducers/info_store.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
+/* harmony export (immutable) */ __webpack_exports__["b"] = token;
+/* harmony export (immutable) */ __webpack_exports__["a"] = shipmentIdList;
+/* harmony export (immutable) */ __webpack_exports__["c"] = allShipmentList;
+/* harmony export (immutable) */ __webpack_exports__["d"] = shipmentDetail;
+/* harmony export (immutable) */ __webpack_exports__["e"] = newShipment;
+/* harmony export (immutable) */ __webpack_exports__["f"] = allDevicesList;
+/* harmony export (immutable) */ __webpack_exports__["g"] = checkVehicle;
+/* harmony export (immutable) */ __webpack_exports__["o"] = switchShipment;
+/* harmony export (immutable) */ __webpack_exports__["h"] = deviceDetails;
+/* harmony export (immutable) */ __webpack_exports__["p"] = addDevice;
+/* harmony export (immutable) */ __webpack_exports__["i"] = closeDialog;
+/* harmony export (immutable) */ __webpack_exports__["j"] = createOrgRes;
+/* harmony export (immutable) */ __webpack_exports__["k"] = switchOrganisationResp;
+/* harmony export (immutable) */ __webpack_exports__["l"] = customerDetails;
+/* harmony export (immutable) */ __webpack_exports__["m"] = shipmentGroupList;
+/* harmony export (immutable) */ __webpack_exports__["n"] = createGroupRes;
+/* harmony export (immutable) */ __webpack_exports__["q"] = authorization;
 // import { RouterState } from '@ngrx/router-store';
 // export const allShipmentList = 'allShipmentList';
 function token(state, action) {
@@ -5615,7 +5773,6 @@ function token(state, action) {
             return state;
     }
 }
-exports.token = token;
 function shipmentIdList(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5627,7 +5784,6 @@ function shipmentIdList(state, action) {
             return state;
     }
 }
-exports.shipmentIdList = shipmentIdList;
 function allShipmentList(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5639,7 +5795,6 @@ function allShipmentList(state, action) {
             return state;
     }
 }
-exports.allShipmentList = allShipmentList;
 function shipmentDetail(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5651,7 +5806,6 @@ function shipmentDetail(state, action) {
             return state;
     }
 }
-exports.shipmentDetail = shipmentDetail;
 function newShipment(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5663,7 +5817,6 @@ function newShipment(state, action) {
             return state;
     }
 }
-exports.newShipment = newShipment;
 function allDevicesList(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5675,7 +5828,6 @@ function allDevicesList(state, action) {
             return state;
     }
 }
-exports.allDevicesList = allDevicesList;
 function checkVehicle(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5687,7 +5839,6 @@ function checkVehicle(state, action) {
             return state;
     }
 }
-exports.checkVehicle = checkVehicle;
 function switchShipment(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5699,7 +5850,6 @@ function switchShipment(state, action) {
             return state;
     }
 }
-exports.switchShipment = switchShipment;
 function deviceDetails(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5711,7 +5861,6 @@ function deviceDetails(state, action) {
             return state;
     }
 }
-exports.deviceDetails = deviceDetails;
 function addDevice(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5723,7 +5872,6 @@ function addDevice(state, action) {
             return state;
     }
 }
-exports.addDevice = addDevice;
 function closeDialog(state, action) {
     if (state === void 0) { state = false; }
     switch (action.type) {
@@ -5735,7 +5883,6 @@ function closeDialog(state, action) {
             return state;
     }
 }
-exports.closeDialog = closeDialog;
 function createOrgRes(state, action) {
     console.log("In createOrgRes in Info store");
     switch (action.type) {
@@ -5746,7 +5893,6 @@ function createOrgRes(state, action) {
             return state;
     }
 }
-exports.createOrgRes = createOrgRes;
 function switchOrganisationResp(state, action) {
     console.log("In switchOrganisationResp in Info store");
     switch (action.type) {
@@ -5757,7 +5903,6 @@ function switchOrganisationResp(state, action) {
             return state;
     }
 }
-exports.switchOrganisationResp = switchOrganisationResp;
 function customerDetails(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5769,7 +5914,6 @@ function customerDetails(state, action) {
             return state;
     }
 }
-exports.customerDetails = customerDetails;
 function shipmentGroupList(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5780,7 +5924,6 @@ function shipmentGroupList(state, action) {
             return state;
     }
 }
-exports.shipmentGroupList = shipmentGroupList;
 function createGroupRes(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5791,7 +5934,6 @@ function createGroupRes(state, action) {
             return state;
     }
 }
-exports.createGroupRes = createGroupRes;
 function authorization(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5802,7 +5944,6 @@ function authorization(state, action) {
             return state;
     }
 }
-exports.authorization = authorization;
 // export function checkDevice(state: any = null, action:Action) {
 //   switch (action.type) {
 //     case 'CHECK_DEVICE':
@@ -5838,11 +5979,13 @@ exports.authorization = authorization;
 /***/ }),
 
 /***/ "../../../../../src/app/reducers/user-management-store.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
+/* harmony export (immutable) */ __webpack_exports__["a"] = deleteUserResponse;
+/* harmony export (immutable) */ __webpack_exports__["b"] = getAllUserList;
+/* harmony export (immutable) */ __webpack_exports__["c"] = updateUserStatusResponse;
+/* harmony export (immutable) */ __webpack_exports__["d"] = existingUserResponse;
 function deleteUserResponse(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5853,7 +5996,6 @@ function deleteUserResponse(state, action) {
             return state;
     }
 }
-exports.deleteUserResponse = deleteUserResponse;
 function getAllUserList(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5864,7 +6006,6 @@ function getAllUserList(state, action) {
             return state;
     }
 }
-exports.getAllUserList = getAllUserList;
 function updateUserStatusResponse(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5875,7 +6016,6 @@ function updateUserStatusResponse(state, action) {
             return state;
     }
 }
-exports.updateUserStatusResponse = updateUserStatusResponse;
 function existingUserResponse(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5886,7 +6026,6 @@ function existingUserResponse(state, action) {
             return state;
     }
 }
-exports.existingUserResponse = existingUserResponse;
 // export function createOrganisationResponse(state: any = null, action:Action) {
 //
 //   switch (action.type) {
@@ -5917,59 +6056,71 @@ exports.existingUserResponse = existingUserResponse;
 /***/ }),
 
 /***/ "../../../../../src/app/router-module/router-module-routing.module.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_shipment_status_shipment_status_component__ = __webpack_require__("../../../../../src/app/components/shipment-status/shipment-status.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_device_dashboard_device_dashboard_component__ = __webpack_require__("../../../../../src/app/components/device-dashboard/device-dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_new_shipment_new_shipment_component__ = __webpack_require__("../../../../../src/app/components/new-shipment/new-shipment.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_manual_shipment_status_manual_shipment_status_component__ = __webpack_require__("../../../../../src/app/components/manual-shipment-status/manual-shipment-status.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_add_organisation_add_organisation_component__ = __webpack_require__("../../../../../src/app/components/add-organisation/add-organisation.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_settings_component_settings_component_component__ = __webpack_require__("../../../../../src/app/components/settings-component/settings-component.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_manage_organisation_manage_organisation_component__ = __webpack_require__("../../../../../src/app/components/manage-organisation/manage-organisation.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_shipment_management_shipment_management_component__ = __webpack_require__("../../../../../src/app/components/shipment-management/shipment-management.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_user_management_console_user_management_console_component__ = __webpack_require__("../../../../../src/app/components/user-management-console/user-management-console.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_user_management_console_users_list_users_list_component__ = __webpack_require__("../../../../../src/app/components/user-management-console/users-list/users-list.component.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RouterModuleRoutingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var router_1 = __webpack_require__("../../../router/@angular/router.es5.js");
-var dashboard_component_1 = __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.ts");
-var shipment_status_component_1 = __webpack_require__("../../../../../src/app/components/shipment-status/shipment-status.component.ts");
-var device_dashboard_component_1 = __webpack_require__("../../../../../src/app/components/device-dashboard/device-dashboard.component.ts");
-var new_shipment_component_1 = __webpack_require__("../../../../../src/app/components/new-shipment/new-shipment.component.ts");
-var manual_shipment_status_component_1 = __webpack_require__("../../../../../src/app/components/manual-shipment-status/manual-shipment-status.component.ts");
-var add_organisation_component_1 = __webpack_require__("../../../../../src/app/components/add-organisation/add-organisation.component.ts");
-var settings_component_component_1 = __webpack_require__("../../../../../src/app/components/settings-component/settings-component.component.ts");
-var manage_organisation_component_1 = __webpack_require__("../../../../../src/app/components/manage-organisation/manage-organisation.component.ts");
+
+
+
+
+
+
+
+
+
+
 // import {UserManagementComponent} from "../components/user-management/user-management.component";
-var shipment_management_component_1 = __webpack_require__("../../../../../src/app/components/shipment-management/shipment-management.component.ts");
+
 // import {EditShipmentGroupsComponent} from "../components/shipment-management/edit-shipment-groups/edit-shipment-groups.component";
 // import {ShipmentGroupsListComponent} from "../components/shipment-management/shipment-groups-list/shipment-groups-list.component";
 // import {ShipmentListInGroupComponent} from "../components/shipment-management/shipment-list-in-group/shipment-list-in-group.component";
-var user_management_console_component_1 = __webpack_require__("../../../../../src/app/components/user-management-console/user-management-console.component.ts");
-var users_list_component_1 = __webpack_require__("../../../../../src/app/components/user-management-console/users-list/users-list.component.ts");
+
+
 var routes = [
     { path: '', pathMatch: 'full', redirectTo: 'dashboard' }
 ];
 var childRoutes = [
-    { path: 'dashboard', component: dashboard_component_1.DashboardComponent,
+    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_2__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
         children: [
             { path: '', redirectTo: 'shipmentStatus', pathMatch: 'full' },
-            { path: 'shipmentStatus', component: shipment_status_component_1.ShipmentStatusComponent,
+            { path: 'shipmentStatus', component: __WEBPACK_IMPORTED_MODULE_3__components_shipment_status_shipment_status_component__["a" /* ShipmentStatusComponent */],
                 children: [
                     // {path: '', redirectTo: 'shipmentTable', pathMatch: 'full'},
-                    { path: 'selectedVehicle', component: manual_shipment_status_component_1.ManualShipmentStatusComponent }
+                    { path: 'selectedVehicle', component: __WEBPACK_IMPORTED_MODULE_6__components_manual_shipment_status_manual_shipment_status_component__["a" /* ManualShipmentStatusComponent */] }
                 ] },
             // {path: 'shipmentDetails', component: ShipmentDetailsComponent}
-            { path: 'deviceDashboard', component: device_dashboard_component_1.DeviceDashboard },
-            { path: 'newShipment', component: new_shipment_component_1.NewShipment },
-            { path: 'addOrganisation', component: add_organisation_component_1.AddOrganisationComponent },
-            { path: 'settingsComponent', component: settings_component_component_1.SettingsComponentComponent },
-            { path: 'manageOrganisation', component: manage_organisation_component_1.ManageOrganisationComponent },
+            { path: 'deviceDashboard', component: __WEBPACK_IMPORTED_MODULE_4__components_device_dashboard_device_dashboard_component__["a" /* DeviceDashboard */] },
+            { path: 'newShipment', component: __WEBPACK_IMPORTED_MODULE_5__components_new_shipment_new_shipment_component__["a" /* NewShipment */] },
+            { path: 'addOrganisation', component: __WEBPACK_IMPORTED_MODULE_7__components_add_organisation_add_organisation_component__["a" /* AddOrganisationComponent */] },
+            { path: 'settingsComponent', component: __WEBPACK_IMPORTED_MODULE_8__components_settings_component_settings_component_component__["a" /* SettingsComponentComponent */] },
+            { path: 'manageOrganisation', component: __WEBPACK_IMPORTED_MODULE_9__components_manage_organisation_manage_organisation_component__["a" /* ManageOrganisationComponent */] },
             // {path: 'userManagementComponent', component: UserManagementComponent},
-            { path: 'shipmentManagementComponent', component: shipment_management_component_1.ShipmentManagementComponent },
+            { path: 'shipmentManagementComponent', component: __WEBPACK_IMPORTED_MODULE_10__components_shipment_management_shipment_management_component__["a" /* ShipmentManagementComponent */] },
             // {path: 'shipmentGroupsList', component: ShipmentGroupsListComponent},
             // {path: 'editShipmentGroup', component: EditShipmentGroupsComponent},
             // {path: 'shipmentListInGroup', component: ShipmentListInGroupComponent},
-            { path: 'userManagementConsole', component: user_management_console_component_1.UserManagementConsoleComponent },
-            { path: 'usersList', component: users_list_component_1.UsersListComponent },
+            { path: 'userManagementConsole', component: __WEBPACK_IMPORTED_MODULE_11__components_user_management_console_user_management_console_component__["a" /* UserManagementConsoleComponent */] },
+            { path: 'usersList', component: __WEBPACK_IMPORTED_MODULE_12__components_user_management_console_users_list_users_list_component__["a" /* UsersListComponent */] },
         ]
     }
 ];
@@ -5979,24 +6130,32 @@ var RouterModuleRoutingModule = (function () {
     return RouterModuleRoutingModule;
 }());
 RouterModuleRoutingModule = __decorate([
-    core_1.NgModule({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
         imports: [
-            router_1.RouterModule.forRoot(routes),
-            router_1.RouterModule.forChild(childRoutes)
+            __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* RouterModule */].forRoot(routes),
+            __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* RouterModule */].forChild(childRoutes)
         ],
-        exports: [router_1.RouterModule]
+        exports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* RouterModule */]]
     })
 ], RouterModuleRoutingModule);
-exports.RouterModuleRoutingModule = RouterModuleRoutingModule;
+
 //# sourceMappingURL=router-module-routing.module.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/services/authorization-services.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthorizationServices; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6006,14 +6165,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var http_1 = __webpack_require__("../../../http/@angular/http.es5.js");
-var http_2 = __webpack_require__("../../../http/@angular/http.es5.js");
-__webpack_require__("../../../../rxjs/add/operator/map.js");
-var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
-var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-var environment_1 = __webpack_require__("../../../../../src/environments/environment.ts");
+
+
+
+
+
+
+
 var AuthorizationServices = (function () {
     function AuthorizationServices(http, _store, localStorageService) {
         var _this = this;
@@ -6021,17 +6179,17 @@ var AuthorizationServices = (function () {
         this._store = _store;
         this.localStorageService = localStorageService;
         // protected basePath = 'http://35.189.162.187:8080/command';
-        this.defaultHeaders = new http_1.Headers();
+        this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]();
         this.token = '';
         this.unSub_token = null;
-        this.tokenAuthorization = new core_1.EventEmitter();
+        this.tokenAuthorization = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.defaultHeaders.append('Access-Control-Allow-Origin', '*');
         this.defaultHeaders.append('Access-Control-Allow-Methods', 'GET,POST, OPTIONS, PUT, PATCH, DELETE');
         //************ login  ***************************************************
         this.tokenAuthorization.subscribe(function (token) {
             // const path =paths.PATH+':8094/authorize';
             // const path =paths.PATH+':8099/user/authorize';
-            var path = environment_1.TEST_BASE_IP.IP + '/user/authorize';
+            var path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* TEST_BASE_IP */].IP + '/user/authorize';
             _this.checkTokenAuthorization(path, token).subscribe(function (response) {
                 console.log(response);
                 // console.log(response['error']);
@@ -6070,14 +6228,14 @@ var AuthorizationServices = (function () {
     // ***********************  token authorization**********************
     AuthorizationServices.prototype.checkTokenAuthorization = function (path, token) {
         // let queryParameters = new URLSearchParams();
-        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */](this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + token;
         headers.set('authorization', bearerToken);
         console.log(path);
         // console.log(headers);
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Get,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
             headers: headers,
         });
         return this.http.request(path, requestOptions).map(function (response) {
@@ -6108,20 +6266,28 @@ var AuthorizationServices = (function () {
     return AuthorizationServices;
 }()); // class close
 AuthorizationServices = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [typeof (_a = typeof http_1.Http !== "undefined" && http_1.Http) === "function" && _a || Object, typeof (_b = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _b || Object, typeof (_c = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _c || Object])
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _c || Object])
 ], AuthorizationServices);
-exports.AuthorizationServices = AuthorizationServices;
+
 var _a, _b, _c;
 //# sourceMappingURL=authorization-services.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/services/device-services.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DeviceServices; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6131,15 +6297,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var http_1 = __webpack_require__("../../../http/@angular/http.es5.js");
-var http_2 = __webpack_require__("../../../http/@angular/http.es5.js");
-__webpack_require__("../../../../rxjs/add/operator/map.js");
-var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
+
+
+
+
+
 // import {PATH,DETAIL,CREATESHIPMENT} from "./path-services";
-var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-var environment_1 = __webpack_require__("../../../../../src/environments/environment.ts");
+
+
 // import {KEY} from "./config-services"
 var DeviceServices = (function () {
     function DeviceServices(http, _store, localStorageService) {
@@ -6147,20 +6312,20 @@ var DeviceServices = (function () {
         this.http = http;
         this._store = _store;
         this.localStorageService = localStorageService;
-        this.defaultHeaders = new http_1.Headers();
+        this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]();
         this.token = '';
-        this.allDevicesList = new core_1.EventEmitter();
+        this.allDevicesList = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         //   public allActiveDevicesList=new EventEmitter();
         //   public allAvalabileDevicesList=new EventEmitter();
         //   public allRepairingDevicesList=new EventEmitter();
         //   public deviceDetail=new EventEmitter();
-        this.addDevice = new core_1.EventEmitter();
+        this.addDevice = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.token = this.localStorageService.get("AUTH_TOKEN");
         this.allDevicesList.subscribe(function () {
             // this.token ='eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MTI2NTU1NDksInVzZXJJZCI6IjdjYjQwYWQ2LWVmZjMtNGJiNS05MmE5LTA4ZDEwMWU4N2E2NSIsImVtYWlsIjoic3VuaWxAZnJldHJvbi5jb20iLCJtb2JpbGVOdW1iZXIiOiI5MDg1NDMyOTUxIiwib3JnSWQiOiI5ODJlNjczMy1lMTMyLTRhOWMtOTM4OC00ZmE0NzQ0Zjg3ODMiLCJuYW1lIjoiU3VuaWwiLCJvcmdUeXBlIjoiRkxFRVRfT1dORVIifQ.ZUgT6OvjOtkMqzeXMEa9aCpH3QqJS_KnqSAMjWIXAes';
             // close remove it for testing purpose only
             console.log(_this.token);
-            var path = environment_1.paths.DEVICE_LIST_PATH;
+            var path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["a" /* paths */].DEVICE_LIST_PATH;
             // console.log(path);
             _this.getDevicesList(path).subscribe(function (response) {
                 console.log(response);
@@ -6177,7 +6342,7 @@ var DeviceServices = (function () {
             });
         });
         this.addDevice.subscribe(function (device) {
-            var path = environment_1.paths.DEVICE_ADD_PATH;
+            var path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["a" /* paths */].DEVICE_ADD_PATH;
             _this.addDeviceService(path, device).subscribe(function (response) {
                 //  console.log(response);
                 if (response['status'] >= 200 && response['status'] < 300) {
@@ -6252,13 +6417,13 @@ var DeviceServices = (function () {
     // }
     //
     DeviceServices.prototype.getDevicesList = function (path) {
-        var headers = new http_1.Headers();
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]();
         console.log(this.token);
         var bearerToken = "Bearer " + this.token;
         headers.set('Content-Type', 'application/json');
         headers.set('authorization', bearerToken);
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Get,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
             headers: headers,
         });
         return this.http.request(path, requestOptions).map(function (response) {
@@ -6275,13 +6440,13 @@ var DeviceServices = (function () {
     DeviceServices.prototype.addDeviceService = function (path, device) {
         console.log(path);
         console.log(device);
-        var headers = new http_1.Headers();
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]();
         console.log(this.token);
         var bearerToken = "Bearer " + this.token;
         headers.set('Content-Type', 'application/json');
         headers.set('authorization', bearerToken);
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Post,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
             headers: headers,
             body: device,
         });
@@ -6299,20 +6464,24 @@ var DeviceServices = (function () {
     return DeviceServices;
 }()); // class close
 DeviceServices = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [typeof (_a = typeof http_1.Http !== "undefined" && http_1.Http) === "function" && _a || Object, typeof (_b = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _b || Object, typeof (_c = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _c || Object])
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _c || Object])
 ], DeviceServices);
-exports.DeviceServices = DeviceServices;
+
 var _a, _b, _c;
 //# sourceMappingURL=device-services.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/services/logout-service.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LogoutServices; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6322,10 +6491,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
-var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+
+
+
 var LogoutServices = (function () {
     function LogoutServices(localStorageService, _store) {
         this.localStorageService = localStorageService;
@@ -6355,20 +6523,28 @@ var LogoutServices = (function () {
     return LogoutServices;
 }()); // class close
 LogoutServices = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [typeof (_a = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _a || Object, typeof (_b = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _b || Object])
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__ngrx_store__["b" /* Store */]) === "function" && _b || Object])
 ], LogoutServices);
-exports.LogoutServices = LogoutServices;
+
 var _a, _b;
 //# sourceMappingURL=logout-service.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/services/manage-organisation-services.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ManageOrganisationService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6378,25 +6554,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var http_1 = __webpack_require__("../../../http/@angular/http.es5.js");
-var http_2 = __webpack_require__("../../../http/@angular/http.es5.js");
-__webpack_require__("../../../../rxjs/add/operator/map.js");
-var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
-var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-var environment_1 = __webpack_require__("../../../../../src/environments/environment.ts");
+
+
+
+
+
+
+
 var ManageOrganisationService = (function () {
     function ManageOrganisationService(http, _store, localStorageService) {
         var _this = this;
         this.http = http;
         this._store = _store;
         this.localStorageService = localStorageService;
-        this.createOrg = new core_1.EventEmitter();
-        this.switchOrganisations = new core_1.EventEmitter();
+        this.createOrg = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.switchOrganisations = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.createOrg.subscribe(function (addOrgObj) {
             _this.token = _this.localStorageService.get("AUTH_TOKEN");
-            var path = environment_1.paths.CREATE_ORGANISATION_PATH;
+            var path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["a" /* paths */].CREATE_ORGANISATION_PATH;
             console.log(path);
             _this.createOrganisation(path, addOrgObj).subscribe(function (response) {
                 console.log(response);
@@ -6415,7 +6590,7 @@ var ManageOrganisationService = (function () {
         });
         this.switchOrganisations.subscribe(function (orgId) {
             _this.token = _this.localStorageService.get("AUTH_TOKEN");
-            var path = environment_1.paths.SWITCH_ORG_PATH + orgId;
+            var path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["a" /* paths */].SWITCH_ORG_PATH + orgId;
             console.log(path);
             _this.switchOrganisation(path, orgId).subscribe(function (response) {
                 console.log(response);
@@ -6435,13 +6610,13 @@ var ManageOrganisationService = (function () {
     ManageOrganisationService.prototype.ngOnDestroy = function () {
     };
     ManageOrganisationService.prototype.createOrganisation = function (path, addOrgObj) {
-        var headers = new http_1.Headers();
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]();
         console.log(this.token);
         var bearerToken = "Bearer " + this.token;
         headers.set('Content-Type', 'application/json');
         headers.set('authorization', bearerToken);
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Post,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
             headers: headers,
             body: addOrgObj,
         });
@@ -6457,14 +6632,14 @@ var ManageOrganisationService = (function () {
         });
     };
     ManageOrganisationService.prototype.switchOrganisation = function (path, switchOrgId) {
-        var headers = new http_1.Headers();
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]();
         console.log(this.token);
         console.log(this.token);
         var bearerToken = "Bearer " + this.token;
         headers.set('Content-Type', 'application/json');
         headers.set('authorization', bearerToken);
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Get,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
             headers: headers,
         });
         return this.http.request(path, requestOptions).map(function (response) {
@@ -6481,20 +6656,29 @@ var ManageOrganisationService = (function () {
     return ManageOrganisationService;
 }());
 ManageOrganisationService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [typeof (_a = typeof http_1.Http !== "undefined" && http_1.Http) === "function" && _a || Object, typeof (_b = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _b || Object, typeof (_c = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _c || Object])
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _c || Object])
 ], ManageOrganisationService);
-exports.ManageOrganisationService = ManageOrganisationService;
+
 var _a, _b, _c;
 //# sourceMappingURL=manage-organisation-services.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/services/manual-shipment-service.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_shipment_services__ = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ManualShipmentServices; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6504,16 +6688,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var http_1 = __webpack_require__("../../../http/@angular/http.es5.js");
-var http_2 = __webpack_require__("../../../http/@angular/http.es5.js");
-__webpack_require__("../../../../rxjs/add/operator/map.js");
-var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
+
+
+
+
+
 // import {ADDSTOP,PICKUP,DELIVERY} from "./path-services";
-var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-var environment_1 = __webpack_require__("../../../../../src/environments/environment.ts");
-var shipment_services_1 = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
+
+
+
 // import {KEY} from "./config-services"
 var ManualShipmentServices = (function () {
     function ManualShipmentServices(http, _store, localStorgeService, shipmentServices) {
@@ -6522,16 +6705,16 @@ var ManualShipmentServices = (function () {
         this._store = _store;
         this.localStorgeService = localStorgeService;
         this.shipmentServices = shipmentServices;
-        this.defaultHeaders = new http_1.Headers();
+        this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]();
         this.token = '';
-        this.pickup = new core_1.EventEmitter();
-        this.addStop = new core_1.EventEmitter();
-        this.delivery = new core_1.EventEmitter();
+        this.pickup = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.addStop = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.delivery = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         /***************get shipment list ***************/
         this.token = this.localStorgeService.get("AUTH_TOKEN");
         /***************set pickup ***************/
         this.pickup.subscribe(function (pickUp) {
-            var path = environment_1.paths.SHIPMENT_PATH + '/missing/pickup';
+            var path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["a" /* paths */].SHIPMENT_PATH + '/missing/pickup';
             console.log(path);
             _this.setPickup(path, pickUp).subscribe(function (response) {
                 console.log(response);
@@ -6542,7 +6725,7 @@ var ManualShipmentServices = (function () {
         });
         /***************set addStop ***************/
         this.addStop.subscribe(function (addstop) {
-            var path = environment_1.paths.SHIPMENT_PATH + '/addstop';
+            var path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["a" /* paths */].SHIPMENT_PATH + '/addstop';
             _this.setAddStop(path, addstop).subscribe(function (response) {
                 console.log(response);
                 var res = response;
@@ -6552,7 +6735,7 @@ var ManualShipmentServices = (function () {
         });
         /***************set delivery ***************/
         this.delivery.subscribe(function (deliveryy) {
-            var path = environment_1.paths.SHIPMENT_PATH + '/missing/delivery';
+            var path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["a" /* paths */].SHIPMENT_PATH + '/missing/delivery';
             _this.setDelivery(path, deliveryy).subscribe(function (response) {
                 console.log(response);
                 var res = response;
@@ -6566,12 +6749,12 @@ var ManualShipmentServices = (function () {
     // ***********************  get shipmentId list **********************
     ManualShipmentServices.prototype.getIdList = function (path) {
         var _this = this;
-        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */](this.defaultHeaders.toJSON());
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
         headers.set('Content-Type', 'application/json');
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Get,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
             headers: headers,
         });
         console.log(this.http);
@@ -6584,12 +6767,12 @@ var ManualShipmentServices = (function () {
     // ***********************  add Stop **********************
     ManualShipmentServices.prototype.setAddStop = function (path, value) {
         var _this = this;
-        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */](this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Post,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
             headers: headers,
             body: value
         });
@@ -6606,12 +6789,12 @@ var ManualShipmentServices = (function () {
     ManualShipmentServices.prototype.setPickup = function (path, value) {
         var _this = this;
         console.log(path);
-        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */](this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Post,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
             headers: headers,
             body: value
         });
@@ -6627,12 +6810,12 @@ var ManualShipmentServices = (function () {
     // ***********************  delivery **********************
     ManualShipmentServices.prototype.setDelivery = function (path, value) {
         var _this = this;
-        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */](this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Post,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
             headers: headers,
             body: value
         });
@@ -6648,20 +6831,28 @@ var ManualShipmentServices = (function () {
     return ManualShipmentServices;
 }()); // class close
 ManualShipmentServices = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [typeof (_a = typeof http_1.Http !== "undefined" && http_1.Http) === "function" && _a || Object, typeof (_b = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _b || Object, typeof (_c = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _c || Object, typeof (_d = typeof shipment_services_1.ShipmentServices !== "undefined" && shipment_services_1.ShipmentServices) === "function" && _d || Object])
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_6__services_shipment_services__["a" /* ShipmentServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__services_shipment_services__["a" /* ShipmentServices */]) === "function" && _d || Object])
 ], ManualShipmentServices);
-exports.ManualShipmentServices = ManualShipmentServices;
+
 var _a, _b, _c, _d;
 //# sourceMappingURL=manual-shipment-service.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/services/shipment-mgmt-services.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShipmentMgmtService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6671,37 +6862,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Created by amit8.kumar on 06-12-2017.
  */
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var http_1 = __webpack_require__("../../../http/@angular/http.es5.js");
-var http_2 = __webpack_require__("../../../http/@angular/http.es5.js");
-__webpack_require__("../../../../rxjs/add/operator/map.js");
-var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
-var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-var environment_1 = __webpack_require__("../../../../../src/environments/environment.ts");
+
+
+
+
+
+
+
 var ShipmentMgmtService = (function () {
     function ShipmentMgmtService(http, _store, localStorageService) {
         var _this = this;
         this.http = http;
         this._store = _store;
         this.localStorageService = localStorageService;
-        this.defaultHeaders = new http_1.Headers();
+        this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]();
         // public deleteUser = new EventEmitter();
-        this.getAllShipmentGroupsList = new core_1.EventEmitter();
+        this.getAllShipmentGroupsList = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         // public getAllVehiclesByGroup = new EventEmitter();
         // public getAllVehiclesByOrg = new EventEmitter();
         // public deleteGroup = new EventEmitter();
         // public editSelecetedVehicle = new EventEmitter();
         // public deleteSelecetedVehicle = new EventEmitter();
-        this.createNewShipmentGroup = new core_1.EventEmitter();
+        this.createNewShipmentGroup = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.token = this.localStorageService.get("AUTH_TOKEN");
         //@todo handle error cases
         this.getAllShipmentGroupsList.subscribe(function (orgId) {
             // let path=paths.CONFIGURE_ALERTS_PATH+"/all?"+customerId;
-            var path = environment_1.paths.MANAGE_VEHICLES_GRP_PATH + "/get";
+            var path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["a" /* paths */].MANAGE_VEHICLES_GRP_PATH + "/get";
             // console.log(path);
             _this.getAllShipmentGroup(path).subscribe(function (response) {
                 console.log(response);
@@ -6764,7 +6954,7 @@ var ShipmentMgmtService = (function () {
         //   });
         // });
         this.createNewShipmentGroup.subscribe(function (groupObj) {
-            var path = environment_1.paths.MANAGE_VEHICLES_GRP_PATH + "/create";
+            var path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["a" /* paths */].MANAGE_VEHICLES_GRP_PATH + "/create";
             console.log(path);
             console.log(groupObj);
             _this.createNewGroup(groupObj, path).subscribe(function (response) {
@@ -6809,12 +6999,12 @@ var ShipmentMgmtService = (function () {
     ShipmentMgmtService.prototype.ngOnDestroy = function () {
     };
     ShipmentMgmtService.prototype.getAllShipmentGroup = function (path) {
-        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */](this.defaultHeaders.toJSON());
         var bearerToken = "Bearer " + this.token;
         headers.set('Content-Type', 'application/json');
         headers.set('authorization', bearerToken);
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Get,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
             headers: headers,
         });
         return this.http.request(path, requestOptions).map(function (response) {
@@ -6907,12 +7097,12 @@ var ShipmentMgmtService = (function () {
     //   });
     // }
     ShipmentMgmtService.prototype.createNewGroup = function (vehicleObj, path) {
-        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */](this.defaultHeaders.toJSON());
         var bearerToken = "Bearer " + this.token;
         headers.set('Content-Type', 'application/json');
         headers.set('authorization', bearerToken);
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Post,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
             headers: headers,
             body: vehicleObj,
         });
@@ -6927,20 +7117,28 @@ var ShipmentMgmtService = (function () {
     return ShipmentMgmtService;
 }());
 ShipmentMgmtService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [typeof (_a = typeof http_1.Http !== "undefined" && http_1.Http) === "function" && _a || Object, typeof (_b = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _b || Object, typeof (_c = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _c || Object])
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _c || Object])
 ], ShipmentMgmtService);
-exports.ShipmentMgmtService = ShipmentMgmtService;
+
 var _a, _b, _c;
 //# sourceMappingURL=shipment-mgmt-services.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/services/shipment-services.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShipmentServices; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6950,15 +7148,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var http_1 = __webpack_require__("../../../http/@angular/http.es5.js");
-var http_2 = __webpack_require__("../../../http/@angular/http.es5.js");
-__webpack_require__("../../../../rxjs/add/operator/map.js");
-var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
+
+
+
+
+
 // import {PATH,DETAIL,CREATESHIPMENT,ADDSTOP,PICKUP,DELIVERY} from "./path-services";
-var environment_1 = __webpack_require__("../../../../../src/environments/environment.ts");
-var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+
+
 // import {KEY} from "./config-services"
 var ShipmentServices = (function () {
     function ShipmentServices(http, _store, localStorgeService) {
@@ -6966,18 +7163,18 @@ var ShipmentServices = (function () {
         this.http = http;
         this._store = _store;
         this.localStorgeService = localStorgeService;
-        this.defaultHeaders = new http_1.Headers();
+        this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]();
         this.token = '';
-        this.getShipmentList = new core_1.EventEmitter();
-        this.getShipmentDetail = new core_1.EventEmitter();
-        this.createNewShipment = new core_1.EventEmitter();
-        this.checkVehicle = new core_1.EventEmitter();
+        this.getShipmentList = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.getShipmentDetail = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.createNewShipment = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.checkVehicle = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         // public checkDevice=new EventEmitter();
-        this.switchShipmentDetail = new core_1.EventEmitter();
+        this.switchShipmentDetail = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         /***************get shipment list ***************/
         this.token = this.localStorgeService.get("AUTH_TOKEN");
         this.getShipmentList.subscribe(function () {
-            var path = environment_1.paths.SHIPMENT_PATH + '/dashboard';
+            var path = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* paths */].SHIPMENT_PATH + '/dashboard';
             console.log(path);
             _this.getList(path).subscribe(function (response) {
                 console.log(response);
@@ -6995,7 +7192,7 @@ var ShipmentServices = (function () {
         });
         /************* get shipment details  *************/
         this.getShipmentDetail.subscribe(function (id) {
-            var path = environment_1.paths.SHIPMENT_PATH + '/detail/' + id;
+            var path = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* paths */].SHIPMENT_PATH + '/detail/' + id;
             console.log(path);
             _this.getDetails(path).subscribe(function (response) {
                 console.log(response['detail']);
@@ -7013,7 +7210,7 @@ var ShipmentServices = (function () {
         });
         /************* create shipment   *************/
         this.createNewShipment.subscribe(function (shipment) {
-            var path = environment_1.paths.SHIPMENT_PATH + '/create';
+            var path = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* paths */].SHIPMENT_PATH + '/create';
             console.log(path);
             _this.createShipment(path, shipment).subscribe(function (response) {
                 console.log(response);
@@ -7034,7 +7231,7 @@ var ShipmentServices = (function () {
         /************* get shipment details  *************/
         /************* switch shipment   *************/
         this.switchShipmentDetail.subscribe(function (shipment) {
-            var path = environment_1.paths.SHIPMENT_PATH + '/switch/trackmode';
+            var path = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* paths */].SHIPMENT_PATH + '/switch/trackmode';
             console.log(path);
             _this.switchShipment(path, shipment).subscribe(function (response) {
                 console.log(response);
@@ -7051,7 +7248,7 @@ var ShipmentServices = (function () {
         });
         /*************check vehicle details  *************/
         this.checkVehicle.subscribe(function (id) {
-            var path = environment_1.paths.CHECK_VEHICLE + '?registrationNumber=' + id;
+            var path = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* paths */].CHECK_VEHICLE + '?registrationNumber=' + id;
             console.log(path);
             _this.getVehicle(path).subscribe(function (response) {
                 console.log(response);
@@ -7089,12 +7286,12 @@ var ShipmentServices = (function () {
     };
     // ***********************  get shipment list **********************
     ShipmentServices.prototype.getList = function (path) {
-        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */](this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Get,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
             headers: headers,
         });
         // console.log(this.http);
@@ -7105,12 +7302,12 @@ var ShipmentServices = (function () {
     };
     // ***********************  get vehicle list **********************
     ShipmentServices.prototype.getVehicle = function (path) {
-        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */](this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Get,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
             headers: headers,
         });
         // console.log(this.http);
@@ -7121,12 +7318,12 @@ var ShipmentServices = (function () {
     };
     // ***********************  switch shipment **********************
     ShipmentServices.prototype.switchShipment = function (path, shipment) {
-        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */](this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Post,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
             headers: headers,
             body: shipment
         });
@@ -7138,12 +7335,12 @@ var ShipmentServices = (function () {
     };
     // ****************** get Vehicle Detail *******************
     ShipmentServices.prototype.getDetails = function (path) {
-        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */](this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Get,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
             headers: headers,
         });
         return this.http.request(path, requestOptions).map(function (response) {
@@ -7155,12 +7352,12 @@ var ShipmentServices = (function () {
     ShipmentServices.prototype.createShipment = function (path, shipment) {
         console.log(path);
         console.log(shipment);
-        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */](this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Post,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
             headers: headers,
             body: shipment
         });
@@ -7175,20 +7372,28 @@ var ShipmentServices = (function () {
     return ShipmentServices;
 }()); // class close
 ShipmentServices = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [typeof (_a = typeof http_1.Http !== "undefined" && http_1.Http) === "function" && _a || Object, typeof (_b = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _b || Object, typeof (_c = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _c || Object])
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"]) === "function" && _c || Object])
 ], ShipmentServices);
-exports.ShipmentServices = ShipmentServices;
+
 var _a, _b, _c;
 //# sourceMappingURL=shipment-services.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/services/tracker-services.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TrackerServices; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7198,15 +7403,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var http_1 = __webpack_require__("../../../http/@angular/http.es5.js");
-var http_2 = __webpack_require__("../../../http/@angular/http.es5.js");
-__webpack_require__("../../../../rxjs/add/operator/map.js");
-var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
-var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+
+
+
+
+
+
 // import {TRACKER_TRIP_DISCARD_PATH,TRACKER_TRIP_UPDATE_PATH,TRACKER_TRIP_UPDATE_FROM_STOP_PATH,TRACKER_TRIP_CONFIRM_LOCATION_PATH } from "./path-services";
-var environment_1 = __webpack_require__("../../../../../src/environments/environment.ts");
+
 var TrackerServices = (function () {
     function TrackerServices(http, _store, localStorageService) {
         var _this = this;
@@ -7214,21 +7418,21 @@ var TrackerServices = (function () {
         this._store = _store;
         this.localStorageService = localStorageService;
         // protected basePath = 'http://35.189.162.187:8080/command';
-        this.defaultHeaders = new http_1.Headers();
-        this.discardTrackerTrip = new core_1.EventEmitter();
-        this.updateTrackerTrip = new core_1.EventEmitter();
-        this.updateTrackerTripFromStop = new core_1.EventEmitter();
-        this.confirmLocation = new core_1.EventEmitter();
+        this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]();
+        this.discardTrackerTrip = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.updateTrackerTrip = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.updateTrackerTripFromStop = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.confirmLocation = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.token = '';
         //@todo handle error cases
         this.token = this.localStorageService.get("AUTH_TOKEN");
         this.discardTrackerTrip.subscribe(function (discard) {
             var path;
             if (discard['forEditPlace'] == 'destination') {
-                path = environment_1.paths.SHIPMENT_PATH + "/discard/delivery";
+                path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["a" /* paths */].SHIPMENT_PATH + "/discard/delivery";
             }
             else if (discard['forEditPlace'] == 'pickup') {
-                path = environment_1.paths.SHIPMENT_PATH + "/discard/pickup";
+                path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["a" /* paths */].SHIPMENT_PATH + "/discard/pickup";
             }
             console.log(path);
             console.log(discard['discardObj']);
@@ -7240,7 +7444,7 @@ var TrackerServices = (function () {
         });
         //@todo handle error cases
         this.updateTrackerTrip.subscribe(function (updateTripObj) {
-            var path = environment_1.paths.SHIPMENT_PATH + '/update';
+            var path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["a" /* paths */].SHIPMENT_PATH + '/update';
             console.log(path);
             console.log(updateTripObj);
             _this.doUpdateTrip(path, updateTripObj).subscribe(function (response) {
@@ -7253,10 +7457,10 @@ var TrackerServices = (function () {
         this.updateTrackerTripFromStop.subscribe(function (tripObj) {
             var path;
             if (tripObj['forEditPlace'] == 'destination') {
-                path = environment_1.paths.SHIPMENT_PATH + "/selectfromstop/delivery";
+                path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["a" /* paths */].SHIPMENT_PATH + "/selectfromstop/delivery";
             }
             else if (tripObj['forEditPlace'] == 'pickup') {
-                path = environment_1.paths.SHIPMENT_PATH + "/selectfromstop/pickup";
+                path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["a" /* paths */].SHIPMENT_PATH + "/selectfromstop/pickup";
             }
             console.log(path);
             console.log(tripObj['movementObj']);
@@ -7270,10 +7474,10 @@ var TrackerServices = (function () {
         this.confirmLocation.subscribe(function (obj) {
             var path;
             if (obj['forConfirmPlace'] == 'Destination') {
-                path = environment_1.paths.SHIPMENT_PATH + "/missing/delivery";
+                path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["a" /* paths */].SHIPMENT_PATH + "/missing/delivery";
             }
             else if (obj['forConfirmPlace'] == 'Pickup') {
-                path = environment_1.paths.SHIPMENT_PATH + "/missing/pickup";
+                path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["a" /* paths */].SHIPMENT_PATH + "/missing/pickup";
             }
             console.log(path);
             console.log(obj['conObj']);
@@ -7288,12 +7492,12 @@ var TrackerServices = (function () {
     };
     // *********************** discard Trip  **********************
     TrackerServices.prototype.doDiscardTrip = function (path, discardTrip) {
-        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */](this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Post,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
             headers: headers,
             body: discardTrip,
         });
@@ -7310,12 +7514,12 @@ var TrackerServices = (function () {
     };
     // *********************** update trip  **********************
     TrackerServices.prototype.doUpdateTrip = function (path, updateTrip) {
-        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */](this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Post,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
             headers: headers,
             body: updateTrip,
         });
@@ -7332,12 +7536,12 @@ var TrackerServices = (function () {
     };
     // *********************** update trip  from stop/list of movement logs  **********************
     TrackerServices.prototype.doUpdateTripFromStop = function (path, updateTrip) {
-        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */](this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Post,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
             headers: headers,
             body: updateTrip,
         });
@@ -7354,12 +7558,12 @@ var TrackerServices = (function () {
     };
     // *********************** update trip  from stop/list of movement logs  **********************
     TrackerServices.prototype.doConfirmLocation = function (path, obj) {
-        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */](this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Post,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
             headers: headers,
             body: obj,
         });
@@ -7377,20 +7581,28 @@ var TrackerServices = (function () {
     return TrackerServices;
 }()); // class close
 TrackerServices = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [typeof (_a = typeof http_1.Http !== "undefined" && http_1.Http) === "function" && _a || Object, typeof (_b = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _b || Object, typeof (_c = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _c || Object])
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _c || Object])
 ], TrackerServices);
-exports.TrackerServices = TrackerServices;
+
 var _a, _b, _c;
 //# sourceMappingURL=tracker-services.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/services/user-management-services.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserManagementService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7400,30 +7612,29 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var http_1 = __webpack_require__("../../../http/@angular/http.es5.js");
-var http_2 = __webpack_require__("../../../http/@angular/http.es5.js");
-__webpack_require__("../../../../rxjs/add/operator/map.js");
-var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
-var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-var environment_1 = __webpack_require__("../../../../../src/environments/environment.ts");
+
+
+
+
+
+
+
 var UserManagementService = (function () {
     function UserManagementService(http, _store, localStorageService) {
         var _this = this;
         this.http = http;
         this._store = _store;
         this.localStorageService = localStorageService;
-        this.defaultHeaders = new http_1.Headers();
-        this.deleteUser = new core_1.EventEmitter();
-        this.getAllUsersList = new core_1.EventEmitter();
-        this.changeUserType = new core_1.EventEmitter();
-        this.getUserIfExist = new core_1.EventEmitter();
-        this.addUserToGroup = new core_1.EventEmitter();
+        this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]();
+        this.deleteUser = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.getAllUsersList = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.changeUserType = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.getUserIfExist = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.addUserToGroup = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         //@todo handle error cases
         this.getAllUsersList.subscribe(function (token) {
             _this.token = token;
-            var path = environment_1.paths.MANAGE_USERS_PATH;
+            var path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["a" /* paths */].MANAGE_USERS_PATH;
             console.log(path);
             _this.getAllUsers(path, token).subscribe(function (response) {
                 console.log(response);
@@ -7468,7 +7679,7 @@ var UserManagementService = (function () {
         // });
         //@todo handle error cases
         this.deleteUser.subscribe(function (userObj) {
-            var path = environment_1.paths.DELETE_USERS_PATH + "/remove";
+            var path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["a" /* paths */].DELETE_USERS_PATH + "/remove";
             console.log(path);
             console.log(userObj);
             _this.deleteSelectedUser(userObj, path).subscribe(function (response) {
@@ -7479,7 +7690,7 @@ var UserManagementService = (function () {
             });
         });
         this.changeUserType.subscribe(function (userObj) {
-            var path = environment_1.paths.DELETE_USERS_PATH + "/add";
+            var path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["a" /* paths */].DELETE_USERS_PATH + "/add";
             console.log(path);
             console.log(userObj);
             _this.updateSelectedUser(userObj, path).subscribe(function (response) {
@@ -7490,7 +7701,7 @@ var UserManagementService = (function () {
             });
         });
         this.addUserToGroup.subscribe(function (userObj) {
-            var path = environment_1.paths.DELETE_USERS_PATH + "/add";
+            var path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["a" /* paths */].DELETE_USERS_PATH + "/add";
             console.log(path);
             console.log(userObj);
             _this.updateSelectedUser(userObj, path).subscribe(function (response) {
@@ -7503,10 +7714,10 @@ var UserManagementService = (function () {
         this.getUserIfExist.subscribe(function (newUserObj) {
             var path = "";
             if (newUserObj['email'] != "") {
-                path = environment_1.paths.ADD_EXISTING_USERS_PATH + "?email=" + newUserObj['email'];
+                path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["a" /* paths */].ADD_EXISTING_USERS_PATH + "?email=" + newUserObj['email'];
             }
             if (newUserObj['mobile'] != "") {
-                path = environment_1.paths.ADD_EXISTING_USERS_PATH + "?mobile=" + newUserObj['mobile'];
+                path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["a" /* paths */].ADD_EXISTING_USERS_PATH + "?mobile=" + newUserObj['mobile'];
             }
             console.log(path);
             console.log(newUserObj);
@@ -7521,12 +7732,12 @@ var UserManagementService = (function () {
     UserManagementService.prototype.ngOnDestroy = function () {
     };
     UserManagementService.prototype.deleteSelectedUser = function (userObj, path) {
-        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */](this.defaultHeaders.toJSON());
         var bearerToken = "Bearer " + this.token;
         headers.set('Content-Type', 'application/json');
         headers.set('authorization', bearerToken);
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Post,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
             headers: headers,
             body: userObj,
         });
@@ -7586,12 +7797,12 @@ var UserManagementService = (function () {
     //   });
     // }
     UserManagementService.prototype.updateSelectedUser = function (userObj, path) {
-        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */](this.defaultHeaders.toJSON());
         var bearerToken = "Bearer " + this.token;
         headers.set('Content-Type', 'application/json');
         headers.set('authorization', bearerToken);
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Post,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
             headers: headers,
             body: userObj,
         });
@@ -7604,12 +7815,12 @@ var UserManagementService = (function () {
         });
     };
     UserManagementService.prototype.getAllUsers = function (path, token) {
-        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */](this.defaultHeaders.toJSON());
         var bearerToken = "Bearer " + token;
         headers.set('Content-Type', 'application/json');
         headers.set('authorization', bearerToken);
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Get,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
             headers: headers,
         });
         return this.http.request(path, requestOptions).map(function (response) {
@@ -7621,12 +7832,12 @@ var UserManagementService = (function () {
         });
     };
     UserManagementService.prototype.checkExistingUser = function (path) {
-        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */](this.defaultHeaders.toJSON());
         var bearerToken = "Bearer " + this.token;
         headers.set('Content-Type', 'application/json');
         headers.set('authorization', bearerToken);
-        var requestOptions = new http_2.RequestOptions({
-            method: http_2.RequestMethod.Get,
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({
+            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
             headers: headers,
         });
         return this.http.request(path, requestOptions).map(function (response) {
@@ -7640,52 +7851,55 @@ var UserManagementService = (function () {
     return UserManagementService;
 }());
 UserManagementService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [typeof (_a = typeof http_1.Http !== "undefined" && http_1.Http) === "function" && _a || Object, typeof (_b = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _b || Object, typeof (_c = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _c || Object])
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["b" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _c || Object])
 ], UserManagementService);
-exports.UserManagementService = UserManagementService;
+
 var _a, _b, _c;
 //# sourceMappingURL=user-management-services.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/environments/environment.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* unused harmony export environment */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return TEST_BASE_IP; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return BASE_IP; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return paths; });
 // The file contents for the current environment will overwrite these during build.
 // The build system defaults to the dev environment which uses `environment.ts`, but if you do
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `.angular-cli.json`.
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.environment = {
+// The file contents for the current environment will overwrite these during build.
+var environment = {
     production: false
 };
-exports.TEST_BASE_IP = {
+var TEST_BASE_IP = {
     IP: 'http://192.168.0.153',
 };
-exports.BASE_IP = {
+var BASE_IP = {
     IP: 'http://192.168.0.153',
     // IP1 :'http://192.168.0.103:2124',
     // BETA_IP : 'http://192.168.0.149:8094',
     NODE_IP: 'http://tracknet.fretron.com',
-    FERIGHT_LOCATION: exports.TEST_BASE_IP.IP + '/freight'
+    FERIGHT_LOCATION: TEST_BASE_IP.IP + '/freight'
 };
-exports.paths = {
+var paths = {
     // ********************* organization path *******************************
-    ORGANIZATION_LIST_PATH: exports.BASE_IP.IP + "/organisation/organizations",
-    MANAGE_USERS_PATH: exports.BASE_IP.IP + '/organisation/users',
-    DELETE_USERS_PATH: exports.BASE_IP.IP + '/organisation',
-    ADD_EXISTING_USERS_PATH: exports.BASE_IP.IP + '/user/getUser',
+    ORGANIZATION_LIST_PATH: BASE_IP.IP + "/organisation/organizations",
+    MANAGE_USERS_PATH: BASE_IP.IP + '/organisation/users',
+    DELETE_USERS_PATH: BASE_IP.IP + '/organisation',
+    ADD_EXISTING_USERS_PATH: BASE_IP.IP + '/user/getUser',
     // SWITCH_ORG_PATH:"http://192.168.0.103:8099/user/switchorg?orgId=",
-    SWITCH_ORG_PATH: exports.BASE_IP.IP + "/user/switchorg?orgId=",
-    CREATE_ORGANISATION_PATH: exports.BASE_IP.IP + '/organisation/create',
-    MANAGE_VEHICLES_GRP_PATH: exports.BASE_IP.IP + '/group',
-    SHIPMENT_PATH: exports.BASE_IP.IP + '/shipment',
-    DEVICE_LIST_PATH: exports.BASE_IP.IP + "/shipment/device/dashboard",
-    DEVICE_ADD_PATH: exports.BASE_IP.IP + '/registry/device/add',
-    CHECK_VEHICLE: exports.BASE_IP.IP + '/registry/checkvehicle',
+    SWITCH_ORG_PATH: BASE_IP.IP + "/user/switchorg?orgId=",
+    CREATE_ORGANISATION_PATH: BASE_IP.IP + '/organisation/create',
+    MANAGE_VEHICLES_GRP_PATH: BASE_IP.IP + '/group',
+    SHIPMENT_PATH: BASE_IP.IP + '/shipment',
+    DEVICE_LIST_PATH: BASE_IP.IP + "/shipment/device/dashboard",
+    DEVICE_ADD_PATH: BASE_IP.IP + '/registry/device/add',
+    CHECK_VEHICLE: BASE_IP.IP + '/registry/checkvehicle',
 };
 //# sourceMappingURL=environment.js.map
 
@@ -7699,19 +7913,23 @@ module.exports = __webpack_require__.p + "background-profile.82e0e4644bf995625d9
 /***/ }),
 
 /***/ "../../../../../src/main.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__("../../../platform-browser-dynamic/@angular/platform-browser-dynamic.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__("../../../../../src/app/app.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_hammerjs__ = __webpack_require__("../../../../hammerjs/hammer.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_hammerjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_hammerjs__);
 
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var platform_browser_dynamic_1 = __webpack_require__("../../../platform-browser-dynamic/@angular/platform-browser-dynamic.es5.js");
-var app_module_1 = __webpack_require__("../../../../../src/app/app.module.ts");
-__webpack_require__("../../../../hammerjs/hammer.js");
+
+
+
 // if (environment.production) {
-core_1.enableProdMode();
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["enableProdMode"])();
 // }
-platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */]);
 //# sourceMappingURL=main.js.map
 
 /***/ }),
