@@ -547,6 +547,8 @@ var AddBusinessPartnerComponent = (function () {
                 _this.freightLocUuid = value['data']['data']['uuid'];
                 console.log(_this.freightLocUuid);
                 if (_this.freightLocUuid == '' || _this.freightLocUuid == null) {
+                    _this.isSpinner = false;
+                    _this.isClicked = false;
                     _this.openSnackBar('error please try again');
                     return;
                 }
@@ -577,8 +579,9 @@ var AddBusinessPartnerComponent = (function () {
         });
         this.unSub_checkFretronReferenceNumber = this.store.select('fretronReferenceNumber').subscribe(function (res) {
             console.log(res);
-            if (res == null)
+            if (res == null) {
                 return;
+            }
             if (res['status'] == 200 && res['organisation'] != undefined) {
                 _this.orgType = res['organisation']['type'];
                 _this.fretronReferenceNoUuid = res['organisation']['uuid'];
@@ -996,7 +999,7 @@ var BusinessPartnerComponent = (function () {
         this.store = store;
         this.matSnackBar = matSnackBar;
         this.businesPartList = [];
-        this.pageSize = 5;
+        this.pageSize = 10;
         this.pageIndex = 1;
         this.totalRecord = 0;
         this.search = '';
@@ -1195,7 +1198,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "div{\r\n    font-family: Helvetica;\r\n  }\r\n\r\n  .logo{\r\n    width: 100px;\r\n    padding: 2px;\r\n    height: 19px;\r\n  }\r\n\r\n  .service-name{\r\n    white-space: nowrap;\r\n    font-size: 12px;\r\n    position: absolute;\r\n    margin-top:6px;\r\n    top: 28px;\r\n    left: 45px;\r\n    font-family: Helvetica;\r\n  }\r\n\r\n  .header{\r\n    padding:5px 0px 4px 15px;\r\n    background-color: #3F51B5;\r\n    color: white;\r\n    height: 45px;\r\n    box-shadow: 0px 0px 6px darkgrey;\r\n  }\r\n\r\n  .setting-button{\r\n    margin-left: auto;\r\n    padding: 11px;\r\n    margin-right: 15px;\r\n  }\r\n\r\n  .menu-button{\r\n    color: white;\r\n  }\r\n\r\n  .menu-button >>> .mat-button-focus-overlay{\r\n    background-color: rgba(255, 255, 255, 0);\r\n  }\r\n\r\n  .menu-button:hover{\r\n    color: white !important;\r\n  }\r\n\r\n  .button-basic1 {\r\n    background-color: #3F51B5;\r\n    border: none;\r\n    font-size: 12px;\r\n    color: white;\r\n    margin-left:20px\r\n  }\r\n\r\n  .button-basic2 {\r\n    background-color: white;\r\n    border: none;\r\n    font-size: 12px;\r\n    /*margin-bottom:16px;*/\r\n    color:gray;\r\n    margin-left:20px;\r\n  }\r\n\r\n  .div-class {\r\n      /*margin-top:14px; */\r\n      border-bottom: 1px solid gray;\r\n  }\r\n\r\n  .button-basic2:focus {\r\n    background-color:#5b89ff !important;\r\n    color: white;\r\n  }\r\n", ""]);
+exports.push([module.i, "div{\r\n    font-family: Helvetica;\r\n  }\r\n\r\n  /*.logo{*/\r\n    /*width: 100px;*/\r\n    /*padding: 2px;*/\r\n    /*height: 19px;*/\r\n  /*}*/\r\n\r\n  /*.service-name{*/\r\n    /*white-space: nowrap;*/\r\n    /*font-size: 12px;*/\r\n    /*position: absolute;*/\r\n    /*margin-top:6px;*/\r\n    /*top: 28px;*/\r\n    /*left: 45px;*/\r\n    /*font-family: Helvetica;*/\r\n  /*}*/\r\n\r\n  /*.header{*/\r\n    /*padding:5px 0px 4px 15px;*/\r\n    /*background-color: #3F51B5;*/\r\n    /*color: white;*/\r\n    /*height: 45px;*/\r\n    /*box-shadow: 0px 0px 6px darkgrey;*/\r\n  /*}*/\r\n\r\n  /*.setting-button{*/\r\n    /*margin-left: auto;*/\r\n    /*padding: 11px;*/\r\n    /*margin-right: 15px;*/\r\n  /*}*/\r\n\r\n  /*.menu-button{*/\r\n    /*color: white;*/\r\n  /*}*/\r\n\r\n  /*.menu-button >>> .mat-button-focus-overlay{*/\r\n    /*background-color: rgba(255, 255, 255, 0);*/\r\n  /*}*/\r\n\r\n  /*.menu-button:hover{*/\r\n    /*color: white !important;*/\r\n  /*}*/\r\n\r\n  /*.button-basic1 {*/\r\n    /*background-color: #3F51B5;*/\r\n    /*border: none;*/\r\n    /*font-size: 12px;*/\r\n    /*color: white;*/\r\n    /*margin-left:20px*/\r\n  /*}*/\r\n\r\n  .button-basic2 {\r\n    background-color: white;\r\n    border: none;\r\n    font-size: 12px;\r\n    /*margin-bottom:16px;*/\r\n    color:gray;\r\n    margin-left:20px;\r\n  }\r\n\r\n  .div-class {\r\n      /*margin-top:14px; */\r\n      border-bottom: 1px solid gray;\r\n  }\r\n\r\n  .selected-button {\r\n    background-color:#5b89ff !important;\r\n    color: white;\r\n  }\r\n", ""]);
 
 // exports
 
@@ -1208,7 +1211,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/HMEL-admin/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"height: calc(100vh - 55px);overflow: hidden;\" >\r\n    <!-- <div class=\"header\" fxLayout=\"row\" >\r\n      <img class=\"logo\" src=\"logo-light.png\" alt=\"Fretron Logo\"  >\r\n      <span class=\"service-name\" >Shipper Portal</span>\r\n      <button *ngFor = \"let button of headerButtons\" mat-button class=\"button-basic1\">\r\n             {{button}}\r\n        </button>   -->\r\n\r\n  <div mat-button class=\"div-class\">\r\n  <button *ngFor=\"let button of buttons\"   mat-button class=\"button-basic2\" (click)='onClick(button)'>\r\n    {{button}}\r\n  </button>\r\n</div>\r\n  <div>\r\n      <router-outlet></router-outlet>\r\n  </div>\r\n     <!-- </div> -->\r\n</div>\r\n"
+module.exports = "<div style=\"height: calc(100vh - 55px);overflow: hidden;\" >\r\n  <!-- <div class=\"header\" fxLayout=\"row\" >\r\n    <img class=\"logo\" src=\"logo-light.png\" alt=\"Fretron Logo\"  >\r\n    <span class=\"service-name\" >Shipper Portal</span>\r\n    <button *ngFor = \"let button of headerButtons\" mat-button class=\"button-basic1\">\r\n           {{button}}\r\n      </button>   -->\r\n\r\n  <div mat-button class=\"div-class\">\r\n    <button *ngFor=\"let button of buttons\"   mat-button class=\"button-basic2\" [class.selected-button]=\"button == selectedMenu\" (click)='onClick(button);selectedMenu =button'>\r\n      {{button}}\r\n    </button>\r\n  </div>\r\n  <div>\r\n    <router-outlet></router-outlet>\r\n  </div>\r\n  <!-- </div> -->\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1233,17 +1236,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var DashBoardComponent = (function () {
     function DashBoardComponent(router) {
         this.router = router;
-        // public headerButtons : any[] = [
-        //     "FTL Orders",
-        //     "LR Tracking",
-        //     " Payment Status",
-        //     "Statement of Accounts"
-        // ]
+        this.selectedMenu = "";
         this.buttons = [
             "Users",
             "Business Partner",
         ];
+        this.selectMenuButton();
+        console.log(this.selectedMenu);
     }
+    DashBoardComponent.prototype.selectMenuButton = function () {
+        var tempArray = this.router.url.split('/');
+        var lastPathString = tempArray[tempArray.length - 1];
+        if (lastPathString == "user") {
+            this.selectedMenu = "Users";
+        }
+        else if (lastPathString == "businessPartner") {
+            this.selectedMenu = "Business Partner";
+        }
+    };
     DashBoardComponent.prototype.onClick = function (value) {
         if (value === "Users")
             this.router.navigate(["mainDashboard/dashboard/user"]);
@@ -5798,7 +5808,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/log_in/log-in.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" style=\"position: absolute;\" class=\"spinner\"></mat-spinner>\r\n<div class=\"main\" >\r\n    <!--<div style=\"text-align: center\">-->\r\n      <!--<label>LOGIN</label>-->\r\n    <!--</div>-->\r\n    <mat-card class=\"login-card\">\r\n      <div class=\"imgcontainer\" >\r\n        <img style=\"padding: 5px;background-color: darkgray; width: 60%;\" src=\"../../../../images/fretron_logo.png\" alt=\"Avatar\"  >\r\n      </div>\r\n      <div fxLayout=\"row\" >\r\n        <button (click)=\"loginWithGoogle()\" color=\"primary\" style=\"width: 100%;margin-bottom: 10px\" mat-raised-button >\r\n          Login with Google\r\n        </button>\r\n      </div>\r\n    </mat-card>\r\n</div>\r\n"
+module.exports = "<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" style=\"position: absolute;\" class=\"spinner\"></mat-spinner>\r\n<div class=\"main\" >\r\n    <!--<div style=\"text-align: center\">-->\r\n      <!--<label>LOGIN</label>-->\r\n    <!--</div>-->\r\n    <mat-card class=\"login-card\">\r\n      <div class=\"imgcontainer\" >\r\n        <img style=\"padding: 5px;background-color: darkgray; width: 60%;\" src=\"../../../../images/fretron_logo.png\" alt=\"Avatar\"  >\r\n      </div>\r\n      <div fxLayout=\"row\" >\r\n        <button id=\"google-login\" (click)=\"loginWithGoogle()\" color=\"primary\" style=\"width: 100%;margin-bottom: 10px\" mat-raised-button >\r\n          Login with Google\r\n        </button>\r\n      </div>\r\n    </mat-card>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -5862,6 +5872,7 @@ var LogInComponent = (function () {
                 }
                 else if (value['data']['isExist'] == false) {
                     _this.isSpinner = false;
+                    console.log(_this.isSpinner);
                     _this.openSnackBar("user not Registered Please Signup");
                     _this.router.navigate(["signup"]);
                 }
@@ -5904,29 +5915,31 @@ var LogInComponent = (function () {
     LogInComponent.prototype.loginWithGoogle = function () {
         var _this = this;
         console.log("google auth");
-        this.isSpinner = true;
         this.un_subGoogleLogin = this._auth.login('google').subscribe(function (data) {
-            _this.isSpinner = false;
-            console.log(data);
-            //user data
-            //name, image, uid, provider, uid, email, token (accessToken for Facebook & google, no token for linkedIn),
-            // idToken(only for google)
-            var reqObj = {
-                "loginType": "google",
-                "authToken": {
-                    "token": data['token'],
-                    "email": data['email'],
-                    "name": data['name']
-                }
-            };
-            console.log(reqObj);
-            _this.isSpinner = true;
-            _this._store.dispatch({ type: "USER_INFO", payload: null });
-            _this._store.dispatch({ type: "AUTHORIZATION", payload: null });
-            _this._loginServices.login.emit(reqObj); // call api for checking user existing or not
-        }, function (err) {
-            _this.isSpinner = false;
-            console.log(err);
+            if (_this.un_subGoogleLogin != null && _this.un_subGoogleLogin != undefined) {
+                _this.un_subGoogleLogin.unsubscribe();
+                _this.un_subGoogleLogin = null;
+                document.getElementById('google-login').click(); //
+            }
+            else {
+                _this.isSpinner = true;
+                console.log(data);
+                //user data
+                //name, image, uid, provider, uid, email, token (accessToken for Facebook & google, no token for linkedIn),
+                // idToken(only for google)
+                var reqObj = {
+                    "loginType": "google",
+                    "authToken": {
+                        "token": data['token'],
+                        "email": data['email'],
+                        "name": data['name']
+                    }
+                };
+                console.log(reqObj);
+                _this._store.dispatch({ type: "USER_INFO", payload: null });
+                _this._store.dispatch({ type: "AUTHORIZATION", payload: null });
+                _this._loginServices.login.emit(reqObj); // call api for checking user existing or not
+            }
         });
     }; // close loginWithGoogle
     LogInComponent.prototype.openSnackBar = function (message) {
@@ -5969,7 +5982,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/main-dashboard/main-dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"isUserAuthorized ==false\" style=\"height:100vh;background-color: #1f2021;opacity: .3;\">\n  <label style=\"font-size: 21px;color: #e8dbdb; position: absolute;top: 36%;left: 50%;transform: translate(-50%,-50%);\">{{loginMsg}}</label>\n  <label style=\"color: red;color: #ff000a !important;position: absolute;left: 50%;top: 17%;transform: translate(-50%,-50%);font-size: 20px;font-weight: bold;\">{{errorMsg}}</label>\n</div>\n\n<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\" style=\"position: absolute\"></mat-spinner>\n\n<div *ngIf=\"isUserAuthorized\" class=\"header\" fxLayout=\"row\" style=\"min-width: 768px;\" >\n  <img class=\"logo\" src=\"logo-light.png\" alt=\"Fretron Logo\" >\n  <span class=\"service-name\" >Shipper Portal</span>\n  <button  mat-button class=\"button-basic1\" (click)=\"goToShipment_OrdersView()\" >Shipment Orders</button>\n  <!--<button  mat-button class=\"button-basic1\" (click)=\"goToLR_TrackingView()\">LR Tracking</button>-->\n  <!--<button  mat-button class=\"button-basic1\" >Payment Status</button>-->\n  <!--<button  mat-button class=\"button-basic1\" >Statement of Accounts</button>-->\n\n  <button mat-button class=\"button-basic1 fa fa-cog\" style=\"margin-left:auto;\"  (click)=\"goToSettingView()\"></button>\n\n  <button mat-button [matMenuTriggerFor]=\"menu\" style=\"cursor: pointer;z-index: 1000;\" >\n    <i  class=\"fa fa-user-o\" aria-hidden=\"true\" >&#9662;</i>\n  </button>\n  <mat-menu #menu=\"matMenu\">\n    <app-user-profile></app-user-profile>\n  </mat-menu>\n</div>\n<div *ngIf=\"isUserAuthorized\" style=\"padding: 5px\">\n  <router-outlet></router-outlet>\n</div>\n"
+module.exports = "<div *ngIf=\"isUserAuthorized ==false\" style=\"height:100vh;background-color: #1f2021;opacity: .3;\">\r\n  <label style=\"font-size: 21px;color: #e8dbdb; position: absolute;top: 36%;left: 50%;transform: translate(-50%,-50%);\">{{loginMsg}}</label>\r\n  <label style=\"color: red;color: #ff000a !important;position: absolute;left: 50%;top: 17%;transform: translate(-50%,-50%);font-size: 20px;font-weight: bold;\">{{errorMsg}}</label>\r\n</div>\r\n\r\n<mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\" style=\"position: absolute\"></mat-spinner>\r\n\r\n<div *ngIf=\"isUserAuthorized\" class=\"header\" fxLayout=\"row\" style=\"min-width: 768px;\" >\r\n  <img class=\"logo\" src=\"logo-light.png\" alt=\"Fretron Logo\" >\r\n  <span class=\"service-name\" >Shipper Portal</span>\r\n  <button  mat-button class=\"button-basic1\" (click)=\"goToShipment_OrdersView()\" >Shipment Orders</button>\r\n  <!--<button  mat-button class=\"button-basic1\" (click)=\"goToLR_TrackingView()\">LR Tracking</button>-->\r\n  <!--<button  mat-button class=\"button-basic1\" >Payment Status</button>-->\r\n  <!--<button  mat-button class=\"button-basic1\" >Statement of Accounts</button>-->\r\n\r\n  <button mat-button class=\"button-basic1 fa fa-cog\" style=\"margin-left:auto;\"  (click)=\"goToSettingView()\"></button>\r\n\r\n  <button mat-button [matMenuTriggerFor]=\"menu\" style=\"cursor: pointer;z-index: 1000;\" >\r\n    <i  class=\"fa fa-user-o\" aria-hidden=\"true\" >&#9662;</i>\r\n  </button>\r\n  <mat-menu #menu=\"matMenu\">\r\n    <app-user-profile></app-user-profile>\r\n  </mat-menu>\r\n</div>\r\n<div *ngIf=\"isUserAuthorized\" style=\"padding: 5px\">\r\n  <router-outlet></router-outlet>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -6014,9 +6027,12 @@ var MainDashboardComponent = (function () {
         this.loginMsg = 'LOGIN...';
         this.errorMsg = '';
         console.log("main dashboard");
-        // let currentPath='http://'+window.location.hostname+':'+window.location.port;
-        // window.location.replace(currentPath);
-        // console.log(currentPath);
+        // let iframe =document.getElementById('ssIFrame_google'); // this is google login dialog box frame id
+        // if(iframe != null){
+        //   let currentPath='http://'+window.location.hostname+':'+window.location.port+window.location.pathname;
+        //   window.location.replace(currentPath);
+        //   console.log(window.location.pathname);
+        // }
         var authToken = this.localStorageService.get('AUTH_TOKEN_SHIPPER'); // if token not found then it will check in app.component.
         var isAlreadyAuthorized = false;
         this.unSub_authorization = this._store.select('authorization').subscribe(function (value) {
@@ -6233,7 +6249,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/signup/signup.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main\">\n  <mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></mat-spinner>\n  <mat-card >\n    <form (ngSubmit)=\"userSignup()\" #signupForm=\"ngForm\" >\n      <div class=\"imgcontainer\" >\n        <img style=\"padding: 5px;background-color: darkgray; width: 60%;\" src=\"../../../../images/fretron_logo.png\" alt=\"Avatar\"  >\n      </div>\n\n      <div>\n        <div class=\"fade-header\" style=\"text-align: center;margin-bottom: 30px\" >\n          <span>Create New Account</span>\n        </div>\n\n        <div fxLayout=\"row\" >\n          <mat-input-container class=\"login-text-color\" style=\"width: 100%\" >\n            <input  matTooltip=\"{{'This field is required'}}\" value=\" \" matInput [(ngModel)]=\"name\" placeholder=\"Enter Name\" disabled name=\"name\" id=\"name\" required>\n          </mat-input-container>\n        </div>\n\n        <div fxLayout=\"row\" style=\"margin-top: 5px\" >\n          <mat-input-container class=\"login-text-color\" style=\"width: 100%\" >\n            <input  matTooltip=\"{{'This field is required'}}\" value=\" \" matInput [(ngModel)]=\"email\" placeholder=\"Enter Email\" disabled name=\"email\" id=\"email\">\n          </mat-input-container>\n        </div>\n\n        <div fxLayout=\"row\" style=\"margin-top: 5px\" >\n          <mat-input-container class=\"login-text-color\" style=\"width: 100%\" >\n            <input type=\"number\" min=\"0\" matTooltip=\"{{'This field is required'}}\"  matInput [(ngModel)]=\"mobileNo\"\n                   onkeydown=\"if(event.target.value.length>=10 && event.keyCode!=8 && event.keyCode!=13 )return false;\"\n                   pattern=\"[0-9]{10}\" placeholder=\"{{'Enter Mobile Number'}}\" name=\"mobileNo\" id=\"mobileNo\" >\n          </mat-input-container>\n        </div>\n        <div fxLayout=\"row\" style=\"margin-top:15px;\" >\n          <button style=\"margin-left: auto\" name=\"cancel\" type=\"reset\"  (click)=\"cancel()\"  matTooltip=\"{{'cancel'}}\"  mat-button >\n            cancel\n          </button>\n          <button  name=\"ok\"  type=\"submit\"  matTooltip=\"{{'ok'}}\"  mat-button  [disabled]=\"!signupForm.form.valid || isClicked ==true\" >\n            Signup\n          </button>\n        </div>\n      </div>\n    </form>\n  </mat-card>\n</div>\n\n"
+module.exports = "<div class=\"main\">\r\n  <mat-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></mat-spinner>\r\n  <mat-card >\r\n    <form (ngSubmit)=\"userSignup()\" #signupForm=\"ngForm\" >\r\n      <div class=\"imgcontainer\" >\r\n        <img style=\"padding: 5px;background-color: darkgray; width: 60%;\" src=\"../../../../images/fretron_logo.png\" alt=\"Avatar\"  >\r\n      </div>\r\n\r\n      <div>\r\n        <div class=\"fade-header\" style=\"text-align: center;margin-bottom: 30px\" >\r\n          <span>Create New Account</span>\r\n        </div>\r\n\r\n        <div fxLayout=\"row\" >\r\n          <mat-input-container class=\"login-text-color\" style=\"width: 100%\" >\r\n            <input type=\"text\" matTooltip=\"{{'This field is required'}}\" value=\" \" matInput [(ngModel)]=\"name\" placeholder=\"Enter Name\" disabled name=\"name\" id=\"name\" required>\r\n          </mat-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"row\" style=\"margin-top: 5px\" >\r\n          <mat-input-container class=\"login-text-color\" style=\"width: 100%\" >\r\n            <input  matTooltip=\"{{'This field is required'}}\" value=\" \" matInput [(ngModel)]=\"email\" placeholder=\"Enter Email\" disabled name=\"email\" id=\"email\" required>\r\n          </mat-input-container>\r\n        </div>\r\n\r\n        <div fxLayout=\"row\" style=\"margin-top: 5px\" >\r\n          <mat-input-container class=\"login-text-color\" style=\"width: 100%\" >\r\n            <input type=\"number\" min=\"0\" matTooltip=\"{{'This field is required'}}\"  matInput [(ngModel)]=\"mobileNo\"\r\n                   onkeydown=\"if(event.target.value.length>=10 && event.keyCode!=8 && event.keyCode!=13 )return false;\"\r\n                   pattern=\"[0-9]{10}\" placeholder=\"{{'Enter Mobile Number'}}\" name=\"mobileNo\" id=\"mobileNo\" >\r\n          </mat-input-container>\r\n        </div>\r\n        <div fxLayout=\"row\" style=\"margin-top:15px;\" >\r\n          <button style=\"margin-left: auto\" name=\"cancel\" type=\"reset\"  (click)=\"cancel()\"  matTooltip=\"{{'cancel'}}\"  mat-button >\r\n            cancel\r\n          </button>\r\n          <button  name=\"ok\"  type=\"submit\"  matTooltip=\"{{'ok'}}\"  mat-button  [disabled]=\"!signupForm.form.valid || isClicked ==true\" >\r\n            Signup\r\n          </button>\r\n        </div>\r\n      </div>\r\n    </form>\r\n  </mat-card>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -6430,7 +6446,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/user-profile/user-profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n  <div class=\"profile-container-desktop\" >\r\n    <img class=\"logo\" src=\"../../images/fretron_logo.png\" alt=\"Avatar\"  >\r\n    <img class=\"profile-pic\" src=\"../../images/default-profile.png\" alt=\"profile\"  >\r\n    <div style=\"display: grid;position: absolute;top:81px;left: 23px;color:white\">\r\n      <span style=\"font-size: 18px;margin-bottom: 3px;\">{{customerName}}</span>\r\n      <span style=\"font-size: 12px\">{{customerMobile}}</span>\r\n      <span style=\"font-size: 12px\">{{userDetails?.email}}</span>\r\n    </div>\r\n  </div>\r\n  <!--<div style=\"margin: 10px 0px 10px 10px;overflow: auto;max-height: 250px;\" >-->\r\n    <!--<div class=\"org-list-element\" *ngFor=\"let currentOrg of orgList\" (click)=\"switchOrg(currentOrg)\" >-->\r\n      <!--<div  style=\"padding: 5px;\" [style.background-color]=\"(currentOrgId === currentOrg['uuid']? 'lightblue': 'white')\">-->\r\n        <!--<span >{{currentOrg['organisationName']}}</span>-->\r\n      <!--</div>-->\r\n    <!--</div>-->\r\n  <!--</div>-->\r\n  <div style=\"text-align: center;\">\r\n    <span style=\"font-size: 13px;\"><b>Org Id :</b> {{userDetails['orgId']}}</span>\r\n  </div>\r\n  <div style=\"width: 95%;text-align: right;\" >\r\n\r\n    <!--<button  (click)=\"goToAddOrganisation()\" mat-button >Add Organisation</button>-->\r\n    <button  (click)=\"logout();\" mat-button >Logout</button>\r\n  </div>\r\n</div>\r\n\r\n"
+module.exports = "<div>\r\n  <div class=\"profile-container-desktop\" >\r\n    <img class=\"logo\" src=\"../../images/fretron_logo.png\" alt=\"Avatar\"  >\r\n    <img class=\"profile-pic\" src=\"../../images/default-profile.png\" alt=\"profile\"  >\r\n    <div style=\"display: grid;position: absolute;top:81px;left: 23px;color:white\">\r\n      <span style=\"font-size: 18px;margin-bottom: 3px;\">{{customerName}}</span>\r\n      <span style=\"font-size: 12px\">{{customerMobile}}</span>\r\n      <span style=\"font-size: 12px\">{{userDetails?.email}}</span>\r\n    </div>\r\n  </div>\r\n  <!--<div style=\"margin: 10px 0px 10px 10px;overflow: auto;max-height: 250px;\" >-->\r\n    <!--<div class=\"org-list-element\" *ngFor=\"let currentOrg of orgList\" (click)=\"switchOrg(currentOrg)\" >-->\r\n      <!--<div  style=\"padding: 5px;\" [style.background-color]=\"(currentOrgId === currentOrg['uuid']? 'lightblue': 'white')\">-->\r\n        <!--<span >{{currentOrg['organisationName']}}</span>-->\r\n      <!--</div>-->\r\n    <!--</div>-->\r\n  <!--</div>-->\r\n  <div style=\"text-align: center;\">\r\n    <span style=\"font-size: 13px;\"><b>Org Name :</b> {{orgnizationDetails?.name?orgnizationDetails?.name:'N/A'}}</span>\r\n  </div>\r\n  <div style=\"width: 95%;text-align: right;\" >\r\n\r\n    <!--<button  (click)=\"goToAddOrganisation()\" mat-button >Add Organisation</button>-->\r\n    <button  (click)=\"logout();\" mat-button >Logout</button>\r\n  </div>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -6445,6 +6461,8 @@ module.exports = "<div>\r\n  <div class=\"profile-container-desktop\" >\r\n    <
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__service_businessPartnerService__ = __webpack_require__("../../../../../src/service/businessPartnerService.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6459,8 +6477,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var UserProfile = (function () {
-    function UserProfile(http, localStorageService, _router, _store) {
+    function UserProfile(businessPartnerService, http, localStorageService, _router, _store) {
+        var _this = this;
+        this.businessPartnerService = businessPartnerService;
         this.http = http;
         this.localStorageService = localStorageService;
         this._router = _router;
@@ -6474,21 +6496,30 @@ var UserProfile = (function () {
         this.isOrgList = false;
         this.authToken = null;
         this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        this.unSub_Organisation = null;
         this.defaultHeaders.append('Access-Control-Allow-Origin', '*');
         this.defaultHeaders.append('Access-Control-Allow-Methods', 'GET,POST, OPTIONS, PUT, PATCH, DELETE');
         var auth_token = this.localStorageService.get("AUTH_TOKEN_SHIPPER");
-        console.log("user profile");
-        console.log(auth_token);
         if (auth_token != null) {
             this.authToken = auth_token;
             this.refreshUser();
         }
+        this.unSub_Organisation = this._store.select('organisationStore').subscribe(function (response) {
+            if (response == null)
+                return;
+            _this.orgnizationDetails = response['data'];
+            console.log(response);
+        });
     } // constructor close
     UserProfile.prototype.ngOnDestroy = function () {
+        if (this.unSub_Organisation != null && this.unSub_Organisation != undefined) {
+            this.unSub_Organisation.unsubscribe();
+        }
     };
     UserProfile.prototype.refreshUser = function () {
         console.log(this.authToken);
         this.customerDetail(this.authToken);
+        this.businessPartnerService.getOrganisation.emit(__WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* path */].GET_ORGANISATION + '?uuid=' + this.userDetails['orgId']);
         // this.getOrganization(this.authToken);
     };
     UserProfile.prototype.ngOnInit = function () {
@@ -6532,10 +6563,10 @@ UserProfile = __decorate([
         template: __webpack_require__("../../../../../src/app/user-profile/user-profile.component.html"),
         styles: [__webpack_require__("../../../../../src/app/user-profile/user-profile.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__["LocalStorageService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ngrx_store__["b" /* Store */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_6__service_businessPartnerService__["a" /* BusinessPartnerService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__service_businessPartnerService__["a" /* BusinessPartnerService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__["LocalStorageService"]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ngrx_store__["b" /* Store */]) === "function" && _e || Object])
 ], UserProfile);
 
-var _a, _b, _c, _d;
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=user-profile.component.js.map
 
 /***/ }),
