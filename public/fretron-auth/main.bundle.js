@@ -6,10 +6,10 @@ webpackJsonp([1,5],{
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_store__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_login_services__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular_2_local_storage__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_login_services__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular_2_local_storage__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular_2_local_storage__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_material__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_material__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_logout_services__ = __webpack_require__(136);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddOrganisationComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -141,14 +141,14 @@ var _a, _b, _c, _d, _e;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_store__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_router_store__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_material__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_router_store__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_material__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_flex_layout__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular2_social_login__ = __webpack_require__(140);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__environments_environment_prod__ = __webpack_require__(211);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_login_services__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_login_services__ = __webpack_require__(39);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FretronLogin; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -207,8 +207,7 @@ var FretronLogin = (function () {
                     else if (value['res']['loginType'] == 'google') {
                         var token = value['res']['token'];
                         console.log(token);
-                        _this.localStorageService.remove("AUTH_TOKEN");
-                        // this.localStorageService.clearAll();
+                        _this.localStorageService.clearAll();
                         _this.localStorageService.set("AUTH_TOKEN", "" + value['res']['token']);
                         var user = _this.customerDetail(value['res']['token']);
                         var path = 'http://' + window.location.hostname + ':' + window.location.port;
@@ -325,13 +324,13 @@ var _a, _b, _c, _d, _e, _f;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_router_store__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_material__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_login_services__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_router_store__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_material__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_login_services__ = __webpack_require__(39);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FretronSignup; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -465,13 +464,13 @@ var _a, _b, _c, _d, _e;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_router_store__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_material__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_login_services__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_router_store__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_material__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_login_services__ = __webpack_require__(39);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ValidateOTP; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -723,7 +722,7 @@ var _a, _b, _c, _d, _e;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_store__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LogoutServices; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -747,8 +746,7 @@ var LogoutServices = (function () {
     };
     LogoutServices.prototype.logout = function () {
         console.log(localStorage);
-        // this.localStorageService.clearAll();
-        this.localStorageService.remove("AUTH_TOKEN");
+        this.localStorageService.clearAll();
         // this._store.dispatch({type: "CUSTOMER_DETAILS", payload:null});
         // this._store.dispatch({type: "CURRENT_TRIP_VEHICLE", payload:null});
         // this._store.dispatch({type: "AUTHORIZATION", payload: null});
@@ -795,8 +793,8 @@ var GOOGLE_PROVIDERS = {
     }
 };
 var BASE_IP = {
-    IP: 'http://apis.fretron.com',
-    ROHIT_IP: 'http://192.168.0.103',
+    // IP : 'http://apis.fretron.com',
+    // ROHIT_IP : 'http://192.168.0.103',
     TEST_IP: 'http://192.168.0.153',
 };
 // export const paths = {
@@ -873,12 +871,8 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_router_store__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_material__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -892,31 +886,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-
-
 var AppComponent = (function () {
-    function AppComponent(localStorageService, router, _store, snackBar) {
+    function AppComponent(router, _store) {
+        this.router = router;
+        this._store = _store;
         // this._store.select('router').subscribe(value => {
         //   // console.log(value);
         //
         //   this.actionService.addAction(value);
         //
         // });
-        this.localStorageService = localStorageService;
-        this.router = router;
-        this._store = _store;
-        this.snackBar = snackBar;
-        var token = this.localStorageService.get('AUTH_TOKEN');
-        console.log(token);
-        if (token == undefined || token == null) {
-            this.openSnackBar("Please Login First !!!");
-            this._store.dispatch(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__ngrx_router_store__["b" /* go */])(['/fretronLogin']));
-        }
     }
-    AppComponent.prototype.openSnackBar = function (message) {
-        this.snackBar.open(message, '', { duration: 4000 });
-    };
     return AppComponent;
 }());
 AppComponent = __decorate([
@@ -924,10 +904,10 @@ AppComponent = __decorate([
         selector: 'app-root',
         template: "<router-outlet></router-outlet>",
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["b" /* Store */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_material__["y" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_material__["y" /* MdSnackBar */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["b" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["b" /* Store */]) === "function" && _b || Object])
 ], AppComponent);
 
-var _a, _b, _c, _d;
+var _a, _b;
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
@@ -939,11 +919,11 @@ var _a, _b, _c, _d;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_flex_layout__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(206);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ngrx_store__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_material__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_material__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_hammerjs__ = __webpack_require__(277);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_hammerjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_hammerjs__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_hammer_timejs__ = __webpack_require__(276);
@@ -951,15 +931,15 @@ var _a, _b, _c, _d;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_platform_browser_animations__ = __webpack_require__(197);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__agm_core__ = __webpack_require__(177);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__router_module_app_router_module__ = __webpack_require__(210);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_angular_2_local_storage__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_angular_2_local_storage__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_angular_2_local_storage__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ngrx_router_store__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ngrx_router_store__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__reducers_main_store__ = __webpack_require__(209);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_angular2_social_login__ = __webpack_require__(140);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__environments_environment__ = __webpack_require__(137);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_fretron_login_fretron_login_component__ = __webpack_require__(133);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_fretron_signup_fretron_signup_component__ = __webpack_require__(134);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_login_services__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_login_services__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_validate_otp_validate_otp_component__ = __webpack_require__(135);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_add_organisation_add_organisation_component__ = __webpack_require__(132);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_logout_services__ = __webpack_require__(136);
@@ -1175,7 +1155,7 @@ function mainReducer(state, action) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_fretron_login_fretron_login_component__ = __webpack_require__(133);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_fretron_signup_fretron_signup_component__ = __webpack_require__(134);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_validate_otp_validate_otp_component__ = __webpack_require__(135);
@@ -1240,16 +1220,18 @@ var GOOGLE_PROVIDERS = {
     }
 };
 var BASE_IP = {
-    IP: 'http://apis.fretron.com',
+    // IP : 'http://apis.fretron.com',
+    TEST_IP: 'http://apis.fretron.com'
 };
-var paths = {
-    "LOGIN_PATH": BASE_IP.IP + "/user/login",
-    "SIGN_OTP_PATH": BASE_IP.IP + "/user/sendotp?mobileNumber=",
-    "SIGNUP_PATH": BASE_IP.IP + "/user/create",
-    "CONFIRM_LOGIN_PATH": BASE_IP.IP + "/user/authentication?mobileNumber=",
-    "CREATE_ORGANISATION_PATH": BASE_IP.IP + "/organisation/create",
-    "SWITCH_ORG_PATH": BASE_IP.IP + "/user/switchorg?orgId=",
-};
+//
+// export const paths = {
+//   "LOGIN_PATH" :BASE_IP.IP+"/user/login",
+//   "SIGN_OTP_PATH" :BASE_IP.IP+"/user/sendotp?mobileNumber=",
+//   "SIGNUP_PATH" : BASE_IP.IP+"/user/create",
+//   "CONFIRM_LOGIN_PATH" : BASE_IP.IP+"/user/authentication?mobileNumber=",
+//   "CREATE_ORGANISATION_PATH" : BASE_IP.IP+"/organisation/create",
+//   "SWITCH_ORG_PATH": BASE_IP.IP+"/user/switchorg?orgId=",
+// };
 // export const paths = {
 //   "LOGIN_PATH" :BASE_IP.TEST_IP+"/user/login/forany",
 //   "SIGN_OTP_PATH" :BASE_IP.TEST_IP+"/user/sendotp?mobileNumber=",
@@ -1258,6 +1240,14 @@ var paths = {
 //   "CREATE_ORGANISATION_PATH" : BASE_IP.TEST_IP+"/organisation/create",
 //   "SWITCH_ORG_PATH": BASE_IP.TEST_IP+"/user/switchorg?orgId=",
 // };
+var paths = {
+    "LOGIN_PATH": BASE_IP.TEST_IP + "/user/login",
+    "SIGN_OTP_PATH": BASE_IP.TEST_IP + "/user/sendotp?mobileNumber=",
+    "SIGNUP_PATH": BASE_IP.TEST_IP + "/user/create",
+    "CONFIRM_LOGIN_PATH": BASE_IP.TEST_IP + "/user/authentication?mobileNumber=",
+    "CREATE_ORGANISATION_PATH": BASE_IP.TEST_IP + "/organisation/create",
+    "SWITCH_ORG_PATH": BASE_IP.TEST_IP + "/user/switchorg?orgId=",
+};
 //# sourceMappingURL=environment.prod.js.map
 
 /***/ }),
@@ -1265,12 +1255,12 @@ var paths = {
 /***/ 269:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(19)(false);
+exports = module.exports = __webpack_require__(18)(false);
 // imports
 
 
 // module
-exports.push([module.i, "md-card\r\n{\r\n  margin: 10%;\r\n}\r\n\r\n.main{\r\n  min-width: 200px;\r\n  max-width: 390px;\r\n  margin: 50px auto;\r\n  padding: 8px\r\n}\r\n\r\nbutton:hover {\r\n  opacity: 0.7;\r\n}\r\n\r\n.imgcontainer {\r\n  text-align: center;\r\n  margin: 24px 0 20px 0;\r\n}\r\n", ""]);
+exports.push([module.i, "md-card\n{\n  margin: 10%;\n}\n\n.main{\n  min-width: 200px;\n  max-width: 390px;\n  margin: 50px auto;\n  padding: 8px\n}\n\nbutton:hover {\n  opacity: 0.7;\n}\n\n.imgcontainer {\n  text-align: center;\n  margin: 24px 0 20px 0;\n}\n", ""]);
 
 // exports
 
@@ -1283,12 +1273,12 @@ module.exports = module.exports.toString();
 /***/ 270:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(19)(false);
+exports = module.exports = __webpack_require__(18)(false);
 // imports
 
 
 // module
-exports.push([module.i, ".main{\r\n  min-width: 200px;\r\n  max-width: 300px;\r\n  margin: 50px auto;\r\n  padding: 8px\r\n}\r\n\r\nbutton:hover {\r\n  opacity: 0.7;\r\n}\r\n\r\n.imgcontainer {\r\n  text-align: center;\r\n  margin: 24px 0 20px 0;\r\n}\r\n\r\n/*button {*/\r\n  /*color:#ffffff;*/\r\n  /*background-color:#1E88E5;*/\r\n/*}*/\r\n\r\n\r\n.label-quote{\r\n  width: 100%;\r\n  text-align: center;\r\n  margin-top: 40px;\r\n  margin-bottom: 30px;\r\n  color:cadetblue;\r\n}\r\n\r\n.add-button{\r\n  width: 50px;\r\n  height: 50px;\r\n  line-height: 50px;\r\n  padding: 0px;\r\n  min-width: 0px;\r\n  font-size: 18px;\r\n  border-radius: 30px;\r\n  box-shadow: 1px 4px 17px darkslategrey;\r\n}\r\n\r\n.language{\r\n  margin-right: 1px;\r\n}\r\n\r\n.language  >>> .mat-select-trigger{\r\n  min-width: 68px !important;\r\n  font-size: 13px;\r\n  height: 28px;\r\n}\r\n\r\n\r\n.my-select {\r\n  margin-top: 11px;\r\n  margin-right: 5px;\r\n}\r\n/*  */\r\n.my-select >>> .mat-select-trigger{\r\n  min-width: 68px !important;\r\n  font-size: 13px;\r\n  height: 28px;\r\n}\r\n\r\n.my-hr{\r\n  width: 28px;\r\n  border-style: ridge;\r\n}\r\n", ""]);
+exports.push([module.i, ".main{\n  min-width: 200px;\n  max-width: 300px;\n  margin: 50px auto;\n  padding: 8px\n}\n\nbutton:hover {\n  opacity: 0.7;\n}\n\n.imgcontainer {\n  text-align: center;\n  margin: 24px 0 20px 0;\n}\n\n/*button {*/\n  /*color:#ffffff;*/\n  /*background-color:#1E88E5;*/\n/*}*/\n\n\n.label-quote{\n  width: 100%;\n  text-align: center;\n  margin-top: 40px;\n  margin-bottom: 30px;\n  color:cadetblue;\n}\n\n.add-button{\n  width: 50px;\n  height: 50px;\n  line-height: 50px;\n  padding: 0px;\n  min-width: 0px;\n  font-size: 18px;\n  border-radius: 30px;\n  box-shadow: 1px 4px 17px darkslategrey;\n}\n\n.language{\n  margin-right: 1px;\n}\n\n.language  >>> .mat-select-trigger{\n  min-width: 68px !important;\n  font-size: 13px;\n  height: 28px;\n}\n\n\n.my-select {\n  margin-top: 11px;\n  margin-right: 5px;\n}\n/*  */\n.my-select >>> .mat-select-trigger{\n  min-width: 68px !important;\n  font-size: 13px;\n  height: 28px;\n}\n\n.my-hr{\n  width: 28px;\n  border-style: ridge;\n}\n", ""]);
 
 // exports
 
@@ -1301,12 +1291,12 @@ module.exports = module.exports.toString();
 /***/ 271:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(19)(false);
+exports = module.exports = __webpack_require__(18)(false);
 // imports
 
 
 // module
-exports.push([module.i, ".main{\r\n  min-width: 200px;\r\n  max-width: 300px;\r\n  margin: 50px auto;\r\n  padding: 8px\r\n}\r\n\r\nbutton:hover {\r\n  opacity: 0.7;\r\n}\r\n\r\n.imgcontainer {\r\n  text-align: center;\r\n  margin: 24px 0 20px 0;\r\n}\r\n\r\n/*button {*/\r\n/*color:#ffffff;*/\r\n/*background-color:#1E88E5;*/\r\n/*}*/\r\n\r\n\r\n.label-quote{\r\n  width: 100%;\r\n  text-align: center;\r\n  margin-top: 40px;\r\n  margin-bottom: 30px;\r\n  color:cadetblue;\r\n}\r\n\r\n.add-button{\r\n  width: 50px;\r\n  height: 50px;\r\n  line-height: 50px;\r\n  padding: 0px;\r\n  min-width: 0px;\r\n  font-size: 18px;\r\n  border-radius: 30px;\r\n  box-shadow: 1px 4px 17px darkslategrey;\r\n}\r\n\r\n.language{\r\n  margin-right: 1px;\r\n}\r\n\r\n.language  >>> .mat-select-trigger{\r\n  min-width: 68px !important;\r\n  font-size: 13px;\r\n  height: 28px;\r\n}\r\n\r\n\r\n.my-select {\r\n  margin-top: 11px;\r\n  margin-right: 5px;\r\n}\r\n/*  */\r\n.my-select >>> .mat-select-trigger{\r\n  min-width: 68px !important;\r\n  font-size: 13px;\r\n  height: 28px;\r\n}\r\n\r\n\r\n.resend-otp-button{\r\n  width: 33px;\r\n  height: 30px;\r\n  line-height: 30px;\r\n  padding: 0px;\r\n  min-width: 0px;\r\n  font-size: 18px;\r\n  border-radius: 15px;\r\n  box-shadow: 1px 2px 9px darkslategrey;\r\n  color: #46465f;\r\n  background-color:whitesmoke;\r\n}\r\n\r\n", ""]);
+exports.push([module.i, ".main{\n  min-width: 200px;\n  max-width: 300px;\n  margin: 50px auto;\n  padding: 8px\n}\n\nbutton:hover {\n  opacity: 0.7;\n}\n\n.imgcontainer {\n  text-align: center;\n  margin: 24px 0 20px 0;\n}\n\n/*button {*/\n/*color:#ffffff;*/\n/*background-color:#1E88E5;*/\n/*}*/\n\n\n.label-quote{\n  width: 100%;\n  text-align: center;\n  margin-top: 40px;\n  margin-bottom: 30px;\n  color:cadetblue;\n}\n\n.add-button{\n  width: 50px;\n  height: 50px;\n  line-height: 50px;\n  padding: 0px;\n  min-width: 0px;\n  font-size: 18px;\n  border-radius: 30px;\n  box-shadow: 1px 4px 17px darkslategrey;\n}\n\n.language{\n  margin-right: 1px;\n}\n\n.language  >>> .mat-select-trigger{\n  min-width: 68px !important;\n  font-size: 13px;\n  height: 28px;\n}\n\n\n.my-select {\n  margin-top: 11px;\n  margin-right: 5px;\n}\n/*  */\n.my-select >>> .mat-select-trigger{\n  min-width: 68px !important;\n  font-size: 13px;\n  height: 28px;\n}\n\n\n.resend-otp-button{\n  width: 33px;\n  height: 30px;\n  line-height: 30px;\n  padding: 0px;\n  min-width: 0px;\n  font-size: 18px;\n  border-radius: 15px;\n  box-shadow: 1px 2px 9px darkslategrey;\n  color: #46465f;\n  background-color:whitesmoke;\n}\n\n", ""]);
 
 // exports
 
@@ -1319,12 +1309,12 @@ module.exports = module.exports.toString();
 /***/ 272:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(19)(false);
+exports = module.exports = __webpack_require__(18)(false);
 // imports
 
 
 // module
-exports.push([module.i, ".main{\r\n  min-width: 200px;\r\n  max-width: 300px;\r\n  margin: 50px auto;\r\n  padding: 8px\r\n}\r\n\r\nbutton:hover {\r\n  opacity: 0.7;\r\n}\r\n\r\n.imgcontainer {\r\n  text-align: center;\r\n  margin: 24px 0 20px 0;\r\n}\r\n\r\n/*button {*/\r\n/*color:#ffffff;*/\r\n/*background-color:#1E88E5;*/\r\n/*}*/\r\n\r\n\r\n.label-quote{\r\n  width: 100%;\r\n  text-align: center;\r\n  margin-top: 40px;\r\n  margin-bottom: 30px;\r\n  color:cadetblue;\r\n}\r\n\r\n.add-button{\r\n  width: 50px;\r\n  height: 50px;\r\n  line-height: 50px;\r\n  padding: 0px;\r\n  min-width: 0px;\r\n  font-size: 18px;\r\n  border-radius: 30px;\r\n  box-shadow: 1px 4px 17px darkslategrey;\r\n}\r\n\r\n.language{\r\n  margin-right: 1px;\r\n}\r\n\r\n.language  >>> .mat-select-trigger{\r\n  min-width: 68px !important;\r\n  font-size: 13px;\r\n  height: 28px;\r\n}\r\n\r\n\r\n.my-select {\r\n  margin-top: 11px;\r\n  margin-right: 5px;\r\n}\r\n/*  */\r\n.my-select >>> .mat-select-trigger{\r\n  min-width: 68px !important;\r\n  font-size: 13px;\r\n  height: 28px;\r\n}\r\n\r\n\r\n.resend-otp-button{\r\n  width: 33px;\r\n  height: 30px;\r\n  line-height: 30px;\r\n  padding: 0px;\r\n  min-width: 0px;\r\n  font-size: 18px;\r\n  border-radius: 15px;\r\n  box-shadow: 1px 2px 9px darkslategrey;\r\n  color: #46465f;\r\n  background-color:whitesmoke;\r\n}\r\n\r\n", ""]);
+exports.push([module.i, ".main{\n  min-width: 200px;\n  max-width: 300px;\n  margin: 50px auto;\n  padding: 8px\n}\n\nbutton:hover {\n  opacity: 0.7;\n}\n\n.imgcontainer {\n  text-align: center;\n  margin: 24px 0 20px 0;\n}\n\n/*button {*/\n/*color:#ffffff;*/\n/*background-color:#1E88E5;*/\n/*}*/\n\n\n.label-quote{\n  width: 100%;\n  text-align: center;\n  margin-top: 40px;\n  margin-bottom: 30px;\n  color:cadetblue;\n}\n\n.add-button{\n  width: 50px;\n  height: 50px;\n  line-height: 50px;\n  padding: 0px;\n  min-width: 0px;\n  font-size: 18px;\n  border-radius: 30px;\n  box-shadow: 1px 4px 17px darkslategrey;\n}\n\n.language{\n  margin-right: 1px;\n}\n\n.language  >>> .mat-select-trigger{\n  min-width: 68px !important;\n  font-size: 13px;\n  height: 28px;\n}\n\n\n.my-select {\n  margin-top: 11px;\n  margin-right: 5px;\n}\n/*  */\n.my-select >>> .mat-select-trigger{\n  min-width: 68px !important;\n  font-size: 13px;\n  height: 28px;\n}\n\n\n.resend-otp-button{\n  width: 33px;\n  height: 30px;\n  line-height: 30px;\n  padding: 0px;\n  min-width: 0px;\n  font-size: 18px;\n  border-radius: 15px;\n  box-shadow: 1px 2px 9px darkslategrey;\n  color: #46465f;\n  background-color:whitesmoke;\n}\n\n", ""]);
 
 // exports
 
@@ -1337,7 +1327,7 @@ module.exports = module.exports.toString();
 /***/ 280:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main\">\r\n<md-card>\r\n  <md-card-content>\r\n    <div class=\"imgcontainer\"  style=\"text-align: center\">\r\n      <img style=\"padding: 5px;background-color: darkgray; width: 60%;\" src=\"../../../../images/fretron_logo.png\" alt=\"Avatar\"  >\r\n    </div>\r\n    <span><b>You don't have any organisation yet.</b><br> Kindly register any your organisation here: </span>\r\n\r\n    <!--<form (ngSubmit)=\"addOrganisationToUser()\" #addOgForm=\"ngForm\">-->\r\n\r\n      <div>\r\n        <div fxLayout=\"row\" >\r\n          <div fxFlex=\"100\">\r\n          <md-input-container style=\"width: 100%\" >\r\n            <input type=\"text\" value=\" \" name=\"orgName\" placeholder=\"Organisation Name\"  mdTooltip=\"{{'This field is required'}}\"  mdInput [(ngModel)]=\"orgName\" required>\r\n          </md-input-container>\r\n          </div>\r\n        </div>\r\n\r\n        <div fxLayout=\"row\" >\r\n          <div fxFlex=\"100\">\r\n          <md-input-container style=\"width: 100%\" >\r\n            <input type=\"text\" value=\" \" name=\"OrganisationId\" placeholder=\"Organisation Id\"  mdTooltip=\"{{'This field is required'}}\"  mdInput [(ngModel)]=\"userOrgId\" required>\r\n          </md-input-container>\r\n          </div>\r\n        </div>\r\n\r\n        <div fxLayout=\"row\" >\r\n          <div fxFlex=\"100\">\r\n          <md-select [(ngModel)]=\"orgType\" value=\" \" style=\"width: 100%\" name=\"OrganisationType\">\r\n            <md-option value=\"TRANSPORTER\">TRANSPORTER</md-option>\r\n            <md-option value=\"FLEET_OWNER\">FLEET OWNER</md-option>\r\n            <md-option value=\"FLEET_OWNER_AGENT\">FLEET OWNER AGENT</md-option>\r\n          </md-select>\r\n        </div>\r\n        </div>\r\n        <div style=\"text-align: center;padding: 15px;\">\r\n\r\n          <button style=\"width: 45%;\" mdTooltip= \"{{'Logout'}}\"  md-raised-button color=\"primary\" (click)=\"Logout()\" >\r\n            Logout\r\n          </button>\r\n          <!--<button mdTooltip=\"Register here\"  style=\"margin-top: 20px;width: 100%;\" md-raised-button  (click)=\"logout()\">Logout</button>-->\r\n          <button style=\"width: 45%;\" name=\"add\"  type=\"submit\" color=\"primary\"  mdTooltip=\"{{'Add Organisation'}}\"  md-raised-button  (click)=\"addOrganisationToUser()\" >\r\n            Add\r\n          </button>\r\n\r\n\r\n        </div>\r\n      </div>\r\n     </md-card-content>\r\n</md-card>\r\n</div>\r\n"
+module.exports = "<div class=\"main\">\n<md-card>\n  <md-card-content>\n    <div class=\"imgcontainer\"  style=\"text-align: center\">\n      <img style=\"padding: 5px;background-color: darkgray; width: 60%;\" src=\"../../../../images/fretron_logo.png\" alt=\"Avatar\"  >\n    </div>\n    <span><b>You don't have any organisation yet.</b><br> Kindly register any your organisation here: </span>\n\n    <!--<form (ngSubmit)=\"addOrganisationToUser()\" #addOgForm=\"ngForm\">-->\n\n      <div>\n        <div fxLayout=\"row\" >\n          <div fxFlex=\"100\">\n          <md-input-container style=\"width: 100%\" >\n            <input type=\"text\" value=\" \" name=\"orgName\" placeholder=\"Organisation Name\"  mdTooltip=\"{{'This field is required'}}\"  mdInput [(ngModel)]=\"orgName\" required>\n          </md-input-container>\n          </div>\n        </div>\n\n        <div fxLayout=\"row\" >\n          <div fxFlex=\"100\">\n          <md-input-container style=\"width: 100%\" >\n            <input type=\"text\" value=\" \" name=\"OrganisationId\" placeholder=\"Organisation Id\"  mdTooltip=\"{{'This field is required'}}\"  mdInput [(ngModel)]=\"userOrgId\" required>\n          </md-input-container>\n          </div>\n        </div>\n\n        <div fxLayout=\"row\" >\n          <div fxFlex=\"100\">\n          <md-select [(ngModel)]=\"orgType\" value=\" \" style=\"width: 100%\" name=\"OrganisationType\">\n            <md-option value=\"TRANSPORTER\">TRANSPORTER</md-option>\n            <md-option value=\"FLEET_OWNER\">FLEET OWNER</md-option>\n            <md-option value=\"FLEET_OWNER_AGENT\">FLEET OWNER AGENT</md-option>\n          </md-select>\n        </div>\n        </div>\n        <div style=\"text-align: center;padding: 15px;\">\n\n          <button style=\"width: 45%;\" mdTooltip= \"{{'Logout'}}\"  md-raised-button color=\"primary\" (click)=\"Logout()\" >\n            Logout\n          </button>\n          <!--<button mdTooltip=\"Register here\"  style=\"margin-top: 20px;width: 100%;\" md-raised-button  (click)=\"logout()\">Logout</button>-->\n          <button style=\"width: 45%;\" name=\"add\"  type=\"submit\" color=\"primary\"  mdTooltip=\"{{'Add Organisation'}}\"  md-raised-button  (click)=\"addOrganisationToUser()\" >\n            Add\n          </button>\n\n\n        </div>\n      </div>\n     </md-card-content>\n</md-card>\n</div>\n"
 
 /***/ }),
 
@@ -1370,16 +1360,16 @@ module.exports = __webpack_require__(171);
 
 /***/ }),
 
-/***/ 40:
+/***/ 39:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__(137);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginServices; });

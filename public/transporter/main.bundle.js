@@ -18,18 +18,18 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_gendir lazy recursive";
 /***/ }),
 
 /***/ "../../../../../src/app/app.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'app';
@@ -37,159 +37,106 @@ var AppComponent = (function () {
     return AppComponent;
 }());
 AppComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    core_1.Component({
         selector: 'app-root',
         template: '<router-outlet></router-outlet>'
     })
 ], AppComponent);
-
+exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/app.module.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/@angular/platform-browser/animations.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__router_module_router_module_routing_module__ = __webpack_require__("../../../../../src/app/router-module/router-module-routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angular_font_awesome_angular_font_awesome__ = __webpack_require__("../../../../angular-font-awesome/angular-font-awesome.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_shipment_status_shipment_status_component__ = __webpack_require__("../../../../../src/app/components/shipment-status/shipment-status.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_ng2_charts__ = __webpack_require__("../../../../ng2-charts/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_ng2_charts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_ng2_charts__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_flex_layout__ = __webpack_require__("../../../flex-layout/@angular/flex-layout.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_manual_shipment_status_manual_shipment_status_component__ = __webpack_require__("../../../../../src/app/components/manual-shipment-status/manual-shipment-status.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__filters_filter__ = __webpack_require__("../../../../../src/app/filters/filter.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__filters_deviceFilter__ = __webpack_require__("../../../../../src/app/filters/deviceFilter.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__filters_shipmentFilter__ = __webpack_require__("../../../../../src/app/filters/shipmentFilter.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__filters_searchOrgFilter__ = __webpack_require__("../../../../../src/app/filters/searchOrgFilter.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__filters_sortFilter__ = __webpack_require__("../../../../../src/app/filters/sortFilter.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__filters_searchDeviceFilter__ = __webpack_require__("../../../../../src/app/filters/searchDeviceFilter.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_device_dashboard_device_dashboard_component__ = __webpack_require__("../../../../../src/app/components/device-dashboard/device-dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_new_shipment_new_shipment_component__ = __webpack_require__("../../../../../src/app/components/new-shipment/new-shipment.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_ng_pick_datetime_picker_module__ = __webpack_require__("../../../../ng-pick-datetime/picker.module.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_ng_pick_datetime_picker_module___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_22_ng_pick_datetime_picker_module__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_shipment_services__ = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__services_tracker_services__ = __webpack_require__("../../../../../src/app/services/tracker-services.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__services_manage_organisation_services__ = __webpack_require__("../../../../../src/app/services/manage-organisation-services.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__services_authorization_services__ = __webpack_require__("../../../../../src/app/services/authorization-services.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__services_device_services__ = __webpack_require__("../../../../../src/app/services/device-services.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_30_angular_2_local_storage__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__ = __webpack_require__("../../../../../src/app/reducers/info_store.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_dialog_confirm_device_return_confirm_device_return_component__ = __webpack_require__("../../../../../src/app/components/dialog/confirm-device-return/confirm-device-return.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_dialog_assign_vehicle_assign_vehicle_component__ = __webpack_require__("../../../../../src/app/components/dialog/assign-vehicle/assign-vehicle.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_dialog_mark_as_required_mark_as_required_component__ = __webpack_require__("../../../../../src/app/components/dialog/mark-as-required/mark-as-required.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_tracker_shipment_status_tracker_shipment_status_component__ = __webpack_require__("../../../../../src/app/components/tracker-shipment-status/tracker-shipment-status.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_edit_shipment_location_edit_shipment_location_component__ = __webpack_require__("../../../../../src/app/components/edit-shipment-location/edit-shipment-location.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__components_user_profile_user_profile_component__ = __webpack_require__("../../../../../src/app/components/user-profile/user-profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__components_add_organisation_add_organisation_component__ = __webpack_require__("../../../../../src/app/components/add-organisation/add-organisation.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__components_settings_component_settings_component_component__ = __webpack_require__("../../../../../src/app/components/settings-component/settings-component.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__components_manage_organisation_manage_organisation_component__ = __webpack_require__("../../../../../src/app/components/manage-organisation/manage-organisation.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__components_shipment_management_shipment_management_component__ = __webpack_require__("../../../../../src/app/components/shipment-management/shipment-management.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__services_shipment_mgmt_services__ = __webpack_require__("../../../../../src/app/services/shipment-mgmt-services.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__services_manual_shipment_service__ = __webpack_require__("../../../../../src/app/services/manual-shipment-service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__components_user_management_console_user_management_console_component__ = __webpack_require__("../../../../../src/app/components/user-management-console/user-management-console.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__components_user_management_console_users_list_users_list_component__ = __webpack_require__("../../../../../src/app/components/user-management-console/users-list/users-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__services_user_management_services__ = __webpack_require__("../../../../../src/app/services/user-management-services.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__components_freight_location_components_freight_location_picker_freight_location_picker_component__ = __webpack_require__("../../../../../src/app/components/freight-location-components/freight-location-picker/freight-location-picker.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__components_freight_location_components_freight_location_creater_freight_location_creater_component__ = __webpack_require__("../../../../../src/app/components/freight-location-components/freight-location-creater/freight-location-creater.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__reducers_user_management_store__ = __webpack_require__("../../../../../src/app/reducers/user-management-store.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__services_logout_service__ = __webpack_require__("../../../../../src/app/services/logout-service.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var platform_browser_1 = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var core_2 = __webpack_require__("../../../../@agm/core/index.js");
+var app_component_1 = __webpack_require__("../../../../../src/app/app.component.ts");
+var animations_1 = __webpack_require__("../../../platform-browser/@angular/platform-browser/animations.es5.js");
+var dashboard_component_1 = __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.ts");
+var router_module_routing_module_1 = __webpack_require__("../../../../../src/app/router-module/router-module-routing.module.ts");
+var material_1 = __webpack_require__("../../../material/@angular/material.es5.js");
+var angular_font_awesome_1 = __webpack_require__("../../../../angular-font-awesome/angular-font-awesome.ts");
+var shipment_status_component_1 = __webpack_require__("../../../../../src/app/components/shipment-status/shipment-status.component.ts");
+var ng2_charts_1 = __webpack_require__("../../../../ng2-charts/index.js");
+var flex_layout_1 = __webpack_require__("../../../flex-layout/@angular/flex-layout.es5.js");
+var manual_shipment_status_component_1 = __webpack_require__("../../../../../src/app/components/manual-shipment-status/manual-shipment-status.component.ts");
+var core_3 = __webpack_require__("../../../../@agm/core/index.js");
+var forms_1 = __webpack_require__("../../../forms/@angular/forms.es5.js");
+var filter_1 = __webpack_require__("../../../../../src/app/filters/filter.ts");
+var deviceFilter_1 = __webpack_require__("../../../../../src/app/filters/deviceFilter.ts");
+var shipmentFilter_1 = __webpack_require__("../../../../../src/app/filters/shipmentFilter.ts");
+var searchOrgFilter_1 = __webpack_require__("../../../../../src/app/filters/searchOrgFilter.ts");
+var sortFilter_1 = __webpack_require__("../../../../../src/app/filters/sortFilter.ts");
+var searchDeviceFilter_1 = __webpack_require__("../../../../../src/app/filters/searchDeviceFilter.ts");
+var device_dashboard_component_1 = __webpack_require__("../../../../../src/app/components/device-dashboard/device-dashboard.component.ts");
+var new_shipment_component_1 = __webpack_require__("../../../../../src/app/components/new-shipment/new-shipment.component.ts");
+var picker_module_1 = __webpack_require__("../../../../ng-pick-datetime/picker.module.js");
+var shipment_services_1 = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
+var tracker_services_1 = __webpack_require__("../../../../../src/app/services/tracker-services.ts");
+var manage_organisation_services_1 = __webpack_require__("../../../../../src/app/services/manage-organisation-services.ts");
 // import {TripServices} from "./services/tripServices";
-
-
-
-
-
+var authorization_services_1 = __webpack_require__("../../../../../src/app/services/authorization-services.ts");
+var device_services_1 = __webpack_require__("../../../../../src/app/services/device-services.ts");
+var http_1 = __webpack_require__("../../../http/@angular/http.es5.js");
+var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
+var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
 //import {TranslateModule} from 'ng2-translate';
-
-
-
-
-
-
-
-
-
-
-
+var info_store_1 = __webpack_require__("../../../../../src/app/reducers/info_store.ts");
+var confirm_device_return_component_1 = __webpack_require__("../../../../../src/app/components/dialog/confirm-device-return/confirm-device-return.component.ts");
+var assign_vehicle_component_1 = __webpack_require__("../../../../../src/app/components/dialog/assign-vehicle/assign-vehicle.component.ts");
+var mark_as_required_component_1 = __webpack_require__("../../../../../src/app/components/dialog/mark-as-required/mark-as-required.component.ts");
+var tracker_shipment_status_component_1 = __webpack_require__("../../../../../src/app/components/tracker-shipment-status/tracker-shipment-status.component.ts");
+var edit_shipment_location_component_1 = __webpack_require__("../../../../../src/app/components/edit-shipment-location/edit-shipment-location.component.ts");
+var user_profile_component_1 = __webpack_require__("../../../../../src/app/components/user-profile/user-profile.component.ts");
+var add_organisation_component_1 = __webpack_require__("../../../../../src/app/components/add-organisation/add-organisation.component.ts");
+var settings_component_component_1 = __webpack_require__("../../../../../src/app/components/settings-component/settings-component.component.ts");
+var manage_organisation_component_1 = __webpack_require__("../../../../../src/app/components/manage-organisation/manage-organisation.component.ts");
+var shipment_management_component_1 = __webpack_require__("../../../../../src/app/components/shipment-management/shipment-management.component.ts");
 // import { ShipmentGroupsListComponent } from './components/shipment-management/shipment-groups-list/shipment-groups-list.component';
 // import { EditShipmentGroupsComponent } from './components/shipment-management/edit-shipment-groups/edit-shipment-groups.component';
 // import { ShipmentListInGroupComponent } from './components/shipment-management/shipment-list-in-group/shipment-list-in-group.component';
-
-
-
-
-
-
-
-
-
-var stores = { shipmentIdList: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["n" /* shipmentIdList */],
-    token: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["q" /* token */],
-    allShipmentList: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["c" /* allShipmentList */],
-    shipmentDetail: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["l" /* shipmentDetail */],
-    newShipment: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["k" /* newShipment */],
-    allDevicesList: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["b" /* allDevicesList */],
-    checkVehicle: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["e" /* checkVehicle */],
-    deviceDetails: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["j" /* deviceDetails */],
-    closeDialog: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["f" /* closeDialog */],
-    createOrgRes: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["h" /* createOrgRes */],
-    switchOrganisationResp: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["o" /* switchOrganisationResp */],
-    customerDetails: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["i" /* customerDetails */],
-    shipmentGroupList: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["m" /* shipmentGroupList */],
-    createGroupRes: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["g" /* createGroupRes */],
-    deleteUserResponse: __WEBPACK_IMPORTED_MODULE_49__reducers_user_management_store__["a" /* deleteUserResponse */],
-    getAllUserList: __WEBPACK_IMPORTED_MODULE_49__reducers_user_management_store__["c" /* getAllUserList */],
-    updateUserStatusResponse: __WEBPACK_IMPORTED_MODULE_49__reducers_user_management_store__["d" /* updateUserStatusResponse */],
-    existingUserResponse: __WEBPACK_IMPORTED_MODULE_49__reducers_user_management_store__["b" /* existingUserResponse */],
-    switchShipment: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["p" /* switchShipment */],
-    addDevice: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["a" /* addDevice */],
-    authorization: __WEBPACK_IMPORTED_MODULE_31__reducers_info_store__["d" /* authorization */]
+var shipment_mgmt_services_1 = __webpack_require__("../../../../../src/app/services/shipment-mgmt-services.ts");
+var manual_shipment_service_1 = __webpack_require__("../../../../../src/app/services/manual-shipment-service.ts");
+var user_management_console_component_1 = __webpack_require__("../../../../../src/app/components/user-management-console/user-management-console.component.ts");
+var users_list_component_1 = __webpack_require__("../../../../../src/app/components/user-management-console/users-list/users-list.component.ts");
+var user_management_services_1 = __webpack_require__("../../../../../src/app/services/user-management-services.ts");
+var freight_location_picker_component_1 = __webpack_require__("../../../../../src/app/components/freight-location-components/freight-location-picker/freight-location-picker.component.ts");
+var freight_location_creater_component_1 = __webpack_require__("../../../../../src/app/components/freight-location-components/freight-location-creater/freight-location-creater.component.ts");
+var user_management_store_1 = __webpack_require__("../../../../../src/app/reducers/user-management-store.ts");
+var logout_service_1 = __webpack_require__("../../../../../src/app/services/logout-service.ts");
+var stores = { shipmentIdList: info_store_1.shipmentIdList,
+    token: info_store_1.token,
+    allShipmentList: info_store_1.allShipmentList,
+    shipmentDetail: info_store_1.shipmentDetail,
+    newShipment: info_store_1.newShipment,
+    allDevicesList: info_store_1.allDevicesList,
+    checkVehicle: info_store_1.checkVehicle,
+    deviceDetails: info_store_1.deviceDetails,
+    closeDialog: info_store_1.closeDialog,
+    createOrgRes: info_store_1.createOrgRes,
+    switchOrganisationResp: info_store_1.switchOrganisationResp,
+    customerDetails: info_store_1.customerDetails,
+    shipmentGroupList: info_store_1.shipmentGroupList,
+    createGroupRes: info_store_1.createGroupRes,
+    deleteUserResponse: user_management_store_1.deleteUserResponse,
+    getAllUserList: user_management_store_1.getAllUserList,
+    updateUserStatusResponse: user_management_store_1.updateUserStatusResponse,
+    existingUserResponse: user_management_store_1.existingUserResponse,
+    switchShipment: info_store_1.switchShipment,
+    addDevice: info_store_1.addDevice,
+    authorization: info_store_1.authorization
     // checkDevice
 };
 var AppModule = (function () {
@@ -198,79 +145,79 @@ var AppModule = (function () {
     return AppModule;
 }());
 AppModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
+    core_1.NgModule({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_5__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__components_shipment_status_shipment_status_component__["a" /* ShipmentStatusComponent */],
-            __WEBPACK_IMPORTED_MODULE_12__components_manual_shipment_status_manual_shipment_status_component__["a" /* ManualShipmentStatusComponent */],
-            __WEBPACK_IMPORTED_MODULE_15__filters_deviceFilter__["a" /* DeviceFilter */], __WEBPACK_IMPORTED_MODULE_16__filters_shipmentFilter__["a" /* ShipmentFilter */], __WEBPACK_IMPORTED_MODULE_14__filters_filter__["a" /* SearchFilter */], __WEBPACK_IMPORTED_MODULE_18__filters_sortFilter__["a" /* SortFilter */], __WEBPACK_IMPORTED_MODULE_19__filters_searchDeviceFilter__["a" /* SearchDeviceFilter */], __WEBPACK_IMPORTED_MODULE_17__filters_searchOrgFilter__["a" /* SearchOrgFilter */],
-            __WEBPACK_IMPORTED_MODULE_20__components_device_dashboard_device_dashboard_component__["a" /* DeviceDashboard */], __WEBPACK_IMPORTED_MODULE_21__components_new_shipment_new_shipment_component__["a" /* NewShipment */],
-            __WEBPACK_IMPORTED_MODULE_32__components_dialog_confirm_device_return_confirm_device_return_component__["a" /* ConfirmDeviceReturnComponent */], __WEBPACK_IMPORTED_MODULE_33__components_dialog_assign_vehicle_assign_vehicle_component__["a" /* AssignVehicleComponent */], __WEBPACK_IMPORTED_MODULE_34__components_dialog_mark_as_required_mark_as_required_component__["a" /* MarkAsRequiredComponent */],
-            __WEBPACK_IMPORTED_MODULE_35__components_tracker_shipment_status_tracker_shipment_status_component__["a" /* TrackerShipmentStatusComponent */],
-            __WEBPACK_IMPORTED_MODULE_36__components_edit_shipment_location_edit_shipment_location_component__["a" /* EditShipmentLocationComponent */],
-            __WEBPACK_IMPORTED_MODULE_37__components_user_profile_user_profile_component__["a" /* UserProfile */],
-            __WEBPACK_IMPORTED_MODULE_38__components_add_organisation_add_organisation_component__["a" /* AddOrganisationComponent */],
-            __WEBPACK_IMPORTED_MODULE_39__components_settings_component_settings_component_component__["a" /* SettingsComponentComponent */],
-            __WEBPACK_IMPORTED_MODULE_40__components_manage_organisation_manage_organisation_component__["a" /* ManageOrganisationComponent */],
-            __WEBPACK_IMPORTED_MODULE_41__components_shipment_management_shipment_management_component__["a" /* ShipmentManagementComponent */],
+            app_component_1.AppComponent,
+            dashboard_component_1.DashboardComponent,
+            shipment_status_component_1.ShipmentStatusComponent,
+            manual_shipment_status_component_1.ManualShipmentStatusComponent,
+            deviceFilter_1.DeviceFilter, shipmentFilter_1.ShipmentFilter, filter_1.SearchFilter, sortFilter_1.SortFilter, searchDeviceFilter_1.SearchDeviceFilter, searchOrgFilter_1.SearchOrgFilter,
+            device_dashboard_component_1.DeviceDashboard, new_shipment_component_1.NewShipment,
+            confirm_device_return_component_1.ConfirmDeviceReturnComponent, assign_vehicle_component_1.AssignVehicleComponent, mark_as_required_component_1.MarkAsRequiredComponent,
+            tracker_shipment_status_component_1.TrackerShipmentStatusComponent,
+            edit_shipment_location_component_1.EditShipmentLocationComponent,
+            user_profile_component_1.UserProfile,
+            add_organisation_component_1.AddOrganisationComponent,
+            settings_component_component_1.SettingsComponentComponent,
+            manage_organisation_component_1.ManageOrganisationComponent,
+            shipment_management_component_1.ShipmentManagementComponent,
             // ShipmentGroupsListComponent,
             // EditShipmentGroupsComponent,
-            __WEBPACK_IMPORTED_MODULE_45__components_user_management_console_users_list_users_list_component__["a" /* UsersListComponent */],
+            users_list_component_1.UsersListComponent,
             // ShipmentListInGroupComponent,
-            __WEBPACK_IMPORTED_MODULE_44__components_user_management_console_user_management_console_component__["a" /* UserManagementConsoleComponent */],
+            user_management_console_component_1.UserManagementConsoleComponent,
             //*************freight picker */
-            __WEBPACK_IMPORTED_MODULE_47__components_freight_location_components_freight_location_picker_freight_location_picker_component__["a" /* FreightLocationPickerComponent */],
-            __WEBPACK_IMPORTED_MODULE_48__components_freight_location_components_freight_location_creater_freight_location_creater_component__["a" /* FreightLocationCreaterComponent */],
+            freight_location_picker_component_1.FreightLocationPickerComponent,
+            freight_location_creater_component_1.FreightLocationCreaterComponent,
         ],
         entryComponents: [
-            __WEBPACK_IMPORTED_MODULE_32__components_dialog_confirm_device_return_confirm_device_return_component__["a" /* ConfirmDeviceReturnComponent */],
-            __WEBPACK_IMPORTED_MODULE_33__components_dialog_assign_vehicle_assign_vehicle_component__["a" /* AssignVehicleComponent */],
-            __WEBPACK_IMPORTED_MODULE_34__components_dialog_mark_as_required_mark_as_required_component__["a" /* MarkAsRequiredComponent */],
+            confirm_device_return_component_1.ConfirmDeviceReturnComponent,
+            assign_vehicle_component_1.AssignVehicleComponent,
+            mark_as_required_component_1.MarkAsRequiredComponent,
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_30_angular_2_local_storage__["LocalStorageModule"].withConfig({
+            angular_2_local_storage_1.LocalStorageModule.withConfig({
                 prefix: "my-app",
                 storageType: "localStorage"
             }),
-            __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */], __WEBPACK_IMPORTED_MODULE_28__angular_http__["c" /* HttpModule */], __WEBPACK_IMPORTED_MODULE_28__angular_http__["d" /* JsonpModule */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-            __WEBPACK_IMPORTED_MODULE_6__router_module_router_module_routing_module__["a" /* RouterModuleRoutingModule */],
-            __WEBPACK_IMPORTED_MODULE_2__agm_core__["a" /* AgmCoreModule */].forRoot({
+            platform_browser_1.BrowserModule, http_1.HttpModule, http_1.JsonpModule,
+            animations_1.BrowserAnimationsModule,
+            router_module_routing_module_1.RouterModuleRoutingModule,
+            core_3.AgmCoreModule.forRoot({
                 apiKey: 'AIzaSyBCRowVqghQTO8iJDgOc4QY-GlFwsn85_I',
                 libraries: ["places"]
             }),
-            __WEBPACK_IMPORTED_MODULE_13__angular_forms__["FormsModule"],
-            __WEBPACK_IMPORTED_MODULE_13__angular_forms__["ReactiveFormsModule"],
-            __WEBPACK_IMPORTED_MODULE_29__ngrx_store__["b" /* StoreModule */].provideStore(stores),
-            __WEBPACK_IMPORTED_MODULE_8_angular_font_awesome_angular_font_awesome__["a" /* AngularFontAwesomeModule */], __WEBPACK_IMPORTED_MODULE_22_ng_pick_datetime_picker_module__["DateTimePickerModule"],
-            __WEBPACK_IMPORTED_MODULE_7__angular_material__["l" /* MdInputModule */],
-            __WEBPACK_IMPORTED_MODULE_7__angular_material__["v" /* MdToolbarModule */],
-            __WEBPACK_IMPORTED_MODULE_7__angular_material__["j" /* MdGridListModule */],
-            __WEBPACK_IMPORTED_MODULE_7__angular_material__["u" /* MdTabsModule */],
-            __WEBPACK_IMPORTED_MODULE_7__angular_material__["c" /* MdCardModule */],
-            __WEBPACK_IMPORTED_MODULE_7__angular_material__["d" /* MdCheckboxModule */],
-            __WEBPACK_IMPORTED_MODULE_7__angular_material__["m" /* MdMenuModule */],
-            __WEBPACK_IMPORTED_MODULE_7__angular_material__["p" /* MdRadioModule */],
-            __WEBPACK_IMPORTED_MODULE_10_ng2_charts__["ChartsModule"],
-            __WEBPACK_IMPORTED_MODULE_7__angular_material__["a" /* MdButtonModule */],
-            __WEBPACK_IMPORTED_MODULE_11__angular_flex_layout__["a" /* FlexLayoutModule */],
-            __WEBPACK_IMPORTED_MODULE_7__angular_material__["t" /* MdSnackBarModule */],
-            __WEBPACK_IMPORTED_MODULE_7__angular_material__["q" /* MdSelectModule */],
-            __WEBPACK_IMPORTED_MODULE_7__angular_material__["b" /* MdButtonToggleModule */], __WEBPACK_IMPORTED_MODULE_7__angular_material__["n" /* MdPaginatorModule */], __WEBPACK_IMPORTED_MODULE_7__angular_material__["i" /* MdExpansionModule */],
-            __WEBPACK_IMPORTED_MODULE_7__angular_material__["e" /* MdChipsModule */],
-            __WEBPACK_IMPORTED_MODULE_7__angular_material__["g" /* MdDialogModule */],
-            __WEBPACK_IMPORTED_MODULE_7__angular_material__["o" /* MdProgressSpinnerModule */],
-            __WEBPACK_IMPORTED_MODULE_7__angular_material__["r" /* MdSlideToggleModule */],
+            forms_1.FormsModule,
+            forms_1.ReactiveFormsModule,
+            store_1.StoreModule.provideStore(stores),
+            angular_font_awesome_1.AngularFontAwesomeModule, picker_module_1.DateTimePickerModule,
+            material_1.MdInputModule,
+            material_1.MdToolbarModule,
+            material_1.MdGridListModule,
+            material_1.MdTabsModule,
+            material_1.MdCardModule,
+            material_1.MdCheckboxModule,
+            material_1.MdMenuModule,
+            material_1.MdRadioModule,
+            ng2_charts_1.ChartsModule,
+            material_1.MdButtonModule,
+            flex_layout_1.FlexLayoutModule,
+            material_1.MdSnackBarModule,
+            material_1.MdSelectModule,
+            material_1.MdButtonToggleModule, material_1.MdPaginatorModule, material_1.MdExpansionModule,
+            material_1.MdChipsModule,
+            material_1.MdDialogModule,
+            material_1.MdProgressSpinnerModule,
+            material_1.MdSlideToggleModule,
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_7__angular_material__["k" /* MdIconRegistry */],
-            __WEBPACK_IMPORTED_MODULE_13__angular_forms__["NgModel"], __WEBPACK_IMPORTED_MODULE_29__ngrx_store__["b" /* StoreModule */], __WEBPACK_IMPORTED_MODULE_23__services_shipment_services__["a" /* ShipmentServices */], __WEBPACK_IMPORTED_MODULE_26__services_authorization_services__["a" /* AuthorizationServices */],
-            __WEBPACK_IMPORTED_MODULE_27__services_device_services__["a" /* DeviceServices */], __WEBPACK_IMPORTED_MODULE_2__agm_core__["c" /* GoogleMapsAPIWrapper */], __WEBPACK_IMPORTED_MODULE_24__services_tracker_services__["a" /* TrackerServices */],
-            __WEBPACK_IMPORTED_MODULE_25__services_manage_organisation_services__["a" /* ManageOrganisationService */], __WEBPACK_IMPORTED_MODULE_42__services_shipment_mgmt_services__["a" /* ShipmentMgmtService */], __WEBPACK_IMPORTED_MODULE_46__services_user_management_services__["a" /* UserManagementService */], __WEBPACK_IMPORTED_MODULE_50__services_logout_service__["a" /* LogoutServices */], __WEBPACK_IMPORTED_MODULE_43__services_manual_shipment_service__["a" /* ManualShipmentServices */]],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */]]
+        providers: [material_1.MdIconRegistry,
+            forms_1.NgModel, store_1.StoreModule, shipment_services_1.ShipmentServices, authorization_services_1.AuthorizationServices,
+            device_services_1.DeviceServices, core_2.GoogleMapsAPIWrapper, tracker_services_1.TrackerServices,
+            manage_organisation_services_1.ManageOrganisationService, shipment_mgmt_services_1.ShipmentMgmtService, user_management_services_1.UserManagementService, logout_service_1.LogoutServices, manual_shipment_service_1.ManualShipmentServices],
+        bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
-
+exports.AppModule = AppModule;
 //# sourceMappingURL=app.module.js.map
 
 /***/ }),
@@ -301,17 +248,10 @@ module.exports = "<div class=\"main\">\n  <md-card>\n    <md-card-content>\n    
 /***/ }),
 
 /***/ "../../../../../src/app/components/add-organisation/add-organisation.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddOrganisationComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_manage_organisation_services__ = __webpack_require__("../../../../../src/app/services/manage-organisation-services.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -321,12 +261,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+var router_1 = __webpack_require__("../../../router/@angular/router.es5.js");
+var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
+var manage_organisation_services_1 = __webpack_require__("../../../../../src/app/services/manage-organisation-services.ts");
+var material_1 = __webpack_require__("../../../material/@angular/material.es5.js");
 var AddOrganisationComponent = (function () {
     function AddOrganisationComponent(localStorageService, _router, _store, _manageOrganisationServices, snackBar) {
         var _this = this;
@@ -442,14 +383,14 @@ var AddOrganisationComponent = (function () {
     return AddOrganisationComponent;
 }());
 AddOrganisationComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    core_1.Component({
         selector: 'app-add-organisation',
         template: __webpack_require__("../../../../../src/app/components/add-organisation/add-organisation.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/add-organisation/add-organisation.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["a" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["a" /* Store */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__services_manage_organisation_services__["a" /* ManageOrganisationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_manage_organisation_services__["a" /* ManageOrganisationService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__angular_material__["s" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_material__["s" /* MdSnackBar */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _a || Object, typeof (_b = typeof router_1.Router !== "undefined" && router_1.Router) === "function" && _b || Object, typeof (_c = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _c || Object, typeof (_d = typeof manage_organisation_services_1.ManageOrganisationService !== "undefined" && manage_organisation_services_1.ManageOrganisationService) === "function" && _d || Object, typeof (_e = typeof material_1.MdSnackBar !== "undefined" && material_1.MdSnackBar) === "function" && _e || Object])
 ], AddOrganisationComponent);
-
+exports.AddOrganisationComponent = AddOrganisationComponent;
 var _a, _b, _c, _d, _e;
 //# sourceMappingURL=add-organisation.component.js.map
 
@@ -481,18 +422,10 @@ module.exports = "\n\n<!--    ************************ abhinav code ************
 /***/ }),
 
 /***/ "../../../../../src/app/components/dashboard/dashboard.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_authorization_services__ = __webpack_require__("../../../../../src/app/services/authorization-services.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_logout_service__ = __webpack_require__("../../../../../src/app/services/logout-service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -502,13 +435,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var router_1 = __webpack_require__("../../../router/@angular/router.es5.js");
+var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+var authorization_services_1 = __webpack_require__("../../../../../src/app/services/authorization-services.ts");
+var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
+var logout_service_1 = __webpack_require__("../../../../../src/app/services/logout-service.ts");
+var material_1 = __webpack_require__("../../../material/@angular/material.es5.js");
 var DashboardComponent = (function () {
     function DashboardComponent(logoutService, snackBar, _store, authorization, localStorageService, _router) {
         var _this = this;
@@ -622,14 +556,14 @@ var DashboardComponent = (function () {
     return DashboardComponent;
 }());
 DashboardComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    core_1.Component({
         selector: 'app-dashboard',
         template: __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5__services_logout_service__["a" /* LogoutServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_logout_service__["a" /* LogoutServices */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_6__angular_material__["s" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__angular_material__["s" /* MdSnackBar */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__ngrx_store__["a" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ngrx_store__["a" /* Store */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_authorization_services__["a" /* AuthorizationServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_authorization_services__["a" /* AuthorizationServices */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__["LocalStorageService"]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _f || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof logout_service_1.LogoutServices !== "undefined" && logout_service_1.LogoutServices) === "function" && _a || Object, typeof (_b = typeof material_1.MdSnackBar !== "undefined" && material_1.MdSnackBar) === "function" && _b || Object, typeof (_c = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _c || Object, typeof (_d = typeof authorization_services_1.AuthorizationServices !== "undefined" && authorization_services_1.AuthorizationServices) === "function" && _d || Object, typeof (_e = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _e || Object, typeof (_f = typeof router_1.Router !== "undefined" && router_1.Router) === "function" && _f || Object])
 ], DashboardComponent);
-
+exports.DashboardComponent = DashboardComponent;
 var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=dashboard.component.js.map
 
@@ -656,26 +590,15 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/device-dashboard/device-dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" style=\"min-width: 700px;box-sizing: border-box;overflow: auto\">\n  <md-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></md-spinner>\n  <div style=\"display:flex;padding:7px\" >\n    <div style=\"display:flex;\">\n      <button (click)=\"selectedFilter = ''\" md-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == ''?'#1976d2':''\"  [style.color]=\"selectedFilter == ''?'#FFFFFF':''\">{{countFilterData['all']}} <span>All</span></button>\n      <button (click)=\"selectedFilter = 'active'\" md-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == 'active'?'#1976d2':''\" [style.color]=\"selectedFilter == 'active'?'#FFFFFF':''\" style=\"margin-left: 15px\">{{countFilterData['active']}} <span>Active</span></button>\n      <button (click)=\"selectedFilter = 'available'\" md-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == 'available'?'#1976d2':''\" [style.color]=\"selectedFilter == 'available'?'#FFFFFF':''\" style=\"margin-left: 15px\">{{countFilterData['available']}} <span>Available</span></button>\n      <!--<button (click)=\"selectedFilter = 'repairing'\" md-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == 'repairing'?'#1976d2':''\" [style.color]=\"selectedFilter == 'repairing'?'#FFFFFF':''\" style=\"margin-left: 15px;width: 23%;\"> {{countFilterData['repairing']}} <span style=\"white-space: nowrap\">Not Working</span></button>-->\n    </div>\n    <div style=\"margin-left: auto;display: flex\">\n      <div >\n        <button class=\"custome-button align-vert-center\"  md-button  (click)=\"showAddDevice()\">+add Tracker</button>\n      </div>\n\n      <div style=\"position:relative;margin-top: 4px;\" >\n        <i  class=\"fa fa-search \"  aria-hidden=\"true\" style=\"margin-top: 7px;right: 7px;position: absolute;font-size: 13px;color: black;\"></i>\n        <input myAutofocus  [(ngModel)]=\"search\" class=\"expand-search\"  placeholder=\"Search\">\n      </div>\n    </div>\n  </div>\n  <hr>\n  <!--************************  dialog *********************************-->\n  <div *ngIf=\"isAddDeviceDialog\"  class=\"mycustomDialog\" style=\"padding-top: 70px;overflow:unset\">\n    <div class=\"modal-content\" style=\"width: 60%;min-width: 250px;overflow:unset;max-width: 360px;height:40vh;\">\n      <div class=\"modal-header\">\n        <span class=\"close\" (click)=\"isAddDeviceDialog=false\" >&times;</span>\n        <div>\n          <label>Add Device</label>\n        </div>\n      </div>\n\n      <div  style=\"font-size: 15px;margin-left:20px;margin-top: 20px;\">          \n        <md-input-container style=\"width: 80%;\">\n          <input   style=\"width: 100%;\" placeholder=\"IMEI Number\" mdInput [(ngModel)]=\"deviceIMEI\"  name=\"deviceIMEI\" id=\"deviceIMEI\" required>\n        </md-input-container>\n      </div>\n      <div  style=\"font-size: 15px;margin-left:20px\" >          \n        <md-input-container style=\"width: 80%;\">\n          <input style=\"width:100%;\" placeholder=\"Manufacturer Name\" mdInput [(ngModel)]=\"manufacturerName\"  name=\"manufacturerName\" id=\"manufacturerName\">\n        </md-input-container>\n      </div>\n      <div style=\"margin-top: 30px;\">\n          <button md-raised-button  style=\"margin-left: 50px;\" (click)=\"isAddDeviceDialog=false\" >Cancel</button>\n          <button md-raised-button  style=\"margin-left: 20px;width: 30%\" (click)=\"confirmAddDevice()\" >Ok</button>\n      </div>\n    </div>\n  </div>\n<!-- close Switch Shipment dialog -->\n<div  style=\"overflow:auto;max-height:100vh;display:flex\" >\n    <div style=\"overflow-y:auto;overflow-x:hidden;max-height:100vh; width: 100%;margin-right: -1px;\" >\n      <div  *ngFor=\"let selDevice of allDeviceList | deviceType: ['status' ,selectedFilter] | searchDeviceFilter:['imei',search]\" >\n        <md-card  *ngIf=\"selDevice['device']['status'] =='active'\" style=\"margin-top:5px;\" (click)=\"selectedShipmentDetail(selDevice['shipment'])\" >\n          <div fxLayout=\"row\" >\n            <div style=\"font-size: 12px;width: 100%\" >\n              <div fxLayout=\"row\" class=\"margins\" >\n                <span fxFlex >{{selDevice['device']?.imei}}</span>\n                <span fxFlex >{{selDevice['shipment']?.shipmentNoExtended}}</span>\n                <span style=\"margin-right: 12px\"  fxFlex ><i style=\"margin-right: 3px\" class=\"fa fa-truck\" aria-hidden=\"true\"></i>{{selDevice['shipment']?.vehicleRegistrationNo}}</span>\n                <!-- <span fxFlex ><i style=\"margin-right: 3px\" class=\"fa fa-user-o\" aria-hidden=\"true\"></i>{{selDevice['shipment']?.driverName}}</span> -->\n              <!-- </div> -->\n  \n              <!-- <div style=\"margin-top: 8px\"  fxLayout=\"row\" class=\"margins\"  > -->\n                <span fxFlex *ngIf=\"!(selDevice.latestGpsState)\" ><i style=\"margin-right: 3px\" class=\"fa fa-location-arrow\" aria-hidden=\"true\"></i>N/A</span>\n                <span fxFlex *ngIf=\"(!(selDevice.latestGpsState?.startLocation?.address) && !(selDevice.latestGpsState?.endLocation?.address))\" ><i style=\"margin-right: 3px\" class=\"fa fa-location-arrow\" aria-hidden=\"true\"></i>N/A</span>                                \n                <span fxFlex *ngIf=\"(selDevice.latestGpsState?.endLocation?.address)\" ><i style=\"margin-right: 3px\" class=\"fa fa-location-arrow\" aria-hidden=\"true\"></i>{{(selDevice?.latestGpsState?.endLocation?.address)?selDevice?.latestGpsState?.endLocation?.address:'N/A'}}</span>\n                <span fxFlex *ngIf=\"(selDevice.latestGpsState?.startLocation?.address && !(selDevice.latestGpsState?.endLocation?.address))\" ><i style=\"margin-right: 3px\" class=\"fa fa-location-arrow\" aria-hidden=\"true\"></i>{{(selDevice?.latestGpsState?.startLocation?.address)?selDevice?.latestGpsState?.startLocation?.address:'N/A'}}</span>                \n                <span fxFlex><label style=\"margin-right: 3px\" ><i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i></label>{{(selDevice['shipment']?.startLocation?.freightLocation?.name)?selDevice['shipment']?.startLocation?.freightLocation?.name:'N/A'}}</span>\n                \n                <span fxFlex ><i style=\"margin-right: 3px\" class=\"fa fa-circle\" aria-hidden=\"true\"></i>{{(selDevice['shipment']?.endLocation?.freightLocation?.name)?selDevice['shipment']?.endLocation?.freightLocation?.name:'N/A'}}</span>\n                \n                <!-- <span fxFlex  ><i style=\"margin-right: 3px\" class=\"fa fa-phone\" aria-hidden=\"true\"></i>{{selDevice['shipment']?.mobileNo}}</span> -->\n                <span fxFlex=\"20\" *ngIf=\"selDevice['shipment']['actualStartTime'] != null\" style=\"white-space: nowrap;\" >Since: {{(selDevice['shipment']?._stateDuration)?selDevice['shipment']?._stateDuration:'0 min'}}</span>\n                \n              </div>\n            </div>\n            <!-- <div style=\"font-size: 11px;\">\n              <div style=\"margin-top: 8px;width: 100px;\" >\n              </div>\n            </div> -->\n            <div style=\"margin-right: 30px;\">\n              <button md-raised-button style=\"margin-top: 3px\" class=\"current-status-button\" >Active</button>\n            </div>\n            <!-- <div style=\"margin-left: auto;margin-right: 10px;\">\n              <button class=\"custome-button fade-sub-header-text align-vert-center\"  md-button (click)=\"openDialogConfirmDeviceReturn(selDevice)\" >+confirm device Return</button>\n            </div> -->\n          </div>\n        </md-card>\n\n        <md-card style=\"margin-top:5px;\"  *ngIf=\"selDevice['device']['status'] =='available'\" >\n          <div fxLayout=\"row\">\n            <div style=\"font-size: 12px;width: 100%\" >\n              <div fxLayout=\"row\" class=\"margins\" >\n                <span fxFlex >{{selDevice['device']['imei']}}</span>\n                <span fxFlex=22 ><i style=\"color: #e39f41;margin-right: 5px;font-size: 14px;\" class=\"fa fa-exclamation-circle\" aria-hidden=\"true\"></i>(Since 29 aug 2017)</span>\n              </div>\n            </div>\n  \n            <div style=\"margin-right: 30px;\">\n              <button md-raised-button style=\"margin-top: 3px;background-color: #21b22e\" class=\"current-status-button\" >Available</button>\n            </div>\n  \n            <!-- <div style=\"margin-right: 30px;\">\n              <button class=\"custome-button fade-sub-header-text align-vert-center\"  md-button (click)=\"openDialogAssignVehicle(selDevice)\">+assign Vehicle</button>\n            </div> -->\n          </div>\n        </md-card>\n      </div>\n    </div>\n    <div *ngIf=\"isShowDetails\" class=\"mycustomDialog\" style=\"padding: 8px 10px;width: 100%;margin-bottom: 10px;\" >\n      <div class=\"modal-content\"  style=\"min-width: 280px;overflow:unset;max-width: 400px;height:45vh;margin-top: 70px;\">\n        <i (click)=\"isShowDetails = false;\" style=\"font-size:24px;float: right;margin-top: 3px;color: rgb(82, 80, 80);cursor:pointer\" class=\"fa fa-times-circle-o\" aria-hidden=\"true\"></i>\n        <div *ngIf=\"trackingType=='Tracker'\"><app-tracker-shipment-status></app-tracker-shipment-status></div>\n      </div>\n    </div>\n</div>\n\n  <!-- <div style=\"overflow:auto;height:calc(100vh - 115px);\" >\n  <div style=\"margin-top: 10px\" *ngFor=\"let selDevice of allDeviceList | deviceType: ['status' ,selectedFilter]\"> -->\n      <!--<div style=\"margin-top: 10px\" *ngFor=\"let selDevice of allDeviceList\">-->\n     \n\n      <!--<md-card style=\"margin-top:5px;\" *ngIf=\"selDevice.device.status=='repairing'\" >-->\n        <!--<div fxLayout=\"row\">-->\n          <!--<div style=\"font-size: 12px;width: 100%\" >-->\n            <!--<div fxLayout=\"row\" class=\"margins\" >-->\n              <!--<span fxFlex >363251425152</span>-->\n            <!--</div>-->\n\n            <!--<div style=\"margin-top: 8px\"  fxLayout=\"row\" class=\"margins\"  >-->\n              <!--<span fxFlex=\"50\" >-->\n                <!--<i style=\"color: #dc2019;margin-right: 5px;font-size: 14px;\" class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i>-->\n                <!--Under Repairing - since 8 days</span>-->\n            <!--</div>-->\n          <!--</div>-->\n\n          <!--<div style=\"margin-right: 30px;\">-->\n            <!--<button md-raised-button style=\"margin-top: 3px;background-color: #dc2019\" class=\"current-status-button\" >Repairing</button>-->\n          <!--</div>-->\n          <!--<div style=\"margin-right: 10px;\">-->\n            <!--<button class=\"custome-button fade-sub-header-text align-vert-center\"  md-button (click)=\"openDialogMarkAsRequired(selDevice)\">+mark as Required</button>-->\n          <!--</div>-->\n        <!--</div>-->\n      <!--</md-card>-->\n  <!-- </div>\n  <div style=\"height:30px\"></div>\n  </div> -->\n</div>\n"
+module.exports = "<div class=\"container\" style=\"min-width: 700px;box-sizing: border-box;overflow: auto\">\n  <md-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></md-spinner>\n  <div style=\"display:flex;padding:7px\" >\n    <div style=\"display:flex;\">\n      <button (click)=\"selectedFilter = ''\" md-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == ''?'#1976d2':''\"  [style.color]=\"selectedFilter == ''?'#FFFFFF':''\">{{countFilterData['all']}} <span>All</span></button>\n      <button (click)=\"selectedFilter = 'active'\" md-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == 'active'?'#1976d2':''\" [style.color]=\"selectedFilter == 'active'?'#FFFFFF':''\" style=\"margin-left: 15px\">{{countFilterData['active']}} <span>Active</span></button>\n      <button (click)=\"selectedFilter = 'available'\" md-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == 'available'?'#1976d2':''\" [style.color]=\"selectedFilter == 'available'?'#FFFFFF':''\" style=\"margin-left: 15px\">{{countFilterData['available']}} <span>Available</span></button>\n      <!--<button (click)=\"selectedFilter = 'repairing'\" md-raised-button class=\"status-button\" [style.background-color]=\"selectedFilter == 'repairing'?'#1976d2':''\" [style.color]=\"selectedFilter == 'repairing'?'#FFFFFF':''\" style=\"margin-left: 15px;width: 23%;\"> {{countFilterData['repairing']}} <span style=\"white-space: nowrap\">Not Working</span></button>-->\n    </div>\n    <div style=\"margin-left: auto;display: flex\">\n      <div >\n        <button class=\"custome-button align-vert-center\"  md-button  (click)=\"showAddDevice()\">+add Tracker</button>\n      </div>\n\n      <div style=\"position:relative;margin-top: 4px;\" >\n        <i  class=\"fa fa-search \"  aria-hidden=\"true\" style=\"margin-top: 7px;right: 7px;position: absolute;font-size: 13px;color: black;\"></i>\n        <input myAutofocus  [(ngModel)]=\"search\" class=\"expand-search\"  placeholder=\"Search\">\n      </div>\n    </div>\n  </div>\n  <hr>\n  <!--************************  dialog *********************************-->\n  <div *ngIf=\"isAddDeviceDialog\"  class=\"mycustomDialog\" style=\"padding-top: 70px;overflow:unset\">\n    <div class=\"modal-content\" style=\"width: 60%;min-width: 250px;overflow:unset;max-width: 360px;height:40vh;\">\n      <div class=\"modal-header\">\n        <span class=\"close\" (click)=\"isAddDeviceDialog=false\" >&times;</span>\n        <div>\n          <label>Add Device</label>\n        </div>\n      </div>\n\n      <div  style=\"font-size: 15px;margin-left:20px;margin-top: 20px;\">          \n        <md-input-container style=\"width: 80%;\">\n          <input   style=\"width: 100%;\" placeholder=\"IMEI Number\" mdInput [(ngModel)]=\"deviceIMEI\"  name=\"deviceIMEI\" id=\"deviceIMEI\" required>\n        </md-input-container>\n      </div>\n      <div  style=\"font-size: 15px;margin-left:20px\" >          \n        <md-input-container style=\"width: 80%;\">\n          <input style=\"width:100%;\" placeholder=\"Manufacturer Name\" mdInput [(ngModel)]=\"manufacturerName\"  name=\"manufacturerName\" id=\"manufacturerName\">\n        </md-input-container>\n      </div>\n      <div style=\"margin-top: 30px;\">\n          <button md-raised-button  style=\"margin-left: 50px;\" (click)=\"isAddDeviceDialog=false\" >Cancel</button>\n          <button md-raised-button  style=\"margin-left: 20px;width: 30%\" (click)=\"confirmAddDevice()\" >Ok</button>\n      </div>\n    </div>\n  </div>\n<!-- close Switch Shipment dialog -->\n<div  style=\"overflow:auto;max-height:100vh;display:flex\" >\n    <div style=\"overflow-y:auto;overflow-x:hidden;max-height:100vh; width: 100%;margin-right: -1px;\" >\n      <div  *ngFor=\"let selDevice of allDeviceList | deviceType: ['status' ,selectedFilter] | searchDeviceFilter:['imei',search]\" >\n        <md-card  *ngIf=\"selDevice['device']['status'] =='active'\" style=\"margin-top:5px;\" (click)=\"selectedShipmentDetail(selDevice['shipment'])\" >\n          <div fxLayout=\"row\" >\n            <div style=\"font-size: 12px;width: 100%\" >\n              <div fxLayout=\"row\" class=\"margins\" >\n                <span fxFlex=20>{{selDevice['device']?.imei}}</span>\n                <span fxFlex=13>{{selDevice['shipment']?.shipmentNoExtended}}</span>\n                <span style=\"margin-right: 12px\"  fxFlex=10><i style=\"margin-right: 3px\" class=\"fa fa-truck\" aria-hidden=\"true\"></i>{{selDevice['shipment']?.vehicleRegistrationNo}}</span>\n                <!-- <span fxFlex ><i style=\"margin-right: 3px\" class=\"fa fa-user-o\" aria-hidden=\"true\"></i>{{selDevice['shipment']?.driverName}}</span> -->\n              <!-- </div> -->\n  \n              <!-- <div style=\"margin-top: 8px\"  fxLayout=\"row\" class=\"margins\"  > -->\n                <span fxFlex=13 *ngIf=\"!(selDevice.latestGpsState)\" ><i style=\"margin-right: 3px\" class=\"fa fa-location-arrow\" aria-hidden=\"true\"></i>N/A1</span>\n                <span fxFlex=13 *ngIf=\"((selDevice.latestGpsState) && !(selDevice.latestGpsState?.startLocation?.address) && !(selDevice.latestGpsState?.endLocation?.address))\" ><i style=\"margin-right: 3px\" class=\"fa fa-location-arrow\" aria-hidden=\"true\"></i>N/A2</span>                                \n                <span fxFlex=13 *ngIf=\"(selDevice.latestGpsState?.endLocation?.address)\" ><i style=\"margin-right: 3px\" class=\"fa fa-location-arrow\" aria-hidden=\"true\"></i>{{(selDevice?.latestGpsState?.endLocation?.address)?selDevice?.latestGpsState?.endLocation?.address:'N/A'}}</span>\n                <span fxFlex=13 *ngIf=\"(selDevice.latestGpsState?.startLocation?.address && !(selDevice.latestGpsState?.endLocation?.address))\" ><i style=\"margin-right: 3px\" class=\"fa fa-location-arrow\" aria-hidden=\"true\"></i>{{(selDevice?.latestGpsState?.startLocation?.address)?selDevice?.latestGpsState?.startLocation?.address:'N/A'}}</span>                \n                <span fxFlex=13><label style=\"margin-right: 3px\" ><i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i></label>{{(selDevice['shipment']?.startLocation?.freightLocation?.name)?selDevice['shipment']?.startLocation?.freightLocation?.name:'N/A'}}</span>\n                \n                <span fxFlex=13 ><i style=\"margin-right: 3px\" class=\"fa fa-circle\" aria-hidden=\"true\"></i>{{(selDevice['shipment']?.endLocation?.freightLocation?.name)?selDevice['shipment']?.endLocation?.freightLocation?.name:'N/A'}}</span>\n                \n                <!-- <span fxFlex  ><i style=\"margin-right: 3px\" class=\"fa fa-phone\" aria-hidden=\"true\"></i>{{selDevice['shipment']?.mobileNo}}</span> -->\n                <span fxFlex=\"10\" *ngIf=\"selDevice['shipment']['actualStartTime'] != null\" style=\"white-space: nowrap;\" >Since: {{(selDevice['shipment']?._stateDuration)?selDevice['shipment']?._stateDuration:'0 min'}}</span>\n                \n              </div>\n            </div>\n            <!-- <div style=\"font-size: 11px;\">\n              <div style=\"margin-top: 8px;width: 100px;\" >\n              </div>\n            </div> -->\n            <div style=\"margin-right: 30px;\">\n              <button md-raised-button style=\"margin-top: 3px\" class=\"current-status-button\" >Active</button>\n            </div>\n            <!-- <div style=\"margin-left: auto;margin-right: 10px;\">\n              <button class=\"custome-button fade-sub-header-text align-vert-center\"  md-button (click)=\"openDialogConfirmDeviceReturn(selDevice)\" >+confirm device Return</button>\n            </div> -->\n          </div>\n        </md-card>\n\n        <md-card style=\"margin-top:5px;\"  *ngIf=\"selDevice['device']['status'] =='available'\" >\n          <div fxLayout=\"row\">\n            <div style=\"font-size: 12px;width: 100%\" >\n              <div fxLayout=\"row\" class=\"margins\" >\n                <span fxFlex=20 >{{selDevice['device']['imei']}}</span>\n                <span fxFlex=22 ><i style=\"color: #e39f41;margin-right: 5px;font-size: 14px;\" class=\"fa fa-exclamation-circle\" aria-hidden=\"true\"></i>(Since 29 aug 2017)</span>\n              </div>\n            </div>\n  \n            <div style=\"margin-right: 30px;\">\n              <button md-raised-button style=\"margin-top: 3px;background-color: #21b22e\" class=\"current-status-button\" >Available</button>\n            </div>\n  \n            <!-- <div style=\"margin-right: 30px;\">\n              <button class=\"custome-button fade-sub-header-text align-vert-center\"  md-button (click)=\"openDialogAssignVehicle(selDevice)\">+assign Vehicle</button>\n            </div> -->\n          </div>\n        </md-card>\n      </div>\n    </div>\n    <div *ngIf=\"isShowDetails\" class=\"mycustomDialog\" style=\"padding: 8px 10px;width: 100%;margin-bottom: 10px;\" >\n      <div class=\"modal-content\"  style=\"min-width: 280px;overflow:unset;max-width: 400px;height:45vh;margin-top: 70px;\">\n        <i (click)=\"isShowDetails = false;\" style=\"font-size:24px;float: right;margin-top: 3px;color: rgb(82, 80, 80);cursor:pointer\" class=\"fa fa-times-circle-o\" aria-hidden=\"true\"></i>\n        <div *ngIf=\"trackingType=='Tracker'\"><app-tracker-shipment-status></app-tracker-shipment-status></div>\n      </div>\n    </div>\n</div>\n\n  <!-- <div style=\"overflow:auto;height:calc(100vh - 115px);\" >\n  <div style=\"margin-top: 10px\" *ngFor=\"let selDevice of allDeviceList | deviceType: ['status' ,selectedFilter]\"> -->\n      <!--<div style=\"margin-top: 10px\" *ngFor=\"let selDevice of allDeviceList\">-->\n     \n\n      <!--<md-card style=\"margin-top:5px;\" *ngIf=\"selDevice.device.status=='repairing'\" >-->\n        <!--<div fxLayout=\"row\">-->\n          <!--<div style=\"font-size: 12px;width: 100%\" >-->\n            <!--<div fxLayout=\"row\" class=\"margins\" >-->\n              <!--<span fxFlex >363251425152</span>-->\n            <!--</div>-->\n\n            <!--<div style=\"margin-top: 8px\"  fxLayout=\"row\" class=\"margins\"  >-->\n              <!--<span fxFlex=\"50\" >-->\n                <!--<i style=\"color: #dc2019;margin-right: 5px;font-size: 14px;\" class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i>-->\n                <!--Under Repairing - since 8 days</span>-->\n            <!--</div>-->\n          <!--</div>-->\n\n          <!--<div style=\"margin-right: 30px;\">-->\n            <!--<button md-raised-button style=\"margin-top: 3px;background-color: #dc2019\" class=\"current-status-button\" >Repairing</button>-->\n          <!--</div>-->\n          <!--<div style=\"margin-right: 10px;\">-->\n            <!--<button class=\"custome-button fade-sub-header-text align-vert-center\"  md-button (click)=\"openDialogMarkAsRequired(selDevice)\">+mark as Required</button>-->\n          <!--</div>-->\n        <!--</div>-->\n      <!--</md-card>-->\n  <!-- </div>\n  <div style=\"height:30px\"></div>\n  </div> -->\n</div>\n"
 
 /***/ }),
 
 /***/ "../../../../../src/app/components/device-dashboard/device-dashboard.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DeviceDashboard; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_device_services__ = __webpack_require__("../../../../../src/app/services/device-services.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_shipment_services__ = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_util__ = __webpack_require__("../../../../util/util.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_util___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_util__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_dialog_confirm_device_return_confirm_device_return_component__ = __webpack_require__("../../../../../src/app/components/dialog/confirm-device-return/confirm-device-return.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_dialog_assign_vehicle_assign_vehicle_component__ = __webpack_require__("../../../../../src/app/components/dialog/assign-vehicle/assign-vehicle.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_dialog_mark_as_required_mark_as_required_component__ = __webpack_require__("../../../../../src/app/components/dialog/mark-as-required/mark-as-required.component.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -685,16 +608,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var router_1 = __webpack_require__("../../../router/@angular/router.es5.js");
+var device_services_1 = __webpack_require__("../../../../../src/app/services/device-services.ts");
+var shipment_services_1 = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
+var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
+var util_1 = __webpack_require__("../../../../util/util.js");
+var material_1 = __webpack_require__("../../../material/@angular/material.es5.js");
+var confirm_device_return_component_1 = __webpack_require__("../../../../../src/app/components/dialog/confirm-device-return/confirm-device-return.component.ts");
+var assign_vehicle_component_1 = __webpack_require__("../../../../../src/app/components/dialog/assign-vehicle/assign-vehicle.component.ts");
+var mark_as_required_component_1 = __webpack_require__("../../../../../src/app/components/dialog/mark-as-required/mark-as-required.component.ts");
 var DeviceDashboard = (function () {
     // public unSub_allActiveDeviceList=null;
     // public unSub_allAvailableDeviceList=null;
@@ -789,7 +713,7 @@ var DeviceDashboard = (function () {
     };
     DeviceDashboard.prototype.confirmAddDevice = function () {
         console.log(this.deviceIMEI);
-        if (Object(__WEBPACK_IMPORTED_MODULE_5_util__["isNullOrUndefined"])(this.deviceIMEI) || this.deviceIMEI == '') {
+        if (util_1.isNullOrUndefined(this.deviceIMEI) || this.deviceIMEI == '') {
             this.openSnackBar('please fill device IMEI ');
             return;
         }
@@ -806,7 +730,7 @@ var DeviceDashboard = (function () {
     };
     DeviceDashboard.prototype.selectedShipmentDetail = function (shipment) {
         console.log(shipment);
-        if (!Object(__WEBPACK_IMPORTED_MODULE_5_util__["isNullOrUndefined"])(shipment)) {
+        if (!util_1.isNullOrUndefined(shipment)) {
             this.trackingType = shipment.trackingType;
             var id = shipment.shipmentId;
             this.shipmentServices.getShipmentDetail.emit(id);
@@ -829,7 +753,7 @@ var DeviceDashboard = (function () {
         var res = device;
         console.log(res);
         this._store.dispatch({ type: "DEVICE_DETAILS", payload: { error: '', data: res } });
-        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_7__components_dialog_confirm_device_return_confirm_device_return_component__["a" /* ConfirmDeviceReturnComponent */]);
+        var dialogRef = this.dialog.open(confirm_device_return_component_1.ConfirmDeviceReturnComponent);
         dialogRef.afterClosed().subscribe(function (result) {
             console.log("Dialog result: " + result);
         });
@@ -838,7 +762,7 @@ var DeviceDashboard = (function () {
         var res = device;
         console.log(res);
         this._store.dispatch({ type: "DEVICE_DETAILS", payload: { error: '', data: res } });
-        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_8__components_dialog_assign_vehicle_assign_vehicle_component__["a" /* AssignVehicleComponent */], {
+        var dialogRef = this.dialog.open(assign_vehicle_component_1.AssignVehicleComponent, {
             height: '350px', width: '500px'
         });
         dialogRef.afterClosed().subscribe(function (result) {
@@ -849,7 +773,7 @@ var DeviceDashboard = (function () {
         var res = device;
         console.log(res);
         this._store.dispatch({ type: "DEVICE_DETAILS", payload: { error: '', data: res } });
-        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_9__components_dialog_mark_as_required_mark_as_required_component__["a" /* MarkAsRequiredComponent */], {
+        var dialogRef = this.dialog.open(mark_as_required_component_1.MarkAsRequiredComponent, {
             height: '350px', width: '500px'
         });
         dialogRef.afterClosed().subscribe(function (result) {
@@ -895,14 +819,14 @@ var DeviceDashboard = (function () {
     return DeviceDashboard;
 }());
 DeviceDashboard = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    core_1.Component({
         selector: 'app-device-dashboard',
         template: __webpack_require__("../../../../../src/app/components/device-dashboard/device-dashboard.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/device-dashboard/device-dashboard.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_6__angular_material__["s" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__angular_material__["s" /* MdSnackBar */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_device_services__["a" /* DeviceServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_device_services__["a" /* DeviceServices */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_shipment_services__["a" /* ShipmentServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_shipment_services__["a" /* ShipmentServices */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_6__angular_material__["f" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__angular_material__["f" /* MdDialog */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__ngrx_store__["a" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ngrx_store__["a" /* Store */]) === "function" && _f || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof material_1.MdSnackBar !== "undefined" && material_1.MdSnackBar) === "function" && _a || Object, typeof (_b = typeof router_1.Router !== "undefined" && router_1.Router) === "function" && _b || Object, typeof (_c = typeof device_services_1.DeviceServices !== "undefined" && device_services_1.DeviceServices) === "function" && _c || Object, typeof (_d = typeof shipment_services_1.ShipmentServices !== "undefined" && shipment_services_1.ShipmentServices) === "function" && _d || Object, typeof (_e = typeof material_1.MdDialog !== "undefined" && material_1.MdDialog) === "function" && _e || Object, typeof (_f = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _f || Object])
 ], DeviceDashboard);
-
+exports.DeviceDashboard = DeviceDashboard;
 var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=device-dashboard.component.js.map
 
@@ -934,13 +858,10 @@ module.exports = "<h1 md-dialog-title><u>Assign Vehicle</u></h1> \n<div md-dialo
 /***/ }),
 
 /***/ "../../../../../src/app/components/dialog/assign-vehicle/assign-vehicle.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AssignVehicleComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -950,9 +871,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
+var material_1 = __webpack_require__("../../../material/@angular/material.es5.js");
 var AssignVehicleComponent = (function () {
     function AssignVehicleComponent(dialogRef, _store) {
         var _this = this;
@@ -986,14 +908,14 @@ var AssignVehicleComponent = (function () {
     return AssignVehicleComponent;
 }());
 AssignVehicleComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    core_1.Component({
         selector: 'app-assign-vehicle',
         template: __webpack_require__("../../../../../src/app/components/dialog/assign-vehicle/assign-vehicle.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/dialog/assign-vehicle/assign-vehicle.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["h" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_material__["h" /* MdDialogRef */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__ngrx_store__["a" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__ngrx_store__["a" /* Store */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof material_1.MdDialogRef !== "undefined" && material_1.MdDialogRef) === "function" && _a || Object, typeof (_b = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _b || Object])
 ], AssignVehicleComponent);
-
+exports.AssignVehicleComponent = AssignVehicleComponent;
 var _a, _b;
 //# sourceMappingURL=assign-vehicle.component.js.map
 
@@ -1025,13 +947,10 @@ module.exports = "<div style=\"padding: 10px\">\n  <span md-dialog-title>Confirm
 /***/ }),
 
 /***/ "../../../../../src/app/components/dialog/confirm-device-return/confirm-device-return.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConfirmDeviceReturnComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1041,9 +960,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var material_1 = __webpack_require__("../../../material/@angular/material.es5.js");
+var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
 var ConfirmDeviceReturnComponent = (function () {
     function ConfirmDeviceReturnComponent(dialogRef, _store) {
         var _this = this;
@@ -1084,14 +1004,14 @@ var ConfirmDeviceReturnComponent = (function () {
     return ConfirmDeviceReturnComponent;
 }());
 ConfirmDeviceReturnComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    core_1.Component({
         selector: 'app-confirm-device-return',
         template: __webpack_require__("../../../../../src/app/components/dialog/confirm-device-return/confirm-device-return.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/dialog/confirm-device-return/confirm-device-return.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["h" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["h" /* MdDialogRef */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["a" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["a" /* Store */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof material_1.MdDialogRef !== "undefined" && material_1.MdDialogRef) === "function" && _a || Object, typeof (_b = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _b || Object])
 ], ConfirmDeviceReturnComponent);
-
+exports.ConfirmDeviceReturnComponent = ConfirmDeviceReturnComponent;
 var _a, _b;
 //# sourceMappingURL=confirm-device-return.component.js.map
 
@@ -1123,13 +1043,10 @@ module.exports = "<h1 md-dialog-title><u>Assign Vehicle</u></h1> \n<div md-dialo
 /***/ }),
 
 /***/ "../../../../../src/app/components/dialog/mark-as-required/mark-as-required.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MarkAsRequiredComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1139,9 +1056,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
+var material_1 = __webpack_require__("../../../material/@angular/material.es5.js");
 var MarkAsRequiredComponent = (function () {
     function MarkAsRequiredComponent(dialogRef, _store) {
         var _this = this;
@@ -1179,14 +1097,14 @@ var MarkAsRequiredComponent = (function () {
     return MarkAsRequiredComponent;
 }());
 MarkAsRequiredComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    core_1.Component({
         selector: 'app-mark-as-required',
         template: __webpack_require__("../../../../../src/app/components/dialog/mark-as-required/mark-as-required.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/dialog/mark-as-required/mark-as-required.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["h" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_material__["h" /* MdDialogRef */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__ngrx_store__["a" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__ngrx_store__["a" /* Store */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof material_1.MdDialogRef !== "undefined" && material_1.MdDialogRef) === "function" && _a || Object, typeof (_b = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _b || Object])
 ], MarkAsRequiredComponent);
-
+exports.MarkAsRequiredComponent = MarkAsRequiredComponent;
 var _a, _b;
 //# sourceMappingURL=mark-as-required.component.js.map
 
@@ -1218,19 +1136,10 @@ module.exports = "<div style=\"width: 100%;top: 0px;z-index:100\" class=\"slow-d
 /***/ }),
 
 /***/ "../../../../../src/app/components/edit-shipment-location/edit-shipment-location.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditShipmentLocationComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__agm_core_services_google_maps_types__ = __webpack_require__("../../../../@agm/core/services/google-maps-types.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_tracker_services__ = __webpack_require__("../../../../../src/app/services/tracker-services.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_shipment_services__ = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1240,15 +1149,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var core_2 = __webpack_require__("../../../../@agm/core/index.js");
+var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
 //import {Polygon} from "angular2-google-maps/esm/core/services/google-maps-types";
-
-
-
-
-
+var google_maps_types_1 = __webpack_require__("../../../../@agm/core/services/google-maps-types.js");
+var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+var tracker_services_1 = __webpack_require__("../../../../../src/app/services/tracker-services.ts");
+var shipment_services_1 = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
+var router_1 = __webpack_require__("../../../router/@angular/router.es5.js");
 // import poly = google.maps.geometry.poly;
 var EditShipmentLocationComponent = (function () {
     function EditShipmentLocationComponent(_router, localStorageService, mapApiWrapper, _store, trackerServices, shipmentServices) {
@@ -1601,7 +1511,7 @@ var EditShipmentLocationComponent = (function () {
     EditShipmentLocationComponent.prototype.addPolygone = function (map, points, editable, fillColor, strokeColor) {
         // Map Center
         // Styling & Controls
-        var myPolygon = new __WEBPACK_IMPORTED_MODULE_3__agm_core_services_google_maps_types__["a" /* google */].maps.Polygon({
+        var myPolygon = new google_maps_types_1.google.maps.Polygon({
             paths: points,
             // draggable: true, // turn off if it gets annoying
             editable: editable,
@@ -1638,7 +1548,7 @@ var EditShipmentLocationComponent = (function () {
             var lon2 = lon1 + Math.atan2(Math.sin(brng) * Math.sin(dist) * Math.cos(lat1), Math.cos(dist) - Math.sin(lat1) * Math.sin(lat2));
             if (isNaN(lat2) || isNaN(lon2))
                 return null;
-            return new __WEBPACK_IMPORTED_MODULE_3__agm_core_services_google_maps_types__["a" /* google */].maps.LatLng(toDeg(lat2), toDeg(lon2));
+            return new google_maps_types_1.google.maps.LatLng(toDeg(lat2), toDeg(lon2));
         }
         ;
         return polygonePoint;
@@ -1663,7 +1573,7 @@ var EditShipmentLocationComponent = (function () {
         // Create the search box and link it to the UI element.
         var input = document.getElementById('pac-input');
         console.log(input);
-        var searchBox = new __WEBPACK_IMPORTED_MODULE_3__agm_core_services_google_maps_types__["a" /* google */].maps.places.SearchBox(input);
+        var searchBox = new google_maps_types_1.google.maps.places.SearchBox(input);
         // this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
         // Bias the SearchBox results towards current map's viewport.
         this.map.addListener('bounds_changed', function () {
@@ -1683,7 +1593,7 @@ var EditShipmentLocationComponent = (function () {
             });
             _this.markers = [];
             // For each place, get the icon, name and location.
-            var bounds = new __WEBPACK_IMPORTED_MODULE_3__agm_core_services_google_maps_types__["a" /* google */].maps.LatLngBounds();
+            var bounds = new google_maps_types_1.google.maps.LatLngBounds();
             places.forEach(function (place) {
                 if (!place.geometry) {
                     console.log("Returned place contains no geometry");
@@ -1691,10 +1601,10 @@ var EditShipmentLocationComponent = (function () {
                 }
                 var icon = {
                     url: place.icon,
-                    size: new __WEBPACK_IMPORTED_MODULE_3__agm_core_services_google_maps_types__["a" /* google */].maps.Size(71, 71),
-                    origin: new __WEBPACK_IMPORTED_MODULE_3__agm_core_services_google_maps_types__["a" /* google */].maps.Point(0, 0),
-                    anchor: new __WEBPACK_IMPORTED_MODULE_3__agm_core_services_google_maps_types__["a" /* google */].maps.Point(17, 34),
-                    scaledSize: new __WEBPACK_IMPORTED_MODULE_3__agm_core_services_google_maps_types__["a" /* google */].maps.Size(25, 25)
+                    size: new google_maps_types_1.google.maps.Size(71, 71),
+                    origin: new google_maps_types_1.google.maps.Point(0, 0),
+                    anchor: new google_maps_types_1.google.maps.Point(17, 34),
+                    scaledSize: new google_maps_types_1.google.maps.Size(25, 25)
                 };
                 // let currentInfowindow = new google.maps.InfoWindow({
                 //   content: place.name
@@ -1702,7 +1612,7 @@ var EditShipmentLocationComponent = (function () {
                 _this.selectedAddress = place.formatted_address;
                 console.log(_this.selectedAddress);
                 // Create a marker for each place.
-                var currentMarker = new __WEBPACK_IMPORTED_MODULE_3__agm_core_services_google_maps_types__["a" /* google */].maps.Marker({
+                var currentMarker = new google_maps_types_1.google.maps.Marker({
                     // map: this.map,
                     // icon: icon,
                     title: place.name,
@@ -1888,18 +1798,18 @@ var EditShipmentLocationComponent = (function () {
     return EditShipmentLocationComponent;
 }()); // class close
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1__agm_core__["b" /* AgmMap */]),
+    core_1.ViewChild(core_2.AgmMap),
     __metadata("design:type", Object)
 ], EditShipmentLocationComponent.prototype, "agmMap", void 0);
 EditShipmentLocationComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    core_1.Component({
         selector: 'app-edit-shipment-location',
         template: __webpack_require__("../../../../../src/app/components/edit-shipment-location/edit-shipment-location.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/edit-shipment-location/edit-shipment-location.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_7__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__agm_core__["c" /* GoogleMapsAPIWrapper */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__agm_core__["c" /* GoogleMapsAPIWrapper */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["a" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["a" /* Store */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__services_tracker_services__["a" /* TrackerServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_tracker_services__["a" /* TrackerServices */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_6__services_shipment_services__["a" /* ShipmentServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__services_shipment_services__["a" /* ShipmentServices */]) === "function" && _f || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof router_1.Router !== "undefined" && router_1.Router) === "function" && _a || Object, typeof (_b = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _b || Object, typeof (_c = typeof core_2.GoogleMapsAPIWrapper !== "undefined" && core_2.GoogleMapsAPIWrapper) === "function" && _c || Object, typeof (_d = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _d || Object, typeof (_e = typeof tracker_services_1.TrackerServices !== "undefined" && tracker_services_1.TrackerServices) === "function" && _e || Object, typeof (_f = typeof shipment_services_1.ShipmentServices !== "undefined" && shipment_services_1.ShipmentServices) === "function" && _f || Object])
 ], EditShipmentLocationComponent);
-
+exports.EditShipmentLocationComponent = EditShipmentLocationComponent;
 var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=edit-shipment-location.component.js.map
 
@@ -1931,12 +1841,10 @@ module.exports = "<div class=\"slow-down\">\n  <!-- <div> -->\n    <!-- <section
 /***/ }),
 
 /***/ "../../../../../src/app/components/freight-location-components/freight-location-creater/freight-location-creater.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FreightLocationCreaterComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1946,8 +1854,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var core_2 = __webpack_require__("../../../../@agm/core/index.js");
 var FreightLocationCreaterComponent = (function () {
     function FreightLocationCreaterComponent(mapApiWrapper) {
         this.mapApiWrapper = mapApiWrapper;
@@ -1966,7 +1875,7 @@ var FreightLocationCreaterComponent = (function () {
         this.toAddProximity = true;
         this.toAddBoundary = true;
         // public id: any;
-        this.onLocationCreation = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.onLocationCreation = new core_1.EventEmitter();
         this.latitude = null;
         this.longitude = null;
         console.log(this.latitude);
@@ -2224,26 +2133,26 @@ var FreightLocationCreaterComponent = (function () {
     return FreightLocationCreaterComponent;
 }());
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1__agm_core__["b" /* AgmMap */]),
+    core_1.ViewChild(core_2.AgmMap),
     __metadata("design:type", Object)
 ], FreightLocationCreaterComponent.prototype, "agmMap", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    core_1.Output(),
     __metadata("design:type", Object)
 ], FreightLocationCreaterComponent.prototype, "onLocationCreation", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+    core_1.Input(),
     __metadata("design:type", Object)
 ], FreightLocationCreaterComponent.prototype, "selectedValueFromParent", void 0);
 FreightLocationCreaterComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    core_1.Component({
         selector: 'app-freight-location-creater',
         template: __webpack_require__("../../../../../src/app/components/freight-location-components/freight-location-creater/freight-location-creater.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/freight-location-components/freight-location-creater/freight-location-creater.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__agm_core__["c" /* GoogleMapsAPIWrapper */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__agm_core__["c" /* GoogleMapsAPIWrapper */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof core_2.GoogleMapsAPIWrapper !== "undefined" && core_2.GoogleMapsAPIWrapper) === "function" && _a || Object])
 ], FreightLocationCreaterComponent);
-
+exports.FreightLocationCreaterComponent = FreightLocationCreaterComponent;
 var _a;
 //# sourceMappingURL=freight-location-creater.component.js.map
 
@@ -2275,16 +2184,10 @@ module.exports = "\n<md-input-container style=\"width: 100%;margin-top:-20px\">\
 /***/ }),
 
 /***/ "../../../../../src/app/components/freight-location-components/freight-location-picker/freight-location-picker.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FreightLocationPickerComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2294,13 +2197,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var http_1 = __webpack_require__("../../../http/@angular/http.es5.js");
+var http_2 = __webpack_require__("../../../http/@angular/http.es5.js");
 // import { FreightLocationServices } from "../../../services/freightLocation.service";
-
-
-
+var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+var environment_1 = __webpack_require__("../../../../../src/environments/environment.ts");
+var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
 var FreightLocationPickerComponent = (function () {
     function FreightLocationPickerComponent(http, localStorageService, _store) {
         var _this = this;
@@ -2309,7 +2213,7 @@ var FreightLocationPickerComponent = (function () {
         this._store = _store;
         this.PATH = 'http://tracknet.fretron.com';
         this.FREIGHT = 'http://tracknet.fretron.com';
-        this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        this.defaultHeaders = new http_1.Headers();
         this.unSub_searchName = null;
         this.waitForLastResp = false;
         this.locationNameList = [];
@@ -2321,18 +2225,18 @@ var FreightLocationPickerComponent = (function () {
         this.isFavouriteLocationAvailable = false;
         this.isHideList = true;
         this.clickFilter = "PUBLIC";
-        this.addTripFreightLocation = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.publicFreightLocation = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.recentFreightLocation = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.privateFreightLocation = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.favouriteFreightLocation = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.addFavouriteLocation = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.removeFavouriteFLocation = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.addTripFreightLocation = new core_1.EventEmitter();
+        this.publicFreightLocation = new core_1.EventEmitter();
+        this.recentFreightLocation = new core_1.EventEmitter();
+        this.privateFreightLocation = new core_1.EventEmitter();
+        this.favouriteFreightLocation = new core_1.EventEmitter();
+        this.addFavouriteLocation = new core_1.EventEmitter();
+        this.removeFavouriteFLocation = new core_1.EventEmitter();
         this.isDialogOpen = false;
         this.unSub_customerDetails = null;
-        this.onLocationPick = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.searchLocation = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.locationFromTemplate = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.onLocationPick = new core_1.EventEmitter();
+        this.searchLocation = new core_1.EventEmitter();
+        this.locationFromTemplate = new core_1.EventEmitter();
         this.token = this.localStorageService.get("AUTH_TOKEN");
         // this.orgId=this.localStorageService.get("ORGID");
         this.unSub_customerDetails = _store.select('customerDetails').subscribe(function (value) {
@@ -2347,7 +2251,7 @@ var FreightLocationPickerComponent = (function () {
         });
         //console.log(this.locationType);
         this.searchLocation.subscribe(function (obj) {
-            var path = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* BASE_IP */].FERIGHT_LOCATION + "/search?type=" + obj['type'] + "&name=" + obj['name'] + "&geofenceType=" + _this.selected_value['type'];
+            var path = environment_1.BASE_IP.FERIGHT_LOCATION + "/search?type=" + obj['type'] + "&name=" + obj['name'] + "&geofenceType=" + _this.selected_value['type'];
             // console.log(path);
             _this.searchLocationByName(path, name).subscribe(function (response) {
                 console.log(response);
@@ -2358,7 +2262,7 @@ var FreightLocationPickerComponent = (function () {
         });
         this.addTripFreightLocation.subscribe(function (fretObj) {
             console.log(fretObj);
-            var path = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* BASE_IP */].FERIGHT_LOCATION + "/locations/add";
+            var path = environment_1.BASE_IP.FERIGHT_LOCATION + "/locations/add";
             console.log(path);
             _this.addFretLocation(fretObj, path).subscribe(function (response) {
                 // TODO
@@ -2478,13 +2382,13 @@ var FreightLocationPickerComponent = (function () {
         });
     };
     FreightLocationPickerComponent.prototype.searchLocationByName = function (path, name) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
         // console.log(headers);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Get,
             headers: headers,
         });
         return this.http.request(path, requestOptions).map(function (response) {
@@ -2523,18 +2427,18 @@ var FreightLocationPickerComponent = (function () {
         }
     };
     FreightLocationPickerComponent.prototype.setFavouriteFreightLocation = function (location) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
         // headers.set("orgUuid",this.orgId);
         // console.log(headers);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Post,
             headers: headers,
             body: location
         });
-        var path4 = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* BASE_IP */].FERIGHT_LOCATION + '/favourite/add';
+        var path4 = environment_1.BASE_IP.FERIGHT_LOCATION + '/favourite/add';
         console.log(path4);
         return this.http.request(path4, requestOptions).map(function (response) {
             console.log(response.status);
@@ -2546,18 +2450,18 @@ var FreightLocationPickerComponent = (function () {
         });
     };
     FreightLocationPickerComponent.prototype.removeFavouriteFreightLocation = function (location) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
         // headers.set('orguuid',this.orgId);
         // headers.set("orgUuid",this.orgId);
         // console.log(headers);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Get,
             headers: headers,
         });
-        var path4 = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* BASE_IP */].FERIGHT_LOCATION + '/favourite/remove?uuid=' + location['favFreightLocation']['uuid'];
+        var path4 = environment_1.BASE_IP.FERIGHT_LOCATION + '/favourite/remove?uuid=' + location['favFreightLocation']['uuid'];
         console.log(path4);
         return this.http.request(path4, requestOptions).map(function (response) {
             console.log(response.status);
@@ -2569,17 +2473,17 @@ var FreightLocationPickerComponent = (function () {
         });
     };
     FreightLocationPickerComponent.prototype.getFavouriteFreight = function () {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
         // headers.set("orgUuid",this.orgId);
         // console.log(headers);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Get,
             headers: headers,
         });
-        var path4 = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* BASE_IP */].FERIGHT_LOCATION + '/get/favourite?geofenceType=' + this.selected_value['type'];
+        var path4 = environment_1.BASE_IP.FERIGHT_LOCATION + '/get/favourite?geofenceType=' + this.selected_value['type'];
         console.log(path4);
         return this.http.request(path4, requestOptions).map(function (response) {
             console.log(response.status);
@@ -2591,18 +2495,18 @@ var FreightLocationPickerComponent = (function () {
         });
     };
     FreightLocationPickerComponent.prototype.privateFreight = function () {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
         // let headers = new Headers();
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
         // headers.set("orgUuid",this.orgId);
         console.log(headers);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Get,
             headers: headers,
         });
-        var path3 = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* BASE_IP */].FERIGHT_LOCATION + '/get/private?geofenceType=' + this.selected_value['type'];
+        var path3 = environment_1.BASE_IP.FERIGHT_LOCATION + '/get/private?geofenceType=' + this.selected_value['type'];
         console.log(path3);
         return this.http.request(path3, requestOptions).map(function (response) {
             console.log(response.status);
@@ -2614,17 +2518,17 @@ var FreightLocationPickerComponent = (function () {
         });
     };
     FreightLocationPickerComponent.prototype.recentFreight = function () {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
         // headers.set("orgUuid",this.orgId);
         // console.log(headers);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Get,
             headers: headers,
         });
-        var path2 = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* BASE_IP */].FERIGHT_LOCATION + '/get/recent?geofenceType=' + this.selected_value['type'];
+        var path2 = environment_1.BASE_IP.FERIGHT_LOCATION + '/get/recent?geofenceType=' + this.selected_value['type'];
         console.log(path2);
         return this.http.request(path2, requestOptions).map(function (response) {
             console.log(response.status);
@@ -2636,17 +2540,17 @@ var FreightLocationPickerComponent = (function () {
         });
     };
     FreightLocationPickerComponent.prototype.publicFreight = function () {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
         var bearerToken = "Bearer " + this.token;
         headers.set('Content-Type', 'application/json');
         headers.set('authorization', bearerToken);
         // headers.set("orgUuid",this.orgId);
         // console.log(headers);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Get,
             headers: headers,
         });
-        var path = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* BASE_IP */].FERIGHT_LOCATION + '/get/public?geofenceType=' + this.selected_value['type'];
+        var path = environment_1.BASE_IP.FERIGHT_LOCATION + '/get/public?geofenceType=' + this.selected_value['type'];
         console.log(path);
         return this.http.request(path, requestOptions).map(function (response) {
             console.log(response.status);
@@ -2660,14 +2564,14 @@ var FreightLocationPickerComponent = (function () {
     FreightLocationPickerComponent.prototype.onFilterClick = function (button) {
         this.isSearchClicked = true;
         console.log(button);
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
         headers.set("orgUuid", this.orgId);
         // console.log(headers);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Get,
             headers: headers,
         });
         if (button === "PUBLIC") {
@@ -2775,13 +2679,13 @@ var FreightLocationPickerComponent = (function () {
     };
     // *********************** add fret Location service  **********************
     FreightLocationPickerComponent.prototype.addFretLocation = function (fretObj, path) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
         console.log(fretObj);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Post,
             headers: headers,
             body: fretObj,
         });
@@ -2804,38 +2708,38 @@ var FreightLocationPickerComponent = (function () {
     return FreightLocationPickerComponent;
 }());
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    core_1.Output(),
     __metadata("design:type", Object)
 ], FreightLocationPickerComponent.prototype, "onLocationPick", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])("searchOrigin"),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object)
+    core_1.ViewChild("searchOrigin"),
+    __metadata("design:type", typeof (_a = typeof core_1.ElementRef !== "undefined" && core_1.ElementRef) === "function" && _a || Object)
 ], FreightLocationPickerComponent.prototype, "searchOrigineElementRef", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])("searchDestination"),
-    __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _b || Object)
+    core_1.ViewChild("searchDestination"),
+    __metadata("design:type", typeof (_b = typeof core_1.ElementRef !== "undefined" && core_1.ElementRef) === "function" && _b || Object)
 ], FreightLocationPickerComponent.prototype, "searchDestElementRef", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+    core_1.Input(),
     __metadata("design:type", Object)
 ], FreightLocationPickerComponent.prototype, "pickerLocationType", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+    core_1.Input(),
     __metadata("design:type", Object)
 ], FreightLocationPickerComponent.prototype, "inputType", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+    core_1.Input(),
     __metadata("design:type", Object)
 ], FreightLocationPickerComponent.prototype, "locationFromTemplate", void 0);
 FreightLocationPickerComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    core_1.Component({
         selector: 'app-freight-location-picker',
         template: __webpack_require__("../../../../../src/app/components/freight-location-components/freight-location-picker/freight-location-picker.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/freight-location-components/freight-location-picker/freight-location-picker.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__["LocalStorageService"]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__ngrx_store__["a" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ngrx_store__["a" /* Store */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_c = typeof http_1.Http !== "undefined" && http_1.Http) === "function" && _c || Object, typeof (_d = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _d || Object, typeof (_e = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _e || Object])
 ], FreightLocationPickerComponent);
-
+exports.FreightLocationPickerComponent = FreightLocationPickerComponent;
 var _a, _b, _c, _d, _e;
 //# sourceMappingURL=freight-location-picker.component.js.map
 
@@ -2867,12 +2771,10 @@ module.exports = "<md-card style=\"cursor: pointer\" (click)=\"goToShipmentGroup
 /***/ }),
 
 /***/ "../../../../../src/app/components/manage-organisation/manage-organisation.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ManageOrganisationComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2882,8 +2784,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var router_1 = __webpack_require__("../../../router/@angular/router.es5.js");
 var ManageOrganisationComponent = (function () {
     function ManageOrganisationComponent(_router) {
         this._router = _router;
@@ -2900,14 +2803,14 @@ var ManageOrganisationComponent = (function () {
     return ManageOrganisationComponent;
 }());
 ManageOrganisationComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    core_1.Component({
         selector: 'app-manage-organisation',
         template: __webpack_require__("../../../../../src/app/components/manage-organisation/manage-organisation.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/manage-organisation/manage-organisation.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof router_1.Router !== "undefined" && router_1.Router) === "function" && _a || Object])
 ], ManageOrganisationComponent);
-
+exports.ManageOrganisationComponent = ManageOrganisationComponent;
 var _a;
 //# sourceMappingURL=manage-organisation.component.js.map
 
@@ -2939,16 +2842,10 @@ module.exports = "<div style=\"width: 100%;top: 0px;z-index:100;background-color
 /***/ }),
 
 /***/ "../../../../../src/app/components/manual-shipment-status/manual-shipment-status.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ManualShipmentStatusComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_shipment_services__ = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_manual_shipment_service__ = __webpack_require__("../../../../../src/app/services/manual-shipment-service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2958,12 +2855,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var router_1 = __webpack_require__("../../../router/@angular/router.es5.js");
+var material_1 = __webpack_require__("../../../material/@angular/material.es5.js");
+var shipment_services_1 = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
+var manual_shipment_service_1 = __webpack_require__("../../../../../src/app/services/manual-shipment-service.ts");
+var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
 var ManualShipmentStatusComponent = (function () {
     function ManualShipmentStatusComponent(_router, dialog, shipmentServices, _store, manualShipment) {
         var _this = this;
@@ -3305,14 +3203,14 @@ var ManualShipmentStatusComponent = (function () {
     return ManualShipmentStatusComponent;
 }());
 ManualShipmentStatusComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    core_1.Component({
         selector: 'app-manual-shipment-status',
         template: __webpack_require__("../../../../../src/app/components/manual-shipment-status/manual-shipment-status.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/manual-shipment-status/manual-shipment-status.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["f" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_material__["f" /* MdDialog */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_shipment_services__["a" /* ShipmentServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_shipment_services__["a" /* ShipmentServices */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__ngrx_store__["a" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__ngrx_store__["a" /* Store */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__services_manual_shipment_service__["a" /* ManualShipmentServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_manual_shipment_service__["a" /* ManualShipmentServices */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof router_1.Router !== "undefined" && router_1.Router) === "function" && _a || Object, typeof (_b = typeof material_1.MdDialog !== "undefined" && material_1.MdDialog) === "function" && _b || Object, typeof (_c = typeof shipment_services_1.ShipmentServices !== "undefined" && shipment_services_1.ShipmentServices) === "function" && _c || Object, typeof (_d = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _d || Object, typeof (_e = typeof manual_shipment_service_1.ManualShipmentServices !== "undefined" && manual_shipment_service_1.ManualShipmentServices) === "function" && _e || Object])
 ], ManualShipmentStatusComponent);
-
+exports.ManualShipmentStatusComponent = ManualShipmentStatusComponent;
 var _a, _b, _c, _d, _e;
 //# sourceMappingURL=manual-shipment-status.component.js.map
 
@@ -3339,25 +3237,15 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/new-shipment/new-shipment.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div style=\"overflow: hidden;height: 100vh;\">\n      <div  fxLayout=\"row\" style=\"padding: 9px;\">\n        <div  fxFlex=\"33\" >\n          <div  style=\"display:flex;\" >\n            <label class=\"stepperIcon\" [style.background-color]=\"steperNo >= 1 ?'#3f51b5':'grey'\" >\n              <span style=\"position: absolute;margin-left: -4px;margin-top: -8px;\">1</span>\n            </label>\n            <!--<hr>-->\n            <span style=\"margin-left: 5px\">Enter Shipment Detail</span>\n          </div>\n        </div>\n        <div fxFlex=\"33\">\n          <div style=\"text-align: center;display: flex;\" >\n            <label class=\"stepperIcon\" [style.background-color]=\"steperNo >= 2 ?'#3f51b5':'grey'\" >\n              <span style=\"position: absolute;margin-left: -4px;margin-top: -8px;\">2</span>\n            </label>\n            <!--<hr>-->\n            <span style=\"margin-left: 5px\">Add Vehicle Tracking device</span>\n            <!--<span style=\"margin-left: 5px\">Tracking Configuration</span>-->\n          </div>\n        </div>\n\n        <div fxFlex=\"33\">\n          <div  style=\"display: flex;\" >\n            <label class=\"stepperIcon\" [style.background-color]=\"steperNo == 3 ?'#3f51b5':'grey'\" >\n              <span style=\"position: absolute;margin-left: -4px;margin-top: -8px;\">3</span>\n            </label>\n            <span style=\"margin-left: 5px\">Add Driver Details</span>\n          </div>\n        </div>\n      </div>\n\n      <div style=\"overflow:hidden;height: calc(100vh - 80px);\">\n        <div *ngIf=\"steperNo == 1\" style=\"padding: 30px;font-size: 13px;\" >\n          \n          <div>\n            <label  class=\"fade-sub-header-text\">Consignor Name*</label>\n            <app-freight-location-picker [inputType]=\"'origin'\"    [locationFromTemplate]=\"selectedTemplateLocation\" [pickerLocationType]=\"typeOfLocationCreator\" (onLocationPick)='setOriginLocation($event)' ></app-freight-location-picker>\n          </div>\n          <!--(click)=\"tripOriginDialog()\"-->\n           \n          <div>\n              <label class=\"fade-sub-header-text\">Consignee Name*</label>              \n            <app-freight-location-picker [inputType]=\"'destination'\"  [locationFromTemplate]=\"selectedTemplateLocation\" [pickerLocationType]=\"typeOfLocationCreator\" (onLocationPick)='setDestinationLocation($event)' ></app-freight-location-picker>\n          </div>\n           <!--(click)=\"tripOriginDialog()\"-->\n            \n           \n\n\n          <div class=\"element\" >\n            <md-input-container style=\"width: 100%;\">\n              <input style=\"width: 100%;\" placeholder=\"Shipment Number\" mdInput [(ngModel)]=\"shipmentNumber\" name=\"shipmentNumber\" id=\"shipmentNumber\" >\n            </md-input-container>\n          </div>\n\n\n          <div class=\"element\" >\n            <md-input-container style=\"width: 100%;\">\n              <input style=\"width: 100%;\" placeholder=\"Consignment Number\" mdInput [(ngModel)]=\"consignmentNumber\" name=\"consignmentNumber\"\n                     id=\"consignmentNumber\">\n            </md-input-container>\n          </div>\n\n          <div fxLayout=\"row\" >\n            <div fxFlex=\"48\" style=\"margin-top: 12px;height:60px;top:281px;\">\n              <owl-date-time mdInput [autoClose]=true [(ngModel)]=\"plannedStartDate\" placeHolder=\"Planned Start Date\"></owl-date-time>\n            </div>\n            <div fxFlex=\"48\" style=\"margin-left:auto\">\n              <md-input-container style=\"width: 100%;\">\n                <input type=\"number\" placeholder=\"Transit Days\" mdInput  [(ngModel)]=\"transitDays\" name=\"transitDays\" id=\"transitDays\">\n              </md-input-container>\n            </div>\n          </div>\n\n          \n          <div fxLayout=\"row\" class=\"element\" ><!-- *ngFor=\"let item of itemList\" -->\n            <div fxFlex=\"48\" style=\"margin-top: 4px\">\n              <md-input-container style=\"width: 90%;\">\n                <input style=\"width: 100%;\" placeholder=\"Quantity\" mdInput  [(ngModel)]=\"quantity\" name=\"quantity\" id=\"quantity\">\n              </md-input-container>\n            </div>\n\n            <div fxFlex=\"48\" style=\"margin-top: 11px\">\n              <md-select  placeholder=\"Measurement Type\" style=\"width: 80%\" [(ngModel)]=\"mesurementType\" (change)=\"selectMesurementType()\" >\n                <md-option *ngFor=\"let mesurement of mesurements\" [value]=\"mesurement.name\" >\n                   {{mesurement.viewValue}}\n                </md-option>\n              </md-select>\n            </div>\n            <div fxFlex=\"48\" style=\"margin-top: 11px\" *ngIf=\"isShowUnits\">\n              <md-select  placeholder=\"Select Units\" style=\"width: 60%\" [(ngModel)]=\"selectedUnit\" floatPlaceholder=\"never\">\n                <md-option *ngFor=\"let unit of selectUnit\" [value]=\"unit\">\n                   {{unit}}\n                </md-option>\n              </md-select>\n            </div>\n            <div fxFlex=\"48\" style=\"margin-top: 7px\" *ngIf=\"isShowUnitInput\">\n                <md-input-container style=\"width: 90%;\">\n                    <input style=\"width: 60%;\" placeholder=\"No. Of Package\" mdInput  [(ngModel)]=\"selectedUnit\" >\n                  </md-input-container>\n            </div>\n          </div>\n          <!-- <div style=\"width: 100%;margin-top: 10px;text-align:right;\">\n            <button md-raised-button  class=\"change-mode-button\" style=\"background-color: #bebebe;\" (click)=\"addItem()\">+add</button>\n         </div> -->\n          \n\n\n          <div style=\"margin-top: 10px;\">\n            <md-input-container style=\"width: 100%;\">\n              <input style=\"width: 100%;\" placeholder=\"Vehicle Number\" mdInput [(ngModel)]=\"vehicleNumber\" name=\"vehicleNumber\" id=\"vehicleNumber\">\n            </md-input-container>\n          </div>\n\n          <div style=\"margin-top: 20px;text-align: right;\">\n            <button md-raised-button color=\"primary\" (click)=\"step2();convertTime();\">Next</button>\n            <!--<button md-raised-button>BACK</button>-->\n          </div>\n\n        </div>\n\n        <!-- step 2 ************************************-->\n        <div *ngIf=\"steperNo == 2\" style=\"margin-top:60px;text-align: center\" >\n        <md-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></md-spinner>\n          <div *ngIf=\"isShowTracknetEnable\"><span><u>Tracknet Enabled </u></span></div>\n          <div style=\"margin-top: 21px;\">\n             <button [style.background-color]=\"trackerType == 'Trip'?'green':'gray'\" md-raised-button  class=\"change-mode-button\"  (click)=\"setTrackType('Trip');isShowTracknetEnable=true\" *ngIf=\"isShowTrip\">Tracknet</button>              \n             <button [style.background-color]=\"trackerType == 'Tracker'?'green':'gray'\" md-raised-button  class=\"change-mode-button\" style=\"margin-left: 20px;\" (click)=\"setTrackType('Tracker');isShowTracknetEnable=false\">Tracker</button>\n             <button [style.background-color]=\"trackerType == 'Manual'?'green':'gray'\" md-raised-button style=\"margin-left: 20px;\" class=\"change-mode-button\" (click)=\"setTrackType('Manual');isShowTracknetEnable=false\">Manual mode</button>\n          </div>\n          <div style=\"margin-top: 15px\" *ngIf=\"trackerType == 'Tracker'\">\n            <md-input-container style=\"width: 250px;\" >\n              <input style=\"width: 100%;\" placeholder=\"Tracker IMEI\" mdInput [(ngModel)]=\"trackerIMEI\"  name=\"TrackerIMEI\" id=\"TrackerIMEI\" readonly (focus)=\"onClickIMEI()\">\n            </md-input-container>\n            <div *ngIf=\"showIMEI\" style=\"min-height: 90px;max-height: 190px;overflow-y: auto;width: 280px;margin-left:40%;margin-top: -22px;    background-color: rgb(236, 236, 241);\">\n              <ul style=\"list-style-type: none;\" *ngFor=\"let device of allDeviceList\">\n                <li  (click)=\"onSelectIMEI(device)\">{{device?.device?.imei}}</li><hr style=\"margin-left:-40px\">\n              </ul>\n            </div>\n          </div>\n\n          <div style=\"margin-top: 60px;\">\n\n            <button md-raised-button color=\"primary\" (click)=\"step1()\">Previous</button>\n\n            <button md-raised-button color=\"primary\" (click)=\"step3();\">Next</button>\n            <!--<button md-raised-button>BACK</button>-->\n          </div>\n        </div>\n\n        <div *ngIf=\"steperNo ==  3\" style=\"text-align: center;margin-top: 60px\">\n          <div  *ngIf=\"isShowchip\"style=\"margin-top: 15px;\">\n            <md-chip-list style=\"justify-content: center;display: flex;\">\n                <md-chip >{{driverName}}  {{mobileNo}} <i class=\"fa fa-times-circle\" mdChipRemove *ngIf=\"true\" (click)=\"isShowchip=false\"></i> </md-chip>\n            </md-chip-list>\n          </div>\n\n          <div style=\"margin-top: 15px \">\n             <button md-raised-button  class=\"change-mode-button\" style=\"background-color: #bebebe\" (click)=\"isAddDriverDetail=true\">+add Driver</button>\n          </div>\n          <div *ngIf=\"isAddDriverDetail\">\n            <md-input-container>\n              <input style=\"width: 100%;\" placeholder=\"Driver Name\" mdInput [(ngModel)]=\"driverName\"  name=\"driverName\" id=\"driverName\">\n            </md-input-container>\n            <md-input-container>\n              <input style=\"width: 100%;\" placeholder=\"Mobile No\" mdInput [(ngModel)]=\"mobileNo\"  name=\"mobileNo\" id=\"mobileNo\">\n            </md-input-container>\n          </div>\n          <div style=\"margin-top: 60px\">\n             <button md-raised-button color=\"primary\" (click)=\"step2()\">Previous</button>\n             <button md-raised-button color=\"primary\" (click)=\"createShipment()\">Done</button>\n          </div>\n        </div>\n      </div>\n</div>\n\n"
+module.exports = "\n<div style=\"overflow: hidden;height: 100vh;\">\n      <div  fxLayout=\"row\" style=\"padding: 9px;\">\n        <div  fxFlex=\"33\" >\n          <div  style=\"display:flex;\" >\n            <label class=\"stepperIcon\" [style.background-color]=\"steperNo >= 1 ?'#3f51b5':'grey'\" >\n              <span style=\"position: absolute;margin-left: -4px;margin-top: -8px;\">1</span>\n            </label>\n            <!--<hr>-->\n            <span style=\"margin-left: 5px\">Enter Shipment Detail</span>\n          </div>\n        </div>\n        <div fxFlex=\"33\">\n          <div style=\"text-align: center;display: flex;\" >\n            <label class=\"stepperIcon\" [style.background-color]=\"steperNo >= 2 ?'#3f51b5':'grey'\" >\n              <span style=\"position: absolute;margin-left: -4px;margin-top: -8px;\">2</span>\n            </label>\n            <!--<hr>-->\n            <span style=\"margin-left: 5px\">Add Vehicle Tracking device</span>\n            <!--<span style=\"margin-left: 5px\">Tracking Configuration</span>-->\n          </div>\n        </div>\n\n        <div fxFlex=\"33\">\n          <div  style=\"display: flex;\" >\n            <label class=\"stepperIcon\" [style.background-color]=\"steperNo == 3 ?'#3f51b5':'grey'\" >\n              <span style=\"position: absolute;margin-left: -4px;margin-top: -8px;\">3</span>\n            </label>\n            <span style=\"margin-left: 5px\">Add Driver Details</span>\n          </div>\n        </div>\n      </div>\n\n      <div style=\"overflow:hidden;height: calc(100vh - 80px);\">\n        <div *ngIf=\"steperNo == 1\" style=\"padding: 30px;font-size: 13px;\" >\n          \n          <div>\n            <label  class=\"fade-sub-header-text\">Consignor Name*</label>\n            <app-freight-location-picker [inputType]=\"'origin'\"    [locationFromTemplate]=\"selectedTemplateLocation\" [pickerLocationType]=\"typeOfLocationCreator\" (onLocationPick)='setOriginLocation($event)' ></app-freight-location-picker>\n          </div>\n          <!--(click)=\"tripOriginDialog()\"-->\n           \n          <div>\n              <label class=\"fade-sub-header-text\">Consignee Name*</label>              \n            <app-freight-location-picker [inputType]=\"'destination'\"  [locationFromTemplate]=\"selectedTemplateLocation\" [pickerLocationType]=\"typeOfLocationCreator\" (onLocationPick)='setDestinationLocation($event)' ></app-freight-location-picker>\n          </div>\n           <!--(click)=\"tripOriginDialog()\"-->\n            \n           \n\n\n          <div class=\"element\" >\n            <md-input-container style=\"width: 100%;\">\n              <input style=\"width: 100%;\" placeholder=\"Shipment Number\" mdInput [(ngModel)]=\"shipmentNumber\" name=\"shipmentNumber\" id=\"shipmentNumber\" >\n            </md-input-container>\n          </div>\n\n\n          <div class=\"element\" >\n            <md-input-container style=\"width: 100%;\">\n              <input style=\"width: 100%;\" placeholder=\"Consignment Number\" mdInput [(ngModel)]=\"consignmentNumber\" name=\"consignmentNumber\"\n                     id=\"consignmentNumber\">\n            </md-input-container>\n          </div>\n\n          <div fxLayout=\"row\" >\n            <div fxFlex=\"48\" style=\"margin-top: 12px;height:60px;top:281px;\">\n              <owl-date-time mdInput [autoClose]=true [(ngModel)]=\"plannedStartDate\" placeHolder=\"Planned Start Date\"></owl-date-time>\n            </div>\n            <div fxFlex=\"48\" style=\"margin-left:auto\">\n              <md-input-container style=\"width: 100%;\">\n                <input type=\"number\" placeholder=\"Transit Days\" mdInput  [(ngModel)]=\"transitDays\" name=\"transitDays\" id=\"transitDays\">\n              </md-input-container>\n            </div>\n          </div>\n\n          \n          <div fxLayout=\"row\" class=\"element\" ><!-- *ngFor=\"let item of itemList\" -->\n            <div fxFlex=\"48\" style=\"margin-top: 4px\">\n              <md-input-container style=\"width: 90%;\">\n                <input style=\"width: 100%;\" placeholder=\"Quantity\" mdInput  [(ngModel)]=\"quantity\" name=\"quantity\" id=\"quantity\">\n              </md-input-container>\n            </div>\n\n            <div fxFlex=\"48\" style=\"margin-top: 11px\">\n              <md-select  placeholder=\"Measurement Type\" style=\"width: 80%\" [(ngModel)]=\"mesurementType\" (change)=\"selectMesurementType()\" >\n                <md-option *ngFor=\"let mesurement of mesurements\" [value]=\"mesurement.name\" >\n                   {{mesurement.viewValue}}\n                </md-option>\n              </md-select>\n            </div>\n            <div fxFlex=\"48\" style=\"margin-top: 11px\" *ngIf=\"isShowUnits\">\n              <md-select  placeholder=\"Select Units\" style=\"width: 60%\" [(ngModel)]=\"selectedUnit\" floatPlaceholder=\"never\">\n                <md-option *ngFor=\"let unit of selectUnit\" [value]=\"unit\">\n                   {{unit}}\n                </md-option>\n              </md-select>\n            </div>\n            <div fxFlex=\"48\" style=\"margin-top: 7px\" *ngIf=\"isShowUnitInput\">\n                <md-input-container style=\"width: 90%;\">\n                    <input style=\"width: 60%;\" placeholder=\"No. Of Package\" mdInput  [(ngModel)]=\"selectedUnit\" >\n                  </md-input-container>\n            </div>\n          </div>\n          <!-- <div style=\"width: 100%;margin-top: 10px;text-align:right;\">\n            <button md-raised-button  class=\"change-mode-button\" style=\"background-color: #bebebe;\" (click)=\"addItem()\">+add</button>\n         </div> -->\n          \n\n\n          <div style=\"margin-top: 10px;\">\n            <md-input-container style=\"width: 100%;\">\n              <input style=\"width: 100%;\" placeholder=\"Vehicle Number\" mdInput [(ngModel)]=\"vehicleNumber\" name=\"vehicleNumber\" id=\"vehicleNumber\">\n            </md-input-container>\n          </div>\n\n          <div style=\"margin-top: 20px;text-align: right;\">\n            <button md-raised-button color=\"primary\" (click)=\"step2();convertTime();\">Next</button>\n            <!--<button md-raised-button>BACK</button>-->\n          </div>\n\n        </div>\n\n        <!-- step 2 ************************************-->\n        <div *ngIf=\"steperNo == 2\" style=\"margin-top:60px;text-align: center\" >\n        <md-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\" class=\"spinner\"></md-spinner>       \n          <div style=\"margin-top: 21px;\">\n             <button [style.background-color]=\"(trackerType == 'Trip')?(isShowTripDisconnected)?'red':'green':'gray'\" md-raised-button  class=\"change-mode-button\"  (click)=\"setTrackType('Trip');isShowTracknetEnable=true\" *ngIf=\"isShowTrip\">Tracknet</button>              \n             <button [style.background-color]=\"trackerType == 'Tracker'?'green':'gray'\" md-raised-button  class=\"change-mode-button\" style=\"margin-left: 20px;\" (click)=\"setTrackType('Tracker');isShowTracknetEnable=false\">Tracker</button>\n             <button [style.background-color]=\"trackerType == 'Manual'?'green':'gray'\" md-raised-button style=\"margin-left: 20px;\" class=\"change-mode-button\" (click)=\"setTrackType('Manual');isShowTracknetEnable=false\">Manual mode</button>\n          </div>\n          <div style=\"margin-top: 15px\" *ngIf=\"trackerType == 'Trip' && isShowTracknetEnable\">\n            <div  ><span><u>Tracknet Enabled </u></span></div>\n            <div  *ngIf=\"isShowTripDisconnected\"><span>Since {{sinceTime}}</span></div>   \n          </div>\n          <div style=\"margin-top: 15px\" *ngIf=\"trackerType == 'Tracker'\">\n            <md-input-container style=\"width: 250px;\" >\n              <input style=\"width: 100%;\" placeholder=\"Tracker IMEI\" mdInput [(ngModel)]=\"trackerIMEI\"  name=\"TrackerIMEI\" id=\"TrackerIMEI\" readonly (focus)=\"onClickIMEI()\">\n            </md-input-container>\n            <div *ngIf=\"showIMEI\" style=\"min-height: 90px;max-height: 190px;overflow-y: auto;width: 280px;margin-left:40%;margin-top: -22px;    background-color: rgb(236, 236, 241);\">\n              <ul style=\"list-style-type: none;\" *ngFor=\"let device of allDeviceList\">\n                <li  (click)=\"onSelectIMEI(device)\">{{device?.device?.imei}}</li><hr style=\"margin-left:-40px\">\n              </ul>\n            </div>\n          </div>\n\n          <div style=\"margin-top: 60px;\">\n\n            <button md-raised-button color=\"primary\" (click)=\"step1()\">Previous</button>\n\n            <button md-raised-button color=\"primary\" (click)=\"step3();\">Next</button>\n            <!--<button md-raised-button>BACK</button>-->\n          </div>\n        </div>\n\n        <div *ngIf=\"steperNo ==  3\" style=\"text-align: center;margin-top: 60px\">\n          <div  *ngIf=\"isShowchip\"style=\"margin-top: 15px;\">\n            <md-chip-list style=\"justify-content: center;display: flex;\">\n                <md-chip >{{driverName}}  {{mobileNo}} <i class=\"fa fa-times-circle\" mdChipRemove *ngIf=\"true\" (click)=\"isShowchip=false\"></i> </md-chip>\n            </md-chip-list>\n          </div>\n\n          <div style=\"margin-top: 15px \">\n             <button md-raised-button  class=\"change-mode-button\" style=\"background-color: #bebebe\" (click)=\"isAddDriverDetail=true\">+add Driver</button>\n          </div>\n          <div *ngIf=\"isAddDriverDetail\">\n            <md-input-container>\n              <input style=\"width: 100%;\" placeholder=\"Driver Name\" mdInput [(ngModel)]=\"driverName\"  name=\"driverName\" id=\"driverName\">\n            </md-input-container>\n            <md-input-container>\n              <input style=\"width: 100%;\" placeholder=\"Mobile No\" mdInput [(ngModel)]=\"mobileNo\"  name=\"mobileNo\" id=\"mobileNo\">\n            </md-input-container>\n          </div>\n          <div style=\"margin-top: 60px\">\n             <button md-raised-button color=\"primary\" (click)=\"step2()\">Previous</button>\n             <button md-raised-button color=\"primary\" (click)=\"createShipment()\">Done</button>\n          </div>\n        </div>\n      </div>\n</div>\n\n"
 
 /***/ }),
 
 /***/ "../../../../../src/app/components/new-shipment/new-shipment.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewShipment; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_device_services__ = __webpack_require__("../../../../../src/app/services/device-services.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_shipment_services__ = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_util__ = __webpack_require__("../../../../util/util.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_util___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_util__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3367,14 +3255,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var router_1 = __webpack_require__("../../../router/@angular/router.es5.js");
+var device_services_1 = __webpack_require__("../../../../../src/app/services/device-services.ts");
+var shipment_services_1 = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
+var material_1 = __webpack_require__("../../../material/@angular/material.es5.js");
+var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+var util_1 = __webpack_require__("../../../../util/util.js");
+var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
 var NewShipment = (function () {
     function NewShipment(_router, deviceServices, shipmentServices, _store, service, snackBar) {
         var _this = this;
@@ -3413,7 +3302,7 @@ var NewShipment = (function () {
         //unSubscribe variables
         this.unSub_allFreightList = null;
         this.unSub_allDeviceList = null;
-        this.selectedTemplateLocation = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.selectedTemplateLocation = new core_1.EventEmitter();
         //validation variables
         this.isEventSelected = false;
         this.isShowEvent = true;
@@ -3445,6 +3334,7 @@ var NewShipment = (function () {
         this.isSpinner = true;
         this.allDeviceList = [];
         this.showIMEI = false;
+        this.isShowTripDisconnected = false;
         shipmentServices.initialize();
         this.unSub_newShipment = this._store.select('newShipment').subscribe(function (value) {
             if (value != null) {
@@ -3480,6 +3370,12 @@ var NewShipment = (function () {
                         _this.trackerType = "Trip";
                         _this.vehicleObj = value['res']['vehicle'];
                         _this.isShowTrip = true;
+                        if (value['res']['latestGpsState'] != null) {
+                            _this.sinceTime = _this.msToTime(new Date().getMilliseconds() - value['res']['latestGpsState']['endTime'] - value['res']['latestGpsState']['startTime']);
+                            if (value['res']['latestGpsState']['state'] == "Disconnected" || value['res']['latestGpsState']['state'] == null || value['res']['latestGpsState']['state'] == "Suspended") {
+                                _this.isShowTripDisconnected = true;
+                            }
+                        }
                         _this.isShowTracknetEnable = true;
                         _this.isSpinner = false;
                         console.log(_this.vehicleObj);
@@ -3552,7 +3448,7 @@ var NewShipment = (function () {
             console.log('contains No freight location Obj source');
             obj1 = value;
         }
-        if (Object(__WEBPACK_IMPORTED_MODULE_6_util__["isNullOrUndefined"])(obj1['address']) || obj1['address'] == "") {
+        if (util_1.isNullOrUndefined(obj1['address']) || obj1['address'] == "") {
             obj1['address'] = value['name'];
         }
         // console.log(obj1);
@@ -3577,7 +3473,7 @@ var NewShipment = (function () {
             console.log('contains No freight location Obj Destination');
             obj = value;
         }
-        if (Object(__WEBPACK_IMPORTED_MODULE_6_util__["isNullOrUndefined"])(obj['address']) || obj['address'] == "") {
+        if (util_1.isNullOrUndefined(obj['address']) || obj['address'] == "") {
             obj['address'] = value['name'];
         }
         this.consigneeName = obj['name'];
@@ -3638,6 +3534,39 @@ var NewShipment = (function () {
         console.log(this.durationTime);
         this.isModalShown = false;
     };
+    NewShipment.prototype.msToTime = function (duration) {
+        var x = duration / 1000;
+        var seconds = Math.floor(x % 60);
+        x /= 60;
+        var minutes = Math.floor(x % 60);
+        x /= 60;
+        var hours = Math.floor(x % 24);
+        x /= 24;
+        var days = Math.floor(x);
+        // console.log(days);
+        var totalDuration = '';
+        if (days > 0) {
+            totalDuration = days + "d ";
+        }
+        if (hours > 0) {
+            totalDuration = totalDuration + hours + "hr ";
+        }
+        if (days >= 1) {
+            return totalDuration;
+        }
+        if (minutes > 0) {
+            return totalDuration = totalDuration + minutes + "min";
+        }
+        if (seconds > 0 && totalDuration == '') {
+            totalDuration = totalDuration + seconds + " sec";
+        }
+        if (totalDuration == '') {
+            return '0 sec';
+        }
+        else {
+            return totalDuration;
+        }
+    }; //close methods msToTime
     NewShipment.prototype.step1 = function () {
         var _this = this;
         setTimeout(function () {
@@ -3650,23 +3579,23 @@ var NewShipment = (function () {
         this.snackBar.open(message, 'OK', { duration: 4000 });
     };
     NewShipment.prototype.step2 = function () {
-        if (Object(__WEBPACK_IMPORTED_MODULE_6_util__["isNullOrUndefined"])(this.consigner) || this.consigner == "") {
+        if (util_1.isNullOrUndefined(this.consigner) || this.consigner == "") {
             this.openSnackBar("Please fill Consigner");
             this.steperNo = 1;
         }
-        else if (Object(__WEBPACK_IMPORTED_MODULE_6_util__["isNullOrUndefined"])(this.consignee) || this.consignee == "") {
+        else if (util_1.isNullOrUndefined(this.consignee) || this.consignee == "") {
             this.openSnackBar("Please fill Consinee");
             this.steperNo = 1;
         }
-        else if (Object(__WEBPACK_IMPORTED_MODULE_6_util__["isNullOrUndefined"])(this.plannedStartDate) || this.plannedStartDate == "") {
+        else if (util_1.isNullOrUndefined(this.plannedStartDate) || this.plannedStartDate == "") {
             this.openSnackBar("Please fill Shipment start time");
             this.steperNo = 1;
         }
-        else if (Object(__WEBPACK_IMPORTED_MODULE_6_util__["isNullOrUndefined"])(this.transitDays) || this.transitDays == "") {
+        else if (util_1.isNullOrUndefined(this.transitDays) || this.transitDays == "") {
             this.openSnackBar("Please fill Transite Days");
             this.steperNo = 1;
         }
-        else if (Object(__WEBPACK_IMPORTED_MODULE_6_util__["isNullOrUndefined"])(this.vehicleNumber) || this.vehicleNumber == "") {
+        else if (util_1.isNullOrUndefined(this.vehicleNumber) || this.vehicleNumber == "") {
             this.openSnackBar("Please fill Vehicle No");
             this.steperNo = 1;
         }
@@ -3704,14 +3633,14 @@ var NewShipment = (function () {
     return NewShipment;
 }());
 NewShipment = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    core_1.Component({
         selector: 'app-new-shipment',
         template: __webpack_require__("../../../../../src/app/components/new-shipment/new-shipment.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/new-shipment/new-shipment.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_device_services__["a" /* DeviceServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_device_services__["a" /* DeviceServices */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_shipment_services__["a" /* ShipmentServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_shipment_services__["a" /* ShipmentServices */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_7__ngrx_store__["a" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__ngrx_store__["a" /* Store */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__angular_material__["s" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_material__["s" /* MdSnackBar */]) === "function" && _f || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof router_1.Router !== "undefined" && router_1.Router) === "function" && _a || Object, typeof (_b = typeof device_services_1.DeviceServices !== "undefined" && device_services_1.DeviceServices) === "function" && _b || Object, typeof (_c = typeof shipment_services_1.ShipmentServices !== "undefined" && shipment_services_1.ShipmentServices) === "function" && _c || Object, typeof (_d = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _d || Object, typeof (_e = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _e || Object, typeof (_f = typeof material_1.MdSnackBar !== "undefined" && material_1.MdSnackBar) === "function" && _f || Object])
 ], NewShipment);
-
+exports.NewShipment = NewShipment;
 var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=new-shipment.component.js.map
 
@@ -3743,12 +3672,10 @@ module.exports = "<md-card style=\"cursor: pointer\" (click)=\"goToManageOrganis
 /***/ }),
 
 /***/ "../../../../../src/app/components/settings-component/settings-component.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SettingsComponentComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3758,8 +3685,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var router_1 = __webpack_require__("../../../router/@angular/router.es5.js");
 var SettingsComponentComponent = (function () {
     function SettingsComponentComponent(_router) {
         this._router = _router;
@@ -3772,14 +3700,14 @@ var SettingsComponentComponent = (function () {
     return SettingsComponentComponent;
 }());
 SettingsComponentComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    core_1.Component({
         selector: 'app-settings-component',
         template: __webpack_require__("../../../../../src/app/components/settings-component/settings-component.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/settings-component/settings-component.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof router_1.Router !== "undefined" && router_1.Router) === "function" && _a || Object])
 ], SettingsComponentComponent);
-
+exports.SettingsComponentComponent = SettingsComponentComponent;
 var _a;
 //# sourceMappingURL=settings-component.component.js.map
 
@@ -3811,15 +3739,10 @@ module.exports = "<div>\n  <md-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\
 /***/ }),
 
 /***/ "../../../../../src/app/components/shipment-management/shipment-management.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShipmentManagementComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_shipment_mgmt_services__ = __webpack_require__("../../../../../src/app/services/shipment-mgmt-services.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3829,11 +3752,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var router_1 = __webpack_require__("../../../router/@angular/router.es5.js");
+var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
+var shipment_mgmt_services_1 = __webpack_require__("../../../../../src/app/services/shipment-mgmt-services.ts");
+var material_1 = __webpack_require__("../../../material/@angular/material.es5.js");
 var ShipmentManagementComponent = (function () {
     function ShipmentManagementComponent(_router, _store, snackBar, shipmentMgmtService) {
         var _this = this;
@@ -3935,14 +3859,14 @@ var ShipmentManagementComponent = (function () {
     return ShipmentManagementComponent;
 }());
 ShipmentManagementComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    core_1.Component({
         selector: 'app-shipment-management',
         template: __webpack_require__("../../../../../src/app/components/shipment-management/shipment-management.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/shipment-management/shipment-management.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["a" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["a" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__angular_material__["s" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_material__["s" /* MdSnackBar */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_shipment_mgmt_services__["a" /* ShipmentMgmtService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_shipment_mgmt_services__["a" /* ShipmentMgmtService */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof router_1.Router !== "undefined" && router_1.Router) === "function" && _a || Object, typeof (_b = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _b || Object, typeof (_c = typeof material_1.MdSnackBar !== "undefined" && material_1.MdSnackBar) === "function" && _c || Object, typeof (_d = typeof shipment_mgmt_services_1.ShipmentMgmtService !== "undefined" && shipment_mgmt_services_1.ShipmentMgmtService) === "function" && _d || Object])
 ], ShipmentManagementComponent);
-
+exports.ShipmentManagementComponent = ShipmentManagementComponent;
 var _a, _b, _c, _d;
 //# sourceMappingURL=shipment-management.component.js.map
 
@@ -3974,18 +3898,10 @@ module.exports = "<div class=\"container\" style=\"min-width: 700px;box-sizing: 
 /***/ }),
 
 /***/ "../../../../../src/app/components/shipment-status/shipment-status.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShipmentStatusComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_shipment_services__ = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_device_services__ = __webpack_require__("../../../../../src/app/services/device-services.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3995,13 +3911,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var router_1 = __webpack_require__("../../../router/@angular/router.es5.js");
+var shipment_services_1 = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
+var device_services_1 = __webpack_require__("../../../../../src/app/services/device-services.ts");
+var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
+var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+var material_1 = __webpack_require__("../../../material/@angular/material.es5.js");
 var ShipmentStatusComponent = (function () {
     //close for pagination
     function ShipmentStatusComponent(_router, shipmentServices, deviceServices, _store, localStorgeService, snackBar) {
@@ -4435,14 +4352,14 @@ var ShipmentStatusComponent = (function () {
     return ShipmentStatusComponent;
 }());
 ShipmentStatusComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    core_1.Component({
         selector: 'app-shipment-status',
         template: __webpack_require__("../../../../../src/app/components/shipment-status/shipment-status.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/shipment-status/shipment-status.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_shipment_services__["a" /* ShipmentServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_shipment_services__["a" /* ShipmentServices */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_device_services__["a" /* DeviceServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_device_services__["a" /* DeviceServices */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__ngrx_store__["a" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ngrx_store__["a" /* Store */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_6__angular_material__["s" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__angular_material__["s" /* MdSnackBar */]) === "function" && _f || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof router_1.Router !== "undefined" && router_1.Router) === "function" && _a || Object, typeof (_b = typeof shipment_services_1.ShipmentServices !== "undefined" && shipment_services_1.ShipmentServices) === "function" && _b || Object, typeof (_c = typeof device_services_1.DeviceServices !== "undefined" && device_services_1.DeviceServices) === "function" && _c || Object, typeof (_d = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _d || Object, typeof (_e = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _e || Object, typeof (_f = typeof material_1.MdSnackBar !== "undefined" && material_1.MdSnackBar) === "function" && _f || Object])
 ], ShipmentStatusComponent);
-
+exports.ShipmentStatusComponent = ShipmentStatusComponent;
 var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=shipment-status.component.js.map
 
@@ -4474,18 +4391,10 @@ module.exports = "<div style=\"width: 100%;top: 0px;z-index:100;background-color
 /***/ }),
 
 /***/ "../../../../../src/app/components/tracker-shipment-status/tracker-shipment-status.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TrackerShipmentStatusComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_shipment_services__ = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_tracker_services__ = __webpack_require__("../../../../../src/app/services/tracker-services.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4495,14 +4404,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var material_1 = __webpack_require__("../../../material/@angular/material.es5.js");
+var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
 // import {Services} from "../../services/services";
-
-
-
-
+var router_1 = __webpack_require__("../../../router/@angular/router.es5.js");
+var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+var shipment_services_1 = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
+var tracker_services_1 = __webpack_require__("../../../../../src/app/services/tracker-services.ts");
 var TrackerShipmentStatusComponent = (function () {
     function TrackerShipmentStatusComponent(_router, localStorageService, snackBar, _store, shipmentServices, trackerService, route) {
         var _this = this;
@@ -4824,14 +4734,14 @@ var TrackerShipmentStatusComponent = (function () {
     return TrackerShipmentStatusComponent;
 }());
 TrackerShipmentStatusComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    core_1.Component({
         selector: 'app-tracker-shipment-status',
         template: __webpack_require__("../../../../../src/app/components/tracker-shipment-status/tracker-shipment-status.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/tracker-shipment-status/tracker-shipment-status.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["s" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["s" /* MdSnackBar */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["a" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["a" /* Store */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__services_shipment_services__["a" /* ShipmentServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_shipment_services__["a" /* ShipmentServices */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_6__services_tracker_services__["a" /* TrackerServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__services_tracker_services__["a" /* TrackerServices */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */]) === "function" && _g || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof router_1.Router !== "undefined" && router_1.Router) === "function" && _a || Object, typeof (_b = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _b || Object, typeof (_c = typeof material_1.MdSnackBar !== "undefined" && material_1.MdSnackBar) === "function" && _c || Object, typeof (_d = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _d || Object, typeof (_e = typeof shipment_services_1.ShipmentServices !== "undefined" && shipment_services_1.ShipmentServices) === "function" && _e || Object, typeof (_f = typeof tracker_services_1.TrackerServices !== "undefined" && tracker_services_1.TrackerServices) === "function" && _f || Object, typeof (_g = typeof router_1.ActivatedRoute !== "undefined" && router_1.ActivatedRoute) === "function" && _g || Object])
 ], TrackerShipmentStatusComponent);
-
+exports.TrackerShipmentStatusComponent = TrackerShipmentStatusComponent;
 var _a, _b, _c, _d, _e, _f, _g;
 //# sourceMappingURL=tracker-shipment-status.component.js.map
 
@@ -4863,12 +4773,10 @@ module.exports = "<!--Top Header to be shown in mobile view only -->\n\n<!--<div
 /***/ }),
 
 /***/ "../../../../../src/app/components/user-management-console/user-management-console.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserManagementConsoleComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4878,8 +4786,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var router_1 = __webpack_require__("../../../router/@angular/router.es5.js");
 var UserManagementConsoleComponent = (function () {
     function UserManagementConsoleComponent(_router) {
         this._router = _router;
@@ -4890,14 +4799,14 @@ var UserManagementConsoleComponent = (function () {
     return UserManagementConsoleComponent;
 }());
 UserManagementConsoleComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    core_1.Component({
         selector: 'app-user-management-console',
         template: __webpack_require__("../../../../../src/app/components/user-management-console/user-management-console.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/user-management-console/user-management-console.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof router_1.Router !== "undefined" && router_1.Router) === "function" && _a || Object])
 ], UserManagementConsoleComponent);
-
+exports.UserManagementConsoleComponent = UserManagementConsoleComponent;
 var _a;
 //# sourceMappingURL=user-management-console.component.js.map
 
@@ -4929,16 +4838,10 @@ module.exports = "<div>\n  <md-spinner *ngIf=\"isSpinner\" mode=\"indeterminate\
 /***/ }),
 
 /***/ "../../../../../src/app/components/user-management-console/users-list/users-list.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UsersListComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_user_management_services__ = __webpack_require__("../../../../../src/app/services/user-management-services.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4948,11 +4851,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
+var material_1 = __webpack_require__("../../../material/@angular/material.es5.js");
+var user_management_services_1 = __webpack_require__("../../../../../src/app/services/user-management-services.ts");
+var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
 var UsersListComponent = (function () {
     function UsersListComponent(_store, userMgmntService, snackBar, _localStorageServices) {
         var _this = this;
@@ -5136,14 +5040,14 @@ var UsersListComponent = (function () {
     return UsersListComponent;
 }());
 UsersListComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    core_1.Component({
         selector: 'app-users-list',
         template: __webpack_require__("../../../../../src/app/components/user-management-console/users-list/users-list.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/user-management-console/users-list/users-list.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__ngrx_store__["a" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__ngrx_store__["a" /* Store */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_user_management_services__["a" /* UserManagementService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_user_management_services__["a" /* UserManagementService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["s" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_material__["s" /* MdSnackBar */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _a || Object, typeof (_b = typeof user_management_services_1.UserManagementService !== "undefined" && user_management_services_1.UserManagementService) === "function" && _b || Object, typeof (_c = typeof material_1.MdSnackBar !== "undefined" && material_1.MdSnackBar) === "function" && _c || Object, typeof (_d = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _d || Object])
 ], UsersListComponent);
-
+exports.UsersListComponent = UsersListComponent;
 var _a, _b, _c, _d;
 //# sourceMappingURL=users-list.component.js.map
 
@@ -5175,18 +5079,10 @@ module.exports = "<div>\n  <div class=\"profile-container-desktop\" >\n    <img 
 /***/ }),
 
 /***/ "../../../../../src/app/components/user-profile/user-profile.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserProfile; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_logout_service__ = __webpack_require__("../../../../../src/app/services/logout-service.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5196,14 +5092,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var http_1 = __webpack_require__("../../../http/@angular/http.es5.js");
+var http_2 = __webpack_require__("../../../http/@angular/http.es5.js");
+var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+var router_1 = __webpack_require__("../../../router/@angular/router.es5.js");
+var environment_1 = __webpack_require__("../../../../../src/environments/environment.ts");
+var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
+var logout_service_1 = __webpack_require__("../../../../../src/app/services/logout-service.ts");
 var UserProfile = (function () {
     function UserProfile(zone, http, localStorageService, logoutService, _router, _store) {
         this.zone = zone;
@@ -5221,7 +5118,7 @@ var UserProfile = (function () {
         this.viewType = '';
         this.isOrgList = false;
         this.authToken = null;
-        this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        this.defaultHeaders = new http_1.Headers();
         this.orgList = [];
         this.orgListNew = [];
         this.search = '';
@@ -5279,13 +5176,13 @@ var UserProfile = (function () {
         if (!isGodOrg) {
             console.log(currentOrg);
             console.log(this.userDetails);
-            var path = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["c" /* paths */].SWITCH_ORG_PATH + currentOrg['uuid'];
-            var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+            var path = environment_1.paths.SWITCH_ORG_PATH + currentOrg['uuid'];
+            var headers = new http_1.Headers(this.defaultHeaders.toJSON());
             headers.set('Content-Type', 'application/json');
             var bearerToken = "Bearer " + this.authToken;
             headers.set('authorization', bearerToken);
-            var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-                method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
+            var requestOptions = new http_2.RequestOptions({
+                method: http_2.RequestMethod.Get,
                 headers: headers,
             });
             console.log(path);
@@ -5298,7 +5195,8 @@ var UserProfile = (function () {
                 console.log(response);
                 if (response['status'] >= 200 && response['status'] < 300) {
                     if (_this.userDetails['details']['orgType'] == currentOrg['type']) {
-                        _this.localStorageService.clearAll();
+                        // this.localStorageService.clearAll();
+                        _this.localStorageService.remove("AUTH_TOKEN");
                         _this.localStorageService.set("AUTH_TOKEN", response['token']);
                         _this.authToken = _this.localStorageService.get("AUTH_TOKEN");
                         _this.refreshUser();
@@ -5307,7 +5205,8 @@ var UserProfile = (function () {
                         });
                     }
                     else {
-                        _this.localStorageService.clearAll();
+                        // this.localStorageService.clearAll();
+                        _this.localStorageService.remove("AUTH_TOKEN");
                         _this.localStorageService.set("AUTH_TOKEN", response['token']);
                         var path_1 = 'http://' + window.location.hostname + ':' + window.location.port;
                         console.log(path_1 + "/transporter");
@@ -5338,13 +5237,13 @@ var UserProfile = (function () {
             console.log("is God User user");
             console.log(currentOrg);
             console.log(this.userDetails);
-            var path = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["c" /* paths */].SWITCH_ORG_PATH + currentOrg['uuid'];
-            var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+            var path = environment_1.paths.SWITCH_ORG_PATH + currentOrg['uuid'];
+            var headers = new http_1.Headers(this.defaultHeaders.toJSON());
             headers.set('Content-Type', 'application/json');
             var bearerToken = "Bearer " + this.authToken;
             headers.set('authorization', bearerToken);
-            var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-                method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
+            var requestOptions = new http_2.RequestOptions({
+                method: http_2.RequestMethod.Get,
                 headers: headers,
             });
             console.log(path);
@@ -5357,7 +5256,8 @@ var UserProfile = (function () {
                 console.log(response);
                 if (response['status'] >= 200 && response['status'] < 300) {
                     if (_this.userDetails['details']['orgType'] == currentOrg['type']) {
-                        _this.localStorageService.clearAll();
+                        // this.localStorageService.clearAll();
+                        _this.localStorageService.remove("AUTH_TOKEN");
                         _this.localStorageService.set("AUTH_TOKEN", response['token']);
                         _this.authToken = _this.localStorageService.get("AUTH_TOKEN");
                         _this.refreshUser();
@@ -5366,7 +5266,8 @@ var UserProfile = (function () {
                         });
                     }
                     else {
-                        _this.localStorageService.clearAll();
+                        // this.localStorageService.clearAll();
+                        _this.localStorageService.remove("AUTH_TOKEN");
                         _this.localStorageService.set("AUTH_TOKEN", response['token']);
                         var path_2 = 'http://' + window.location.hostname + ':' + window.location.port;
                         console.log(path_2 + "/transporter");
@@ -5398,13 +5299,13 @@ var UserProfile = (function () {
     UserProfile.prototype.getOrganization = function (token) {
         var _this = this;
         this.orgList = [];
-        var path = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["c" /* paths */].ORGANIZATION_LIST_PATH;
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var path = environment_1.paths.ORGANIZATION_LIST_PATH;
+        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + token;
         headers.set('authorization', bearerToken);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Get,
             headers: headers,
         });
         this.http.request(path, requestOptions).map(function (response) {
@@ -5439,36 +5340,36 @@ var UserProfile = (function () {
     return UserProfile;
 }()); // class close
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+    core_1.Input(),
     __metadata("design:type", Object)
 ], UserProfile.prototype, "view", void 0);
 UserProfile = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    core_1.Component({
         selector: 'app-user-profile',
         template: __webpack_require__("../../../../../src/app/components/user-profile/user-profile.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/user-profile/user-profile.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__["LocalStorageService"]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_6__services_logout_service__["a" /* LogoutServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__services_logout_service__["a" /* LogoutServices */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_5__ngrx_store__["a" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__ngrx_store__["a" /* Store */]) === "function" && _f || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof core_1.NgZone !== "undefined" && core_1.NgZone) === "function" && _a || Object, typeof (_b = typeof http_1.Http !== "undefined" && http_1.Http) === "function" && _b || Object, typeof (_c = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _c || Object, typeof (_d = typeof logout_service_1.LogoutServices !== "undefined" && logout_service_1.LogoutServices) === "function" && _d || Object, typeof (_e = typeof router_1.Router !== "undefined" && router_1.Router) === "function" && _e || Object, typeof (_f = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _f || Object])
 ], UserProfile);
-
+exports.UserProfile = UserProfile;
 var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=user-profile.component.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/filters/deviceFilter.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DeviceFilter; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
 var DeviceFilter = (function () {
     function DeviceFilter() {
     }
@@ -5491,26 +5392,26 @@ var DeviceFilter = (function () {
     return DeviceFilter;
 }());
 DeviceFilter = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Pipe"])({ name: "deviceType", pure: true })
+    core_1.Pipe({ name: "deviceType", pure: true })
 ], DeviceFilter);
-
+exports.DeviceFilter = DeviceFilter;
 //# sourceMappingURL=deviceFilter.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/filters/filter.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchFilter; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
 var SearchFilter = (function () {
     function SearchFilter() {
     }
@@ -5532,26 +5433,26 @@ var SearchFilter = (function () {
     return SearchFilter;
 }());
 SearchFilter = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Pipe"])({ name: 'searchFilter', pure: true })
+    core_1.Pipe({ name: 'searchFilter', pure: true })
 ], SearchFilter);
-
+exports.SearchFilter = SearchFilter;
 //# sourceMappingURL=filter.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/filters/searchDeviceFilter.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchDeviceFilter; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
 var SearchDeviceFilter = (function () {
     function SearchDeviceFilter() {
     }
@@ -5571,26 +5472,26 @@ var SearchDeviceFilter = (function () {
     return SearchDeviceFilter;
 }());
 SearchDeviceFilter = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Pipe"])({ name: 'searchDeviceFilter', pure: true })
+    core_1.Pipe({ name: 'searchDeviceFilter', pure: true })
 ], SearchDeviceFilter);
-
+exports.SearchDeviceFilter = SearchDeviceFilter;
 //# sourceMappingURL=searchDeviceFilter.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/filters/searchOrgFilter.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchOrgFilter; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
 var SearchOrgFilter = (function () {
     function SearchOrgFilter() {
     }
@@ -5610,26 +5511,26 @@ var SearchOrgFilter = (function () {
     return SearchOrgFilter;
 }());
 SearchOrgFilter = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Pipe"])({ name: 'searchOrgFilter', pure: true })
+    core_1.Pipe({ name: 'searchOrgFilter', pure: true })
 ], SearchOrgFilter);
-
+exports.SearchOrgFilter = SearchOrgFilter;
 //# sourceMappingURL=searchOrgFilter.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/filters/shipmentFilter.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShipmentFilter; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
 var ShipmentFilter = (function () {
     function ShipmentFilter() {
     }
@@ -5652,26 +5553,26 @@ var ShipmentFilter = (function () {
     return ShipmentFilter;
 }());
 ShipmentFilter = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Pipe"])({ name: "shipmentType", pure: true })
+    core_1.Pipe({ name: "shipmentType", pure: true })
 ], ShipmentFilter);
-
+exports.ShipmentFilter = ShipmentFilter;
 //# sourceMappingURL=shipmentFilter.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/filters/sortFilter.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SortFilter; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
 var SortFilter = (function () {
     function SortFilter() {
     }
@@ -5692,34 +5593,19 @@ var SortFilter = (function () {
     return SortFilter;
 }());
 SortFilter = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Pipe"])({ name: 'orderBy', pure: false })
+    core_1.Pipe({ name: 'orderBy', pure: false })
 ], SortFilter);
-
+exports.SortFilter = SortFilter;
 //# sourceMappingURL=sortFilter.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/reducers/info_store.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["q"] = token;
-/* harmony export (immutable) */ __webpack_exports__["n"] = shipmentIdList;
-/* harmony export (immutable) */ __webpack_exports__["c"] = allShipmentList;
-/* harmony export (immutable) */ __webpack_exports__["l"] = shipmentDetail;
-/* harmony export (immutable) */ __webpack_exports__["k"] = newShipment;
-/* harmony export (immutable) */ __webpack_exports__["b"] = allDevicesList;
-/* harmony export (immutable) */ __webpack_exports__["e"] = checkVehicle;
-/* harmony export (immutable) */ __webpack_exports__["p"] = switchShipment;
-/* harmony export (immutable) */ __webpack_exports__["j"] = deviceDetails;
-/* harmony export (immutable) */ __webpack_exports__["a"] = addDevice;
-/* harmony export (immutable) */ __webpack_exports__["f"] = closeDialog;
-/* harmony export (immutable) */ __webpack_exports__["h"] = createOrgRes;
-/* harmony export (immutable) */ __webpack_exports__["o"] = switchOrganisationResp;
-/* harmony export (immutable) */ __webpack_exports__["i"] = customerDetails;
-/* harmony export (immutable) */ __webpack_exports__["m"] = shipmentGroupList;
-/* harmony export (immutable) */ __webpack_exports__["g"] = createGroupRes;
-/* harmony export (immutable) */ __webpack_exports__["d"] = authorization;
+
+Object.defineProperty(exports, "__esModule", { value: true });
 // import { RouterState } from '@ngrx/router-store';
 // export const allShipmentList = 'allShipmentList';
 function token(state, action) {
@@ -5733,6 +5619,7 @@ function token(state, action) {
             return state;
     }
 }
+exports.token = token;
 function shipmentIdList(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5744,6 +5631,7 @@ function shipmentIdList(state, action) {
             return state;
     }
 }
+exports.shipmentIdList = shipmentIdList;
 function allShipmentList(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5755,6 +5643,7 @@ function allShipmentList(state, action) {
             return state;
     }
 }
+exports.allShipmentList = allShipmentList;
 function shipmentDetail(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5766,6 +5655,7 @@ function shipmentDetail(state, action) {
             return state;
     }
 }
+exports.shipmentDetail = shipmentDetail;
 function newShipment(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5777,6 +5667,7 @@ function newShipment(state, action) {
             return state;
     }
 }
+exports.newShipment = newShipment;
 function allDevicesList(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5788,6 +5679,7 @@ function allDevicesList(state, action) {
             return state;
     }
 }
+exports.allDevicesList = allDevicesList;
 function checkVehicle(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5799,6 +5691,7 @@ function checkVehicle(state, action) {
             return state;
     }
 }
+exports.checkVehicle = checkVehicle;
 function switchShipment(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5810,6 +5703,7 @@ function switchShipment(state, action) {
             return state;
     }
 }
+exports.switchShipment = switchShipment;
 function deviceDetails(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5821,6 +5715,7 @@ function deviceDetails(state, action) {
             return state;
     }
 }
+exports.deviceDetails = deviceDetails;
 function addDevice(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5832,6 +5727,7 @@ function addDevice(state, action) {
             return state;
     }
 }
+exports.addDevice = addDevice;
 function closeDialog(state, action) {
     if (state === void 0) { state = false; }
     switch (action.type) {
@@ -5843,6 +5739,7 @@ function closeDialog(state, action) {
             return state;
     }
 }
+exports.closeDialog = closeDialog;
 function createOrgRes(state, action) {
     console.log("In createOrgRes in Info store");
     switch (action.type) {
@@ -5853,6 +5750,7 @@ function createOrgRes(state, action) {
             return state;
     }
 }
+exports.createOrgRes = createOrgRes;
 function switchOrganisationResp(state, action) {
     console.log("In switchOrganisationResp in Info store");
     switch (action.type) {
@@ -5863,6 +5761,7 @@ function switchOrganisationResp(state, action) {
             return state;
     }
 }
+exports.switchOrganisationResp = switchOrganisationResp;
 function customerDetails(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5874,6 +5773,7 @@ function customerDetails(state, action) {
             return state;
     }
 }
+exports.customerDetails = customerDetails;
 function shipmentGroupList(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5884,6 +5784,7 @@ function shipmentGroupList(state, action) {
             return state;
     }
 }
+exports.shipmentGroupList = shipmentGroupList;
 function createGroupRes(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5894,6 +5795,7 @@ function createGroupRes(state, action) {
             return state;
     }
 }
+exports.createGroupRes = createGroupRes;
 function authorization(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5904,6 +5806,7 @@ function authorization(state, action) {
             return state;
     }
 }
+exports.authorization = authorization;
 // export function checkDevice(state: any = null, action:Action) {
 //   switch (action.type) {
 //     case 'CHECK_DEVICE':
@@ -5939,13 +5842,11 @@ function authorization(state, action) {
 /***/ }),
 
 /***/ "../../../../../src/app/reducers/user-management-store.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = deleteUserResponse;
-/* harmony export (immutable) */ __webpack_exports__["c"] = getAllUserList;
-/* harmony export (immutable) */ __webpack_exports__["d"] = updateUserStatusResponse;
-/* harmony export (immutable) */ __webpack_exports__["b"] = existingUserResponse;
+
+Object.defineProperty(exports, "__esModule", { value: true });
 function deleteUserResponse(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5956,6 +5857,7 @@ function deleteUserResponse(state, action) {
             return state;
     }
 }
+exports.deleteUserResponse = deleteUserResponse;
 function getAllUserList(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5966,6 +5868,7 @@ function getAllUserList(state, action) {
             return state;
     }
 }
+exports.getAllUserList = getAllUserList;
 function updateUserStatusResponse(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5976,6 +5879,7 @@ function updateUserStatusResponse(state, action) {
             return state;
     }
 }
+exports.updateUserStatusResponse = updateUserStatusResponse;
 function existingUserResponse(state, action) {
     if (state === void 0) { state = null; }
     switch (action.type) {
@@ -5986,6 +5890,7 @@ function existingUserResponse(state, action) {
             return state;
     }
 }
+exports.existingUserResponse = existingUserResponse;
 // export function createOrganisationResponse(state: any = null, action:Action) {
 //
 //   switch (action.type) {
@@ -6016,71 +5921,59 @@ function existingUserResponse(state, action) {
 /***/ }),
 
 /***/ "../../../../../src/app/router-module/router-module-routing.module.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RouterModuleRoutingModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_shipment_status_shipment_status_component__ = __webpack_require__("../../../../../src/app/components/shipment-status/shipment-status.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_device_dashboard_device_dashboard_component__ = __webpack_require__("../../../../../src/app/components/device-dashboard/device-dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_new_shipment_new_shipment_component__ = __webpack_require__("../../../../../src/app/components/new-shipment/new-shipment.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_manual_shipment_status_manual_shipment_status_component__ = __webpack_require__("../../../../../src/app/components/manual-shipment-status/manual-shipment-status.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_add_organisation_add_organisation_component__ = __webpack_require__("../../../../../src/app/components/add-organisation/add-organisation.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_settings_component_settings_component_component__ = __webpack_require__("../../../../../src/app/components/settings-component/settings-component.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_manage_organisation_manage_organisation_component__ = __webpack_require__("../../../../../src/app/components/manage-organisation/manage-organisation.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_shipment_management_shipment_management_component__ = __webpack_require__("../../../../../src/app/components/shipment-management/shipment-management.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_user_management_console_user_management_console_component__ = __webpack_require__("../../../../../src/app/components/user-management-console/user-management-console.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_user_management_console_users_list_users_list_component__ = __webpack_require__("../../../../../src/app/components/user-management-console/users-list/users-list.component.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
-
-
-
-
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var router_1 = __webpack_require__("../../../router/@angular/router.es5.js");
+var dashboard_component_1 = __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.ts");
+var shipment_status_component_1 = __webpack_require__("../../../../../src/app/components/shipment-status/shipment-status.component.ts");
+var device_dashboard_component_1 = __webpack_require__("../../../../../src/app/components/device-dashboard/device-dashboard.component.ts");
+var new_shipment_component_1 = __webpack_require__("../../../../../src/app/components/new-shipment/new-shipment.component.ts");
+var manual_shipment_status_component_1 = __webpack_require__("../../../../../src/app/components/manual-shipment-status/manual-shipment-status.component.ts");
+var add_organisation_component_1 = __webpack_require__("../../../../../src/app/components/add-organisation/add-organisation.component.ts");
+var settings_component_component_1 = __webpack_require__("../../../../../src/app/components/settings-component/settings-component.component.ts");
+var manage_organisation_component_1 = __webpack_require__("../../../../../src/app/components/manage-organisation/manage-organisation.component.ts");
 // import {UserManagementComponent} from "../components/user-management/user-management.component";
-
+var shipment_management_component_1 = __webpack_require__("../../../../../src/app/components/shipment-management/shipment-management.component.ts");
 // import {EditShipmentGroupsComponent} from "../components/shipment-management/edit-shipment-groups/edit-shipment-groups.component";
 // import {ShipmentGroupsListComponent} from "../components/shipment-management/shipment-groups-list/shipment-groups-list.component";
 // import {ShipmentListInGroupComponent} from "../components/shipment-management/shipment-list-in-group/shipment-list-in-group.component";
-
-
+var user_management_console_component_1 = __webpack_require__("../../../../../src/app/components/user-management-console/user-management-console.component.ts");
+var users_list_component_1 = __webpack_require__("../../../../../src/app/components/user-management-console/users-list/users-list.component.ts");
 var routes = [
     { path: '', pathMatch: 'full', redirectTo: 'dashboard' }
 ];
 var childRoutes = [
-    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_2__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
+    { path: 'dashboard', component: dashboard_component_1.DashboardComponent,
         children: [
             { path: '', redirectTo: 'shipmentStatus', pathMatch: 'full' },
-            { path: 'shipmentStatus', component: __WEBPACK_IMPORTED_MODULE_3__components_shipment_status_shipment_status_component__["a" /* ShipmentStatusComponent */],
+            { path: 'shipmentStatus', component: shipment_status_component_1.ShipmentStatusComponent,
                 children: [
                     // {path: '', redirectTo: 'shipmentTable', pathMatch: 'full'},
-                    { path: 'selectedVehicle', component: __WEBPACK_IMPORTED_MODULE_6__components_manual_shipment_status_manual_shipment_status_component__["a" /* ManualShipmentStatusComponent */] }
+                    { path: 'selectedVehicle', component: manual_shipment_status_component_1.ManualShipmentStatusComponent }
                 ] },
             // {path: 'shipmentDetails', component: ShipmentDetailsComponent}
-            { path: 'deviceDashboard', component: __WEBPACK_IMPORTED_MODULE_4__components_device_dashboard_device_dashboard_component__["a" /* DeviceDashboard */] },
-            { path: 'newShipment', component: __WEBPACK_IMPORTED_MODULE_5__components_new_shipment_new_shipment_component__["a" /* NewShipment */] },
-            { path: 'addOrganisation', component: __WEBPACK_IMPORTED_MODULE_7__components_add_organisation_add_organisation_component__["a" /* AddOrganisationComponent */] },
-            { path: 'settingsComponent', component: __WEBPACK_IMPORTED_MODULE_8__components_settings_component_settings_component_component__["a" /* SettingsComponentComponent */] },
-            { path: 'manageOrganisation', component: __WEBPACK_IMPORTED_MODULE_9__components_manage_organisation_manage_organisation_component__["a" /* ManageOrganisationComponent */] },
+            { path: 'deviceDashboard', component: device_dashboard_component_1.DeviceDashboard },
+            { path: 'newShipment', component: new_shipment_component_1.NewShipment },
+            { path: 'addOrganisation', component: add_organisation_component_1.AddOrganisationComponent },
+            { path: 'settingsComponent', component: settings_component_component_1.SettingsComponentComponent },
+            { path: 'manageOrganisation', component: manage_organisation_component_1.ManageOrganisationComponent },
             // {path: 'userManagementComponent', component: UserManagementComponent},
-            { path: 'shipmentManagementComponent', component: __WEBPACK_IMPORTED_MODULE_10__components_shipment_management_shipment_management_component__["a" /* ShipmentManagementComponent */] },
+            { path: 'shipmentManagementComponent', component: shipment_management_component_1.ShipmentManagementComponent },
             // {path: 'shipmentGroupsList', component: ShipmentGroupsListComponent},
             // {path: 'editShipmentGroup', component: EditShipmentGroupsComponent},
             // {path: 'shipmentListInGroup', component: ShipmentListInGroupComponent},
-            { path: 'userManagementConsole', component: __WEBPACK_IMPORTED_MODULE_11__components_user_management_console_user_management_console_component__["a" /* UserManagementConsoleComponent */] },
-            { path: 'usersList', component: __WEBPACK_IMPORTED_MODULE_12__components_user_management_console_users_list_users_list_component__["a" /* UsersListComponent */] },
+            { path: 'userManagementConsole', component: user_management_console_component_1.UserManagementConsoleComponent },
+            { path: 'usersList', component: users_list_component_1.UsersListComponent },
         ]
     }
 ];
@@ -6090,32 +5983,24 @@ var RouterModuleRoutingModule = (function () {
     return RouterModuleRoutingModule;
 }());
 RouterModuleRoutingModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+    core_1.NgModule({
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* RouterModule */].forRoot(routes),
-            __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* RouterModule */].forChild(childRoutes)
+            router_1.RouterModule.forRoot(routes),
+            router_1.RouterModule.forChild(childRoutes)
         ],
-        exports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* RouterModule */]]
+        exports: [router_1.RouterModule]
     })
 ], RouterModuleRoutingModule);
-
+exports.RouterModuleRoutingModule = RouterModuleRoutingModule;
 //# sourceMappingURL=router-module-routing.module.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/services/authorization-services.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthorizationServices; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6125,13 +6010,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var http_1 = __webpack_require__("../../../http/@angular/http.es5.js");
+var http_2 = __webpack_require__("../../../http/@angular/http.es5.js");
+__webpack_require__("../../../../rxjs/add/operator/map.js");
+var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
+var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+var environment_1 = __webpack_require__("../../../../../src/environments/environment.ts");
 var AuthorizationServices = (function () {
     function AuthorizationServices(http, _store, localStorageService) {
         var _this = this;
@@ -6139,17 +6025,17 @@ var AuthorizationServices = (function () {
         this._store = _store;
         this.localStorageService = localStorageService;
         // protected basePath = 'http://35.189.162.187:8080/command';
-        this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        this.defaultHeaders = new http_1.Headers();
         this.token = '';
         this.unSub_token = null;
-        this.tokenAuthorization = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.tokenAuthorization = new core_1.EventEmitter();
         this.defaultHeaders.append('Access-Control-Allow-Origin', '*');
         this.defaultHeaders.append('Access-Control-Allow-Methods', 'GET,POST, OPTIONS, PUT, PATCH, DELETE');
         //************ login  ***************************************************
         this.tokenAuthorization.subscribe(function (token) {
             // const path =paths.PATH+':8094/authorize';
             // const path =paths.PATH+':8099/user/authorize';
-            var path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["b" /* TEST_BASE_IP */].IP + '/user/authorize';
+            var path = environment_1.TEST_BASE_IP.IP + '/user/authorize';
             _this.checkTokenAuthorization(path, token).subscribe(function (response) {
                 console.log(response);
                 // console.log(response['error']);
@@ -6188,14 +6074,14 @@ var AuthorizationServices = (function () {
     // ***********************  token authorization**********************
     AuthorizationServices.prototype.checkTokenAuthorization = function (path, token) {
         // let queryParameters = new URLSearchParams();
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + token;
         headers.set('authorization', bearerToken);
         console.log(path);
         // console.log(headers);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Get,
             headers: headers,
         });
         return this.http.request(path, requestOptions).map(function (response) {
@@ -6226,28 +6112,20 @@ var AuthorizationServices = (function () {
     return AuthorizationServices;
 }()); // class close
 AuthorizationServices = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["a" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["a" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _c || Object])
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [typeof (_a = typeof http_1.Http !== "undefined" && http_1.Http) === "function" && _a || Object, typeof (_b = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _b || Object, typeof (_c = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _c || Object])
 ], AuthorizationServices);
-
+exports.AuthorizationServices = AuthorizationServices;
 var _a, _b, _c;
 //# sourceMappingURL=authorization-services.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/services/device-services.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DeviceServices; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6257,14 +6135,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var http_1 = __webpack_require__("../../../http/@angular/http.es5.js");
+var http_2 = __webpack_require__("../../../http/@angular/http.es5.js");
+__webpack_require__("../../../../rxjs/add/operator/map.js");
+var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
 // import {PATH,DETAIL,CREATESHIPMENT} from "./path-services";
-
-
+var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+var environment_1 = __webpack_require__("../../../../../src/environments/environment.ts");
 // import {KEY} from "./config-services"
 var DeviceServices = (function () {
     function DeviceServices(http, _store, localStorageService) {
@@ -6272,20 +6151,20 @@ var DeviceServices = (function () {
         this.http = http;
         this._store = _store;
         this.localStorageService = localStorageService;
-        this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        this.defaultHeaders = new http_1.Headers();
         this.token = '';
-        this.allDevicesList = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.allDevicesList = new core_1.EventEmitter();
         //   public allActiveDevicesList=new EventEmitter();
         //   public allAvalabileDevicesList=new EventEmitter();
         //   public allRepairingDevicesList=new EventEmitter();
         //   public deviceDetail=new EventEmitter();
-        this.addDevice = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.addDevice = new core_1.EventEmitter();
         this.token = this.localStorageService.get("AUTH_TOKEN");
         this.allDevicesList.subscribe(function () {
             // this.token ='eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MTI2NTU1NDksInVzZXJJZCI6IjdjYjQwYWQ2LWVmZjMtNGJiNS05MmE5LTA4ZDEwMWU4N2E2NSIsImVtYWlsIjoic3VuaWxAZnJldHJvbi5jb20iLCJtb2JpbGVOdW1iZXIiOiI5MDg1NDMyOTUxIiwib3JnSWQiOiI5ODJlNjczMy1lMTMyLTRhOWMtOTM4OC00ZmE0NzQ0Zjg3ODMiLCJuYW1lIjoiU3VuaWwiLCJvcmdUeXBlIjoiRkxFRVRfT1dORVIifQ.ZUgT6OvjOtkMqzeXMEa9aCpH3QqJS_KnqSAMjWIXAes';
             // close remove it for testing purpose only
             console.log(_this.token);
-            var path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["c" /* paths */].DEVICE_LIST_PATH;
+            var path = environment_1.paths.DEVICE_LIST_PATH;
             // console.log(path);
             _this.getDevicesList(path).subscribe(function (response) {
                 console.log(response);
@@ -6302,7 +6181,7 @@ var DeviceServices = (function () {
             });
         });
         this.addDevice.subscribe(function (device) {
-            var path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["c" /* paths */].DEVICE_ADD_PATH;
+            var path = environment_1.paths.DEVICE_ADD_PATH;
             _this.addDeviceService(path, device).subscribe(function (response) {
                 //  console.log(response);
                 if (response['status'] >= 200 && response['status'] < 300) {
@@ -6377,13 +6256,13 @@ var DeviceServices = (function () {
     // }
     //
     DeviceServices.prototype.getDevicesList = function (path) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var headers = new http_1.Headers();
         console.log(this.token);
         var bearerToken = "Bearer " + this.token;
         headers.set('Content-Type', 'application/json');
         headers.set('authorization', bearerToken);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Get,
             headers: headers,
         });
         return this.http.request(path, requestOptions).map(function (response) {
@@ -6400,13 +6279,13 @@ var DeviceServices = (function () {
     DeviceServices.prototype.addDeviceService = function (path, device) {
         console.log(path);
         console.log(device);
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var headers = new http_1.Headers();
         console.log(this.token);
         var bearerToken = "Bearer " + this.token;
         headers.set('Content-Type', 'application/json');
         headers.set('authorization', bearerToken);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Post,
             headers: headers,
             body: device,
         });
@@ -6424,24 +6303,20 @@ var DeviceServices = (function () {
     return DeviceServices;
 }()); // class close
 DeviceServices = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["a" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["a" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _c || Object])
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [typeof (_a = typeof http_1.Http !== "undefined" && http_1.Http) === "function" && _a || Object, typeof (_b = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _b || Object, typeof (_c = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _c || Object])
 ], DeviceServices);
-
+exports.DeviceServices = DeviceServices;
 var _a, _b, _c;
 //# sourceMappingURL=device-services.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/services/logout-service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LogoutServices; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__);
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6451,9 +6326,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
+var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
 var LogoutServices = (function () {
     function LogoutServices(localStorageService, _store) {
         this.localStorageService = localStorageService;
@@ -6463,48 +6339,40 @@ var LogoutServices = (function () {
     };
     LogoutServices.prototype.logout = function () {
         console.log(localStorage);
-        // this.localStorageService.remove("TOKEN");
+        this.localStorageService.remove("AUTH_TOKEN");
         // this.localStorageService.remove("USER-MOB-NO");
         // this.localStorageService.remove("COUNTRY-CODE");
         // this.localStorageService.remove("VEHICLE_TIMELINE_REQUEST_OBJ");
         // this.localStorageService.remove("VEHICLE-TRIP-DETAIL-OBJ"); //created in vehicle trip status details
         // this.localStorageService.remove("SELECTED-LOCATION-HIS-VEHICLE");
         // this._store.dispatch({type: "LOGOUT",payload:null});
-        this.localStorageService.clearAll();
+        // this.localStorageService.clearAll();
         this._store.dispatch({ type: "CUSTOMER_DETAILS", payload: null });
         // this._store.dispatch({type: "CURRENT_TRIP_VEHICLE", payload:null});
         // this._store.dispatch({type: "AUTHORIZATION", payload: null});
         // this._store.dispatch({type: "VEHICLE_LIST",payload:null});
         // this._store.dispatch({type: "TOKEN",payload:null});
-        // this._store.dispatch({type: "AUTH_TOKEN",payload:null});
+        this._store.dispatch({ type: "AUTH_TOKEN", payload: null });
         var path = 'http://' + window.location.hostname + ':' + window.location.port;
         window.location.replace(path + "/fretron-auth/fretronLogin");
     };
     return LogoutServices;
 }()); // class close
 LogoutServices = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular_2_local_storage__["LocalStorageService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__ngrx_store__["a" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__ngrx_store__["a" /* Store */]) === "function" && _b || Object])
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [typeof (_a = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _a || Object, typeof (_b = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _b || Object])
 ], LogoutServices);
-
+exports.LogoutServices = LogoutServices;
 var _a, _b;
 //# sourceMappingURL=logout-service.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/services/manage-organisation-services.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ManageOrganisationService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6514,24 +6382,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var http_1 = __webpack_require__("../../../http/@angular/http.es5.js");
+var http_2 = __webpack_require__("../../../http/@angular/http.es5.js");
+__webpack_require__("../../../../rxjs/add/operator/map.js");
+var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
+var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+var environment_1 = __webpack_require__("../../../../../src/environments/environment.ts");
 var ManageOrganisationService = (function () {
     function ManageOrganisationService(http, _store, localStorageService) {
         var _this = this;
         this.http = http;
         this._store = _store;
         this.localStorageService = localStorageService;
-        this.createOrg = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.switchOrganisations = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.createOrg = new core_1.EventEmitter();
+        this.switchOrganisations = new core_1.EventEmitter();
         this.createOrg.subscribe(function (addOrgObj) {
             _this.token = _this.localStorageService.get("AUTH_TOKEN");
-            var path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["c" /* paths */].CREATE_ORGANISATION_PATH;
+            var path = environment_1.paths.CREATE_ORGANISATION_PATH;
             console.log(path);
             _this.createOrganisation(path, addOrgObj).subscribe(function (response) {
                 console.log(response);
@@ -6550,7 +6419,7 @@ var ManageOrganisationService = (function () {
         });
         this.switchOrganisations.subscribe(function (orgId) {
             _this.token = _this.localStorageService.get("AUTH_TOKEN");
-            var path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["c" /* paths */].SWITCH_ORG_PATH + orgId;
+            var path = environment_1.paths.SWITCH_ORG_PATH + orgId;
             console.log(path);
             _this.switchOrganisation(path, orgId).subscribe(function (response) {
                 console.log(response);
@@ -6570,13 +6439,13 @@ var ManageOrganisationService = (function () {
     ManageOrganisationService.prototype.ngOnDestroy = function () {
     };
     ManageOrganisationService.prototype.createOrganisation = function (path, addOrgObj) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var headers = new http_1.Headers();
         console.log(this.token);
         var bearerToken = "Bearer " + this.token;
         headers.set('Content-Type', 'application/json');
         headers.set('authorization', bearerToken);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Post,
             headers: headers,
             body: addOrgObj,
         });
@@ -6592,14 +6461,14 @@ var ManageOrganisationService = (function () {
         });
     };
     ManageOrganisationService.prototype.switchOrganisation = function (path, switchOrgId) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        var headers = new http_1.Headers();
         console.log(this.token);
         console.log(this.token);
         var bearerToken = "Bearer " + this.token;
         headers.set('Content-Type', 'application/json');
         headers.set('authorization', bearerToken);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Get,
             headers: headers,
         });
         return this.http.request(path, requestOptions).map(function (response) {
@@ -6616,29 +6485,20 @@ var ManageOrganisationService = (function () {
     return ManageOrganisationService;
 }());
 ManageOrganisationService = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["a" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["a" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _c || Object])
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [typeof (_a = typeof http_1.Http !== "undefined" && http_1.Http) === "function" && _a || Object, typeof (_b = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _b || Object, typeof (_c = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _c || Object])
 ], ManageOrganisationService);
-
+exports.ManageOrganisationService = ManageOrganisationService;
 var _a, _b, _c;
 //# sourceMappingURL=manage-organisation-services.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/services/manual-shipment-service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ManualShipmentServices; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_shipment_services__ = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6648,15 +6508,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var http_1 = __webpack_require__("../../../http/@angular/http.es5.js");
+var http_2 = __webpack_require__("../../../http/@angular/http.es5.js");
+__webpack_require__("../../../../rxjs/add/operator/map.js");
+var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
 // import {ADDSTOP,PICKUP,DELIVERY} from "./path-services";
-
-
-
+var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+var environment_1 = __webpack_require__("../../../../../src/environments/environment.ts");
+var shipment_services_1 = __webpack_require__("../../../../../src/app/services/shipment-services.ts");
 // import {KEY} from "./config-services"
 var ManualShipmentServices = (function () {
     function ManualShipmentServices(http, _store, localStorgeService, shipmentServices) {
@@ -6665,16 +6526,16 @@ var ManualShipmentServices = (function () {
         this._store = _store;
         this.localStorgeService = localStorgeService;
         this.shipmentServices = shipmentServices;
-        this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        this.defaultHeaders = new http_1.Headers();
         this.token = '';
-        this.pickup = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.addStop = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.delivery = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.pickup = new core_1.EventEmitter();
+        this.addStop = new core_1.EventEmitter();
+        this.delivery = new core_1.EventEmitter();
         /***************get shipment list ***************/
         this.token = this.localStorgeService.get("AUTH_TOKEN");
         /***************set pickup ***************/
         this.pickup.subscribe(function (pickUp) {
-            var path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["c" /* paths */].SHIPMENT_PATH + '/missing/pickup';
+            var path = environment_1.paths.SHIPMENT_PATH + '/missing/pickup';
             console.log(path);
             _this.setPickup(path, pickUp).subscribe(function (response) {
                 console.log(response);
@@ -6685,7 +6546,7 @@ var ManualShipmentServices = (function () {
         });
         /***************set addStop ***************/
         this.addStop.subscribe(function (addstop) {
-            var path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["c" /* paths */].SHIPMENT_PATH + '/addstop';
+            var path = environment_1.paths.SHIPMENT_PATH + '/addstop';
             _this.setAddStop(path, addstop).subscribe(function (response) {
                 console.log(response);
                 var res = response;
@@ -6695,7 +6556,7 @@ var ManualShipmentServices = (function () {
         });
         /***************set delivery ***************/
         this.delivery.subscribe(function (deliveryy) {
-            var path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["c" /* paths */].SHIPMENT_PATH + '/missing/delivery';
+            var path = environment_1.paths.SHIPMENT_PATH + '/missing/delivery';
             _this.setDelivery(path, deliveryy).subscribe(function (response) {
                 console.log(response);
                 var res = response;
@@ -6709,12 +6570,12 @@ var ManualShipmentServices = (function () {
     // ***********************  get shipmentId list **********************
     ManualShipmentServices.prototype.getIdList = function (path) {
         var _this = this;
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
         headers.set('Content-Type', 'application/json');
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Get,
             headers: headers,
         });
         console.log(this.http);
@@ -6727,12 +6588,12 @@ var ManualShipmentServices = (function () {
     // ***********************  add Stop **********************
     ManualShipmentServices.prototype.setAddStop = function (path, value) {
         var _this = this;
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Post,
             headers: headers,
             body: value
         });
@@ -6749,12 +6610,12 @@ var ManualShipmentServices = (function () {
     ManualShipmentServices.prototype.setPickup = function (path, value) {
         var _this = this;
         console.log(path);
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Post,
             headers: headers,
             body: value
         });
@@ -6770,12 +6631,12 @@ var ManualShipmentServices = (function () {
     // ***********************  delivery **********************
     ManualShipmentServices.prototype.setDelivery = function (path, value) {
         var _this = this;
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Post,
             headers: headers,
             body: value
         });
@@ -6791,28 +6652,20 @@ var ManualShipmentServices = (function () {
     return ManualShipmentServices;
 }()); // class close
 ManualShipmentServices = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["a" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["a" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_6__services_shipment_services__["a" /* ShipmentServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__services_shipment_services__["a" /* ShipmentServices */]) === "function" && _d || Object])
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [typeof (_a = typeof http_1.Http !== "undefined" && http_1.Http) === "function" && _a || Object, typeof (_b = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _b || Object, typeof (_c = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _c || Object, typeof (_d = typeof shipment_services_1.ShipmentServices !== "undefined" && shipment_services_1.ShipmentServices) === "function" && _d || Object])
 ], ManualShipmentServices);
-
+exports.ManualShipmentServices = ManualShipmentServices;
 var _a, _b, _c, _d;
 //# sourceMappingURL=manual-shipment-service.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/services/shipment-mgmt-services.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShipmentMgmtService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6822,36 +6675,37 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Created by amit8.kumar on 06-12-2017.
  */
-
-
-
-
-
-
-
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var http_1 = __webpack_require__("../../../http/@angular/http.es5.js");
+var http_2 = __webpack_require__("../../../http/@angular/http.es5.js");
+__webpack_require__("../../../../rxjs/add/operator/map.js");
+var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
+var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+var environment_1 = __webpack_require__("../../../../../src/environments/environment.ts");
 var ShipmentMgmtService = (function () {
     function ShipmentMgmtService(http, _store, localStorageService) {
         var _this = this;
         this.http = http;
         this._store = _store;
         this.localStorageService = localStorageService;
-        this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        this.defaultHeaders = new http_1.Headers();
         // public deleteUser = new EventEmitter();
-        this.getAllShipmentGroupsList = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.getAllShipmentGroupsList = new core_1.EventEmitter();
         // public getAllVehiclesByGroup = new EventEmitter();
         // public getAllVehiclesByOrg = new EventEmitter();
         // public deleteGroup = new EventEmitter();
         // public editSelecetedVehicle = new EventEmitter();
         // public deleteSelecetedVehicle = new EventEmitter();
-        this.createNewShipmentGroup = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.createNewShipmentGroup = new core_1.EventEmitter();
         this.token = this.localStorageService.get("AUTH_TOKEN");
         //@todo handle error cases
         this.getAllShipmentGroupsList.subscribe(function (orgId) {
             // let path=paths.CONFIGURE_ALERTS_PATH+"/all?"+customerId;
-            var path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["c" /* paths */].MANAGE_VEHICLES_GRP_PATH + "/get";
+            var path = environment_1.paths.MANAGE_VEHICLES_GRP_PATH + "/get";
             // console.log(path);
             _this.getAllShipmentGroup(path).subscribe(function (response) {
                 console.log(response);
@@ -6914,7 +6768,7 @@ var ShipmentMgmtService = (function () {
         //   });
         // });
         this.createNewShipmentGroup.subscribe(function (groupObj) {
-            var path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["c" /* paths */].MANAGE_VEHICLES_GRP_PATH + "/create";
+            var path = environment_1.paths.MANAGE_VEHICLES_GRP_PATH + "/create";
             console.log(path);
             console.log(groupObj);
             _this.createNewGroup(groupObj, path).subscribe(function (response) {
@@ -6959,12 +6813,12 @@ var ShipmentMgmtService = (function () {
     ShipmentMgmtService.prototype.ngOnDestroy = function () {
     };
     ShipmentMgmtService.prototype.getAllShipmentGroup = function (path) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
         var bearerToken = "Bearer " + this.token;
         headers.set('Content-Type', 'application/json');
         headers.set('authorization', bearerToken);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Get,
             headers: headers,
         });
         return this.http.request(path, requestOptions).map(function (response) {
@@ -7057,12 +6911,12 @@ var ShipmentMgmtService = (function () {
     //   });
     // }
     ShipmentMgmtService.prototype.createNewGroup = function (vehicleObj, path) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
         var bearerToken = "Bearer " + this.token;
         headers.set('Content-Type', 'application/json');
         headers.set('authorization', bearerToken);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Post,
             headers: headers,
             body: vehicleObj,
         });
@@ -7077,28 +6931,20 @@ var ShipmentMgmtService = (function () {
     return ShipmentMgmtService;
 }());
 ShipmentMgmtService = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["a" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["a" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _c || Object])
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [typeof (_a = typeof http_1.Http !== "undefined" && http_1.Http) === "function" && _a || Object, typeof (_b = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _b || Object, typeof (_c = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _c || Object])
 ], ShipmentMgmtService);
-
+exports.ShipmentMgmtService = ShipmentMgmtService;
 var _a, _b, _c;
 //# sourceMappingURL=shipment-mgmt-services.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/services/shipment-services.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShipmentServices; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__);
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7108,14 +6954,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var http_1 = __webpack_require__("../../../http/@angular/http.es5.js");
+var http_2 = __webpack_require__("../../../http/@angular/http.es5.js");
+__webpack_require__("../../../../rxjs/add/operator/map.js");
+var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
 // import {PATH,DETAIL,CREATESHIPMENT,ADDSTOP,PICKUP,DELIVERY} from "./path-services";
-
-
+var environment_1 = __webpack_require__("../../../../../src/environments/environment.ts");
+var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
 // import {KEY} from "./config-services"
 var ShipmentServices = (function () {
     function ShipmentServices(http, _store, localStorgeService) {
@@ -7123,18 +6970,18 @@ var ShipmentServices = (function () {
         this.http = http;
         this._store = _store;
         this.localStorgeService = localStorgeService;
-        this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        this.defaultHeaders = new http_1.Headers();
         this.token = '';
-        this.getShipmentList = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.getShipmentDetail = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.createNewShipment = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.checkVehicle = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.getShipmentList = new core_1.EventEmitter();
+        this.getShipmentDetail = new core_1.EventEmitter();
+        this.createNewShipment = new core_1.EventEmitter();
+        this.checkVehicle = new core_1.EventEmitter();
         // public checkDevice=new EventEmitter();
-        this.switchShipmentDetail = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.switchShipmentDetail = new core_1.EventEmitter();
         /***************get shipment list ***************/
         this.token = this.localStorgeService.get("AUTH_TOKEN");
         this.getShipmentList.subscribe(function () {
-            var path = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["c" /* paths */].SHIPMENT_PATH + '/dashboard';
+            var path = environment_1.paths.SHIPMENT_PATH + '/dashboard';
             console.log(path);
             _this.getList(path).subscribe(function (response) {
                 console.log(response);
@@ -7152,7 +6999,7 @@ var ShipmentServices = (function () {
         });
         /************* get shipment details  *************/
         this.getShipmentDetail.subscribe(function (id) {
-            var path = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["c" /* paths */].SHIPMENT_PATH + '/detail/' + id;
+            var path = environment_1.paths.SHIPMENT_PATH + '/detail/' + id;
             console.log(path);
             _this.getDetails(path).subscribe(function (response) {
                 console.log(response['detail']);
@@ -7170,7 +7017,7 @@ var ShipmentServices = (function () {
         });
         /************* create shipment   *************/
         this.createNewShipment.subscribe(function (shipment) {
-            var path = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["c" /* paths */].SHIPMENT_PATH + '/create';
+            var path = environment_1.paths.SHIPMENT_PATH + '/create';
             console.log(path);
             _this.createShipment(path, shipment).subscribe(function (response) {
                 console.log(response);
@@ -7191,7 +7038,7 @@ var ShipmentServices = (function () {
         /************* get shipment details  *************/
         /************* switch shipment   *************/
         this.switchShipmentDetail.subscribe(function (shipment) {
-            var path = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["c" /* paths */].SHIPMENT_PATH + '/switch/trackmode';
+            var path = environment_1.paths.SHIPMENT_PATH + '/switch/trackmode';
             console.log(path);
             _this.switchShipment(path, shipment).subscribe(function (response) {
                 console.log(response);
@@ -7208,7 +7055,7 @@ var ShipmentServices = (function () {
         });
         /*************check vehicle details  *************/
         this.checkVehicle.subscribe(function (id) {
-            var path = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["c" /* paths */].CHECK_VEHICLE + '?registrationNumber=' + id;
+            var path = environment_1.paths.CHECK_VEHICLE + '?registrationNumber=' + id;
             console.log(path);
             _this.getVehicle(path).subscribe(function (response) {
                 console.log(response);
@@ -7246,12 +7093,12 @@ var ShipmentServices = (function () {
     };
     // ***********************  get shipment list **********************
     ShipmentServices.prototype.getList = function (path) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Get,
             headers: headers,
         });
         // console.log(this.http);
@@ -7262,12 +7109,12 @@ var ShipmentServices = (function () {
     };
     // ***********************  get vehicle list **********************
     ShipmentServices.prototype.getVehicle = function (path) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Get,
             headers: headers,
         });
         // console.log(this.http);
@@ -7278,12 +7125,12 @@ var ShipmentServices = (function () {
     };
     // ***********************  switch shipment **********************
     ShipmentServices.prototype.switchShipment = function (path, shipment) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Post,
             headers: headers,
             body: shipment
         });
@@ -7295,12 +7142,12 @@ var ShipmentServices = (function () {
     };
     // ****************** get Vehicle Detail *******************
     ShipmentServices.prototype.getDetails = function (path) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Get,
             headers: headers,
         });
         return this.http.request(path, requestOptions).map(function (response) {
@@ -7312,12 +7159,12 @@ var ShipmentServices = (function () {
     ShipmentServices.prototype.createShipment = function (path, shipment) {
         console.log(path);
         console.log(shipment);
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Post,
             headers: headers,
             body: shipment
         });
@@ -7332,28 +7179,20 @@ var ShipmentServices = (function () {
     return ShipmentServices;
 }()); // class close
 ShipmentServices = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["a" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["a" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_angular_2_local_storage__["LocalStorageService"]) === "function" && _c || Object])
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [typeof (_a = typeof http_1.Http !== "undefined" && http_1.Http) === "function" && _a || Object, typeof (_b = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _b || Object, typeof (_c = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _c || Object])
 ], ShipmentServices);
-
+exports.ShipmentServices = ShipmentServices;
 var _a, _b, _c;
 //# sourceMappingURL=shipment-services.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/services/tracker-services.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TrackerServices; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7363,14 +7202,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var http_1 = __webpack_require__("../../../http/@angular/http.es5.js");
+var http_2 = __webpack_require__("../../../http/@angular/http.es5.js");
+__webpack_require__("../../../../rxjs/add/operator/map.js");
+var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
+var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
 // import {TRACKER_TRIP_DISCARD_PATH,TRACKER_TRIP_UPDATE_PATH,TRACKER_TRIP_UPDATE_FROM_STOP_PATH,TRACKER_TRIP_CONFIRM_LOCATION_PATH } from "./path-services";
-
+var environment_1 = __webpack_require__("../../../../../src/environments/environment.ts");
 var TrackerServices = (function () {
     function TrackerServices(http, _store, localStorageService) {
         var _this = this;
@@ -7378,21 +7218,21 @@ var TrackerServices = (function () {
         this._store = _store;
         this.localStorageService = localStorageService;
         // protected basePath = 'http://35.189.162.187:8080/command';
-        this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
-        this.discardTrackerTrip = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.updateTrackerTrip = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.updateTrackerTripFromStop = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.confirmLocation = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.defaultHeaders = new http_1.Headers();
+        this.discardTrackerTrip = new core_1.EventEmitter();
+        this.updateTrackerTrip = new core_1.EventEmitter();
+        this.updateTrackerTripFromStop = new core_1.EventEmitter();
+        this.confirmLocation = new core_1.EventEmitter();
         this.token = '';
         //@todo handle error cases
         this.token = this.localStorageService.get("AUTH_TOKEN");
         this.discardTrackerTrip.subscribe(function (discard) {
             var path;
             if (discard['forEditPlace'] == 'destination') {
-                path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["c" /* paths */].SHIPMENT_PATH + "/discard/delivery";
+                path = environment_1.paths.SHIPMENT_PATH + "/discard/delivery";
             }
             else if (discard['forEditPlace'] == 'pickup') {
-                path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["c" /* paths */].SHIPMENT_PATH + "/discard/pickup";
+                path = environment_1.paths.SHIPMENT_PATH + "/discard/pickup";
             }
             console.log(path);
             console.log(discard['discardObj']);
@@ -7404,7 +7244,7 @@ var TrackerServices = (function () {
         });
         //@todo handle error cases
         this.updateTrackerTrip.subscribe(function (updateTripObj) {
-            var path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["c" /* paths */].SHIPMENT_PATH + '/update';
+            var path = environment_1.paths.SHIPMENT_PATH + '/update';
             console.log(path);
             console.log(updateTripObj);
             _this.doUpdateTrip(path, updateTripObj).subscribe(function (response) {
@@ -7417,10 +7257,10 @@ var TrackerServices = (function () {
         this.updateTrackerTripFromStop.subscribe(function (tripObj) {
             var path;
             if (tripObj['forEditPlace'] == 'destination') {
-                path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["c" /* paths */].SHIPMENT_PATH + "/selectfromstop/delivery";
+                path = environment_1.paths.SHIPMENT_PATH + "/selectfromstop/delivery";
             }
             else if (tripObj['forEditPlace'] == 'pickup') {
-                path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["c" /* paths */].SHIPMENT_PATH + "/selectfromstop/pickup";
+                path = environment_1.paths.SHIPMENT_PATH + "/selectfromstop/pickup";
             }
             console.log(path);
             console.log(tripObj['movementObj']);
@@ -7434,10 +7274,10 @@ var TrackerServices = (function () {
         this.confirmLocation.subscribe(function (obj) {
             var path;
             if (obj['forConfirmPlace'] == 'Destination') {
-                path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["c" /* paths */].SHIPMENT_PATH + "/missing/delivery";
+                path = environment_1.paths.SHIPMENT_PATH + "/missing/delivery";
             }
             else if (obj['forConfirmPlace'] == 'Pickup') {
-                path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["c" /* paths */].SHIPMENT_PATH + "/missing/pickup";
+                path = environment_1.paths.SHIPMENT_PATH + "/missing/pickup";
             }
             console.log(path);
             console.log(obj['conObj']);
@@ -7452,12 +7292,12 @@ var TrackerServices = (function () {
     };
     // *********************** discard Trip  **********************
     TrackerServices.prototype.doDiscardTrip = function (path, discardTrip) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Post,
             headers: headers,
             body: discardTrip,
         });
@@ -7474,12 +7314,12 @@ var TrackerServices = (function () {
     };
     // *********************** update trip  **********************
     TrackerServices.prototype.doUpdateTrip = function (path, updateTrip) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Post,
             headers: headers,
             body: updateTrip,
         });
@@ -7496,12 +7336,12 @@ var TrackerServices = (function () {
     };
     // *********************** update trip  from stop/list of movement logs  **********************
     TrackerServices.prototype.doUpdateTripFromStop = function (path, updateTrip) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Post,
             headers: headers,
             body: updateTrip,
         });
@@ -7518,12 +7358,12 @@ var TrackerServices = (function () {
     };
     // *********************** update trip  from stop/list of movement logs  **********************
     TrackerServices.prototype.doConfirmLocation = function (path, obj) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
         headers.set('Content-Type', 'application/json');
         var bearerToken = "Bearer " + this.token;
         headers.set('authorization', bearerToken);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Post,
             headers: headers,
             body: obj,
         });
@@ -7541,28 +7381,20 @@ var TrackerServices = (function () {
     return TrackerServices;
 }()); // class close
 TrackerServices = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["a" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["a" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _c || Object])
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [typeof (_a = typeof http_1.Http !== "undefined" && http_1.Http) === "function" && _a || Object, typeof (_b = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _b || Object, typeof (_c = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _c || Object])
 ], TrackerServices);
-
+exports.TrackerServices = TrackerServices;
 var _a, _b, _c;
 //# sourceMappingURL=tracker-services.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/services/user-management-services.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserManagementService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__ = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7572,29 +7404,30 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var http_1 = __webpack_require__("../../../http/@angular/http.es5.js");
+var http_2 = __webpack_require__("../../../http/@angular/http.es5.js");
+__webpack_require__("../../../../rxjs/add/operator/map.js");
+var store_1 = __webpack_require__("../../../../@ngrx/store/index.js");
+var angular_2_local_storage_1 = __webpack_require__("../../../../angular-2-local-storage/dist/index.js");
+var environment_1 = __webpack_require__("../../../../../src/environments/environment.ts");
 var UserManagementService = (function () {
     function UserManagementService(http, _store, localStorageService) {
         var _this = this;
         this.http = http;
         this._store = _store;
         this.localStorageService = localStorageService;
-        this.defaultHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
-        this.deleteUser = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.getAllUsersList = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.changeUserType = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.getUserIfExist = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.addUserToGroup = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.defaultHeaders = new http_1.Headers();
+        this.deleteUser = new core_1.EventEmitter();
+        this.getAllUsersList = new core_1.EventEmitter();
+        this.changeUserType = new core_1.EventEmitter();
+        this.getUserIfExist = new core_1.EventEmitter();
+        this.addUserToGroup = new core_1.EventEmitter();
         //@todo handle error cases
         this.getAllUsersList.subscribe(function (token) {
             _this.token = token;
-            var path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["c" /* paths */].MANAGE_USERS_PATH;
+            var path = environment_1.paths.MANAGE_USERS_PATH;
             console.log(path);
             _this.getAllUsers(path, token).subscribe(function (response) {
                 console.log(response);
@@ -7639,7 +7472,7 @@ var UserManagementService = (function () {
         // });
         //@todo handle error cases
         this.deleteUser.subscribe(function (userObj) {
-            var path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["c" /* paths */].DELETE_USERS_PATH + "/remove";
+            var path = environment_1.paths.DELETE_USERS_PATH + "/remove";
             console.log(path);
             console.log(userObj);
             _this.deleteSelectedUser(userObj, path).subscribe(function (response) {
@@ -7650,7 +7483,7 @@ var UserManagementService = (function () {
             });
         });
         this.changeUserType.subscribe(function (userObj) {
-            var path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["c" /* paths */].DELETE_USERS_PATH + "/add";
+            var path = environment_1.paths.DELETE_USERS_PATH + "/add";
             console.log(path);
             console.log(userObj);
             _this.updateSelectedUser(userObj, path).subscribe(function (response) {
@@ -7661,7 +7494,7 @@ var UserManagementService = (function () {
             });
         });
         this.addUserToGroup.subscribe(function (userObj) {
-            var path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["c" /* paths */].DELETE_USERS_PATH + "/add";
+            var path = environment_1.paths.DELETE_USERS_PATH + "/add";
             console.log(path);
             console.log(userObj);
             _this.updateSelectedUser(userObj, path).subscribe(function (response) {
@@ -7674,10 +7507,10 @@ var UserManagementService = (function () {
         this.getUserIfExist.subscribe(function (newUserObj) {
             var path = "";
             if (newUserObj['email'] != "") {
-                path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["c" /* paths */].ADD_EXISTING_USERS_PATH + "?email=" + newUserObj['email'];
+                path = environment_1.paths.ADD_EXISTING_USERS_PATH + "?email=" + newUserObj['email'];
             }
             if (newUserObj['mobile'] != "") {
-                path = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["c" /* paths */].ADD_EXISTING_USERS_PATH + "?mobile=" + newUserObj['mobile'];
+                path = environment_1.paths.ADD_EXISTING_USERS_PATH + "?mobile=" + newUserObj['mobile'];
             }
             console.log(path);
             console.log(newUserObj);
@@ -7692,12 +7525,12 @@ var UserManagementService = (function () {
     UserManagementService.prototype.ngOnDestroy = function () {
     };
     UserManagementService.prototype.deleteSelectedUser = function (userObj, path) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
         var bearerToken = "Bearer " + this.token;
         headers.set('Content-Type', 'application/json');
         headers.set('authorization', bearerToken);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Post,
             headers: headers,
             body: userObj,
         });
@@ -7757,12 +7590,12 @@ var UserManagementService = (function () {
     //   });
     // }
     UserManagementService.prototype.updateSelectedUser = function (userObj, path) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
         var bearerToken = "Bearer " + this.token;
         headers.set('Content-Type', 'application/json');
         headers.set('authorization', bearerToken);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Post,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Post,
             headers: headers,
             body: userObj,
         });
@@ -7775,12 +7608,12 @@ var UserManagementService = (function () {
         });
     };
     UserManagementService.prototype.getAllUsers = function (path, token) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
         var bearerToken = "Bearer " + token;
         headers.set('Content-Type', 'application/json');
         headers.set('authorization', bearerToken);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Get,
             headers: headers,
         });
         return this.http.request(path, requestOptions).map(function (response) {
@@ -7792,12 +7625,12 @@ var UserManagementService = (function () {
         });
     };
     UserManagementService.prototype.checkExistingUser = function (path) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */](this.defaultHeaders.toJSON());
+        var headers = new http_1.Headers(this.defaultHeaders.toJSON());
         var bearerToken = "Bearer " + this.token;
         headers.set('Content-Type', 'application/json');
         headers.set('authorization', bearerToken);
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
-            method: __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestMethod */].Get,
+        var requestOptions = new http_2.RequestOptions({
+            method: http_2.RequestMethod.Get,
             headers: headers,
         });
         return this.http.request(path, requestOptions).map(function (response) {
@@ -7811,55 +7644,53 @@ var UserManagementService = (function () {
     return UserManagementService;
 }());
 UserManagementService = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["a" /* Store */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ngrx_store__["a" /* Store */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular_2_local_storage__["LocalStorageService"]) === "function" && _c || Object])
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [typeof (_a = typeof http_1.Http !== "undefined" && http_1.Http) === "function" && _a || Object, typeof (_b = typeof store_1.Store !== "undefined" && store_1.Store) === "function" && _b || Object, typeof (_c = typeof angular_2_local_storage_1.LocalStorageService !== "undefined" && angular_2_local_storage_1.LocalStorageService) === "function" && _c || Object])
 ], UserManagementService);
-
+exports.UserManagementService = UserManagementService;
 var _a, _b, _c;
 //# sourceMappingURL=user-management-services.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/environments/environment.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* unused harmony export environment */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return TEST_BASE_IP; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BASE_IP; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return paths; });
+
 // The file contents for the current environment will overwrite these during build.
 // The build system defaults to the dev environment which uses `environment.ts`, but if you do
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `.angular-cli.json`.
-// The file contents for the current environment will overwrite these during build.
-var environment = {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.environment = {
     production: false
 };
-var TEST_BASE_IP = {
+exports.TEST_BASE_IP = {
     IP: 'http://192.168.0.153',
 };
-var BASE_IP = {
+exports.BASE_IP = {
     IP: 'http://192.168.0.153',
+    // IP : 'http://apis.fretron.com',
     // IP1 :'http://192.168.0.103:2124',
     // BETA_IP : 'http://192.168.0.149:8094',
     NODE_IP: 'http://tracknet.fretron.com',
-    FERIGHT_LOCATION: TEST_BASE_IP.IP + '/freight'
+    FERIGHT_LOCATION: exports.TEST_BASE_IP.IP + '/freight'
 };
-var paths = {
+exports.paths = {
     // ********************* organization path *******************************
-    ORGANIZATION_LIST_PATH: BASE_IP.IP + "/organisation/organizations",
-    MANAGE_USERS_PATH: BASE_IP.IP + '/organisation/users',
-    DELETE_USERS_PATH: BASE_IP.IP + '/organisation',
-    ADD_EXISTING_USERS_PATH: BASE_IP.IP + '/user/getUser',
+    ORGANIZATION_LIST_PATH: exports.BASE_IP.IP + "/organisation/organizations",
+    MANAGE_USERS_PATH: exports.BASE_IP.IP + '/organisation/users',
+    DELETE_USERS_PATH: exports.BASE_IP.IP + '/organisation',
+    ADD_EXISTING_USERS_PATH: exports.BASE_IP.IP + '/user/getUser',
     // SWITCH_ORG_PATH:"http://192.168.0.103:8099/user/switchorg?orgId=",
-    SWITCH_ORG_PATH: BASE_IP.IP + "/user/switchorg?orgId=",
-    CREATE_ORGANISATION_PATH: BASE_IP.IP + '/organisation/create',
-    MANAGE_VEHICLES_GRP_PATH: BASE_IP.IP + '/group',
-    SHIPMENT_PATH: BASE_IP.IP + '/shipment',
-    DEVICE_LIST_PATH: BASE_IP.IP + "/shipment/device/dashboard",
-    DEVICE_ADD_PATH: BASE_IP.IP + '/registry/device/add',
-    CHECK_VEHICLE: BASE_IP.IP + '/registry/checkvehicle',
+    SWITCH_ORG_PATH: exports.BASE_IP.IP + "/user/switchorg?orgId=",
+    CREATE_ORGANISATION_PATH: exports.BASE_IP.IP + '/organisation/create',
+    MANAGE_VEHICLES_GRP_PATH: exports.BASE_IP.IP + '/group',
+    SHIPMENT_PATH: exports.BASE_IP.IP + '/shipment',
+    DEVICE_LIST_PATH: exports.BASE_IP.IP + "/shipment/device/dashboard",
+    DEVICE_ADD_PATH: exports.BASE_IP.IP + '/registry/device/add',
+    CHECK_VEHICLE: exports.BASE_IP.IP + '/registry/checkvehicle',
 };
 //# sourceMappingURL=environment.js.map
 
@@ -7873,23 +7704,19 @@ module.exports = __webpack_require__.p + "background-profile.82e0e4644bf995625d9
 /***/ }),
 
 /***/ "../../../../../src/main.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__("../../../platform-browser-dynamic/@angular/platform-browser-dynamic.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__("../../../../../src/app/app.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_hammerjs__ = __webpack_require__("../../../../hammerjs/hammer.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_hammerjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_hammerjs__);
 
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var platform_browser_dynamic_1 = __webpack_require__("../../../platform-browser-dynamic/@angular/platform-browser-dynamic.es5.js");
+var app_module_1 = __webpack_require__("../../../../../src/app/app.module.ts");
+__webpack_require__("../../../../hammerjs/hammer.js");
 // if (environment.production) {
-Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["enableProdMode"])();
+core_1.enableProdMode();
 // }
-Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */]);
+platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
 //# sourceMappingURL=main.js.map
 
 /***/ }),
