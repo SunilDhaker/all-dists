@@ -7667,7 +7667,8 @@ exports.environment = {
     production: false
 };
 exports.TEST_BASE_IP = {
-    IP: 'http://192.168.0.153',
+    // IP : 'http://192.168.0.153',
+    IP: 'http://apis.fretron.com'
 };
 exports.BASE_IP = {
     IP: 'http://192.168.0.153',
